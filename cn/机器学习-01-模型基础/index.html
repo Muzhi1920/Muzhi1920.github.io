@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxx-xx"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-xxxxxx-xx');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="人工智能的奇点，正在来临..."/>
+  <meta name="keyword" content="AI"/>
+  <link rel="shortcut icon" href="/img/avatar/roguerabbit.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+      <!-- gitalk start -->
+      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
+      <link rel="stylesheet" href="/css/gitalk.css"/>
+      <!-- gitalk end -->
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://Muzhi1920.github.io/cn/机器学习-01-模型基础/">
+  <title>
+    
+      机器学习-01-模型基础 - Shawn Blog
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--dark">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'dark';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+		<!-- Gitter -->
+<!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'your-community/your-room'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Shawn Blog</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">首页</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>搜索</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: url('');
+      --intro-header-background-image-url-page: url('/img/header_img/archive_bg2.jpg');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/archive_bg2.jpg');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url(''); */
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('/img/signature/vincent-white.png');
+      }
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#ML" title="ML">ML</a>
+              
+            </div>
+            <h1>机器学习-01-模型基础</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by 小于 on
+              2019-10-26
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">16</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">4.4k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h1>树模型与集成学习</h1>
+<h2 id="1-决策树ID3-C4-5-CART树">1. 决策树ID3,C4.5,CART树</h2>
+<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-01-%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80/1.png" alt="avatar"><br>
+特征枚举：根据规则选择特征<br>
+划分节点：根据特征进一步分裂叶子节点<br>
+<strong>根据样本训练出GBDT树，对于每个叶子节点，回溯到根节点都可以得到一组组合特征，所以用叶子节点的标号可以代表一个新的组合特征</strong></p>
+<span id="more"></span>
+<h3 id="ID3算法——信息增益">ID3算法——信息增益</h3>
+<p>D为样本集合；$D_v$是特征f取v时的样本集。Gain信息增益=信息熵-条件熵</p>
+<ul>
+<li>信息熵：<br>
+$$H(D)=-\sum_{y=k}^{K}p_k·log(p_k)$$</li>
+<li>条件熵：<br>
+$$H(D|f)=-\sum_{v\epsilon V_f}\frac{|D_v|}{|D|}H(D_v)$$</li>
+<li>信息增益：<br>
+$$Gain(D,f)=H(D)-H(D|f)$$</li>
+<li>缺点：**信息增益准则倾向于选取多值特征！**假如把“编号”也作为一个候选划分属性，因为每一个样本的编号都是不同的（由于编号独特唯一，条件熵为0，每一个结点中只有一类，纯度非常高），也就是说，来了一个预测样本，你只要告诉我编号，其它特征就没有用了，这样生成的决策树显然不具有泛化能力。</li>
+</ul>
+<h3 id="C4-5算法——信息增益比">C4.5算法——信息增益比</h3>
+<p>信息增益比：<br>
+$$Gain_ratio(D,f)=\frac{Gain(D,f)}{IV(f)}$$<br>
+$$IV(f)=-\sum_{y=k}^{K}p_{k,f}·log(p_{k,f})$$<br>
+IV(f)表明：某属性分成的K类别数越大，IV(f)就越大；是对多值属性的罚项，描述该特征下类别的离散程度。C4.5算法不直接选择增益率最大的候选划分属性，候选划分属性中找出信息增益高于平均水平的属性（这样保证了大部分好的的特征），再从中选择增益率最高的（又保证了不会出现编号特征这种极端的情况）</p>
+<ul>
+<li>优点
+<ol>
+<li>可处理连续特征，排序取中间值。</li>
+</ol>
+</li>
+</ul>
+<h3 id="CART树——Gini系数">CART树——Gini系数</h3>
+<ul>
+<li>总体样本的Gini系数：<br>
+$$Gini(D)=1-\sum_{y=k}^{K}(\frac{D_k}{D})^2$$</li>
+<li>特征f下的Gini系数<br>
+$$Gini(D|f)=1-\sum_{v\epsilon V_f}\frac{D_v}{D}Gini(D_v)$$<br>
+<strong>无论是回归还是分类问题，无论特征是离散的还是连续的，无论特征取值有多个还是两个，CART树内部节点只能根据属性值进行二分</strong></li>
+<li>作为回归树：使用最小化MSE来选择特征并进行划分。遍历特征以及取值尝试划分，每一个叶子节点给出的预测值，是该叶子节点中所有样本的均值，计算最小平方误差。回归树生成使用平方误差最小化准则。</li>
+<li>作为分类树：使用Gini指数最小化准则来选择特征并进行划分。Gini指数表示集合的不确定性，或者是不纯度。基尼指数越大，集合不确定性越高，不纯度也越大。这一点和熵类似。另一种理解基尼指数的思路是，基尼指数是为了最小化误分类的概率。</li>
+</ul>
+<h4 id="CART树，ID3，C4-5对比">CART树，ID3，C4.5对比</h4>
+<table>
+<thead>
+<tr>
+<th>算法</th>
+<th>树</th>
+<th>准则</th>
+<th>多分类</th>
+<th>回归</th>
+<th>特征</th>
+<th>缺失值</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID3</td>
+<td>多叉树</td>
+<td>信息增益</td>
+<td>仅二分类</td>
+<td>不能</td>
+<td>仅离散</td>
+<td>敏感</td>
+<td>倾向多值特征</td>
+</tr>
+<tr>
+<td>C4.5</td>
+<td>多叉树</td>
+<td>信息增益比</td>
+<td>仅二分类</td>
+<td>不能</td>
+<td>离散/连续</td>
+<td>可处理</td>
+<td>偏向少值特征。实际信息增益+信息增益比</td>
+</tr>
+<tr>
+<td>CART</td>
+<td>仅二叉树</td>
+<td>Gini系数</td>
+<td>多分类</td>
+<td>能</td>
+<td>离散/连续</td>
+<td>可处理</td>
+<td>不需对数运算，更偏向于连续属性</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-集成学习">2. 集成学习</h2>
+<p>集成学习——bagging与boosting<br>
+<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-01-%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80/4.png" alt="avatar"><br>
+<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-01-%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80/3.png" alt="avatar"></p>
+<table>
+<thead>
+<tr>
+<th>集成学习</th>
+<th>基学习器</th>
+<th>依赖关系</th>
+<th>串/并行</th>
+<th>复杂度</th>
+<th>关注点</th>
+<th>应用</th>
+<th>预测结果</th>
+<th>数据使用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bagging</td>
+<td>强</td>
+<td>弱</td>
+<td>并行</td>
+<td>基学习器同阶</td>
+<td>降方差</td>
+<td>可回归，可分类</td>
+<td>投票/平均</td>
+<td>有放回抽取</td>
+</tr>
+<tr>
+<td>boosting</td>
+<td>弱</td>
+<td>强</td>
+<td>串行</td>
+<td>基学习器叠加</td>
+<td>降偏差</td>
+<td>可回归，可分类</td>
+<td>累加/阈值</td>
+<td>原数据样本权重会改变</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Random-Forest">Random Forest</h3>
+<p>多棵决策树，随机样本，随即特征进行划分。<br>
+分类：投票；回归：平均。<br>
+样本随机：63.2%（1-1/e）数据会被选区，<strong>36.8%(1/e)未被用到称为OOB样本，包外估计</strong>。<br>
+特征随机：从该节点特征集随机抽取K个，然后选择最优属性。<br>
+容易做成并行化方法</p>
+<h3 id="GBDT">GBDT</h3>
+<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-01-%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80/9.png" alt="avatar"></p>
+<ol>
+<li>初始化第一棵树；</li>
+<li>计算损失对前面k-1棵树的负梯度；</li>
+<li>训练拟合得到第k棵树；</li>
+<li>最小化损失获得步长η；将新的树添加到模型Fk</li>
+</ol>
+<ul>
+<li>函数空间的梯度下降，函数拟合的是负梯度；最终函数等于每次迭代的增量的累加和。</li>
+<li>参数空间的梯度下降，参数更新方向为负梯度方向；最终参数等于每次迭代的增量累加和。</li>
+</ul>
+<p>新的一棵树拟合的是模型的整体损失对前面k-1棵树的负梯度。</p>
+<h4 id="GBDT多分类以及训练过程">GBDT多分类以及训练过程</h4>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">X=[];label=[<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>]</span><br><span class="line">(X,0) -&gt; t1;#得到预测值f1(X)</span><br><span class="line">(X,1) -&gt; t2;#得到预测值f2(X)</span><br><span class="line">(X,0) -&gt; t3;#得到预测值f3(X)</span><br><span class="line">对f1(x),f2(x),f3(x)进行softmax产生概率。得到残差：</span><br><span class="line">类别<span class="number">1</span>：y11(x)=<span class="number">0</span>−p1(x);</span><br><span class="line">类别<span class="number">2</span>：y22(x)=<span class="number">1</span>−p2(x);</span><br><span class="line">类别<span class="number">3</span>：y33(x)=<span class="number">0</span>−p3(x);</span><br><span class="line">-------------------------------</span><br><span class="line">(X,y11) -&gt; t11;#得到预测值f11(X)</span><br><span class="line">(X,y22) -&gt; t22;#得到预测值f22(X)</span><br><span class="line">(X,y33) -&gt; t33;#得到预测值f33(X)</span><br><span class="line">……</span><br></pre></td></tr></table></figure>
+<h4 id="求解树复杂度">求解树复杂度</h4>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">树深度K:</span><br><span class="line">    枚举所有特征d:</span><br><span class="line">        该特征下值排序 nlogn</span><br><span class="line">        线性扫描决定最佳分裂点</span><br><span class="line">        计算分裂后MSE或者Gini系数选择最优分裂点</span><br></pre></td></tr></table></figure>
+<p>总体复杂度：<strong>K * d * nlogn。</strong></p>
+<h3 id="XGBoost">XGBoost</h3>
+<p>xgb与gbdt的算法对比<br>
+<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-01-%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80/7.png" alt="avatar"><br>
+<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-01-%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80/11.jpg" alt="avatar"><br>
+<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-01-%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80/5.png" alt="avatar"></p>
+<ul>
+<li>
+<p>GBDT：<br>
+GBDT构造新的一棵树，对损失近似到一阶导，拟合负梯度；属于函数空间中利用梯度下降法进行优化</p>
+</li>
+<li>
+<p>XGBoost：<br>
+XGBoost构造新的一棵树，对损失近似到二阶导，拟合负一阶导/二阶导(+正则项)；属于函数空间中的牛顿法进行优化</p>
+</li>
+</ul>
+<h4 id="GBDT-vs-XGB">GBDT vs XGB</h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>GBDT</th>
+<th>XGB</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基分类器</td>
+<td>树模型</td>
+<td>树模型+LR回归</td>
+</tr>
+<tr>
+<td>树拟合</td>
+<td>负梯度</td>
+<td>负梯度/二阶导</td>
+</tr>
+<tr>
+<td>方差-偏差权衡</td>
+<td></td>
+<td>目标函数+正则（叶子节点数，节点权重）</td>
+</tr>
+<tr>
+<td>分割准则</td>
+<td>回归：MSE；分类：基尼系数</td>
+<td>最大化损失增益</td>
+</tr>
+<tr>
+<td>分割方法</td>
+<td></td>
+<td>分位数法列举候选分割，求Gain最佳</td>
+</tr>
+<tr>
+<td>缺失值处理</td>
+<td></td>
+<td>指定学习缺失值分类方向；忽略缺失值</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>列抽样，数据集抽样</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>并行化：特征值排序找出候选点，保存为列块结构，各个特征增益计算并行运算</td>
+</tr>
+</tbody>
+</table>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/a4v9n_hUgxNyKSQ3RgDMLA">XGB精选</a></p>
+<h1>GBDT与XGB</h1>
+<p>相信看到这篇文章的你对于梯度提升树的推导计算应该有所了解，但是推导公式只是理论理解，工程实现上却有很多细节需要探究。此外因为关于梯度提升树整理得较多，比较杂乱。所以为了更好地理解和向别人介绍梯度提升树，需要系统的掌握。<br>
+<strong>梯度提升思想-&gt;决策树思想-&gt;梯度提升树理论-&gt;代码-&gt;wink</strong></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/program_developer/article/details/102763481">深入理解GBDT</a></p>
+<!--more-->
+<h2 id="CART树（分类与回归树）">CART树（分类与回归树）</h2>
+<p>目标函数的定义决定了CART树用与回归还是分类，排序任务</p>
+<h3 id="GBDT-2">GBDT</h3>
+<h4 id="GBDT提升树原理">GBDT提升树原理</h4>
+<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-01-%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80/1.png" alt="avater"><br>
+<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-01-%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80/2.png" alt="avater"><br>
+无论损失函数是什么形式，每个决策树拟合的都是负梯度。准确的说，不是用负梯度代替残差，而是当损失函数是平方损失时，负梯度刚好是残差，残差只是特例。<br>
+<strong>$\theta$参数空间的优化，方向是$L$对$\theta$的负梯度；提升树作为函数空间的优化，方向是$L$对$F_{m-1}(x)$的负梯度</strong></p>
+<p><strong>对于GBDT来说，新的提升树拟合的都是前面m-1棵树对样本造成的损失对前m-1棵树权重的负梯度方向。</strong><br>
+<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/63560633/answer/379959040">参考知乎</a></p>
+<h4 id="分类任务">分类任务</h4>
+<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-01-%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80/log_fenlei.png" alt="avatar"><br>
+逻辑回归、FM模型用于分类问题，其实是在用一个线性模型或者包含交叉项的非线性模型，去拟合对数几率$ln{\frac{p}{1-p}}$。而GBDT也是一样，用一系列的梯度提升树去拟合这个对数几率，实际上最终得到的是一系列CART回归树。其分类模型可以表达为：<br>
+$$P(y=1|x)=\frac{1}{1+e^{-\sum_{m=0}^{M}h_m(x)}}$$<br>
+前m棵树相加，然后非线性变换为概率P作为预测概率，$h_m(x)$为学习到的决策树<br>
+交叉熵损失函数为：<br>
+$$l(x_i,y_i)=-y_i\log{\hat{y_i}}-(1-y_i)\log(1-\hat{y_i})$$<br>
+迭代k步后，模型输出为<br>
+$$\hat{y_i}=F(x)=\sum_{k=0}^Kh_m(x)$$<br>
+，损失函数为<br>
+$$L(x_i,y_i|F(x))=y_i\log(1+e^{-F(x_i)})+(1-y_i)[F(x_i)+\log(1+e^{-F(x_i)})]$$<br>
+求导得到梯度为<br>
+$$\frac{\partial L}{\partial {F(x)}}|_{x_i,y_i}=P-y_i$$<br>
+因此对于下一棵决策树的训练样本X，其所需要拟合的<strong>负梯度</strong>为真实标签与预测概率的残差$y_i-P$。<br>
+<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-01-%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80/multi_fenlei.png" alt="avatar"><br>
+<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_22238533/article/details/79192579?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task">参考知乎</a></p>
+<h4 id="回归任务">回归任务</h4>
+<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-01-%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80/ls_huigui.png" alt="avatar"><br>
+回归预测采用平方误差损失<br>
+$$L=\sum_{i=1}^{N}l(y_i,F_{m-1}(x)+h_m(x_i))$$<br>
+$$L=\sum_{i=1}^{N}(y_i-F_{m-1}(x)-h_m(x_i))^2$$<br>
+欲使损失最小，很显然则需要满足<br>
+$$h_m(x_i)=r=(y_i-F_{m-1}(x))$$<br>
+拟合残差即可。–<strong>《统计学习方法》</strong><br>
+或者<strong>通过求取负梯度，使$h_m(x_i)=T(x_i,\theta_m)$拟合</strong>，满足损失最小<br>
+$$L=\sum_{i=1}^{N}(y_i-F_{m-1}(x_i))^2$$<br>
+求导得到<br>
+$$\frac{\partial L}{\partial {F_{m-1}(x)}}|<em>{x_i,y_i}=-2\sum</em>{i=1}^{N}(y_i-F(x_i))$$<br>
+因此新的一棵树$T(x_i,\theta_m)$应该对于样本$(x_i,y_i)$需要拟合$r=y_i-F_{m-1}(x_i)$<br>
+两种方法是相似的，对于回归任务，新的一棵树的权重拟合的是负梯度(伪残差）</p>
+<blockquote>
+<blockquote>
+<p>对于第一棵树，作为弱分类器，样本预测值为所有样本真实结果的均值；而后每增加一棵树，使得样本在前面所有的树中得到的损失都小。因此新的树权重的拟合方向，就是所有样本在函数空间得到的损失减小的负梯度方向，构成的合矢量方向，保证所有样本损失减小。</p>
+</blockquote>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/46445201">参考知乎</a><br>
+<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_22238533/article/details/79185969">参考博客</a></p>
+<h4 id="总结">总结</h4>
+<p>因此对于GBDT来说，使用的是CART树。并且通过定义合适的目标函数实现不同的任务。但总得来说，<strong>GBDT的提升树叶子权重拟合的都是负梯度，实为真实值与预测结果值的残差。</strong></p>
+<ol>
+<li>回归任务：拟合的是r=真实值-前向累加的结果；$y-\hat{y}$</li>
+<li>二分类：拟合的是r=真实值-前向累加后非线性变换的结果；$y-p$</li>
+<li>多分类：拟合的是r=真实值-前向累加后非线性变换+softmax的结果。$y-\hat{y_p}$</li>
+</ol>
+<p>初始化弱分类器时，不同任务对应不同损失函数，对应不同的初始化方式<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_22238533/article/details/79185969">参考博客</a></p>
+<h2 id="XGBoost-2">XGBoost</h2>
+<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-01-%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80/gbdt.png" alt="avatar"></p>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzI1MzY0MzE4Mg==&amp;mid=2247485159&amp;idx=1&amp;sn=d429aac8370ca5127e1e786995d4e8ec&amp;chksm=e9d01626dea79f30043ab80652c4a859760c1ebc0d602e58e13490bf525ad7608a9610495b3d&amp;scene=21#wechat_redirect">XGB精选</a></p>
+<h2 id="GBDT-vs-XGB-2">GBDT vs XGB</h2>
+<p>GBDT：$w^<em>=-G$<br>
+XGB：$w^</em>=-\frac{G}{H}$</p>
+<p>GBDT初始化弱分类器，任务，损失函数不同，初始化方式不同；<br>
+XGB初始化弱分类器，都归为0，因此训练时略去初始化过程</p>
+<h2 id="FM算法">FM算法</h2>
+<ul>
+<li>优点： 减少特征交叉的选择工作，特征参数学习更加充分，提升参数学习效率和模型预估能力。</li>
+<li>缺点：两两交叉，相比于DNN，GBDT更多特征的交叉</li>
+</ul>
+<h3 id="FM的计算">FM的计算</h3>
+<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-01-%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80/fm.png" alt=""><br>
+<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-01-%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80/fm.webp" alt=""></p>
+<h3 id="计算过程">计算过程</h3>
+<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-01-%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80/m1.png" alt="avatar"><br>
+<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-01-%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80/m2.png" alt="avatar"><br>
+<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-01-%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80/m3.png" alt="avatar"></p>
+<h2 id="GBDT-FM">GBDT+FM</h2>
+<p>GBDT一棵树的叶子节点one-hot构成组合特征，该颗树特征对应一个K维向量作为该特$v_i$，进FM时两棵树的组合就是$v_i$和$v_j$的点成得到$w_{ij}$实际上是更多低阶特征的组合离散特征学习低维dense特征；</p>
+<ol>
+<li>提取统计类特征使用gbdt模型快速拿到收益;</li>
+<li>加入海量离散类特征（个性化），使用LR/FM模型进一步提升效果。</li>
+<li>至于原有的统计类特征可以通过gbdt叶子节点转换成离散特征一并加入到LR/FM中。</li>
+</ol>
+<h3 id="稀疏特征进FM">稀疏特征进FM</h3>
+<p>高维稀疏特征适合线性模型；LR+L2正则可以使得权重降低，不容易对稀疏特征过拟合。</p>
+<h3 id="连续特征进GBDT">连续特征进GBDT</h3>
+<p><strong>统计特征，低维稠密特征适合树模型</strong>；一般统计特征具有总体的特征效果或全局性的因素</p>
+<p>离散特征进GBDT时根据0，1划分节点偶然性太大，很容易过拟合；特征太多，树模型不易训练</p>
+<h3 id="DNN的应用">DNN的应用</h3>
+<p>解决FM特征交叉能力受限的问题。<strong>DNN较容易学习到高阶非线性特征</strong></p>
+<h3 id="GBDT-FM为什么不是RF-FM">GBDT+FM为什么不是RF+FM</h3>
+<ul>
+<li>GBDT前面的树侧重对多数样本有区分度的特征；后面的树针对经过前面的树仍然残差大的少数样本</li>
+<li>从bias and variance角度，RF降低variance而不改变bias, 而LR线性模型的variance足够低，需要更多的组合特征降低bias</li>
+</ul>
+<h2 id="reference">reference</h2>
+<h3 id="非参考，仅推荐">非参考，仅推荐</h3>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/program_developer/article/details/102763481">深入理解GBDT算法</a><br>
+<a target="_blank" rel="noopener" href="https://blog.csdn.net/program_developer/article/details/102539034">梯度提升树</a><br>
+<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/7n1nzGL7r789P9sv0GEkDA">XGB详细推导</a></p>
+<h1>各种机器学习算法优缺点总结</h1>
+<h2 id="决策树">决策树</h2>
+<blockquote>
+<blockquote>
+<p>可回归，可分类</p>
+</blockquote>
+</blockquote>
+<h3 id="决策树优点">决策树优点</h3>
+<ol>
+<li>决策树易于理解和解释，可以可视化分析，容易提取出规则。</li>
+<li>可以同时处理标称型和数值型数据。</li>
+<li>测试数据集时，运行速度比较快。</li>
+<li>决策树可以很好的扩展到大型数据库中，同时它的大小独立于数据库大小。</li>
+</ol>
+<h3 id="决策树缺点">决策树缺点</h3>
+<ol>
+<li>对缺失数据处理比较困难。</li>
+<li>容易出现过拟合问题。</li>
+<li>忽略数据集中属性的相互关联。</li>
+<li>ID3算法计算信息增益时结果偏向数值比较多的特征。</li>
+</ol>
+<h3 id="改进措施">改进措施</h3>
+<p>剪枝，采用交叉验证法，加入正则化；bagging算法，randomforest算法，可以解决过拟合的问题。</p>
+<h3 id="C4-5算法">C4.5算法</h3>
+<p>C4.5算法核心思想是ID3算法的改进，改进方面有：</p>
+<ol>
+<li>用信息增益率来选择属性，克服了用信息增益选择属性时偏向选择取值多的属性的不足；</li>
+<li>在树构造过程中进行剪枝；</li>
+<li>能处理非离散的数据；</li>
+<li>能处理不完整的数据。</li>
+</ol>
+<h4 id="优点：">优点：</h4>
+<p>产生的分类规则易于理解，准确率较高。</p>
+<h4 id="缺点：">缺点：</h4>
+<ol>
+<li>在构造树的过程中，需要对数据集进行多次的顺序扫描和排序，因而导致算法的低效；</li>
+<li>C4.5只适合于能够驻留于内存的数据集，当训练集大得无法在内存容纳时程序无法运行。</li>
+</ol>
+<h3 id="CART分类与回归树">CART分类与回归树</h3>
+<h4 id="优点：-2">优点：</h4>
+<ol>
+<li>非常灵活，可以允许有部分错分成本，还可指定先验概率分布，可使用自动的成本复杂性剪枝来得到归纳性更强的树。</li>
+<li>在面对诸如存在缺失值、变量数多等问题时CART 显得非常稳健。</li>
+</ol>
+<h3 id="随机森林">随机森林</h3>
+<ul>
+<li>优点：不易过拟合，并行化更快；降方差；鲁棒性更强；适用大规模数据和不相关特征</li>
+<li>准确度可能不够；噪声较大的问题上会过拟合；内部级别较多的特征对模型影响更大，此时权值不可信；</li>
+</ul>
+<h2 id="K-Means聚类">K-Means聚类</h2>
+<ul>
+<li>优点：复杂度O(N*K*T)，N样本数，K类别数，T迭代数</li>
+<li>缺点：对噪声孤立点敏感；K的定义trick。</li>
+</ul>
+<h2 id="EM算法">EM算法</h2>
+<ul>
+<li>优点：含隐变量弥补极大似然缺陷；</li>
+<li>缺点：迭代收敛慢，依赖初始化参数假设</li>
+</ul>
+<h2 id="LR">LR</h2>
+<ul>
+<li>优点：计算小，存储低；</li>
+<li>缺点：欠拟合，精度不高；</li>
+</ul>
+<h2 id="朴素贝叶斯">朴素贝叶斯</h2>
+<blockquote>
+<blockquote>
+<p>使用先验知识，得到后验概率，条件独立性假设前提下，期望风险最小化得到后验概率最大化。</p>
+</blockquote>
+</blockquote>
+<ul>
+<li>优点：小规模数据效果好，可以多分类；支持增量式运算。即可以实时的对新增的样本进行训练；可解释性强；</li>
+<li>缺点：条件独立性假设，性能不一定高；</li>
+</ul>
+<h2 id="SVM">SVM</h2>
+<ul>
+<li>优点：小样本下，可实现非线性分类，用于分类与回归，泛化能力强；无局部极小值问题，可以很好的处理高维数据集。</li>
+<li>缺点：对核函数和参数敏感；对于核函数的高维映射解释力不强，尤其是径向基函数；对缺失数据敏感。</li>
+</ul>
+<h2 id="集成算法（AdaBoost算法）">集成算法（AdaBoost算法）</h2>
+<h3 id="AdaBoost算法优点">AdaBoost算法优点</h3>
+<ol>
+<li>很好的利用了弱分类器进行级联。</li>
+<li>可以将不同的分类算法作为弱分类器。</li>
+<li>AdaBoost具有很高的精度。</li>
+<li>相对于bagging算法和Random Forest算法，AdaBoost充分考虑的每个分类器的权重。</li>
+</ol>
+<h3 id="Adaboost算法缺点">Adaboost算法缺点</h3>
+<ol>
+<li>AdaBoost迭代次数也就是弱分类器数目不太好设定，可以使用交叉验证来进行确定。</li>
+<li>数据不平衡导致分类精度下降。</li>
+<li>训练比较耗时，每次重新选择当前分类器最好切分点。</li>
+</ol>
+<h2 id="神经网络">神经网络</h2>
+<ul>
+<li>优点：非线性拟合能力强；鲁棒性强；并行性好；</li>
+<li>缺点：可解释性差，初值敏感；</li>
+</ul>
+<h2 id="隐马尔可夫HMM">隐马尔可夫HMM</h2>
+<ul>
+<li>优点：解决标注问题；</li>
+<li>缺点：齐次马尔科夫假设与观测孤立性假设，可能出现标记偏置。</li>
+</ul>
+<h2 id="CRF条件随机场">CRF条件随机场</h2>
+<ul>
+<li>优点：全局范围最优解；解决MEMM标注偏置；没有条件独立性假设；计算整个标记序列的联合概率分布；</li>
+<li>缺点：训练代价大，复杂度高。</li>
+</ul>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/cn/算法导论-01-动态规划/" data-toggle="tooltip" data-placement="top" title="算法导论-01-动态规划">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/cn/推荐系统-00-基础/" data-toggle="tooltip" data-placement="top" title="推荐系统">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      如果您喜欢此博客或发现它对您有用，则欢迎对此发表评论。 也欢迎您共享此博客，以便更多人可以参与。 如果博客中使用的图像侵犯了您的版权，请与作者联系以将其删除。 谢谢 ！
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=机器学习-01-模型基础&body=Hi,I found this website and thought you might like it https://Muzhi1920.github.io/cn/机器学习-01-模型基础/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Sat Oct 26 2019 13:37:00 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#ML" title="ML">ML</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>链友</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/Muzhi1920">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+            <li>
+              <a target="_blank" href="https://www.zhihu.com/people/Recommender">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa  fa-stack-1x fa-inverse">知</i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          小于
+          2022
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='The first step is as good as half over...,Laugh and grow fat...,Man proposes God disposes...,When all else is lost the future still remains...,Wasting time is robbing oneself...,Sharp tools make good work...,Cease to struggle and you cease to live...,A friend in need is a friend indeed...,Faith can move mountains...' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033'></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://Muzhi1920.github.io/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

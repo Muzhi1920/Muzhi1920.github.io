@@ -1,0 +1,1745 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxx-xx"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-xxxxxx-xx');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="人工智能的奇点，正在来临..."/>
+  <meta name="keyword" content="AI"/>
+  <link rel="shortcut icon" href="/img/avatar/roguerabbit.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+      <!-- gitalk start -->
+      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
+      <link rel="stylesheet" href="/css/gitalk.css"/>
+      <!-- gitalk end -->
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://Muzhi1920.github.io/cn/大数据-03-linux/">
+  <title>
+    
+      大数据-03-linux - Shawn Blog
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--dark">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'dark';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+		<!-- Gitter -->
+<!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'your-community/your-room'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Shawn Blog</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">首页</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>搜索</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: url('');
+      --intro-header-background-image-url-page: url('/img/header_img/archive_bg2.jpg');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/archive_bg2.jpg');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url(''); */
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('/img/signature/vincent-white.png');
+      }
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#linux" title="linux">linux</a>
+              
+            </div>
+            <h1>大数据-03-linux</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by 小于 on
+              2021-09-28
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">15</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">3.5k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h1>Linux</h1>
+<p>更多命令参考<br>
+<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/36093355">Linux常用命令总结</a></p>
+<ul>
+<li>ps：查看当前进程
+<ol>
+<li>ps -ef (system v 输出)</li>
+<li>ps -aux bsd 格式输出</li>
+<li>ps -ef | grep pid</li>
+</ol>
+</li>
+<li>ln：软连接，快捷方式；硬链接：同步更改。</li>
+<li>chmod abc file a,b,c：分别表示User、Group、及Other的权限。若要rwx属性则4+2+1=7</li>
+<li>vi 文件名编辑 cat file | more | less
+<ol>
+<li>more 分页</li>
+<li>less 分页可回翻</li>
+<li>tail 尾部</li>
+<li>head 头部</li>
+</ol>
+</li>
+</ul>
+<span id="more"></span>
+<ul>
+<li>wc 命令 - c 统计字节数 - l 统计行数 - w 统计字数。</li>
+<li>grep [string] filename grep [^string] filename```</li>
+<li>nohup sh **.sh &amp; 后台运行 job -l fg bg</li>
+<li>kill -9 pid</li>
+<li>
+<ol>
+<li>find &lt;指定目录&gt; &lt;指定条件&gt; &lt;指定动作&gt;</li>
+<li>whereis 加参数与文件名</li>
+<li>locate 只加文件名</li>
+</ol>
+</li>
+<li>history ,who am i,</li>
+<li>df -hl 磁盘使用</li>
+<li>hash：记录了已执行过的命令的完整路径, 用该命令可以打印出你所使用过的命令以及执行的次数。</li>
+<li>let 可以进行整型数的数学运算</li>
+</ul>
+<h2 id="一、man-page">一、man_page</h2>
+<ol>
+<li>内部命令：echo<br>
+查看内部命令帮助：help echo 或者 man echo</li>
+<li>外部命令：ls<br>
+查看外部命令帮助：ls --help 或者 man ls 或者 info ls</li>
+<li>快捷键：<br>
+ctrl + c：停止进程<br>
+ctrl + l：清屏<br>
+ctrl + r：搜索历史命令<br>
+ctrl + q：退出<br>
+4.善于用tab键：文件名补全</li>
+</ol>
+<h2 id="二、常用命令">二、常用命令</h2>
+<ol>
+<li>进入到用户根目录<br>
+cd ~ 或 cd</li>
+<li>查看当前所在目录<br>
+pwd</li>
+<li>进入到itcast用户根目录<br>
+cd ~itcast</li>
+<li>返回到原来目录<br>
+cd -</li>
+<li>返回到上一级目录<br>
+cd …</li>
+<li>查看itcast用户根目录下的所有文件<br>
+ls -la</li>
+<li>在根目录下创建一个itcast的文件夹<br>
+mkdir /itcast</li>
+<li>查看/itcast目录下面的所有文件<br>
+ls -la</li>
+<li>在/itcast目录下面创建一个test.txt文件,同时写入内容&quot;this is test&quot;<br>
+echo “this is test” &gt; test.txt</li>
+<li>查看一下test.txt的内容<br>
+cat test.txt<br>
+more test.txt<br>
+less test.txt</li>
+<li>向README文件追加写入&quot;please read me first&quot;<br>
+echo “please read me first” &gt;&gt; README</li>
+<li>将test.txt的内容追加到README文件中<br>
+cat test.txt &gt;&gt; README</li>
+<li>拷贝/itcast目录下的所有文件到/itcast-bak<br>
+cp -r /itcast /itcast-bak</li>
+<li>进入到/itcast-bak目录，将test.txt移动到src目录下，并修改文件名为Student.java<br>
+mv test.txt src/Student.java</li>
+<li>在src目录下创建一个struts.xml</li>
+</ol>
+<blockquote>
+<p>struts.xml</p>
+</blockquote>
+<ol start="17">
+<li>删除所有的xml类型的文件<br>
+rm -rf *.xml</li>
+<li>删除/itcast-bak目录和下面的所有文件<br>
+rm -rf /itcast-bak</li>
+<li>返回到/itcast目录，查看一下README文件有多单词，多少个少行<br>
+wc -w README<br>
+wc -l README</li>
+<li>返回到根目录，将/itcast目录先打包，再用gzip压缩<br>
+分步完成：tar -cvf itcast.tar itcast    gzip itcast.tar<br>
+一步完成：tar -zcvf itcast.tar.gz itcast</li>
+<li>将其解压缩，再取消打包<br>
+分步完成：gzip -d itcast.tar.gz 或 gunzip itcast.tar.gz<br>
+一步完成：tar -zxvf itcast.tar.gz<br>
+将/itcast目录先打包，同时用bzip2压缩，并保存到/tmp目录下<br>
+tar -jcvf /tmp/itcast.tar.bz2 itcast<br>
+将/tmp/itcast.tar.bz2解压到/usr目录下面<br>
+tar -jxvf itcast.tar.bz2 -C /usr/</li>
+</ol>
+<p>三、文件相关命令</p>
+<ol>
+<li>进入到用户根目录<br>
+cd ~ 或者 cd<br>
+cd ~hadoop<br>
+回到原来路径<br>
+cd -</li>
+<li>查看文件详情<br>
+stat a.txt</li>
+<li>移动<br>
+mv a.txt /ect/<br>
+改名<br>
+mv b.txt a.txt<br>
+移动并改名<br>
+mv a.txt …/b.txt</li>
+<li>拷贝并改名<br>
+cp a.txt /etc/b.txt</li>
+<li>vi撤销修改<br>
+ctrl + u (undo)<br>
+恢复<br>
+ctrl + r (redo)</li>
+<li>名令设置别名(重启后无效)<br>
+alias ll=“ls -l”<br>
+取消<br>
+unalias ll</li>
+<li>如果想让别名重启后仍然有效需要修改<br>
+vi ~/.bashrc</li>
+<li>添加用户<br>
+useradd hadoop<br>
+passwd hadoop</li>
+<li>创建多个文件<br>
+touch a.txt b.txt<br>
+touch /home/{a.txt,b.txt}</li>
+<li>将一个文件的内容复制到里另一个文件中<br>
+cat a.txt &gt; b.txt<br>
+追加内容<br>
+cat a.txt &gt;&gt; b.txt</li>
+<li>将a.txt 与b.txt设为其拥有者和其所属同一个组者可写入，但其他以外的人则不可写入:<br>
+chmod ug+w,o-w a.txt b.txt<br>
+chmod a=wx c.txt</li>
+<li>将当前目录下的所有文件与子目录皆设为任何人可读取:<br>
+chmod -R a+r *</li>
+<li>将a.txt的用户拥有者设为users,组的拥有者设为jessie:<br>
+chown users:jessie a.txt</li>
+<li>将当前目录下的所有文件与子目录的用户的使用者为lamport,组拥有者皆设为users<br>
+chown -R lamport:users *</li>
+<li>将所有的java语言程式拷贝至finished子目录中:<br>
+cp *.java finished</li>
+<li>将目前目录及其子目录下所有扩展名是java的文件列出来。<br>
+find -name “*.java”<br>
+查找当前目录下扩展名是java 的文件<br>
+find -name *.java</li>
+<li>删除当前目录下扩展名是java的文件<br>
+rm -f *.java</li>
+</ol>
+<p>##四、系统命令</p>
+<ol>
+<li>查看主机名<br>
+hostname</li>
+<li>修改主机名(重启后无效)<br>
+hostname hadoop</li>
+<li>修改主机名(重启后永久生效)<br>
+vi /ect/sysconfig/network</li>
+<li>修改IP(重启后无效)<br>
+ifconfig eth0 192.168.12.22</li>
+<li>修改IP(重启后永久生效)<br>
+vi /etc/sysconfig/network-scripts/ifcfg-eth0</li>
+<li>查看系统信息<br>
+uname -a<br>
+uname -r</li>
+<li>查看ID命令<br>
+id -u<br>
+id -g</li>
+<li>日期<br>
+date<br>
+date +%Y-%m-%d<br>
+date +%T<br>
+date +%Y-%m-%d&quot; &quot;%T</li>
+<li>日历<br>
+cal 2012</li>
+<li>查看文件信息<br>
+file filename</li>
+<li>挂载硬盘<br>
+mount<br>
+umount<br>
+加载windows共享<br>
+mount -t cifs <a target="_blank" rel="noopener" href="//192.168.1.100/tools">//192.168.1.100/tools</a> /mnt</li>
+<li>查看文件大小<br>
+du -h<br>
+du -ah</li>
+<li>查看分区<br>
+df -h</li>
+<li>ssh<br>
+ssh <a href="mailto:hadoop@192.168.1.1">hadoop@192.168.1.1</a></li>
+<li>关机<br>
+shutdown -h now /init 0<br>
+shutdown -r now /reboot</li>
+</ol>
+<h2 id="五、用户和组">五、用户和组</h2>
+<ol>
+<li>
+<p>添加一个tom用户，设置它属于users组，并添加注释信息<br>
+分步完成：useradd tom<br>
+usermod -g users tom<br>
+usermod -c “hr tom” tom<br>
+一步完成：useradd -g users -c “hr tom” tom</p>
+</li>
+<li>
+<p>设置tom用户的密码<br>
+passwd tom</p>
+</li>
+<li>
+<p>修改tom用户的登陆名为tomcat<br>
+usermod -l tomcat tom</p>
+</li>
+<li>
+<p>将tomcat添加到sys和root组中<br>
+usermod -G sys,root tomcat</p>
+</li>
+<li>
+<p>查看tomcat的组信息<br>
+groups tomcat</p>
+</li>
+<li>
+<p>添加一个jerry用户并设置密码<br>
+useradd jerry<br>
+passwd jerry</p>
+</li>
+<li>
+<p>添加一个交america的组<br>
+groupadd america</p>
+</li>
+<li>
+<p>将jerry添加到america组中<br>
+usermod -g america jerry</p>
+</li>
+<li>
+<p>将tomcat用户从root组和sys组删除<br>
+gpasswd -d tomcat root<br>
+gpasswd -d tomcat sys</p>
+</li>
+<li>
+<p>将america组名修改为am<br>
+groupmod -n am america</p>
+</li>
+</ol>
+<h2 id="六、权限">六、权限</h2>
+<p>创建a.txt和b.txt文件，将他们设为其拥有者和所在组可写入，但其他以外的人则不可写入:<br>
+chmod ug+w,o-w a.txt b.txt</p>
+<p>创建c.txt文件所有人都可以写和执行<br>
+chmod a=wx c.txt 或chmod 666 c.txt</p>
+<p>将/itcast目录下的所有文件与子目录皆设为任何人可读取<br>
+chmod -R a+r /itcast</p>
+<p>将/itcast目录下的所有文件与子目录的拥有者设为root，用户拥有组为users<br>
+chown -R root:users /itcast</p>
+<p>将当前目录下的所有文件与子目录的用户皆设为itcast，组设为users<br>
+chown -R itcast:users *</p>
+<h2 id="七、文件夹属性">七、文件夹属性</h2>
+<ol>
+<li>
+<p>查看文件夹属性<br>
+ls -ld test</p>
+</li>
+<li>
+<p>文件夹的rwx<br>
+–x:可以cd进去<br>
+r-x:可以cd进去并ls<br>
+-wx:可以cd进去并touch，rm自己的文件，并且可以vi其他用户的文件<br>
+-wt:可以cd进去并touch，rm自己的文件<br>
+ls -ld /tmp<br>
+drwxrwxrwt的权限值是1777(sticky)\</p>
+</li>
+</ol>
+<h2 id="八、vim">八、vim</h2>
+<ul>
+<li>i   插入编辑操作</li>
+<li>a/A</li>
+<li>o/O</li>
+<li>r + ?替换</li>
+<li>0:文件当前行的开头</li>
+<li>$:文件当前行的末尾</li>
+<li>G:文件的最后一行开头</li>
+<li>1 + G到第一行</li>
+<li>9 + G到第九行 = :9</li>
+<li>dd:删除一行</li>
+<li>3dd：删除3行</li>
+<li>yy:复制一行</li>
+<li>3yy:复制3行</li>
+<li>p:粘贴</li>
+<li>u:undo</li>
+<li>ctrl + r:redo</li>
+<li>&quot;a剪切板a</li>
+<li>&quot;b剪切板b</li>
+<li>&quot;ap粘贴剪切板a的内容</li>
+<li>每次进入vi就有行号</li>
+<li>vi ~/.vimrc</li>
+<li>set nu</li>
+<li>:w a.txt另存为</li>
+<li>:w &gt;&gt; a.txt内容追加到a.txt</li>
+<li>:e!恢复到最初状态</li>
+<li>:1,$s/hadoop/root/g 将第一行到追后一行的hadoop替换为root</li>
+<li>:1,$s/hadoop/root/c 将第一行到追后一行的hadoop替换为root(有提示)</li>
+</ul>
+<h2 id="九、查找">九、查找</h2>
+<ol>
+<li>查找可执行的命令：<br>
+which ls</li>
+<li>查找可执行的命令和帮助的位置：<br>
+whereis ls</li>
+<li>查找文件(需要更新库:updatedb)<br>
+locate hadoop.txt</li>
+<li>从某个文件夹开始查找<br>
+find / -name “hadooop*”<br>
+find / -name “hadooop*” -ls</li>
+<li>查找并删除<br>
+find / -name “hadooop*” -ok rm {} ;<br>
+find / -name “hadooop*” -exec rm {} ;</li>
+<li>查找用户为hadoop的文件<br>
+find /usr -user hadoop -ls</li>
+<li>查找用户为hadoop并且(-a)拥有组为root的文件<br>
+find /usr -user hadoop -a -group root -ls</li>
+<li>查找用户为hadoop或者(-o)拥有组为root并且是文件夹类型的文件<br>
+find /usr -user hadoop -o -group root -a -type d</li>
+<li>查找权限为777的文件<br>
+find / -perm -777 -type d -ls</li>
+<li>显示命令历史<br>
+history</li>
+<li>grep<br>
+grep hadoop /etc/password</li>
+</ol>
+<h2 id="十、打包与压缩">十、打包与压缩</h2>
+<ol>
+<li>gzip压缩<br>
+gzip a.txt</li>
+<li>解压<br>
+gunzip a.txt.gz<br>
+gzip -d a.txt.gz</li>
+<li>bzip2压缩<br>
+bzip2 a</li>
+<li>解压<br>
+bunzip2 a.bz2<br>
+bzip2 -d a.bz2</li>
+<li>将当前目录的文件打包<br>
+tar -cvf bak.tar .<br>
+将/etc/password追加文件到bak.tar中®<br>
+tar -rvf bak.tar /etc/password</li>
+<li>解压<br>
+tar -xvf bak.tar</li>
+<li>打包并压缩gzip<br>
+tar -zcvf a.tar.gz</li>
+<li>解压缩<br>
+tar -zxvf a.tar.gz<br>
+解压到/usr/下<br>
+tar -zxvf a.tar.gz -C /usr</li>
+<li>查看压缩包内容<br>
+tar -ztvf a.tar.gz<br>
+zip/unzip</li>
+<li>打包并压缩成bz2<br>
+tar -jcvf a.tar.bz2</li>
+<li>解压bz2<br>
+tar -jxvf a.tar.bz2</li>
+</ol>
+<h2 id="十一、正则表达式">十一、正则表达式</h2>
+<ol>
+<li>cut截取以:分割保留第七段<br>
+grep hadoop /etc/passwd | cut -d: -f7</li>
+<li>排序<br>
+du | sort -n</li>
+<li>查询不包含hadoop的<br>
+grep -v hadoop /etc/passwd</li>
+<li>正则表达包含hadoop<br>
+grep ‘hadoop’ /etc/passwd</li>
+<li>正则表达(点代表任意一个字符)<br>
+grep ‘h.*p’ /etc/passwd</li>
+<li>正则表达以hadoop开头<br>
+grep ‘^hadoop’ /etc/passwd</li>
+<li>正则表达以hadoop结尾<br>
+grep ‘hadoop$’ /etc/passwd</li>
+</ol>
+<p><code>.  : 任意一个字符</code><br>
+<code>a* : 任意多个a(零个或多个a)</code><br>
+<code>a? : 零个或一个a</code><br>
+<code>a+ : 一个或多个a</code><br>
+<code>.* : 任意多个任意字符</code><br>
+查找不是以#开头的行<br>
+<code>grep -v '^#' a.txt | grep -v '^$'</code><br>
+以h或r开头的<br>
+<code>grep '^[hr]' /etc/passwd</code><br>
+不是以h和r开头的<br>
+<code>grep '^[^hr]' /etc/passwd</code><br>
+不是以h到r开头的<br>
+<code>grep '^[^h-r]' /etc/passwd</code></p>
+<h2 id="十二、进程控制">十二、进程控制</h2>
+<ol>
+<li>查看用户最近登录情况<br>
+last<br>
+lastlog</li>
+<li>查看硬盘使用情况<br>
+df</li>
+<li>查看文件大小<br>
+du</li>
+<li>查看内存使用情况<br>
+free</li>
+<li>查看文件系统<br>
+/proc</li>
+<li>查看日志<br>
+ls /var/log/</li>
+<li>查看系统报错日志<br>
+tail /var/log/messages</li>
+<li>查看进程<br>
+top</li>
+<li>结束进程<br>
+kill 1234<br>
+kill -9 4333</li>
+</ol>
+<h2 id="十三、linux的命令操作">十三、linux的命令操作</h2>
+<p>用vi文本编辑器来编辑生成文件<br>
+******最基本用法<br>
+vi  somefile.4</p>
+<ol>
+<li>首先会进入“一般模式”，此模式只接受各种快捷键，不能编辑文件内容</li>
+<li>按i键，就会从一般模式进入编辑模式，此模式下，敲入的都是文件内容</li>
+<li>编辑完成之后，按Esc键退出编辑模式，回到一般模式；</li>
+<li>再按：，进入“底行命令模式”，输入wq命令，回车即可</li>
+</ol>
+<h3 id="查看文件内容">查看文件内容</h3>
+<p>cat    somefile    一次性将文件内容全部输出（控制台）<br>
+more  somefile    可以翻页查看, 下翻一页(空格)    上翻一页（b）  退出（q）<br>
+less  somefile      可以翻页查看,下翻一页(空格)    上翻一页（b），上翻一行(↑)  下翻一行（↓）  可以搜索关键字（/keyword）</p>
+<p>tail -10  install.log  查看文件尾部的10行<br>
+tail -f install.log    小f跟踪文件的唯一inode号，就算文件改名后，还是跟踪原来这个inode表示的文件<br>
+tail -F install.log    大F按照文件名来跟踪<br>
+head -10  install.log  查看文件头部的10行</p>
+<p>文件内容查阅<br>
+head -10 a.log 取前10行<br>
+tail -10 a.log 取后10行<br>
+tail -f a.log 实时检测日志更新<br>
+tail -f30 a.log 实时监测该日志的后30行<br>
+tab：代码补全，文件名补全<br>
+文件类型权限 drwxrwx user，group / 4,2,1打分<br>
+查看日志var/log\</p>
+<h3 id="3、文件权限的操作">3、文件权限的操作</h3>
+<p>drwxr-xr-x      （也可以用二进制表示  111 101 101  --&gt;  755）<br>
+d：标识节点类型（d：文件夹  -：文件  l:链接）<br>
+r：可读  w：可写    x：可执行 <br>
+第一组rwx：  表示这个文件的拥有者对它的权限：可读可写可执行<br>
+第二组r-x：  表示这个文件的所属组对它的权限：可读，不可写，可执行<br>
+第三组r-x：  表示这个文件的其他用户（相对于上面两类用户）对它的权限：可读，不可写，可执行</p>
+<p>chmod g-rw haha.dat    表示将haha.dat对所属组的rw权限取消<br>
+chmod o-rw haha.dat    表示将haha.dat对其他人的rw权限取消<br>
+chmod u+x haha.dat      表示将haha.dat对所属用户的权限增加x</p>
+<p>也可以用数字的方式来修改权限<br>
+chmod 664 haha.dat  <br>
+就会修改成  rw-rw-r–</p>
+<p>如果要将一个文件夹的所有内容权限统一修改，则可以-R参数<br>
+chmod -R 770 aaa/<br>
+chown angela:angela aaa/    &lt;只有root能执行&gt;</p>
+<p>4、基本的用户管理<br>
+useradd  angela<br>
+要修改密码才能登陆<br>
+passwd angela  按提示输入密码即可</p>
+<p>**为用户配置sudo权限<br>
+用root编辑 vi /etc/sudoers<br>
+在文件的如下位置，为hadoop添加一行即可<br>
+root    ALL=(ALL)      ALL    <br>
+hadoop  ALL=(ALL)      ALL</p>
+<p>然后，hadoop用户就可以用sudo来执行系统级别的指令<br>
+[hadoop@shizhan ~]$ sudo useradd huangxiaoming</p>
+<p>5、系统管理操作</p>
+<ul>
+<li>
+<p>查看主机名<br>
+hostname</p>
+</li>
+<li>
+<p>修改主机名(重启后无效)<br>
+hostname hadoop</p>
+</li>
+<li>
+<p>修改主机名(重启后永久生效)<br>
+vi /ect/sysconfig/network</p>
+</li>
+<li>
+<p>修改IP(重启后无效)<br>
+ifconfig eth0 192.168.12.22</p>
+</li>
+<li>
+<p>修改IP(重启后永久生效)<br>
+vi /etc/sysconfig/network-scripts/ifcfg-eth0</p>
+</li>
+</ul>
+<p>mkdir  /mnt/cdrom      创建一个目录，用来挂载<br>
+mount -t iso9660 -o ro /dev/cdrom /mnt/cdrom/    将设备/dev/cdrom挂载到 挂载点 ：  /mnt/cdrom中</p>
+<ul>
+<li>
+<p>umount<br>
+umount /mnt/cdrom</p>
+</li>
+<li>
+<p>统计文件或文件夹的大小<br>
+du -sh  /mnt/cdrom/Packages<br>
+df -h    查看磁盘的空间</p>
+</li>
+<li>
+<p>关机<br>
+halt</p>
+</li>
+<li>
+<p>重启<br>
+reboot</p>
+</li>
+</ul>
+<p>******配置主机之间的免密ssh登陆<br>
+假如 A  要登陆  B<br>
+在A上操作：<br>
+%%首先生成密钥对<br>
+ssh-keygen  (提示时，直接回车即可)<br>
+%%再将A自己的公钥拷贝并追加到B的授权列表文件authorized_keys中<br>
+ssh-copy-id  B</p>
+<p>******后台服务管理<br>
+service network status  查看指定服务的状态<br>
+service network stop    停止指定服务<br>
+service network start    启动指定服务<br>
+service network restart  重启指定服务<br>
+service --status-all  查看系统中所有的后台服务</p>
+<p>设置后台服务的自启配置<br>
+chkconfig  查看所有服务器自启配置<br>
+chkconfig iptables off  关掉指定服务的自动启动<br>
+chkconfig iptables on  开启指定服务的自动启动</p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/cn/大数据-02-Java/" data-toggle="tooltip" data-placement="top" title="大数据-02-Java理论基础">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/en/Hexo-Theme-LiveMyLife/" data-toggle="tooltip" data-placement="top" title="Hexo-Theme-LiveMyLife">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      如果您喜欢此博客或发现它对您有用，则欢迎对此发表评论。 也欢迎您共享此博客，以便更多人可以参与。 如果博客中使用的图像侵犯了您的版权，请与作者联系以将其删除。 谢谢 ！
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=大数据-03-linux&body=Hi,I found this website and thought you might like it https://Muzhi1920.github.io/cn/大数据-03-linux/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Tue Sep 28 2021 13:38:01 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#linux" title="linux">linux</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>链友</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/Muzhi1920">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+            <li>
+              <a target="_blank" href="https://www.zhihu.com/people/Recommender">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa  fa-stack-1x fa-inverse">知</i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          小于
+          2022
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='The first step is as good as half over...,Laugh and grow fat...,Man proposes God disposes...,When all else is lost the future still remains...,Wasting time is robbing oneself...,Sharp tools make good work...,Cease to struggle and you cease to live...,A friend in need is a friend indeed...,Faith can move mountains...' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033'></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://Muzhi1920.github.io/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

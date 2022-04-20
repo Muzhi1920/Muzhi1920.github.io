@@ -1,0 +1,1553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxx-xx"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-xxxxxx-xx');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="人工智能的奇点，正在来临..."/>
+  <meta name="keyword" content="AI"/>
+  <link rel="shortcut icon" href="/img/avatar/roguerabbit.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+      <!-- gitalk start -->
+      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
+      <link rel="stylesheet" href="/css/gitalk.css"/>
+      <!-- gitalk end -->
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://Muzhi1920.github.io/cn/大数据-01-基础/">
+  <title>
+    
+      大数据-01-基础 - Shawn Blog
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--dark">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'dark';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+		<!-- Gitter -->
+<!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'your-community/your-room'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Shawn Blog</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">首页</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>搜索</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: url('');
+      --intro-header-background-image-url-page: url('/img/header_img/archive_bg2.jpg');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/archive_bg2.jpg');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url(''); */
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('/img/signature/vincent-white.png');
+      }
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#大数据" title="大数据">大数据</a>
+              
+            </div>
+            <h1>大数据-01-基础</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by 小于 on
+              2021-10-24
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">16</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">4.3k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h1>大数据</h1>
+<p>大数据Hadoop和Spark基础知识，涉及Scala语言，Maven包管理，Hadoop/Hbase/Hive/Spark等大数据工具。(不断更新中，图片源自网络，侵删)</p>
+<span id="more"></span>
+<hr>
+<h2 id="0-Scala基础">0. Scala基础</h2>
+<ul>
+<li>case class：自动生成常用方法(equals&amp;hashCode,toString,copy)；自动生成伴生对象；实现了 apply 方法让你不需要通过 new 来创建类实例</li>
+<li>宽依赖，窄依赖：窄依赖：map和filter，一个父RDD对应一个子RDD；宽依赖：一个父RDD对应非全部的子RDD；</li>
+<li>Transformation与Action：Transformation 操作是延迟计算的，也就是说从一个RDD 转换生成另一个 RDD 的转换操作不是马上执行，需要等到有 Action 操作的时候才会真正触发运算（map, filter）；Action是count之类的算子出发计算；</li>
+<li>存在shuffle的spark算子：distinct、groupByKey，reduceByKey、repartition，coalesce、interection，join；</li>
+<li>collect: Spark的collect方法，是Action类型的一个算子，收集一个弹性分布式数据集的所有元素到一个数组中。从远程集群拉取数据到driver端将大量数据汇集到一个driver节点上，将数据用数组存放，占用jvm堆内存容易造成内存溢出，只用作小型数据收集。</li>
+<li>persist:读取数据转为多个RDD时暂存；提高效率，没必要重复多次读取</li>
+</ul>
+<h3 id="Shuffle的操作">Shuffle的操作</h3>
+<p>由于 Shuffle 操作对性能的影响比较大，所以需要特别注意使用，以下操作都会导致 Shuffle：</p>
+<ul>
+<li>涉及到重新分区操作： 如 repartition 和 coalesce；</li>
+<li>所有涉及到 ByKey 的操作：如 groupByKey 和 reduceByKey，但 countByKey 除外；</li>
+<li>联结操作：如 cogroup 和 join。</li>
+</ul>
+<h3 id="广播变量">广播变量</h3>
+<p>每个Task任务的闭包都会持有自由变量的副本，如果变量很大且 Task 任务很多的情况下，这必然会对网络 IO 造成压力，为了解决这个情况，Spark 提供了广播变量。<strong>广播变量后不把副本变量分发到每个 Task 中，而是将其分发到每个 Executor，Executor 中的所有 Task 共享一个副本变量。</strong></p>
+<h3 id="RDD">RDD</h3>
+<ul>
+<li><strong>全局变量应用在rdd中运算为副本运算，变量并不改变；rdd中定义变量可改变。</strong></li>
+<li>一个RDD由多个分区（Partitions）组成。<strong>对于RDD的每个分区会被一个计算任务所处理，用户可以在创建 RDD 时指定其分区个数，如果没有指定，则默认采用程序所分配到的 CPU 的核心数；</strong> RDD的每次转换都会生成一个新的依赖关系，如果分区数据丢失后，可以通过依赖关系重新计算对RDD的所有分区进行重新计算；</li>
+<li>Key-Value 型的 RDD 还拥有 Partitioner(分区器)，用于决定数据被存储在哪个分区中，目前 Spark 中支持 HashPartitioner(按照哈希分区) 和 RangeParationer(按照范围进行分区)；</li>
+<li>Spark进行任务调度会尽可能的将计算任务分配到其所要处理数据块的存储位置。</li>
+<li>RDD 支持两种类型的操作：transformations（转换，从现有数据集创建新数据集）和 actions（在数据集上运行计算后将值返回到驱动程序）。</li>
+<li>RDD 中的所有转换操作都是惰性的，它们只是记住这些转换操作，但不会立即执行，只有遇到 action 操作后才会真正的进行计算，这类似于函数式编程中的惰性求值</li>
+</ul>
+<h2 id="1-Maven">1. Maven</h2>
+<ul>
+<li>mvn clean compile  编译</li>
+<li>mvn clean test 测试</li>
+<li><strong>mvn clean package 打包</strong></li>
+<li>mvn clean install 把生成的jar/war包复制到本地repository(就是~/.m2/repository下面)</li>
+<li>mvn clean deploy 把生成的jar/war包发送到远程repository（建议配置了私服，那就是往私服发送）</li>
+<li>mvn cargo:run 通过cargo插件，把生成的war包部署到本地服务器，并启动。（注意要先运行 mvn clean package 打包）</li>
+<li>mvn cargo:redeploy 通过cargo插件，把生成的war包部署到远程服务器：如果存在，就先undeploy再deploy，如果没有直接deploy（注意要先运行 mvn clean package 打包，并且远程服务器是启动的）</li>
+</ul>
+<h3 id="scope">scope</h3>
+<p>org.apache.等外公司名下的包在集群上有相关容器提供，故scope为provide然后提交；<br>
+私服内公司名下的工程下的包集群上是没有容器提供的，故scope不可以添加provide默认compile，然后提交；<br>
+本地运行测试时，在应用中勾选“include dependencies with Provided scope”，后成功运行。</p>
+<h2 id="2-Hadoop">2. Hadoop</h2>
+<table>
+<thead>
+<tr>
+<th>command</th>
+<th>func</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mkdir -p /a/b/c</td>
+<td>父目录不存在时会创建，不会报错</td>
+</tr>
+<tr>
+<td>hadoop fs -germerge -nl /hdfs_dir  /local_dir/</td>
+<td>同名则会覆盖；nl在不同文件之间会空一行</td>
+</tr>
+<tr>
+<td>hadoop fs -du -s -h /hdfs_dir</td>
+<td>文件夹下数据大小</td>
+</tr>
+<tr>
+<td>hadoop fs -test -e：</td>
+<td>如果路径存在，则返回 0;-s：如果路径不为空，则返回 0。</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nohup <span class="built_in">command</span> aaa.sh &gt;&gt; xx.out &amp;</span><br><span class="line"><span class="built_in">jobs</span> -l</span><br><span class="line"><span class="built_in">kill</span> -9 进程号</span><br></pre></td></tr></table></figure>
+<h3 id="SecondaryNamenode">SecondaryNamenode</h3>
+<p>SecondaryNameNode：周期性保存NameNode的元数据，在namenode失效时恢复出namenode上的元数据。</p>
+<h4 id="元数据">元数据</h4>
+<p>包括文件镜像数据FSImage和编辑日志EditLog。FSImage相当于HDFS的检查点，namenode启动时候会读取FSImage的内容到内存，并将其与EditLog日志中的所有修改信息合并生成新的FSImage；在namenode运行过程中，所有关于HDFS的修改都将写入EditLog。这样，如果namenode失效，可以通过SecondaryNameNode中保存的FSImage和EditLog数据恢复出namenode最近的状态。</p>
+<h3 id="HDFS读写流程">HDFS读写流程</h3>
+<ol>
+<li>向HDFS写数据<br>
+<img src="%E5%A4%A7%E6%95%B0%E6%8D%AE-01-%E5%9F%BA%E7%A1%80/write.png" alt=""></li>
+<li>从HDFS读数据<br>
+<img src="%E5%A4%A7%E6%95%B0%E6%8D%AE-01-%E5%9F%BA%E7%A1%80/read.png" alt=""></li>
+</ol>
+<h3 id="提交job应用流程">提交job应用流程</h3>
+<p>提交job的全过程：提交job给YARN，执行MapReduce、HDFS读数据，HDFS写数据。<br>
+提交job给YARN的过程：提交job，job的初始化，任务分配，任务运行，作业完成<br>
+作业换队列：<code>yarn application -movetoqueue application_1563931265452_2009268 -queue root.a.b</code></p>
+<hr>
+<p><img src="%E5%A4%A7%E6%95%B0%E6%8D%AE-01-%E5%9F%BA%E7%A1%80/job.png" alt=""></p>
+<p>1、客户端向Resource Manager申请一个job_id和job资源的提交路径；提交后向Resource manager申请运行 MRAppMaster。</p>
+<p>2、Resource Manager将job分配给某一个空闲的NodeManager，创建容器得到MRAppmaster，再把客户端提交的资源下载到本地。</p>
+<p>3、MRAppMaster向Resource Manager申请运行多个mapTask任务资源。Resource Manager将mapTask分配给其他NodeManager。</p>
+<p>4、Resource Manager向NodeManager发送脚本启动map任务，等所有map任务运行完毕后，向Resource Manager申请容器，运行 reduce任务，运行完后向Resource Manager申请注销。</p>
+<h3 id="MapReduce">MapReduce</h3>
+<p>详解shuffle过程：<br>
+map-&gt;buff环形缓存区-&gt;溢出合并与归并排序-&gt;按分区号将不同的mapTask数据合并到reduceTask-&gt;同一reduceTask归并排序-&gt;对reduceTask中的value计算</p>
+<hr>
+<p>从文件中获取block<br>
+<img src="%E5%A4%A7%E6%95%B0%E6%8D%AE-01-%E5%9F%BA%E7%A1%80/spark.png" alt=""></p>
+<ul>
+<li>本文件内若干个Block合并成一个输入分片split；不能跨越文件；</li>
+<li>一个split对应一个Task；</li>
+<li>一个Task执行结果对应RDD的partition<strong>增大分区数，增大task数，增大并行度</strong></li>
+<li>一个Executor数目包含多个core；</li>
+</ul>
+<p><img src="%E5%A4%A7%E6%95%B0%E6%8D%AE-01-%E5%9F%BA%E7%A1%80/mr.jpg" alt="avatar"></p>
+<p>map task读取文件写入环形缓冲区（100M），一次溢出后按照key进行hash分区，多次溢出的文件按照分区合并(归并排序)；对多个map task的相同分区内的key进行归并排序，然后传给reduce task。</p>
+<h3 id="详解shuffle过程">详解shuffle过程</h3>
+<p><img src="%E5%A4%A7%E6%95%B0%E6%8D%AE-01-%E5%9F%BA%E7%A1%80/shuffle1.png" alt=""><br>
+<img src="%E5%A4%A7%E6%95%B0%E6%8D%AE-01-%E5%9F%BA%E7%A1%80/shuffle2.png" alt=""></p>
+<p>上面的流程是整个mapreduce最全工作流程，但是shuffle过程只是从第7步开始到第16步结束，具体shuffle过程详解，如下：</p>
+<ol>
+<li>maptask收集我们的map()方法输出的kv对，放到内存缓冲区中</li>
+<li>从内存缓冲区不断溢出本地磁盘文件，可能会溢出多个文件</li>
+<li>多个溢出文件会被合并成大的溢出文件</li>
+<li>在溢出过程中，及合并的过程中，都要调用partitoner进行分组和针对key进行排序</li>
+<li>reducetask根据自己的分区号，去各个maptask机器上取相应的结果分区数据</li>
+<li>reducetask会取到同一个分区的来自不同maptask的结果文件，reducetask会将这些文件再进行合并（归并排序）</li>
+<li>合并成大文件后，shuffle的过程也就结束了，后面进入reducetask的逻辑运算过程（从文件中取出一个一个的键值对group，调用用户自定义的reduce()方法）</li>
+</ol>
+<h4 id="tips">tips</h4>
+<ul>
+<li>Shuffle中的缓冲区大小会影响到mapreduce程序的执行效率，原则上说，缓冲区越大，磁盘io的次数越少，执行速度就越快。</li>
+<li>缓冲区的大小可以通过参数调整，参数：io.sort.mb  默认100M</li>
+</ul>
+<p><img src="%E5%A4%A7%E6%95%B0%E6%8D%AE-01-%E5%9F%BA%E7%A1%80/mr.png" alt="avatar"></p>
+<h3 id="Partition">Partition</h3>
+<p>map端输出(k,v)对key取hash值实现分区负载均衡算法</p>
+<h3 id="Combiner">Combiner</h3>
+<p>每一个map都可能会产生大量的本地输出，Combiner的作用就是对<strong>本地的map端的输出先做一次合并</strong>key下value以list形式存储，<strong>大大减少在map和reduce节点之间的数据传输量，以提高网络IO性能</strong>是MapReduce的一种优化手段之一。就在part下对相同的key提前合并一下</p>
+<ul>
+<li>combiner是MR程序中Mapper和Reducer之外的一种组件</li>
+<li>combiner组件的父类就是Reducer</li>
+<li>combiner和reducer的区别在于运行的位置：Combiner是在每一个maptask所在的节点运行，Reducer是接收全局所有Mapper的输出结果；</li>
+<li>combiner的意义就是对每一个maptask的输出进行局部汇总，以减小网络传输量</li>
+<li>combiner能够应用的前提是不能影响最终的业务逻辑，而且，combiner的输出kv应该跟reducer的输入kv类型要对应起来</li>
+</ul>
+<h3 id="二次排序">二次排序</h3>
+<p>如何做到在Reduce阶段，先对Key排序，再对Value排序<br>
+该问题通常称为”二次排序“，最常用的方法是将Value放到Key中，实现一个组合Key，然后自定义Key排序规则（为Key实现一个WritableComparable）</p>
+<h2 id="3-Spark">3. Spark</h2>
+<h3 id="Spark-job资源分配">Spark job资源分配</h3>
+<table>
+<thead>
+<tr>
+<th>config</th>
+<th>num</th>
+<th>annotation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>driver-memory</td>
+<td>4g</td>
+<td>driver使用的内存，不可超过单机的 core 总数。</td>
+</tr>
+<tr>
+<td>num-executors</td>
+<td>2</td>
+<td>创建多少个 executor。</td>
+</tr>
+<tr>
+<td>executor-memory</td>
+<td>2g</td>
+<td>各个 executor使用的最大内存，不可超过单机的最大可使用内存。</td>
+</tr>
+<tr>
+<td>executor-cores</td>
+<td>2</td>
+<td>各个 executor 使用的并发线程数目，也即每个 executor 最大可并发执行的 Task 数目。</td>
+</tr>
+</tbody>
+</table>
+<p><img src="%E5%A4%A7%E6%95%B0%E6%8D%AE-01-%E5%9F%BA%E7%A1%80/cluster.jpg" alt="avatar"></p>
+<ul>
+<li>数据倾斜：某个key下value过多，reduce_task处理任务过重导致运行特别慢。shuffle出现在期间。造成后果：有得任务执行完毕，某个任务执行很慢而且可能出现OOM错误；一般增大执行器与核数，并行数，自定义partition</li>
+<li>尽量减少spark任务的空间占用，同时加速spark任务运行速度</li>
+</ul>
+<h2 id="4-HBase">4. HBase</h2>
+<ul>
+<li>行键：是hbase表自带的，每个行键对应一条数据。</li>
+<li>列族：是创建表时指定的，为列的集合，每个列族作为一个文件单独存储，存储的数据都是字节数组，其中数据可以有很多，通过时间戳来区分。</li>
+<li>物理模型：整个hbase表会拆分成多个region，每个region记录着行键的起始点保存在不同的节点上，查询时就是对各个节点的并行查询，当region很大时使用.META表存储各个region的起始点，-ROOT又可以存储.META的起始点。</li>
+</ul>
+<ol>
+<li>Rowkey的设计原则：各个列族数据平衡，长度原则、相邻原则，创建表的时候设置表放入regionserver缓存中，避免自动增长和时间，使用字节数组代替string，最大长度64kb，最好16字节以内，按天分表，两个字节散列，四个字节存储时分毫秒。</li>
+<li>列族的设计原则：尽可能少(按照列族进行存储，按照region进行读取，不必要的io操作)，经常和不经常使用的两类数据放入不同列族中，列族名字尽可能短</li>
+</ol>
+<h3 id="hbase-shell">hbase shell</h3>
+<p>hbase扫的是key，非视频id，哈希后的数据对应的key<br>
+<code>get 'hbasehhhhh','000005020000'</code><br>
+<code>scan 'hbasehhhhh'</code></p>
+<h2 id="5-Hive">5. Hive</h2>
+<h3 id="内部表与外部表">内部表与外部表</h3>
+<ol>
+<li>一般为内部表，<strong>删除内部表时相应数据也会删除</strong></li>
+<li>内部表数据由Hive自身管理，外部表数据由HDFS管理。</li>
+<li>内部表数据存储在hive.metastore.warehouse.dir【默认:/user/hive/warehouse】，外部表数据存储位置由用户自己决定。</li>
+<li>加载内部表数据后会把数据源删除，很像&quot;剪切/移动&quot;。<strong>删除内部表会直接删除元数据【metadata】及存储数据</strong></li>
+<li>加载外部表没有mv到数据仓库目录，只是关联上数据格式和数据位置，Hive就能直接访问外部数据。<strong>删除外部表仅仅删除元数据，HDFS上的文件不会被删除。</strong></li>
+</ol>
+<h3 id="加载与删除分区">加载与删除分区</h3>
+<ul>
+<li>外部分区表删除分区，只会删除元数据，相应的目录和文件并不会删除；</li>
+<li>内部表删除分区，既会删除元数据，也会删除相应的目录和数据文件；</li>
+</ul>
+<h3 id="建表">建表</h3>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">use qiyu_feature;</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> update_user_mobile_brand_day(</span><br><span class="line">uid string <span class="keyword">comment</span> <span class="string">&#x27;uid&#x27;</span>,</span><br><span class="line">ctiy_id string <span class="keyword">comment</span> <span class="string">&#x27;城市&#x27;</span>,</span><br><span class="line">brand string <span class="keyword">comment</span> <span class="string">&#x27;手机品牌&#x27;</span>,</span><br><span class="line">mkey string <span class="keyword">comment</span> <span class="string">&#x27;渠道mkey&#x27;</span>)</span><br><span class="line">partitioned <span class="keyword">by</span> (dt string) <span class="keyword">row</span> <span class="keyword">format</span> delimited fields terminated <span class="keyword">by</span> <span class="string">&#x27;\t&#x27;</span> stored <span class="keyword">as</span> textfile;</span><br></pre></td></tr></table></figure>
+<h3 id="修改表">修改表</h3>
+<ol>
+<li>添加字段 <code>alter table table add columns(mkey string);</code></li>
+<li>修改表名 <code>alter table table_name rename ti new_table_name;</code></li>
+<li>修改列名 <code>alter table table_name change old_name new_name data_type first col1 after col2;</code></li>
+<li>增加分区 <code>alter table table_name add if not exists partition (dt='2019-12-01') location '/data/a/b/2019-12-01';</code></li>
+<li>删除分区 <code>alter table table_name drop if exists partition (dt='2019-12-01');</code></li>
+</ol>
+<h3 id="关键字">关键字</h3>
+<table>
+<thead>
+<tr>
+<th>command</th>
+<th>func</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>percentile_approxc</td>
+<td><code>percentile_approx(cast(playtime as int),0.5) as mwt</code></td>
+</tr>
+<tr>
+<td>cast(col as int) as res</td>
+<td>列做类型转换</td>
+</tr>
+<tr>
+<td>round</td>
+<td>四舍五入</td>
+</tr>
+<tr>
+<td>ceil</td>
+<td>向上取整</td>
+</tr>
+<tr>
+<td>floor</td>
+<td>向下取整</td>
+</tr>
+<tr>
+<td>lower：转成小写</td>
+<td><code>select lower('Hive');</code> --hive</td>
+</tr>
+<tr>
+<td>upper：转成大写</td>
+<td><code>select lower('Hive');</code> --HIVE</td>
+</tr>
+<tr>
+<td>length：长度</td>
+<td><code>select length('Hive');</code> --4</td>
+</tr>
+<tr>
+<td>concat：拼接字符串</td>
+<td><code>select concat('hello','Hive');</code> --helloHive</td>
+</tr>
+<tr>
+<td>substr：求子串</td>
+<td><code>select substr('hive',2);</code> --ive <code>select substr('hive',2,1);</code> --i</td>
+</tr>
+<tr>
+<td>trim：去掉前后的空格</td>
+<td><code>select trim('  hive   ');</code> -hive</td>
+</tr>
+<tr>
+<td>lpad：左填充</td>
+<td><code>select lpad('hive',10,'#');</code> --######hive</td>
+</tr>
+<tr>
+<td>rpad：右填充</td>
+<td><code>select rpad('hive',10,'#');</code> --hive######</td>
+</tr>
+<tr>
+<td>to_date</td>
+<td><code>select to_date('2015-05-22 15:34:23');</code> --2015-05-22</td>
+</tr>
+<tr>
+<td>year</td>
+<td><code>select year('2015-05-22 15:34:23');</code> --2015</td>
+</tr>
+<tr>
+<td>month</td>
+<td><code>select month('2015-05-22 15:34:23');</code> --5</td>
+</tr>
+<tr>
+<td>day</td>
+<td><code>select day('2015-05-22 15:34:23');</code> --22</td>
+</tr>
+<tr>
+<td>weekofyear</td>
+<td><code>select weekofyear('2015-05-22 15:34:23');</code> --21</td>
+</tr>
+<tr>
+<td>datediff</td>
+<td><code>select datediff('2015-05-22 15:34:23','2015-05-29 15:34:23');</code> --[-7]</td>
+</tr>
+<tr>
+<td>date_add</td>
+<td><code>select date_add('2015-05-22 15:34:23',2);</code> --2015-05-24</td>
+</tr>
+<tr>
+<td>date_sub</td>
+<td><code>select date_sub('2015-05-22 15:34:23',2);</code> --2015-05-20</td>
+</tr>
+<tr>
+<td>case……when</td>
+<td><code>select ename,job,sal,case job when 'president' then sal+100 when 'manager' then sal+800 else sal+400 end from emp;</code></td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#以某字符连接字段</span><br><span class="line">concat_ws：<span class="keyword">SELECT</span> CONCAT_WS(<span class="string">&#x27;_&#x27;</span>,id,name) <span class="keyword">AS</span> con_ws <span class="keyword">FROM</span> info;</span><br><span class="line">#对字段A分组，队字段B降序且取字段B的top3</span><br><span class="line">row_number：<span class="keyword">select</span> id,age,name,sex <span class="keyword">from</span></span><br><span class="line">(<span class="keyword">select</span> id,age,name,sex,<span class="built_in">row_number</span>() <span class="keyword">over</span>(<span class="keyword">partition</span> <span class="keyword">by</span> sex <span class="keyword">order</span> <span class="keyword">by</span> age <span class="keyword">desc</span>) <span class="keyword">as</span> rownumber <span class="keyword">from</span> rownumber) temp <span class="keyword">where</span> rownumber<span class="operator">&lt;</span><span class="number">3</span></span><br><span class="line">#条件真值与假值</span><br><span class="line">case..when：<span class="keyword">case</span> tb1.os <span class="keyword">when</span> <span class="string">&#x27;android&#x27;</span> <span class="keyword">then</span> <span class="string">&#x27;android&#x27;</span> <span class="keyword">when</span> <span class="string">&#x27;ios&#x27;</span> <span class="keyword">then</span> <span class="string">&#x27;iPhone&#x27;</span> <span class="keyword">else</span> <span class="string">&#x27;PC&#x27;</span> <span class="keyword">end</span> <span class="keyword">as</span> os</span><br><span class="line">##[&#123;&quot;name&quot;:&quot;王二狗&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;age&quot;:&quot;25&quot;&#125;,&#123;&quot;name&quot;:&quot;李狗嗨&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;age&quot;:&quot;47&quot;&#125;]</span><br><span class="line">get_json_object：</span><br><span class="line"><span class="number">1.</span><span class="keyword">SELECT</span> get_json_object(xjson,&quot;$.[0]&quot;) <span class="keyword">FROM</span> person;</span><br><span class="line"><span class="number">2.</span><span class="keyword">SELECT</span> get_json_object(xjson,&quot;$.[0].age&quot;) <span class="keyword">FROM</span> person;</span><br></pre></td></tr></table></figure>
+<h3 id="Hive与SQL">Hive与SQL</h3>
+<ul>
+<li>数据存储位置不同：hive是把数据存储在hdfs上，mysql数据是存储在自己的系统中</li>
+<li>数据格式：hive数据格式用户可以自定义，mysql有自己的系统定义格式</li>
+<li>数据更新：hive不支持数据更新，只可以读，不可以写，而sql支持数据更新</li>
+<li>索引：hive没有索引，因此查询数据的时候是通过mapreduce很暴力的把数据都查询一遍，也造成了hive查询数据速度很慢的原因，而mysql有索引；</li>
+<li>延迟性：hive延迟性高，原因就是上边一点所说的，而mysql延迟性低；</li>
+<li>数据规模：hive存储的数据量超级大，而mysql只是存储一些少量的业务数据；</li>
+<li>底层执行原理：hive底层是用的mapreduce，而mysql是excutor执行器</li>
+</ul>
+<h2 id="6-Kafka">6. Kafka</h2>
+<p>消息是kafka主要处理的对象，在某个主题之下，生产者向主题发布新消息，消费者从主题订阅新消息。<br>
+异步处理、应用解耦、流量缓冲、日志采集</p>
+<ul>
+<li>消息队列实现订单系统与库存系统的解耦，到应用层的解耦，防止短时间压垮应用；</li>
+<li>负责日志数据接收存储与转发</li>
+</ul>
+<h2 id="7-Flink">7. Flink</h2>
+<h3 id="流处理与批处理">流处理与批处理</h3>
+<ol>
+<li>流处理系统：一条数据被处理完成后，序列化到缓存中，通过网络传输到下一个节点，由下一个节点继续处理。</li>
+<li>批处理系统：一条数据被处理完成后，序列化到缓存中，并不会立刻通过网络传输到下一个节点，当缓存写满，就持久化到本地硬盘上，当所有数据都被处理完成后，才数据通过网络传输到下一个节点。</li>
+</ol>
+<ul>
+<li>数据传输的两个极端：流处理系统对低延迟；批处理系统对高吞吐量。</li>
+<li><strong>Flink是两个极端的折中，以固定缓存块为单位传输，且缓存块超时值是可调的</strong>。如果缓存块为0，则是低延迟的流处理系统；如果缓存块的超时值为无限大，则是高吞吐量的批处理系统。</li>
+</ul>
+<h4 id="Flink容错性高，快照恢复">Flink容错性高，快照恢复</h4>
+<p>Flink基于分布式快照与可部分重发的数据源实现了容错。用户可自定义对整个Job进行快照的时间间隔，当任务失败时，Flink会将整个Job恢复到最近一次快照，并从数据源重发快照之后的数据。</p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/cn/大数据-00-计算机网络/" data-toggle="tooltip" data-placement="top" title="大数据-00-操作系统与网络">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/cn/大数据-02-Java/" data-toggle="tooltip" data-placement="top" title="大数据-02-Java理论基础">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      如果您喜欢此博客或发现它对您有用，则欢迎对此发表评论。 也欢迎您共享此博客，以便更多人可以参与。 如果博客中使用的图像侵犯了您的版权，请与作者联系以将其删除。 谢谢 ！
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=大数据-01-基础&body=Hi,I found this website and thought you might like it https://Muzhi1920.github.io/cn/大数据-01-基础/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Sun Oct 24 2021 12:02:22 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#大数据" title="大数据">大数据</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>链友</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/Muzhi1920">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+            <li>
+              <a target="_blank" href="https://www.zhihu.com/people/Recommender">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa  fa-stack-1x fa-inverse">知</i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          小于
+          2022
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='The first step is as good as half over...,Laugh and grow fat...,Man proposes God disposes...,When all else is lost the future still remains...,Wasting time is robbing oneself...,Sharp tools make good work...,Cease to struggle and you cease to live...,A friend in need is a friend indeed...,Faith can move mountains...' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033'></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://Muzhi1920.github.io/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

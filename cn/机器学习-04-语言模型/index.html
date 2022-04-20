@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxx-xx"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-xxxxxx-xx');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="人工智能的奇点，正在来临..."/>
+  <meta name="keyword" content="AI"/>
+  <link rel="shortcut icon" href="/img/avatar/roguerabbit.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+      <!-- gitalk start -->
+      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
+      <link rel="stylesheet" href="/css/gitalk.css"/>
+      <!-- gitalk end -->
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://Muzhi1920.github.io/cn/机器学习-04-语言模型/">
+  <title>
+    
+      机器学习-04-语言模型 - Shawn Blog
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--dark">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'dark';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+		<!-- Gitter -->
+<!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'your-community/your-room'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Shawn Blog</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">首页</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>搜索</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: url('');
+      --intro-header-background-image-url-page: url('/img/header_img/archive_bg2.jpg');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/archive_bg2.jpg');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url(''); */
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('/img/signature/vincent-white.png');
+      }
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#NLP" title="NLP">NLP</a>
+              
+            </div>
+            <h1>机器学习-04-语言模型</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by 小于 on
+              2019-10-29
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">11</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">3.1k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h1>语言模型</h1>
+<h2 id="万物皆可Embedding">万物皆可Embedding</h2>
+<blockquote>
+<blockquote>
+<p>将one-hot映射为embedding，能够很好挖掘嵌入实体间的内部关联</p>
+</blockquote>
+</blockquote>
+<p>1、高维-&gt;低维<br>
+2、稀疏-&gt;稠密<br>
+3、离散-&gt;连续<br>
+4、整数-&gt;实数</p>
+<span id="more"></span>
+<h3 id="高维稀疏">高维稀疏</h3>
+<p>不利于机器学习参数学习和相关计算；维度灾难；复杂度增加，过拟合；稀疏造成梯度消失；</p>
+<h3 id="向量化好处">向量化好处</h3>
+<ul>
+<li>不丢失信息降维</li>
+<li>矩阵运算便于并行</li>
+<li>向量空间比较相似性</li>
+</ul>
+<h2 id="word2vec">word2vec</h2>
+<p><a target="_blank" rel="noopener" href="http://www.hankcs.com/nlp/word2vec.html">网页版笔记在线看</a></p>
+<h3 id="层序与负采样">层序与负采样</h3>
+<h4 id="层序">层序</h4>
+<p>层序模型：用哈夫曼树词频高的路径短，更易被搜索，对于生僻词路径更长，搜索树深更深；多个LR二分类；<br>
+将原来的softmax层拆解，将N分类问题转化成$log_2N$个二分类问题。<strong>用哈夫曼树代替隐藏层到softmax层的映射，左为1，右为0，且左子树权重&gt;=右子树权重</strong>哈夫曼树叶子节点起到输出层神经元的作用，内部节点起到隐层神经元的作用。</p>
+<h4 id="负采样">负采样</h4>
+<p>原理：将softmax多分类问题转化成多次二分类问题，使得LR让一个训练样本每次仅更新一小部分的权重。<br>
+输入到输出，输出V中某个词对应节点输出1，其他V-1个节点输出0（负词）.随机选择5个来更新权重。<br>
+负采样：词频越大更被定为负样本，所以对生僻词更有优势<br>
+<strong>提高训练速度，改善词向量质量</strong></p>
+<h4 id="补充Huffman树">补充Huffman树</h4>
+<p>Huffman树只是二叉树中具体的一种，word2vec训练的时候按照词频将每个词语Huffman编码，由于Huffman编码中词频越高的词语对应的编码越短。所以越高频的词语在Hierarchical Softmax过程中经过的二分类节点就越少，整体计算量就更少了。</p>
+<h4 id="负采样算法">负采样算法</h4>
+<p>任何采样算法都应该保证频次越高的样本越容易被采样出来。基本的思路是对于长度为1的线段，根据词语的词频将其公平地分配给每个词语：<br>
+$$len(w)=\frac{counter(w)}{\sum _{u\epsilon D} counter(u)}$$<br>
+<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/35.jpg" alt="avatat"><br>
+counter就是w的词频。word2vec用的是一种查表的方式，将上述线段标上M个“刻度”，刻度之间的间隔是相等的，即1/M：接着生成0-M之间的整数，去这个刻度尺上一查就能抽中一个单词了。对于机器学习中的分类任务，在训练的时候不但要给正例，还要给负例。对于Hierarchical Softmax，负例是二叉树的其他路径。对于Negative Sampling，负例是随机挑选出来的。Negative Sampling能<strong>提高速度、改进模型质量。</strong></p>
+<h3 id="网络结构">网络结构</h3>
+<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/w2v.jpg" alt="avatar"><br>
+<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/sg.jpg" alt="avatar"><br>
+Word2Vec模型是一个很大的神经网络；10000个单词的词汇表，如果嵌入300维的词向量，那么输入-隐层权重矩阵=隐层-输出层的权重矩阵都会有 10000 x 300 = 300万个权重。<strong>在如此庞大的神经网络中进行梯度下降是相当慢的，所以通过负采样仅对K+1个词的损失反向更新</strong>。中间隐层embedding拿出来做词向量，输入索引，U的输出就是embedding，然后再进行3.1，3.2的公式仅对K+1个词计算二分类的损失，再反向传播。而且隐层没有使用任何非线性激活函数，更简单。</p>
+<h3 id="CBOW与Skip-gram">CBOW与Skip-gram</h3>
+<ul>
+<li>CBOW：输入上下文，输出中心词；训练次数等同于样本次数V(词典大小)；效率高，训练质量不够充分；梯度值会同样的作用到每个周围词的词向量当中去； 相当于该生僻词没有收到专门的训练，生僻词不太友好</li>
+<li>SKip-gram：输入中心词，输出上下文；训练次数为KV,即每个样本训练K次(窗口大小)；效率较低，训练质量充分；梯度不断的调整中心词的词向量；每个词在作为中心词的时候，都要进行K次的预测、调整，生僻词更友好</li>
+<li>Skip-grem 处理少量数据时效果很好，对低频词更加友好，CBOW学习速度更快，高频词友好。</li>
+</ul>
+<h4 id="CBOW">CBOW</h4>
+<p>给定训练样本，即一个词w和它的上下文Context(w)，Context(w)是输入，w是输出。那么w就是正例，词汇表中其他的词语的就是负例。假设我们通过某种采样方法获得了负例子集NEG(w)。对于正负样本，分别定义一个标签：正样本为1，负样本为0。<br>
+$$L^w(\tilde{w})=\left {<br>
+\begin{array}{ll}<br>
+1 &amp; \tilde{w}=w;\<br>
+0 &amp; \tilde{w} \neq w;<br>
+\end{array}<br>
+\right.$$</p>
+<p>对于给定正样本（Context(w),w）我们希望最大化<br>
+$$g(w)=\prod _{<br>
+u{\epsilon {\left { w \right }} \cup NEG(w)}}<br>
+p(u|Context(w))$$<br>
+其中，<br>
+$$p(u|Context(w))=[\sigma (X_w^T\theta ^u)]^{L^w(u)}\cdot [1-\sigma(X_w^T\theta ^u)]^{1-L^w(u))}$$<br>
+也就是说，当u是正例时，$\sigma (X_w^T\theta ^u)$越大越好，当u是负例时，$\sigma (X_w^T\theta ^u)$越小越好。因为$\sigma (X_w^T\theta ^u)$ 等于模型预测样本为正例的概率，当答案就是正的时候，我们希望这个概率越大越好，当答案是负的时候，我们希望它越小越好，模型也符合极大似然估计。<br>
+$$\log\prod _{w\epsilon C} g(w)=\sum _{w\epsilon C}\log g(w)$$<br>
+<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/28.jpg" alt="avatat"><br>
+每个词都是如此，语料库有多个词，我们将g累积得到优化目标。因为对数方便计算，我们对其取对数得到目标函数：<br>
+训练伪码为：<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/30.jpg" alt="avatat"></p>
+<h4 id="Skip-gram">Skip-gram</h4>
+<p>对于(w,Context(w))我们希望最大化：<br>
+$$g(w)=\prod _{\tilde{w}\epsilon Context(w)} \prod _{u\epsilon \left { w \right }\cup NEG^{\tilde{w}}(w)}p(u|\tilde w)$$<br>
+其中，<br>
+$$L =\sum _{w\epsilon C} \sum _{\tilde{w}\epsilon Context(w)} \sum _{u\epsilon \left { w \right  }\cup NEG^{\tilde w }(w)} L(w,\tilde w,u)$$</p>
+<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/34.jpg" alt="avatat"><br>
+<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/33.jpg" alt="avatat"><br>
+训练伪码为：<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/31.jpg" alt="avatat"></p>
+<h2 id="LSTM">LSTM</h2>
+<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/LSTM.jpg" alt=""></p>
+<ul>
+<li>每个cell作为前馈网络层，num_units隐层神经元数；多值向量；不同时刻共享</li>
+<li>$h_{t-1}$和$x(t)$横向拼接输入；</li>
+<li>上面路径代表长时记忆；下面路径代表短时记忆。</li>
+</ul>
+<ol>
+<li>输入和输出都用tanh而非sigmoid？
+<ol>
+<li>输出保证0均值；</li>
+<li>线性部分多；</li>
+</ol>
+</li>
+</ol>
+<h3 id="真实的物理结构">真实的物理结构</h3>
+<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/LSTM2.jpg" alt=""></p>
+<h2 id="TextCNN">TextCNN</h2>
+<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/27.png" alt="avatar"></p>
+<p>$$W^*=\frac{(W-f+2p)}{s}+1$$</p>
+<h2 id="Transformer">Transformer</h2>
+<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/trm.jpg" alt="avatar"><br>
+<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/trm.gif" alt="avatar"></p>
+<h2 id="Encoder">Encoder</h2>
+<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/encoder.jpg" alt="avatar"></p>
+<p>Transformer的encoder中，数据首先会经过一个叫做‘self-attention’的模块得到一个加权之后的特征向量$Z$，这个$Z$便是论文公式1中的 $\text{Attention}(Q,K,V)$<br>
+$$\text{Attention}(Q,K,V)=\text{softmax}(\frac{QK^T}{\sqrt{d_k}})V \tag1$$<br>
+<strong>得到$Z$之后，加上残差网络结构然后被送到encoder的下一个模块，即Feed Forward Neural Network</strong>。这个全连接有两层，第一层的激活函数是ReLU，第二层是一个线性激活函数，可以表示为：<br>
+$$\text{FFN}(Z) = max(0, ZW_1 +b_1)W_2 + b_2 \tag2$$<br>
+<strong>FFN输出后加上残差网络结构输出到下一层</strong></p>
+<h3 id="1-1、从self-Attention到MultiHead-Attention">1.1、从self-Attention到MultiHead-Attention</h3>
+<p>在self-attention中，每个单词有3个不同的向量，它们分别是Query向量（ Q ），Key向量（ K ）和Value向量（ V ），长度均是64。它们是通过3个不同的权值矩阵由嵌入向量 X 乘以三个不同的权值矩阵$W^Q$，$W^K$,$W^V$ 得到，其中三个矩阵的尺寸也是相同的。均是$512\times 64$.</p>
+<ul>
+<li>图解<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/attention.jpg" alt="avatar"></li>
+</ul>
+<ol>
+<li>根据嵌入向量得到 q ， k ， v 三个向量;</li>
+<li>为每个向量计算一个score：$\text{score} = q \cdot k$;</li>
+<li>为了梯度的稳定，Transformer使用了score归一化，即除以$\sqrt{d_k}$;</li>
+<li>对score施以softmax激活函数，归一化权重</li>
+<li>softmax点乘Value值 v，得到加权的每个输入向量的评分 v</li>
+<li>对每个词的emb相加之后得到最终的输出结果$z ： z=\sum v$.</li>
+</ol>
+<ul>
+<li>图解<br>
+<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/attention2.png" alt=""><br>
+以上为self-Attention，MultiHead-Attention如下<br>
+<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/mattention.jpg" alt="avatar"><br>
+将各路self-Attention结果拼接得到MultiHead-Attention</li>
+</ul>
+<h2 id="残差网络">残差网络</h2>
+<ul>
+<li>为什么使用残差网络
+<ol>
+<li>实际上随着网络深度的加深，训练错误会先减少，然后增多；</li>
+<li>深度越深越难训练，冗余的网络层不是恒等映射；<strong>DNN(x)!=x不是恒等映射后面就会学偏</strong>。</li>
+</ol>
+</li>
+<li>解决：引入残差网络希望这些冗余层能够完成恒等映射，保证DNN(x)=x。有助于解决梯度消失和梯度爆炸问题，让我们在训练更深网络的同时，又能保证良好的性能。</li>
+</ul>
+<h2 id="Position-encoding">Position encoding</h2>
+<p>至此无论句子的结构怎么打乱，Transformer都会得到类似的结果。换句话说，Transformer只是一个功能更强大的词袋模型而已。引入位置信息的方式是对位置进行编码论文给出的编码公式如下：<br>
+$$PE(pos, 2i) = sin(\frac{pos}{10000^{\frac{2i}{d_{model}}}}) \tag3$$<br>
+$$PE(pos, 2i+1) = cos(\frac{pos}{10000^{\frac{2i}{d_{model}}}}) \tag4<br>
+$$<br>
+在上式中， pos 表示单词的位置， i 表示单词的维度。在NLP任务重，除了单词的绝对位中，单词的相对位置也非常重要。根据公式$sin(\alpha+\beta) = sin \alpha cos \beta + cos \alpha sin\beta$以及$cos(\alpha + \beta) = cos \alpha cos \beta - sin \alpha sin\beta$这表明位置 k+p 的位置向量可以表示为位置 k 的特征向量的线性变化，这为模型捕捉单词之间的相对位置关系提供了非常大的便利。</p>
+<h2 id="总结">总结</h2>
+<h3 id="优点">优点</h3>
+<ol>
+<li>虽然Transformer最终也没有逃脱传统学习的套路，Transformer也只是一个全连接（或者是一维卷积）加Attention的结合体。抛弃了在NLP中最根本的RNN或者CNN并且取得了非常不错的效果;</li>
+<li>Transformer的设计最大的带来性能提升的关键是self_attention将任意两个单词的求取权重，解决文本处理中的长期依赖问题;</li>
+<li>Transformer可以应用更广;</li>
+<li>算法可并行，支持GPU加速。</li>
+</ol>
+<h3 id="缺点">缺点</h3>
+<ol>
+<li>位置信息不够重复</li>
+</ol>
+<h3 id="LSTM与RNN，Transformer比较">LSTM与RNN，Transformer比较</h3>
+<ul>
+<li>RNN：易梯度消失；（梯度小于1，反向传播越乘越小）</li>
+<li>LSTM：缓解梯度消失；缓解长期依赖；但路径复杂，模型训练复杂</li>
+<li>Transformer：可并行计算，解决长期依赖</li>
+</ul>
+<h3 id="为何出现梯度消失和梯度爆炸，LSTM又是如何解决（改善）的">为何出现梯度消失和梯度爆炸，LSTM又是如何解决（改善）的</h3>
+<p>原因：链式求导法则导致梯度表示为连乘积的形式，梯度过大或者过小会造成梯度消失和爆炸<br>
+忘记门：通过相乘加和形式保证梯度流传播稳定；<br>
+输入门：与普通RNN类似仍然是连乘形式，依旧会可能发生梯度问题。<br>
+<strong>通过改善一条路径的梯度缓解总体的远距离梯度太弱的问题。</strong></p>
+<h3 id="编码器与解码器">编码器与解码器</h3>
+<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/17.png" alt="avatar"><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/16.png" alt="avatar"></p>
+<p>各层结构相同，权重不共享</p>
+<h3 id="编码器结构细节">编码器结构细节</h3>
+<p>we+pos_en，词向量+位置编码<br>
+<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/25.png" alt="avatar"></p>
+<h3 id="计算任意两词的注意力加权后的向量表示">计算任意两词的注意力加权后的向量表示</h3>
+<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/25.png" alt="avatar"><br>
+<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/22.png" alt="avatar"></p>
+<h4 id="补充soft-attention">补充soft-attention</h4>
+<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/soft.webp" alt=""></p>
+<h3 id="单词的矩阵运算，获取注意力加权后的向量表示">单词的矩阵运算，获取注意力加权后的向量表示</h3>
+<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/24.png" alt="avatar"></p>
+<h4 id="解码器端动态展示">解码器端动态展示</h4>
+<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/23.gif" alt="avatar"></p>
+<h2 id="EMLO——特征融合">EMLO——特征融合</h2>
+<p>word embedding：无法解决多义词问题；<br>
+elmo：we训练后获得上下文语义了，根据这个语义调整单词的we表示；we适配语义，完成多义词问题。<br>
+两阶段：语言模型预训练+下游任务。<br>
+语言模型预训练：we输入到双层双向LSTM网络；最终得到句子每个单词对应的(单词we，单词的句法信息，单词的语义信息)。每一个we对应一个权重a，累加求和整合成一个。<br>
+<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/14.jpg" alt="avatar"></p>
+<hr>
+<h2 id="GPT——预训练-fine-tune">GPT——预训练+fine tune</h2>
+<p>重点是Transformer，特征抽取的能力强于RNN，只有单向的特征提取能力。<br>
+<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/20.jpg" alt="avatar"></p>
+<hr>
+<h2 id="BERT">BERT</h2>
+<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/21.jpg" alt="avatar"></p>
+<h3 id="Mask-LM">Mask LM</h3>
+<p>随机选择预料15%单词，用掩码覆盖，然后要求模型去正确预测被抠掉的单词。实际上80%真正被mask标记，10%替换成另外的词，10%未改。</p>
+<h3 id="Next-Sentence-Prediction">Next Sentence Prediction</h3>
+<p>多任务训练，增加句子关系推断。（选择两个句子：语料中真正顺序相连的两个句子；或者选择随机取两个句子）判断第二个是否是第一个句子的后续句子。考虑到单词预测粒度到不了句子关系层级。</p>
+<hr>
+<h2 id="QA系统基本框架">QA系统基本框架</h2>
+<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/18.png" alt="avatar"><br>
+<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/19.png" alt="avatar"></p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/cn/算法导论-00-CPP基础/" data-toggle="tooltip" data-placement="top" title="算法导论-00-CPP基础">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/cn/大数据-04-调优/" data-toggle="tooltip" data-placement="top" title="大数据-04-调优">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      如果您喜欢此博客或发现它对您有用，则欢迎对此发表评论。 也欢迎您共享此博客，以便更多人可以参与。 如果博客中使用的图像侵犯了您的版权，请与作者联系以将其删除。 谢谢 ！
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=机器学习-04-语言模型&body=Hi,I found this website and thought you might like it https://Muzhi1920.github.io/cn/机器学习-04-语言模型/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Tue Oct 29 2019 13:44:31 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#NLP" title="NLP">NLP</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>链友</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/Muzhi1920">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+            <li>
+              <a target="_blank" href="https://www.zhihu.com/people/Recommender">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa  fa-stack-1x fa-inverse">知</i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          小于
+          2022
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='The first step is as good as half over...,Laugh and grow fat...,Man proposes God disposes...,When all else is lost the future still remains...,Wasting time is robbing oneself...,Sharp tools make good work...,Cease to struggle and you cease to live...,A friend in need is a friend indeed...,Faith can move mountains...' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033'></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://Muzhi1920.github.io/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
