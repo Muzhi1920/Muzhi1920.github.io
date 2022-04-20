@@ -291,6 +291,13 @@
 
   
   <url>
+    <loc>https://muzhi1920.github.io/tags/Hexo-Theme-LiveMyLife/</loc>
+    <lastmod>2022-04-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://muzhi1920.github.io/tags/coding/</loc>
     <lastmod>2022-04-20</lastmod>
     <changefreq>daily</changefreq>
@@ -389,13 +396,6 @@
   </url>
   
   <url>
-    <loc>https://muzhi1920.github.io/tags/linux/</loc>
-    <lastmod>2022-04-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://muzhi1920.github.io/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E8%B0%83%E4%BC%98/</loc>
     <lastmod>2022-04-20</lastmod>
     <changefreq>daily</changefreq>
@@ -411,6 +411,13 @@
   
   <url>
     <loc>https://muzhi1920.github.io/tags/%E6%95%B0%E6%8D%AE%E5%80%BE%E6%96%9C/</loc>
+    <lastmod>2022-04-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://muzhi1920.github.io/tags/linux/</loc>
     <lastmod>2022-04-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -466,13 +473,6 @@
   </url>
   
   <url>
-    <loc>https://muzhi1920.github.io/tags/Hexo-Theme-LiveMyLife/</loc>
-    <lastmod>2022-04-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://muzhi1920.github.io/tags/%E8%B4%AA%E5%BF%83/</loc>
     <lastmod>2022-04-20</lastmod>
     <changefreq>daily</changefreq>
@@ -494,6 +494,13 @@
   </url>
   
 
+  
+  <url>
+    <loc>https://muzhi1920.github.io/categories/Hexo-Theme-LiveMyLife/</loc>
+    <lastmod>2022-04-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
   
   <url>
     <loc>https://muzhi1920.github.io/categories/leetcode/</loc>
@@ -546,13 +553,6 @@
   
   <url>
     <loc>https://muzhi1920.github.io/categories/algo/</loc>
-    <lastmod>2022-04-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://muzhi1920.github.io/categories/Hexo-Theme-LiveMyLife/</loc>
     <lastmod>2022-04-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
