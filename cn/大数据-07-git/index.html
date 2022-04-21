@@ -150,7 +150,7 @@
 
 <!-- hack iOS CSS :active style -->
 
-	<body ontouchstart="" class="body--light body--dark">
+	<body ontouchstart="" class="body--light body--light">
 
 
 		<!-- ThemeColor -->
@@ -184,7 +184,7 @@
       ? b.pop()
       : '';
   }
-  let themeMode = 'dark';
+  let themeMode = 'light';
   if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
     let dbody = document.body.classList;
     themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
@@ -211,7 +211,7 @@
 <!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
 <script>
   ((window.gitter = {}).chat = {}).options = {
-    room: 'your-community/your-room'
+    room: 'touch_fish/lie_down'
   };
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
@@ -408,7 +408,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">182</span> In Total
+              Words <span class="post-count">178</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -470,23 +470,13 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h2 id="git操作">git操作</h2>
-<h3 id="新建分支以及远程分支">新建分支以及远程分支</h3>
-<p>git branch xx<br>
-git checkout -b xx<br>
-git push --set-upstream origin xx</p>
+        <h2 id="git操作"><a href="#git操作" class="headerlink" title="git操作"></a>git操作</h2><h3 id="新建分支以及远程分支"><a href="#新建分支以及远程分支" class="headerlink" title="新建分支以及远程分支"></a>新建分支以及远程分支</h3><p>git branch xx<br>git checkout -b xx<br>git push –set-upstream origin xx</p>
 <span id="more"></span>
-<h3 id="新本地分支追溯远程分支">新本地分支追溯远程分支</h3>
-<p>git checkout -b xx<br>
-git branch --set-upstream-to=origin/xx</p>
-<h4 id="删除分支以及远程分支">删除分支以及远程分支</h4>
-<p>git checkout master<br>
-git push origin --delete xx<br>
-git branch -D xx</p>
-<h3 id="拉推">拉推</h3>
-<p>commit,master,pull,checkout本地,merge master,push</p>
-<h2 id="commit">commit</h2>
-<ol>
+
+<h3 id="新本地分支追溯远程分支"><a href="#新本地分支追溯远程分支" class="headerlink" title="新本地分支追溯远程分支"></a>新本地分支追溯远程分支</h3><p>git checkout -b xx<br>git branch –set-upstream-to&#x3D;origin&#x2F;xx</p>
+<h4 id="删除分支以及远程分支"><a href="#删除分支以及远程分支" class="headerlink" title="删除分支以及远程分支"></a>删除分支以及远程分支</h4><p>git checkout master<br>git push origin –delete xx<br>git branch -D xx</p>
+<h3 id="拉推"><a href="#拉推" class="headerlink" title="拉推"></a>拉推</h3><p>commit,master,pull,checkout本地,merge master,push</p>
+<h2 id="commit"><a href="#commit" class="headerlink" title="commit"></a>commit</h2><ol>
 <li>对于一个任务修改多次，提交多次（amend），一次push；（添加时选中amend即可）</li>
 <li>对于一个任务修改多次，提交多次（amend），多次push；（push时使用下句）<code>git push --force-with-lease origin yyx</code></li>
 </ol>
@@ -497,8 +487,7 @@ git branch -D xx</p>
 <th>作用</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>revert</td>
 <td>修改编辑后，点击revert则撤回修改；commit之前可用</td>
 </tr>
@@ -510,8 +499,7 @@ git branch -D xx</p>
 <td>push</td>
 <td>多次amend提交用<code>git push --force-with-lease origin yyx</code></td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 
 
         <hr>
@@ -794,12 +782,12 @@ git branch -D xx</p>
           2022
           <br>
           Theme by
-          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <a target="_blank" rel="noopener" href="https://hexo.io/themes/">Hexo</a>
           <span style="display: inline-block; margin: 0 5px;">
             <i class="fa fa-heart"></i>
           </span>
           re-Ported by
-          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          <a target="_blank" rel="noopener" href="https://github.com/Muzhi1920/Muzhi1920.github.io">Live My Life</a>
           |
           <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
         </p>

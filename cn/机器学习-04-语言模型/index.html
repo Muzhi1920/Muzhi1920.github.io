@@ -150,7 +150,7 @@
 
 <!-- hack iOS CSS :active style -->
 
-	<body ontouchstart="" class="body--light body--dark">
+	<body ontouchstart="" class="body--light body--light">
 
 
 		<!-- ThemeColor -->
@@ -184,7 +184,7 @@
       ? b.pop()
       : '';
   }
-  let themeMode = 'dark';
+  let themeMode = 'light';
   if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
     let dbody = document.body.classList;
     themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
@@ -211,7 +211,7 @@
 <!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
 <script>
   ((window.gitter = {}).chat = {}).options = {
-    room: 'your-community/your-room'
+    room: 'touch_fish/lie_down'
   };
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
@@ -470,206 +470,109 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1>语言模型</h1>
-<h2 id="万物皆可Embedding">万物皆可Embedding</h2>
-<blockquote>
+        <h1 id="语言模型"><a href="#语言模型" class="headerlink" title="语言模型"></a>语言模型</h1><h2 id="万物皆可Embedding"><a href="#万物皆可Embedding" class="headerlink" title="万物皆可Embedding"></a>万物皆可Embedding</h2><blockquote>
 <blockquote>
 <p>将one-hot映射为embedding，能够很好挖掘嵌入实体间的内部关联</p>
 </blockquote>
 </blockquote>
-<p>1、高维-&gt;低维<br>
-2、稀疏-&gt;稠密<br>
-3、离散-&gt;连续<br>
-4、整数-&gt;实数</p>
+<p>1、高维-&gt;低维<br>2、稀疏-&gt;稠密<br>3、离散-&gt;连续<br>4、整数-&gt;实数</p>
 <span id="more"></span>
-<h3 id="高维稀疏">高维稀疏</h3>
-<p>不利于机器学习参数学习和相关计算；维度灾难；复杂度增加，过拟合；稀疏造成梯度消失；</p>
-<h3 id="向量化好处">向量化好处</h3>
-<ul>
+
+<h3 id="高维稀疏"><a href="#高维稀疏" class="headerlink" title="高维稀疏"></a>高维稀疏</h3><p>不利于机器学习参数学习和相关计算；维度灾难；复杂度增加，过拟合；稀疏造成梯度消失；</p>
+<h3 id="向量化好处"><a href="#向量化好处" class="headerlink" title="向量化好处"></a>向量化好处</h3><ul>
 <li>不丢失信息降维</li>
 <li>矩阵运算便于并行</li>
 <li>向量空间比较相似性</li>
 </ul>
-<h2 id="word2vec">word2vec</h2>
-<p><a target="_blank" rel="noopener" href="http://www.hankcs.com/nlp/word2vec.html">网页版笔记在线看</a></p>
-<h3 id="层序与负采样">层序与负采样</h3>
-<h4 id="层序">层序</h4>
-<p>层序模型：用哈夫曼树词频高的路径短，更易被搜索，对于生僻词路径更长，搜索树深更深；多个LR二分类；<br>
-将原来的softmax层拆解，将N分类问题转化成$log_2N$个二分类问题。<strong>用哈夫曼树代替隐藏层到softmax层的映射，左为1，右为0，且左子树权重&gt;=右子树权重</strong>哈夫曼树叶子节点起到输出层神经元的作用，内部节点起到隐层神经元的作用。</p>
-<h4 id="负采样">负采样</h4>
-<p>原理：将softmax多分类问题转化成多次二分类问题，使得LR让一个训练样本每次仅更新一小部分的权重。<br>
-输入到输出，输出V中某个词对应节点输出1，其他V-1个节点输出0（负词）.随机选择5个来更新权重。<br>
-负采样：词频越大更被定为负样本，所以对生僻词更有优势<br>
-<strong>提高训练速度，改善词向量质量</strong></p>
-<h4 id="补充Huffman树">补充Huffman树</h4>
-<p>Huffman树只是二叉树中具体的一种，word2vec训练的时候按照词频将每个词语Huffman编码，由于Huffman编码中词频越高的词语对应的编码越短。所以越高频的词语在Hierarchical Softmax过程中经过的二分类节点就越少，整体计算量就更少了。</p>
-<h4 id="负采样算法">负采样算法</h4>
-<p>任何采样算法都应该保证频次越高的样本越容易被采样出来。基本的思路是对于长度为1的线段，根据词语的词频将其公平地分配给每个词语：<br>
-$$len(w)=\frac{counter(w)}{\sum _{u\epsilon D} counter(u)}$$<br>
-<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/35.jpg" alt="avatat"><br>
-counter就是w的词频。word2vec用的是一种查表的方式，将上述线段标上M个“刻度”，刻度之间的间隔是相等的，即1/M：接着生成0-M之间的整数，去这个刻度尺上一查就能抽中一个单词了。对于机器学习中的分类任务，在训练的时候不但要给正例，还要给负例。对于Hierarchical Softmax，负例是二叉树的其他路径。对于Negative Sampling，负例是随机挑选出来的。Negative Sampling能<strong>提高速度、改进模型质量。</strong></p>
-<h3 id="网络结构">网络结构</h3>
-<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/w2v.jpg" alt="avatar"><br>
-<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/sg.jpg" alt="avatar"><br>
-Word2Vec模型是一个很大的神经网络；10000个单词的词汇表，如果嵌入300维的词向量，那么输入-隐层权重矩阵=隐层-输出层的权重矩阵都会有 10000 x 300 = 300万个权重。<strong>在如此庞大的神经网络中进行梯度下降是相当慢的，所以通过负采样仅对K+1个词的损失反向更新</strong>。中间隐层embedding拿出来做词向量，输入索引，U的输出就是embedding，然后再进行3.1，3.2的公式仅对K+1个词计算二分类的损失，再反向传播。而且隐层没有使用任何非线性激活函数，更简单。</p>
-<h3 id="CBOW与Skip-gram">CBOW与Skip-gram</h3>
-<ul>
+<h2 id="word2vec"><a href="#word2vec" class="headerlink" title="word2vec"></a>word2vec</h2><p><a target="_blank" rel="noopener" href="http://www.hankcs.com/nlp/word2vec.html">网页版笔记在线看</a></p>
+<h3 id="层序与负采样"><a href="#层序与负采样" class="headerlink" title="层序与负采样"></a>层序与负采样</h3><h4 id="层序"><a href="#层序" class="headerlink" title="层序"></a>层序</h4><p>层序模型：用哈夫曼树词频高的路径短，更易被搜索，对于生僻词路径更长，搜索树深更深；多个LR二分类；<br>将原来的softmax层拆解，将N分类问题转化成$log_2N$个二分类问题。<strong>用哈夫曼树代替隐藏层到softmax层的映射，左为1，右为0，且左子树权重&gt;&#x3D;右子树权重</strong>哈夫曼树叶子节点起到输出层神经元的作用，内部节点起到隐层神经元的作用。</p>
+<h4 id="负采样"><a href="#负采样" class="headerlink" title="负采样"></a>负采样</h4><p>原理：将softmax多分类问题转化成多次二分类问题，使得LR让一个训练样本每次仅更新一小部分的权重。<br>输入到输出，输出V中某个词对应节点输出1，其他V-1个节点输出0（负词）.随机选择5个来更新权重。<br>负采样：词频越大更被定为负样本，所以对生僻词更有优势<br><strong>提高训练速度，改善词向量质量</strong></p>
+<h4 id="补充Huffman树"><a href="#补充Huffman树" class="headerlink" title="补充Huffman树"></a>补充Huffman树</h4><p>Huffman树只是二叉树中具体的一种，word2vec训练的时候按照词频将每个词语Huffman编码，由于Huffman编码中词频越高的词语对应的编码越短。所以越高频的词语在Hierarchical Softmax过程中经过的二分类节点就越少，整体计算量就更少了。</p>
+<h4 id="负采样算法"><a href="#负采样算法" class="headerlink" title="负采样算法"></a>负采样算法</h4><p>任何采样算法都应该保证频次越高的样本越容易被采样出来。基本的思路是对于长度为1的线段，根据词语的词频将其公平地分配给每个词语：<br>$$len(w)&#x3D;\frac{counter(w)}{\sum _{u\epsilon D} counter(u)}$$<br><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/35.jpg" alt="avatat"><br>counter就是w的词频。word2vec用的是一种查表的方式，将上述线段标上M个“刻度”，刻度之间的间隔是相等的，即1&#x2F;M：接着生成0-M之间的整数，去这个刻度尺上一查就能抽中一个单词了。对于机器学习中的分类任务，在训练的时候不但要给正例，还要给负例。对于Hierarchical Softmax，负例是二叉树的其他路径。对于Negative Sampling，负例是随机挑选出来的。Negative Sampling能<strong>提高速度、改进模型质量。</strong></p>
+<h3 id="网络结构"><a href="#网络结构" class="headerlink" title="网络结构"></a>网络结构</h3><p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/w2v.jpg" alt="avatar"><br><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/sg.jpg" alt="avatar"><br>Word2Vec模型是一个很大的神经网络；10000个单词的词汇表，如果嵌入300维的词向量，那么输入-隐层权重矩阵&#x3D;隐层-输出层的权重矩阵都会有 10000 x 300 &#x3D; 300万个权重。<strong>在如此庞大的神经网络中进行梯度下降是相当慢的，所以通过负采样仅对K+1个词的损失反向更新</strong>。中间隐层embedding拿出来做词向量，输入索引，U的输出就是embedding，然后再进行3.1，3.2的公式仅对K+1个词计算二分类的损失，再反向传播。而且隐层没有使用任何非线性激活函数，更简单。</p>
+<h3 id="CBOW与Skip-gram"><a href="#CBOW与Skip-gram" class="headerlink" title="CBOW与Skip-gram"></a>CBOW与Skip-gram</h3><ul>
 <li>CBOW：输入上下文，输出中心词；训练次数等同于样本次数V(词典大小)；效率高，训练质量不够充分；梯度值会同样的作用到每个周围词的词向量当中去； 相当于该生僻词没有收到专门的训练，生僻词不太友好</li>
 <li>SKip-gram：输入中心词，输出上下文；训练次数为KV,即每个样本训练K次(窗口大小)；效率较低，训练质量充分；梯度不断的调整中心词的词向量；每个词在作为中心词的时候，都要进行K次的预测、调整，生僻词更友好</li>
 <li>Skip-grem 处理少量数据时效果很好，对低频词更加友好，CBOW学习速度更快，高频词友好。</li>
 </ul>
-<h4 id="CBOW">CBOW</h4>
-<p>给定训练样本，即一个词w和它的上下文Context(w)，Context(w)是输入，w是输出。那么w就是正例，词汇表中其他的词语的就是负例。假设我们通过某种采样方法获得了负例子集NEG(w)。对于正负样本，分别定义一个标签：正样本为1，负样本为0。<br>
-$$L^w(\tilde{w})=\left {<br>
-\begin{array}{ll}<br>
-1 &amp; \tilde{w}=w;\<br>
-0 &amp; \tilde{w} \neq w;<br>
-\end{array}<br>
-\right.$$</p>
-<p>对于给定正样本（Context(w),w）我们希望最大化<br>
-$$g(w)=\prod _{<br>
-u{\epsilon {\left { w \right }} \cup NEG(w)}}<br>
-p(u|Context(w))$$<br>
-其中，<br>
-$$p(u|Context(w))=[\sigma (X_w^T\theta ^u)]^{L^w(u)}\cdot [1-\sigma(X_w^T\theta ^u)]^{1-L^w(u))}$$<br>
-也就是说，当u是正例时，$\sigma (X_w^T\theta ^u)$越大越好，当u是负例时，$\sigma (X_w^T\theta ^u)$越小越好。因为$\sigma (X_w^T\theta ^u)$ 等于模型预测样本为正例的概率，当答案就是正的时候，我们希望这个概率越大越好，当答案是负的时候，我们希望它越小越好，模型也符合极大似然估计。<br>
-$$\log\prod _{w\epsilon C} g(w)=\sum _{w\epsilon C}\log g(w)$$<br>
-<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/28.jpg" alt="avatat"><br>
-每个词都是如此，语料库有多个词，我们将g累积得到优化目标。因为对数方便计算，我们对其取对数得到目标函数：<br>
-训练伪码为：<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/30.jpg" alt="avatat"></p>
-<h4 id="Skip-gram">Skip-gram</h4>
-<p>对于(w,Context(w))我们希望最大化：<br>
-$$g(w)=\prod _{\tilde{w}\epsilon Context(w)} \prod _{u\epsilon \left { w \right }\cup NEG^{\tilde{w}}(w)}p(u|\tilde w)$$<br>
-其中，<br>
-$$L =\sum _{w\epsilon C} \sum _{\tilde{w}\epsilon Context(w)} \sum _{u\epsilon \left { w \right  }\cup NEG^{\tilde w }(w)} L(w,\tilde w,u)$$</p>
-<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/34.jpg" alt="avatat"><br>
-<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/33.jpg" alt="avatat"><br>
-训练伪码为：<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/31.jpg" alt="avatat"></p>
-<h2 id="LSTM">LSTM</h2>
-<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/LSTM.jpg" alt=""></p>
+<h4 id="CBOW"><a href="#CBOW" class="headerlink" title="CBOW"></a>CBOW</h4><p>给定训练样本，即一个词w和它的上下文Context(w)，Context(w)是输入，w是输出。那么w就是正例，词汇表中其他的词语的就是负例。假设我们通过某种采样方法获得了负例子集NEG(w)。对于正负样本，分别定义一个标签：正样本为1，负样本为0。<br>$$L^w(\tilde{w})&#x3D;\left {<br>\begin{array}{ll}<br>1 &amp; \tilde{w}&#x3D;w;\<br>0 &amp; \tilde{w} \neq w;<br>\end{array}<br>\right.$$</p>
+<p>对于给定正样本（Context(w),w）我们希望最大化<br>$$g(w)&#x3D;\prod _{<br>    u{\epsilon {\left { w \right }} \cup NEG(w)}}<br>    p(u|Context(w))$$<br>其中，<br>$$p(u|Context(w))&#x3D;[\sigma (X_w^T\theta ^u)]^{L^w(u)}\cdot [1-\sigma(X_w^T\theta ^u)]^{1-L^w(u))}$$<br>也就是说，当u是正例时，$\sigma (X_w^T\theta ^u)$越大越好，当u是负例时，$\sigma (X_w^T\theta ^u)$越小越好。因为$\sigma (X_w^T\theta ^u)$ 等于模型预测样本为正例的概率，当答案就是正的时候，我们希望这个概率越大越好，当答案是负的时候，我们希望它越小越好，模型也符合极大似然估计。<br>$$\log\prod _{w\epsilon C} g(w)&#x3D;\sum _{w\epsilon C}\log g(w)$$<br><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/28.jpg" alt="avatat"><br>每个词都是如此，语料库有多个词，我们将g累积得到优化目标。因为对数方便计算，我们对其取对数得到目标函数：<br>训练伪码为：<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/30.jpg" alt="avatat"></p>
+<h4 id="Skip-gram"><a href="#Skip-gram" class="headerlink" title="Skip-gram"></a>Skip-gram</h4><p>对于(w,Context(w))我们希望最大化：<br>$$g(w)&#x3D;\prod _{\tilde{w}\epsilon Context(w)} \prod _{u\epsilon \left { w \right }\cup NEG^{\tilde{w}}(w)}p(u|\tilde w)$$<br>其中，<br>$$L &#x3D;\sum _{w\epsilon C} \sum _{\tilde{w}\epsilon Context(w)} \sum _{u\epsilon \left { w \right  }\cup NEG^{\tilde w }(w)} L(w,\tilde w,u)$$</p>
+<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/34.jpg" alt="avatat"><br><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/33.jpg" alt="avatat"><br>训练伪码为：<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/31.jpg" alt="avatat"></p>
+<h2 id="LSTM"><a href="#LSTM" class="headerlink" title="LSTM"></a>LSTM</h2><p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/LSTM.jpg"></p>
 <ul>
 <li>每个cell作为前馈网络层，num_units隐层神经元数；多值向量；不同时刻共享</li>
 <li>$h_{t-1}$和$x(t)$横向拼接输入；</li>
 <li>上面路径代表长时记忆；下面路径代表短时记忆。</li>
 </ul>
 <ol>
-<li>输入和输出都用tanh而非sigmoid？
-<ol>
+<li>输入和输出都用tanh而非sigmoid？<ol>
 <li>输出保证0均值；</li>
 <li>线性部分多；</li>
 </ol>
 </li>
 </ol>
-<h3 id="真实的物理结构">真实的物理结构</h3>
-<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/LSTM2.jpg" alt=""></p>
-<h2 id="TextCNN">TextCNN</h2>
-<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/27.png" alt="avatar"></p>
-<p>$$W^*=\frac{(W-f+2p)}{s}+1$$</p>
-<h2 id="Transformer">Transformer</h2>
-<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/trm.jpg" alt="avatar"><br>
-<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/trm.gif" alt="avatar"></p>
-<h2 id="Encoder">Encoder</h2>
-<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/encoder.jpg" alt="avatar"></p>
-<p>Transformer的encoder中，数据首先会经过一个叫做‘self-attention’的模块得到一个加权之后的特征向量$Z$，这个$Z$便是论文公式1中的 $\text{Attention}(Q,K,V)$<br>
-$$\text{Attention}(Q,K,V)=\text{softmax}(\frac{QK^T}{\sqrt{d_k}})V \tag1$$<br>
-<strong>得到$Z$之后，加上残差网络结构然后被送到encoder的下一个模块，即Feed Forward Neural Network</strong>。这个全连接有两层，第一层的激活函数是ReLU，第二层是一个线性激活函数，可以表示为：<br>
-$$\text{FFN}(Z) = max(0, ZW_1 +b_1)W_2 + b_2 \tag2$$<br>
-<strong>FFN输出后加上残差网络结构输出到下一层</strong></p>
-<h3 id="1-1、从self-Attention到MultiHead-Attention">1.1、从self-Attention到MultiHead-Attention</h3>
-<p>在self-attention中，每个单词有3个不同的向量，它们分别是Query向量（ Q ），Key向量（ K ）和Value向量（ V ），长度均是64。它们是通过3个不同的权值矩阵由嵌入向量 X 乘以三个不同的权值矩阵$W^Q$，$W^K$,$W^V$ 得到，其中三个矩阵的尺寸也是相同的。均是$512\times 64$.</p>
+<h3 id="真实的物理结构"><a href="#真实的物理结构" class="headerlink" title="真实的物理结构"></a>真实的物理结构</h3><p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/LSTM2.jpg"></p>
+<h2 id="TextCNN"><a href="#TextCNN" class="headerlink" title="TextCNN"></a>TextCNN</h2><p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/27.png" alt="avatar"></p>
+<p>$$W^*&#x3D;\frac{(W-f+2p)}{s}+1$$</p>
+<h2 id="Transformer"><a href="#Transformer" class="headerlink" title="Transformer"></a>Transformer</h2><p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/trm.jpg" alt="avatar"><br><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/trm.gif" alt="avatar"></p>
+<h2 id="Encoder"><a href="#Encoder" class="headerlink" title="Encoder"></a>Encoder</h2><p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/encoder.jpg" alt="avatar"></p>
+<p>Transformer的encoder中，数据首先会经过一个叫做‘self-attention’的模块得到一个加权之后的特征向量$Z$，这个$Z$便是论文公式1中的 $\text{Attention}(Q,K,V)$<br>$$\text{Attention}(Q,K,V)&#x3D;\text{softmax}(\frac{QK^T}{\sqrt{d_k}})V \tag1$$<br><strong>得到$Z$之后，加上残差网络结构然后被送到encoder的下一个模块，即Feed Forward Neural Network</strong>。这个全连接有两层，第一层的激活函数是ReLU，第二层是一个线性激活函数，可以表示为：<br>$$\text{FFN}(Z) &#x3D; max(0, ZW_1 +b_1)W_2 + b_2 \tag2$$<br><strong>FFN输出后加上残差网络结构输出到下一层</strong></p>
+<h3 id="1-1、从self-Attention到MultiHead-Attention"><a href="#1-1、从self-Attention到MultiHead-Attention" class="headerlink" title="1.1、从self-Attention到MultiHead-Attention"></a>1.1、从self-Attention到MultiHead-Attention</h3><p>在self-attention中，每个单词有3个不同的向量，它们分别是Query向量（ Q ），Key向量（ K ）和Value向量（ V ），长度均是64。它们是通过3个不同的权值矩阵由嵌入向量 X 乘以三个不同的权值矩阵$W^Q$，$W^K$,$W^V$ 得到，其中三个矩阵的尺寸也是相同的。均是$512\times 64$.</p>
 <ul>
 <li>图解<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/attention.jpg" alt="avatar"></li>
 </ul>
 <ol>
 <li>根据嵌入向量得到 q ， k ， v 三个向量;</li>
-<li>为每个向量计算一个score：$\text{score} = q \cdot k$;</li>
+<li>为每个向量计算一个score：$\text{score} &#x3D; q \cdot k$;</li>
 <li>为了梯度的稳定，Transformer使用了score归一化，即除以$\sqrt{d_k}$;</li>
 <li>对score施以softmax激活函数，归一化权重</li>
 <li>softmax点乘Value值 v，得到加权的每个输入向量的评分 v</li>
-<li>对每个词的emb相加之后得到最终的输出结果$z ： z=\sum v$.</li>
+<li>对每个词的emb相加之后得到最终的输出结果$z ： z&#x3D;\sum v$.</li>
 </ol>
 <ul>
-<li>图解<br>
-<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/attention2.png" alt=""><br>
-以上为self-Attention，MultiHead-Attention如下<br>
-<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/mattention.jpg" alt="avatar"><br>
-将各路self-Attention结果拼接得到MultiHead-Attention</li>
+<li>图解<br><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/attention2.png"><br>以上为self-Attention，MultiHead-Attention如下<br><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/mattention.jpg" alt="avatar"><br>将各路self-Attention结果拼接得到MultiHead-Attention</li>
 </ul>
-<h2 id="残差网络">残差网络</h2>
-<ul>
-<li>为什么使用残差网络
-<ol>
+<h2 id="残差网络"><a href="#残差网络" class="headerlink" title="残差网络"></a>残差网络</h2><ul>
+<li>为什么使用残差网络<ol>
 <li>实际上随着网络深度的加深，训练错误会先减少，然后增多；</li>
-<li>深度越深越难训练，冗余的网络层不是恒等映射；<strong>DNN(x)!=x不是恒等映射后面就会学偏</strong>。</li>
+<li>深度越深越难训练，冗余的网络层不是恒等映射；<strong>DNN(x)!&#x3D;x不是恒等映射后面就会学偏</strong>。</li>
 </ol>
 </li>
-<li>解决：引入残差网络希望这些冗余层能够完成恒等映射，保证DNN(x)=x。有助于解决梯度消失和梯度爆炸问题，让我们在训练更深网络的同时，又能保证良好的性能。</li>
+<li>解决：引入残差网络希望这些冗余层能够完成恒等映射，保证DNN(x)&#x3D;x。有助于解决梯度消失和梯度爆炸问题，让我们在训练更深网络的同时，又能保证良好的性能。</li>
 </ul>
-<h2 id="Position-encoding">Position encoding</h2>
-<p>至此无论句子的结构怎么打乱，Transformer都会得到类似的结果。换句话说，Transformer只是一个功能更强大的词袋模型而已。引入位置信息的方式是对位置进行编码论文给出的编码公式如下：<br>
-$$PE(pos, 2i) = sin(\frac{pos}{10000^{\frac{2i}{d_{model}}}}) \tag3$$<br>
-$$PE(pos, 2i+1) = cos(\frac{pos}{10000^{\frac{2i}{d_{model}}}}) \tag4<br>
-$$<br>
-在上式中， pos 表示单词的位置， i 表示单词的维度。在NLP任务重，除了单词的绝对位中，单词的相对位置也非常重要。根据公式$sin(\alpha+\beta) = sin \alpha cos \beta + cos \alpha sin\beta$以及$cos(\alpha + \beta) = cos \alpha cos \beta - sin \alpha sin\beta$这表明位置 k+p 的位置向量可以表示为位置 k 的特征向量的线性变化，这为模型捕捉单词之间的相对位置关系提供了非常大的便利。</p>
-<h2 id="总结">总结</h2>
-<h3 id="优点">优点</h3>
-<ol>
+<h2 id="Position-encoding"><a href="#Position-encoding" class="headerlink" title="Position encoding"></a>Position encoding</h2><p>至此无论句子的结构怎么打乱，Transformer都会得到类似的结果。换句话说，Transformer只是一个功能更强大的词袋模型而已。引入位置信息的方式是对位置进行编码论文给出的编码公式如下：<br>$$PE(pos, 2i) &#x3D; sin(\frac{pos}{10000^{\frac{2i}{d_{model}}}}) \tag3$$<br>$$PE(pos, 2i+1) &#x3D; cos(\frac{pos}{10000^{\frac{2i}{d_{model}}}}) \tag4<br>$$<br>在上式中， pos 表示单词的位置， i 表示单词的维度。在NLP任务重，除了单词的绝对位中，单词的相对位置也非常重要。根据公式$sin(\alpha+\beta) &#x3D; sin \alpha cos \beta + cos \alpha sin\beta$以及$cos(\alpha + \beta) &#x3D; cos \alpha cos \beta - sin \alpha sin\beta$这表明位置 k+p 的位置向量可以表示为位置 k 的特征向量的线性变化，这为模型捕捉单词之间的相对位置关系提供了非常大的便利。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ol>
 <li>虽然Transformer最终也没有逃脱传统学习的套路，Transformer也只是一个全连接（或者是一维卷积）加Attention的结合体。抛弃了在NLP中最根本的RNN或者CNN并且取得了非常不错的效果;</li>
 <li>Transformer的设计最大的带来性能提升的关键是self_attention将任意两个单词的求取权重，解决文本处理中的长期依赖问题;</li>
 <li>Transformer可以应用更广;</li>
 <li>算法可并行，支持GPU加速。</li>
 </ol>
-<h3 id="缺点">缺点</h3>
-<ol>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ol>
 <li>位置信息不够重复</li>
 </ol>
-<h3 id="LSTM与RNN，Transformer比较">LSTM与RNN，Transformer比较</h3>
-<ul>
+<h3 id="LSTM与RNN，Transformer比较"><a href="#LSTM与RNN，Transformer比较" class="headerlink" title="LSTM与RNN，Transformer比较"></a>LSTM与RNN，Transformer比较</h3><ul>
 <li>RNN：易梯度消失；（梯度小于1，反向传播越乘越小）</li>
 <li>LSTM：缓解梯度消失；缓解长期依赖；但路径复杂，模型训练复杂</li>
 <li>Transformer：可并行计算，解决长期依赖</li>
 </ul>
-<h3 id="为何出现梯度消失和梯度爆炸，LSTM又是如何解决（改善）的">为何出现梯度消失和梯度爆炸，LSTM又是如何解决（改善）的</h3>
-<p>原因：链式求导法则导致梯度表示为连乘积的形式，梯度过大或者过小会造成梯度消失和爆炸<br>
-忘记门：通过相乘加和形式保证梯度流传播稳定；<br>
-输入门：与普通RNN类似仍然是连乘形式，依旧会可能发生梯度问题。<br>
-<strong>通过改善一条路径的梯度缓解总体的远距离梯度太弱的问题。</strong></p>
-<h3 id="编码器与解码器">编码器与解码器</h3>
-<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/17.png" alt="avatar"><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/16.png" alt="avatar"></p>
+<h3 id="为何出现梯度消失和梯度爆炸，LSTM又是如何解决（改善）的"><a href="#为何出现梯度消失和梯度爆炸，LSTM又是如何解决（改善）的" class="headerlink" title="为何出现梯度消失和梯度爆炸，LSTM又是如何解决（改善）的"></a>为何出现梯度消失和梯度爆炸，LSTM又是如何解决（改善）的</h3><p>原因：链式求导法则导致梯度表示为连乘积的形式，梯度过大或者过小会造成梯度消失和爆炸<br>忘记门：通过相乘加和形式保证梯度流传播稳定；<br>输入门：与普通RNN类似仍然是连乘形式，依旧会可能发生梯度问题。<br><strong>通过改善一条路径的梯度缓解总体的远距离梯度太弱的问题。</strong></p>
+<h3 id="编码器与解码器"><a href="#编码器与解码器" class="headerlink" title="编码器与解码器"></a>编码器与解码器</h3><p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/17.png" alt="avatar"><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/16.png" alt="avatar"></p>
 <p>各层结构相同，权重不共享</p>
-<h3 id="编码器结构细节">编码器结构细节</h3>
-<p>we+pos_en，词向量+位置编码<br>
-<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/25.png" alt="avatar"></p>
-<h3 id="计算任意两词的注意力加权后的向量表示">计算任意两词的注意力加权后的向量表示</h3>
-<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/25.png" alt="avatar"><br>
-<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/22.png" alt="avatar"></p>
-<h4 id="补充soft-attention">补充soft-attention</h4>
-<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/soft.webp" alt=""></p>
-<h3 id="单词的矩阵运算，获取注意力加权后的向量表示">单词的矩阵运算，获取注意力加权后的向量表示</h3>
-<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/24.png" alt="avatar"></p>
-<h4 id="解码器端动态展示">解码器端动态展示</h4>
-<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/23.gif" alt="avatar"></p>
-<h2 id="EMLO——特征融合">EMLO——特征融合</h2>
-<p>word embedding：无法解决多义词问题；<br>
-elmo：we训练后获得上下文语义了，根据这个语义调整单词的we表示；we适配语义，完成多义词问题。<br>
-两阶段：语言模型预训练+下游任务。<br>
-语言模型预训练：we输入到双层双向LSTM网络；最终得到句子每个单词对应的(单词we，单词的句法信息，单词的语义信息)。每一个we对应一个权重a，累加求和整合成一个。<br>
-<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/14.jpg" alt="avatar"></p>
+<h3 id="编码器结构细节"><a href="#编码器结构细节" class="headerlink" title="编码器结构细节"></a>编码器结构细节</h3><p>we+pos_en，词向量+位置编码<br><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/25.png" alt="avatar"></p>
+<h3 id="计算任意两词的注意力加权后的向量表示"><a href="#计算任意两词的注意力加权后的向量表示" class="headerlink" title="计算任意两词的注意力加权后的向量表示"></a>计算任意两词的注意力加权后的向量表示</h3><p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/25.png" alt="avatar"><br><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/22.png" alt="avatar"></p>
+<h4 id="补充soft-attention"><a href="#补充soft-attention" class="headerlink" title="补充soft-attention"></a>补充soft-attention</h4><p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/soft.webp"></p>
+<h3 id="单词的矩阵运算，获取注意力加权后的向量表示"><a href="#单词的矩阵运算，获取注意力加权后的向量表示" class="headerlink" title="单词的矩阵运算，获取注意力加权后的向量表示"></a>单词的矩阵运算，获取注意力加权后的向量表示</h3><p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/24.png" alt="avatar"></p>
+<h4 id="解码器端动态展示"><a href="#解码器端动态展示" class="headerlink" title="解码器端动态展示"></a>解码器端动态展示</h4><p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/23.gif" alt="avatar"></p>
+<h2 id="EMLO——特征融合"><a href="#EMLO——特征融合" class="headerlink" title="EMLO——特征融合"></a>EMLO——特征融合</h2><p>word embedding：无法解决多义词问题；<br>elmo：we训练后获得上下文语义了，根据这个语义调整单词的we表示；we适配语义，完成多义词问题。<br>两阶段：语言模型预训练+下游任务。<br>语言模型预训练：we输入到双层双向LSTM网络；最终得到句子每个单词对应的(单词we，单词的句法信息，单词的语义信息)。每一个we对应一个权重a，累加求和整合成一个。<br><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/14.jpg" alt="avatar"></p>
 <hr>
-<h2 id="GPT——预训练-fine-tune">GPT——预训练+fine tune</h2>
-<p>重点是Transformer，特征抽取的能力强于RNN，只有单向的特征提取能力。<br>
-<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/20.jpg" alt="avatar"></p>
+<h2 id="GPT——预训练-fine-tune"><a href="#GPT——预训练-fine-tune" class="headerlink" title="GPT——预训练+fine tune"></a>GPT——预训练+fine tune</h2><p>重点是Transformer，特征抽取的能力强于RNN，只有单向的特征提取能力。<br><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/20.jpg" alt="avatar"></p>
 <hr>
-<h2 id="BERT">BERT</h2>
-<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/21.jpg" alt="avatar"></p>
-<h3 id="Mask-LM">Mask LM</h3>
-<p>随机选择预料15%单词，用掩码覆盖，然后要求模型去正确预测被抠掉的单词。实际上80%真正被mask标记，10%替换成另外的词，10%未改。</p>
-<h3 id="Next-Sentence-Prediction">Next Sentence Prediction</h3>
-<p>多任务训练，增加句子关系推断。（选择两个句子：语料中真正顺序相连的两个句子；或者选择随机取两个句子）判断第二个是否是第一个句子的后续句子。考虑到单词预测粒度到不了句子关系层级。</p>
+<h2 id="BERT"><a href="#BERT" class="headerlink" title="BERT"></a>BERT</h2><p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/21.jpg" alt="avatar"></p>
+<h3 id="Mask-LM"><a href="#Mask-LM" class="headerlink" title="Mask LM"></a>Mask LM</h3><p>随机选择预料15%单词，用掩码覆盖，然后要求模型去正确预测被抠掉的单词。实际上80%真正被mask标记，10%替换成另外的词，10%未改。</p>
+<h3 id="Next-Sentence-Prediction"><a href="#Next-Sentence-Prediction" class="headerlink" title="Next Sentence Prediction"></a>Next Sentence Prediction</h3><p>多任务训练，增加句子关系推断。（选择两个句子：语料中真正顺序相连的两个句子；或者选择随机取两个句子）判断第二个是否是第一个句子的后续句子。考虑到单词预测粒度到不了句子关系层级。</p>
 <hr>
-<h2 id="QA系统基本框架">QA系统基本框架</h2>
-<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/18.png" alt="avatar"><br>
-<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/19.png" alt="avatar"></p>
+<h2 id="QA系统基本框架"><a href="#QA系统基本框架" class="headerlink" title="QA系统基本框架"></a>QA系统基本框架</h2><p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/18.png" alt="avatar"><br><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-04-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/19.png" alt="avatar"></p>
 
 
         <hr>
@@ -952,12 +855,12 @@ elmo：we训练后获得上下文语义了，根据这个语义调整单词的we
           2022
           <br>
           Theme by
-          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <a target="_blank" rel="noopener" href="https://hexo.io/themes/">Hexo</a>
           <span style="display: inline-block; margin: 0 5px;">
             <i class="fa fa-heart"></i>
           </span>
           re-Ported by
-          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          <a target="_blank" rel="noopener" href="https://github.com/Muzhi1920/Muzhi1920.github.io">Live My Life</a>
           |
           <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
         </p>

@@ -150,7 +150,7 @@
 
 <!-- hack iOS CSS :active style -->
 
-	<body ontouchstart="" class="body--light body--dark">
+	<body ontouchstart="" class="body--light body--light">
 
 
 		<!-- ThemeColor -->
@@ -184,7 +184,7 @@
       ? b.pop()
       : '';
   }
-  let themeMode = 'dark';
+  let themeMode = 'light';
   if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
     let dbody = document.body.classList;
     themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
@@ -211,7 +211,7 @@
 <!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
 <script>
   ((window.gitter = {}).chat = {}).options = {
-    room: 'your-community/your-room'
+    room: 'touch_fish/lie_down'
   };
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
@@ -404,11 +404,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">27</span> Minutes
+              Estimated Reading Time <span class="post-count">28</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">7.1k</span> In Total
+              Words <span class="post-count">7.3k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -470,9 +470,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1>0. 理论基础</h1>
-<h2 id="机器学习和深度学习的区别">机器学习和深度学习的区别</h2>
-<ul>
+        <h1 id="0-理论基础"><a href="#0-理论基础" class="headerlink" title="0. 理论基础"></a>0. 理论基础</h1><h2 id="机器学习和深度学习的区别"><a href="#机器学习和深度学习的区别" class="headerlink" title="机器学习和深度学习的区别"></a>机器学习和深度学习的区别</h2><ul>
 <li>特征工程：机器学习中专家识别，业务数据人工编码，性能取决于特征提取准确程度；深度学习尝试提取低层次特征，自动化</li>
 <li>深度学习的可解释性较差，机器学习的决策树算法规则清晰</li>
 <li>深度学习是端到端</li>
@@ -481,242 +479,157 @@
 <li>执行时间深度学习更长</li>
 </ul>
 <span id="more"></span>
-<h2 id="模型">模型</h2>
-<h3 id="生成式模型">生成式模型</h3>
-<p>由数据学到联合概率分布$P(X,Y)$,然后求出条件概率分布$P(Y|X)$作为预测模型。给定输入$X$产生输出$Y$的生成关系。<strong>收敛更快，隐变量时仍然能用</strong><br>
-$$P(Y|X)=\frac{P(X,Y)}{P(X)}$$</p>
+
+
+<h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><h3 id="生成式模型"><a href="#生成式模型" class="headerlink" title="生成式模型"></a>生成式模型</h3><p>由数据学到联合概率分布$P(X,Y)$,然后求出条件概率分布$P(Y|X)$作为预测模型。给定输入$X$产生输出$Y$的生成关系。<strong>收敛更快，隐变量时仍然能用</strong><br>$$P(Y|X)&#x3D;\frac{P(X,Y)}{P(X)}$$</p>
 <blockquote>
 <blockquote>
 <p>朴素贝叶斯、隐马尔科夫模型（HMM）。</p>
 </blockquote>
 </blockquote>
-<h3 id="判别式模型">判别式模型</h3>
-<p>由数据学习到决策函数$f(X)$或者条件概率模型$P(Y|X)$作为预测的模型。给定输入$X$，预测什么样的输出$Y$。<strong>更为准确，隐变量失效，定义和使用特征</strong></p>
+<h3 id="判别式模型"><a href="#判别式模型" class="headerlink" title="判别式模型"></a>判别式模型</h3><p>由数据学习到决策函数$f(X)$或者条件概率模型$P(Y|X)$作为预测的模型。给定输入$X$，预测什么样的输出$Y$。<strong>更为准确，隐变量失效，定义和使用特征</strong></p>
 <blockquote>
 <blockquote>
 <p>KNN、感知机、逻辑斯蒂回归（Logistic Regression）、最大熵、支持向量机（SVM）、条件随机场（CRF）、决策树。</p>
 </blockquote>
 </blockquote>
-<h3 id="模型的泛化能力-泛化误差上界">模型的泛化能力-泛化误差上界</h3>
-<p>对任意函数f，至少以概率$1-\delta$使得不等式成立<br>
-$$\delta=d*\exp(-2N\epsilon^2)$$<br>
-$$\epsilon(d,N,\delta)=\sqrt{\frac{1}{2N}(\log d+\log \frac{1}{\delta})}$$<br>
-$$R(f_N)&lt;R_{f_N}^{train}+\epsilon(d,N,\delta)$$</p>
+<h3 id="模型的泛化能力-泛化误差上界"><a href="#模型的泛化能力-泛化误差上界" class="headerlink" title="模型的泛化能力-泛化误差上界"></a>模型的泛化能力-泛化误差上界</h3><p>对任意函数f，至少以概率$1-\delta$使得不等式成立<br>$$\delta&#x3D;d*\exp(-2N\epsilon^2)$$<br>$$\epsilon(d,N,\delta)&#x3D;\sqrt{\frac{1}{2N}(\log d+\log \frac{1}{\delta})}$$<br>$$R(f_N)&lt;R_{f_N}^{train}+\epsilon(d,N,\delta)$$</p>
 <ol>
 <li>训练误差越小，则泛化误差越小；</li>
 <li>样本容量N越大，则训练误差与泛化误差越接近；</li>
 <li>假设空间中包含的函数越多，则泛化误差上界越大。</li>
 </ol>
-<h3 id="模型融合">模型融合</h3>
-<ol>
+<h3 id="模型融合"><a href="#模型融合" class="headerlink" title="模型融合"></a>模型融合</h3><ol>
 <li>平均法</li>
 <li>投票法</li>
 <li>bagging</li>
 <li>boosting</li>
 <li>stacking 精排得分入重排序</li>
 </ol>
-<h2 id="策略">策略</h2>
-<p>$$\theta^*=argmin_{\theta}\frac{1}{N}\sum_{i=1}^{N}L(y_i,f(x_i;\theta))+\lambda\Omega(\theta)$$</p>
-<h2 id="逻辑回归">逻辑回归</h2>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/ModifyRong/p/7739955.html">逻辑回归整理</a></p>
+<h2 id="策略"><a href="#策略" class="headerlink" title="策略"></a>策略</h2><p>$$\theta^*&#x3D;argmin_{\theta}\frac{1}{N}\sum_{i&#x3D;1}^{N}L(y_i,f(x_i;\theta))+\lambda\Omega(\theta)$$</p>
+<h2 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/ModifyRong/p/7739955.html">逻辑回归整理</a></p>
 <p>逻辑回归假设数据服从<strong>伯努利</strong>分布,通过极大化似然函数的方法，运用梯度下降来求解参数，来达到将数据二分类的目的</p>
 <p>求解过程：按照<strong>极大似然估计求解</strong>或者<strong>交叉熵损失求解</strong>殊途同归</p>
 <p>何为极大似然：“模型已定，参数未知”；<strong>利用已知的样本结果，反推最有可能（最大概率）导致这样结果的参数值。</strong></p>
-<h2 id="逻辑回归的假设">逻辑回归的假设</h2>
-<p>逻辑回归的第一个基本假设是假设数据服从伯努利分布<br>
-$$h_\theta\left(x;\theta \right )=\frac{1}{1+e^{-\theta^{T} x}}$$</p>
-<h3 id="逻辑回归的求解方法">逻辑回归的求解方法</h3>
-<p>对应着三种优化方法：随机梯度下降，批梯度下降，small batch 梯度下降三种方式：</p>
+<h2 id="逻辑回归的假设"><a href="#逻辑回归的假设" class="headerlink" title="逻辑回归的假设"></a>逻辑回归的假设</h2><p>逻辑回归的第一个基本假设是假设数据服从伯努利分布<br>$$h_\theta\left(x;\theta \right )&#x3D;\frac{1}{1+e^{-\theta^{T} x}}$$</p>
+<h3 id="逻辑回归的求解方法"><a href="#逻辑回归的求解方法" class="headerlink" title="逻辑回归的求解方法"></a>逻辑回归的求解方法</h3><p>对应着三种优化方法：随机梯度下降，批梯度下降，small batch 梯度下降三种方式：</p>
 <ol>
 <li>批梯度下降：会获得全局最优解，缺点是在更新每个参数的时候需要遍历所有的数据，当数据量大的时候，每个参数的更新都会很慢。</li>
 <li>随机梯度下降：以高方差频繁更新，优点是使得sgd会跳到新的和潜在更好的局部最优解，缺点是使得收敛到局部最优解的过程更加的复杂。</li>
 <li>小批量梯度下降：结合了sgd和batch gd的优点，每次更新的时候使用n个样本。减少了参数更新的次数，可以达到更加稳定收敛结果。</li>
 </ol>
-<h3 id="逻辑回归如何分类">逻辑回归如何分类</h3>
-<p>逻辑回归的划定一个阈值，y值大于这个阈值的是一类，y值小于这个阈值的是另外一类。阈值具体如何调整根据实际情况选择。一般会选择0.5做为阈值来划分。</p>
-<h2 id="逻辑回归的损失函数">逻辑回归的损失函数</h2>
-<blockquote>
+<h3 id="逻辑回归如何分类"><a href="#逻辑回归如何分类" class="headerlink" title="逻辑回归如何分类"></a>逻辑回归如何分类</h3><p>逻辑回归的划定一个阈值，y值大于这个阈值的是一类，y值小于这个阈值的是另外一类。阈值具体如何调整根据实际情况选择。一般会选择0.5做为阈值来划分。</p>
+<h2 id="逻辑回归的损失函数"><a href="#逻辑回归的损失函数" class="headerlink" title="逻辑回归的损失函数"></a>逻辑回归的损失函数</h2><blockquote>
 <blockquote>
 <p>样本总体的后验概率</p>
 </blockquote>
 </blockquote>
-<p>$$L_\theta\left(x\right )= \prod <em>{i=1}^{m}h</em>\theta(x_{i};\theta )^{y_{i}}*(1-h_\theta(x_{i};\theta))^{1-y_{i}}$$</p>
+<p>$$L_\theta\left(x\right )&#x3D; \prod <em>{i&#x3D;1}^{m}h_\theta(x</em>{i};\theta )^{y_{i}}*(1-h_\theta(x_{i};\theta))^{1-y_{i}}$$</p>
 <blockquote>
 <blockquote>
 <p>损失函数为负对数损失时求和</p>
 </blockquote>
 </blockquote>
-<p>$$J(\theta)=-\frac{1}{N}\sum_{i=1}^{N}[y_{i}log(h_{\theta}(x_i))+(1-y_{i})log(1-h_{\theta}(x_i))]$$</p>
+<p>$$J(\theta)&#x3D;-\frac{1}{N}\sum_{i&#x3D;1}^{N}[y_{i}log(h_{\theta}(x_i))+(1-y_{i})log(1-h_{\theta}(x_i))]$$</p>
 <p>交叉熵损失用于回归任务，label[0~1]，y&lt;0.5时0处loss最小；y约&gt;0.5时1处loss最小。</p>
-<h2 id="扩展">扩展</h2>
-<h3 id="平方损失与交叉熵损失">平方损失与交叉熵损失</h3>
-<ul>
+<h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><h3 id="平方损失与交叉熵损失"><a href="#平方损失与交叉熵损失" class="headerlink" title="平方损失与交叉熵损失"></a>平方损失与交叉熵损失</h3><ul>
 <li>平方损失函数是线性回归假设样本误差服从高斯分布，利用极大似然估计推导而得；交叉熵损失函数是逻辑回归假设样本服从二项分布，利用极大似然估计推导而得。这是<strong>由于模型优化目标不同而推导得到不同的损失函数</strong>。</li>
-<li>$\theta _j=\theta <em>j-\left ( y^{i} -h</em>\theta (x^{i};\theta ) \right )\ast x^{i}_j$交叉熵损失，误差较大时训练速度较快且稳定，平方损失梯度&lt;=0.25.</li>
+<li>$\theta _j&#x3D;\theta _j-\left ( y^{i} -h_\theta (x^{i};\theta ) \right )\ast x^{i}_j$交叉熵损失，误差较大时训练速度较快且稳定，平方损失梯度&lt;&#x3D;0.25.</li>
 </ul>
-<h3 id="优缺点">优缺点</h3>
-<h4 id="优点">优点</h4>
-<ol>
+<h3 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h3><h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ol>
 <li>模型效果，工程上可接受。一般用作baseline</li>
 <li>形式简单，模型的可解释性非常好。从特征的权重可以看到不同的特征对最后结果的影响，</li>
-<li>训练速度较快。分类的时候，计算量仅仅只和特征的数目相关。</li>
-</ol>
-<h4 id="缺点">缺点</h4>
-<ol>
+<li>训练速度较快。分类的时候，计算量仅仅只和特征的数目相关。<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4></li>
 <li>准确率并不是很高。因为形式非常的简单(非常类似线性模型)，很难去拟合数据的真实分布。</li>
 <li>处理非线性数据较麻烦。逻辑回归在不引入其他方法的情况下，只能处理线性可分的数据，或者进一步说，处理二分类的问题 。</li>
 <li>逻辑回归本身无法筛选特征。有时候，我们会用gbdt来筛选特征，然后再上逻辑回归。</li>
 </ol>
-<h3 id="Loss-损失函数">Loss 损失函数</h3>
-<h4 id="分类">分类</h4>
+<h3 id="Loss-损失函数"><a href="#Loss-损失函数" class="headerlink" title="Loss 损失函数"></a>Loss 损失函数</h3><h4 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h4><ol>
+<li><p>对数损失-交叉熵取均值</p>
 <ol>
-<li>
-<p>对数损失-交叉熵取均值</p>
-<ol>
-<li>$$J(\theta)=-\frac{1}{N}\sum_{i=1}^{N}[y_{i}log(h_{\theta}(x_i))+(1-y_{i})log(1-h_{\theta}(x_i))]$$</li>
-<li>$$CrossEntropy(\theta)=-\sum_{i=1}^{N}[y_{i}log(h_{\theta}(x_i))+(1-y_{i})log(1-h_{\theta}(x_i))]$$</li>
+<li>$$J(\theta)&#x3D;-\frac{1}{N}\sum_{i&#x3D;1}^{N}[y_{i}log(h_{\theta}(x_i))+(1-y_{i})log(1-h_{\theta}(x_i))]$$</li>
+<li>$$CrossEntropy(\theta)&#x3D;-\sum_{i&#x3D;1}^{N}[y_{i}log(h_{\theta}(x_i))+(1-y_{i})log(1-h_{\theta}(x_i))]$$</li>
 </ol>
 </li>
-<li>
-<p>指数损失-Adaboost<br>
-$$L(y,f(x))=\frac{1}{N}\sum_{i=1}^{N}e^{-y_if(x_i)}$$</p>
+<li><p>指数损失-Adaboost<br>$$L(y,f(x))&#x3D;\frac{1}{N}\sum_{i&#x3D;1}^{N}e^{-y_if(x_i)}$$</p>
 </li>
-<li>
-<p>合页损失-SVM<br>
-$$L(y·(w<em>x+b))=\sum_{i=1}^{N}[1-y(w</em>x+b)]_++\lambda||w||^2$$</p>
+<li><p>合页损失-SVM<br>$$L(y·(w<em>x+b))&#x3D;\sum_{i&#x3D;1}^{N}[1-y(w</em>x+b)]_++\lambda||w||^2$$</p>
 </li>
-<li>
-<p>决策树<br>
-$$C_\alpha(T)=\sum_{t=1}^{T}N_tH_t(T)+\alpha|T|$$</p>
+<li><p>决策树<br>$$C_\alpha(T)&#x3D;\sum_{t&#x3D;1}^{T}N_tH_t(T)+\alpha|T|$$</p>
 </li>
-<li>
-<p>focal loss- 推荐挖掘困难样本<br>
-$$L_{fl}=-\alpha(1-p)^\gamma \log§; p=1$$<br>
-$$L_{fl}=-(1-\alpha)p^\gamma \log(1-p); p=0$$</p>
+<li><p>focal loss- 推荐挖掘困难样本<br>$$L_{fl}&#x3D;-\alpha(1-p)^\gamma \log(p); p&#x3D;1$$<br>$$L_{fl}&#x3D;-(1-\alpha)p^\gamma \log(1-p); p&#x3D;0$$</p>
 </li>
-<li>
-<p>多分类交叉熵损失</p>
+<li><p>多分类交叉熵损失</p>
 </li>
-<li>
-<p>KL散度</p>
+<li><p>KL散度</p>
 </li>
 </ol>
-<h4 id="回归">回归</h4>
-<ol>
-<li>
-<p>平方损失-回归<br>
-$$MSE=\frac{1}{N}\sum_{i=1}^{N}(y_i^{pred}-y_i^{true})^2$$</p>
+<h4 id="回归"><a href="#回归" class="headerlink" title="回归"></a>回归</h4><ol>
+<li><p>平方损失-回归<br>$$MSE&#x3D;\frac{1}{N}\sum_{i&#x3D;1}^{N}(y_i^{pred}-y_i^{true})^2$$</p>
 </li>
-<li>
-<p>绝对误差损失<br>
-$$MAE=\sum_{i=1}^{n}|y-f(x)|$$</p>
+<li><p>绝对误差损失<br>$$MAE&#x3D;\sum_{i&#x3D;1}^{n}|y-f(x)|$$</p>
 </li>
-<li>
-<p>Huber损失<br>
-Huber损失结合了MSE和MAE的最佳特性。对于较小的误差，它是二次的，否则是线性的(对于其梯度也是如此)。Huber损失需要确定δ参数：</p>
+<li><p>Huber损失<br>Huber损失结合了MSE和MAE的最佳特性。对于较小的误差，它是二次的，否则是线性的(对于其梯度也是如此)。Huber损失需要确定δ参数：</p>
 </li>
 </ol>
-<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/640.webp" alt=""></p>
-<h1>1. 数学基础</h1>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/wuliytTaotao/p/10513371.html">机器学习之数学基础01</a><br>
-<a target="_blank" rel="noopener" href="https://www.cnblogs.com/wuliytTaotao/p/10603576.html">机器学习之数学基础02</a></p>
+<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/640.webp"></p>
+<h1 id="1-数学基础"><a href="#1-数学基础" class="headerlink" title="1. 数学基础"></a>1. 数学基础</h1><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/wuliytTaotao/p/10513371.html">机器学习之数学基础01</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/wuliytTaotao/p/10603576.html">机器学习之数学基础02</a></p>
 <hr>
-<h2 id="导数、偏导数与方向导数">导数、偏导数与方向导数</h2>
-<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/37.png" alt="avatar"></p>
-<p>首先明确，导数是一个值，代表切线的斜率，而梯度是一个向量。<strong>最大方向导数的方向就是梯度代表的方向。</strong><br>
-梯度是$f(x)$对各个自变量$ x = [x_1, x_2, …, x_m]^\top$每一维分别求偏导数得到的向量。<br>
-从式（5）和（6）中我们也可以知道，当$d = \frac{\nabla f(x)}{|\nabla f(x)|}$方向导数最大。 <strong>最大方向导数的方向就是梯度的方向，最大的方向导数就是梯度的欧几里德范数。</strong></p>
-<h2 id="概率论">概率论</h2>
-<h3 id="极大似然与概率">极大似然与概率</h3>
-<ul>
+<h2 id="导数、偏导数与方向导数"><a href="#导数、偏导数与方向导数" class="headerlink" title="导数、偏导数与方向导数"></a>导数、偏导数与方向导数</h2><p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/37.png" alt="avatar"></p>
+<p>首先明确，导数是一个值，代表切线的斜率，而梯度是一个向量。<strong>最大方向导数的方向就是梯度代表的方向。</strong><br>梯度是$f(x)$对各个自变量$ x &#x3D; [x_1, x_2, …, x_m]^\top$每一维分别求偏导数得到的向量。<br>从式（5）和（6）中我们也可以知道，当$d &#x3D; \frac{\nabla f(x)}{|\nabla f(x)|}$方向导数最大。 <strong>最大方向导数的方向就是梯度的方向，最大的方向导数就是梯度的欧几里德范数。</strong></p>
+<h2 id="概率论"><a href="#概率论" class="headerlink" title="概率论"></a>概率论</h2><h3 id="极大似然与概率"><a href="#极大似然与概率" class="headerlink" title="极大似然与概率"></a>极大似然与概率</h3><ul>
 <li>1&gt; 多个时间概率相乘得到似然表达式，值的大小意味着这组样本值都发生的可能性的大小；</li>
 <li>2&gt; 对似然表达式求导，必要时进行预处理，比如取对数（逻辑回归需要），令其导数为0，得到似然方程。</li>
-<li>3&gt; 求解似然方程，得到的参数解即为极大似然估计的解。</li>
-</ul>
-<blockquote>
+<li>3&gt; 求解似然方程，得到的参数解即为极大似然估计的解。<blockquote>
 <blockquote>
 <p>何为极大似然：“模型已定，参数未知”。通过若干次试验，观察其结果，反推得到某个参数值能够使样本出现的概率为最大，则称为极大似然估计。<strong>利用已知的样本结果，反推取得所有样本最大概率的参数值。</strong></p>
 </blockquote>
 </blockquote>
-<h3 id="概率分布">概率分布</h3>
-<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/bern.png" alt="avatar"><br>
-<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/er.png" alt="avatar"><br>
-<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/gauss.png" alt="avatar"><br>
-<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/junyun.png" alt="avatar"></p>
-<h3 id="条件概率与链式法则">条件概率与链式法则</h3>
-<ol>
-<li>协方差矩阵<br>
-$$cov(X,Y)= E{(X_i-E(X))(Y_i-E(Y)},i=1,2,……n;j=i,2,……n$$</li>
-<li>全概率公式<br>
-$$P(X=x)=\sum_{k=1}^{K}P(X=x|Y=c_k)P(Y=c_k)$$</li>
-<li>朴素贝叶斯=贝叶斯公式+条件独立性假设
-<ol>
-<li>贝叶斯公式<br>
-$$y=argmax_{c_k}\frac{P(Y=c_k)P(X=x|Y=c_k)}{\displaystyle\sum_{k}^KP(Y=c_k)P(X=x|Y=c_k)}$$</li>
-<li>条件独立性假设<br>
-$$P(X=x|Y=c_k)=\prod_{j=1}^nP(X_j=x_j|Y=c_k)P(Y=c_k)$$</li>
-</ol>
-</li>
-</ol>
-<blockquote>
-<blockquote>
-<p>计算后验概率分布，将后验概率最大的x的类别作为输出，使用贝叶斯定理计算最大后验概率。另：贝叶斯公式=条件概率公式+全概率公式。</p>
-</blockquote>
-</blockquote>
-<h4 id="拉普拉斯平滑">拉普拉斯平滑</h4>
-<p>如果$P(x_i|y=c_k)$中的某一项为0，则其联合概率的乘积也为0.如果是k类分母+k，分子+1；分母加k的原因是使之满足全概率公式。</p>
-<h3 id="置信度与置信区间">置信度与置信区间</h3>
-<p>置信度：95%，置信区间(u-a,u+a)样本数目不变的情况下，做100次试验，有95个置信区间包含了总体真值(虚线)。</p>
-<p>$$P(\mu - 1.96 \frac{\sigma}{\sqrt{n}} &lt; M &lt; \mu + 1.96 \frac{\sigma}{\sqrt{n}} ) = 0.95$$</p>
-<p>样本均值为整体均值的一个点估计。<strong>置信水平95%表示，有100个样本，每个样本会计算出一个置信区间。其中有95个置信区间包含了总体均值。也就是包含总体平均值的概率为95%。样本估计总体–核心思想</strong><br>
-<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/zhixindu.gif" alt="avatar"></p>
-<h3 id="各种熵">各种熵</h3>
-<ul>
-<li>
-<p>信息熵：<br>
-$$H(D)=-\sum_{y=k}^{K}p_k·log(p_k)$$</p>
-</li>
-<li>
-<p>联合熵：<br>
-$$H(X,Y)=-\sum_{x,y}p(x,y)\log p(x,y)$$</p>
-</li>
-<li>
-<p>条件熵：条件熵=联合熵-熵<br>
-$$H(Y|X)=H(X,Y)-H(X)$$<br>
-$$H(D|f)=\sum_{v\epsilon V_f}\frac{|D_v|}{|D|}H(D_v)$$</p>
-</li>
-<li>
-<p>信息增益：<br>
-$$Gain(D,f)=H(D)-H(D|f)$$</p>
-</li>
-<li>
-<p>交叉熵：<br>
-$$H(p,q)=-\sum_x p(x)\log q(x)$$</p>
-</li>
-<li>
-<p>KL散度（相对熵）=交叉熵-熵<br>
-$$D_{KL}(p||q)=H(p,q)-H§$$</p>
 </li>
 </ul>
-<blockquote>
-<blockquote>
-<p>p对q的相对熵,q拟合p的分布情况<br>
-$$D_{KL}(p||q)=\sum_{x}p(x)\log \frac{p(x)}{q(x)}=-\sum_x p(x)\log q(x)-(-\sum_x p(x)\log p(x))$$<br>
-相对熵可以用来衡量两个概率分布之间的差异，上面公式的意义就是求 p 与 q 之间的对数差在 p 上的期望值。</p>
-</blockquote>
-</blockquote>
-<h2 id="矩阵论">矩阵论</h2>
-<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/Matrix.png" alt="avatar"><br>
-<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/Matrix2.png" alt="avatar"><br>
-<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/Matrix3.png" alt="avatar"><br>
-<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/Matrix4.png" alt="avatar"></p>
-<h3 id="向量与矩阵求导">向量与矩阵求导</h3>
-<ul>
-<li>
-<p>包含元素x的求导就是元素x对矩阵的各元素a求导,或者矩阵各元素a对元素x的求导。</p>
+<h3 id="概率分布"><a href="#概率分布" class="headerlink" title="概率分布"></a>概率分布</h3><p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/bern.png" alt="avatar"><br><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/er.png" alt="avatar"><br><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/gauss.png" alt="avatar"><br><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/junyun.png" alt="avatar"></p>
+<h3 id="条件概率与链式法则"><a href="#条件概率与链式法则" class="headerlink" title="条件概率与链式法则"></a>条件概率与链式法则</h3><ol>
+<li>协方差矩阵<br>$$cov(X,Y)&#x3D; E{(X_i-E(X))(Y_i-E(Y)},i&#x3D;1,2,……n;j&#x3D;i,2,……n$$</li>
+<li>全概率公式<br>$$P(X&#x3D;x)&#x3D;\sum_{k&#x3D;1}^{K}P(X&#x3D;x|Y&#x3D;c_k)P(Y&#x3D;c_k)$$</li>
+<li>朴素贝叶斯&#x3D;贝叶斯公式+条件独立性假设<ol>
+<li>贝叶斯公式<br>$$y&#x3D;argmax_{c_k}\frac{P(Y&#x3D;c_k)P(X&#x3D;x|Y&#x3D;c_k)}{\displaystyle\sum_{k}^KP(Y&#x3D;c_k)P(X&#x3D;x|Y&#x3D;c_k)}$$</li>
+<li>条件独立性假设<br>$$P(X&#x3D;x|Y&#x3D;c_k)&#x3D;\prod_{j&#x3D;1}^nP(X_j&#x3D;x_j|Y&#x3D;c_k)P(Y&#x3D;c_k)$$</li>
+</ol>
 </li>
-<li>
-<p>向量对向量求导</p>
+</ol>
+<blockquote>
+<blockquote>
+<p>计算后验概率分布，将后验概率最大的x的类别作为输出，使用贝叶斯定理计算最大后验概率。另：贝叶斯公式&#x3D;条件概率公式+全概率公式。</p>
+</blockquote>
+</blockquote>
+<h4 id="拉普拉斯平滑"><a href="#拉普拉斯平滑" class="headerlink" title="拉普拉斯平滑"></a>拉普拉斯平滑</h4><p> 如果$P(x_i|y&#x3D;c_k)$中的某一项为0，则其联合概率的乘积也为0.如果是k类分母+k，分子+1；分母加k的原因是使之满足全概率公式。</p>
+<h3 id="置信度与置信区间"><a href="#置信度与置信区间" class="headerlink" title="置信度与置信区间"></a>置信度与置信区间</h3><p>置信度：95%，置信区间(u-a,u+a)样本数目不变的情况下，做100次试验，有95个置信区间包含了总体真值(虚线)。</p>
+<p>$$P(\mu - 1.96 \frac{\sigma}{\sqrt{n}} &lt; M &lt; \mu + 1.96 \frac{\sigma}{\sqrt{n}} ) &#x3D; 0.95$$</p>
+<p>样本均值为整体均值的一个点估计。<strong>置信水平95%表示，有100个样本，每个样本会计算出一个置信区间。其中有95个置信区间包含了总体均值。也就是包含总体平均值的概率为95%。样本估计总体–核心思想</strong><br><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/zhixindu.gif" alt="avatar"></p>
+<h3 id="各种熵"><a href="#各种熵" class="headerlink" title="各种熵"></a>各种熵</h3><ul>
+<li><p>信息熵：<br>$$H(D)&#x3D;-\sum_{y&#x3D;k}^{K}p_k·log(p_k)$$</p>
+</li>
+<li><p>联合熵：<br>$$H(X,Y)&#x3D;-\sum_{x,y}p(x,y)\log p(x,y)$$</p>
+</li>
+<li><p>条件熵：条件熵&#x3D;联合熵-熵<br>$$H(Y|X)&#x3D;H(X,Y)-H(X)$$<br>$$H(D|f)&#x3D;\sum_{v\epsilon V_f}\frac{|D_v|}{|D|}H(D_v)$$</p>
+</li>
+<li><p>信息增益：<br>$$Gain(D,f)&#x3D;H(D)-H(D|f)$$</p>
+</li>
+<li><p>交叉熵：<br>$$H(p,q)&#x3D;-\sum_x p(x)\log q(x)$$</p>
+</li>
+<li><p>KL散度（相对熵）&#x3D;交叉熵-熵<br>$$D_{KL}(p||q)&#x3D;H(p,q)-H(p)$$</p>
+<blockquote>
+<blockquote>
+<p>p对q的相对熵,q拟合p的分布情况<br>$$D_{KL}(p||q)&#x3D;\sum_{x}p(x)\log \frac{p(x)}{q(x)}&#x3D;-\sum_x p(x)\log q(x)-(-\sum_x p(x)\log p(x))$$<br>相对熵可以用来衡量两个概率分布之间的差异，上面公式的意义就是求 p 与 q 之间的对数差在 p 上的期望值。</p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<h2 id="矩阵论"><a href="#矩阵论" class="headerlink" title="矩阵论"></a>矩阵论</h2><p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/Matrix.png" alt="avatar"><br><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/Matrix2.png" alt="avatar"><br><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/Matrix3.png" alt="avatar"><br><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/Matrix4.png" alt="avatar"></p>
+<h3 id="向量与矩阵求导"><a href="#向量与矩阵求导" class="headerlink" title="向量与矩阵求导"></a>向量与矩阵求导</h3><ul>
+<li><p>包含元素x的求导就是元素x对矩阵的各元素a求导,或者矩阵各元素a对元素x的求导。</p>
+</li>
+<li><p>向量对向量求导</p>
 <ol>
 <li>行向量m对列向量n：行的每一个元素对列向量求导，导数矩阵：n*m;</li>
 <li>列向量m对行向量n：列的每一个元素对行向量求导，导数矩阵：m*n;</li>
@@ -724,275 +637,152 @@ $$D_{KL}(p||q)=\sum_{x}p(x)\log \frac{p(x)}{q(x)}=-\sum_x p(x)\log q(x)-(-\sum_x
 <li>列向量m对列向量n：一列m*n行</li>
 </ol>
 </li>
-<li>
-<p>矩阵对向量求导</p>
+<li><p>矩阵对向量求导</p>
 <ol>
 <li>矩阵看做列向量，对行向量求导：<strong>矩阵</strong>对各个元素求导，横向拼接</li>
 <li>矩阵看做列向量，对列向量求导：<strong>各个元素</strong>对列向量求导，整体拼接</li>
 </ol>
 </li>
-<li>
-<p>向量对矩阵求导</p>
+<li><p>向量对矩阵求导</p>
 <ol>
 <li>行向量对矩阵求导：行向量对矩阵的s<strong>各个元素</strong>求导，然后拼接</li>
 <li>列向量对矩阵求导：列向量的<strong>各个元素</strong>对矩阵求导，然后拼接</li>
 </ol>
 </li>
-<li>
-<p>矩阵Y对矩阵X求导</p>
+<li><p>矩阵Y对矩阵X求导</p>
 <ol>
 <li>Y看做列向量，X看做行向量：Y的列向量对X的行向量逐一求导</li>
 </ol>
 </li>
 </ul>
-<h3 id="矩阵分解">矩阵分解</h3>
-<h4 id="2-1-矩阵分解为特征值与特征向量">2.1 矩阵分解为特征值与特征向量</h4>
-<p>$$Av=\lambda v$$<br>
-$V=[v_1,v_2,v_3,v_n]$,$\Lambda=[\lambda_1,\lambda_2,\lambda_3,]$则有</p>
+<h3 id="矩阵分解"><a href="#矩阵分解" class="headerlink" title="矩阵分解"></a>矩阵分解</h3><h4 id="2-1-矩阵分解为特征值与特征向量"><a href="#2-1-矩阵分解为特征值与特征向量" class="headerlink" title="2.1 矩阵分解为特征值与特征向量"></a>2.1 矩阵分解为特征值与特征向量</h4><p>$$Av&#x3D;\lambda v$$<br>$V&#x3D;[v_1,v_2,v_3,,,,v_n]$,$\Lambda&#x3D;[\lambda_1,\lambda_2,\lambda_3,,,]$则有</p>
 <blockquote>
 <blockquote>
-<p>$\lambda$降序排列<br>
-$$A=V * diag(\lambda)*V^{-1}$$<br>
-正定矩阵的转置就是正定矩阵的逆<br>
-$$A=Q \Lambda Q^{T}$$<br>
-Q是正交矩阵，将A看作沿方向$v^i$延展$\lambda ^i$倍的空间。所有的特征值都是正数则正定，非负数半正定。<strong>但是仅对于方阵才行</strong></p>
+<p>$\lambda$降序排列<br>$$A&#x3D;V * diag(\lambda)<em>V^{-1}$$<br>正定矩阵的转置就是正定矩阵的逆<br>$$A&#x3D;Q \Lambda Q^{T}$$<br>Q是正交矩阵，将A看作沿方向$v^i$延展$\lambda ^i$倍的空间。所有的特征值都是正数则正定，非负数半正定。*<em>但是仅对于方阵才行</em></em></p>
 </blockquote>
 </blockquote>
-<h4 id="矩阵分解为奇异值与奇异向量SVD">矩阵分解为奇异值与奇异向量SVD</h4>
-<p>$$A_{m,n}=U_{m,m}D_{m,n}V^T_{n,n}$$<br>
-U,V正交矩阵，D对角矩阵，对角线元素为为奇异值，U,V列向量为奇异向量<br>
-U是$AA^T$的特征向量；V是$A^TA$的特征向量。$AA^T$特征值的平方根就是D的非0奇异值<strong>只有非方阵，才行</strong></p>
-<h2 id="机器学习中的梯度下降">机器学习中的梯度下降</h2>
-<p>梯度下降首先需要明确损失函数Loss function（一个样本损失）和代价函数Cost function（统计平均意义下的损失）。<br>
-$$w^{(k+1)} = w^{(k)} - \alpha \cdot  \nabla C(w^{(k)})$$<br>
-f(x,y)=x²+y²<br>
-<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/tidu1.png" alt="avatar"><br>
-将f(x,y)=x²+y²看做<strong>二维等高图</strong><br>
-<strong>对于二维曲面来说，切线的方向有上有下描述的是函数值的方向；梯度代表使函数值增大时，各个自变量的变化方向；梯度下降就是梯度反方向更新各个自变量可以使得函数值减小。梯度方向与切线方向垂直。</strong></p>
-<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/tidu2.png" alt="avatar"><br>
-<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/futidu.jpeg" alt="avatar"></p>
-<h3 id="1-1、批梯度下降比较">1.1、批梯度下降比较</h3>
-<ol>
+<h4 id="矩阵分解为奇异值与奇异向量SVD"><a href="#矩阵分解为奇异值与奇异向量SVD" class="headerlink" title="矩阵分解为奇异值与奇异向量SVD"></a>矩阵分解为奇异值与奇异向量SVD</h4><p>$$A_{m,n}&#x3D;U_{m,m}D_{m,n}V^T_{n,n}$$<br>U,V正交矩阵，D对角矩阵，对角线元素为为奇异值，U,V列向量为奇异向量<br>U是$AA^T$的特征向量；V是$A^TA$的特征向量。$AA^T$特征值的平方根就是D的非0奇异值<strong>只有非方阵，才行</strong></p>
+<h2 id="机器学习中的梯度下降"><a href="#机器学习中的梯度下降" class="headerlink" title="机器学习中的梯度下降"></a>机器学习中的梯度下降</h2><p>梯度下降首先需要明确损失函数Loss function（一个样本损失）和代价函数Cost function（统计平均意义下的损失）。<br>$$w^{(k+1)} &#x3D; w^{(k)} - \alpha \cdot  \nabla C(w^{(k)})$$<br>f(x,y)&#x3D;x²+y²<br><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/tidu1.png" alt="avatar"><br>将f(x,y)&#x3D;x²+y²看做<strong>二维等高图</strong><br><strong>对于二维曲面来说，切线的方向有上有下描述的是函数值的方向；梯度代表使函数值增大时，各个自变量的变化方向；梯度下降就是梯度反方向更新各个自变量可以使得函数值减小。梯度方向与切线方向垂直。</strong></p>
+<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/tidu2.png" alt="avatar"><br><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/futidu.jpeg" alt="avatar"></p>
+<h3 id="1-1、批梯度下降比较"><a href="#1-1、批梯度下降比较" class="headerlink" title="1.1、批梯度下降比较"></a>1.1、批梯度下降比较</h3><ol>
 <li>批梯度下降会获得全局最优解，缺点是在更新每个参数的时候需要遍历所有的数据，计算量会很大，并且会有很多的冗余计算，导致的结果是当数据量大的时候，每个参数的更新都会很慢。</li>
 <li>随机梯度下降是以高方差频繁更新，优点是使得sgd会跳到新的和潜在更好的局部最优解，缺点是使得收敛到局部最优解的过程更加的复杂。</li>
 <li>小批量梯度下降结合了sgd和batch gd的优点，每次更新的时候使用n个样本。减少了参数更新的次数，可以达到更加稳定收敛结果，一般在深度学习当中我们采用这种方法。</li>
 </ol>
 <blockquote>
 <blockquote>
-<p><strong>全局最优</strong>&lt;=&gt;通过梯度下降得到的最小值在全局Loss中也是最小值&lt;=&gt;Loss函数是否是凸的&lt;=&gt;<strong>二阶导(海森矩阵)判断是否正定</strong></p>
+<p><strong>全局最优</strong>&lt;&#x3D;&gt;通过梯度下降得到的最小值在全局Loss中也是最小值&lt;&#x3D;&gt;Loss函数是否是凸的&lt;&#x3D;&gt;<strong>二阶导(海森矩阵)判断是否正定</strong></p>
 </blockquote>
 </blockquote>
-<h3 id="1-2、最速下降">1.2、最速下降</h3>
-<p>最速下降法（Steepest descent）是梯度下降法的一种更具体实现形式，其理念为在每次迭代中选择合适的步长$\alpha_k$使得目标函数值能够得到最大程度的减少。<br>
-每一次迭代，沿梯度的反方向，我们总可以找到一个<br>
-$$w^{(k+1)} = w^{(k)} - \alpha_k \cdot  \nabla C(w^{(k)})$$<br>
-使得在这个方向上$f(x^{(k+1)})$取最小值。<br>
-$$\alpha_k = \mathop{\arg\min}_{\alpha \ge 0} f(x^{(k)} - \alpha \nabla f(x^{(k)}))$$<br>
-有意思的是，最速下降法每次更新的轨迹都和上一次垂直。而且只要梯度$\nabla f(x^{(k)}) \not = 0$则$f(x^{(k+1)}) &lt; f(x^{(k)})$<br>
-（即梯度不等于 0 时，肯定会下降。）</p>
-<h3 id="1-3、多分类梯度下降">1.3、多分类梯度下降</h3>
-<p>softmax 函数的表达式为:<br>
-$$y_i = \frac{e^{z_i}}{\sum_{t = 1}^m e^{z_t}}$$<br>
-$$\frac{\partial y_i}{\partial z_j}<br>
-= \frac{\partial \frac{e^{z_i}}{\sum_{t = 1}^m e^{z_t}}}{\partial z_j}<br>
-\tag{2}$$<br>
-<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/38.jpg" alt="avatar"><br>
-<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/39.jpg" alt="avatar"></p>
-<h2 id="牛顿法">牛顿法</h2>
-<p>在确定搜索方向时，<strong>梯度下降和最速下降只用到了目标函数的一阶导数（梯度），而牛顿法（Newton’s method）用到了二阶（偏）导数。</strong><br>
-牛顿法的基本思路是在每次迭代中，利用二次型函数来局部近似目标函数f，并求解近似函数的极小点作为下一个迭代点，牛顿法自变量x的更新公式为：<br>
-$$x^{(k+1)} = x^{(k)} - F(x^{(k)})^{-1}\nabla f( x^{(k)})$$<br>
-当前点离min点较近趋势可能不会错，但较远时会带偏。</p>
-<h2 id="Levenberg-Marquardt修正">Levenberg-Marquardt修正</h2>
-<ul>
+<h3 id="1-2、最速下降"><a href="#1-2、最速下降" class="headerlink" title="1.2、最速下降"></a>1.2、最速下降</h3><p>最速下降法（Steepest descent）是梯度下降法的一种更具体实现形式，其理念为在每次迭代中选择合适的步长$\alpha_k$使得目标函数值能够得到最大程度的减少。<br>每一次迭代，沿梯度的反方向，我们总可以找到一个<br>$$w^{(k+1)} &#x3D; w^{(k)} - \alpha_k \cdot  \nabla C(w^{(k)})$$<br>使得在这个方向上$f(x^{(k+1)})$取最小值。<br>$$\alpha_k &#x3D; \mathop{\arg\min}_{\alpha \ge 0} f(x^{(k)} - \alpha \nabla f(x^{(k)}))$$<br>有意思的是，最速下降法每次更新的轨迹都和上一次垂直。而且只要梯度$\nabla f(x^{(k)}) \not &#x3D; 0$则$f(x^{(k+1)}) &lt; f(x^{(k)})$<br>（即梯度不等于 0 时，肯定会下降。）</p>
+<h3 id="1-3、多分类梯度下降"><a href="#1-3、多分类梯度下降" class="headerlink" title="1.3、多分类梯度下降"></a>1.3、多分类梯度下降</h3><p>softmax 函数的表达式为:<br>$$y_i &#x3D; \frac{e^{z_i}}{\sum_{t &#x3D; 1}^m e^{z_t}}$$<br>$$\frac{\partial y_i}{\partial z_j}<br>&#x3D; \frac{\partial \frac{e^{z_i}}{\sum_{t &#x3D; 1}^m e^{z_t}}}{\partial z_j}<br>\tag{2}$$<br><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/38.jpg" alt="avatar"><br><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/39.jpg" alt="avatar"></p>
+<h2 id="牛顿法"><a href="#牛顿法" class="headerlink" title="牛顿法"></a>牛顿法</h2><p>在确定搜索方向时，<strong>梯度下降和最速下降只用到了目标函数的一阶导数（梯度），而牛顿法（Newton’s method）用到了二阶（偏）导数。</strong><br>牛顿法的基本思路是在每次迭代中，利用二次型函数来局部近似目标函数f，并求解近似函数的极小点作为下一个迭代点，牛顿法自变量x的更新公式为：<br>$$x^{(k+1)} &#x3D; x^{(k)} - F(x^{(k)})^{-1}\nabla f( x^{(k)})$$<br>当前点离min点较近趋势可能不会错，但较远时会带偏。</p>
+<h2 id="Levenberg-Marquardt修正"><a href="#Levenberg-Marquardt修正" class="headerlink" title="Levenberg-Marquardt修正"></a>Levenberg-Marquardt修正</h2><ul>
 <li>牛顿法引入二阶导数拟合f，依据f的变化趋势去梯度下降，收敛更快，迭代次数更少。但同时会引入问题，拟合会有误差，当前离min点较远时，趋势可能不对。</li>
 <li>多元函数的Hessian矩阵就类似一元函数的二阶导。多元函数Hessian矩阵半正定就相当于一元函数二阶导非负，半负定就相当于一元函数二阶导非正</li>
 </ul>
-<p>如果黑塞矩阵$F(x^{(k)})$不正定，那么搜索方向$ d^{(k)} = - F( x^{(k)})^{-1}\nabla f( x^{(k)})$可能不会是下降方向。 牛顿法的 Levenberg-Marquardt 修正可以解决这个问题：<br>
-$$ x^{(k+1)} = x^{(k)} - \alpha_k(F( x^{(k)})  + \mu_k I)^{-1}\nabla f(x^{(k)})$$<br>
-其中，$\mu_k \ge 0$，I为单位矩阵。在该修正中，$F( x^{(k)})$可以不正定，但是$ G = F( x^{(k)}) + \mu_k , I$需要是正定的，所以，取适当的$\mu_k$使得$ G$正定即可。（矩阵正定，当前仅当所有特征值大于 0。）</p>
-<h3 id="牛顿法-vs-梯度下降">牛顿法 vs 梯度下降</h3>
-<ul>
+<p>如果黑塞矩阵$F(x^{(k)})$不正定，那么搜索方向$ d^{(k)} &#x3D; - F( x^{(k)})^{-1}\nabla f( x^{(k)})$可能不会是下降方向。 牛顿法的 Levenberg-Marquardt 修正可以解决这个问题：<br>$$ x^{(k+1)} &#x3D; x^{(k)} - \alpha_k(F( x^{(k)})  + \mu_k I)^{-1}\nabla f(x^{(k)})$$<br>其中，$\mu_k \ge 0$，I为单位矩阵。在该修正中，$F( x^{(k)})$可以不正定，但是$ G &#x3D; F( x^{(k)}) + \mu_k , I$需要是正定的，所以，取适当的$\mu_k$使得$ G$正定即可。（矩阵正定，当前仅当所有特征值大于 0。）</p>
+<h3 id="牛顿法-vs-梯度下降"><a href="#牛顿法-vs-梯度下降" class="headerlink" title="牛顿法 vs 梯度下降"></a>牛顿法 vs 梯度下降</h3><ul>
 <li>牛顿法是二阶收敛，梯度下降法是一阶收敛，所以牛顿法就更快。</li>
 <li>更通俗地，梯度下降法只从当前位置选择一个坡度最大的方向走一步，而牛顿法在选择方向时，不仅会考虑坡度是否够大，还会考虑走了一步后，坡度是否会变得更大。</li>
 <li>从几何上说，牛顿法就是用一个二次曲面去拟合当前位置的的局部曲面，而梯度下降法用的是一个平面去拟合，通常情况下，二次曲面的拟合会比平面更好，所以牛顿法选择的下降路径会更符合真实的最优下降路径。</li>
 </ul>
-<h2 id="拟牛顿法-牛顿法hessian矩阵的优化求解">拟牛顿法-牛顿法hessian矩阵的优化求解</h2>
-<p>在每次迭代的时候计算一个矩阵，其逼近海塞矩阵的逆。最重要的是，该逼近值只是使用损失函数的一阶偏导来计算求出$  H_{k+1}$给出 $  H_{k}$，梯度$f(  x^{(k)})$，$  d^{(k)}$，$\alpha_k$找到 $  H_{k+1}$的递推式，那么在迭代过程中就不需要涉及到黑塞矩阵也不会求逆。<br>
-$$\boldsymbol{H}<em>{k+1}=\boldsymbol{H}</em>{k}+\frac{\left(\Delta \boldsymbol{x}^{(k)}-\boldsymbol{H}<em>{k} \Delta \boldsymbol{g}^{(k)}\right)\left(\Delta \boldsymbol{x}^{(k)}-\boldsymbol{H}</em>{k} \Delta \boldsymbol{g}^{(k)}\right)^{\top}}{\Delta \boldsymbol{g}^{(k) \top}\left(\Delta \boldsymbol{x}^{(k)}-\boldsymbol{H}<em>{k} \Delta \boldsymbol{g}^{(k)}\right)}$$<br>
-$\Delta x^{(k)}=\alpha</em>{k} d^{(k)}$，$\Delta \boldsymbol{g}^{(k)}=\boldsymbol{g}^{(k+1)}-\boldsymbol{g}^{(k)}$<br>
-$  H_0$可以取任一对称正定实矩阵。</p>
-<h2 id="偏差与方差">偏差与方差</h2>
-<p><a target="_blank" rel="noopener" href="http://liuchengxu.org/blog-cn/posts/bias-variance/">参考链接</a></p>
+<h2 id="拟牛顿法-牛顿法hessian矩阵的优化求解"><a href="#拟牛顿法-牛顿法hessian矩阵的优化求解" class="headerlink" title="拟牛顿法-牛顿法hessian矩阵的优化求解"></a>拟牛顿法-牛顿法hessian矩阵的优化求解</h2><p>在每次迭代的时候计算一个矩阵，其逼近海塞矩阵的逆。最重要的是，该逼近值只是使用损失函数的一阶偏导来计算求出$  H_{k+1}$给出 $  H_{k}$，梯度$f(  x^{(k)})$，$  d^{(k)}$，$\alpha_k$找到 $  H_{k+1}$的递推式，那么在迭代过程中就不需要涉及到黑塞矩阵也不会求逆。<br>$$\boldsymbol{H}<em>{k+1}&#x3D;\boldsymbol{H}</em>{k}+\frac{\left(\Delta \boldsymbol{x}^{(k)}-\boldsymbol{H}<em>{k} \Delta \boldsymbol{g}^{(k)}\right)\left(\Delta \boldsymbol{x}^{(k)}-\boldsymbol{H}</em>{k} \Delta \boldsymbol{g}^{(k)}\right)^{\top}}{\Delta \boldsymbol{g}^{(k) \top}\left(\Delta \boldsymbol{x}^{(k)}-\boldsymbol{H}<em>{k} \Delta \boldsymbol{g}^{(k)}\right)}$$<br>$\Delta x^{(k)}&#x3D;\alpha</em>{k} d^{(k)}$，$\Delta \boldsymbol{g}^{(k)}&#x3D;\boldsymbol{g}^{(k+1)}-\boldsymbol{g}^{(k)}$<br>$  H_0$可以取任一对称正定实矩阵。</p>
+<h2 id="偏差与方差"><a href="#偏差与方差" class="headerlink" title="偏差与方差"></a>偏差与方差</h2><p><a target="_blank" rel="noopener" href="http://liuchengxu.org/blog-cn/posts/bias-variance/">参考链接</a></p>
 <ol>
-<li>泛化误差：以回归任务为例, 学习算法的平方预测误差期望为:<br>
-$$Err(\mathbf{x}) = E\left[\left( y - f(\mathbf{x}; D) \right)^2\right]$$</li>
-<li>方差：在一个训练集 D上模型 f 对测试样本 x 的预测输出为 f(x;D), 那么学习算法 f 对测试样本 x 的 期望预测和使用样本数相同的不同训练集产生的方差为:<br>
-$$\overline{f}(\mathbf{x}) = E_D\left[f\left(\mathbf{x}; D\right)\right]$$<br>
-$$var(\mathbf{x}) = E_D\left[\left( f(\mathbf{x}; D) - \overline{f}(\mathbf{x}) \right)^2\right]$$</li>
-<li>偏差：期望预测与真实标记的误差称为偏差(bias), 为了方便起见, 我们直接取偏差的平方:<br>
-$$bias^2(\mathbf{x}) = \left( \overline{f}(\mathbf{x}) - y \right)^2$$</li>
-<li>噪声：噪声为真实标记与数据集中的实际标记间的偏差:<br>
-$$\epsilon^2 = E_D\left[ (y_D - y)^2 \right]$$</li>
+<li>泛化误差：以回归任务为例, 学习算法的平方预测误差期望为:<br>$$Err(\mathbf{x}) &#x3D; E\left[\left( y - f(\mathbf{x}; D) \right)^2\right]$$</li>
+<li>方差：在一个训练集 D上模型 f 对测试样本 x 的预测输出为 f(x;D), 那么学习算法 f 对测试样本 x 的 期望预测和使用样本数相同的不同训练集产生的方差为:<br>$$\overline{f}(\mathbf{x}) &#x3D; E_D\left[f\left(\mathbf{x}; D\right)\right]$$<br>$$var(\mathbf{x}) &#x3D; E_D\left[\left( f(\mathbf{x}; D) - \overline{f}(\mathbf{x}) \right)^2\right]$$</li>
+<li>偏差：期望预测与真实标记的误差称为偏差(bias), 为了方便起见, 我们直接取偏差的平方:<br>$$bias^2(\mathbf{x}) &#x3D; \left( \overline{f}(\mathbf{x}) - y \right)^2$$</li>
+<li>噪声：噪声为真实标记与数据集中的实际标记间的偏差:<br>$$\epsilon^2 &#x3D; E_D\left[ (y_D - y)^2 \right]$$</li>
 </ol>
-<h3 id="方差与偏差推导">方差与偏差推导</h3>
-<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/38.png" alt="avatar"><br>
-<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/39.png" alt="avatar"></p>
+<h3 id="方差与偏差推导"><a href="#方差与偏差推导" class="headerlink" title="方差与偏差推导"></a>方差与偏差推导</h3><p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/38.png" alt="avatar"><br><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/39.png" alt="avatar"></p>
 <ul>
 <li>偏差度量了学习算法的期望预测与真实结果的偏离程序, 即 刻画了学习算法本身的拟合能力 .</li>
 <li>方差度量了同样大小的训练集的变动所导致的学习性能的变化, 即 刻画了数据扰动所造成的影响 .</li>
 <li>噪声表达了在当前任务上任何学习算法所能达到的期望泛化误差的下界, 即 刻画了学习问题本身的难度.</li>
 </ul>
 <p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/40.png" alt="avatar"></p>
-<h2 id="L1和L2正则">L1和L2正则</h2>
-<ul>
+<h2 id="L1和L2正则"><a href="#L1和L2正则" class="headerlink" title="L1和L2正则"></a>L1和L2正则</h2><ul>
 <li>L1大部分特征的权重降为0，变稀疏矩阵，只保留少量特征。目标函数等高线与L1正则的解空间决定，“棱”状更能碰撞出稀疏值。类似减少特征的方式解决过拟合</li>
 <li>L2少量降为0，大部分权重减小。降低所有特征的权重。整体减小所有特征权重，来解决过拟合</li>
 </ul>
-<p>L0范数指向量中非零元素的个数<br>
-$$|w|<em>0=\sum</em>{w_i!=0}^{W}{|w_i|}$$<br>
-L1范数：向量中每个元素绝对值的和<br>
-$$|w|<em>1=\sum</em>{i=1}^{N}{|w_i|}$$<br>
-L2范数：向量元素绝对值的平方和再开平方<br>
-$$|w|<em>2=\sqrt{\sum</em>{i=1}^{N}{w_i^2}}$$<br>
-L1正则公式<br>
-$$L=L_{0}+\lambda\sum_j|w_j|$$<br>
-L2正则公式<br>
-$$L=L_{0}+\lambda\sum_jw_j^2$$</p>
-<h3 id="解的稀疏性">解的稀疏性</h3>
-<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/l1l2.png" alt="avatar"></p>
-<h2 id="优化过拟合和欠拟合">优化过拟合和欠拟合</h2>
-<h3 id="降低过拟合">降低过拟合</h3>
-<ol>
+<p>L0范数指向量中非零元素的个数<br>$$|w|<em>0&#x3D;\sum</em>{w_i!&#x3D;0}^{W}{|w_i|}$$<br>L1范数：向量中每个元素绝对值的和<br>$$|w|<em>1&#x3D;\sum</em>{i&#x3D;1}^{N}{|w_i|}$$<br>L2范数：向量元素绝对值的平方和再开平方<br>$$|w|<em>2&#x3D;\sqrt{\sum</em>{i&#x3D;1}^{N}{w_i^2}}$$<br>L1正则公式<br>$$L&#x3D;L_{0}+\lambda\sum_j|w_j|$$<br>L2正则公式<br>$$L&#x3D;L_{0}+\lambda\sum_jw_j^2$$</p>
+<h3 id="解的稀疏性"><a href="#解的稀疏性" class="headerlink" title="解的稀疏性"></a>解的稀疏性</h3><p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/l1l2.png" alt="avatar"></p>
+<h2 id="优化过拟合和欠拟合"><a href="#优化过拟合和欠拟合" class="headerlink" title="优化过拟合和欠拟合"></a>优化过拟合和欠拟合</h2><h3 id="降低过拟合"><a href="#降低过拟合" class="headerlink" title="降低过拟合"></a>降低过拟合</h3><ol>
 <li>更多的数据；</li>
 <li>降低模型复杂度；</li>
 <li>正则化方法；</li>
 <li>bagging 多个模型集成在一起，降低单一模型过拟合风险；</li>
-<li>减少特征：PCA等</li>
-</ol>
-<h3 id="降低欠拟合">降低欠拟合</h3>
-<ol>
+<li>减少特征：PCA等<h3 id="降低欠拟合"><a href="#降低欠拟合" class="headerlink" title="降低欠拟合"></a>降低欠拟合</h3></li>
 <li>添加新特征（深度学习提供稠密特征，因子分解机）</li>
 <li>增加模型复杂度；</li>
 <li>减少正则化系数</li>
 </ol>
-<h2 id="拉格朗日乘法">拉格朗日乘法</h2>
-<p>$$ \begin{aligned}<br>
-&amp;{}\max f(x, y), \<br>
-&amp;{}\text{s.t. } g(x, y) = c.<br>
-\end{aligned}$$<br>
-$$\mathcal{L}(x, y, \lambda) \overset{\text{def}}{=}f(x, y) + \lambda\cdot g(x, y).$$<br>
-$$\begin{cases}<br>
-\frac{\partial \mathcal{L}}{\partial x} = 0, \<br>
-\frac{\partial \mathcal{L}}{\partial y} = 0, \<br>
-\frac{\partial \mathcal{L}}{\partial \lambda} = 0.<br>
-\end{cases}$$<br>
-函数 f(x,y)=x²+y² 是曲面<strong>特别地，对于序列 {d1,d2,…} 来说，f(x,y)=dk 形成了一系列的曲线。若将 dk 理解为高度，则这一系列的曲线即是函数 f(x,y) 的等高线组。</strong> 同样，对于约束 g(x,y)=x²-y=C 来说它也是一条曲线，我们称之为约束曲线。对g曲线求导得到法向量，对f也如此；故有下式成立<br>
-$$\Bigl(\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}\Bigr) = \lambda\Bigl(\frac{\partial g}{\partial x}, \frac{\partial g}{\partial y}\Bigr)$$<br>
-函数曲线相切，意味着两个函数的法线在切点重合，也就是两个函数的法向量相差一个系数 λ，这也就是说两个函数在切点的梯度向量相差一个系数 λ</p>
-<h3 id="KKT条件">KKT条件</h3>
-<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/kkt.jpeg" alt="avatar"><br>
-<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/lglr.jpg" alt="avatar"><br>
-因此我们说，拉格朗日乘数法有很直观的物理意义。<br>
-对于h(x)&gt;=0的设定如下<br>
-<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/hx1.jpg" alt="avatar"><br>
-<img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/hx2.jpg" alt="avatar"></p>
-<h1>2. 评价指标</h1>
-<blockquote>
+<h2 id="拉格朗日乘法"><a href="#拉格朗日乘法" class="headerlink" title="拉格朗日乘法"></a>拉格朗日乘法</h2><p>$$ \begin{aligned}<br>&amp;{}\max f(x, y), \<br>&amp;{}\text{s.t. } g(x, y) &#x3D; c.<br>\end{aligned}$$<br>$$\mathcal{L}(x, y, \lambda) \overset{\text{def}}{&#x3D;}f(x, y) + \lambda\cdot g(x, y).$$<br>$$\begin{cases}<br>\frac{\partial \mathcal{L}}{\partial x} &#x3D; 0, \<br>\frac{\partial \mathcal{L}}{\partial y} &#x3D; 0, \<br>\frac{\partial \mathcal{L}}{\partial \lambda} &#x3D; 0.<br>\end{cases}$$<br>函数 f(x,y)&#x3D;x²+y² 是曲面<strong>特别地，对于序列 {d1,d2,…} 来说，f(x,y)&#x3D;dk 形成了一系列的曲线。若将 dk 理解为高度，则这一系列的曲线即是函数 f(x,y) 的等高线组。</strong> 同样，对于约束 g(x,y)&#x3D;x²-y&#x3D;C 来说它也是一条曲线，我们称之为约束曲线。对g曲线求导得到法向量，对f也如此；故有下式成立<br>$$\Bigl(\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}\Bigr) &#x3D; \lambda\Bigl(\frac{\partial g}{\partial x}, \frac{\partial g}{\partial y}\Bigr)$$<br>函数曲线相切，意味着两个函数的法线在切点重合，也就是两个函数的法向量相差一个系数 λ，这也就是说两个函数在切点的梯度向量相差一个系数 λ</p>
+<h3 id="KKT条件"><a href="#KKT条件" class="headerlink" title="KKT条件"></a>KKT条件</h3><p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/kkt.jpeg" alt="avatar"><br><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/lglr.jpg" alt="avatar"><br>因此我们说，拉格朗日乘数法有很直观的物理意义。<br>对于h(x)&gt;&#x3D;0的设定如下<br><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/hx1.jpg" alt="avatar"><br><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/hx2.jpg" alt="avatar"></p>
+<h1 id="2-评价指标"><a href="#2-评价指标" class="headerlink" title="2. 评价指标"></a>2. 评价指标</h1><blockquote>
 <blockquote>
 <p>准确率，精确率，召回率，均方根误差</p>
 </blockquote>
 </blockquote>
 <ul>
 <li>准确率：正负样本不均衡时，大类别特别影响准确率；</li>
-<li>精确率：$Precision=\frac{TP}{TP+FP}$</li>
-<li>召回率：$Recall=\frac{TP}{TP+FN}$</li>
+<li>精确率：$Precision&#x3D;\frac{TP}{TP+FP}$</li>
+<li>召回率：$Recall&#x3D;\frac{TP}{TP+FN}$</li>
 </ul>
 <blockquote>
 <blockquote>
-<p>由此得到P-R曲线越右上角越好；且$F_1=\frac{2pr}{p+r}$</p>
+<p>由此得到P-R曲线越右上角越好；且$F_1&#x3D;\frac{2pr}{p+r}$</p>
 </blockquote>
 </blockquote>
 <ul>
-<li>均方根误差：异常点影响大<br>
-$$RMSE=\sqrt{\frac{1}{N}\sum_{i=1}^{N}(y_i^{pred}-y_i^{true})^2}$$</li>
-<li>MAPE：平均绝对百分比误差，每个点误差进行归一化<br>
-$$MAPE=\sum_{i=1}^{N}|\frac{y_i^{true}-y_i^{pred}}{y_i^{true}}|*\frac{100}{N}$$</li>
+<li>均方根误差：异常点影响大<br>$$RMSE&#x3D;\sqrt{\frac{1}{N}\sum_{i&#x3D;1}^{N}(y_i^{pred}-y_i^{true})^2}$$</li>
+<li>MAPE：平均绝对百分比误差，每个点误差进行归一化<br>$$MAPE&#x3D;\sum_{i&#x3D;1}^{N}|\frac{y_i^{true}-y_i^{pred}}{y_i^{true}}|*\frac{100}{N}$$</li>
 </ul>
-<h3 id="ROC曲线">ROC曲线</h3>
-<ul>
+<h3 id="ROC曲线"><a href="#ROC曲线" class="headerlink" title="ROC曲线"></a>ROC曲线</h3><ul>
 <li>优点：不受类分布的影响，适合与评估、比较类分布不平衡的数据集。</li>
 <li>缺点：ROC和AUC仅适合于两类问题 ,对多类问题 ,无法直接应用。</li>
 </ul>
-<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/AUC.gif" alt=""></p>
-<h4 id="AUC">AUC</h4>
-<p><code>AUC</code>就是从所有正样本中随机选取一个样本<code>A</code>，同时从所有负样本中随机选取一个样本<code>B</code>，通过分类器对其进行预测，得分为<code>pA和pB</code>，那么<code>pA &gt; pB</code>的概率就等于<code>AUC</code>。即<code>AUC</code>是指正样本得分，大于负样本得分的概率。</p>
+<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/AUC.gif"></p>
+<h4 id="AUC"><a href="#AUC" class="headerlink" title="AUC"></a>AUC</h4><p><code>AUC</code>就是从所有正样本中随机选取一个样本<code>A</code>，同时从所有负样本中随机选取一个样本<code>B</code>，通过分类器对其进行预测，得分为<code>pA和pB</code>，那么<code>pA &gt; pB</code>的概率就等于<code>AUC</code>。即<code>AUC</code>是指正样本得分，大于负样本得分的概率。</p>
 <blockquote>
 <p>注意：为严谨，这里分类器的输出叫做<code>值或者得分</code>，不称作<code>概率</code>。概率是统计意义上的，比如做多次实验，统计<code>pA &gt; pB</code>的次数，进而得到<code>概率</code>，这叫<code>AUC</code>。</p>
 </blockquote>
 <p>定义：AUC值为ROC曲线所覆盖的区域面积，显然，AUC越大，分类器分类效果越好。</p>
 <ul>
-<li>AUC = 1，是完美分类器，采用这个预测模型时，不管设定什么阈值都能得出完美预测。绝大多数预测的场合，不存在完美分类器。</li>
+<li>AUC &#x3D; 1，是完美分类器，采用这个预测模型时，不管设定什么阈值都能得出完美预测。绝大多数预测的场合，不存在完美分类器。</li>
 <li>0.5 &lt; AUC &lt; 1，优于随机猜测。这个分类器（模型）妥善设定阈值的话，能有预测价值。</li>
-<li>AUC = 0.5，跟随机猜测一样（例：丢铜板），模型没有预测价值。</li>
+<li>AUC &#x3D; 0.5，跟随机猜测一样（例：丢铜板），模型没有预测价值。</li>
 <li>AUC &lt; 0.5，比随机猜测还差；但只要总是反预测而行，就优于随机猜测。</li>
 </ul>
-<h4 id="AUC值的物理意义">AUC值的物理意义</h4>
-<p>假设分类器的输出是样本属于正类的socre（置信度），<strong>AUC的物理意义为：任取一对（正、负）样本，正样本的score大于负样本的score的概率。</strong></p>
-<h4 id="AUC值的计算">AUC值的计算</h4>
-<ul>
+<h4 id="AUC值的物理意义"><a href="#AUC值的物理意义" class="headerlink" title="AUC值的物理意义"></a>AUC值的物理意义</h4><p>假设分类器的输出是样本属于正类的socre（置信度），<strong>AUC的物理意义为：任取一对（正、负）样本，正样本的score大于负样本的score的概率。</strong></p>
+<h4 id="AUC值的计算"><a href="#AUC值的计算" class="headerlink" title="AUC值的计算"></a>AUC值的计算</h4><ul>
 <li>第一种方法：AUC为ROC曲线下的面积，那我们直接计算面积可得。面积为一个个小的梯形面积之和，计算的精度与阈值的精度有关。</li>
 <li>第二种方法：根据AUC的物理意义，我们计算正样本score大于负样本的score的概率。取N*M（M为正样本数，N为负样本数）个二元组，比较score，最后得到AUC。时间复杂度为O(N*M)。</li>
 <li><strong>第三种方法</strong>：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/van19/p/5494908.html">AUC计算</a>首先对score从大到小排序，然后令最大score对应的sample的rank值为n，第二大score对应sample的rank值为n-1，以此类推从n到1。然后把所有的正类样本的rank相加，再减去正类样本的score为最小的那M个值的情况。得到的结果就是有多少对正类样本的score值大于负类样本的score值，最后再除以M×N即可。值得注意的是，当存在score相等的时候，对于score相等的样本，需要赋予相同的rank值(无论这个相等的score是出现在同类样本还是不同类的样本之间，都需要这样处理)。\</li>
 </ul>
-<p>(正类与分数低者比较次数，正类与正类比较的次数)<br>
-(n,m),<br>
-(n-1,m-1),<br>
-(n-2,m-2),<br>
-,<br>
-(n-(m-1),1)<br>
-左求和，右求和再相减即为下式<br>
-$$AUC=\frac{\sum_{i \in posClass}rank_i - \frac{M(M+1)}{2}}{M*N}$$<br>
-时间复杂度为O(N+M)。</p>
-<h4 id="参考引用">参考引用</h4>
-<ul>
+<p>(正类与分数低者比较次数，正类与正类比较的次数)<br>(n,m),<br>(n-1,m-1),<br>(n-2,m-2),<br>,,,<br>(n-(m-1),1)<br>左求和，右求和再相减即为下式<br>$$AUC&#x3D;\frac{\sum_{i \in posClass}rank_i - \frac{M(M+1)}{2}}{M*N}$$<br>时间复杂度为O(N+M)。</p>
+<h4 id="参考引用"><a href="#参考引用" class="headerlink" title="参考引用"></a>参考引用</h4><ul>
 <li>真正意义上的值准确性是不存在的，因为我们观测不到微观意义上每一个事件的真实CTR值</li>
 <li>对每一个事件（样本）给出预测的pCTR值，这只是代表在特定坐标系(特征空间)、特定模型形式(模型空间)两种选择下的数学值，是对微观意义上真实CTR的逼近；</li>
 <li>计算的CTR预测是否准确，需要站在同一个坐标系中。不同的坐标系会进一步带来观测视角的偏差，这个偏差跟模型本身无关。</li>
 </ul>
-<p>所以AUC反应的是分类器对样本的排序能力。 根据这个解释，如果我们完全随机的对样本分类，那么AUC应该接近0.5。（所以一般训练出的模型，AUC&gt;0.5,如果AUC=0.5，这个分类器等于没有效果，效果与完全随机一样，如果AUC&lt;0.5，则可能是标签标注错误等情况造成）；</p>
-<h4 id="优缺点-2">优缺点</h4>
-<h5 id="优缺点：">优缺点：</h5>
-<ul>
+<p>所以AUC反应的是分类器对样本的排序能力。 根据这个解释，如果我们完全随机的对样本分类，那么AUC应该接近0.5。（所以一般训练出的模型，AUC&gt;0.5,如果AUC&#x3D;0.5，这个分类器等于没有效果，效果与完全随机一样，如果AUC&lt;0.5，则可能是标签标注错误等情况造成）；</p>
+<h4 id="优缺点-1"><a href="#优缺点-1" class="headerlink" title="优缺点"></a>优缺点</h4><h5 id="优缺点："><a href="#优缺点：" class="headerlink" title="优缺点："></a>优缺点：</h5><ul>
 <li>AUC衡量的是一种排序能力，因此特别适合排序类业务；</li>
 <li>AUC对正负样本均衡并不敏感，在样本不均衡的情况下，也可以做出合理的评估。</li>
 <li>其他指标比如precision，recall，F1，根据区分正负样本阈值的变化会有不同的结果，而AUC不需要手动设定阈值，是一种整体上的衡量方法。</li>
 </ul>
-<h5 id="缺点-2">缺点</h5>
-<ul>
+<h5 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h5><ul>
 <li>忽略了预测的概率值和模型的拟合程度；</li>
 <li>AUC反应了太过笼统的信息。无法反应召回率、精确率等在实际业务中经常关心的指标；</li>
 <li>AUC只关注正负样本之间的排序，并不关心正样本内部，或者负样本内部的排序</li>
 </ul>
-<h4 id="ROC与P-R曲线对比">ROC与P-R曲线对比</h4>
-<p>ROC明显降低不同测试集带来的干扰，困难样本下，ROC更加稳定反应模型的排序效果。</p>
-<h3 id="排序指标">排序指标</h3>
-<h4 id="MAP">MAP</h4>
-<p>对用户u的返回结果I（item的顺序1,2,10）的平均准确率（AP）<br>
-$$AP_u = \frac{1}{|I_u|}\sum_{i \in I_u}\frac{\sum_{j \in I_u}\delta(p_{uj} &lt; p_{ui}) + 1}{p_{ui}}$$<br>
-MAP(Mean Average Precision)即为所有用户取AP的均值有：<br>
-$$MAP = \frac{\sum_{u \in U}AP_u}{|{U}|}$$</p>
-<h4 id="举个列子">举个列子</h4>
-<p>$命中的pos对应precision=\frac{pos及以上的命中个数}{pos}$，没命中的为0</p>
-<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/AP.png" alt=""><br>
-在对所有用户求均值</p>
-<h4 id="NDCG">NDCG</h4>
-<p>计算该位置和item的相关性得分；<br>
-$$累计收益：CG_k = \sum_{i=1}^k rel_i$$<br>
-没有考虑不同位置，靠后得分应该低；故增加pos的罚项对排名靠后的收益打折：<br>
-$$贴现累计收益：DCG_k = \sum_{i=1}^k \frac{2^{rel_i}-1}{\log_2 (i+1)}$$<br>
-不同用户的推荐列表进行评估，需要以最好的收益IDCG为base进行归一化<br>
-$$归一化贴现累计收益：NDCG_u@k = \frac{DCG_u@k}{IDCG_u} ，k=list.size$$</p>
+<h4 id="ROC与P-R曲线对比"><a href="#ROC与P-R曲线对比" class="headerlink" title="ROC与P-R曲线对比"></a>ROC与P-R曲线对比</h4><p>ROC明显降低不同测试集带来的干扰，困难样本下，ROC更加稳定反应模型的排序效果。</p>
+<h3 id="排序指标"><a href="#排序指标" class="headerlink" title="排序指标"></a>排序指标</h3><h4 id="MAP"><a href="#MAP" class="headerlink" title="MAP"></a>MAP</h4><p>对用户u的返回结果I（item的顺序1,2,,,10）的平均准确率（AP）<br>$$AP_u &#x3D; \frac{1}{|I_u|}\sum_{i \in I_u}\frac{\sum_{j \in I_u}\delta(p_{uj} &lt; p_{ui}) + 1}{p_{ui}}$$<br>MAP(Mean Average Precision)即为所有用户取AP的均值有：<br>$$MAP &#x3D; \frac{\sum_{u \in U}AP_u}{|{U}|}$$</p>
+<h4 id="举个列子"><a href="#举个列子" class="headerlink" title="举个列子"></a>举个列子</h4><p>$命中的pos对应precision&#x3D;\frac{pos及以上的命中个数}{pos}$，没命中的为0</p>
+<p><img src="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-00-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/AP.png"><br>在对所有用户求均值</p>
+<h4 id="NDCG"><a href="#NDCG" class="headerlink" title="NDCG"></a>NDCG</h4><p>计算该位置和item的相关性得分；<br>$$累计收益：CG_k &#x3D; \sum_{i&#x3D;1}^k rel_i$$<br>没有考虑不同位置，靠后得分应该低；故增加pos的罚项对排名靠后的收益打折：<br>$$贴现累计收益：DCG_k &#x3D; \sum_{i&#x3D;1}^k \frac{2^{rel_i}-1}{\log_2 (i+1)}$$<br>不同用户的推荐列表进行评估，需要以最好的收益IDCG为base进行归一化<br>$$归一化贴现累计收益：NDCG_u@k &#x3D; \frac{DCG_u@k}{IDCG_u} ，k&#x3D;list.size$$</p>
 
 
         <hr>
@@ -1275,12 +1065,12 @@ $$归一化贴现累计收益：NDCG_u@k = \frac{DCG_u@k}{IDCG_u} ，k=list.size
           2022
           <br>
           Theme by
-          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <a target="_blank" rel="noopener" href="https://hexo.io/themes/">Hexo</a>
           <span style="display: inline-block; margin: 0 5px;">
             <i class="fa fa-heart"></i>
           </span>
           re-Ported by
-          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          <a target="_blank" rel="noopener" href="https://github.com/Muzhi1920/Muzhi1920.github.io">Live My Life</a>
           |
           <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
         </p>

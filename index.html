@@ -150,7 +150,7 @@
 
 <!-- hack iOS CSS :active style -->
 
-	<body ontouchstart="" class="body--light body--dark">
+	<body ontouchstart="" class="body--light body--light">
 
 
 		<!-- ThemeColor -->
@@ -184,7 +184,7 @@
       ? b.pop()
       : '';
   }
-  let themeMode = 'dark';
+  let themeMode = 'light';
   if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
     let dbody = document.body.classList;
     themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
@@ -211,7 +211,7 @@
 <!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
 <script>
   ((window.gitter = {}).chat = {}).options = {
-    room: 'your-community/your-room'
+    room: 'touch_fish/lie_down'
   };
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
@@ -525,8 +525,7 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
       
     </h3>
     <div class="post-content-preview">
-      动态规划
-基于一维、二维数组，实现动态规划思路。区别于贪心，动态规划的每一个状态是由上几个状态决定的。贪心没有状态依赖，是局部选最优至全局最优。部分问题既可以用贪心解决，也可以用DP，相比较此时贪心一般节省空间复杂度，但DP递推公式的形式更能显式的说明问题。
+      动态规划基于一维、二维数组，实现动态规划思路。区别于贪心，动态规划的每一个状态是由上几个状态决定的。贪心没有状态依赖，是局部选最优至全局最优。部分问题既可以用贪心解决，也可以用DP，相比较此时贪心一般节省空间复杂度，但DP递推公式的形式更能显式的说明问题。
 
 确定dp数组及下标的含义
 确定dp的递推公式
@@ -535,7 +534,7 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
 
 
 判断是否可以转换为DP问题
-如何确定递......
+如何确定递推......
     </div>
   </a>
   
@@ -568,9 +567,7 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
       
     </h3>
     <div class="post-content-preview">
-      0. 理论基础
-机器学习和深度学习的区别
-
+      0. 理论基础机器学习和深度学习的区别
 特征工程：机器学习中专家识别，业务数据人工编码，性能取决于特征提取准确程度；深度学习尝试提取低层次特征，自动化
 深度学习的可解释性较差，机器学习的决策树算法规则清晰
 深度学习是端到端
@@ -579,9 +576,9 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
 执行时间深度学习更长
 
 
-模型
-生成式模型
-由数据学到联合概率分布$P(X,Y)$,然后求出条件概率......
+
+
+模型生成式模型由数据学到联合概率分布$P(X,Y)$,然后求出条件概率分布......
     </div>
   </a>
   
@@ -614,12 +611,7 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
       
     </h3>
     <div class="post-content-preview">
-      算法推导整理
-EM算法
-当已知每一个样本数据$x^{(i)}$都对应一个类别变量$z^{(i)}$时，即$z=(z^{(1)},z^{(2)},\dots,z^{(m)})$，此时的极大化模型的对数似然函数可以通过全概率公式展开为
-$$
-\begin{aligned}
-\hat{\theta}&amp;= \mathop{\arg\max}{\theta} \sum\limits{i=1}^......
+      算法推导整理EM算法当已知每一个样本数据$x^{(i)}$都对应一个类别变量$z^{(i)}$时，即$z&#x3D;(z^{(1)},z^{(2)},\dots,z^{(m)})$，此时的极大化模型的对数似然函数可以通过全概率公式展开为$$\begin{aligned}\hat{\theta}&amp;&#x3D; \mathop{\arg\max}{\theta} \sum\limits{......
     </div>
   </a>
   
@@ -652,17 +644,16 @@ $$
       
     </h3>
     <div class="post-content-preview">
-      优化算法
-梯度下降
-梯度下降是一种优化算法，通过迭代的方式寻找模型的最优参数；当目标函数是凸函数时，梯度下降的解是全局最优解；但在一般情况下，梯度下降无法保证全局最优。负梯度中的每一项可以认为传达了两个信息:
+      优化算法梯度下降梯度下降是一种优化算法，通过迭代的方式寻找模型的最优参数；当目标函数是凸函数时，梯度下降的解是全局最优解；但在一般情况下，梯度下降无法保证全局最优。负梯度中的每一项可以认为传达了两个信息:
 
 正负号在告诉输入向量应该调大还是调小（正调大，负调小）；
 每一项的相对大小表明每个参数对函数值达到最值的影响程度
 
 
-批梯度下降（Batch SGD） VS  随机梯度下降
 
-批梯度......
+
+批梯度下降（Batch SGD） VS  随机梯度下降
+批梯度下......
     </div>
   </a>
   
@@ -693,19 +684,15 @@ $$
       
     </h3>
     <div class="post-content-preview">
-      数据结构题
-二叉树
-
+      数据结构题二叉树
 满二叉树、完全二叉树、二叉搜索树、平衡二叉搜索树
 链式、顺序存储
 遍历方式
-
 深度：先序、中序、后序
 广度：层序遍历
 
 
 二叉树属性
-
 反转、对称、平衡、子树
 二叉搜索树：搜索、判断、插入、删除、修剪、构造。
 公共祖先、路径
@@ -714,8 +701,9 @@ $$
 
 
 
+
 对于树的删除和增加操作改变树结构时
-12root-&gt;left=delete(root-&gt;left,key);r......
+12root-&gt;left=delete(root-&gt;left,key);root......
     </div>
   </a>
   
@@ -748,8 +736,7 @@ $$
       
     </h3>
     <div class="post-content-preview">
-      贪心算法
-本质是，通过获得某一阶段的局部最优，逐步达到全局最优。常识性推导 + 举反例
+      贪心算法本质是，通过获得某一阶段的局部最优，逐步达到全局最优。常识性推导 + 举反例
 
 问题可分解为若干子问题
 思考策略，使得子问题得到局部最优
@@ -757,16 +744,14 @@ $$
 
 贪心算法经常可以基于dp数组将问题转化为动态规划的递推公式。
 特点
-
 常识性
 巧妙行思路
 无固定套路
 数学递推证明，如果可以，也就能用dp来做
 
 
-一、分发饼干和糖果等零食
-455. 分发饼干
-胃口小的尽量用小饼干满足，以满足更......
+
+一、分发饼干和糖果等零食455. 分发饼干胃口小的尽量用小饼干满足，以满足更多的人......
     </div>
   </a>
   
@@ -801,12 +786,8 @@ $$
       
     </h3>
     <div class="post-content-preview">
-      数与数列
-10.1斐波那契数列
-
-第一个数为0，第二个数为1.
-
-12345678910111213class Solution &#123;public:    int fib(int n) &#123;        int a = 0, b = 1, sum;        for (int i = 0; i &lt; n; i++) &#123;            sum = (......
+      数与数列10.1斐波那契数列
+第一个数为0，第二个数为1.12345678910111213class Solution &#123;public:    int fib(int n) &#123;        int a = 0, b = 1, sum;        for (int i = 0; i &lt; n; i++) &#123;            sum = (a + ......
     </div>
   </a>
   
@@ -841,12 +822,9 @@ $$
       
     </h3>
     <div class="post-content-preview">
-      字符串
-回文串等
-一、回文串系列
-9. 验证回文数
-判断数字是否是回文数：121，12321。复杂度$O(logN)$
-12345678910111213class Solution &#123;public:    bool isPalindrome(int x) &#123;        if (x &lt; 0 || (x % 10 == 0 &amp;&amp; x != 0)) ......
+      字符串回文串等
+一、回文串系列9. 验证回文数判断数字是否是回文数：121，12321。复杂度$O(logN)$
+12345678910111213class Solution &#123;public:    bool isPalindrome(int x) &#123;        if (x &lt; 0 || (x % 10 == 0 &amp;&amp; x != 0))    ......
     </div>
   </a>
   
@@ -880,14 +858,13 @@ $$
     </h3>
     <div class="post-content-preview">
       栈与队列题目
-
 栈：先入后出
-队列：先入先出
-结合栈和队列常见的题目
+队列：先入先出结合栈和队列常见的题目
 
 
-两栈实现队列
-1234567891011121314151617181920212223242526272829class CQueue &#123;private:    stack&lt;int&gt; s1, s2;public:    CQueue() &#123;    &#125;    void appe......
+
+
+两栈实现队列1234567891011121314151617181920212223242526272829class CQueue &#123;private:    stack&lt;int&gt; s1, s2;public:    CQueue() &#123;    &#125;    void appen......
     </div>
   </a>
   
@@ -1205,28 +1182,24 @@ $$
       <li>home</li>
     </a>
     
-    <a href="/categories/#jz-offer">
-      <li>jz-offer</li>
+    <a href="/categories/#剑指offer">
+      <li>剑指offer</li>
     </a>
     
-    <a href="/categories/#BD">
-      <li>BD</li>
+    <a href="/categories/#大数据基础">
+      <li>大数据基础</li>
     </a>
     
-    <a href="/categories/#bd">
-      <li>bd</li>
+    <a href="/categories/#推荐系统">
+      <li>推荐系统</li>
     </a>
     
-    <a href="/categories/#rec">
-      <li>rec</li>
+    <a href="/categories/#机器学习">
+      <li>机器学习</li>
     </a>
     
-    <a href="/categories/#ml">
-      <li>ml</li>
-    </a>
-    
-    <a href="/categories/#algo">
-      <li>algo</li>
+    <a href="/categories/#算法">
+      <li>算法</li>
     </a>
     
   </ul>
@@ -1291,12 +1264,12 @@ $$
           2022
           <br>
           Theme by
-          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <a target="_blank" rel="noopener" href="https://hexo.io/themes/">Hexo</a>
           <span style="display: inline-block; margin: 0 5px;">
             <i class="fa fa-heart"></i>
           </span>
           re-Ported by
-          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          <a target="_blank" rel="noopener" href="https://github.com/Muzhi1920/Muzhi1920.github.io">Live My Life</a>
           |
           <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
         </p>

@@ -150,7 +150,7 @@
 
 <!-- hack iOS CSS :active style -->
 
-	<body ontouchstart="" class="body--light body--dark">
+	<body ontouchstart="" class="body--light body--light">
 
 
 		<!-- ThemeColor -->
@@ -184,7 +184,7 @@
       ? b.pop()
       : '';
   }
-  let themeMode = 'dark';
+  let themeMode = 'light';
   if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
     let dbody = document.body.classList;
     themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
@@ -211,7 +211,7 @@
 <!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
 <script>
   ((window.gitter = {}).chat = {}).options = {
-    room: 'your-community/your-room'
+    room: 'touch_fish/lie_down'
   };
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
@@ -472,9 +472,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1>搜索</h1>
-<h2 id="12-字符串路径">12. 字符串路径</h2>
-<p>路径的起点可以从矩阵的任意位置，然后搜索整个字符串；因此遍历入口<code>N^2</code>；继续搜索字符串，因此整体的复杂度为<code>N^2 * k^4</code>。每一次搜索：</p>
+        <h1 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h1><h2 id="12-字符串路径"><a href="#12-字符串路径" class="headerlink" title="12. 字符串路径"></a>12. 字符串路径</h2><p>路径的起点可以从矩阵的任意位置，然后搜索整个字符串；因此遍历入口<code>N^2</code>；继续搜索字符串，因此整体的复杂度为<code>N^2 * k^4</code>。每一次搜索：</p>
 <ol>
 <li>边界判断；</li>
 <li>终止条件判断；</li>
@@ -482,24 +480,25 @@
 <li>复杂度$O(MN*3^K)$</li>
 </ol>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">func</span><span class="params">(vector&lt;vector&lt;<span class="keyword">char</span>&gt;&gt; &amp;board, vector&lt;vector&lt;<span class="keyword">bool</span>&gt;&gt; &amp;visited, <span class="keyword">int</span> i, <span class="keyword">int</span> j, string &amp;word, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (i &lt; <span class="number">0</span> || j &lt; <span class="number">0</span> || i &gt;= board.<span class="built_in">size</span>() || j &gt;= board[<span class="number">0</span>].<span class="built_in">size</span>() || visited[i][j] || board[i][j] != word[k])</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span> (k == word.<span class="built_in">size</span>() - <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        visited[i][j] = <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">bool</span> res = <span class="built_in">func</span>(board, visited, i - <span class="number">1</span>, j, word, k + <span class="number">1</span>)</span><br><span class="line">                   || <span class="built_in">func</span>(board, visited, i + <span class="number">1</span>, j, word, k + <span class="number">1</span>)</span><br><span class="line">                   || <span class="built_in">func</span>(board, visited, i, j - <span class="number">1</span>, word, k + <span class="number">1</span>)</span><br><span class="line">                   || <span class="built_in">func</span>(board, visited, i, j + <span class="number">1</span>, word, k + <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">if</span> (res) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            visited[i][j] = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">exist</span><span class="params">(vector&lt;vector&lt;<span class="keyword">char</span>&gt;&gt; &amp;board, string word)</span> </span>&#123;</span><br><span class="line">        vector&lt;vector&lt;<span class="keyword">bool</span>&gt;&gt; <span class="built_in">visited</span>(board.<span class="built_in">size</span>(), vector&lt;<span class="keyword">bool</span>&gt;(board[<span class="number">0</span>].<span class="built_in">size</span>(), <span class="literal">false</span>));</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; board.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; board[<span class="number">0</span>].<span class="built_in">size</span>(); j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="built_in">func</span>(board, visited, i, j, word, <span class="number">0</span>))</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
 <span id="more"></span>
-<h2 id="13-机器人的运动范围">13. 机器人的运动范围</h2>
-<p>从<code>00</code>进入，搜索四个方向判断，全局变量统计次数；复杂度为<code>N^2</code>搜索</p>
+
+<h2 id="13-机器人的运动范围"><a href="#13-机器人的运动范围" class="headerlink" title="13. 机器人的运动范围"></a>13. 机器人的运动范围</h2><p>从<code>00</code>进入，搜索四个方向判断，全局变量统计次数；复杂度为<code>N^2</code>搜索</p>
 <ol>
 <li>不会遍历所有的值</li>
 <li><code>visited[i][j]</code>记录是否经历过即可</li>
 </ol>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(<span class="keyword">int</span> m, <span class="keyword">int</span> n, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (m) &#123;</span><br><span class="line">            res += m % <span class="number">10</span>;</span><br><span class="line">            m = m / <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (n) &#123;</span><br><span class="line">            res += n % <span class="number">10</span>;</span><br><span class="line">            n = n / <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res &gt; k;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j, <span class="keyword">int</span> &amp;m, <span class="keyword">int</span> &amp;n, <span class="keyword">int</span> &amp;k, <span class="keyword">int</span> &amp;nums, vector&lt;vector&lt;<span class="keyword">bool</span>&gt;&gt; &amp;visit)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (i &lt; <span class="number">0</span> || j &lt; <span class="number">0</span> || i &gt;= m || j &gt;= n || visit[i][j] || <span class="built_in">check</span>(i, j, k)) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        visit[i][j] = <span class="literal">true</span>;</span><br><span class="line">        nums++;</span><br><span class="line">        <span class="built_in">func</span>(i + <span class="number">1</span>, j, m, n, k, nums, visit);</span><br><span class="line">        <span class="built_in">func</span>(i - <span class="number">1</span>, j, m, n, k, nums, visit);</span><br><span class="line">        <span class="built_in">func</span>(i, j - <span class="number">1</span>, m, n, k, nums, visit);</span><br><span class="line">        <span class="built_in">func</span>(i, j + <span class="number">1</span>, m, n, k, nums, visit);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">movingCount</span><span class="params">(<span class="keyword">int</span> m, <span class="keyword">int</span> n, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> nums = <span class="number">0</span>;</span><br><span class="line">        vector&lt;vector&lt;<span class="keyword">bool</span>&gt;&gt; <span class="built_in">visit</span>(m, vector&lt;<span class="keyword">bool</span>&gt;(n, <span class="literal">false</span>));</span><br><span class="line">        <span class="built_in">func</span>(<span class="number">0</span>, <span class="number">0</span>, m, n, k, nums, visit);</span><br><span class="line">        <span class="keyword">return</span> nums;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="47-二位矩阵礼物的最大值">47. 二位矩阵礼物的最大值</h2>
-<p>从<code>00</code>出发，到<code>mm</code>计算可获得礼物的最大值</p>
+
+<h2 id="47-二位矩阵礼物的最大值"><a href="#47-二位矩阵礼物的最大值" class="headerlink" title="47. 二位矩阵礼物的最大值"></a>47. 二位矩阵礼物的最大值</h2><p>从<code>00</code>出发，到<code>mm</code>计算可获得礼物的最大值</p>
 <ol>
 <li>行累加；列累加；</li>
 <li><code>1，1</code>开始：<code>grid[i][j]=max(grid[i][j-1], grid[i-1][j])</code>；</li>
 <li>因此复杂度为<code>O(N^2)</code>遍历。</li>
 </ol>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxValue</span><span class="params">(vector &lt;vector&lt;<span class="keyword">int</span>&gt;&gt; &amp;grid)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; grid[<span class="number">0</span>].<span class="built_in">size</span>(); i++)</span><br><span class="line">            grid[<span class="number">0</span>][i] += grid[<span class="number">0</span>][i - <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; grid.<span class="built_in">size</span>(); i++)</span><br><span class="line">            grid[i][<span class="number">0</span>] += grid[i - <span class="number">1</span>][<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; grid.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; grid[i].<span class="built_in">size</span>(); j++)</span><br><span class="line">                grid[i][j] += <span class="built_in">max</span>(grid[i - <span class="number">1</span>][j], grid[i][j - <span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> grid[grid.<span class="built_in">size</span>() - <span class="number">1</span>][grid[<span class="number">0</span>].<span class="built_in">size</span>() - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="结论">结论</h2>
-<ol>
+
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><ol>
 <li>确定随机入口，还是<code>00</code>入口；</li>
 <li>确定终止条件；</li>
 <li>是否支持<code>visited</code>回溯</li>
@@ -788,12 +787,12 @@
           2022
           <br>
           Theme by
-          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <a target="_blank" rel="noopener" href="https://hexo.io/themes/">Hexo</a>
           <span style="display: inline-block; margin: 0 5px;">
             <i class="fa fa-heart"></i>
           </span>
           re-Ported by
-          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          <a target="_blank" rel="noopener" href="https://github.com/Muzhi1920/Muzhi1920.github.io">Live My Life</a>
           |
           <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
         </p>

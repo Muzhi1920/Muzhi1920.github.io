@@ -150,7 +150,7 @@
 
 <!-- hack iOS CSS :active style -->
 
-	<body ontouchstart="" class="body--light body--dark">
+	<body ontouchstart="" class="body--light body--light">
 
 
 		<!-- ThemeColor -->
@@ -184,7 +184,7 @@
       ? b.pop()
       : '';
   }
-  let themeMode = 'dark';
+  let themeMode = 'light';
   if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
     let dbody = document.body.classList;
     themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
@@ -211,7 +211,7 @@
 <!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
 <script>
   ((window.gitter = {}).chat = {}).options = {
-    room: 'your-community/your-room'
+    room: 'touch_fish/lie_down'
   };
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
@@ -410,7 +410,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">1.2k</span> In Total
+              Words <span class="post-count">1.3k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -472,17 +472,14 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1>shell基础</h1>
-<h2 id="vim命令">vim命令</h2>
-<table>
+        <h1 id="shell基础"><a href="#shell基础" class="headerlink" title="shell基础"></a>shell基础</h1><h2 id="vim命令"><a href="#vim命令" class="headerlink" title="vim命令"></a>vim命令</h2><table>
 <thead>
 <tr>
 <th>命令</th>
 <th>功能</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>set nu</td>
 <td>显示行号</td>
 </tr>
@@ -492,10 +489,10 @@
 </tr>
 <tr>
 <td>&lt;-查找-&gt;</td>
-<td>&lt;-查找=&gt;</td>
+<td>&lt;-查找&#x3D;&gt;</td>
 </tr>
 <tr>
-<td>/</td>
+<td>&#x2F;</td>
 <td>向后搜索</td>
 </tr>
 <tr>
@@ -508,7 +505,7 @@
 </tr>
 <tr>
 <td>&lt;-跳转-&gt;</td>
-<td>&lt;-跳转=&gt;</td>
+<td>&lt;-跳转&#x3D;&gt;</td>
 </tr>
 <tr>
 <td>gg</td>
@@ -586,14 +583,12 @@
 <td>:%d</td>
 <td>清空所有</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <span id="more"></span>
-<h2 id="shell">shell</h2>
-<p>本地安装的shell目录：etc/shells</p>
-<h3 id="fork-与-source">fork 与 source</h3>
-<p>fork：执行shell script时，其实是产生一个sub-shell 的子进程，然后sub-shell再去产生命令行的子行程。<br>
-source：b.sh脚本中有source ./a.sh；就是使a.sh在当前b.sh的shell内执行、而不是再产生一个sub-shell 來執行。但b.sh是fork出来的子进程</p>
+
+
+<h2 id="shell"><a href="#shell" class="headerlink" title="shell"></a>shell</h2><p>本地安装的shell目录：etc&#x2F;shells</p>
+<h3 id="fork-与-source"><a href="#fork-与-source" class="headerlink" title="fork 与 source"></a>fork 与 source</h3><p>fork：执行shell script时，其实是产生一个sub-shell 的子进程，然后sub-shell再去产生命令行的子行程。<br>source：b.sh脚本中有source .&#x2F;a.sh；就是使a.sh在当前b.sh的shell内执行、而不是再产生一个sub-shell 來執行。但b.sh是fork出来的子进程</p>
 <p>$：給一般使用者使用 #：給 root (管理員)使用</p>
 <table>
 <thead>
@@ -602,8 +597,7 @@ source：b.sh脚本中有source ./a.sh；就是使a.sh在当前b.sh的shell内�
 <th>desc</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>[command line]</td>
 <td>代码块</td>
 </tr>
@@ -613,7 +607,7 @@ source：b.sh脚本中有source ./a.sh；就是使a.sh在当前b.sh的shell内�
 </tr>
 <tr>
 <td>date</td>
-<td>-d(2019-12-01) -/+ 2 days +%F</td>
+<td>-d(2019-12-01) -&#x2F;+ 2 days +%F</td>
 </tr>
 <tr>
 <td>&gt;</td>
@@ -632,7 +626,7 @@ source：b.sh脚本中有source ./a.sh；就是使a.sh在当前b.sh的shell内�
 <td>忽略其前返回值执行下一個命令</td>
 </tr>
 <tr>
-<td>’ '(单引号)</td>
+<td>‘ ‘(单引号)</td>
 <td>关键字符转为字符串</td>
 </tr>
 <tr>
@@ -644,12 +638,12 @@ source：b.sh脚本中有source ./a.sh；就是使a.sh在当前b.sh的shell内�
 <td>二者相同，${ }精确范围</td>
 </tr>
 <tr>
-<td>&quot; &quot;(双引号)</td>
-<td>大部分为字符串，但某些保留(如$ )参数含空格时用&quot;&quot;包裹</td>
+<td>“ “(双引号)</td>
+<td>大部分为字符串，但某些保留(如$ )参数含空格时用””包裹</td>
 </tr>
 <tr>
 <td>export</td>
-<td>将本地变量（.bash_profile）&quot;输出&quot;为环境变量</td>
+<td>将本地变量（.bash_profile）”输出”为环境变量</td>
 </tr>
 <tr>
 <td>unset</td>
@@ -664,46 +658,38 @@ source：b.sh脚本中有source ./a.sh；就是使a.sh在当前b.sh的shell内�
 <td>shift 3取消前3个参数，第4个为第1个</td>
 </tr>
 <tr>
-<td>mkdir -p /a/b/c</td>
+<td>mkdir -p &#x2F;a&#x2F;b&#x2F;c</td>
 <td>父目录不存在时会创建，不会报错。</td>
 </tr>
 <tr>
-<td>hadoop fs -germerge -nl /hdfs_dir  /local_dir/</td>
+<td>hadoop fs -germerge -nl &#x2F;hdfs_dir  &#x2F;local_dir&#x2F;</td>
 <td>同名则会覆盖；nl在不同文件之间会空一行</td>
 </tr>
 <tr>
-<td>hadoop fs -du -s -h /hdfs_dir</td>
+<td>hadoop fs -du -s -h &#x2F;hdfs_dir</td>
 <td>文件夹下数据大小</td>
 </tr>
 <tr>
 <td>hadoop fs -test</td>
 <td>-e：如果路径存在，则返回 0;-s：如果路径不为空，则返回 0。</td>
 </tr>
-</tbody>
-</table>
-<h3 id="Mac端shell">Mac端shell</h3>
-<p>本地bash：/bin: /usr/bin: /usr/local/bin: ${PATH}包含以上的bin目录下命令文件，本地bash可直接执行；<br>
-.bash_profile：export PATH 添加第三方（maven，idea等）加载到本地bash可直接执行；<br>
-.zshrc ：文件首先source ~/.bash_profile 将上面新添加命令加载到zsh中（内置可用，新添加到bash_profile也可用）</p>
-<h2 id="source">source</h2>
-<ul>
-<li>sh check. sh == ./check.sh</li>
-<li>source.check .sh == .check.sh</li>
+</tbody></table>
+<h3 id="Mac端shell"><a href="#Mac端shell" class="headerlink" title="Mac端shell"></a>Mac端shell</h3><p>本地bash：&#x2F;bin: &#x2F;usr&#x2F;bin: &#x2F;usr&#x2F;local&#x2F;bin: ${PATH}包含以上的bin目录下命令文件，本地bash可直接执行；<br>.bash_profile：export PATH 添加第三方（maven，idea等）加载到本地bash可直接执行；<br>.zshrc ：文件首先source ~&#x2F;.bash_profile 将上面新添加命令加载到zsh中（内置可用，新添加到bash_profile也可用）</p>
+<h2 id="source"><a href="#source" class="headerlink" title="source"></a>source</h2><ul>
+<li>sh check. sh &#x3D;&#x3D; .&#x2F;check.sh</li>
+<li>source.check .sh &#x3D;&#x3D; .check.sh</li>
 </ul>
-<p>source(或点)命令通常用于重新执行刚修改的初始化文档，如 .bash_profile和 .profile。<br>
-<strong>在check.sh的子shell中source 几个文件，将文件中的变量和函数编译加载，然后子shell使用。</strong></p>
-<h3 id="结论">结论</h3>
-<ol>
-<li>当shell脚本具有可执行权限时，sh check与./check执行脚本一样；</li>
+<p>source(或点)命令通常用于重新执行刚修改的初始化文档，如 .bash_profile和 .profile。<br><strong>在check.sh的子shell中source 几个文件，将文件中的变量和函数编译加载，然后子shell使用。</strong></p>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><ol>
+<li>当shell脚本具有可执行权限时，sh check与.&#x2F;check执行脚本一样；</li>
 <li>sh check 新建子shell执行脚本，该子shell继承父shell的环境变量，但子shell新建的、改变的变量不会被带回父shell，除非使用export；</li>
-<li>source <a target="_blank" rel="noopener" href="http://check.sh">check.sh</a>：读取脚本里面的语句依次在当前shell里面首先执行（一般放在shell前面）。没有建立新的子shell。脚本内所有变量的语句都会保存在当前shell里面。当前shell中可以直接用check中定义的变量，函数。</li>
+<li>source check.sh：读取脚本里面的语句依次在当前shell里面首先执行（一般放在shell前面）。没有建立新的子shell。脚本内所有变量的语句都会保存在当前shell里面。当前shell中可以直接用check中定义的变量，函数。</li>
 <li>执行脚本是在一个子shell环境运行的，脚本执行完后该子shell自动退出。</li>
 <li>执行脚本中的系统环境变量（用export定义的变量）才会被复制到子shell中。</li>
 <li>一个shell中的系统环境变量只对该shell或者它的子shell有效，该shell结束时变量消失（并不能返回到父shell中）。</li>
 <li>不用export定义的变量只对该shell有效，对子shell也是无效的。 直接执行一个脚本文件是在一个子shell中运行的，而source则是在当前shell环境中运行的。source可以让脚本影响它们的父shell环境,这和export去影响子shell环境相反。</li>
 </ol>
-<h2 id="关于-参数">关于$ 参数</h2>
-<ul>
+<h2 id="关于-参数"><a href="#关于-参数" class="headerlink" title="关于$ 参数"></a>关于$ 参数</h2><ul>
 <li>$1~9：函数内获取第1-9个参数；</li>
 <li>$0：文件名；</li>
 <li>$# ：命令行参数个数；</li>
@@ -712,14 +698,13 @@ source：b.sh脚本中有source ./a.sh；就是使a.sh在当前b.sh的shell内�
 <li>$? ：前一个命令的退出状态，可用于获取函数返回值；</li>
 <li>$$ ：执行的进程 ID。</li>
 </ul>
-<h2 id="工程内部常用shell整理">工程内部常用shell整理</h2>
-<ul>
+<h2 id="工程内部常用shell整理"><a href="#工程内部常用shell整理" class="headerlink" title="工程内部常用shell整理"></a>工程内部常用shell整理</h2><ul>
 <li>执行脚本输出：+表示的是Shell调试器的输出日志，不带 + 表示程序内的输出；</li>
-<li>''单引号严格，双引号“”可以嵌套单引号；</li>
+<li>‘’单引号严格，双引号“”可以嵌套单引号；</li>
 <li>local定义本地变量；输出字符串’$引用变量’；</li>
-<li>source /…/…/**.conf 当作shell脚本获取.conf文件中的变量</li>
+<li>source &#x2F;..&#x2F;..&#x2F;**.conf 当作shell脚本获取.conf文件中的变量</li>
 <li>basename：取文件名；dirname：取路径名</li>
-<li>date -d t1 -range +F :定义时间-d / +F 定义格式</li>
+<li>date -d t1 -range +F :定义时间-d &#x2F; +F 定义格式</li>
 <li>rn -r -skipTrash 删除文件时确定不放入回收站，直接删除</li>
 <li>shift 位置参数可以用shift命令左移。默认为1</li>
 </ul>
@@ -1007,12 +992,12 @@ source：b.sh脚本中有source ./a.sh；就是使a.sh在当前b.sh的shell内�
           2022
           <br>
           Theme by
-          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <a target="_blank" rel="noopener" href="https://hexo.io/themes/">Hexo</a>
           <span style="display: inline-block; margin: 0 5px;">
             <i class="fa fa-heart"></i>
           </span>
           re-Ported by
-          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          <a target="_blank" rel="noopener" href="https://github.com/Muzhi1920/Muzhi1920.github.io">Live My Life</a>
           |
           <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
         </p>

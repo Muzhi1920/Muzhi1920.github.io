@@ -150,7 +150,7 @@
 
 <!-- hack iOS CSS :active style -->
 
-	<body ontouchstart="" class="body--light body--dark">
+	<body ontouchstart="" class="body--light body--light">
 
 
 		<!-- ThemeColor -->
@@ -184,7 +184,7 @@
       ? b.pop()
       : '';
   }
-  let themeMode = 'dark';
+  let themeMode = 'light';
   if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
     let dbody = document.body.classList;
     themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
@@ -211,7 +211,7 @@
 <!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
 <script>
   ((window.gitter = {}).chat = {}).options = {
-    room: 'your-community/your-room'
+    room: 'touch_fish/lie_down'
   };
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
@@ -486,16 +486,14 @@
       
     </h3>
     <div class="post-content-preview">
-      算法导论
-动态规划
-
+      算法导论动态规划
 最优子结构性质。如果问题的最优解所包含的子问题的解也是最优的。
 无后效性。即子问题的解一旦确定，不受之后和包含它的更大的问题的决策影响。
 子问题重叠性质。子问题会被重复计算多次。动态规划对每一个子问题只计算一次保存在表格，简化重复计算时。
 
 
-钢条切割问题
-长度为n英寸的钢条有$2^{n-1}$种切割方法：因为在距离钢条左端i (i = 1, 2, … , n-1)英寸......
+
+钢条切割问题长度为n英寸的钢条有$2^{n-1}$种切割方法：因为在距离钢条左端i (i &#x3D; 1, 2, … , n-1......
     </div>
   </a>
   
@@ -530,18 +528,12 @@
       
     </h3>
     <div class="post-content-preview">
-      树模型与集成学习
-1. 决策树ID3,C4.5,CART树
+      树模型与集成学习1. 决策树ID3,C4.5,CART树特征枚举：根据规则选择特征划分节点：根据特征进一步分裂叶子节点根据样本训练出GBDT树，对于每个叶子节点，回溯到根节点都可以得到一组组合特征，所以用叶子节点的标号可以代表一个新的组合特征
 
-特征枚举：根据规则选择特征
-划分节点：根据特征进一步分裂叶子节点
-根据样本训练出GBDT树，对于每个叶子节点，回溯到根节点都可以得到一组组合特征，所以用叶子节点的标号可以代表一个新的组合特征
 
-ID3算法——信息增益
-D为样本集合；$D_v$是特征f取v时的样本集。Gain信息增益=信息熵-条件熵
+ID3算法——信息增益D为样本集合；$D_v$是特征f取v时的样本集。Gain信息增益&#x3D;信息熵-条件熵
 
-信息熵：
-$$H(D)=-\s......
+信息熵：$$H(D)&#x3D......
     </div>
   </a>
   
@@ -574,13 +566,8 @@ $$H(D)=-\s......
       
     </h3>
     <div class="post-content-preview">
-      推荐系统基础
-目标主要包括：用户满意性，多样性，新颖性，惊喜度，实时性，推荐透明度，覆盖率。
-热门、人工、相关、个性化推荐
-0. 推荐系统简介
-$U$ 表示所有用户(user)的集合,用 $I$ 表示所有项目(item)的集合。在实际系统中，$U$ 和 $I$ 具有非常大的规模。定义一个效用函数$s$，用来计算项目$i$对用户$u$的推荐度,即$s$:
-$$U×I→R$$
-，其中$R$是一个......
+      推荐系统基础目标主要包括：用户满意性，多样性，新颖性，惊喜度，实时性，推荐透明度，覆盖率。热门、人工、相关、个性化推荐
+0. 推荐系统简介$U$ 表示所有用户(user)的集合,用 $I$ 表示所有项目(item)的集合。在实际系统中，$U$ 和 $I$ 具有非常大的规模。定义一个效用函数$s$，用来计算项目$i$对用户$u$的推荐度,即$s$:$$U×I→R$$，其中$R$是一个全序集合(......
     </div>
   </a>
   
@@ -613,27 +600,22 @@ $$U×I→R$$
       
     </h3>
     <div class="post-content-preview">
-      Easy题目
-top-400的基础题目
+      Easy题目top-400的基础题目
 
-9. 回文数
-记忆两个数，切分最终得到左右两部分数字return x == m || x == m / 10;
-14. 最长公共前缀
-纵向check
+
+9. 回文数记忆两个数，切分最终得到左右两部分数字return x == m || x == m / 10;
+14. 最长公共前缀纵向check
 
 遍历第一个字符串的每个字符
-
 遍历其他字符串
-
 字符不等或者该串遍历完毕则返回
 
 
 
 
 
-20. 有效的括号
-维护闭开括号的map，用栈遍历字符串，栈顶判断是否一致，最后返回栈是否为空。
-21. 合并......
+20. 有效的括号维护闭开括号的map，用栈遍历字符串，栈顶判断是否一致，最后返回栈是否为空。
+21. 合并有序链表任......
     </div>
   </a>
   
@@ -667,7 +649,6 @@ top-400的基础题目
     </h3>
     <div class="post-content-preview">
       主页
-
 ...
     </div>
   </a>
@@ -984,28 +965,24 @@ top-400的基础题目
       <li>home</li>
     </a>
     
-    <a href="/categories/#jz-offer">
-      <li>jz-offer</li>
+    <a href="/categories/#剑指offer">
+      <li>剑指offer</li>
     </a>
     
-    <a href="/categories/#BD">
-      <li>BD</li>
+    <a href="/categories/#大数据基础">
+      <li>大数据基础</li>
     </a>
     
-    <a href="/categories/#bd">
-      <li>bd</li>
+    <a href="/categories/#推荐系统">
+      <li>推荐系统</li>
     </a>
     
-    <a href="/categories/#rec">
-      <li>rec</li>
+    <a href="/categories/#机器学习">
+      <li>机器学习</li>
     </a>
     
-    <a href="/categories/#ml">
-      <li>ml</li>
-    </a>
-    
-    <a href="/categories/#algo">
-      <li>algo</li>
+    <a href="/categories/#算法">
+      <li>算法</li>
     </a>
     
   </ul>
@@ -1070,12 +1047,12 @@ top-400的基础题目
           2022
           <br>
           Theme by
-          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <a target="_blank" rel="noopener" href="https://hexo.io/themes/">Hexo</a>
           <span style="display: inline-block; margin: 0 5px;">
             <i class="fa fa-heart"></i>
           </span>
           re-Ported by
-          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          <a target="_blank" rel="noopener" href="https://github.com/Muzhi1920/Muzhi1920.github.io">Live My Life</a>
           |
           <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
         </p>

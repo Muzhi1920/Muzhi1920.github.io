@@ -150,7 +150,7 @@
 
 <!-- hack iOS CSS :active style -->
 
-	<body ontouchstart="" class="body--light body--dark">
+	<body ontouchstart="" class="body--light body--light">
 
 
 		<!-- ThemeColor -->
@@ -184,7 +184,7 @@
       ? b.pop()
       : '';
   }
-  let themeMode = 'dark';
+  let themeMode = 'light';
   if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
     let dbody = document.body.classList;
     themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
@@ -211,7 +211,7 @@
 <!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
 <script>
   ((window.gitter = {}).chat = {}).options = {
-    room: 'your-community/your-room'
+    room: 'touch_fish/lie_down'
   };
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
@@ -408,7 +408,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">3.5k</span> In Total
+              Words <span class="post-count">3.6k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -470,21 +470,17 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1>Linux</h1>
-<p>更多命令参考<br>
-<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/36093355">Linux常用命令总结</a></p>
+        <h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><p>更多命令参考<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/36093355">Linux常用命令总结</a></p>
 <ul>
-<li>ps：查看当前进程
-<ol>
+<li>ps：查看当前进程<ol>
 <li>ps -ef (system v 输出)</li>
 <li>ps -aux bsd 格式输出</li>
 <li>ps -ef | grep pid</li>
 </ol>
 </li>
 <li>ln：软连接，快捷方式；硬链接：同步更改。</li>
-<li>chmod abc file a,b,c：分别表示User、Group、及Other的权限。若要rwx属性则4+2+1=7</li>
-<li>vi 文件名编辑 cat file | more | less
-<ol>
+<li>chmod abc file a,b,c：分别表示User、Group、及Other的权限。若要rwx属性则4+2+1&#x3D;7</li>
+<li>vi 文件名编辑 cat file | more | less<ol>
 <li>more 分页</li>
 <li>less 分页可回翻</li>
 <li>tail 尾部</li>
@@ -493,13 +489,13 @@
 </li>
 </ul>
 <span id="more"></span>
+
 <ul>
 <li>wc 命令 - c 统计字节数 - l 统计行数 - w 统计字数。</li>
-<li>grep [string] filename grep [^string] filename```</li>
+<li>grep [string] filename grep [^string] filename&#96;&#96;&#96;</li>
 <li>nohup sh **.sh &amp; 后台运行 job -l fg bg</li>
 <li>kill -9 pid</li>
-<li>
-<ol>
+<li><ol>
 <li>find &lt;指定目录&gt; &lt;指定条件&gt; &lt;指定动作&gt;</li>
 <li>whereis 加参数与文件名</li>
 <li>locate 只加文件名</li>
@@ -510,259 +506,119 @@
 <li>hash：记录了已执行过的命令的完整路径, 用该命令可以打印出你所使用过的命令以及执行的次数。</li>
 <li>let 可以进行整型数的数学运算</li>
 </ul>
-<h2 id="一、man-page">一、man_page</h2>
-<ol>
-<li>内部命令：echo<br>
-查看内部命令帮助：help echo 或者 man echo</li>
-<li>外部命令：ls<br>
-查看外部命令帮助：ls --help 或者 man ls 或者 info ls</li>
-<li>快捷键：<br>
-ctrl + c：停止进程<br>
-ctrl + l：清屏<br>
-ctrl + r：搜索历史命令<br>
-ctrl + q：退出<br>
-4.善于用tab键：文件名补全</li>
+<h2 id="一、man-page"><a href="#一、man-page" class="headerlink" title="一、man_page"></a>一、man_page</h2><ol>
+<li>内部命令：echo<br>查看内部命令帮助：help echo 或者 man echo</li>
+<li>外部命令：ls<br>查看外部命令帮助：ls –help 或者 man ls 或者 info ls</li>
+<li>快捷键：<br>ctrl + c：停止进程<br>ctrl + l：清屏<br>ctrl + r：搜索历史命令<br>ctrl + q：退出</li>
 </ol>
-<h2 id="二、常用命令">二、常用命令</h2>
-<ol>
-<li>进入到用户根目录<br>
-cd ~ 或 cd</li>
-<li>查看当前所在目录<br>
-pwd</li>
-<li>进入到itcast用户根目录<br>
-cd ~itcast</li>
-<li>返回到原来目录<br>
-cd -</li>
-<li>返回到上一级目录<br>
-cd …</li>
-<li>查看itcast用户根目录下的所有文件<br>
-ls -la</li>
-<li>在根目录下创建一个itcast的文件夹<br>
-mkdir /itcast</li>
-<li>查看/itcast目录下面的所有文件<br>
-ls -la</li>
-<li>在/itcast目录下面创建一个test.txt文件,同时写入内容&quot;this is test&quot;<br>
-echo “this is test” &gt; test.txt</li>
-<li>查看一下test.txt的内容<br>
-cat test.txt<br>
-more test.txt<br>
-less test.txt</li>
-<li>向README文件追加写入&quot;please read me first&quot;<br>
-echo “please read me first” &gt;&gt; README</li>
-<li>将test.txt的内容追加到README文件中<br>
-cat test.txt &gt;&gt; README</li>
-<li>拷贝/itcast目录下的所有文件到/itcast-bak<br>
-cp -r /itcast /itcast-bak</li>
-<li>进入到/itcast-bak目录，将test.txt移动到src目录下，并修改文件名为Student.java<br>
-mv test.txt src/Student.java</li>
-<li>在src目录下创建一个struts.xml</li>
-</ol>
-<blockquote>
+<p>4.善于用tab键：文件名补全</p>
+<h2 id="二、常用命令"><a href="#二、常用命令" class="headerlink" title="二、常用命令"></a>二、常用命令</h2><ol>
+<li>进入到用户根目录<br>cd ~ 或 cd</li>
+<li>查看当前所在目录<br>pwd</li>
+<li>进入到itcast用户根目录<br>cd ~itcast</li>
+<li>返回到原来目录<br>cd -</li>
+<li>返回到上一级目录<br>cd ..</li>
+<li>查看itcast用户根目录下的所有文件<br>ls -la</li>
+<li>在根目录下创建一个itcast的文件夹<br>mkdir &#x2F;itcast</li>
+<li>查看&#x2F;itcast目录下面的所有文件<br>ls -la</li>
+<li>在&#x2F;itcast目录下面创建一个test.txt文件,同时写入内容”this is test”<br>echo “this is test” &gt; test.txt</li>
+<li>查看一下test.txt的内容<br>cat test.txt<br>more test.txt<br>less test.txt</li>
+<li>向README文件追加写入”please read me first”<br>echo “please read me first” &gt;&gt; README</li>
+<li>将test.txt的内容追加到README文件中<br>cat test.txt &gt;&gt; README</li>
+<li>拷贝&#x2F;itcast目录下的所有文件到&#x2F;itcast-bak<br>cp -r &#x2F;itcast &#x2F;itcast-bak</li>
+<li>进入到&#x2F;itcast-bak目录，将test.txt移动到src目录下，并修改文件名为Student.java<br>mv test.txt src&#x2F;Student.java</li>
+<li>在src目录下创建一个struts.xml<blockquote>
 <p>struts.xml</p>
 </blockquote>
-<ol start="17">
-<li>删除所有的xml类型的文件<br>
-rm -rf *.xml</li>
-<li>删除/itcast-bak目录和下面的所有文件<br>
-rm -rf /itcast-bak</li>
-<li>返回到/itcast目录，查看一下README文件有多单词，多少个少行<br>
-wc -w README<br>
-wc -l README</li>
-<li>返回到根目录，将/itcast目录先打包，再用gzip压缩<br>
-分步完成：tar -cvf itcast.tar itcast    gzip itcast.tar<br>
-一步完成：tar -zcvf itcast.tar.gz itcast</li>
-<li>将其解压缩，再取消打包<br>
-分步完成：gzip -d itcast.tar.gz 或 gunzip itcast.tar.gz<br>
-一步完成：tar -zxvf itcast.tar.gz<br>
-将/itcast目录先打包，同时用bzip2压缩，并保存到/tmp目录下<br>
-tar -jcvf /tmp/itcast.tar.bz2 itcast<br>
-将/tmp/itcast.tar.bz2解压到/usr目录下面<br>
-tar -jxvf itcast.tar.bz2 -C /usr/</li>
+</li>
+<li>删除所有的xml类型的文件<br>rm -rf *.xml</li>
+<li>删除&#x2F;itcast-bak目录和下面的所有文件<br>rm -rf &#x2F;itcast-bak</li>
+<li>返回到&#x2F;itcast目录，查看一下README文件有多单词，多少个少行<br>wc -w README<br>wc -l README</li>
+<li>返回到根目录，将&#x2F;itcast目录先打包，再用gzip压缩<br>分步完成：tar -cvf itcast.tar itcast    gzip itcast.tar<br>一步完成：tar -zcvf itcast.tar.gz itcast</li>
+<li>将其解压缩，再取消打包<br>分步完成：gzip -d itcast.tar.gz 或 gunzip itcast.tar.gz<br>一步完成：tar -zxvf itcast.tar.gz<br>将&#x2F;itcast目录先打包，同时用bzip2压缩，并保存到&#x2F;tmp目录下<br>tar -jcvf &#x2F;tmp&#x2F;itcast.tar.bz2 itcast<br>将&#x2F;tmp&#x2F;itcast.tar.bz2解压到&#x2F;usr目录下面<br>tar -jxvf itcast.tar.bz2 -C &#x2F;usr&#x2F;</li>
 </ol>
 <p>三、文件相关命令</p>
 <ol>
-<li>进入到用户根目录<br>
-cd ~ 或者 cd<br>
-cd ~hadoop<br>
-回到原来路径<br>
-cd -</li>
-<li>查看文件详情<br>
-stat a.txt</li>
-<li>移动<br>
-mv a.txt /ect/<br>
-改名<br>
-mv b.txt a.txt<br>
-移动并改名<br>
-mv a.txt …/b.txt</li>
-<li>拷贝并改名<br>
-cp a.txt /etc/b.txt</li>
-<li>vi撤销修改<br>
-ctrl + u (undo)<br>
-恢复<br>
-ctrl + r (redo)</li>
-<li>名令设置别名(重启后无效)<br>
-alias ll=“ls -l”<br>
-取消<br>
-unalias ll</li>
-<li>如果想让别名重启后仍然有效需要修改<br>
-vi ~/.bashrc</li>
-<li>添加用户<br>
-useradd hadoop<br>
-passwd hadoop</li>
-<li>创建多个文件<br>
-touch a.txt b.txt<br>
-touch /home/{a.txt,b.txt}</li>
-<li>将一个文件的内容复制到里另一个文件中<br>
-cat a.txt &gt; b.txt<br>
-追加内容<br>
-cat a.txt &gt;&gt; b.txt</li>
-<li>将a.txt 与b.txt设为其拥有者和其所属同一个组者可写入，但其他以外的人则不可写入:<br>
-chmod ug+w,o-w a.txt b.txt<br>
-chmod a=wx c.txt</li>
-<li>将当前目录下的所有文件与子目录皆设为任何人可读取:<br>
-chmod -R a+r *</li>
-<li>将a.txt的用户拥有者设为users,组的拥有者设为jessie:<br>
-chown users:jessie a.txt</li>
-<li>将当前目录下的所有文件与子目录的用户的使用者为lamport,组拥有者皆设为users<br>
-chown -R lamport:users *</li>
-<li>将所有的java语言程式拷贝至finished子目录中:<br>
-cp *.java finished</li>
-<li>将目前目录及其子目录下所有扩展名是java的文件列出来。<br>
-find -name “*.java”<br>
-查找当前目录下扩展名是java 的文件<br>
-find -name *.java</li>
-<li>删除当前目录下扩展名是java的文件<br>
-rm -f *.java</li>
+<li>进入到用户根目录<br>cd ~ 或者 cd<br>cd ~hadoop<br>回到原来路径<br>cd -</li>
+<li>查看文件详情<br>stat a.txt</li>
+<li>移动<br>mv a.txt &#x2F;ect&#x2F;<br>改名<br>mv b.txt a.txt<br>移动并改名<br>mv a.txt ..&#x2F;b.txt</li>
+<li>拷贝并改名<br>cp a.txt &#x2F;etc&#x2F;b.txt</li>
+<li>vi撤销修改<br>ctrl + u (undo)<br>恢复<br>ctrl + r (redo)</li>
+<li>名令设置别名(重启后无效)<br>alias ll&#x3D;”ls -l”<br>取消<br>unalias ll</li>
+<li>如果想让别名重启后仍然有效需要修改<br>vi ~&#x2F;.bashrc</li>
+<li>添加用户<br>useradd hadoop<br>passwd hadoop</li>
+<li>创建多个文件<br>touch a.txt b.txt<br>touch &#x2F;home&#x2F;{a.txt,b.txt}</li>
+<li>将一个文件的内容复制到里另一个文件中<br>cat a.txt &gt; b.txt<br>追加内容<br>cat a.txt &gt;&gt; b.txt</li>
+<li>将a.txt 与b.txt设为其拥有者和其所属同一个组者可写入，但其他以外的人则不可写入:<br>chmod ug+w,o-w a.txt b.txt<br>chmod a&#x3D;wx c.txt</li>
+<li>将当前目录下的所有文件与子目录皆设为任何人可读取:<br>chmod -R a+r *</li>
+<li>将a.txt的用户拥有者设为users,组的拥有者设为jessie:<br>chown users:jessie a.txt</li>
+<li>将当前目录下的所有文件与子目录的用户的使用者为lamport,组拥有者皆设为users<br>chown -R lamport:users *</li>
+<li>将所有的java语言程式拷贝至finished子目录中:<br>cp *.java finished</li>
+<li>将目前目录及其子目录下所有扩展名是java的文件列出来。<br>find -name “*.java”<br>查找当前目录下扩展名是java 的文件<br>find -name *.java</li>
+<li>删除当前目录下扩展名是java的文件<br>rm -f *.java</li>
 </ol>
 <p>##四、系统命令</p>
 <ol>
-<li>查看主机名<br>
-hostname</li>
-<li>修改主机名(重启后无效)<br>
-hostname hadoop</li>
-<li>修改主机名(重启后永久生效)<br>
-vi /ect/sysconfig/network</li>
-<li>修改IP(重启后无效)<br>
-ifconfig eth0 192.168.12.22</li>
-<li>修改IP(重启后永久生效)<br>
-vi /etc/sysconfig/network-scripts/ifcfg-eth0</li>
-<li>查看系统信息<br>
-uname -a<br>
-uname -r</li>
-<li>查看ID命令<br>
-id -u<br>
-id -g</li>
-<li>日期<br>
-date<br>
-date +%Y-%m-%d<br>
-date +%T<br>
-date +%Y-%m-%d&quot; &quot;%T</li>
-<li>日历<br>
-cal 2012</li>
-<li>查看文件信息<br>
-file filename</li>
-<li>挂载硬盘<br>
-mount<br>
-umount<br>
-加载windows共享<br>
-mount -t cifs <a target="_blank" rel="noopener" href="//192.168.1.100/tools">//192.168.1.100/tools</a> /mnt</li>
-<li>查看文件大小<br>
-du -h<br>
-du -ah</li>
-<li>查看分区<br>
-df -h</li>
-<li>ssh<br>
-ssh <a href="mailto:hadoop@192.168.1.1">hadoop@192.168.1.1</a></li>
-<li>关机<br>
-shutdown -h now /init 0<br>
-shutdown -r now /reboot</li>
+<li>查看主机名<br>hostname</li>
+<li>修改主机名(重启后无效)<br>hostname hadoop</li>
+<li>修改主机名(重启后永久生效)<br>vi &#x2F;ect&#x2F;sysconfig&#x2F;network</li>
+<li>修改IP(重启后无效)<br>ifconfig eth0 192.168.12.22</li>
+<li>修改IP(重启后永久生效)<br>vi &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-eth0</li>
+<li>查看系统信息<br>uname -a<br>uname -r</li>
+<li>查看ID命令<br>id -u<br>id -g</li>
+<li>日期<br>date<br>date +%Y-%m-%d<br>date +%T<br>date +%Y-%m-%d” “%T</li>
+<li>日历<br>cal 2012</li>
+<li>查看文件信息<br>file filename</li>
+<li>挂载硬盘<br>mount<br>umount<br>加载windows共享<br>mount -t cifs &#x2F;&#x2F;192.168.1.100&#x2F;tools &#x2F;mnt</li>
+<li>查看文件大小<br>du -h<br>du -ah</li>
+<li>查看分区<br>df -h</li>
+<li>ssh<br>ssh <a href="mailto:&#x68;&#97;&#100;&#111;&#111;&#112;&#x40;&#49;&#x39;&#50;&#46;&#x31;&#x36;&#56;&#46;&#x31;&#46;&#x31;">&#x68;&#97;&#100;&#111;&#111;&#112;&#x40;&#49;&#x39;&#50;&#46;&#x31;&#x36;&#56;&#46;&#x31;&#46;&#x31;</a></li>
+<li>关机<br>shutdown -h now &#x2F;init 0<br>shutdown -r now &#x2F;reboot</li>
 </ol>
-<h2 id="五、用户和组">五、用户和组</h2>
-<ol>
-<li>
-<p>添加一个tom用户，设置它属于users组，并添加注释信息<br>
-分步完成：useradd tom<br>
-usermod -g users tom<br>
-usermod -c “hr tom” tom<br>
-一步完成：useradd -g users -c “hr tom” tom</p>
+<h2 id="五、用户和组"><a href="#五、用户和组" class="headerlink" title="五、用户和组"></a>五、用户和组</h2><ol>
+<li><p>添加一个tom用户，设置它属于users组，并添加注释信息<br>分步完成：useradd tom<br>   usermod -g users tom<br>   usermod -c “hr tom” tom<br>一步完成：useradd -g users -c “hr tom” tom</p>
 </li>
-<li>
-<p>设置tom用户的密码<br>
-passwd tom</p>
+<li><p>设置tom用户的密码<br>passwd tom</p>
 </li>
-<li>
-<p>修改tom用户的登陆名为tomcat<br>
-usermod -l tomcat tom</p>
+<li><p>修改tom用户的登陆名为tomcat<br>usermod -l tomcat tom</p>
 </li>
-<li>
-<p>将tomcat添加到sys和root组中<br>
-usermod -G sys,root tomcat</p>
+<li><p>将tomcat添加到sys和root组中<br>usermod -G sys,root tomcat</p>
 </li>
-<li>
-<p>查看tomcat的组信息<br>
-groups tomcat</p>
+<li><p>查看tomcat的组信息<br>groups tomcat</p>
 </li>
-<li>
-<p>添加一个jerry用户并设置密码<br>
-useradd jerry<br>
-passwd jerry</p>
+<li><p>添加一个jerry用户并设置密码<br>useradd jerry<br>passwd jerry</p>
 </li>
-<li>
-<p>添加一个交america的组<br>
-groupadd america</p>
+<li><p>添加一个交america的组<br>groupadd america</p>
 </li>
-<li>
-<p>将jerry添加到america组中<br>
-usermod -g america jerry</p>
+<li><p>将jerry添加到america组中<br>usermod -g america jerry</p>
 </li>
-<li>
-<p>将tomcat用户从root组和sys组删除<br>
-gpasswd -d tomcat root<br>
-gpasswd -d tomcat sys</p>
+<li><p>将tomcat用户从root组和sys组删除<br>gpasswd -d tomcat root<br>gpasswd -d tomcat sys</p>
 </li>
-<li>
-<p>将america组名修改为am<br>
-groupmod -n am america</p>
+<li><p>将america组名修改为am<br>groupmod -n am america</p>
 </li>
 </ol>
-<h2 id="六、权限">六、权限</h2>
-<p>创建a.txt和b.txt文件，将他们设为其拥有者和所在组可写入，但其他以外的人则不可写入:<br>
-chmod ug+w,o-w a.txt b.txt</p>
-<p>创建c.txt文件所有人都可以写和执行<br>
-chmod a=wx c.txt 或chmod 666 c.txt</p>
-<p>将/itcast目录下的所有文件与子目录皆设为任何人可读取<br>
-chmod -R a+r /itcast</p>
-<p>将/itcast目录下的所有文件与子目录的拥有者设为root，用户拥有组为users<br>
-chown -R root:users /itcast</p>
-<p>将当前目录下的所有文件与子目录的用户皆设为itcast，组设为users<br>
-chown -R itcast:users *</p>
-<h2 id="七、文件夹属性">七、文件夹属性</h2>
-<ol>
-<li>
-<p>查看文件夹属性<br>
-ls -ld test</p>
+<h2 id="六、权限"><a href="#六、权限" class="headerlink" title="六、权限"></a>六、权限</h2><p>创建a.txt和b.txt文件，将他们设为其拥有者和所在组可写入，但其他以外的人则不可写入:<br>chmod ug+w,o-w a.txt b.txt</p>
+<p>创建c.txt文件所有人都可以写和执行<br>chmod a&#x3D;wx c.txt 或chmod 666 c.txt</p>
+<p>将&#x2F;itcast目录下的所有文件与子目录皆设为任何人可读取<br>chmod -R a+r &#x2F;itcast</p>
+<p>将&#x2F;itcast目录下的所有文件与子目录的拥有者设为root，用户拥有组为users<br>chown -R root:users &#x2F;itcast</p>
+<p>将当前目录下的所有文件与子目录的用户皆设为itcast，组设为users<br>chown -R itcast:users *</p>
+<h2 id="七、文件夹属性"><a href="#七、文件夹属性" class="headerlink" title="七、文件夹属性"></a>七、文件夹属性</h2><ol>
+<li><p>查看文件夹属性<br>ls -ld test</p>
 </li>
-<li>
-<p>文件夹的rwx<br>
-–x:可以cd进去<br>
-r-x:可以cd进去并ls<br>
--wx:可以cd进去并touch，rm自己的文件，并且可以vi其他用户的文件<br>
--wt:可以cd进去并touch，rm自己的文件<br>
-ls -ld /tmp<br>
-drwxrwxrwt的权限值是1777(sticky)\</p>
+<li><p>文件夹的rwx</p>
 </li>
 </ol>
-<h2 id="八、vim">八、vim</h2>
-<ul>
+<p>–x:可以cd进去<br>r-x:可以cd进去并ls<br>-wx:可以cd进去并touch，rm自己的文件，并且可以vi其他用户的文件<br>-wt:可以cd进去并touch，rm自己的文件<br>ls -ld &#x2F;tmp<br>drwxrwxrwt的权限值是1777(sticky)\</p>
+<h2 id="八、vim"><a href="#八、vim" class="headerlink" title="八、vim"></a>八、vim</h2><ul>
 <li>i   插入编辑操作</li>
-<li>a/A</li>
-<li>o/O</li>
+<li>a&#x2F;A</li>
+<li>o&#x2F;O</li>
 <li>r + ?替换</li>
 <li>0:文件当前行的开头</li>
 <li>$:文件当前行的末尾</li>
 <li>G:文件的最后一行开头</li>
 <li>1 + G到第一行</li>
-<li>9 + G到第九行 = :9</li>
+<li>9 + G到第九行 &#x3D; :9</li>
 <li>dd:删除一行</li>
 <li>3dd：删除3行</li>
 <li>yy:复制一行</li>
@@ -770,244 +626,109 @@ drwxrwxrwt的权限值是1777(sticky)\</p>
 <li>p:粘贴</li>
 <li>u:undo</li>
 <li>ctrl + r:redo</li>
-<li>&quot;a剪切板a</li>
-<li>&quot;b剪切板b</li>
-<li>&quot;ap粘贴剪切板a的内容</li>
+<li>“a剪切板a</li>
+<li>“b剪切板b</li>
+<li>“ap粘贴剪切板a的内容</li>
 <li>每次进入vi就有行号</li>
-<li>vi ~/.vimrc</li>
+<li>vi ~&#x2F;.vimrc</li>
 <li>set nu</li>
 <li>:w a.txt另存为</li>
 <li>:w &gt;&gt; a.txt内容追加到a.txt</li>
 <li>:e!恢复到最初状态</li>
-<li>:1,$s/hadoop/root/g 将第一行到追后一行的hadoop替换为root</li>
-<li>:1,$s/hadoop/root/c 将第一行到追后一行的hadoop替换为root(有提示)</li>
+<li>:1,$s&#x2F;hadoop&#x2F;root&#x2F;g 将第一行到追后一行的hadoop替换为root</li>
+<li>:1,$s&#x2F;hadoop&#x2F;root&#x2F;c 将第一行到追后一行的hadoop替换为root(有提示)</li>
 </ul>
-<h2 id="九、查找">九、查找</h2>
-<ol>
-<li>查找可执行的命令：<br>
-which ls</li>
-<li>查找可执行的命令和帮助的位置：<br>
-whereis ls</li>
-<li>查找文件(需要更新库:updatedb)<br>
-locate hadoop.txt</li>
-<li>从某个文件夹开始查找<br>
-find / -name “hadooop*”<br>
-find / -name “hadooop*” -ls</li>
-<li>查找并删除<br>
-find / -name “hadooop*” -ok rm {} ;<br>
-find / -name “hadooop*” -exec rm {} ;</li>
-<li>查找用户为hadoop的文件<br>
-find /usr -user hadoop -ls</li>
-<li>查找用户为hadoop并且(-a)拥有组为root的文件<br>
-find /usr -user hadoop -a -group root -ls</li>
-<li>查找用户为hadoop或者(-o)拥有组为root并且是文件夹类型的文件<br>
-find /usr -user hadoop -o -group root -a -type d</li>
-<li>查找权限为777的文件<br>
-find / -perm -777 -type d -ls</li>
-<li>显示命令历史<br>
-history</li>
-<li>grep<br>
-grep hadoop /etc/password</li>
+<h2 id="九、查找"><a href="#九、查找" class="headerlink" title="九、查找"></a>九、查找</h2><ol>
+<li>查找可执行的命令：<br>which ls</li>
+<li>查找可执行的命令和帮助的位置：<br>whereis ls</li>
+<li>查找文件(需要更新库:updatedb)<br>locate hadoop.txt</li>
+<li>从某个文件夹开始查找<br>find &#x2F; -name “hadooop*”<br>find &#x2F; -name “hadooop*” -ls</li>
+<li>查找并删除<br>find &#x2F; -name “hadooop*” -ok rm {} ;<br>find &#x2F; -name “hadooop*” -exec rm {} ;</li>
+<li>查找用户为hadoop的文件<br>find &#x2F;usr -user hadoop -ls</li>
+<li>查找用户为hadoop并且(-a)拥有组为root的文件<br>find &#x2F;usr -user hadoop -a -group root -ls</li>
+<li>查找用户为hadoop或者(-o)拥有组为root并且是文件夹类型的文件<br>find &#x2F;usr -user hadoop -o -group root -a -type d</li>
+<li>查找权限为777的文件<br>find &#x2F; -perm -777 -type d -ls</li>
+<li>显示命令历史<br>history</li>
+<li>grep<br>grep hadoop &#x2F;etc&#x2F;password</li>
 </ol>
-<h2 id="十、打包与压缩">十、打包与压缩</h2>
-<ol>
-<li>gzip压缩<br>
-gzip a.txt</li>
-<li>解压<br>
-gunzip a.txt.gz<br>
-gzip -d a.txt.gz</li>
-<li>bzip2压缩<br>
-bzip2 a</li>
-<li>解压<br>
-bunzip2 a.bz2<br>
-bzip2 -d a.bz2</li>
-<li>将当前目录的文件打包<br>
-tar -cvf bak.tar .<br>
-将/etc/password追加文件到bak.tar中®<br>
-tar -rvf bak.tar /etc/password</li>
-<li>解压<br>
-tar -xvf bak.tar</li>
-<li>打包并压缩gzip<br>
-tar -zcvf a.tar.gz</li>
-<li>解压缩<br>
-tar -zxvf a.tar.gz<br>
-解压到/usr/下<br>
-tar -zxvf a.tar.gz -C /usr</li>
-<li>查看压缩包内容<br>
-tar -ztvf a.tar.gz<br>
-zip/unzip</li>
-<li>打包并压缩成bz2<br>
-tar -jcvf a.tar.bz2</li>
-<li>解压bz2<br>
-tar -jxvf a.tar.bz2</li>
+<h2 id="十、打包与压缩"><a href="#十、打包与压缩" class="headerlink" title="十、打包与压缩"></a>十、打包与压缩</h2><ol>
+<li>gzip压缩<br>gzip a.txt</li>
+<li>解压<br>gunzip a.txt.gz<br>gzip -d a.txt.gz</li>
+<li>bzip2压缩<br>bzip2 a</li>
+<li>解压<br>bunzip2 a.bz2<br>bzip2 -d a.bz2</li>
+<li>将当前目录的文件打包<br>tar -cvf bak.tar .<br>将&#x2F;etc&#x2F;password追加文件到bak.tar中(r)<br>tar -rvf bak.tar &#x2F;etc&#x2F;password</li>
+<li>解压<br>tar -xvf bak.tar</li>
+<li>打包并压缩gzip<br>tar -zcvf a.tar.gz</li>
+<li>解压缩<br>tar -zxvf a.tar.gz<br>解压到&#x2F;usr&#x2F;下<br>tar -zxvf a.tar.gz -C &#x2F;usr</li>
+<li>查看压缩包内容<br>tar -ztvf a.tar.gz<br>zip&#x2F;unzip</li>
+<li>打包并压缩成bz2<br>tar -jcvf a.tar.bz2</li>
+<li>解压bz2<br>tar -jxvf a.tar.bz2</li>
 </ol>
-<h2 id="十一、正则表达式">十一、正则表达式</h2>
-<ol>
-<li>cut截取以:分割保留第七段<br>
-grep hadoop /etc/passwd | cut -d: -f7</li>
-<li>排序<br>
-du | sort -n</li>
-<li>查询不包含hadoop的<br>
-grep -v hadoop /etc/passwd</li>
-<li>正则表达包含hadoop<br>
-grep ‘hadoop’ /etc/passwd</li>
-<li>正则表达(点代表任意一个字符)<br>
-grep ‘h.*p’ /etc/passwd</li>
-<li>正则表达以hadoop开头<br>
-grep ‘^hadoop’ /etc/passwd</li>
-<li>正则表达以hadoop结尾<br>
-grep ‘hadoop$’ /etc/passwd</li>
+<h2 id="十一、正则表达式"><a href="#十一、正则表达式" class="headerlink" title="十一、正则表达式"></a>十一、正则表达式</h2><ol>
+<li>cut截取以:分割保留第七段<br>grep hadoop &#x2F;etc&#x2F;passwd | cut -d: -f7</li>
+<li>排序<br>du | sort -n</li>
+<li>查询不包含hadoop的<br>grep -v hadoop &#x2F;etc&#x2F;passwd</li>
+<li>正则表达包含hadoop<br>grep ‘hadoop’ &#x2F;etc&#x2F;passwd</li>
+<li>正则表达(点代表任意一个字符)<br>grep ‘h.*p’ &#x2F;etc&#x2F;passwd</li>
+<li>正则表达以hadoop开头<br>grep ‘^hadoop’ &#x2F;etc&#x2F;passwd</li>
+<li>正则表达以hadoop结尾<br>grep ‘hadoop$’ &#x2F;etc&#x2F;passwd</li>
 </ol>
-<p><code>.  : 任意一个字符</code><br>
-<code>a* : 任意多个a(零个或多个a)</code><br>
-<code>a? : 零个或一个a</code><br>
-<code>a+ : 一个或多个a</code><br>
-<code>.* : 任意多个任意字符</code><br>
-查找不是以#开头的行<br>
-<code>grep -v '^#' a.txt | grep -v '^$'</code><br>
-以h或r开头的<br>
-<code>grep '^[hr]' /etc/passwd</code><br>
-不是以h和r开头的<br>
-<code>grep '^[^hr]' /etc/passwd</code><br>
-不是以h到r开头的<br>
-<code>grep '^[^h-r]' /etc/passwd</code></p>
-<h2 id="十二、进程控制">十二、进程控制</h2>
-<ol>
-<li>查看用户最近登录情况<br>
-last<br>
-lastlog</li>
-<li>查看硬盘使用情况<br>
-df</li>
-<li>查看文件大小<br>
-du</li>
-<li>查看内存使用情况<br>
-free</li>
-<li>查看文件系统<br>
-/proc</li>
-<li>查看日志<br>
-ls /var/log/</li>
-<li>查看系统报错日志<br>
-tail /var/log/messages</li>
-<li>查看进程<br>
-top</li>
-<li>结束进程<br>
-kill 1234<br>
-kill -9 4333</li>
+<p><code>.  : 任意一个字符</code><br><code>a* : 任意多个a(零个或多个a)</code><br><code>a? : 零个或一个a</code><br><code>a+ : 一个或多个a</code><br><code>.* : 任意多个任意字符</code><br>查找不是以#开头的行<br><code>grep -v &#39;^#&#39; a.txt | grep -v &#39;^$&#39;</code><br>以h或r开头的<br><code>grep &#39;^[hr]&#39; /etc/passwd</code><br>不是以h和r开头的<br><code>grep &#39;^[^hr]&#39; /etc/passwd</code><br>不是以h到r开头的<br><code>grep &#39;^[^h-r]&#39; /etc/passwd</code></p>
+<h2 id="十二、进程控制"><a href="#十二、进程控制" class="headerlink" title="十二、进程控制"></a>十二、进程控制</h2><ol>
+<li>查看用户最近登录情况<br>last<br>lastlog</li>
+<li>查看硬盘使用情况<br>df</li>
+<li>查看文件大小<br>du</li>
+<li>查看内存使用情况<br>free</li>
+<li>查看文件系统<br>&#x2F;proc</li>
+<li>查看日志<br>ls &#x2F;var&#x2F;log&#x2F;</li>
+<li>查看系统报错日志<br>tail &#x2F;var&#x2F;log&#x2F;messages</li>
+<li>查看进程<br>top</li>
+<li>结束进程<br>kill 1234<br>kill -9 4333</li>
 </ol>
-<h2 id="十三、linux的命令操作">十三、linux的命令操作</h2>
-<p>用vi文本编辑器来编辑生成文件<br>
-******最基本用法<br>
-vi  somefile.4</p>
+<h2 id="十三、linux的命令操作"><a href="#十三、linux的命令操作" class="headerlink" title="十三、linux的命令操作"></a>十三、linux的命令操作</h2><p>用vi文本编辑器来编辑生成文件<br>******最基本用法<br>vi  somefile.4</p>
 <ol>
 <li>首先会进入“一般模式”，此模式只接受各种快捷键，不能编辑文件内容</li>
 <li>按i键，就会从一般模式进入编辑模式，此模式下，敲入的都是文件内容</li>
 <li>编辑完成之后，按Esc键退出编辑模式，回到一般模式；</li>
 <li>再按：，进入“底行命令模式”，输入wq命令，回车即可</li>
 </ol>
-<h3 id="查看文件内容">查看文件内容</h3>
-<p>cat    somefile    一次性将文件内容全部输出（控制台）<br>
-more  somefile    可以翻页查看, 下翻一页(空格)    上翻一页（b）  退出（q）<br>
-less  somefile      可以翻页查看,下翻一页(空格)    上翻一页（b），上翻一行(↑)  下翻一行（↓）  可以搜索关键字（/keyword）</p>
-<p>tail -10  install.log  查看文件尾部的10行<br>
-tail -f install.log    小f跟踪文件的唯一inode号，就算文件改名后，还是跟踪原来这个inode表示的文件<br>
-tail -F install.log    大F按照文件名来跟踪<br>
-head -10  install.log  查看文件头部的10行</p>
-<p>文件内容查阅<br>
-head -10 a.log 取前10行<br>
-tail -10 a.log 取后10行<br>
-tail -f a.log 实时检测日志更新<br>
-tail -f30 a.log 实时监测该日志的后30行<br>
-tab：代码补全，文件名补全<br>
-文件类型权限 drwxrwx user，group / 4,2,1打分<br>
-查看日志var/log\</p>
-<h3 id="3、文件权限的操作">3、文件权限的操作</h3>
-<p>drwxr-xr-x      （也可以用二进制表示  111 101 101  --&gt;  755）<br>
-d：标识节点类型（d：文件夹  -：文件  l:链接）<br>
-r：可读  w：可写    x：可执行 <br>
-第一组rwx：  表示这个文件的拥有者对它的权限：可读可写可执行<br>
-第二组r-x：  表示这个文件的所属组对它的权限：可读，不可写，可执行<br>
-第三组r-x：  表示这个文件的其他用户（相对于上面两类用户）对它的权限：可读，不可写，可执行</p>
-<p>chmod g-rw haha.dat    表示将haha.dat对所属组的rw权限取消<br>
-chmod o-rw haha.dat    表示将haha.dat对其他人的rw权限取消<br>
-chmod u+x haha.dat      表示将haha.dat对所属用户的权限增加x</p>
-<p>也可以用数字的方式来修改权限<br>
-chmod 664 haha.dat  <br>
-就会修改成  rw-rw-r–</p>
-<p>如果要将一个文件夹的所有内容权限统一修改，则可以-R参数<br>
-chmod -R 770 aaa/<br>
-chown angela:angela aaa/    &lt;只有root能执行&gt;</p>
-<p>4、基本的用户管理<br>
-useradd  angela<br>
-要修改密码才能登陆<br>
-passwd angela  按提示输入密码即可</p>
-<p>**为用户配置sudo权限<br>
-用root编辑 vi /etc/sudoers<br>
-在文件的如下位置，为hadoop添加一行即可<br>
-root    ALL=(ALL)      ALL    <br>
-hadoop  ALL=(ALL)      ALL</p>
-<p>然后，hadoop用户就可以用sudo来执行系统级别的指令<br>
-[hadoop@shizhan ~]$ sudo useradd huangxiaoming</p>
+<h3 id="查看文件内容"><a href="#查看文件内容" class="headerlink" title="查看文件内容"></a>查看文件内容</h3><p>cat    somefile    一次性将文件内容全部输出（控制台）<br>more  somefile    可以翻页查看, 下翻一页(空格)    上翻一页（b）  退出（q）<br>less  somefile      可以翻页查看,下翻一页(空格)    上翻一页（b），上翻一行(↑)  下翻一行（↓）  可以搜索关键字（&#x2F;keyword）</p>
+<p>tail -10  install.log  查看文件尾部的10行<br>tail -f install.log    小f跟踪文件的唯一inode号，就算文件改名后，还是跟踪原来这个inode表示的文件<br>tail -F install.log    大F按照文件名来跟踪<br>head -10  install.log  查看文件头部的10行</p>
+<p>文件内容查阅<br>head -10 a.log 取前10行<br>tail -10 a.log 取后10行<br>tail -f a.log 实时检测日志更新<br>tail -f30 a.log 实时监测该日志的后30行<br>tab：代码补全，文件名补全<br>文件类型权限 drwxrwx user，group &#x2F; 4,2,1打分<br>查看日志var&#x2F;log\</p>
+<h3 id="3、文件权限的操作"><a href="#3、文件权限的操作" class="headerlink" title="3、文件权限的操作"></a>3、文件权限的操作</h3><p>drwxr-xr-x      （也可以用二进制表示  111 101 101  –&gt;  755）<br>d：标识节点类型（d：文件夹  -：文件  l:链接）<br>r：可读  w：可写    x：可执行 <br>第一组rwx：  表示这个文件的拥有者对它的权限：可读可写可执行<br>第二组r-x：  表示这个文件的所属组对它的权限：可读，不可写，可执行<br>第三组r-x：  表示这个文件的其他用户（相对于上面两类用户）对它的权限：可读，不可写，可执行</p>
+<p>chmod g-rw haha.dat    表示将haha.dat对所属组的rw权限取消<br>chmod o-rw haha.dat    表示将haha.dat对其他人的rw权限取消<br>chmod u+x haha.dat      表示将haha.dat对所属用户的权限增加x</p>
+<p>也可以用数字的方式来修改权限<br>chmod 664 haha.dat  <br>就会修改成  rw-rw-r–</p>
+<p>如果要将一个文件夹的所有内容权限统一修改，则可以-R参数<br>chmod -R 770 aaa&#x2F;<br>chown angela:angela aaa&#x2F;    &lt;只有root能执行&gt;</p>
+<p>4、基本的用户管理<br>useradd  angela<br>要修改密码才能登陆<br>passwd angela  按提示输入密码即可</p>
+<p>**为用户配置sudo权限<br>用root编辑 vi &#x2F;etc&#x2F;sudoers<br>在文件的如下位置，为hadoop添加一行即可<br>root    ALL&#x3D;(ALL)      ALL    <br>hadoop  ALL&#x3D;(ALL)      ALL</p>
+<p>然后，hadoop用户就可以用sudo来执行系统级别的指令<br>[hadoop@shizhan ~]$ sudo useradd huangxiaoming</p>
 <p>5、系统管理操作</p>
 <ul>
-<li>
-<p>查看主机名<br>
-hostname</p>
+<li><p>查看主机名<br>hostname</p>
 </li>
-<li>
-<p>修改主机名(重启后无效)<br>
-hostname hadoop</p>
+<li><p>修改主机名(重启后无效)<br>hostname hadoop</p>
 </li>
-<li>
-<p>修改主机名(重启后永久生效)<br>
-vi /ect/sysconfig/network</p>
+<li><p>修改主机名(重启后永久生效)<br>vi &#x2F;ect&#x2F;sysconfig&#x2F;network</p>
 </li>
-<li>
-<p>修改IP(重启后无效)<br>
-ifconfig eth0 192.168.12.22</p>
+<li><p>修改IP(重启后无效)<br>ifconfig eth0 192.168.12.22</p>
 </li>
-<li>
-<p>修改IP(重启后永久生效)<br>
-vi /etc/sysconfig/network-scripts/ifcfg-eth0</p>
+<li><p>修改IP(重启后永久生效)<br>vi &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-eth0</p>
 </li>
 </ul>
-<p>mkdir  /mnt/cdrom      创建一个目录，用来挂载<br>
-mount -t iso9660 -o ro /dev/cdrom /mnt/cdrom/    将设备/dev/cdrom挂载到 挂载点 ：  /mnt/cdrom中</p>
+<p>mkdir  &#x2F;mnt&#x2F;cdrom      创建一个目录，用来挂载<br>mount -t iso9660 -o ro &#x2F;dev&#x2F;cdrom &#x2F;mnt&#x2F;cdrom&#x2F;    将设备&#x2F;dev&#x2F;cdrom挂载到 挂载点 ：  &#x2F;mnt&#x2F;cdrom中</p>
 <ul>
-<li>
-<p>umount<br>
-umount /mnt/cdrom</p>
+<li><p>umount<br>umount &#x2F;mnt&#x2F;cdrom</p>
 </li>
-<li>
-<p>统计文件或文件夹的大小<br>
-du -sh  /mnt/cdrom/Packages<br>
-df -h    查看磁盘的空间</p>
+<li><p>统计文件或文件夹的大小<br>du -sh  &#x2F;mnt&#x2F;cdrom&#x2F;Packages<br>df -h    查看磁盘的空间</p>
 </li>
-<li>
-<p>关机<br>
-halt</p>
+<li><p>关机<br>halt</p>
 </li>
-<li>
-<p>重启<br>
-reboot</p>
+<li><p>重启<br>reboot</p>
 </li>
 </ul>
-<p>******配置主机之间的免密ssh登陆<br>
-假如 A  要登陆  B<br>
-在A上操作：<br>
-%%首先生成密钥对<br>
-ssh-keygen  (提示时，直接回车即可)<br>
-%%再将A自己的公钥拷贝并追加到B的授权列表文件authorized_keys中<br>
-ssh-copy-id  B</p>
-<p>******后台服务管理<br>
-service network status  查看指定服务的状态<br>
-service network stop    停止指定服务<br>
-service network start    启动指定服务<br>
-service network restart  重启指定服务<br>
-service --status-all  查看系统中所有的后台服务</p>
-<p>设置后台服务的自启配置<br>
-chkconfig  查看所有服务器自启配置<br>
-chkconfig iptables off  关掉指定服务的自动启动<br>
-chkconfig iptables on  开启指定服务的自动启动</p>
+<p>******配置主机之间的免密ssh登陆<br>假如 A  要登陆  B<br>在A上操作：<br>%%首先生成密钥对<br>ssh-keygen  (提示时，直接回车即可)<br>%%再将A自己的公钥拷贝并追加到B的授权列表文件authorized_keys中<br>ssh-copy-id  B</p>
+<p>******后台服务管理<br>service network status  查看指定服务的状态<br>service network stop    停止指定服务<br>service network start    启动指定服务<br>service network restart  重启指定服务<br>service –status-all  查看系统中所有的后台服务</p>
+<p>设置后台服务的自启配置<br>chkconfig  查看所有服务器自启配置<br>chkconfig iptables off  关掉指定服务的自动启动<br>chkconfig iptables on  开启指定服务的自动启动</p>
 
 
         <hr>
@@ -1290,12 +1011,12 @@ chkconfig iptables on  开启指定服务的自动启动</p>
           2022
           <br>
           Theme by
-          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <a target="_blank" rel="noopener" href="https://hexo.io/themes/">Hexo</a>
           <span style="display: inline-block; margin: 0 5px;">
             <i class="fa fa-heart"></i>
           </span>
           re-Ported by
-          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          <a target="_blank" rel="noopener" href="https://github.com/Muzhi1920/Muzhi1920.github.io">Live My Life</a>
           |
           <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
         </p>

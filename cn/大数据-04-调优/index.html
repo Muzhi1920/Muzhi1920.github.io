@@ -150,7 +150,7 @@
 
 <!-- hack iOS CSS :active style -->
 
-	<body ontouchstart="" class="body--light body--dark">
+	<body ontouchstart="" class="body--light body--light">
 
 
 		<!-- ThemeColor -->
@@ -184,7 +184,7 @@
       ? b.pop()
       : '';
   }
-  let themeMode = 'dark';
+  let themeMode = 'light';
   if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
     let dbody = document.body.classList;
     themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
@@ -211,7 +211,7 @@
 <!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
 <script>
   ((window.gitter = {}).chat = {}).options = {
-    room: 'your-community/your-room'
+    room: 'touch_fish/lie_down'
   };
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
@@ -412,7 +412,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">364</span> In Total
+              Words <span class="post-count">362</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -474,22 +474,16 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1>大数据调优</h1>
-<h2 id="Hive">Hive</h2>
-<p>不怕数据大，就怕数据斜。报错：<code>reduce.shuffle出错，java heap space造成OOM</code></p>
+        <h1 id="大数据调优"><a href="#大数据调优" class="headerlink" title="大数据调优"></a>大数据调优</h1><h2 id="Hive"><a href="#Hive" class="headerlink" title="Hive"></a>Hive</h2><p>不怕数据大，就怕数据斜。报错：<code>reduce.shuffle出错，java heap space造成OOM</code></p>
 <p>map读入文件的时候每一个切片对应一个map task；到reduce时shuffle某个key数据太多造成reduce运行缓慢</p>
-<h3 id="解决办法">解决办法</h3>
-<ol>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><ol>
 <li>过滤空值；空值可能会造成大量数据进入到一个reduce中造成内存不足</li>
 <li>预跑+设定最大；每个Reduce处理的数据默认是256MB<code>hive.exec.reducers.bytes.per.reducer=256000000</code>;每个任务最大的reduce数，默认为1009<code>hive.exec.reducers.max=1009</code>;<code>N=min(参数2，总输入数据量/参数1)</code>设置Reducer的数量<code>set mapreduce.job.reduces=n</code></li>
 </ol>
 <span id="more"></span>
-<h2 id="Spark">Spark</h2>
-<p>RDD窄依赖没有shuffle过程；RDD在遇到宽依赖时shuffle就是一个stage。更多spark内容参考<br>
-<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/-nP26zi8B2PLpVmHorfzbA">30分钟理解Spark的基本原理</a></p>
-<h3 id="调优">调优</h3>
-<h4 id="提高executor内存">提高executor内存</h4>
-<table>
+
+<h2 id="Spark"><a href="#Spark" class="headerlink" title="Spark"></a>Spark</h2><p>RDD窄依赖没有shuffle过程；RDD在遇到宽依赖时shuffle就是一个stage。更多spark内容参考<br><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/-nP26zi8B2PLpVmHorfzbA">30分钟理解Spark的基本原理</a></p>
+<h3 id="调优"><a href="#调优" class="headerlink" title="调优"></a>调优</h3><h4 id="提高executor内存"><a href="#提高executor内存" class="headerlink" title="提高executor内存"></a>提高executor内存</h4><table>
 <thead>
 <tr>
 <th>参数</th>
@@ -497,8 +491,7 @@
 <th>作用</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>driverMemory</td>
 <td>4</td>
 <td>dirver创建sc，初始化DAG和任务调度</td>
@@ -523,19 +516,12 @@
 <td>16</td>
 <td></td>
 </tr>
-</tbody>
-</table>
-<h3 id="RDD的分区数">RDD的分区数</h3>
-<p>一个文件多个block，若干个block合并为一个输入分片InputSplit，对应一个task，合并RDD后对应输出RDD的一个partition；<br>
-InputSplit不跨越文件；<br>
-map阶段不改变rdd的partition数量，reduce阶段shuffle后改变rdd的partiiton数量<br>
-task的并行度：executor_num * cores /task个数<br>
-map_task数=读取分片数<br>
-reduce_task数=executor数量*executor_cores核数</p>
+</tbody></table>
+<h3 id="RDD的分区数"><a href="#RDD的分区数" class="headerlink" title="RDD的分区数"></a>RDD的分区数</h3><p>一个文件多个block，若干个block合并为一个输入分片InputSplit，对应一个task，合并RDD后对应输出RDD的一个partition；<br>InputSplit不跨越文件；<br>map阶段不改变rdd的partition数量，reduce阶段shuffle后改变rdd的partiiton数量<br>task的并行度：executor_num * cores &#x2F;task个数<br>map_task数&#x3D;读取分片数<br>reduce_task数&#x3D;executor数量*executor_cores核数</p>
 <p>序列化Kryo序列</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">extraSparkConf	--conf spark.serializer&#x3D;org.apache.spark.serializer.</span><br><span class="line">KryoSerializer --conf spark.kryoserializer.buffer.max.mb&#x3D;2000</span><br></pre></td></tr></table></figure>
-<p>其他参数优化参考<br>
-<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/108454557">超全spark性能优化总结</a></p>
+
+<p>其他参数优化参考<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/108454557">超全spark性能优化总结</a></p>
 
 
         <hr>
@@ -822,12 +808,12 @@ reduce_task数=executor数量*executor_cores核数</p>
           2022
           <br>
           Theme by
-          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <a target="_blank" rel="noopener" href="https://hexo.io/themes/">Hexo</a>
           <span style="display: inline-block; margin: 0 5px;">
             <i class="fa fa-heart"></i>
           </span>
           re-Ported by
-          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          <a target="_blank" rel="noopener" href="https://github.com/Muzhi1920/Muzhi1920.github.io">Live My Life</a>
           |
           <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
         </p>

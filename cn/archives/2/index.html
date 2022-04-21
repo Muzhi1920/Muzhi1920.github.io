@@ -150,7 +150,7 @@
 
 <!-- hack iOS CSS :active style -->
 
-	<body ontouchstart="" class="body--light body--dark">
+	<body ontouchstart="" class="body--light body--light">
 
 
 		<!-- ThemeColor -->
@@ -184,7 +184,7 @@
       ? b.pop()
       : '';
   }
-  let themeMode = 'dark';
+  let themeMode = 'light';
   if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
     let dbody = document.body.classList;
     themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
@@ -211,7 +211,7 @@
 <!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
 <script>
   ((window.gitter = {}).chat = {}).options = {
-    room: 'your-community/your-room'
+    room: 'touch_fish/lie_down'
   };
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
@@ -486,13 +486,9 @@
       
     </h3>
     <div class="post-content-preview">
-      搜索与查找问题
-包括搜索（BFS、DFS）、查找（二分）。
-一、一维查找
-1. TwoSum
-1.1 无序解法
-使用map一次遍历，复杂度为O(n)
-1234567891011121314class Solution &#123;public:    vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) &#123......
+      搜索与查找问题包括搜索（BFS、DFS）、查找（二分）。
+一、一维查找1. TwoSum1.1 无序解法使用map一次遍历，复杂度为O(n)
+1234567891011121314class Solution &#123;public:    vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) &#123;   ......
     </div>
   </a>
   
@@ -527,13 +523,11 @@
       
     </h3>
     <div class="post-content-preview">
-      链表与树
-6. 从尾到头打印链表
-
+      链表与树6. 从尾到头打印链表
 首选反转链表
 递归，消耗函数栈
 
-123456789101112131415161718192021class Solution &#123;public:    vector&lt;int&gt; reversePrint(ListNode *head) &#123;        ListNode *cur = head;        ListNod......
+123456789101112131415161718192021class Solution &#123;public:    vector&lt;int&gt; reversePrint(ListNode *head) &#123;        ListNode *cur = head;        ListNode ......
     </div>
   </a>
   
@@ -571,11 +565,10 @@
     </h3>
     <div class="post-content-preview">
       5. 空格替换%20
-
 在原来数组上改，使用resize扩大；
 从后往前赋值或替换%20
 
-123456789101112131415161718192021222324class Solution &#123;public:    string replaceSpace(string s) &#123;        int count = 0;        int origin_len......
+123456789101112131415161718192021222324class Solution &#123;public:    string replaceSpace(string s) &#123;        int count = 0;        int origin_len ......
     </div>
   </a>
   
@@ -610,16 +603,14 @@
       
     </h3>
     <div class="post-content-preview">
-      搜索
-12. 字符串路径
-路径的起点可以从矩阵的任意位置，然后搜索整个字符串；因此遍历入口N^2；继续搜索字符串，因此整体的复杂度为N^2 * k^4。每一次搜索：
+      搜索12. 字符串路径路径的起点可以从矩阵的任意位置，然后搜索整个字符串；因此遍历入口N^2；继续搜索字符串，因此整体的复杂度为N^2 * k^4。每一次搜索：
 
 边界判断；
 终止条件判断；
 pass标记，DFS，pass恢复
 复杂度$O(MN*3^K)$
 
-1234567891011121314151617181920212223242526272829class Solution &......
+1234567891011121314151617181920212223242526272829class Solution &#1......
     </div>
   </a>
   
@@ -655,18 +646,16 @@ pass标记，DFS，pass恢复
     </h3>
     <div class="post-content-preview">
       双指针与滑动窗口
-
 基于数组结合滑动窗口，形成的极值问题；
 基于数组，结合贪心的双指针问题。
 
 
-双指针
-11. 盛水最多的容器
-每次以双指针为边界，得到最大容量。
+
+双指针11. 盛水最多的容器每次以双指针为边界，得到最大容量。
 双指针正确性：假设当前x&lt;y, res = min(x, y) * t = x * t
 
 假设移动右边，导致长度会减小，高度上限为x；后序只能变小。
-假设移动左边：导致长度会减小，高度上限为y；后序可以变大。获得更高的可能......
+假设移动左边：导致长度会减小，高度上限为y；后序可以变大。获得更高的可能性更......
     </div>
   </a>
   
@@ -701,8 +690,7 @@ pass标记，DFS，pass恢复
       
     </h3>
     <div class="post-content-preview">
-      附：快排
-123456789101112131415void quickSort(vector&lt;int&gt; &amp;arr, int l, int r) &#123;    if (l &gt;= r)        return;    int i = l, j = r;    while (i &lt; j) &#123;        while (i &lt; j &am......
+      附：快排123456789101112131415void quickSort(vector&lt;int&gt; &amp;arr, int l, int r) &#123;    if (l &gt;= r)        return;    int i = l, j = r;    while (i &lt; j) &#123;        while (i &lt; j &amp......
     </div>
   </a>
   
@@ -737,8 +725,7 @@ pass标记，DFS，pass恢复
       
     </h3>
     <div class="post-content-preview">
-      回溯算法
-回溯也是搜索的一种方式，常见的二叉树，涉及递归和回溯。
+      回溯算法回溯也是搜索的一种方式，常见的二叉树，涉及递归和回溯。
 
 回溯是递归的副产品，只要有递归就会有回溯。
 回溯的本质是穷举。
@@ -750,7 +737,7 @@ pass标记，DFS，pass恢复
 切割问题：一个字符串按一定规则有几种切割方式
 子集问题：一个N个数的集合里有多少符合条件的子集
 排列问题：N个数按一定规则全排列方式
-棋盘问题......
+棋盘问题：......
     </div>
   </a>
   
@@ -785,20 +772,16 @@ pass标记，DFS，pass恢复
       
     </h3>
     <div class="post-content-preview">
-      操作系统与网络
-物理层,数据链路层,网络层,传输层,会话层,表示层和应用层。
+      操作系统与网络物理层,数据链路层,网络层,传输层,会话层,表示层和应用层。
 服务器编程参考：服务器编程入门
 
-0. 操作系统
-进程与线程
 
+
+0. 操作系统进程与线程
 进程：一个程序在一个数据集合上的一次运行过程。
 线程：线程是进程的一个实体，是被系统独立调度和执行的基本单位。
 
-区别
-进程是程序的一次执行，线程理解为进程中执行的一个程序片段；
-进程间是独立的，表现在内存空间、上下文环境上；线程运行在进程空间内；
-进......
+区别进程是程序的一次执行，线程理解为进程中执行的一个程序片段；进程间是独立的，表现在内存空间、上下文环境上；线程运行在进程空间内；进程间无法......
     </div>
   </a>
   
@@ -831,13 +814,12 @@ pass标记，DFS，pass恢复
       
     </h3>
     <div class="post-content-preview">
-      大数据
-大数据Hadoop和Spark基础知识，涉及Scala语言，Maven包管理，Hadoop/Hbase/Hive/Spark等大数据工具。(不断更新中，图片源自网络，侵删)
+      大数据大数据Hadoop和Spark基础知识，涉及Scala语言，Maven包管理，Hadoop&#x2F;Hbase&#x2F;Hive&#x2F;Spark等大数据工具。(不断更新中，图片源自网络，侵删)
+
 
 
 0. Scala基础
-
-case class：自动生成常用方法(equals&amp;hashCode,toString,copy)；自动生成伴生对象；实现了 apply 方法让你不需要通过 new 来创建类......
+case class：自动生成常用方法(equals&amp;hashCode,toString,copy)；自动生成伴生对象；实现了 apply 方法让你......
     </div>
   </a>
   
@@ -870,18 +852,17 @@ case class：自动生成常用方法(equals&amp;hashCode,toString,copy)；自�
       
     </h3>
     <div class="post-content-preview">
-      Java基础
-包括Java基础和计算机基础，主要包括GC，JVM，线程进程，同步互斥等
+      Java基础包括Java基础和计算机基础，主要包括GC，JVM，线程进程，同步互斥等
 
 
-JVM与GC
-JVM
 
+
+JVM与GCJVM
 程序计数器–与每个线程线程执行字节码行号有关–线程私有
 虚拟机栈–与Java方法有关创建栈帧–线程私有
 本地方法栈–与Java的native方法有关–线程私有
-Java堆–与Java对象实例有关/垃圾收集器管理的主要区域–GC堆
-Java方法区——线程共享；存储被虚拟机加载的类......
+Java堆–与Java对象实例有关&#x2F;垃圾收集器管理的主要区域–GC堆
+Java方法区——线程共享；存储被虚拟机......
     </div>
   </a>
   
@@ -1203,28 +1184,24 @@ Java方法区——线程共享；存储被虚拟机加载的类......
       <li>home</li>
     </a>
     
-    <a href="/categories/#jz-offer">
-      <li>jz-offer</li>
+    <a href="/categories/#剑指offer">
+      <li>剑指offer</li>
     </a>
     
-    <a href="/categories/#BD">
-      <li>BD</li>
+    <a href="/categories/#大数据基础">
+      <li>大数据基础</li>
     </a>
     
-    <a href="/categories/#bd">
-      <li>bd</li>
+    <a href="/categories/#推荐系统">
+      <li>推荐系统</li>
     </a>
     
-    <a href="/categories/#rec">
-      <li>rec</li>
+    <a href="/categories/#机器学习">
+      <li>机器学习</li>
     </a>
     
-    <a href="/categories/#ml">
-      <li>ml</li>
-    </a>
-    
-    <a href="/categories/#algo">
-      <li>algo</li>
+    <a href="/categories/#算法">
+      <li>算法</li>
     </a>
     
   </ul>
@@ -1289,12 +1266,12 @@ Java方法区——线程共享；存储被虚拟机加载的类......
           2022
           <br>
           Theme by
-          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <a target="_blank" rel="noopener" href="https://hexo.io/themes/">Hexo</a>
           <span style="display: inline-block; margin: 0 5px;">
             <i class="fa fa-heart"></i>
           </span>
           re-Ported by
-          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          <a target="_blank" rel="noopener" href="https://github.com/Muzhi1920/Muzhi1920.github.io">Live My Life</a>
           |
           <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
         </p>

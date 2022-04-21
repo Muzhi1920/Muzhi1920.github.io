@@ -150,7 +150,7 @@
 
 <!-- hack iOS CSS :active style -->
 
-	<body ontouchstart="" class="body--light body--dark">
+	<body ontouchstart="" class="body--light body--light">
 
 
 		<!-- ThemeColor -->
@@ -184,7 +184,7 @@
       ? b.pop()
       : '';
   }
-  let themeMode = 'dark';
+  let themeMode = 'light';
   if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
     let dbody = document.body.classList;
     themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
@@ -211,7 +211,7 @@
 <!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
 <script>
   ((window.gitter = {}).chat = {}).options = {
-    room: 'your-community/your-room'
+    room: 'touch_fish/lie_down'
   };
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
@@ -469,17 +469,15 @@
         
         <a href="#home" title="home" rel="1">home</a>
         
-        <a href="#jz-offer" title="jz-offer" rel="7">jz-offer</a>
+        <a href="#剑指offer" title="剑指offer" rel="7">剑指offer</a>
         
-        <a href="#BD" title="BD" rel="7">BD</a>
+        <a href="#大数据基础" title="大数据基础" rel="8">大数据基础</a>
         
-        <a href="#bd" title="bd" rel="1">bd</a>
+        <a href="#推荐系统" title="推荐系统" rel="1">推荐系统</a>
         
-        <a href="#rec" title="rec" rel="1">rec</a>
+        <a href="#机器学习" title="机器学习" rel="5">机器学习</a>
         
-        <a href="#ml" title="ml" rel="5">ml</a>
-        
-        <a href="#algo" title="algo" rel="2">algo</a>
+        <a href="#算法" title="算法" rel="2">算法</a>
         
       </div>
 
@@ -729,8 +727,8 @@
       </div>
       
       <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="jz-offer">
-          <span class="tag-text">jz-offer</span>
+        <span class="fa fa-tag listing-seperator" id="剑指offer">
+          <span class="tag-text">剑指offer</span>
         </span>
         
         <!-- <li class="listing-item">
@@ -792,9 +790,9 @@
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
         <div class="post-preview">
-          <a href="/cn/剑指offer_04_树/">
+          <a href="/cn/剑指offer_04_栈与队列/">
             <h2 class="post-title">
-              剑指offer_04_树
+              剑指offer_05_栈与队列
               
               -- cn
               
@@ -810,9 +808,9 @@
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
         <div class="post-preview">
-          <a href="/cn/剑指offer_04_栈与队列/">
+          <a href="/cn/剑指offer_04_树/">
             <h2 class="post-title">
-              剑指offer_05_栈与队列
+              剑指offer_04_树
               
               -- cn
               
@@ -862,8 +860,8 @@
       </div>
       
       <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="BD">
-          <span class="tag-text">BD</span>
+        <span class="fa fa-tag listing-seperator" id="大数据基础">
+          <span class="tag-text">大数据基础</span>
         </span>
         
         <!-- <li class="listing-item">
@@ -979,6 +977,24 @@
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
         <div class="post-preview">
+          <a href="/cn/大数据-07-git/">
+            <h2 class="post-title">
+              大数据-07-git
+              
+              -- cn
+              
+            </h2>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
           <a href="/cn/大数据-01-基础/">
             <h2 class="post-title">
               大数据-01-基础
@@ -995,33 +1011,8 @@
       </div>
       
       <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="bd">
-          <span class="tag-text">bd</span>
-        </span>
-        
-        <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-        <div class="post-preview">
-          <a href="/cn/大数据-07-git/">
-            <h2 class="post-title">
-              大数据-07-git
-              
-              -- cn
-              
-            </h2>
-            
-          </a>
-          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </div>
-        <hr>
-        
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="rec">
-          <span class="tag-text">rec</span>
+        <span class="fa fa-tag listing-seperator" id="推荐系统">
+          <span class="tag-text">推荐系统</span>
         </span>
         
         <!-- <li class="listing-item">
@@ -1045,8 +1036,8 @@
       </div>
       
       <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="ml">
-          <span class="tag-text">ml</span>
+        <span class="fa fa-tag listing-seperator" id="机器学习">
+          <span class="tag-text">机器学习</span>
         </span>
         
         <!-- <li class="listing-item">
@@ -1142,8 +1133,8 @@
       </div>
       
       <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="algo">
-          <span class="tag-text">algo</span>
+        <span class="fa fa-tag listing-seperator" id="算法">
+          <span class="tag-text">算法</span>
         </span>
         
         <!-- <li class="listing-item">
@@ -1238,12 +1229,12 @@
           2022
           <br>
           Theme by
-          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <a target="_blank" rel="noopener" href="https://hexo.io/themes/">Hexo</a>
           <span style="display: inline-block; margin: 0 5px;">
             <i class="fa fa-heart"></i>
           </span>
           re-Ported by
-          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          <a target="_blank" rel="noopener" href="https://github.com/Muzhi1920/Muzhi1920.github.io">Live My Life</a>
           |
           <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
         </p>

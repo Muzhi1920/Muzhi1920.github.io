@@ -150,7 +150,7 @@
 
 <!-- hack iOS CSS :active style -->
 
-	<body ontouchstart="" class="body--light body--dark">
+	<body ontouchstart="" class="body--light body--light">
 
 
 		<!-- ThemeColor -->
@@ -184,7 +184,7 @@
       ? b.pop()
       : '';
   }
-  let themeMode = 'dark';
+  let themeMode = 'light';
   if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
     let dbody = document.body.classList;
     themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
@@ -211,7 +211,7 @@
 <!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
 <script>
   ((window.gitter = {}).chat = {}).options = {
-    room: 'your-community/your-room'
+    room: 'touch_fish/lie_down'
   };
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
@@ -486,20 +486,17 @@
       
     </h3>
     <div class="post-content-preview">
-      Linux
-更多命令参考
-Linux常用命令总结
+      Linux更多命令参考Linux常用命令总结
 
 ps：查看当前进程
-
 ps -ef (system v 输出)
 ps -aux bsd 格式输出
 ps -ef | grep pid
 
 
 ln：软连接，快捷方式；硬链接：同步更改。
-chmod abc file a,b,c：分别表示User、Group、及Other的权限。若要rwx属性则4+2+1=7
-vi 文件名编辑 cat file ......
+chmod abc file a,b,c：分别表示User、Group、及Other的权限。若要rwx属性则4+2+1&#x3D;7
+vi 文件名编辑 cat fil......
     </div>
   </a>
   
@@ -536,9 +533,7 @@ vi 文件名编辑 cat file ......
 移植 Hux Blog 的主题，感谢 Huxpro 设计了如此完美的主题。
 由 Vincent 创建的 LiveMyLife 的主题修改来源 YenYuHsuan，参考主题 dusign、Utone，感谢 dusign、Utone。
 
-仓库
-Github 仓库地址：https://github.com/V-Vincen/hexo-theme-livemylife
-Gitee 仓库地址：ht......
+仓库Github 仓库地址：https://github.com/V-Vincen/hexo-theme-livemylifeGitee 仓库地址：http......
     </div>
   </a>
   
@@ -571,10 +566,8 @@ Gitee 仓库地址：ht......
       
     </h3>
     <div class="post-content-preview">
-      拓展题目
-包括概率题、智力题、top-k等问题，补充数论问题
-指数次方（logN复杂度）
-12345678int func(int x, int n) &#123;    if (n == 0)        return 1;    int t = func(x, n / 2);    if (n % 2 == 1)        return t * t * x;    return t......
+      拓展题目包括概率题、智力题、top-k等问题，补充数论问题
+指数次方（logN复杂度）12345678int func(int x, int n) &#123;    if (n == 0)        return 1;    int t = func(x, n / 2);    if (n % 2 == 1)        return t * t * x;    return t *......
     </div>
   </a>
   
@@ -607,18 +600,11 @@ Gitee 仓库地址：ht......
       
     </h3>
     <div class="post-content-preview">
-      git操作
-新建分支以及远程分支
-git branch xx
-git checkout -b xx
-git push --set-upstream origin xx
+      git操作新建分支以及远程分支git branch xxgit checkout -b xxgit push –set-upstream origin xx
 
-新本地分支追溯远程分支
-git checkout -b xx
-git branch --set-upstream-to=origin/xx
-删除分支以及远程分支
-git checkout master
-git push or......
+
+新本地分支追溯远程分支git checkout -b xxgit branch –set-upstream-to&#x3D;origin&#x2F;xx
+删除分支以及远程分支git checkout mastergit push o......
     </div>
   </a>
   
@@ -651,23 +637,19 @@ git push or......
       
     </h3>
     <div class="post-content-preview">
-      SQL基础
-简要sql语法基础，包括添加外部脚本，基本的增删改查
+      SQL基础简要sql语法基础，包括添加外部脚本，基本的增删改查
 
-调用Python脚本
-SQL调优
 
+
+调用Python脚本SQL调优
 创建索引；避免索引上引用计算；预编译查询；临时表暂存（减少阻塞提高并发性能）；避免使用having（分组后过滤，开销很大）
 分区dt,strategy统计，用样本估计整体；
 常用列建立索引，但不是越多越好。
 
 SQL关键字
-
-
 +：多个列或者不同表的多个列的值相加；后跟as
 
-
-betwe......
+between 6......
     </div>
   </a>
   
@@ -700,14 +682,11 @@ betwe......
       
     </h3>
     <div class="post-content-preview">
-      shell基础
-vim命令
-
+      shell基础vim命令
 
 
 命令
 功能
-
 
 
 
@@ -720,10 +699,10 @@ set nonu
 
 
 &lt;-查找-&gt;
-&lt;-查找=&gt;
+&lt;-查找&#x3D;&gt;
 
 
-/
+&#x2F;
 向后搜索
 
 
@@ -736,7 +715,7 @@ N
 
 
 &lt;-跳转-&gt;
-&lt;-跳转=&gt;
+&lt;-跳转&#x3D;&gt;
 
 
 gg
@@ -754,12 +733,6 @@ b
 e
 单词前跳
 
-
-0
-跳至行首
-
-
-$
 ......
     </div>
   </a>
@@ -795,12 +768,9 @@ $
       
     </h3>
     <div class="post-content-preview">
-      算法与Coding基础
-算法基础
-code一般分为：数据结构、算法、数学
+      算法与Coding基础算法基础code一般分为：数据结构、算法、数学
 
 数据结构（难度累加）
-
 c++ STL：数组、栈、队列（优先、双端）、集合与映射（有序、哈希）
 字符串
 指针：链表、树（递归遍历、层序、二叉搜索、字典树）、图（二分图、拓扑排序）
@@ -809,12 +779,11 @@ c++ STL：数组、栈、队列（优先、双端）、集合与映射（有序�
 
 
 算法
-
 贪心
 指针类：双指针（滑动、固定窗口）、快慢指针
 二分查找
 排序算法
-搜索算法：广度优先、深......
+搜索算法：广度优先、深度优先（......
     </div>
   </a>
   
@@ -849,27 +818,21 @@ c++ STL：数组、栈、队列（优先、双端）、集合与映射（有序�
       
     </h3>
     <div class="post-content-preview">
-      语言模型
-万物皆可Embedding
-
+      语言模型万物皆可Embedding
 
 将one-hot映射为embedding，能够很好挖掘嵌入实体间的内部关联
 
 
-1、高维-&gt;低维
-2、稀疏-&gt;稠密
-3、离散-&gt;连续
-4、整数-&gt;实数
+1、高维-&gt;低维2、稀疏-&gt;稠密3、离散-&gt;连续4、整数-&gt;实数
 
-高维稀疏
-不利于机器学习参数学习和相关计算；维度灾难；复杂度增加，过拟合；稀疏造成梯度消失；
+
+高维稀疏不利于机器学习参数学习和相关计算；维度灾难；复杂度增加，过拟合；稀疏造成梯度消失；
 向量化好处
-
 不丢失信息降维
 矩阵运算便于并行
 向量空间比较相似性
 
-word2......
+word2vec网页版......
     </div>
   </a>
   
@@ -902,14 +865,11 @@ word2......
       
     </h3>
     <div class="post-content-preview">
-      大数据调优
-Hive
-不怕数据大，就怕数据斜。报错：reduce.shuffle出错，java heap space造成OOM
+      大数据调优Hive不怕数据大，就怕数据斜。报错：reduce.shuffle出错，java heap space造成OOM
 map读入文件的时候每一个切片对应一个map task；到reduce时shuffle某个key数据太多造成reduce运行缓慢
 解决办法
-
 过滤空值；空值可能会造成大量数据进入到一个reduce中造成内存不足
-预跑+设定最大；每个Reduce处理的数据默认是256......
+预跑+设定最大；每个Reduce处理的数据默认是256MBh......
     </div>
   </a>
   
@@ -946,16 +906,14 @@ map读入文件的时候每一个切片对应一个map task；到reduce时shuffl
       
     </h3>
     <div class="post-content-preview">
-      算法导论
-动态规划
-
+      算法导论动态规划
 最优子结构性质。如果问题的最优解所包含的子问题的解也是最优的。
 无后效性。即子问题的解一旦确定，不受之后和包含它的更大的问题的决策影响。
 子问题重叠性质。子问题会被重复计算多次。动态规划对每一个子问题只计算一次保存在表格，简化重复计算时。
 
 
-钢条切割问题
-长度为n英寸的钢条有$2^{n-1}$种切割方法：因为在距离钢条左端i (i = 1, 2, … , n-1)英寸......
+
+钢条切割问题长度为n英寸的钢条有$2^{n-1}$种切割方法：因为在距离钢条左端i (i &#x3D; 1, 2, … , n-1......
     </div>
   </a>
   
@@ -1277,28 +1235,24 @@ map读入文件的时候每一个切片对应一个map task；到reduce时shuffl
       <li>home</li>
     </a>
     
-    <a href="/categories/#jz-offer">
-      <li>jz-offer</li>
+    <a href="/categories/#剑指offer">
+      <li>剑指offer</li>
     </a>
     
-    <a href="/categories/#BD">
-      <li>BD</li>
+    <a href="/categories/#大数据基础">
+      <li>大数据基础</li>
     </a>
     
-    <a href="/categories/#bd">
-      <li>bd</li>
+    <a href="/categories/#推荐系统">
+      <li>推荐系统</li>
     </a>
     
-    <a href="/categories/#rec">
-      <li>rec</li>
+    <a href="/categories/#机器学习">
+      <li>机器学习</li>
     </a>
     
-    <a href="/categories/#ml">
-      <li>ml</li>
-    </a>
-    
-    <a href="/categories/#algo">
-      <li>algo</li>
+    <a href="/categories/#算法">
+      <li>算法</li>
     </a>
     
   </ul>
@@ -1363,12 +1317,12 @@ map读入文件的时候每一个切片对应一个map task；到reduce时shuffl
           2022
           <br>
           Theme by
-          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <a target="_blank" rel="noopener" href="https://hexo.io/themes/">Hexo</a>
           <span style="display: inline-block; margin: 0 5px;">
             <i class="fa fa-heart"></i>
           </span>
           re-Ported by
-          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          <a target="_blank" rel="noopener" href="https://github.com/Muzhi1920/Muzhi1920.github.io">Live My Life</a>
           |
           <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
         </p>

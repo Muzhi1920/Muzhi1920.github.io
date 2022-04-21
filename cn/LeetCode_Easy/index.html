@@ -150,7 +150,7 @@
 
 <!-- hack iOS CSS :active style -->
 
-	<body ontouchstart="" class="body--light body--dark">
+	<body ontouchstart="" class="body--light body--light">
 
 
 		<!-- ThemeColor -->
@@ -184,7 +184,7 @@
       ? b.pop()
       : '';
   }
-  let themeMode = 'dark';
+  let themeMode = 'light';
   if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
     let dbody = document.body.classList;
     themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
@@ -211,7 +211,7 @@
 <!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
 <script>
   ((window.gitter = {}).chat = {}).options = {
-    room: 'your-community/your-room'
+    room: 'touch_fish/lie_down'
   };
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
@@ -470,144 +470,85 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1>Easy题目</h1>
-<p>top-400的基础题目</p>
+        <h1 id="Easy题目"><a href="#Easy题目" class="headerlink" title="Easy题目"></a>Easy题目</h1><p>top-400的基础题目</p>
 <span id="more"></span>
-<h3 id="9-回文数">9. 回文数</h3>
-<p>记忆两个数，切分最终得到左右两部分数字<code>return x == m || x == m / 10;</code></p>
-<h3 id="14-最长公共前缀">14. 最长公共前缀</h3>
-<p>纵向check</p>
+
+<h3 id="9-回文数"><a href="#9-回文数" class="headerlink" title="9. 回文数"></a>9. 回文数</h3><p>记忆两个数，切分最终得到左右两部分数字<code>return x == m || x == m / 10;</code></p>
+<h3 id="14-最长公共前缀"><a href="#14-最长公共前缀" class="headerlink" title="14. 最长公共前缀"></a>14. 最长公共前缀</h3><p>纵向check</p>
 <ul>
-<li>遍历第一个字符串的每个字符
-<ul>
-<li>遍历其他字符串
-<ul>
+<li>遍历第一个字符串的每个字符<ul>
+<li>遍历其他字符串<ul>
 <li>字符不等或者该串遍历完毕则返回</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<h3 id="20-有效的括号">20. 有效的括号</h3>
-<p>维护闭开括号的map，用栈遍历字符串，栈顶判断是否一致，最后返回栈是否为空。</p>
-<h3 id="21-合并有序链表">21. 合并有序链表</h3>
-<p>任意一个为空则返回另一个；通过值判断链表的指针指向</p>
-<h3 id="26-删除有序数组中的重复项">26. 删除有序数组中的重复项</h3>
-<p>要求最后返回长度。遍历数组，使用双指针将非重复项，往前复制即可。最后返回左指针所在位置即可。</p>
-<h3 id="27-移除元素">27. 移除元素</h3>
-<p>题目要求，将所有val的值去掉，允许更改顺序。<br>
-<strong>双指针</strong>做法：left寻找val，找到则用right的值覆盖，right并左移；未找到left右移</p>
-<h3 id="35-搜索插入位置">35. 搜索插入位置</h3>
-<p>二分</p>
-<h3 id="50-Pow-x-n">50. Pow(x,n)</h3>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">myPow</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">double</span> res = <span class="number">1.0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = n; i != <span class="number">0</span>; i /= <span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i % <span class="number">2</span> != <span class="number">0</span>)</span><br><span class="line">                res *= x;</span><br><span class="line">            x *= x;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> n &lt; <span class="number">0</span> ? <span class="number">1</span> / res : res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="53-最大子数组和">53. 最大子数组和</h3>
-<p>dp</p>
-<h3 id="66-加1">66. 加1</h3>
-<p>从后往前遍历：找到第一个不是9的，+1.同时把后面置0.如果均为9，则前面补1另返回数组</p>
-<h3 id="67-二进制求和">67. 二进制求和</h3>
-<p>模拟：反转两二进制；累加，余数保存结果，最后判断进位</p>
-<h3 id="69-Sqrt-x">69. Sqrt(x)</h3>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">mySqrt</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (x &lt;= <span class="number">1</span>) <span class="keyword">return</span> x;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>, right = x;</span><br><span class="line">        <span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = (right + left) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (x / mid &gt;= mid)</span><br><span class="line">                left = mid + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                right = mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> right - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="88-合并有序数组">88. 合并有序数组</h3>
-<p>两指针，指向两数组：从后往前，以<code>nums1</code>为基准合并，比较<code>nums2</code>；最后再判断第二个数组是否遍历完毕。</p>
-<h3 id="杨辉三角">杨辉三角</h3>
-<ol start="118">
+<h3 id="20-有效的括号"><a href="#20-有效的括号" class="headerlink" title="20. 有效的括号"></a>20. 有效的括号</h3><p>维护闭开括号的map，用栈遍历字符串，栈顶判断是否一致，最后返回栈是否为空。</p>
+<h3 id="21-合并有序链表"><a href="#21-合并有序链表" class="headerlink" title="21. 合并有序链表"></a>21. 合并有序链表</h3><p>任意一个为空则返回另一个；通过值判断链表的指针指向</p>
+<h3 id="26-删除有序数组中的重复项"><a href="#26-删除有序数组中的重复项" class="headerlink" title="26. 删除有序数组中的重复项"></a>26. 删除有序数组中的重复项</h3><p>要求最后返回长度。遍历数组，使用双指针将非重复项，往前复制即可。最后返回左指针所在位置即可。</p>
+<h3 id="27-移除元素"><a href="#27-移除元素" class="headerlink" title="27. 移除元素"></a>27. 移除元素</h3><p>题目要求，将所有val的值去掉，允许更改顺序。<br><strong>双指针</strong>做法：left寻找val，找到则用right的值覆盖，right并左移；未找到left右移</p>
+<h3 id="35-搜索插入位置"><a href="#35-搜索插入位置" class="headerlink" title="35. 搜索插入位置"></a>35. 搜索插入位置</h3><p>二分</p>
+<h3 id="50-Pow-x-n"><a href="#50-Pow-x-n" class="headerlink" title="50. Pow(x,n)"></a>50. Pow(x,n)</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">myPow</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">double</span> res = <span class="number">1.0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = n; i != <span class="number">0</span>; i /= <span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i % <span class="number">2</span> != <span class="number">0</span>)</span><br><span class="line">                res *= x;</span><br><span class="line">            x *= x;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> n &lt; <span class="number">0</span> ? <span class="number">1</span> / res : res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="53-最大子数组和"><a href="#53-最大子数组和" class="headerlink" title="53. 最大子数组和"></a>53. 最大子数组和</h3><p>dp</p>
+<h3 id="66-加1"><a href="#66-加1" class="headerlink" title="66. 加1"></a>66. 加1</h3><p>从后往前遍历：找到第一个不是9的，+1.同时把后面置0.如果均为9，则前面补1另返回数组</p>
+<h3 id="67-二进制求和"><a href="#67-二进制求和" class="headerlink" title="67. 二进制求和"></a>67. 二进制求和</h3><p>模拟：反转两二进制；累加，余数保存结果，最后判断进位</p>
+<h3 id="69-Sqrt-x"><a href="#69-Sqrt-x" class="headerlink" title="69. Sqrt(x)"></a>69. Sqrt(x)</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">mySqrt</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (x &lt;= <span class="number">1</span>) <span class="keyword">return</span> x;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>, right = x;</span><br><span class="line">        <span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = (right + left) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (x / mid &gt;= mid)</span><br><span class="line">                left = mid + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                right = mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> right - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="88-合并有序数组"><a href="#88-合并有序数组" class="headerlink" title="88. 合并有序数组"></a>88. 合并有序数组</h3><p>两指针，指向两数组：从后往前，以<code>nums1</code>为基准合并，比较<code>nums2</code>；最后再判断第二个数组是否遍历完毕。</p>
+<h3 id="杨辉三角"><a href="#杨辉三角" class="headerlink" title="杨辉三角"></a>杨辉三角</h3><ol start="118">
 <li>生成杨辉三角：遍历行数，设置正确的数组大小并初始化<code>res[i][j] = res[i - 1][j] + res[i - 1][j - 1];</code>前行的两值做和。</li>
 <li>得到三角的某行：$C_{n,m}$，按照递推公式累乘<code>row[i] = 1LL * row[i - 1] * (rowIndex - i + 1) / i;</code></li>
 </ol>
-<h3 id="167-两数之和">167. 两数之和</h3>
-<p>非递减数组，左右指针，两头凑，返回下标+1.</p>
-<h3 id="168-Excel名称">168. Excel名称</h3>
-<p>按照26进制计算即可。但从1开始，因此「进制转换」时先对columnNumber执行减一操作，从而实现整体偏移。<br>
-复杂度<code>Olog26 N</code></p>
-<h4 id="171-Excel序号">171. Excel序号</h4>
-<p>倒序遍历，加回去。</p>
-<h3 id="169-多数元素">169. 多数元素</h3>
-<p>超过一半的元素，用投票法</p>
-<h3 id="190-颠倒二进制位">190. 颠倒二进制位</h3>
-<ol>
+<h3 id="167-两数之和"><a href="#167-两数之和" class="headerlink" title="167. 两数之和"></a>167. 两数之和</h3><p>非递减数组，左右指针，两头凑，返回下标+1.</p>
+<h3 id="168-Excel名称"><a href="#168-Excel名称" class="headerlink" title="168. Excel名称"></a>168. Excel名称</h3><p>按照26进制计算即可。但从1开始，因此「进制转换」时先对columnNumber执行减一操作，从而实现整体偏移。<br>复杂度<code>Olog26 N</code></p>
+<h4 id="171-Excel序号"><a href="#171-Excel序号" class="headerlink" title="171. Excel序号"></a>171. Excel序号</h4><p>倒序遍历，加回去。</p>
+<h3 id="169-多数元素"><a href="#169-多数元素" class="headerlink" title="169. 多数元素"></a>169. 多数元素</h3><p>超过一半的元素，用投票法</p>
+<h3 id="190-颠倒二进制位"><a href="#190-颠倒二进制位" class="headerlink" title="190. 颠倒二进制位"></a>190. 颠倒二进制位</h3><ol>
 <li>按照32位遍历，相与然后取数累加即可。</li>
 <li><code>O(1)</code>的方式：位运算分治。</li>
 </ol>
-<h3 id="191-位1的个数">191. 位1的个数</h3>
-<p>同剑指offer</p>
-<h4 id="231-2的幂">231. 2的幂</h4>
-<h3 id="202-快乐数">202. 快乐数</h3>
-<p>快慢指针：环相遇、判断是否为1。</p>
+<h3 id="191-位1的个数"><a href="#191-位1的个数" class="headerlink" title="191. 位1的个数"></a>191. 位1的个数</h3><p>同剑指offer</p>
+<h4 id="231-2的幂"><a href="#231-2的幂" class="headerlink" title="231. 2的幂"></a>231. 2的幂</h4><h3 id="202-快乐数"><a href="#202-快乐数" class="headerlink" title="202. 快乐数"></a>202. 快乐数</h3><p>快慢指针：环相遇、判断是否为1。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">squareSum</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(n &gt; <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> digit = n % <span class="number">10</span>;</span><br><span class="line">            sum += digit * digit;</span><br><span class="line">            n /= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isHappy</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> slow = n, fast = <span class="built_in">squareSum</span>(n);</span><br><span class="line">        <span class="keyword">while</span> (slow != fast)&#123;</span><br><span class="line">            slow = <span class="built_in">squareSum</span>(slow);</span><br><span class="line">            fast = <span class="built_in">squareSum</span>(<span class="built_in">squareSum</span>(fast));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> slow == <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="common">common</h3>
-<h4 id="203-移除链表元素">203. 移除链表元素</h4>
-<h4 id="237-删除链表元素">237. 删除链表元素</h4>
-<p>一次删除</p>
-<h4 id="206-反转链表">206. 反转链表</h4>
-<h4 id="217-存在重复元素">217. 存在重复元素</h4>
-<h4 id="219-存在重复元素II">219. 存在重复元素II</h4>
-<p>均使用构造Map映射，判断。</p>
-<h4 id="225-用队列实现栈">225. 用队列实现栈</h4>
-<h4 id="232-用栈实现队列">232. 用栈实现队列</h4>
-<h4 id="226-翻转二叉树">226. 翻转二叉树</h4>
-<h4 id="228-汇总空间">228. 汇总空间</h4>
-<p>模拟方法，一次遍历</p>
-<h3 id="235-二叉搜索树的最近公共祖先">235. 二叉搜索树的最近公共祖先</h3>
-<h3 id="257-二叉树的所有路径">257. 二叉树的所有路径</h3>
-<h3 id="205-同构字符串">205. 同构字符串</h3>
-<p>构造s2t和t2s的两个映射，遍历判断<code>((s2t.count(x) &amp;&amp; s2t[x] != y) || (t2s.count(y) &amp;&amp; t2s[y] != x))</code></p>
-<h3 id="234-回文链表">234. 回文链表</h3>
-<p>快慢指针分半；后半部分反转；两条遍历判断；恢复后半部分。</p>
-<h3 id="242-有效的字母异位词">242. 有效的字母异位词</h3>
-<p>遍历两字符串同时对字符个数进行相反的处理，最后check数组是否有1.</p>
-<h3 id="258-各位相加">258. 各位相加</h3>
-<p><code>return (num - 1) % 9 + 1;</code></p>
+<h3 id="common"><a href="#common" class="headerlink" title="common"></a>common</h3><h4 id="203-移除链表元素"><a href="#203-移除链表元素" class="headerlink" title="203. 移除链表元素"></a>203. 移除链表元素</h4><h4 id="237-删除链表元素"><a href="#237-删除链表元素" class="headerlink" title="237. 删除链表元素"></a>237. 删除链表元素</h4><p>一次删除</p>
+<h4 id="206-反转链表"><a href="#206-反转链表" class="headerlink" title="206. 反转链表"></a>206. 反转链表</h4><h4 id="217-存在重复元素"><a href="#217-存在重复元素" class="headerlink" title="217. 存在重复元素"></a>217. 存在重复元素</h4><h4 id="219-存在重复元素II"><a href="#219-存在重复元素II" class="headerlink" title="219. 存在重复元素II"></a>219. 存在重复元素II</h4><p>均使用构造Map映射，判断。</p>
+<h4 id="225-用队列实现栈"><a href="#225-用队列实现栈" class="headerlink" title="225. 用队列实现栈"></a>225. 用队列实现栈</h4><h4 id="232-用栈实现队列"><a href="#232-用栈实现队列" class="headerlink" title="232. 用栈实现队列"></a>232. 用栈实现队列</h4><h4 id="226-翻转二叉树"><a href="#226-翻转二叉树" class="headerlink" title="226. 翻转二叉树"></a>226. 翻转二叉树</h4><h4 id="228-汇总空间"><a href="#228-汇总空间" class="headerlink" title="228. 汇总空间"></a>228. 汇总空间</h4><p>模拟方法，一次遍历</p>
+<h3 id="235-二叉搜索树的最近公共祖先"><a href="#235-二叉搜索树的最近公共祖先" class="headerlink" title="235. 二叉搜索树的最近公共祖先"></a>235. 二叉搜索树的最近公共祖先</h3><h3 id="257-二叉树的所有路径"><a href="#257-二叉树的所有路径" class="headerlink" title="257. 二叉树的所有路径"></a>257. 二叉树的所有路径</h3><h3 id="205-同构字符串"><a href="#205-同构字符串" class="headerlink" title="205. 同构字符串"></a>205. 同构字符串</h3><p>构造s2t和t2s的两个映射，遍历判断<code>((s2t.count(x) &amp;&amp; s2t[x] != y) || (t2s.count(y) &amp;&amp; t2s[y] != x))</code></p>
+<h3 id="234-回文链表"><a href="#234-回文链表" class="headerlink" title="234. 回文链表"></a>234. 回文链表</h3><p>快慢指针分半；后半部分反转；两条遍历判断；恢复后半部分。</p>
+<h3 id="242-有效的字母异位词"><a href="#242-有效的字母异位词" class="headerlink" title="242. 有效的字母异位词"></a>242. 有效的字母异位词</h3><p>遍历两字符串同时对字符个数进行相反的处理，最后check数组是否有1.</p>
+<h3 id="258-各位相加"><a href="#258-各位相加" class="headerlink" title="258. 各位相加"></a>258. 各位相加</h3><p><code>return (num - 1) % 9 + 1;</code></p>
 <ul>
 <li>num 不是 9 的倍数时，其数根即为num 除以 9 的余数。</li>
-<li>num 是 9 的倍数时：
-<ol>
-<li>如果 num=0，则其数根是 0；</li>
+<li>num 是 9 的倍数时：<ol>
+<li>如果 num&#x3D;0，则其数根是 0；</li>
 <li>如果 num&gt;0，则各位相加的结果大于 0，其数根也大于 0，因此其数根是 9。</li>
 </ol>
 </li>
 </ul>
-<h3 id="268-丢失的数字">268. 丢失的数字</h3>
-<p>0~n的和减去，数组的和。</p>
-<h3 id="278-第一个错误的版本">278. 第一个错误的版本</h3>
-<p>版本号递增，二分查找</p>
-<h3 id="283-移动零">283. 移动零</h3>
-<p>双指针查找0和非0的位置，然后交换。将0置于数组后方。</p>
-<h3 id="290-单词规律">290. 单词规律</h3>
-<p>同字符映射题目。构造字符和字符串的映射和<code>反映射</code>，遍历判断</p>
-<h3 id="292-Nim游戏">292. Nim游戏</h3>
-<p>如果总石头数为 4 的倍数，无论取多少石头，对方总有对应的取法让剩余数目继续为 4的倍数。因此最优选择是<strong>当前己方取完石头后，让剩余的石头的数目为 4 的倍数</strong>。<br>
-<code>return n % 4 != 0;</code></p>
-<h3 id="303-区域和检索-数组不可变">303. 区域和检索 - 数组不可变</h3>
-<p>实现数组元素和累加，区间和两索引相减；</p>
-<h3 id="3的幂">3的幂</h3>
-<p>32位有符号整数的最大值，n应该是其约数，<code>return n &gt; 0 &amp;&amp; 1162261467 % n == 0;</code></p>
-<h3 id="342-4的幂">342. 4的幂</h3>
-<p>2的幂和偶数位置判断：<code> return n &gt; 0 &amp;&amp; (n &amp; (n - 1)) == 0 &amp;&amp; (n &amp; 0xaaaaaaaa) == 0</code></p>
-<h3 id="338-比特位计数">338. 比特位计数</h3>
-<p>对应计算数字中1的个数，这里实现累加</p>
+<h3 id="268-丢失的数字"><a href="#268-丢失的数字" class="headerlink" title="268. 丢失的数字"></a>268. 丢失的数字</h3><p>0~n的和减去，数组的和。</p>
+<h3 id="278-第一个错误的版本"><a href="#278-第一个错误的版本" class="headerlink" title="278. 第一个错误的版本"></a>278. 第一个错误的版本</h3><p>版本号递增，二分查找</p>
+<h3 id="283-移动零"><a href="#283-移动零" class="headerlink" title="283. 移动零"></a>283. 移动零</h3><p>双指针查找0和非0的位置，然后交换。将0置于数组后方。</p>
+<h3 id="290-单词规律"><a href="#290-单词规律" class="headerlink" title="290. 单词规律"></a>290. 单词规律</h3><p>同字符映射题目。构造字符和字符串的映射和<code>反映射</code>，遍历判断</p>
+<h3 id="292-Nim游戏"><a href="#292-Nim游戏" class="headerlink" title="292. Nim游戏"></a>292. Nim游戏</h3><p>如果总石头数为 4 的倍数，无论取多少石头，对方总有对应的取法让剩余数目继续为 4的倍数。因此最优选择是<strong>当前己方取完石头后，让剩余的石头的数目为 4 的倍数</strong>。<br><code>return n % 4 != 0;</code></p>
+<h3 id="303-区域和检索-数组不可变"><a href="#303-区域和检索-数组不可变" class="headerlink" title="303. 区域和检索 - 数组不可变"></a>303. 区域和检索 - 数组不可变</h3><p>实现数组元素和累加，区间和两索引相减；</p>
+<h3 id="3的幂"><a href="#3的幂" class="headerlink" title="3的幂"></a>3的幂</h3><p>32位有符号整数的最大值，n应该是其约数，<code>return n &gt; 0 &amp;&amp; 1162261467 % n == 0;</code></p>
+<h3 id="342-4的幂"><a href="#342-4的幂" class="headerlink" title="342. 4的幂"></a>342. 4的幂</h3><p>2的幂和偶数位置判断：<code> return n &gt; 0 &amp;&amp; (n &amp; (n - 1)) == 0 &amp;&amp; (n &amp; 0xaaaaaaaa) == 0</code></p>
+<h3 id="338-比特位计数"><a href="#338-比特位计数" class="headerlink" title="338. 比特位计数"></a>338. 比特位计数</h3><p>对应计算数字中1的个数，这里实现累加</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">countBits</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">bits</span><span class="params">(n + <span class="number">1</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            bits[i] = bits[i &amp; (i - <span class="number">1</span>)] + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> bits;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="344-翻转字符串">344. 翻转字符串</h3>
-<p>就翻转</p>
-<h4 id="345-翻转字符串的元音字母">345. 翻转字符串的元音字母</h4>
-<p>翻转前查找</p>
-<h3 id="349-两个数组的交集">349. 两个数组的交集</h3>
-<p>构造对应set，遍历去interact即可。</p>
-<h4 id="350-两个数组的交集II">350.两个数组的交集II</h4>
-<p>对小数组构造map统计次数；遍历较大数组，按照数组1的map进行保存结果。</p>
-<h3 id="367-有效的完全平方数">367. 有效的完全平方数</h3>
-<p>和实现sqrt()同理。二分</p>
-<h3 id="374-猜数字大小">374. 猜数字大小</h3>
-<p>二分</p>
-<h3 id="383-赎金信">383. 赎金信</h3>
-<p>统计字符串1的字符及个数，再对字符串2的字符和个数进行判断。</p>
-<h3 id="387-字符串中的第一个唯一字符">387. 字符串中的第一个唯一字符</h3>
-<p>统计次数+遍历判断</p>
-<h3 id="389-找不同">389. 找不同</h3>
-<p>随机重排+字符，按照268丢失数字思路相近。这里只要从0开始，<code>^</code>上两个字符串，返回最终结果。</p>
-<h3 id="392-判断子序列">392. 判断子序列</h3>
-<p>嵌套遍历：统计相同的字符个数，是否为字符串长度即可。</p>
+
+
+<h3 id="344-翻转字符串"><a href="#344-翻转字符串" class="headerlink" title="344. 翻转字符串"></a>344. 翻转字符串</h3><p>就翻转</p>
+<h4 id="345-翻转字符串的元音字母"><a href="#345-翻转字符串的元音字母" class="headerlink" title="345. 翻转字符串的元音字母"></a>345. 翻转字符串的元音字母</h4><p>翻转前查找</p>
+<h3 id="349-两个数组的交集"><a href="#349-两个数组的交集" class="headerlink" title="349. 两个数组的交集"></a>349. 两个数组的交集</h3><p>构造对应set，遍历去interact即可。</p>
+<h4 id="350-两个数组的交集II"><a href="#350-两个数组的交集II" class="headerlink" title="350.两个数组的交集II"></a>350.两个数组的交集II</h4><p>对小数组构造map统计次数；遍历较大数组，按照数组1的map进行保存结果。</p>
+<h3 id="367-有效的完全平方数"><a href="#367-有效的完全平方数" class="headerlink" title="367. 有效的完全平方数"></a>367. 有效的完全平方数</h3><p>和实现sqrt()同理。二分</p>
+<h3 id="374-猜数字大小"><a href="#374-猜数字大小" class="headerlink" title="374. 猜数字大小"></a>374. 猜数字大小</h3><p>二分</p>
+<h3 id="383-赎金信"><a href="#383-赎金信" class="headerlink" title="383. 赎金信"></a>383. 赎金信</h3><p>统计字符串1的字符及个数，再对字符串2的字符和个数进行判断。</p>
+<h3 id="387-字符串中的第一个唯一字符"><a href="#387-字符串中的第一个唯一字符" class="headerlink" title="387. 字符串中的第一个唯一字符"></a>387. 字符串中的第一个唯一字符</h3><p>统计次数+遍历判断</p>
+<h3 id="389-找不同"><a href="#389-找不同" class="headerlink" title="389. 找不同"></a>389. 找不同</h3><p>随机重排+字符，按照268丢失数字思路相近。这里只要从0开始，<code>^</code>上两个字符串，返回最终结果。</p>
+<h3 id="392-判断子序列"><a href="#392-判断子序列" class="headerlink" title="392. 判断子序列"></a>392. 判断子序列</h3><p>嵌套遍历：统计相同的字符个数，是否为字符串长度即可。</p>
 
 
         <hr>
@@ -890,12 +831,12 @@
           2022
           <br>
           Theme by
-          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <a target="_blank" rel="noopener" href="https://hexo.io/themes/">Hexo</a>
           <span style="display: inline-block; margin: 0 5px;">
             <i class="fa fa-heart"></i>
           </span>
           re-Ported by
-          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          <a target="_blank" rel="noopener" href="https://github.com/Muzhi1920/Muzhi1920.github.io">Live My Life</a>
           |
           <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
         </p>
