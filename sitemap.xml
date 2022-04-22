@@ -319,14 +319,14 @@
   </url>
   
   <url>
-    <loc>https://muzhi1920.github.io/tags/home/</loc>
+    <loc>https://muzhi1920.github.io/tags/%E8%B4%AA%E5%BF%83/</loc>
     <lastmod>2022-04-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://muzhi1920.github.io/tags/%E8%B4%AA%E5%BF%83/</loc>
+    <loc>https://muzhi1920.github.io/tags/home/</loc>
     <lastmod>2022-04-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -340,14 +340,14 @@
   </url>
   
   <url>
-    <loc>https://muzhi1920.github.io/tags/%E6%90%9C%E7%B4%A2/</loc>
+    <loc>https://muzhi1920.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/</loc>
     <lastmod>2022-04-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://muzhi1920.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/</loc>
+    <loc>https://muzhi1920.github.io/tags/%E6%90%9C%E7%B4%A2/</loc>
     <lastmod>2022-04-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -417,13 +417,6 @@
   </url>
   
   <url>
-    <loc>https://muzhi1920.github.io/tags/sql/</loc>
-    <lastmod>2022-04-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://muzhi1920.github.io/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E8%B0%83%E4%BC%98/</loc>
     <lastmod>2022-04-22</lastmod>
     <changefreq>daily</changefreq>
@@ -452,7 +445,7 @@
   </url>
   
   <url>
-    <loc>https://muzhi1920.github.io/tags/tools/</loc>
+    <loc>https://muzhi1920.github.io/tags/sql/</loc>
     <lastmod>2022-04-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -466,6 +459,13 @@
   </url>
   
   <url>
+    <loc>https://muzhi1920.github.io/tags/tools/</loc>
+    <lastmod>2022-04-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://muzhi1920.github.io/tags/ML/</loc>
     <lastmod>2022-04-22</lastmod>
     <changefreq>daily</changefreq>
@@ -473,14 +473,14 @@
   </url>
   
   <url>
-    <loc>https://muzhi1920.github.io/tags/%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://muzhi1920.github.io/tags/NLP/</loc>
     <lastmod>2022-04-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://muzhi1920.github.io/tags/NLP/</loc>
+    <loc>https://muzhi1920.github.io/tags/%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2022-04-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
