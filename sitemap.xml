@@ -170,14 +170,14 @@
   </url>
   
   <url>
-    <loc>https://muzhi1920.github.io/cn/Hexo-Theme-LiveMyLife/</loc>
+    <loc>https://muzhi1920.github.io/en/Hexo-Theme-LiveMyLife/</loc>
     
     <lastmod>2020-04-16</lastmod>
     
   </url>
   
   <url>
-    <loc>https://muzhi1920.github.io/en/Hexo-Theme-LiveMyLife/</loc>
+    <loc>https://muzhi1920.github.io/cn/Hexo-Theme-LiveMyLife/</loc>
     
     <lastmod>2020-04-16</lastmod>
     
@@ -291,14 +291,14 @@
 
   
   <url>
-    <loc>https://muzhi1920.github.io/tags/coding/</loc>
+    <loc>https://muzhi1920.github.io/tags/Hexo-Theme-LiveMyLife/</loc>
     <lastmod>2022-04-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://muzhi1920.github.io/tags/Hexo-Theme-LiveMyLife/</loc>
+    <loc>https://muzhi1920.github.io/tags/coding/</loc>
     <lastmod>2022-04-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -347,13 +347,6 @@
   </url>
   
   <url>
-    <loc>https://muzhi1920.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/</loc>
-    <lastmod>2022-04-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://muzhi1920.github.io/tags/%E9%93%BE%E8%A1%A8/</loc>
     <lastmod>2022-04-22</lastmod>
     <changefreq>daily</changefreq>
@@ -362,6 +355,13 @@
   
   <url>
     <loc>https://muzhi1920.github.io/tags/%E6%A0%91/</loc>
+    <lastmod>2022-04-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://muzhi1920.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/</loc>
     <lastmod>2022-04-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -396,13 +396,6 @@
   </url>
   
   <url>
-    <loc>https://muzhi1920.github.io/tags/linux/</loc>
-    <lastmod>2022-04-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://muzhi1920.github.io/tags/Java/</loc>
     <lastmod>2022-04-22</lastmod>
     <changefreq>daily</changefreq>
@@ -411,6 +404,13 @@
   
   <url>
     <loc>https://muzhi1920.github.io/tags/jvm/</loc>
+    <lastmod>2022-04-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://muzhi1920.github.io/tags/linux/</loc>
     <lastmod>2022-04-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -496,14 +496,14 @@
 
   
   <url>
-    <loc>https://muzhi1920.github.io/categories/leetcode/</loc>
+    <loc>https://muzhi1920.github.io/categories/Hexo-Theme-LiveMyLife/</loc>
     <lastmod>2022-04-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://muzhi1920.github.io/categories/Hexo-Theme-LiveMyLife/</loc>
+    <loc>https://muzhi1920.github.io/categories/leetcode/</loc>
     <lastmod>2022-04-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
