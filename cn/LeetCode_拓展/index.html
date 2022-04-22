@@ -116,11 +116,12 @@
     
 
     
-      <!-- gitment start -->
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.css"/>
-      <!-- gitment end -->
-    
 
+    
+      <!-- gitalk start -->
+      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
+      <link rel="stylesheet" href="/css/gitalk.css"/>
+      <!-- gitalk end -->
     
   
 
@@ -257,9 +258,9 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/tags/">
               
-              归档
+              标签
               
               
             </a>
@@ -268,9 +269,9 @@
           
           
           <li>
-            <a href="/tags/">
+            <a href="/archive/">
               
-              标签
+              归档
               
               
             </a>
@@ -585,63 +586,58 @@
         <!-- comments start -->
         <!-- 1. gitalk comment -->
 
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
 
-<!-- 2. gitment comment -->
+  <div id="gitalk-container"></div>
 
-  <!-- gitment start -->
-  <!-- Docs:https://github.com/imsun/gitment -->
-
-  <div id="blog_comments"></div>
-  <!-- <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"> <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script> -->
-
-  <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.js"></script>
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
 
   <script>
-    const myTheme = {
-      render(state, instance) {
-        const container = document.createElement('div')
-        container.lang = "en-US"
-        container.className = 'gitment-container gitment-root-container'
-
-        // your custom component
-        container.appendChild(instance.renderSomething(state, instance))
-        container.appendChild(instance.renderHeader(state, instance))
-        container.appendChild(instance.renderEditor(state, instance))
-        container.appendChild(instance.renderComments(state, instance))
-        container.appendChild(instance.renderFooter(state, instance))
-        return container
-      },
-      renderSomething(state, instance) {
-        const container = document.createElement('div')
-        container.lang = "en-US"
-        container.className = 'hello_visitor'
-        if (state.user.login) {
-          container.innerText = `Hello ${state.user.login}, Welcome to comment system`
-        }
-        return container
-      }
-    }
-
-    const gitment = new Gitment({
-      id: 'Mon Nov 04 2019 20:42:50 GMT+0800', // optional
+    var gitalk = new Gitalk({
+      clientID: 'a9a645b881c78d12baa8',
+      clientSecret: '144741a3fa325fe22d7207d5698374724cd412b7',
+      repo: 'Muzhi1920',
       owner: 'Muzhi1920',
-      repo: 'https://github.com/Muzhi1920/Muzhi1920.github.io',
-      oauth: {
-        client_id: 'a9a645b881c78d12baa8',
-        client_secret: '144741a3fa325fe22d7207d5698374724cd412b7'
-      },
-      desc: '',
-      perPage: '10',
-      maxCommentHeight: '250',
-      theme: myTheme,
-      // ... For more available options, check out the documentation below
-    })
+      admin: 'https://github.com/Muzhi1920/Muzhi1920.github.io',
+      id: 'Mon Nov 04 2019 20:42:50 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'zh-CN',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
 
-    gitment.render('blog_comments')
-    // or gitment.render(document.getElementById('comments')) or document.body.appendChild(gitment.render())
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
   </script>
 
-  <!-- gitment end -->
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
 
 
 <!-- 3. disqus comment -->
