@@ -247,17 +247,6 @@
           
           
           <li>
-            <a href="/categories/">
-              
-              分类
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
             <a href="/about/">
               
               关于
@@ -283,6 +272,17 @@
             <a href="/tags/">
               
               标签
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              分类
               
               
             </a>
@@ -966,15 +966,15 @@ case class：自动生成常用方法(equals&amp;hashCode,toString,copy)；自�
     
     
     
-    <a href="/tags/#栈与队列" title="栈与队列" rel="1">栈与队列</a>
-    
-    
-    
     <a href="/tags/#链表" title="链表" rel="1">链表</a>
     
     
     
     <a href="/tags/#树" title="树" rel="2">树</a>
+    
+    
+    
+    <a href="/tags/#栈与队列" title="栈与队列" rel="1">栈与队列</a>
     
     
     
@@ -1698,5 +1698,20 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
 
 
 		
-	</body>
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>

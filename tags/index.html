@@ -247,17 +247,6 @@
           
           
           <li>
-            <a href="/categories/">
-              
-              分类
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
             <a href="/about/">
               
               关于
@@ -283,6 +272,17 @@
             <a href="/tags/">
               
               标签
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              分类
               
               
             </a>
@@ -479,11 +479,11 @@
         
         <a href="#字符串" title="字符串" rel="1">字符串</a>
         
-        <a href="#栈与队列" title="栈与队列" rel="1">栈与队列</a>
-        
         <a href="#链表" title="链表" rel="1">链表</a>
         
         <a href="#树" title="树" rel="2">树</a>
+        
+        <a href="#栈与队列" title="栈与队列" rel="1">栈与队列</a>
         
         <a href="#数列" title="数列" rel="1">数列</a>
         
@@ -581,9 +581,9 @@
         <hr>
         
         <div class="post-preview">
-          <a href="/cn/LeetCode_动态规划/">
+          <a href="/cn/LeetCode_字符串/">
             <h2 class="post-title">
-              LeetCode_动态规划
+              LeetCode_字符串
               
               -- cn
               
@@ -594,9 +594,9 @@
         <hr>
         
         <div class="post-preview">
-          <a href="/cn/LeetCode_字符串/">
+          <a href="/cn/LeetCode_动态规划/">
             <h2 class="post-title">
-              LeetCode_字符串
+              LeetCode_动态规划
               
               -- cn
               
@@ -692,9 +692,9 @@
         <hr>
         
         <div class="post-preview">
-          <a href="/cn/LeetCode_滑动窗口/">
+          <a href="/cn/LeetCode_贪心/">
             <h2 class="post-title">
-              LeetCode_滑动窗口
+              LeetCode_贪心
               
               -- cn
               
@@ -705,9 +705,9 @@
         <hr>
         
         <div class="post-preview">
-          <a href="/cn/LeetCode_贪心/">
+          <a href="/cn/LeetCode_滑动窗口/">
             <h2 class="post-title">
-              LeetCode_贪心
+              LeetCode_滑动窗口
               
               -- cn
               
@@ -863,9 +863,9 @@
         <hr>
         
         <div class="post-preview">
-          <a href="/cn/剑指offer_04_栈与队列/">
+          <a href="/cn/剑指offer_03_链表与树/">
             <h2 class="post-title">
-              剑指offer_05_栈与队列
+              剑指offer_03_链表与树
               
               -- cn
               
@@ -876,9 +876,9 @@
         <hr>
         
         <div class="post-preview">
-          <a href="/cn/剑指offer_03_链表与树/">
+          <a href="/cn/剑指offer_04_栈与队列/">
             <h2 class="post-title">
-              剑指offer_03_链表与树
+              剑指offer_05_栈与队列
               
               -- cn
               
@@ -957,26 +957,6 @@
       </div>
       
       <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="栈与队列">
-          <span class="tag-text">栈与队列</span>
-        </span>
-        
-        <div class="post-preview">
-          <a href="/cn/剑指offer_04_栈与队列/">
-            <h2 class="post-title">
-              剑指offer_05_栈与队列
-              
-              -- cn
-              
-            </h2>
-            
-          </a>
-        </div>
-        <hr>
-        
-      </div>
-      
-      <div class="one-tag-list">
         <span class="fa fa-tag listing-seperator" id="链表">
           <span class="tag-text">链表</span>
         </span>
@@ -1018,6 +998,26 @@
           <a href="/cn/剑指offer_04_树/">
             <h2 class="post-title">
               剑指offer_04_树
+              
+              -- cn
+              
+            </h2>
+            
+          </a>
+        </div>
+        <hr>
+        
+      </div>
+      
+      <div class="one-tag-list">
+        <span class="fa fa-tag listing-seperator" id="栈与队列">
+          <span class="tag-text">栈与队列</span>
+        </span>
+        
+        <div class="post-preview">
+          <a href="/cn/剑指offer_04_栈与队列/">
+            <h2 class="post-title">
+              剑指offer_05_栈与队列
               
               -- cn
               
@@ -1898,5 +1898,20 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
 
 
 		
-	</body>
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>
