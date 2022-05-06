@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-5GGTGE8BJS"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-5GGTGE8BJS');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+
+  <!-- Baidu Push -->
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <!-- <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/> -->
+  <meta name="google-site-verification" content="MnOJ4x6R2U5mM5X77Gw3bN3VcbjclS96MyKa6oZoMVk" />
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="人工智能的奇点，正在来临..."/>
+  <meta name="keyword" content="AI"/>
+  <link rel="shortcut icon" href="/img/avatar/roguerabbit.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+      <!-- gitalk start -->
+      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
+      <link rel="stylesheet" href="/css/gitalk.css"/>
+      <!-- gitalk end -->
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://11010101.xyz/cn/推荐系统-01-TF/">
+  <title>
+    
+      （全网最详细）基于TensorFlow的Estimator实现Wide&amp;Deep模型 - Shawn Blog
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--light">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'light';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+		<!-- Gitter -->
+<!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'touch_fish/lie_down'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Shawn Blog</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">首页</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>搜索</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: url('');
+      --intro-header-background-image-url-page: url('/img/header_img/archive_bg2.jpg');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/archive_bg2.jpg');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url(''); */
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('/img/signature/vincent-white.png');
+      }
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#Estimator" title="Estimator">Estimator</a>
+              
+            </div>
+            <h1>（全网最详细）基于TensorFlow的Estimator实现Wide&amp;Deep模型</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by 小于 on
+              2022-05-06
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">18</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">3.6k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h1 id="（全网最详细）基于TensorFlow的Estimator实现Wide-amp-Deep模型"><a href="#（全网最详细）基于TensorFlow的Estimator实现Wide-amp-Deep模型" class="headerlink" title="（全网最详细）基于TensorFlow的Estimator实现Wide&amp;Deep模型"></a>（全网最详细）基于TensorFlow的Estimator实现Wide&amp;Deep模型</h1><h1 id="0-前言"><a href="#0-前言" class="headerlink" title="0. 前言"></a>0. 前言</h1><p>推荐系统的发展到如今已离不开深度学习的进步，凭借神经网络较强的特征提取和表征能力，以及架构算力的升级，推荐性能得到了进一步的飞跃。在数亿量级的数据集面前，业界广泛使用基于TensorFlow的Estimator分布式训练框架实现模型训练与部署。大量的祖传代码基本也以TensorFlow的高级API完成数据的读取（Datasets），模型的搭建（Layers），和训练、评估、保存与部署（Estimator）完成模型的生命周期。在TF1.x中主推Datasets + Estimator组合模式；升级到TF2.X后强推eager模式，很方便查看中间结果。相比于工业界的大数据分布式训练，后者更适用于实验室级别的轻量级模型。在比较成熟的深度学习平台上，其实不管使用哪种深度学习框架和高阶API组合，只要兼顾性能，写着熟练、方便才是硬道理。（参考：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/267809209）">https://www.zhihu.com/question/267809209）</a></p>
+<p>为更加详细的窥探TensorFlow框架的训练细节，基于Datasets + Feature_column + Layers + Estimator实现简单的Wide&amp;Deep模型。完整了解基本的TensorFlow.Estimator训练框架，看这篇文章就够了。文末附完整代码和测试数据，代码级内容简介：</p>
+<ol>
+<li>基于Example数据格式的tfrecord读取与解析</li>
+<li>结合feature_column和input_layer组合实现模型的参数独立</li>
+<li>使用Estimator实现wide&amp;deep模型</li>
+<li>对模型的训练、评估与导出等流程进行封装</li>
+</ol>
+<span id="more"></span>
+<h2 id="1-Datasets读取与解析pipeline"><a href="#1-Datasets读取与解析pipeline" class="headerlink" title="1. Datasets读取与解析pipeline"></a>1. Datasets读取与解析pipeline</h2><p>推荐系统中的特征类型一般包括<code>sparse</code>稀疏，和<code>dense</code>稠密类型，解析序列化<a target="_blank" rel="noopener" href="https://www.tensorflow.org/code/tensorflow/core/example/example.proto"><code>TF Example</code></a></p>
+<ul>
+<li>稀疏特征：长度不固定，batch读取后转为Tensorflow中定义的为<code>SparseTensor</code>对象，主要包括<code>indices,dense_shape,values</code>属性。</li>
+<li>稠密特征：长度固定，单值；batch读取后转为Tensor对象。</li>
+</ul>
+<p>基于dataset读取样本，允许按照多种格式读取（TextLine、TFRecord等等），这里使用tfrecord格式的随机数据打通Estimator训练的pipeline。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">os.environ[<span class="string">&#x27;TF_CONFIG&#x27;</span>] = <span class="string">&#x27;&#123;&quot;task&quot;:&#123;&quot;type&quot;:&quot;worker&quot;,&quot;index&quot;:0&#125;&#125;&#x27;</span> <span class="comment">#单机演示</span></span><br></pre></td></tr></table></figure>
+<h3 id="1-1-定义特征proto"><a href="#1-1-定义特征proto" class="headerlink" title="1.1 定义特征proto"></a>1.1 定义特征proto</h3><p>对每个feature index，定义特征读取的proto。不同类型特征对应着Tensor/SparseTensor的转换（参考：<a target="_blank" rel="noopener" href="https://github.com/Muzhi1920/awesome-models/blob/main/04-feature_column/00_00_feature_column%26input_layer.ipynb">input_layer</a>）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">feature_proto = &#123;</span><br><span class="line">    <span class="string">&#x27;sparse_000&#x27;</span>: tf.io.VarLenFeature(tf.int64),</span><br><span class="line">    <span class="string">&#x27;sparse_001&#x27;</span>: tf.io.VarLenFeature(tf.int64),</span><br><span class="line">    <span class="string">&#x27;sparse_002&#x27;</span>: tf.io.VarLenFeature(tf.int64),</span><br><span class="line">    <span class="string">&#x27;dense_000&#x27;</span>: tf.io.FixedLenFeature((), tf.int64, <span class="number">0</span>),</span><br><span class="line">    <span class="string">&#x27;dense_001&#x27;</span>: tf.io.FixedLenFeature((), tf.float32, <span class="number">0.0</span>), <span class="comment">#label ,need pop</span></span><br><span class="line">    <span class="string">&#x27;dense_002&#x27;</span>: tf.io.FixedLenFeature((), tf.float32, <span class="number">0.0</span>),</span><br><span class="line">    <span class="string">&#x27;dense_003&#x27;</span>: tf.io.FixedLenFeature((), tf.float32, <span class="number">0.0</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1-2-实现datasets消费与解析"><a href="#1-2-实现datasets消费与解析" class="headerlink" title="1.2 实现datasets消费与解析"></a>1.2 实现datasets消费与解析</h3><p>基于tf.data构建TensorFlow的输入pipeline，并且使用该API和Estimator搭配可以实现Better performence。（参考：<a target="_blank" rel="noopener" href="https://www.tensorflow.org/api_docs/python/tf/data/Dataset">Dataset</a>）</p>
+<ul>
+<li>对训练集进行shuffle和repeat轮数，再实现Example的读取与解析，以优化训练效果和性能；</li>
+<li>Estimator的训练以<code>max_steps</code>为截止，因此这里一般按照epochs+1计算，避免训练期间截止；</li>
+<li><code>parse_example_batch</code>是对得到的每个batch样本进行处理，返回<code>feature_dict</code>；同时抽取出<code>label</code>返回；</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">parse_example_batch</span>(<span class="params">example, feature_proto</span>):</span></span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">     - serialized: A vector (1-D Tensor) of strings, a batch of binary serialized `Example` protos.</span></span><br><span class="line"><span class="string">     - features: A `dict` mapping feature keys to `FixedLenFeature`, `VarLenFeature`, `SparseFeature`, and `RaggedFeature` values.</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    features = tf.io.parse_example(example, feature_proto) <span class="comment">#dict</span></span><br><span class="line">    label_shape = tf.shape(features[<span class="string">&#x27;dense_001&#x27;</span>])</span><br><span class="line"></span><br><span class="line">    label_dict = <span class="built_in">dict</span>()</span><br><span class="line">    y_pos = tf.fill(dims=label_shape, value=tf.constant(<span class="number">1.0</span>, tf.float32))</span><br><span class="line">    y_neg = tf.fill(dims=label_shape, value=tf.constant(<span class="number">0.0</span>, tf.float32))</span><br><span class="line">    label_dict[<span class="string">&#x27;ctr&#x27;</span>] = tf.where(tf.greater(features[<span class="string">&#x27;dense_001&#x27;</span>], <span class="number">0.0</span>), y_pos, y_neg) <span class="comment">#随机构建label</span></span><br><span class="line">    <span class="keyword">return</span> features, label_dict</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">_tfrecord_input_fn</span>(<span class="params">data_path, batch_size, epochs, feature_proto, num_shards, index</span>):</span></span><br><span class="line">    tf_files = tf.io.match_filenames_once(data_path)</span><br><span class="line">    dataset = tf.data.Dataset.from_tensor_slices(tf_files).shard(num_shards, index).shuffle(<span class="number">10</span>, reshuffle_each_iteration=<span class="literal">True</span>).interleave(</span><br><span class="line">        <span class="keyword">lambda</span> _file: tf.data.TFRecordDataset(_file),</span><br><span class="line">        cycle_length=<span class="number">2</span>,</span><br><span class="line">        block_length=<span class="number">8</span>,</span><br><span class="line">        num_parallel_calls=tf.data.AUTOTUNE).shuffle(batch_size * <span class="number">20</span>, reshuffle_each_iteration=<span class="literal">True</span>).repeat(epochs).batch(batch_size)</span><br><span class="line">    prefetch_dataset = dataset.<span class="built_in">map</span>(<span class="keyword">lambda</span> example: parse_example_batch(example, feature_proto), num_parallel_calls=tf.data.AUTOTUNE).prefetch(tf.data.AUTOTUNE)</span><br><span class="line">    <span class="keyword">return</span> prefetch_dataset</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">_input_fn</span>(<span class="params">data_path, feature_proto</span>):</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">lambda</span>: _tfrecord_input_fn(data_path=data_path, batch_size=<span class="number">4</span>, epochs=<span class="number">20</span>, feature_proto=feature_proto, num_shards=<span class="number">1</span>, index=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<p>基于以上dataset的消费pipeline，解析tfrecord格式的数据集得到dataset对象，能发现DataSet按照解析函数，包含了<code>features，labels</code>的特征名，主要为shape和types属性的数据集合。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ds = _tfrecord_input_fn(<span class="string">&#x27;./data/simple.tfrecord&#x27;</span>, <span class="number">4</span>, <span class="number">20</span>, feature_proto, <span class="number">1</span>, <span class="number">0</span>)</span><br><span class="line">ds</span><br><span class="line"></span><br><span class="line">&lt;PrefetchDataset shapes: (&#123;sparse_000: (<span class="literal">None</span>, <span class="literal">None</span>), sparse_001: (<span class="literal">None</span>, <span class="literal">None</span>), sparse_002: (<span class="literal">None</span>, <span class="literal">None</span>), dense_000: (<span class="literal">None</span>,), dense_001: (<span class="literal">None</span>,), dense_002: (<span class="literal">None</span>,), dense_003: (<span class="literal">None</span>,)&#125;, &#123;ctr: (<span class="literal">None</span>,)&#125;), types: (&#123;sparse_000: tf.int64, sparse_001: tf.int64, sparse_002: tf.int64, dense_000: tf.int64, dense_001: tf.float32, dense_002: tf.float32, dense_003: tf.float32&#125;, &#123;ctr: tf.float32&#125;)&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="1-3-查看dataset数据"><a href="#1-3-查看dataset数据" class="headerlink" title="1.3 查看dataset数据"></a>1.3 查看dataset数据</h3><p>为了进一步了解dataset的数据格式，初始化dataset迭代器，能看到和feature_proto定义的转换是一致的。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">iter</span> = tf.compat.v1.data.make_one_shot_iterator(ds)</span><br><span class="line">features, labels = <span class="built_in">iter</span>.get_next()</span><br><span class="line">features[<span class="string">&#x27;sparse_000&#x27;</span>],labels, features[<span class="string">&#x27;dense_000&#x27;</span>]<span class="comment">#, tf.sparse.to_dense(features[&#x27;sparse_000&#x27;])</span></span><br><span class="line"></span><br><span class="line">(&lt;tensorflow.python.framework.sparse_tensor.SparseTensor at <span class="number">0x7f21542a5b38</span>&gt;,</span><br><span class="line">     &#123;<span class="string">&#x27;ctr&#x27;</span>: &lt;tf.Tensor: shape=(<span class="number">4</span>,), dtype=float32, numpy=array([<span class="number">0.</span>, <span class="number">1.</span>, <span class="number">0.</span>, <span class="number">0.</span>], dtype=float32)&gt;&#125;,</span><br><span class="line">     &lt;tf.Tensor: shape=(<span class="number">4</span>,), dtype=int64, numpy=array([     <span class="number">0</span>,      <span class="number">0</span>, <span class="number">101840</span>,   <span class="number">1177</span>])&gt;)</span><br></pre></td></tr></table></figure>
+<h2 id="2-Feature-Column实现特征处理"><a href="#2-Feature-Column实现特征处理" class="headerlink" title="2. Feature Column实现特征处理"></a>2. Feature Column实现特征处理</h2><p>feature column是原始特征数据与estimator模型之间的中间过程，为原始数据和神经网络输入搭建桥梁。不同的feature_column实现了不同特征的读取和预处理逻辑，具体地是对不同Tensor或SparseTensor的特征进行预处理，主要包括：</p>
+<ol>
+<li>dense类进行线性变换，单值传入；</li>
+<li>sparse类进行稀疏特征的string hash，embedding lookup及其combiner等操作；</li>
+</ol>
+<p>最终的结果是将传入的feature_dict格式转为样本维度的特征拼接，方便后续模型的矩阵运算。但要注意模型训练与推理时字段上的不同。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> tensorflow <span class="keyword">import</span> feature_column <span class="keyword">as</span> fc</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">build_columns</span>(<span class="params">feature_proto</span>):</span></span><br><span class="line">    wide_columns = []</span><br><span class="line">    deep_columns = []</span><br><span class="line">    <span class="keyword">for</span> feature, _ <span class="keyword">in</span> feature_proto.items():</span><br><span class="line">        <span class="keyword">if</span> <span class="string">&#x27;sparse&#x27;</span> <span class="keyword">in</span> feature:</span><br><span class="line">            hash_bkt_input = fc.categorical_column_with_hash_bucket(feature, <span class="number">64</span>, tf.int64)</span><br><span class="line">            emb_input = fc.embedding_column(hash_bkt_input, <span class="number">8</span>, <span class="string">&#x27;sqrtn&#x27;</span>, tf.keras.initializers.VarianceScaling(distribution=<span class="string">&#x27;uniform&#x27;</span>))</span><br><span class="line">            wide_columns.append(hash_bkt_input)</span><br><span class="line">            deep_columns.append(emb_input)</span><br><span class="line">        <span class="keyword">elif</span> <span class="string">&#x27;dense&#x27;</span> <span class="keyword">in</span> feature:</span><br><span class="line">            dense_input = fc.numeric_column(feature, default_value=<span class="number">0.0</span>)</span><br><span class="line">            deep_columns.append(dense_input)</span><br><span class="line">            wide_columns.append(dense_input)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&#x27;exception feature is : &#x27;</span>,feature)</span><br><span class="line">    <span class="keyword">return</span> wide_columns, deep_columns</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">serving_input_receiver_fn that expects all features to be fed directly.</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line">serving_feature = feature_proto.copy()</span><br><span class="line">serving_feature.pop(<span class="string">&#x27;dense_001&#x27;</span>) <span class="comment"># feed features into model, except labes</span></span><br><span class="line">wide_columns, deep_columns = build_columns(serving_feature)</span><br><span class="line">wide_columns, deep_columns</span><br><span class="line"></span><br><span class="line">([HashedCategoricalColumn(key=<span class="string">&#x27;sparse_000&#x27;</span>, hash_bucket_size=<span class="number">64</span>, dtype=tf.int64),</span><br><span class="line">  HashedCategoricalColumn(key=<span class="string">&#x27;sparse_001&#x27;</span>, hash_bucket_size=<span class="number">64</span>, dtype=tf.int64),</span><br><span class="line">  HashedCategoricalColumn(key=<span class="string">&#x27;sparse_002&#x27;</span>, hash_bucket_size=<span class="number">64</span>, dtype=tf.int64),</span><br><span class="line">  NumericColumn(key=<span class="string">&#x27;dense_000&#x27;</span>, shape=(<span class="number">1</span>,), default_value=(<span class="number">0.0</span>,), dtype=tf.float32, normalizer_fn=<span class="literal">None</span>),</span><br><span class="line">  NumericColumn(key=<span class="string">&#x27;dense_002&#x27;</span>, shape=(<span class="number">1</span>,), default_value=(<span class="number">0.0</span>,), dtype=tf.float32, normalizer_fn=<span class="literal">None</span>),</span><br><span class="line">  NumericColumn(key=<span class="string">&#x27;dense_003&#x27;</span>, shape=(<span class="number">1</span>,), default_value=(<span class="number">0.0</span>,), dtype=tf.float32, normalizer_fn=<span class="literal">None</span>)],</span><br><span class="line"> [EmbeddingColumn(categorical_column=HashedCategoricalColumn(key=<span class="string">&#x27;sparse_000&#x27;</span>, hash_bucket_size=<span class="number">64</span>, dtype=tf.int64), dimension=<span class="number">8</span>, combiner=<span class="string">&#x27;sqrtn&#x27;</span>, initializer=&lt;tensorflow.python.keras.initializers.initializers_v2.VarianceScaling <span class="built_in">object</span> at <span class="number">0x7f21542a5ef0</span>&gt;, ckpt_to_load_from=<span class="literal">None</span>, tensor_name_in_ckpt=<span class="literal">None</span>, max_norm=<span class="literal">None</span>, trainable=<span class="literal">True</span>, use_safe_embedding_lookup=<span class="literal">True</span>),</span><br><span class="line">  EmbeddingColumn(categorical_column=HashedCategoricalColumn(key=<span class="string">&#x27;sparse_001&#x27;</span>, hash_bucket_size=<span class="number">64</span>, dtype=tf.int64), dimension=<span class="number">8</span>, combiner=<span class="string">&#x27;sqrtn&#x27;</span>, initializer=&lt;tensorflow.python.keras.initializers.initializers_v2.VarianceScaling <span class="built_in">object</span> at <span class="number">0x7f21542a5b70</span>&gt;, ckpt_to_load_from=<span class="literal">None</span>, tensor_name_in_ckpt=<span class="literal">None</span>, max_norm=<span class="literal">None</span>, trainable=<span class="literal">True</span>, use_safe_embedding_lookup=<span class="literal">True</span>),</span><br><span class="line">  EmbeddingColumn(categorical_column=HashedCategoricalColumn(key=<span class="string">&#x27;sparse_002&#x27;</span>, hash_bucket_size=<span class="number">64</span>, dtype=tf.int64), dimension=<span class="number">8</span>, combiner=<span class="string">&#x27;sqrtn&#x27;</span>, initializer=&lt;tensorflow.python.keras.initializers.initializers_v2.VarianceScaling <span class="built_in">object</span> at <span class="number">0x7f21542a5b00</span>&gt;, ckpt_to_load_from=<span class="literal">None</span>, tensor_name_in_ckpt=<span class="literal">None</span>, max_norm=<span class="literal">None</span>, trainable=<span class="literal">True</span>, use_safe_embedding_lookup=<span class="literal">True</span>),</span><br><span class="line">  NumericColumn(key=<span class="string">&#x27;dense_000&#x27;</span>, shape=(<span class="number">1</span>,), default_value=(<span class="number">0.0</span>,), dtype=tf.float32, normalizer_fn=<span class="literal">None</span>),</span><br><span class="line">  NumericColumn(key=<span class="string">&#x27;dense_002&#x27;</span>, shape=(<span class="number">1</span>,), default_value=(<span class="number">0.0</span>,), dtype=tf.float32, normalizer_fn=<span class="literal">None</span>),</span><br><span class="line">  NumericColumn(key=<span class="string">&#x27;dense_003&#x27;</span>, shape=(<span class="number">1</span>,), default_value=(<span class="number">0.0</span>,), dtype=tf.float32, normalizer_fn=<span class="literal">None</span>)])</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="/cn/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F-01-TF/feature_column.png" alt="feature_column的继承关系图"></p>
+<ol>
+<li>DenseColumn：稠密类型特征的输入，对Sparse特征构建embedding_matrix（参考：<a target="_blank" rel="noopener" href="https://github.com/Muzhi1920/awesome-models/blob/main/04-feature_column/01_00_safe_embedding_lookup_sparse.ipynb">safe_embedding_lookup_sparse</a>，<a target="_blank" rel="noopener" href="https://github.com/Muzhi1920/awesome-models/blob/main/04-feature_column/01_01_embedding_lookup_sparse.ipynb">embedding_lookup_sparse</a>，<a target="_blank" rel="noopener" href="https://github.com/Muzhi1920/awesome-models/blob/main/04-feature_column/01_02_embedding_lookup_and_transform.ipynb">embedding_lookup_and_transform</a>）</li>
+<li>CategoricalColumn：多值离散类型特征的输入（string hash bucket）（参考：<a target="_blank" rel="noopener" href="https://github.com/Muzhi1920/awesome-models/blob/main/04-feature_column/02_HashedCategoricalColumn.ipynb">HashedCategoricalColumn</a>）</li>
+</ol>
+<p>在datasets的pipeline中，使用feature_proto从example样本中解析出feature_dict；而feature column是feature_dict到Model的桥梁</p>
+<h2 id="3-实现Wide-amp-Deep模型"><a href="#3-实现Wide-amp-Deep模型" class="headerlink" title="3. 实现Wide&amp;Deep模型"></a>3. 实现Wide&amp;Deep模型</h2><p>Wide&amp;Deep本质上是对不同类型的特征拆分输入到两个module，通过组合不同的feature_column和input_layer实现wide和deep的参数独立，训练时对两个module设置不同的优化器（FTRL和AdaGrad）。</p>
+<h3 id="3-1-Wide部分"><a href="#3-1-Wide部分" class="headerlink" title="3.1 Wide部分"></a>3.1 Wide部分</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> tensorflow_estimator.python.estimator.canned.linear <span class="keyword">import</span> _linear_model_fn_builder_v2 <span class="keyword">as</span> wide_model</span><br><span class="line">wide_output, wide_weights = wide_model(units=<span class="number">1</span>, feature_columns=wide_columns, sparse_combiner=<span class="string">&#x27;sum&#x27;</span>, features=features)</span><br><span class="line">wide_output <span class="comment">#, wide_weights</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;tf.Tensor: shape=(<span class="number">4</span>, <span class="number">1</span>), dtype=float32, numpy=</span><br><span class="line">    array([[<span class="number">0.</span>],</span><br><span class="line">           [<span class="number">0.</span>],</span><br><span class="line">           [<span class="number">0.</span>],</span><br><span class="line">           [<span class="number">0.</span>]], dtype=float32)&gt;</span><br></pre></td></tr></table></figure>
+<p>wide部分具体实现，实质上是构建了N x 1维的embedding matrix，logistic regression过程即是对sparse特征进行embedding lookup和sum的过程。（参考：<a target="_blank" rel="noopener" href="https://github.com/Muzhi1920/awesome-models/blob/main/04-feature_column/02_HashedCategoricalColumn.ipynb">HashedCategoricalColumn</a>）</p>
+<h2 id="3-2-Deep部分"><a href="#3-2-Deep部分" class="headerlink" title="3.2 Deep部分"></a>3.2 Deep部分</h2><p>构造Deep侧的input_layer，并传入Deep侧对应的feature column</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">input_layer = tf.keras.layers.DenseFeatures(feature_columns=deep_columns, name=<span class="string">&#x27;deep_input&#x27;</span>)</span><br><span class="line">input_layer</span><br><span class="line"></span><br><span class="line">&lt;tensorflow.python.keras.feature_column.dense_features_v2.DenseFeatures at <span class="number">0x7f208806ceb8</span>&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">input_layer(features)</span><br><span class="line"></span><br><span class="line">&lt; tf.Tensor: shape = (<span class="number">4</span>, <span class="number">27</span>), dtype = float32, numpy =</span><br><span class="line">array([[<span class="number">0.00000000e+00</span>, -<span class="number">1.23130009e-01</span>, <span class="number">4.86660004e-02</span>,</span><br><span class="line">        <span class="number">0.00000000e+00</span>, <span class="number">0.00000000e+00</span>, <span class="number">0.00000000e+00</span>,</span><br><span class="line">        <span class="number">0.00000000e+00</span>, <span class="number">0.00000000e+00</span>, <span class="number">0.00000000e+00</span>,</span><br><span class="line">        <span class="number">0.00000000e+00</span>, <span class="number">0.00000000e+00</span>, -<span class="number">2.91737348e-01</span>,</span><br><span class="line">        -<span class="number">9.88678783e-02</span>, -<span class="number">2.16918126e-01</span>, -<span class="number">3.41849178e-02</span>,</span><br><span class="line">        <span class="number">2.07831450e-02</span>, <span class="number">1.23016268e-01</span>, -<span class="number">2.86575764e-01</span>,</span><br><span class="line">        -<span class="number">3.47321928e-01</span>, <span class="number">0.00000000e+00</span>, <span class="number">0.00000000e+00</span>,</span><br><span class="line">        <span class="number">0.00000000e+00</span>, <span class="number">0.00000000e+00</span>, <span class="number">0.00000000e+00</span>,</span><br><span class="line">        <span class="number">0.00000000e+00</span>, <span class="number">0.00000000e+00</span>, <span class="number">0.00000000e+00</span>],</span><br><span class="line">       [<span class="number">0.00000000e+00</span>, -<span class="number">5.97179830e-02</span>, -<span class="number">2.17635006e-01</span>,</span><br><span class="line">        -<span class="number">1.06339920e-02</span>, -<span class="number">7.97530077e-03</span>, <span class="number">5.78919798e-02</span>,</span><br><span class="line">        -<span class="number">2.10052535e-01</span>, <span class="number">1.33555964e-01</span>, -<span class="number">1.38182074e-01</span>,</span><br><span class="line">        <span class="number">3.36843282e-01</span>, <span class="number">2.57565618e-01</span>, -<span class="number">1.74929276e-01</span>,</span><br><span class="line">        -<span class="number">9.99670699e-02</span>, -<span class="number">1.91144332e-01</span>, -<span class="number">3.61557081e-02</span>,</span><br><span class="line">        -<span class="number">8.89207795e-02</span>, <span class="number">2.62435704e-01</span>, <span class="number">8.62833112e-02</span>,</span><br><span class="line">        -<span class="number">3.24669629e-01</span>, -<span class="number">7.06254393e-02</span>, <span class="number">8.17563012e-02</span>,</span><br><span class="line">        -<span class="number">1.93765402e-01</span>, -<span class="number">2.53901109e-02</span>, -<span class="number">1.10933304e-01</span>,</span><br><span class="line">        <span class="number">3.18849802e-01</span>, <span class="number">9.56157297e-02</span>, <span class="number">7.01609859e-03</span>],</span><br><span class="line">       [<span class="number">1.01840000e+05</span>, -<span class="number">1.48438022e-01</span>, <span class="number">9.64389965e-02</span>,</span><br><span class="line">        <span class="number">1.94975955e-03</span>, <span class="number">2.45337203e-01</span>, <span class="number">2.26843879e-01</span>,</span><br><span class="line">        -<span class="number">3.88248533e-01</span>, <span class="number">3.42379361e-01</span>, -<span class="number">1.68303713e-01</span>,</span><br><span class="line">        <span class="number">3.54275614e-01</span>, <span class="number">2.45609060e-01</span>, -<span class="number">5.74365370e-02</span>,</span><br><span class="line">        <span class="number">5.78363519e-03</span>, -<span class="number">1.54849172e-01</span>, <span class="number">1.67152122e-01</span>,</span><br><span class="line">        -<span class="number">1.78391322e-01</span>, <span class="number">1.74259335e-01</span>, <span class="number">1.20959366e-02</span>,</span><br><span class="line">        -<span class="number">3.83788258e-01</span>, <span class="number">1.06353365e-01</span>, <span class="number">1.77369639e-01</span>,</span><br><span class="line">        -<span class="number">3.30952913e-01</span>, -<span class="number">1.74332261e-01</span>, -<span class="number">4.30768095e-02</span>,</span><br><span class="line">        <span class="number">1.56453013e-01</span>, <span class="number">6.41067848e-02</span>, <span class="number">6.55808449e-02</span>],</span><br><span class="line">       [<span class="number">1.17700000e+03</span>, <span class="number">1.79362923e-01</span>, -<span class="number">1.22235000e-01</span>,</span><br><span class="line">        <span class="number">8.84146243e-02</span>, <span class="number">2.24863082e-01</span>, <span class="number">2.90928364e-01</span>,</span><br><span class="line">        -<span class="number">3.25650275e-01</span>, <span class="number">4.67467010e-01</span>, <span class="number">4.84157614e-02</span>,</span><br><span class="line">        <span class="number">3.81549895e-01</span>, <span class="number">2.66754210e-01</span>, -<span class="number">7.79044703e-02</span>,</span><br><span class="line">        -<span class="number">5.78226782e-02</span>, <span class="number">1.90198142e-02</span>, -<span class="number">7.36815855e-02</span>,</span><br><span class="line">        -<span class="number">1.83658749e-01</span>, <span class="number">9.39270705e-02</span>, -<span class="number">3.62510644e-02</span>,</span><br><span class="line">        -<span class="number">2.61197418e-01</span>, <span class="number">1.50572816e-02</span>, -<span class="number">4.70340252e-02</span>,</span><br><span class="line">        -<span class="number">2.87098497e-01</span>, <span class="number">2.01361589e-02</span>, <span class="number">1.04469322e-01</span>,</span><br><span class="line">        <span class="number">3.30212891e-01</span>, <span class="number">1.03758290e-01</span>, <span class="number">7.77714103e-02</span>]], dtype=float32) &gt;</span><br></pre></td></tr></table></figure>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ol>
+<li>基于feature_proto实现了tfrecord格式的example读取和特征解析；</li>
+<li>基于feature_column实现特征粒度的读取，和预处理；<ul>
+<li>dense类型单值读取，对数值型特征线性变换</li>
+<li>sparse类型进行embedding查找和聚合</li>
+</ul>
+</li>
+<li>通过<code>input_layer</code>从各feature column的预处理cache中取出，最终完成所有特征在样本维度的拼接，并输入到后续的网络计算。</li>
+</ol>
+<p>下面以简单的Wide&amp;Deep模型为例实现Estimator的封装，并完成模型的生命周期。（参考：<a target="_blank" rel="noopener" href="https://www.tensorflow.org/guide/estimator">guide estimator</a>）</p>
+<h2 id="4-基于Estimator封装Wide-amp-Deep模型"><a href="#4-基于Estimator封装Wide-amp-Deep模型" class="headerlink" title="4. 基于Estimator封装Wide&amp;Deep模型"></a>4. 基于Estimator封装Wide&amp;Deep模型</h2><p><a target="_blank" rel="noopener" href="https://www.tensorflow.org/api_docs/python/tf/estimator/DNNLinearCombinedClassifier">TF官方实现</a></p>
+<p>对于使用TF2.X等新代码实现Estimator分布式训练，TF官方并不建议这样做。但为了明确窥探各Tensor的格式，以上过程还是在eager模式下运行的，主要过程如下：</p>
+<ol>
+<li>重写model_fn函数，实现自定义estimator；</li>
+<li>通过各model模块组合目标输出；</li>
+<li>组合各module的优化op实现_train_op_fn</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tf.compat.v1.disable_eager_execution()</span><br><span class="line">batch_size = <span class="number">8</span></span><br><span class="line">epochs = <span class="number">100</span></span><br><span class="line">sample_nums = <span class="number">3060</span></span><br><span class="line">max_steps = <span class="built_in">int</span>(sample_nums * epochs / batch_size)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> tensorflow.keras.layers <span class="keyword">import</span> Dense</span><br><span class="line"><span class="keyword">from</span> tensorflow.python.keras.engine <span class="keyword">import</span> training</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DNN</span>(<span class="params">tf.keras.Model</span>):</span></span><br><span class="line">  <span class="string">&quot;&quot;&quot;A DNN Model.&quot;&quot;&quot;</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self,</span></span></span><br><span class="line"><span class="function"><span class="params">               deep_columns = <span class="literal">None</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">               dnn_dims = [<span class="number">16</span>, <span class="number">8</span>, <span class="number">1</span>],</span></span></span><br><span class="line"><span class="function"><span class="params">               name=<span class="literal">None</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">               **kwargs</span>):</span></span><br><span class="line">    <span class="built_in">super</span>(DNN, self).__init__(name=name, **kwargs)</span><br><span class="line">    self._input_layer = tf.keras.layers.DenseFeatures(feature_columns=deep_columns, name=<span class="string">&#x27;deep&#x27;</span>)</span><br><span class="line">    self._dnn = [Dense(dims, <span class="string">&#x27;relu&#x27;</span>) <span class="keyword">for</span> dims <span class="keyword">in</span> dnn_dims]</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">call</span>(<span class="params">self, features, mode</span>):</span></span><br><span class="line">    inputs = self._input_layer(features)</span><br><span class="line">    <span class="keyword">for</span> nn <span class="keyword">in</span> self._dnn:</span><br><span class="line">        inputs = nn(inputs)</span><br><span class="line">    dnn_output = inputs</span><br><span class="line">    <span class="keyword">return</span> dnn_output</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">WideDeepModel</span>(<span class="params">tf.estimator.Estimator</span>):</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, model_dir=<span class="literal">None</span>, config=<span class="literal">None</span>, warm_start_from=<span class="literal">None</span>, wide_columns=<span class="literal">None</span>, linear_optimizer=<span class="literal">None</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">                 deep_columns=<span class="literal">None</span>, dnn_optimizer=<span class="literal">None</span></span>):</span></span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">_model_fn</span>(<span class="params">features, labels, mode, config</span>):</span></span><br><span class="line">            </span><br><span class="line">            <span class="comment"># wide &amp; deep</span></span><br><span class="line">            linear_logits, linear_trainable_variables = wide_model(units=<span class="number">1</span>, feature_columns=wide_columns, sparse_combiner=<span class="string">&#x27;sum&#x27;</span>, features=features)</span><br><span class="line">            </span><br><span class="line">            deep_model = DNN(deep_columns=deep_columns, name=<span class="string">&#x27;dnn&#x27;</span>)</span><br><span class="line">            dnn_logits = deep_model(features, mode)</span><br><span class="line">            dnn_trainable_variables = deep_model.trainable_variables</span><br><span class="line">            dnn_update_ops = deep_model.updates</span><br><span class="line"></span><br><span class="line">            logistic_output = <span class="built_in">dict</span>()</span><br><span class="line">            logistic_output[<span class="string">&#x27;ctr&#x27;</span>] = tf.sigmoid(dnn_logits + linear_logits)</span><br><span class="line"></span><br><span class="line">            obj_head = []</span><br><span class="line">            ctr_head = tf.estimator.BinaryClassHead(weight_column=<span class="literal">None</span>, name=<span class="string">&#x27;ctr&#x27;</span>)</span><br><span class="line">            obj_head.append(ctr_head)</span><br><span class="line">            multi_head = tf.estimator.MultiHead(obj_head)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            <span class="function"><span class="keyword">def</span> <span class="title">_train_op_fn</span>(<span class="params">loss</span>):</span></span><br><span class="line">                <span class="string">&quot;&quot;&quot;Returns the op to optimize the loss.&quot;&quot;&quot;</span></span><br><span class="line">                train_ops = []</span><br><span class="line">                <span class="keyword">if</span> dnn_logits <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">                    train_ops.extend(dnn_optimizer.get_updates(loss, dnn_trainable_variables))</span><br><span class="line">                <span class="keyword">if</span> dnn_update_ops <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">                    train_ops.extend(dnn_update_ops)</span><br><span class="line">                <span class="keyword">if</span> linear_logits <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">                    train_ops.extend(linear_optimizer.get_updates(loss, linear_trainable_variables))</span><br><span class="line">                train_op = tf.group(*train_ops)</span><br><span class="line">                <span class="keyword">return</span> train_op</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> mode == tf.estimator.ModeKeys.TRAIN:</span><br><span class="line">                <span class="keyword">if</span> dnn_logits <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">                    dnn_optimizer.iterations = tf.compat.v1.train.get_or_create_global_step()</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    linear_optimizer.iterations = tf.compat.v1.train.get_or_create_global_step()</span><br><span class="line">    </span><br><span class="line">            <span class="keyword">return</span> multi_head.create_estimator_spec(features=features, mode=mode, labels=labels, train_op_fn=_train_op_fn, logits=logistic_output)</span><br><span class="line"></span><br><span class="line">        <span class="built_in">super</span>(WideDeepModel, self).__init__(model_fn=_model_fn, model_dir=model_dir, config=config, warm_start_from=warm_start_from)</span><br></pre></td></tr></table></figure>
+<h3 id="4-1-Estimator模型的生命周期"><a href="#4-1-Estimator模型的生命周期" class="headerlink" title="4.1 Estimator模型的生命周期"></a>4.1 Estimator模型的生命周期</h3><p>构建模型导出时定义的输入signature，就是模型图的输入“接口”</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">serving_input_receiver_fn that expects all features to be fed directly.</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">_serving_input_receiver_fn</span>(<span class="params">serving_feature</span>):</span></span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;expects all features to be fed directly.&#x27;&#x27;&#x27;</span></span><br><span class="line">    features = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> feature_name, _ <span class="keyword">in</span> serving_feature.items():</span><br><span class="line">        <span class="keyword">if</span> <span class="string">&#x27;dense&#x27;</span> <span class="keyword">in</span> feature_name:</span><br><span class="line">            features[feature_name] = tf.compat.v1.placeholder(dtype=tf.float32, shape=[<span class="literal">None</span>, <span class="literal">None</span>])</span><br><span class="line">        <span class="keyword">elif</span> <span class="string">&#x27;sparse&#x27;</span> <span class="keyword">in</span> feature_name:</span><br><span class="line">            features[feature_name] = tf.compat.v1.placeholder(dtype=tf.int64, shape=[<span class="literal">None</span>, <span class="literal">None</span>])</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&#x27;exception feature type&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> tf.estimator.export.build_raw_serving_input_receiver_fn(features)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">auc_compare_fn</span>(<span class="params">best_eval_result, current_eval_result </span>):</span></span><br><span class="line">    <span class="keyword">return</span> best_eval_result[<span class="string">&#x27;auc/ctr&#x27;</span>] &lt; current_eval_result[<span class="string">&#x27;act/ctr&#x27;</span>]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>TrainSpec、EvalSpec和BestExporter的参数主要控制训练期间评估器的周期性配置，和最佳模型导出的比较等等，具体可以参考<a target="_blank" rel="noopener" href="https://tensorflow.google.cn/api_docs/python/tf/estimator/train_and_evaluate">tf.estimator</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">train_model_spec = tf.estimator.TrainSpec(input_fn=_input_fn(<span class="string">&#x27;./data/simple.tfrecord&#x27;</span>, feature_proto), max_steps=max_steps)</span><br><span class="line"></span><br><span class="line">model_exporter = tf.estimator.BestExporter(</span><br><span class="line">    serving_input_receiver_fn=_serving_input_receiver_fn(serving_feature),</span><br><span class="line">    compare_fn=auc_compare_fn,</span><br><span class="line">    exports_to_keep=<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line">eval_model_spec = tf.estimator.EvalSpec(input_fn=_input_fn(<span class="string">&#x27;./data/simple.tfrecord&#x27;</span>, feature_proto),</span><br><span class="line">                                  steps=<span class="number">10</span>,</span><br><span class="line">                                  throttle_secs=<span class="number">3</span>,</span><br><span class="line">                                  exporters=model_exporter)</span><br><span class="line"></span><br><span class="line">wd_model = WideDeepModel(model_dir=<span class="string">&#x27;./model&#x27;</span>,</span><br><span class="line">                         wide_columns=wide_columns,</span><br><span class="line">                         linear_optimizer=tf.keras.optimizers.Ftrl(),</span><br><span class="line">                         deep_columns=deep_columns,</span><br><span class="line">                         dnn_optimizer=tf.keras.optimizers.Adagrad())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">INFO:tensorflow:TF_CONFIG environment variable: &#123;<span class="string">&#x27;task&#x27;</span>: &#123;<span class="string">&#x27;type&#x27;</span>: <span class="string">&#x27;worker&#x27;</span>, <span class="string">&#x27;index&#x27;</span>: <span class="number">0</span>&#125;&#125;</span><br><span class="line">    INFO:tensorflow:Using default config.</span><br><span class="line">    INFO:tensorflow:Using config: &#123;<span class="string">&#x27;_model_dir&#x27;</span>: <span class="string">&#x27;./model&#x27;</span>, <span class="string">&#x27;_tf_random_seed&#x27;</span>: <span class="literal">None</span>, <span class="string">&#x27;_save_summary_steps&#x27;</span>: <span class="number">100</span>, <span class="string">&#x27;_save_checkpoints_steps&#x27;</span>: <span class="literal">None</span>, <span class="string">&#x27;_save_checkpoints_secs&#x27;</span>: <span class="number">600</span>, <span class="string">&#x27;_session_config&#x27;</span>: allow_soft_placement: true</span><br><span class="line">    graph_options &#123;</span><br><span class="line">      rewrite_options &#123;</span><br><span class="line">        meta_optimizer_iterations: ONE</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    , <span class="string">&#x27;_keep_checkpoint_max&#x27;</span>: <span class="number">5</span>, <span class="string">&#x27;_keep_checkpoint_every_n_hours&#x27;</span>: <span class="number">10000</span>, <span class="string">&#x27;_log_step_count_steps&#x27;</span>: <span class="number">100</span>, <span class="string">&#x27;_train_distribute&#x27;</span>: <span class="literal">None</span>, <span class="string">&#x27;_device_fn&#x27;</span>: <span class="literal">None</span>, <span class="string">&#x27;_protocol&#x27;</span>: <span class="literal">None</span>, <span class="string">&#x27;_eval_distribute&#x27;</span>: <span class="literal">None</span>, <span class="string">&#x27;_experimental_distribute&#x27;</span>: <span class="literal">None</span>, <span class="string">&#x27;_experimental_max_worker_delay_secs&#x27;</span>: <span class="literal">None</span>, <span class="string">&#x27;_session_creation_timeout_secs&#x27;</span>: <span class="number">7200</span>, <span class="string">&#x27;_checkpoint_save_graph_def&#x27;</span>: <span class="literal">True</span>, <span class="string">&#x27;_service&#x27;</span>: <span class="literal">None</span>, <span class="string">&#x27;_cluster_spec&#x27;</span>: ClusterSpec(&#123;&#125;), <span class="string">&#x27;_task_type&#x27;</span>: <span class="string">&#x27;worker&#x27;</span>, <span class="string">&#x27;_task_id&#x27;</span>: <span class="number">0</span>, <span class="string">&#x27;_global_id_in_cluster&#x27;</span>: <span class="number">0</span>, <span class="string">&#x27;_master&#x27;</span>: <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;_evaluation_master&#x27;</span>: <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;_is_chief&#x27;</span>: <span class="literal">True</span>, <span class="string">&#x27;_num_ps_replicas&#x27;</span>: <span class="number">0</span>, <span class="string">&#x27;_num_worker_replicas&#x27;</span>: <span class="number">1</span>&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">!rm -rf ./model</span><br><span class="line">tf.estimator.train_and_evaluate(wd_model, train_model_spec, eval_model_spec)</span><br><span class="line">wd_model.export_saved_model(<span class="string">&quot;./model/saved_model&quot;</span>, _serving_input_receiver_fn(serving_feature))</span><br><span class="line"></span><br><span class="line"><span class="comment"># log is too long</span></span><br><span class="line">INFO:tensorflow:SavedModel written to: ./model/saved_model/temp-<span class="number">1651820608</span>/saved_model.pb</span><br><span class="line"><span class="string">b&#x27;./model/saved_model/1651820608&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>查看model的推理签名，包括整个model图的输入和输出</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">!saved_model_cli show --<span class="built_in">dir</span> ./model/saved_model/*/ --tag_set serve --signature_def predict</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">The given SavedModel SignatureDef contains the following <span class="built_in">input</span>(s):</span><br><span class="line">      inputs[<span class="string">&#x27;dense_000&#x27;</span>] tensor_info:</span><br><span class="line">          dtype: DT_FLOAT</span><br><span class="line">          shape: (-<span class="number">1</span>, -<span class="number">1</span>)</span><br><span class="line">          name: Placeholder_9:<span class="number">0</span></span><br><span class="line">      inputs[<span class="string">&#x27;dense_002&#x27;</span>] tensor_info:</span><br><span class="line">          dtype: DT_FLOAT</span><br><span class="line">          shape: (-<span class="number">1</span>, -<span class="number">1</span>)</span><br><span class="line">          name: Placeholder_10:<span class="number">0</span></span><br><span class="line">      inputs[<span class="string">&#x27;dense_003&#x27;</span>] tensor_info:</span><br><span class="line">          dtype: DT_FLOAT</span><br><span class="line">          shape: (-<span class="number">1</span>, -<span class="number">1</span>)</span><br><span class="line">          name: Placeholder_11:<span class="number">0</span></span><br><span class="line">      inputs[<span class="string">&#x27;sparse_000&#x27;</span>] tensor_info:</span><br><span class="line">          dtype: DT_INT64</span><br><span class="line">          shape: (-<span class="number">1</span>, -<span class="number">1</span>)</span><br><span class="line">          name: Placeholder_6:<span class="number">0</span></span><br><span class="line">      inputs[<span class="string">&#x27;sparse_001&#x27;</span>] tensor_info:</span><br><span class="line">          dtype: DT_INT64</span><br><span class="line">          shape: (-<span class="number">1</span>, -<span class="number">1</span>)</span><br><span class="line">          name: Placeholder_7:<span class="number">0</span></span><br><span class="line">      inputs[<span class="string">&#x27;sparse_002&#x27;</span>] tensor_info:</span><br><span class="line">          dtype: DT_INT64</span><br><span class="line">          shape: (-<span class="number">1</span>, -<span class="number">1</span>)</span><br><span class="line">          name: Placeholder_8:<span class="number">0</span></span><br><span class="line">    The given SavedModel SignatureDef contains the following output(s):</span><br><span class="line">      outputs[<span class="string">&#x27;ctr/all_class_ids&#x27;</span>] tensor_info:</span><br><span class="line">          dtype: DT_INT32</span><br><span class="line">          shape: (-<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line">          name: ctr/ctr/predictions/Tile:<span class="number">0</span></span><br><span class="line">      outputs[<span class="string">&#x27;ctr/all_classes&#x27;</span>] tensor_info:</span><br><span class="line">          dtype: DT_STRING</span><br><span class="line">          shape: (-<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line">          name: ctr/ctr/predictions/Tile_1:<span class="number">0</span></span><br><span class="line">      outputs[<span class="string">&#x27;ctr/class_ids&#x27;</span>] tensor_info:</span><br><span class="line">          dtype: DT_INT64</span><br><span class="line">          shape: (-<span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">          name: ctr/ctr/predictions/ExpandDims:<span class="number">0</span></span><br><span class="line">      outputs[<span class="string">&#x27;ctr/classes&#x27;</span>] tensor_info:</span><br><span class="line">          dtype: DT_STRING</span><br><span class="line">          shape: (-<span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">          name: ctr/ctr/predictions/str_classes:<span class="number">0</span></span><br><span class="line">      outputs[<span class="string">&#x27;ctr/logistic&#x27;</span>] tensor_info:</span><br><span class="line">          dtype: DT_FLOAT</span><br><span class="line">          shape: (-<span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">          name: ctr/ctr/predictions/logistic:<span class="number">0</span></span><br><span class="line">      outputs[<span class="string">&#x27;ctr/logits&#x27;</span>] tensor_info:</span><br><span class="line">          dtype: DT_FLOAT</span><br><span class="line">          shape: (-<span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">          name: Sigmoid:<span class="number">0</span></span><br><span class="line">      outputs[<span class="string">&#x27;ctr/probabilities&#x27;</span>] tensor_info:</span><br><span class="line">          dtype: DT_FLOAT</span><br><span class="line">          shape: (-<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line">          name: ctr/ctr/predictions/probabilities:<span class="number">0</span></span><br><span class="line">    Method name <span class="keyword">is</span>: tensorflow/serving/predict</span><br></pre></td></tr></table></figure>
+<p>以上是基于tf.estimator实现的wide&amp;deep模型，基于此更进一步地丰富各module和训练细节，支持比如样本加权、特征交互、序列建模、多目标结构、训练交替等等。</p>
+<p>完整github见：<a target="_blank" rel="noopener" href="https://github.com/Muzhi1920/awesome-models/blob/main/09-Estimator/00_Wide%26Deep.ipynb">View source on GitHub</a></p>
+<p>个人，个人</p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/cn/LeetCode_动态规划/" data-toggle="tooltip" data-placement="top" title="LeetCode_动态规划">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      如果您喜欢此博客或发现它对您有用，则欢迎对此发表评论。 也欢迎您共享此博客，以便更多人可以参与。 如果博客中使用的图像侵犯了您的版权，请与作者联系以将其删除。 谢谢 ！
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=（全网最详细）基于TensorFlow的Estimator实现Wide&amp;Deep模型&body=Hi,I found this website and thought you might like it https://11010101.xyz/cn/推荐系统-01-TF/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: 'a9a645b881c78d12baa8',
+      clientSecret: '144741a3fa325fe22d7207d5698374724cd412b7',
+      repo: 'Muzhi1920.github.io',
+      owner: 'Muzhi1920',
+      admin: 'Muzhi1920',
+      id: 'Fri May 06 2022 13:37:00 GMT+0800 | truncate: 50', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'zh-CN',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#Estimator" title="Estimator">Estimator</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>链友</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/Muzhi1920">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+            <li>
+              <a target="_blank" href="https://www.zhihu.com/people/awesome-yyds">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa  fa-stack-1x fa-inverse">知</i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          小于
+          2022
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="https://hexo.io/themes/">Hexo</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://github.com/Muzhi1920/Muzhi1920.github.io">Muzhi1920</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=Muzhi1920&repo=Muzhi1920.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='The first step is as good as half over...,Laugh and grow fat...,Man proposes God disposes...,When all else is lost the future still remains...,Wasting time is robbing oneself...,Sharp tools make good work...,Cease to struggle and you cease to live...,A friend in need is a friend indeed...,Faith can move mountains...' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033'></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://11010101.xyz/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
