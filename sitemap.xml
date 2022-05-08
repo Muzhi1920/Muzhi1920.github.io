@@ -227,7 +227,7 @@
   </url>
   
   <url>
-    <loc>https://11010101.xyz/en/Hexo-Theme-LiveMyLife/</loc>
+    <loc>https://11010101.xyz/cn/Hexo-Theme-LiveMyLife/</loc>
     
     <lastmod>2020-04-16</lastmod>
     
@@ -236,7 +236,7 @@
   </url>
   
   <url>
-    <loc>https://11010101.xyz/cn/Hexo-Theme-LiveMyLife/</loc>
+    <loc>https://11010101.xyz/en/Hexo-Theme-LiveMyLife/</loc>
     
     <lastmod>2020-04-16</lastmod>
     
@@ -436,13 +436,6 @@
   </url>
   
   <url>
-    <loc>https://11010101.xyz/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/</loc>
-    <lastmod>2022-05-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://11010101.xyz/tags/%E9%93%BE%E8%A1%A8/</loc>
     <lastmod>2022-05-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -451,6 +444,13 @@
   
   <url>
     <loc>https://11010101.xyz/tags/%E6%A0%91/</loc>
+    <lastmod>2022-05-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://11010101.xyz/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/</loc>
     <lastmod>2022-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -478,13 +478,6 @@
   </url>
   
   <url>
-    <loc>https://11010101.xyz/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/</loc>
-    <lastmod>2022-05-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://11010101.xyz/tags/Java/</loc>
     <lastmod>2022-05-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -499,7 +492,21 @@
   </url>
   
   <url>
+    <loc>https://11010101.xyz/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/</loc>
+    <lastmod>2022-05-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://11010101.xyz/tags/linux/</loc>
+    <lastmod>2022-05-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://11010101.xyz/tags/Linux/</loc>
     <lastmod>2022-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -527,13 +534,6 @@
   </url>
   
   <url>
-    <loc>https://11010101.xyz/tags/Linux/</loc>
-    <lastmod>2022-05-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://11010101.xyz/tags/sql/</loc>
     <lastmod>2022-05-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -541,14 +541,14 @@
   </url>
   
   <url>
-    <loc>https://11010101.xyz/tags/tools/</loc>
+    <loc>https://11010101.xyz/tags/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/</loc>
     <lastmod>2022-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://11010101.xyz/tags/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/</loc>
+    <loc>https://11010101.xyz/tags/tools/</loc>
     <lastmod>2022-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
