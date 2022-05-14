@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-5GGTGE8BJS"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-5GGTGE8BJS');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+
+  <!-- Baidu Push -->
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <!-- <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/> -->
+  <meta name="google-site-verification" content="MnOJ4x6R2U5mM5X77Gw3bN3VcbjclS96MyKa6oZoMVk" />
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="人工智能的奇点，正在来临..."/>
+  <meta name="keyword" content="AI"/>
+  <link rel="shortcut icon" href="/img/avatar/tab.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+      <!-- gitalk start -->
+      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
+      <link rel="stylesheet" href="/css/gitalk.css"/>
+      <!-- gitalk end -->
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://11010101.xyz/cn/17.LSA/">
+  <title>
+    
+      第17章 潜在语义分析 - Shawn Blog
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--light">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'light';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+		<!-- Gitter -->
+<!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'touch_fish/lie_down'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Shawn Blog</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">主页</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于我
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>搜索</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('/img/header_img/new_home_bg.jpg');
+      --intro-header-background-image-url-post: url('');
+      --intro-header-background-image-url-page: url('/img/header_img/archive_bg.jpg');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/new_home_bg.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/archive_bg.jpg');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url(''); */
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('/img/signature/my_signature.png');
+      }
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#机器学习" title="机器学习">机器学习</a>
+              
+            </div>
+            <h1>第17章 潜在语义分析</h1>
+            <h2 class="subheading">Gensim语义分析</h2>
+            <span class="meta">
+              Posted by 小于 on
+              2022-04-01
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">17</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">4k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h1 id="第17章-潜在语义分析"><a href="#第17章-潜在语义分析" class="headerlink" title="第17章 潜在语义分析"></a>第17章 潜在语义分析</h1><p>1.单词向量空间模型通过单词的向量表示文本的语义内容。以单词-文本矩阵$X$为输入，其中每一行对应一个单词，每一列对应一个文本，每一个元素表示单词在文本中的频数或权值（如TF-IDF）</p>
+<script type="math/tex; mode=display">X = \left[ \begin{array} { c c c c } { x _ { 11 } } & { x _ { 12 } } & { \cdots } & { x _ { 1 n } } \\ { x _ { 21 } } & { x _ { 22 } } & { \cdots } & { x _ { 2 n } } \\ { \vdots } & { \vdots } & { } & { \vdots } \\ { x _ { m 1 } } & { x _ { m 2 } } & { \cdots } & { x _ { m n } } \end{array} \right]</script><p>单词向量空间模型认为，这个矩阵的每一列向量是单词向量，表示一个文本，两个单词向量的内积或标准化内积表示文本之间的语义相似度。</p>
+<p>2.话题向量空间模型通过话题的向量表示文本的语义内容。假设有话题文本矩阵</p>
+<script type="math/tex; mode=display">Y = \left[ \begin{array} { c c c c } { y _ { 11 } } & { y _ { 12 } } & { \cdots } & { y _ { 1 n } } \\ { y _ { 21 } } & { y _ { 22 } } & { \cdots } & { y _ { 2 n } } \\ { \vdots } & { \vdots } & { } & { \vdots } \\ { y _ { k 1 } } & { y _ { k 2 } } & { \cdots } & { y _ { k n } } \end{array} \right]</script><p>其中每一行对应一个话题，每一列对应一个文本每一个元素表示话题在文本中的权值。话题向量空间模型认为，这个矩阵的每一列向量是话题向量，表示一个文本，两个话题向量的内积或标准化内积表示文本之间的语义相似度。假设有单词话题矩阵$T$</p>
+<script type="math/tex; mode=display">T = \left[ \begin{array} { c c c c } { t _ { 11 } } & { t _ { 12 } } & { \cdots } & { t _ { 1 k } } \\ { t _ { 21 } } & { t _ { 22 } } & { \cdots } & { t _ { 2 k } } \\ { \vdots } & { \vdots } & { } & { \vdots } \\ { t _ { m 1 } } & { t _ { m 2 } } & { \cdots } & { t _ { m k } } \end{array} \right]</script><p>其中每一行对应一个单词，每一列对应一个话题，每一个元素表示单词在话题中的权值。</p>
+<p>给定一个单词文本矩阵$X$</p>
+<script type="math/tex; mode=display">X = \left[ \begin{array} { c c c c } { x _ { 11 } } & { x _ { 12 } } & { \cdots } & { x _ { 1 n } } \\ { x _ { 21 } } & { x _ { 22 } } & { \cdots } & { x _ { 2 n } } \\ { \vdots } & { \vdots } & { } & { \vdots } \\ { x _ { m 1 } } & { x _ { m 2 } } & { \cdots } & { x _ { m n } } \end{array} \right]</script><p>潜在语义分析的目标是，找到合适的单词-话题矩阵$T$与话题文本矩阵$Y$，将单词文本矩阵$X$近似的表示为$T$与$Y$的乘积形式。</p>
+<script type="math/tex; mode=display">X \approx T Y</script><p>等价地，潜在语义分析将文本在单词向量空间的表示X通过线性变换$T$转换为话题向量空间中的表示$Y$。</p>
+<p>潜在语义分析的关键是对单词-文本矩阵进行以上的矩阵因子分解（话题分析）</p>
+<p>3.潜在语义分析的算法是奇异值分解。通过对单词文本矩阵进行截断奇异值分解，得到</p>
+<script type="math/tex; mode=display">X \approx U _ { k } \Sigma _ { k } V _ { k } ^ { T } = U _ { k } ( \Sigma _ { k } V _ { k } ^ { T } )</script><p>矩阵$U<em>k$表示话题空间，矩阵$( \Sigma </em> { k } V _ { k } ^ { T } )$是文本在话题空间的表示。</p>
+<p>4.非负矩阵分解也可以用于话题分析。非负矩阵分解将非负的单词文本矩阵近似分解成两个非负矩阵$W$和$H$的乘积，得到</p>
+<script type="math/tex; mode=display">X \approx W H</script><p>矩阵$W$表示话题空间，矩阵$H$是文本在话题空间的表示。</p>
+<p>非负矩阵分解可以表为以下的最优化问题：</p>
+<script type="math/tex; mode=display">\left. \begin{array} { l } { \operatorname { min } _ { W , H } \| X - W H \| ^ { 2 } } \\ { \text { s.t. } W , H \geq 0 } \end{array} \right.</script><p>非负矩阵分解的算法是迭代算法。乘法更新规则的迭代算法，交替地对$W$和$H$进行更新。本质是梯度下降法，通过定义特殊的步长和非负的初始值，保证迭代过程及结果的矩阵$W$和$H$均为非负。</p>
+<hr>
+<p><strong>LSA</strong> 是一种无监督学习方法，主要用于文本的话题分析，其特点是通过矩阵分解发现文本与单词之间的基于话题的语义关系。也称为潜在语义索引（Latent semantic indexing, LSI）。</p>
+<p>LSA 使用的是非概率的话题分析模型。将文本集合表示为<strong>单词-文本矩阵</strong>，对单词-文本矩阵进行<strong>奇异值分解</strong>，从而得到话题向量空间，以及文本在话题向量空间的表示。</p>
+<p><strong>非负矩阵分解</strong>（non-negative matrix factorization, NMF）是另一种矩阵的因子分解方法，其特点是分解的矩阵非负。</p>
+<h2 id="单词向量空间"><a href="#单词向量空间" class="headerlink" title="单词向量空间"></a>单词向量空间</h2><p>word vector space model</p>
+<p>给定一个文本，用一个向量表示该文本的”语义“， 向量的<strong>每一维对应一个单词</strong>，其数值为该单词在该文本中出现的频数或权值；基本假设是文本中所有单词的出现情况表示了文本的语义内容，文本集合中的每个文本都表示为一个向量，存在于一个向量空间；向量空间的度量，如内积或标准化<strong>内积</strong>表示文本之间的<strong>相似度</strong>。</p>
+<p>给定一个含有$n$个文本的集合$D=({d<em>{1}, d</em>{2},…,d<em>{n}})$，以及在所有文本中出现的$m$个单词的集合$W=({w</em>{1},w<em>{2},…,w</em>{m}})$. 将单词在文本的出现的数据用一个单词-文本矩阵（word-document matrix）表示，记作$X$:</p>
+<p>$<br>X = \begin{bmatrix}<br>x<em>{11} &amp;  x</em>{12}&amp;  x<em>{1n}&amp; \<br>x</em>{21}&amp;  x<em>{22}&amp;  x</em>{2n}&amp; \<br>\vdots &amp;  \vdots &amp;  \vdots &amp; \<br>x<em>{m1}&amp;  x</em>{m2}&amp;  x_{mn}&amp;<br>\end{bmatrix}<br>$</p>
+<p>这是一个$m*n$矩阵，元素$x<em>{ij}$表示单词$w</em>{i}$在文本$d_{j}$中出现的频数或权值。由于单词的种类很多，而每个文本中出现单词的种类通常较少，所有单词-文本矩阵是一个稀疏矩阵。</p>
+<p>权值通常用单词<strong>频率-逆文本率</strong>（term frequency-inverse document frequency, TF-IDF）表示：</p>
+<p>$TF-IDF(t, d ) = TF(t, d) * IDF(t)$,  </p>
+<p>其中，$TF(t,d)$为单词$t$在文本$d$中出现的概率，$IDF(t)$是逆文本率，用来衡量单词$t$对表示语义所起的重要性， </p>
+<p>$IDF(t) = log(\frac{len(D)}{len(t \in D) + 1})$.</p>
+<p>单词向量空间模型的优点是<strong>模型简单，计算效率高</strong>。因为单词向量通常是稀疏的，单词向量空间模型也有一定的局限性，体现在内积相似度未必能够准确表达两个文本的语义相似度上。因为自然语言的单词具有一词多义性（polysemy）及多词一义性（synonymy）。</p>
+<h2 id="话题向量空间"><a href="#话题向量空间" class="headerlink" title="话题向量空间"></a>话题向量空间</h2><p><strong>1. 话题向量空间</strong>：</p>
+<p>给定一个含有$n$个文本的集合$D=({d<em>{1}, d</em>{2},…,d<em>{n}})$，以及在所有文本中出现的$m$个单词的集合$W=({w</em>{1},w<em>{2},…,w</em>{m}})$. 可以获得其单词-文本矩阵$X$:  </p>
+<p>$<br>X = \begin{bmatrix}<br>x<em>{11} &amp;  x</em>{12}&amp;  x<em>{1n}&amp; \<br>x</em>{21}&amp;  x<em>{22}&amp;  x</em>{2n}&amp; \<br>\vdots &amp;  \vdots &amp;  \vdots &amp; \<br>x<em>{m1}&amp;  x</em>{m2}&amp;  x_{mn}&amp;<br>\end{bmatrix}<br>$</p>
+<p>假设所有文本共含有$k$个话题。假设每个话题由一个定义在单词集合$W$上的$m$维向量表示，称为话题向量，即：<br>$t<em>{l} = \begin{bmatrix}<br>t</em>{1l}\<br>t<em>{2l}\<br>\vdots \<br>t</em>{ml}\end{bmatrix},  l=1,2,…,k$</p>
+<p>其中$t<em>{il}$单词$w</em>{i}$在话题$t<em>{l}$的权值，$i=1,2,…,m$, 权值越大，该单词在该话题中的重要程度就越高。这$k$个话题向量 $t</em>{1},t<em>{2},…,t</em>{k}$张成一个话题向量空间（topic vector space）， 维数为$k$.<strong>话题向量空间是单词向量空间的一个子空间</strong>。</p>
+<p>话题向量空间$T$：  </p>
+<p>$<br>T = \begin{bmatrix}<br>t<em>{11} &amp;  t</em>{12}&amp;  t<em>{1k}&amp; \<br>t</em>{21}&amp;  t<em>{22}&amp;  t</em>{2k}&amp; \<br>\vdots &amp;  \vdots &amp;  \vdots &amp; \<br>t<em>{m1}&amp;  t</em>{m2}&amp;  t_{mk}&amp;<br>\end{bmatrix}<br>$  </p>
+<p>矩阵$T$,称为<strong>单词-话题矩阵</strong>。 $T = [t<em>{1},  t</em>{2}, …, t_{k}]$</p>
+<p><strong>2. 文本在话题向量空间中的表示</strong>  ：</p>
+<p>考虑文本集合$D$的文本$d<em>{j}$, 在单词向量空间中由一个向量$x</em>{j}$表示，将$x<em>{j}$投影到话题向量空间$T$中，得到话题向量空间的一个向量$y</em>{j}$, $y_{j}$是一个$k$维向量：  </p>
+<p>$y<em>{j} = \begin{bmatrix}<br>y</em>{1j}\<br>y<em>{2j}\<br>\vdots \<br>y</em>{kj}\end{bmatrix},  j=1,2,…,n$ </p>
+<p>其中，$y<em>{lj}$是文本$d</em>{j}$在话题$t_{l}$中的权值， $l = 1,2,…, k$, 权值越大，该话题在该文本中的重要程度就越高。  </p>
+<p>矩阵$Y$ 表示话题在文本中出现的情况，称为话题-文本矩阵（topic-document matrix）,记作：  </p>
+<p>$<br>Y = \begin{bmatrix}<br>y<em>{11} &amp;  y</em>{12}&amp;  y<em>{1n}&amp; \<br>y</em>{21}&amp;  y<em>{22}&amp;  y</em>{2n}&amp; \<br>\vdots &amp;  \vdots &amp;  \vdots &amp; \<br>y<em>{k1}&amp;  y</em>{k2}&amp;  y_{kn}&amp;<br>\end{bmatrix}<br>$  </p>
+<p>也可写成： $Y = [y<em>{1}, y</em>{2} …, y_{n}]$</p>
+<p><strong>3. 从单词向量空间到话题向量空间的线性变换</strong>：  </p>
+<p>如此，单词向量空间的文本向量$x<em>{j}$可以通过他在话题空间中的向量$y</em>{j}$近似表示，具体地由$k$个话题向量以$y_{j}$为系数的线性组合近似表示：  </p>
+<p>$x<em>{j} = y</em>{1j}t<em>{1} + y</em>{2j}t<em>{2} + … + y</em>{yj}t_{k}, j = 1,2,…, n$  </p>
+<p>所以，单词-文本矩阵$X$可以近似的表示为单词-话题矩阵$T$与话题-文本矩阵$Y$的乘积形式。</p>
+<p>$X \approx TY$  </p>
+<p>直观上，潜在语义分析是将单词向量空间的表示通过线性变换转换为在话题向量空间中的表示。这个线性变换由矩阵因子分解式的形式体现。</p>
+<h3 id="潜在语义分析算法"><a href="#潜在语义分析算法" class="headerlink" title="潜在语义分析算法"></a>潜在语义分析算法</h3><p>潜在语义分析利用矩阵奇异值分解，具体地，对单词-文本矩阵进行奇异值分解，将其左矩阵作为话题向量空间，将其对角矩阵与右矩阵的乘积作为文本在话题向量空间的表示。</p>
+<p>给定一个含有$n$个文本的集合$D=({d<em>{1}, d</em>{2},…,d<em>{n}})$，以及在所有文本中出现的$m$个单词的集合$W=({w</em>{1},w<em>{2},…,w</em>{m}})$. 可以获得其单词-文本矩阵$X$:<br>$<br>X = \begin{bmatrix}<br>x<em>{11} &amp;  x</em>{12}&amp;  x<em>{1n}&amp; \<br>x</em>{21}&amp;  x<em>{22}&amp;  x</em>{2n}&amp; \<br>\vdots &amp;  \vdots &amp;  \vdots &amp; \<br>x<em>{m1}&amp;  x</em>{m2}&amp;  x_{mn}&amp;<br>\end{bmatrix}<br>$</p>
+<p><strong>截断奇异值分解</strong>：</p>
+<p>潜在语义分析根据确定的话题数$k$对单词-文本矩阵$X$进行截断奇异值分解：  </p>
+<p>$<br>X \approx U<em>{k}\Sigma </em>{k}V<em>{k}^{T} = \begin{bmatrix}<br>\mu </em>{1} &amp;  \mu <em>{2}&amp;  \cdots &amp; \mu </em>{k}<br>\end{bmatrix}\begin{bmatrix}<br>\sigma<em>{1} &amp;  0&amp;  0&amp; 0\<br> 0&amp;  \sigma</em>{2}&amp;  0&amp; 0\<br> 0&amp;  0&amp;  \ddots &amp; 0\<br> 0&amp;  0&amp;  0&amp; \sigma<em>{k}<br>\end{bmatrix}\begin{bmatrix}<br>v</em>{1}^{T}\<br>v<em>{2}^{T}\<br>\vdots \<br>v</em>{k}^{T}\end{bmatrix}<br>$</p>
+<p>矩阵$U<em>{k}$的每一个列向量 $u</em>{1}, u<em>{2},…, u</em>{k}$ 表示一个话题，称为<strong>话题向量</strong>。由这 $k$ 个话题向量张成一个子空间：  </p>
+<p>$<br>U<em>{k} = \begin{bmatrix}<br>u</em>{1} &amp;  u<em>{2}&amp;  \cdots &amp; u</em>{k}<br>\end{bmatrix}<br>$</p>
+<p>称为<strong>话题向量空间</strong>。  </p>
+<p>综上， 可以通过对单词-文本矩阵的奇异值分解进行潜在语义分析：  </p>
+<p>$ X \approx U<em>{k} \Sigma</em>{k} V<em>{k}^{T} = U</em>{k}(\Sigma<em>{k}V</em>{k}^{T})$  </p>
+<p>得到话题空间 $U<em>{k}$ ， 以及文本在话题空间的表示($\Sigma</em>{k}V_{k}^{T}$). </p>
+<h3 id="非负矩阵分解算法"><a href="#非负矩阵分解算法" class="headerlink" title="非负矩阵分解算法"></a>非负矩阵分解算法</h3><p>非负矩阵分解也可以用于话题分析。对单词-文本矩阵进行非负矩阵分解，将<strong>其左矩阵作为话题向量空间</strong>，将其<strong>右矩阵作为文本在话题向量空间的表示</strong>。</p>
+<h4 id="非负矩阵分解"><a href="#非负矩阵分解" class="headerlink" title="非负矩阵分解"></a>非负矩阵分解</h4><p>若一个矩阵的索引元素非负，则该矩阵为非负矩阵。若$X$是非负矩阵，则： $X &gt;= 0$.  </p>
+<p>给定一个非负矩阵$X$, 找到两个非负矩阵$W &gt;= 0$ 和 $H&gt;= 0$, 使得：  </p>
+<p>$ X \approx WH$</p>
+<p>即非负矩阵$X$分解为两个非负矩阵$W$和$H$的乘积形式，成为非负矩阵分解。因为$WH$与$X$完全相等很难实现，所以只要求近似相等。  </p>
+<p>假设非负矩阵$X$是$m\times n$矩阵，非负矩阵$W$和$H$分别为 $m\times k$ 矩阵和 $k\times n$ 矩阵。假设 $k &lt; min(m, n)$ 即$W$ 和 $H$ 小于原矩阵 $X$, 所以非负矩阵分解是对原数据的压缩。</p>
+<p>称 $W$ 为基矩阵， $H$ 为系数矩阵。非负矩阵分解旨在用较少的基向量，系数向量来表示为较大的数据矩阵。</p>
+<p>令 $W = \begin{bmatrix}<br>w<em>{1} &amp;  w</em>{2}&amp;  \cdots&amp; w<em>{k}<br>\end{bmatrix}$<br>为话题向量空间， $w</em>{1}, w<em>{2}, …, w</em>{k}$ 表示文本集合的 $k$ 个话题， 令 $H = \begin{bmatrix}<br>h<em>{1} &amp;  h</em>{2}&amp;  \cdots&amp; h<em>{n}<br>\end{bmatrix}$<br>为文本在话题向量空间的表示， $h</em>{1}, h<em>{2},…, h</em>{n}$ 表示文本集合的 $n$ 个文本。</p>
+<h5 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h5><p>非负矩阵分解可以形式化为最优化问题求解。可以利用平方损失或散度来作为损失函数。</p>
+<p>目标函数 $|| X - WH ||^{2}$ 关于 $W$ 和 $H$ 的最小化，满足约束条件 $W, H &gt;= 0$, 即：  </p>
+<p>$\underset{W,H}{min} || X - WH ||^{2}$  </p>
+<p>$s.t.  W, H &gt;= 0$</p>
+<p>乘法更新规则： </p>
+<p>$W<em>{il} \leftarrow W</em>{il}\frac{(XH^{T})<em>{il}}{(WHH^{T})</em>{il}}$  （17.33）</p>
+<p>$H<em>{lj} \leftarrow H</em>{lj}\frac{(W^{T}X)<em>{lj}}{(W^{T}WH)</em>{lj}}$  （17.34）</p>
+<p>选择初始矩阵 $W$ 和 $H$ 为非负矩阵，可以保证迭代过程及结果的矩阵 $W$ 和 $H$ 非负。</p>
+<p><strong>算法 17.1 （非负矩阵分解的迭代算法）</strong></p>
+<p>输入： 单词-文本矩阵 $X &gt;= 0$, 文本集合的话题个数 $k$, 最大迭代次数 $t$；<br>输出： 话题矩阵 $W$, 文本表示矩阵 $H$。  </p>
+<p><strong>1)</strong>. 初始化</p>
+<p>$W&gt;=0$, 并对 $W$ 的每一列数据归一化；<br>$H&gt;=0$；</p>
+<p><strong>2)</strong>. 迭代  </p>
+<p>对迭代次数由1到$t$执行下列步骤：<br>a. 更新$W$的元素，对 $l$ 从1到 $k,i$从1到$m$按(17.33)更新 $W<em>{il}$;<br>a. 更新$H$的元素，对 $l$ 从1到 $k,j$从1到$m$按(17.34)更新 $H</em>{lj}$; </p>
+<h3 id="图例-17-1"><a href="#图例-17-1" class="headerlink" title="图例 17.1"></a>图例 17.1</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> sklearn.decomposition <span class="keyword">import</span> TruncatedSVD</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">X = [[<span class="number">2</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">2</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>], [<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">1</span>]]</span><br><span class="line">X = np.asarray(X);X</span><br></pre></td></tr></table></figure>
+<pre><code>array([[2, 0, 0, 0],
+       [0, 2, 0, 0],
+       [0, 0, 1, 0],
+       [0, 0, 2, 3],
+       [0, 0, 0, 1],
+       [1, 2, 2, 1]])
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 奇异值分解</span></span><br><span class="line">U,sigma,VT=np.linalg.svd(X)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">U</span><br></pre></td></tr></table></figure>
+<pre><code>array([[-7.84368672e-02, -2.84423033e-01,  8.94427191e-01,
+        -2.15138396e-01, -6.45002451e-02, -2.50012770e-01],
+       [-1.56873734e-01, -5.68846066e-01, -4.47213595e-01,
+        -4.30276793e-01, -1.29000490e-01, -5.00025540e-01],
+       [-1.42622354e-01,  1.37930417e-02, -1.25029761e-16,
+         6.53519444e-01,  3.88575115e-01, -6.33553733e-01],
+       [-7.28804669e-01,  5.53499910e-01, -2.24565656e-16,
+        -1.56161345e-01, -3.23288048e-01, -1.83248673e-01],
+       [-1.47853320e-01,  1.75304609e-01,  8.49795536e-18,
+        -4.87733411e-01,  8.40863653e-01,  4.97204799e-02],
+       [-6.29190197e-01, -5.08166890e-01, -1.60733896e-16,
+         2.81459486e-01,  1.29000490e-01,  5.00025540e-01]])
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sigma</span><br></pre></td></tr></table></figure>
+<pre><code>array([4.47696617, 2.7519661 , 2.        , 1.17620428])
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">VT</span><br></pre></td></tr></table></figure>
+<pre><code>array([[-1.75579600e-01, -3.51159201e-01, -6.38515454e-01,
+        -6.61934313e-01],
+       [-3.91361272e-01, -7.82722545e-01,  3.79579831e-02,
+         4.82432341e-01],
+       [ 8.94427191e-01, -4.47213595e-01, -2.23998094e-16,
+         5.45344065e-17],
+       [-1.26523351e-01, -2.53046702e-01,  7.68672366e-01,
+        -5.73674125e-01]])
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 截断奇异值分解</span></span><br><span class="line">svd = TruncatedSVD(n_components=<span class="number">3</span>, n_iter=<span class="number">7</span>, random_state=<span class="number">42</span>)</span><br><span class="line">svd.fit(X)  </span><br></pre></td></tr></table></figure>
+<pre><code>TruncatedSVD(n_components=3, n_iter=7, random_state=42)
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svd.explained_variance_ratio_</span><br></pre></td></tr></table></figure>
+<pre><code>array([0.39945801, 0.34585056, 0.18861789])
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svd.explained_variance_ratio_.<span class="built_in">sum</span>()</span><br></pre></td></tr></table></figure>
+<pre><code>0.9339264600284485
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svd.singular_values_</span><br></pre></td></tr></table></figure>
+<pre><code>array([4.47696617, 2.7519661 , 2.        ])
+</code></pre><h3 id="使用-sklearn-计算"><a href="#使用-sklearn-计算" class="headerlink" title="使用 sklearn 计算"></a>使用 sklearn 计算</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.decomposition <span class="keyword">import</span> NMF</span><br><span class="line">model = NMF(n_components=<span class="number">3</span>, init=<span class="string">&#x27;random&#x27;</span>, max_iter=<span class="number">200</span>, random_state=<span class="number">0</span>)</span><br><span class="line">W = model.fit_transform(X)</span><br><span class="line">H = model.components_</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">W</span><br></pre></td></tr></table></figure>
+<pre><code>array([[0.        , 0.53849498, 0.        ],
+       [0.        , 1.07698996, 0.        ],
+       [0.69891361, 0.        , 0.        ],
+       [1.39782972, 0.        , 1.97173859],
+       [0.        , 0.        , 0.65783848],
+       [1.39783002, 1.34623756, 0.65573258]])
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">H</span><br></pre></td></tr></table></figure>
+<pre><code>array([[0.00000000e+00, 0.00000000e+00, 1.43078959e+00, 1.71761682e-03],
+       [7.42810976e-01, 1.48562195e+00, 0.00000000e+00, 3.30264644e-04],
+       [0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 1.52030365e+00]])
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">inverse_transform</span>(<span class="params">W, H</span>):</span></span><br><span class="line">    <span class="comment"># 重构</span></span><br><span class="line">    <span class="keyword">return</span> W.dot(H)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">loss</span>(<span class="params">X, X_</span>):</span></span><br><span class="line">    <span class="comment">#计算重构误差</span></span><br><span class="line">    <span class="keyword">return</span> ((X - X_) * (X - X_)).<span class="built_in">sum</span>()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">X__ = inverse_transform(W, H);X__</span><br></pre></td></tr></table></figure>
+<pre><code>array([[3.99999983e-01, 7.99999966e-01, 0.00000000e+00, 1.77845853e-04],
+       [7.99999966e-01, 1.59999993e+00, 0.00000000e+00, 3.55691707e-04],
+       [0.00000000e+00, 0.00000000e+00, 9.99998311e-01, 1.20046577e-03],
+       [0.00000000e+00, 0.00000000e+00, 2.00000021e+00, 3.00004230e+00],
+       [0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 1.00011424e+00],
+       [1.00000003e+00, 2.00000007e+00, 2.00000064e+00, 9.99758185e-01]])
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">loss(X, X__)</span><br></pre></td></tr></table></figure>
+<pre><code>4.0000016725824565
+</code></pre>
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/cn/16.PCA/" data-toggle="tooltip" data-placement="top" title="第16章 主成分分析">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/cn/15.SVD/" data-toggle="tooltip" data-placement="top" title="第15章 奇异值分解">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      如果您喜欢此博客或发现它对您有用，则欢迎对此发表评论。 也欢迎您共享此博客，以便更多人可以参与。 如果博客中使用的图像侵犯了您的版权，请与作者联系以将其删除。 谢谢 ！
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=第17章 潜在语义分析&body=Hi,I found this website and thought you might like it https://11010101.xyz/cn/17.LSA/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: 'a9a645b881c78d12baa8',
+      clientSecret: '144741a3fa325fe22d7207d5698374724cd412b7',
+      repo: 'Muzhi1920.github.io',
+      owner: 'Muzhi1920',
+      admin: 'Muzhi1920',
+      id: 'Fri Apr 01 2022 10:34:17 GMT+0000 | truncate: 50', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'zh-CN',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E7%AC%AC17%E7%AB%A0-%E6%BD%9C%E5%9C%A8%E8%AF%AD%E4%B9%89%E5%88%86%E6%9E%90"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">第17章 潜在语义分析</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%8D%95%E8%AF%8D%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">单词向量空间</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%AF%9D%E9%A2%98%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">话题向量空间</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%BD%9C%E5%9C%A8%E8%AF%AD%E4%B9%89%E5%88%86%E6%9E%90%E7%AE%97%E6%B3%95"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">潜在语义分析算法</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E9%9D%9E%E8%B4%9F%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3%E7%AE%97%E6%B3%95"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">非负矩阵分解算法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E9%9D%9E%E8%B4%9F%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3"><span class="toc-nav-number">1.2.2.1.</span> <span class="toc-nav-text">非负矩阵分解</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E7%AE%97%E6%B3%95"><span class="toc-nav-number">1.2.2.1.1.</span> <span class="toc-nav-text">算法</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%9B%BE%E4%BE%8B-17-1"><span class="toc-nav-number">1.2.3.</span> <span class="toc-nav-text">图例 17.1</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BD%BF%E7%94%A8-sklearn-%E8%AE%A1%E7%AE%97"><span class="toc-nav-number">1.2.4.</span> <span class="toc-nav-text">使用 sklearn 计算</span></a></li></ol></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#机器学习" title="机器学习">机器学习</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>链友</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/Muzhi1920">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+            <li>
+              <a target="_blank" href="https://www.zhihu.com/people/awesome-yyds">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa  fa-stack-1x fa-inverse">知</i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          小于
+          2022
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="https://hexo.io/themes/">Hexo</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://github.com/Muzhi1920/Muzhi1920.github.io">Muzhi1920</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=Muzhi1920&repo=Muzhi1920.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='统计学习方法三要素——模型、策略、算法,高斯证明了假定误差独立同分布，在所有无偏线性估计中，最小二乘法的方差最小,SGD算法：通过误分类点优化w，b的值，使超平面向另一侧移动,朴素贝叶斯法的基本假设是条件独立性（强假设所以叫“朴素”）,决策树特征选择：信息增益、信息增益比，基尼指数（越小越好）,逻辑回归是用线性变换表示输入的对数几率模型,最大熵原理认为在所有概率模型中，熵最大的模型是最好的模型,逻辑回归与最大熵模型都属于对数线性模型，采用极大似然估计学习,逻辑回归的优化，包括改进的迭代尺度法、梯度下降法、拟牛顿法' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033'></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://11010101.xyz/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

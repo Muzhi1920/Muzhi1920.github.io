@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-5GGTGE8BJS"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-5GGTGE8BJS');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+
+  <!-- Baidu Push -->
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <!-- <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/> -->
+  <meta name="google-site-verification" content="MnOJ4x6R2U5mM5X77Gw3bN3VcbjclS96MyKa6oZoMVk" />
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="人工智能的奇点，正在来临..."/>
+  <meta name="keyword" content="AI"/>
+  <link rel="shortcut icon" href="/img/avatar/tab.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+      <!-- gitalk start -->
+      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
+      <link rel="stylesheet" href="/css/gitalk.css"/>
+      <!-- gitalk end -->
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://11010101.xyz/cn/10.HMM/">
+  <title>
+    
+      第10章 隐马尔可夫模型 - Shawn Blog
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--light">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'light';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+		<!-- Gitter -->
+<!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'touch_fish/lie_down'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Shawn Blog</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">主页</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于我
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>搜索</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('/img/header_img/new_home_bg.jpg');
+      --intro-header-background-image-url-post: url('');
+      --intro-header-background-image-url-page: url('/img/header_img/archive_bg.jpg');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/new_home_bg.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/archive_bg.jpg');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url(''); */
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('/img/signature/my_signature.png');
+      }
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#机器学习" title="机器学习">机器学习</a>
+              
+            </div>
+            <h1>第10章 隐马尔可夫模型</h1>
+            <h2 class="subheading">HMM</h2>
+            <span class="meta">
+              Posted by 小于 on
+              2022-03-25
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">21</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">3.8k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h1 id="第10章-隐马尔可夫模型"><a href="#第10章-隐马尔可夫模型" class="headerlink" title="第10章 隐马尔可夫模型"></a>第10章 隐马尔可夫模型</h1><p>1．隐马尔可夫模型是关于时序的概率模型，描述由一个隐藏的马尔可夫链随机生成不可观测的状态的序列，再由各个状态随机生成一个观测而产生观测的序列的过程。</p>
+<p>隐马尔可夫模型由初始状态概率向$\pi$、状态转移概率矩阵$A$和观测概率矩阵$B$决定。因此，隐马尔可夫模型可以写成$\lambda=(A, B, \pi)$。</p>
+<p>隐马尔可夫模型是一个生成模型，表示状态序列和观测序列的联合分布，但是状态序列是隐藏的，不可观测的。</p>
+<p>隐马尔可夫模型可以用于标注，这时状态对应着标记。标注问题是给定观测序列预测其对应的标记序列。</p>
+<p>2．概率计算问题。给定模型$\lambda=(A, B, \pi)$和观测序列$O＝(o_1，o_2,…,o_T)$，计算在模型$\lambda$下观测序列$O$出现的概率$P(O|\lambda)$。前向-后向算法是通过递推地计算前向-后向概率可以高效地进行隐马尔可夫模型的概率计算。</p>
+<p>3．学习问题。已知观测序列$O＝(o_1，o_2,…,o_T)$，估计模型$\lambda=(A, B, \pi)$参数，使得在该模型下观测序列概率$P(O|\lambda)$最大。即用极大似然估计的方法估计参数。Baum-Welch算法，也就是EM算法可以高效地对隐马尔可夫模型进行训练。它是一种非监督学习算法。</p>
+<p>4．预测问题。已知模型$\lambda=(A, B, \pi)$和观测序列$O＝(o_1，o_2,…,o_T)$，求对给定观测序列条件概率$P(I|O)$最大的状态序列$I＝(i_1，i_2,…,i_T)$。维特比算法应用动态规划高效地求解最优路径，即概率最大的状态序列。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HiddenMarkov</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.alphas = <span class="literal">None</span></span><br><span class="line">        self.forward_P = <span class="literal">None</span></span><br><span class="line">        self.betas = <span class="literal">None</span></span><br><span class="line">        self.backward_P = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 前向算法</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span>(<span class="params">self, Q, V, A, B, O, PI</span>):</span></span><br><span class="line">        <span class="comment"># 状态序列的大小</span></span><br><span class="line">        N = <span class="built_in">len</span>(Q)</span><br><span class="line">        <span class="comment"># 观测序列的大小</span></span><br><span class="line">        M = <span class="built_in">len</span>(O)</span><br><span class="line">        <span class="comment"># 初始化前向概率alpha值</span></span><br><span class="line">        alphas = np.zeros((N, M))</span><br><span class="line">        <span class="comment"># 时刻数=观测序列数</span></span><br><span class="line">        T = M</span><br><span class="line">        <span class="comment"># 遍历每一个时刻，计算前向概率alpha值</span></span><br><span class="line">        <span class="keyword">for</span> t <span class="keyword">in</span> <span class="built_in">range</span>(T):</span><br><span class="line">            <span class="comment"># 得到序列对应的索引</span></span><br><span class="line">            indexOfO = V.index(O[t])</span><br><span class="line">            <span class="comment"># 遍历状态序列</span></span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(N):</span><br><span class="line">                <span class="comment"># 初始化alpha初值</span></span><br><span class="line">                <span class="keyword">if</span> t == <span class="number">0</span>:</span><br><span class="line">                    <span class="comment"># P176 公式(10.15)</span></span><br><span class="line">                    alphas[i][t] = PI[t][i] * B[i][indexOfO]</span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">&#x27;alpha1(%d) = p%db%db(o1) = %f&#x27;</span> %</span><br><span class="line">                          (i + <span class="number">1</span>, i, i, alphas[i][t]))</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="comment"># P176 公式(10.16)</span></span><br><span class="line">                    alphas[i][t] = np.dot([alpha[t - <span class="number">1</span>] <span class="keyword">for</span> alpha <span class="keyword">in</span> alphas],</span><br><span class="line">                                          [a[i] <span class="keyword">for</span> a <span class="keyword">in</span> A]) * B[i][indexOfO]</span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">&#x27;alpha%d(%d) = [sigma alpha%d(i)ai%d]b%d(o%d) = %f&#x27;</span> %</span><br><span class="line">                          (t + <span class="number">1</span>, i + <span class="number">1</span>, t - <span class="number">1</span>, i, i, t, alphas[i][t]))</span><br><span class="line">        <span class="comment"># P176 公式(10.17)</span></span><br><span class="line">        self.forward_P = np.<span class="built_in">sum</span>([alpha[M - <span class="number">1</span>] <span class="keyword">for</span> alpha <span class="keyword">in</span> alphas])</span><br><span class="line">        self.alphas = alphas</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 后向算法</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">backward</span>(<span class="params">self, Q, V, A, B, O, PI</span>):</span></span><br><span class="line">        <span class="comment"># 状态序列的大小</span></span><br><span class="line">        N = <span class="built_in">len</span>(Q)</span><br><span class="line">        <span class="comment"># 观测序列的大小</span></span><br><span class="line">        M = <span class="built_in">len</span>(O)</span><br><span class="line">        <span class="comment"># 初始化后向概率beta值，P178 公式(10.19)</span></span><br><span class="line">        betas = np.ones((N, M))</span><br><span class="line">        <span class="comment">#</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(N):</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&#x27;beta%d(%d) = 1&#x27;</span> % (M, i + <span class="number">1</span>))</span><br><span class="line">        <span class="comment"># 对观测序列逆向遍历</span></span><br><span class="line">        <span class="keyword">for</span> t <span class="keyword">in</span> <span class="built_in">range</span>(M - <span class="number">2</span>, -<span class="number">1</span>, -<span class="number">1</span>):</span><br><span class="line">            <span class="comment"># 得到序列对应的索引</span></span><br><span class="line">            indexOfO = V.index(O[t + <span class="number">1</span>])</span><br><span class="line">            <span class="comment"># 遍历状态序列</span></span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(N):</span><br><span class="line">                <span class="comment"># P178 公式(10.20)</span></span><br><span class="line">                betas[i][t] = np.dot(</span><br><span class="line">                    np.multiply(A[i], [b[indexOfO] <span class="keyword">for</span> b <span class="keyword">in</span> B]),</span><br><span class="line">                    [beta[t + <span class="number">1</span>] <span class="keyword">for</span> beta <span class="keyword">in</span> betas])</span><br><span class="line">                realT = t + <span class="number">1</span></span><br><span class="line">                realI = i + <span class="number">1</span></span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&#x27;beta%d(%d) = sigma[a%djbj(o%d)beta%d(j)] = (&#x27;</span> %</span><br><span class="line">                      (realT, realI, realI, realT + <span class="number">1</span>, realT + <span class="number">1</span>),</span><br><span class="line">                      end=<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">                <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(N):</span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">&quot;%.2f * %.2f * %.2f + &quot;</span> %</span><br><span class="line">                          (A[i][j], B[j][indexOfO], betas[j][t + <span class="number">1</span>]),</span><br><span class="line">                          end=<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&quot;0) = %.3f&quot;</span> % betas[i][t])</span><br><span class="line">        <span class="comment"># 取出第一个值</span></span><br><span class="line">        indexOfO = V.index(O[<span class="number">0</span>])</span><br><span class="line">        self.betas = betas</span><br><span class="line">        <span class="comment"># P178 公式(10.21)</span></span><br><span class="line">        P = np.dot(np.multiply(PI, [b[indexOfO] <span class="keyword">for</span> b <span class="keyword">in</span> B]),</span><br><span class="line">                   [beta[<span class="number">0</span>] <span class="keyword">for</span> beta <span class="keyword">in</span> betas])</span><br><span class="line">        self.backward_P = P</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;P(O|lambda) = &quot;</span>, end=<span class="string">&quot;&quot;</span>)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(N):</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;%.1f * %.1f * %.5f + &quot;</span> %</span><br><span class="line">                  (PI[<span class="number">0</span>][i], B[i][indexOfO], betas[i][<span class="number">0</span>]),</span><br><span class="line">                  end=<span class="string">&quot;&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;0 = %f&quot;</span> % P)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 维特比算法</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">viterbi</span>(<span class="params">self, Q, V, A, B, O, PI</span>):</span></span><br><span class="line">        <span class="comment"># 状态序列的大小</span></span><br><span class="line">        N = <span class="built_in">len</span>(Q)</span><br><span class="line">        <span class="comment"># 观测序列的大小</span></span><br><span class="line">        M = <span class="built_in">len</span>(O)</span><br><span class="line">        <span class="comment"># 初始化daltas</span></span><br><span class="line">        deltas = np.zeros((N, M))</span><br><span class="line">        <span class="comment"># 初始化psis</span></span><br><span class="line">        psis = np.zeros((N, M))</span><br><span class="line">        <span class="comment"># 初始化最优路径矩阵，该矩阵维度与观测序列维度相同</span></span><br><span class="line">        I = np.zeros((<span class="number">1</span>, M))</span><br><span class="line">        <span class="comment"># 遍历观测序列</span></span><br><span class="line">        <span class="keyword">for</span> t <span class="keyword">in</span> <span class="built_in">range</span>(M):</span><br><span class="line">            <span class="comment"># 递推从t=2开始</span></span><br><span class="line">            realT = t + <span class="number">1</span></span><br><span class="line">            <span class="comment"># 得到序列对应的索引</span></span><br><span class="line">            indexOfO = V.index(O[t])</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(N):</span><br><span class="line">                realI = i + <span class="number">1</span></span><br><span class="line">                <span class="keyword">if</span> t == <span class="number">0</span>:</span><br><span class="line">                    <span class="comment"># P185 算法10.5 步骤(1)</span></span><br><span class="line">                    deltas[i][t] = PI[<span class="number">0</span>][i] * B[i][indexOfO]</span><br><span class="line">                    psis[i][t] = <span class="number">0</span></span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">&#x27;delta1(%d) = pi%d * b%d(o1) = %.2f * %.2f = %.2f&#x27;</span> %</span><br><span class="line">                          (realI, realI, realI, PI[<span class="number">0</span>][i], B[i][indexOfO],</span><br><span class="line">                           deltas[i][t]))</span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">&#x27;psis1(%d) = 0&#x27;</span> % (realI))</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="comment"># # P185 算法10.5 步骤(2)</span></span><br><span class="line">                    deltas[i][t] = np.<span class="built_in">max</span>(</span><br><span class="line">                        np.multiply([delta[t - <span class="number">1</span>] <span class="keyword">for</span> delta <span class="keyword">in</span> deltas],</span><br><span class="line">                                    [a[i] <span class="keyword">for</span> a <span class="keyword">in</span> A])) * B[i][indexOfO]</span><br><span class="line">                    <span class="built_in">print</span>(</span><br><span class="line">                        <span class="string">&#x27;delta%d(%d) = max[delta%d(j)aj%d]b%d(o%d) = %.2f * %.2f = %.5f&#x27;</span></span><br><span class="line">                        % (realT, realI, realT - <span class="number">1</span>, realI, realI, realT,</span><br><span class="line">                           np.<span class="built_in">max</span>(</span><br><span class="line">                               np.multiply([delta[t - <span class="number">1</span>] <span class="keyword">for</span> delta <span class="keyword">in</span> deltas],</span><br><span class="line">                                           [a[i] <span class="keyword">for</span> a <span class="keyword">in</span> A])), B[i][indexOfO],</span><br><span class="line">                           deltas[i][t]))</span><br><span class="line">                    psis[i][t] = np.argmax(</span><br><span class="line">                        np.multiply([delta[t - <span class="number">1</span>] <span class="keyword">for</span> delta <span class="keyword">in</span> deltas],</span><br><span class="line">                                    [a[i] <span class="keyword">for</span> a <span class="keyword">in</span> A]))</span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">&#x27;psis%d(%d) = argmax[delta%d(j)aj%d] = %d&#x27;</span> %</span><br><span class="line">                          (realT, realI, realT - <span class="number">1</span>, realI, psis[i][t]))</span><br><span class="line">        <span class="comment">#print(deltas)</span></span><br><span class="line">        <span class="comment">#print(psis)</span></span><br><span class="line">        <span class="comment"># 得到最优路径的终结点</span></span><br><span class="line">        I[<span class="number">0</span>][M - <span class="number">1</span>] = np.argmax([delta[M - <span class="number">1</span>] <span class="keyword">for</span> delta <span class="keyword">in</span> deltas])</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;i%d = argmax[deltaT(i)] = %d&#x27;</span> % (M, I[<span class="number">0</span>][M - <span class="number">1</span>] + <span class="number">1</span>))</span><br><span class="line">        <span class="comment"># 递归由后向前得到其他结点</span></span><br><span class="line">        <span class="keyword">for</span> t <span class="keyword">in</span> <span class="built_in">range</span>(M - <span class="number">2</span>, -<span class="number">1</span>, -<span class="number">1</span>):</span><br><span class="line">            I[<span class="number">0</span>][t] = psis[<span class="built_in">int</span>(I[<span class="number">0</span>][t + <span class="number">1</span>])][t + <span class="number">1</span>]</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&#x27;i%d = psis%d(i%d) = %d&#x27;</span> %</span><br><span class="line">                  (t + <span class="number">1</span>, t + <span class="number">2</span>, t + <span class="number">2</span>, I[<span class="number">0</span>][t] + <span class="number">1</span>))</span><br><span class="line">        <span class="comment"># 输出最优路径</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;最优路径是：&#x27;</span>, <span class="string">&quot;-&gt;&quot;</span>.join([<span class="built_in">str</span>(<span class="built_in">int</span>(i + <span class="number">1</span>)) <span class="keyword">for</span> i <span class="keyword">in</span> I[<span class="number">0</span>]]))</span><br></pre></td></tr></table></figure>
+<h3 id="习题10-1"><a href="#习题10-1" class="headerlink" title="习题10.1"></a>习题10.1</h3><p>&emsp;&emsp;给定盒子和球组成的隐马尔可夫模型$\lambda=(A,B,\pi)$，其中，</p>
+<script type="math/tex; mode=display">A=\left[\begin{array}{ccc}0.5&0.2&0.3\\0.3&0.5&0.2\\0.2&0.3&0.5\end{array}\right], \quad B=\left[\begin{array}{cc}0.5&0.5\\0.4&0.6\\0.7&0.3\end{array}\right], \quad \pi=(0.2,0.4,0.4)^T</script><p>设$T=4,O=(红,白,红,白)$，试用后向算法计算$P(O|\lambda)$。</p>
+<p><strong>解答：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#习题10.1</span></span><br><span class="line">Q = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">V = [<span class="string">&#x27;红&#x27;</span>, <span class="string">&#x27;白&#x27;</span>]</span><br><span class="line">A = [[<span class="number">0.5</span>, <span class="number">0.2</span>, <span class="number">0.3</span>], [<span class="number">0.3</span>, <span class="number">0.5</span>, <span class="number">0.2</span>], [<span class="number">0.2</span>, <span class="number">0.3</span>, <span class="number">0.5</span>]]</span><br><span class="line">B = [[<span class="number">0.5</span>, <span class="number">0.5</span>], [<span class="number">0.4</span>, <span class="number">0.6</span>], [<span class="number">0.7</span>, <span class="number">0.3</span>]]</span><br><span class="line"><span class="comment"># O = [&#x27;红&#x27;, &#x27;白&#x27;, &#x27;红&#x27;, &#x27;红&#x27;, &#x27;白&#x27;, &#x27;红&#x27;, &#x27;白&#x27;, &#x27;白&#x27;]</span></span><br><span class="line">O = [<span class="string">&#x27;红&#x27;</span>, <span class="string">&#x27;白&#x27;</span>, <span class="string">&#x27;红&#x27;</span>, <span class="string">&#x27;白&#x27;</span>]    <span class="comment">#习题10.1的例子</span></span><br><span class="line">PI = [[<span class="number">0.2</span>, <span class="number">0.4</span>, <span class="number">0.4</span>]]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">HMM = HiddenMarkov()</span><br><span class="line"><span class="comment"># HMM.forward(Q, V, A, B, O, PI)</span></span><br><span class="line"><span class="comment"># HMM.backward(Q, V, A, B, O, PI)</span></span><br><span class="line">HMM.viterbi(Q, V, A, B, O, PI)</span><br></pre></td></tr></table></figure>
+<pre><code>delta1(1) = pi1 * b1(o1) = 0.20 * 0.50 = 0.10
+psis1(1) = 0
+delta1(2) = pi2 * b2(o1) = 0.40 * 0.40 = 0.16
+psis1(2) = 0
+delta1(3) = pi3 * b3(o1) = 0.40 * 0.70 = 0.28
+psis1(3) = 0
+delta2(1) = max[delta1(j)aj1]b1(o2) = 0.06 * 0.50 = 0.02800
+psis2(1) = argmax[delta1(j)aj1] = 2
+delta2(2) = max[delta1(j)aj2]b2(o2) = 0.08 * 0.60 = 0.05040
+psis2(2) = argmax[delta1(j)aj2] = 2
+delta2(3) = max[delta1(j)aj3]b3(o2) = 0.14 * 0.30 = 0.04200
+psis2(3) = argmax[delta1(j)aj3] = 2
+delta3(1) = max[delta2(j)aj1]b1(o3) = 0.02 * 0.50 = 0.00756
+psis3(1) = argmax[delta2(j)aj1] = 1
+delta3(2) = max[delta2(j)aj2]b2(o3) = 0.03 * 0.40 = 0.01008
+psis3(2) = argmax[delta2(j)aj2] = 1
+delta3(3) = max[delta2(j)aj3]b3(o3) = 0.02 * 0.70 = 0.01470
+psis3(3) = argmax[delta2(j)aj3] = 2
+delta4(1) = max[delta3(j)aj1]b1(o4) = 0.00 * 0.50 = 0.00189
+psis4(1) = argmax[delta3(j)aj1] = 0
+delta4(2) = max[delta3(j)aj2]b2(o4) = 0.01 * 0.60 = 0.00302
+psis4(2) = argmax[delta3(j)aj2] = 1
+delta4(3) = max[delta3(j)aj3]b3(o4) = 0.01 * 0.30 = 0.00220
+psis4(3) = argmax[delta3(j)aj3] = 2
+i4 = argmax[deltaT(i)] = 2
+i3 = psis4(i4) = 2
+i2 = psis3(i3) = 2
+i1 = psis2(i2) = 3
+最优路径是： 3-&gt;2-&gt;2-&gt;2
+</code></pre><h3 id="习题10-2"><a href="#习题10-2" class="headerlink" title="习题10.2"></a>习题10.2</h3><p>&emsp;&emsp;给定盒子和球组成的隐马尔可夫模型$\lambda=(A,B,\pi)$，其中，</p>
+<script type="math/tex; mode=display">A=\left[\begin{array}{ccc}0.5&0.1&0.4\\0.3&0.5&0.2\\0.2&0.2&0.6\end{array}\right], \quad B=\left[\begin{array}{cc}0.5&0.5\\0.4&0.6\\0.7&0.3\end{array}\right], \quad \pi=(0.2,0.3,0.5)^T</script><p>设$T=8,O=(红,白,红,红,白,红,白,白)$，试用前向后向概率计算$P(i_4=q_3|O,\lambda)$</p>
+<p><strong>解答：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Q = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">V = [<span class="string">&#x27;红&#x27;</span>, <span class="string">&#x27;白&#x27;</span>]</span><br><span class="line">A = [[<span class="number">0.5</span>, <span class="number">0.2</span>, <span class="number">0.3</span>], [<span class="number">0.3</span>, <span class="number">0.5</span>, <span class="number">0.2</span>], [<span class="number">0.2</span>, <span class="number">0.3</span>, <span class="number">0.5</span>]]</span><br><span class="line">B = [[<span class="number">0.5</span>, <span class="number">0.5</span>], [<span class="number">0.4</span>, <span class="number">0.6</span>], [<span class="number">0.7</span>, <span class="number">0.3</span>]]</span><br><span class="line">O = [<span class="string">&#x27;红&#x27;</span>, <span class="string">&#x27;白&#x27;</span>, <span class="string">&#x27;红&#x27;</span>, <span class="string">&#x27;红&#x27;</span>, <span class="string">&#x27;白&#x27;</span>, <span class="string">&#x27;红&#x27;</span>, <span class="string">&#x27;白&#x27;</span>, <span class="string">&#x27;白&#x27;</span>]</span><br><span class="line">PI = [[<span class="number">0.2</span>, <span class="number">0.3</span>, <span class="number">0.5</span>]]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">HMM.forward(Q, V, A, B, O, PI)</span><br><span class="line">HMM.backward(Q, V, A, B, O, PI)</span><br></pre></td></tr></table></figure>
+<pre><code>alpha1(1) = p0b0b(o1) = 0.100000
+alpha1(2) = p1b1b(o1) = 0.120000
+alpha1(3) = p2b2b(o1) = 0.350000
+alpha2(1) = [sigma alpha0(i)ai0]b0(o1) = 0.078000
+alpha2(2) = [sigma alpha0(i)ai1]b1(o1) = 0.111000
+alpha2(3) = [sigma alpha0(i)ai2]b2(o1) = 0.068700
+alpha3(1) = [sigma alpha1(i)ai0]b0(o2) = 0.043020
+alpha3(2) = [sigma alpha1(i)ai1]b1(o2) = 0.036684
+alpha3(3) = [sigma alpha1(i)ai2]b2(o2) = 0.055965
+alpha4(1) = [sigma alpha2(i)ai0]b0(o3) = 0.021854
+alpha4(2) = [sigma alpha2(i)ai1]b1(o3) = 0.017494
+alpha4(3) = [sigma alpha2(i)ai2]b2(o3) = 0.033758
+alpha5(1) = [sigma alpha3(i)ai0]b0(o4) = 0.011463
+alpha5(2) = [sigma alpha3(i)ai1]b1(o4) = 0.013947
+alpha5(3) = [sigma alpha3(i)ai2]b2(o4) = 0.008080
+alpha6(1) = [sigma alpha4(i)ai0]b0(o5) = 0.005766
+alpha6(2) = [sigma alpha4(i)ai1]b1(o5) = 0.004676
+alpha6(3) = [sigma alpha4(i)ai2]b2(o5) = 0.007188
+alpha7(1) = [sigma alpha5(i)ai0]b0(o6) = 0.002862
+alpha7(2) = [sigma alpha5(i)ai1]b1(o6) = 0.003389
+alpha7(3) = [sigma alpha5(i)ai2]b2(o6) = 0.001878
+alpha8(1) = [sigma alpha6(i)ai0]b0(o7) = 0.001411
+alpha8(2) = [sigma alpha6(i)ai1]b1(o7) = 0.001698
+alpha8(3) = [sigma alpha6(i)ai2]b2(o7) = 0.000743
+beta8(1) = 1
+beta8(2) = 1
+beta8(3) = 1
+beta7(1) = sigma[a1jbj(o8)beta8(j)] = (0.50 * 0.50 * 1.00 + 0.20 * 0.60 * 1.00 + 0.30 * 0.30 * 1.00 + 0) = 0.460
+beta7(2) = sigma[a2jbj(o8)beta8(j)] = (0.30 * 0.50 * 1.00 + 0.50 * 0.60 * 1.00 + 0.20 * 0.30 * 1.00 + 0) = 0.510
+beta7(3) = sigma[a3jbj(o8)beta8(j)] = (0.20 * 0.50 * 1.00 + 0.30 * 0.60 * 1.00 + 0.50 * 0.30 * 1.00 + 0) = 0.430
+beta6(1) = sigma[a1jbj(o7)beta7(j)] = (0.50 * 0.50 * 0.46 + 0.20 * 0.60 * 0.51 + 0.30 * 0.30 * 0.43 + 0) = 0.215
+beta6(2) = sigma[a2jbj(o7)beta7(j)] = (0.30 * 0.50 * 0.46 + 0.50 * 0.60 * 0.51 + 0.20 * 0.30 * 0.43 + 0) = 0.248
+beta6(3) = sigma[a3jbj(o7)beta7(j)] = (0.20 * 0.50 * 0.46 + 0.30 * 0.60 * 0.51 + 0.50 * 0.30 * 0.43 + 0) = 0.202
+beta5(1) = sigma[a1jbj(o6)beta6(j)] = (0.50 * 0.50 * 0.21 + 0.20 * 0.40 * 0.25 + 0.30 * 0.70 * 0.20 + 0) = 0.116
+beta5(2) = sigma[a2jbj(o6)beta6(j)] = (0.30 * 0.50 * 0.21 + 0.50 * 0.40 * 0.25 + 0.20 * 0.70 * 0.20 + 0) = 0.110
+beta5(3) = sigma[a3jbj(o6)beta6(j)] = (0.20 * 0.50 * 0.21 + 0.30 * 0.40 * 0.25 + 0.50 * 0.70 * 0.20 + 0) = 0.122
+beta4(1) = sigma[a1jbj(o5)beta5(j)] = (0.50 * 0.50 * 0.12 + 0.20 * 0.60 * 0.11 + 0.30 * 0.30 * 0.12 + 0) = 0.053
+beta4(2) = sigma[a2jbj(o5)beta5(j)] = (0.30 * 0.50 * 0.12 + 0.50 * 0.60 * 0.11 + 0.20 * 0.30 * 0.12 + 0) = 0.058
+beta4(3) = sigma[a3jbj(o5)beta5(j)] = (0.20 * 0.50 * 0.12 + 0.30 * 0.60 * 0.11 + 0.50 * 0.30 * 0.12 + 0) = 0.050
+beta3(1) = sigma[a1jbj(o4)beta4(j)] = (0.50 * 0.50 * 0.05 + 0.20 * 0.40 * 0.06 + 0.30 * 0.70 * 0.05 + 0) = 0.028
+beta3(2) = sigma[a2jbj(o4)beta4(j)] = (0.30 * 0.50 * 0.05 + 0.50 * 0.40 * 0.06 + 0.20 * 0.70 * 0.05 + 0) = 0.026
+beta3(3) = sigma[a3jbj(o4)beta4(j)] = (0.20 * 0.50 * 0.05 + 0.30 * 0.40 * 0.06 + 0.50 * 0.70 * 0.05 + 0) = 0.030
+beta2(1) = sigma[a1jbj(o3)beta3(j)] = (0.50 * 0.50 * 0.03 + 0.20 * 0.40 * 0.03 + 0.30 * 0.70 * 0.03 + 0) = 0.015
+beta2(2) = sigma[a2jbj(o3)beta3(j)] = (0.30 * 0.50 * 0.03 + 0.50 * 0.40 * 0.03 + 0.20 * 0.70 * 0.03 + 0) = 0.014
+beta2(3) = sigma[a3jbj(o3)beta3(j)] = (0.20 * 0.50 * 0.03 + 0.30 * 0.40 * 0.03 + 0.50 * 0.70 * 0.03 + 0) = 0.016
+beta1(1) = sigma[a1jbj(o2)beta2(j)] = (0.50 * 0.50 * 0.02 + 0.20 * 0.60 * 0.01 + 0.30 * 0.30 * 0.02 + 0) = 0.007
+beta1(2) = sigma[a2jbj(o2)beta2(j)] = (0.30 * 0.50 * 0.02 + 0.50 * 0.60 * 0.01 + 0.20 * 0.30 * 0.02 + 0) = 0.007
+beta1(3) = sigma[a3jbj(o2)beta2(j)] = (0.20 * 0.50 * 0.02 + 0.30 * 0.60 * 0.01 + 0.50 * 0.30 * 0.02 + 0) = 0.006
+P(O|lambda) = 0.2 * 0.5 * 0.00698 + 0.3 * 0.4 * 0.00741 + 0.5 * 0.7 * 0.00647 + 0 = 0.003852
+</code></pre><p>可知，$\displaystyle P(i_4=q_3|O,\lambda)=\frac{P(i_4=q_3,O|\lambda)}{P(O|\lambda)}=\frac{\alpha_4(3)\beta_4(3)}{P(O|\lambda)}$</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;alpha4(3)=&quot;</span>, HMM.alphas[<span class="number">3</span> - <span class="number">1</span>][<span class="number">4</span> - <span class="number">1</span>])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;beta4(3)=&quot;</span>, HMM.betas[<span class="number">3</span> - <span class="number">1</span>][<span class="number">4</span> - <span class="number">1</span>])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;P(O|lambda)=&quot;</span>, HMM.backward_P[<span class="number">0</span>])</span><br><span class="line">result = (HMM.alphas[<span class="number">3</span> - <span class="number">1</span>][<span class="number">4</span> - <span class="number">1</span>] *</span><br><span class="line">          HMM.betas[<span class="number">3</span> - <span class="number">1</span>][<span class="number">4</span> - <span class="number">1</span>]) / HMM.backward_P[<span class="number">0</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;P(i4=q3|O,lambda) =&quot;</span>, result)</span><br></pre></td></tr></table></figure>
+<pre><code>alpha4(3)= 0.033757709999999996
+beta4(3)= 0.04972891
+P(O|lambda)= 0.0038519735794911
+P(i4=q3|O,lambda) = 0.4358114321796268
+</code></pre><h3 id="习题10-3"><a href="#习题10-3" class="headerlink" title="习题10.3"></a>习题10.3</h3><p>&emsp;&emsp;在习题10.1中，试用维特比算法求最优路径$I^<em>=(i_1^</em>,i_2^<em>,i_3^</em>,i_4^*)$。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Q = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">V = [<span class="string">&#x27;红&#x27;</span>, <span class="string">&#x27;白&#x27;</span>]</span><br><span class="line">A = [[<span class="number">0.5</span>, <span class="number">0.2</span>, <span class="number">0.3</span>], [<span class="number">0.3</span>, <span class="number">0.5</span>, <span class="number">0.2</span>], [<span class="number">0.2</span>, <span class="number">0.3</span>, <span class="number">0.5</span>]]</span><br><span class="line">B = [[<span class="number">0.5</span>, <span class="number">0.5</span>], [<span class="number">0.4</span>, <span class="number">0.6</span>], [<span class="number">0.7</span>, <span class="number">0.3</span>]]</span><br><span class="line">O = [<span class="string">&#x27;红&#x27;</span>, <span class="string">&#x27;白&#x27;</span>, <span class="string">&#x27;红&#x27;</span>, <span class="string">&#x27;白&#x27;</span>]</span><br><span class="line">PI = [[<span class="number">0.2</span>, <span class="number">0.4</span>, <span class="number">0.4</span>]]</span><br><span class="line"></span><br><span class="line">HMM = HiddenMarkov()</span><br><span class="line">HMM.viterbi(Q, V, A, B, O, PI)</span><br></pre></td></tr></table></figure>
+<pre><code>delta1(1) = pi1 * b1(o1) = 0.20 * 0.50 = 0.10
+psis1(1) = 0
+delta1(2) = pi2 * b2(o1) = 0.40 * 0.40 = 0.16
+psis1(2) = 0
+delta1(3) = pi3 * b3(o1) = 0.40 * 0.70 = 0.28
+psis1(3) = 0
+delta2(1) = max[delta1(j)aj1]b1(o2) = 0.06 * 0.50 = 0.02800
+psis2(1) = argmax[delta1(j)aj1] = 2
+delta2(2) = max[delta1(j)aj2]b2(o2) = 0.08 * 0.60 = 0.05040
+psis2(2) = argmax[delta1(j)aj2] = 2
+delta2(3) = max[delta1(j)aj3]b3(o2) = 0.14 * 0.30 = 0.04200
+psis2(3) = argmax[delta1(j)aj3] = 2
+delta3(1) = max[delta2(j)aj1]b1(o3) = 0.02 * 0.50 = 0.00756
+psis3(1) = argmax[delta2(j)aj1] = 1
+delta3(2) = max[delta2(j)aj2]b2(o3) = 0.03 * 0.40 = 0.01008
+psis3(2) = argmax[delta2(j)aj2] = 1
+delta3(3) = max[delta2(j)aj3]b3(o3) = 0.02 * 0.70 = 0.01470
+psis3(3) = argmax[delta2(j)aj3] = 2
+delta4(1) = max[delta3(j)aj1]b1(o4) = 0.00 * 0.50 = 0.00189
+psis4(1) = argmax[delta3(j)aj1] = 0
+delta4(2) = max[delta3(j)aj2]b2(o4) = 0.01 * 0.60 = 0.00302
+psis4(2) = argmax[delta3(j)aj2] = 1
+delta4(3) = max[delta3(j)aj3]b3(o4) = 0.01 * 0.30 = 0.00220
+psis4(3) = argmax[delta3(j)aj3] = 2
+i4 = argmax[deltaT(i)] = 2
+i3 = psis4(i4) = 2
+i2 = psis3(i3) = 2
+i1 = psis2(i2) = 3
+最优路径是： 3-&gt;2-&gt;2-&gt;2
+</code></pre><h3 id="习题10-4"><a href="#习题10-4" class="headerlink" title="习题10.4"></a>习题10.4</h3><p>&emsp;&emsp;试用前向概率和后向概率推导<script type="math/tex">P(O|\lambda)=\sum_{i=1}^N\sum_{j=1}^N\alpha_t(i)a_{ij}b_j(o_{t+1})\beta_{t+1}(j),\quad t=1,2,\cdots,T-1</script></p>
+<p><strong>解答：</strong>  </p>
+<script type="math/tex; mode=display">\begin{aligned}
+P(O|\lambda)
+&= P(o_1,o_2,...,o_T|\lambda) \\
+&= \sum_{i=1}^N P(o_1,..,o_t,i_t=q_i|\lambda) P(o_{t+1},..,o_T|i_t=q_i,\lambda) \\
+&= \sum_{i=1}^N \sum_{j=1}^N P(o_1,..,o_t,i_t=q_i|\lambda) P(o_{t+1},i_{t+1}=q_j|i_t=q_i,\lambda)P(o_{t+2},..,o_T|i_{t+1}=q_j,\lambda) \\
+&= \sum_{i=1}^N \sum_{j=1}^N [P(o_1,..,o_t,i_t=q_i|\lambda) P(o_{t+1}|i_{t+1}=q_j,\lambda) P(i_{t+1}=q_j|i_t=q_i,\lambda) \\
+& \quad \quad \quad \quad P(o_{t+2},..,o_T|i_{t+1}=q_j,\lambda)] \\
+&= \sum_{i=1}^N \sum_{j=1}^N \alpha_t(i) a_{ij} b_j(o_{t+1}) \beta_{t+1}(j),{\quad}t=1,2,...,T-1
+\end{aligned}</script><p>命题得证。</p>
+<h3 id="习题10-5"><a href="#习题10-5" class="headerlink" title="习题10.5"></a>习题10.5</h3><p>&emsp;&emsp;比较维特比算法中变量$\delta$的计算和前向算法中变量$\alpha$的计算的主要区别。</p>
+<p><strong>解答：</strong><br><strong>前向算法：</strong>  </p>
+<ol>
+<li>初值<script type="math/tex; mode=display">\alpha_1(i)=\pi_ib_i(o_i),i=1,2,\cdots,N</script></li>
+<li>递推，对$t=1,2,\cdots,T-1$：<script type="math/tex; mode=display">\alpha_{t+1}(i)=\left[\sum_{j=1}^N \alpha_t(j) a_{ji} \right]b_i(o_{t+1})，i=1,2,\cdots,N</script></li>
+</ol>
+<p><strong>维特比算法：</strong>  </p>
+<ol>
+<li>初始化<script type="math/tex; mode=display">\delta_1(i)=\pi_ib_i(o_1),i=1,2,\cdots,N</script></li>
+<li>递推，对$t=2,3,\cdots,T$，<script type="math/tex; mode=display">\delta_t(i)=\max_{1 \leqslant j \leqslant N} [\delta_{t-1}(j)a_{ji}]b_i(o_t), i=1,2,\cdots,N</script></li>
+</ol>
+<p>&emsp;&emsp;由上面算法可知，计算变量$\alpha$的时候直接对上个的结果进行数值计算，而计算变量$\delta$需要在上个结果计算的基础上选择最大值</p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/cn/13.无监督知识点总结/" data-toggle="tooltip" data-placement="top" title="第13章 无监督学习方法">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/cn/11.CRF/" data-toggle="tooltip" data-placement="top" title="第11章 条件随机场">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      如果您喜欢此博客或发现它对您有用，则欢迎对此发表评论。 也欢迎您共享此博客，以便更多人可以参与。 如果博客中使用的图像侵犯了您的版权，请与作者联系以将其删除。 谢谢 ！
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=第10章 隐马尔可夫模型&body=Hi,I found this website and thought you might like it https://11010101.xyz/cn/10.HMM/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: 'a9a645b881c78d12baa8',
+      clientSecret: '144741a3fa325fe22d7207d5698374724cd412b7',
+      repo: 'Muzhi1920.github.io',
+      owner: 'Muzhi1920',
+      admin: 'Muzhi1920',
+      id: 'Fri Mar 25 2022 10:34:17 GMT+0000 | truncate: 50', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'zh-CN',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E7%AC%AC10%E7%AB%A0-%E9%9A%90%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E6%A8%A1%E5%9E%8B"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">第10章 隐马尔可夫模型</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B9%A0%E9%A2%9810-1"><span class="toc-nav-number">1.0.1.</span> <span class="toc-nav-text">习题10.1</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B9%A0%E9%A2%9810-2"><span class="toc-nav-number">1.0.2.</span> <span class="toc-nav-text">习题10.2</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B9%A0%E9%A2%9810-3"><span class="toc-nav-number">1.0.3.</span> <span class="toc-nav-text">习题10.3</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B9%A0%E9%A2%9810-4"><span class="toc-nav-number">1.0.4.</span> <span class="toc-nav-text">习题10.4</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B9%A0%E9%A2%9810-5"><span class="toc-nav-number">1.0.5.</span> <span class="toc-nav-text">习题10.5</span></a></li></ol></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#机器学习" title="机器学习">机器学习</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>链友</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/Muzhi1920">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+            <li>
+              <a target="_blank" href="https://www.zhihu.com/people/awesome-yyds">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa  fa-stack-1x fa-inverse">知</i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          小于
+          2022
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="https://hexo.io/themes/">Hexo</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://github.com/Muzhi1920/Muzhi1920.github.io">Muzhi1920</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=Muzhi1920&repo=Muzhi1920.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='统计学习方法三要素——模型、策略、算法,高斯证明了假定误差独立同分布，在所有无偏线性估计中，最小二乘法的方差最小,SGD算法：通过误分类点优化w，b的值，使超平面向另一侧移动,朴素贝叶斯法的基本假设是条件独立性（强假设所以叫“朴素”）,决策树特征选择：信息增益、信息增益比，基尼指数（越小越好）,逻辑回归是用线性变换表示输入的对数几率模型,最大熵原理认为在所有概率模型中，熵最大的模型是最好的模型,逻辑回归与最大熵模型都属于对数线性模型，采用极大似然估计学习,逻辑回归的优化，包括改进的迭代尺度法、梯度下降法、拟牛顿法' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033'></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://11010101.xyz/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
