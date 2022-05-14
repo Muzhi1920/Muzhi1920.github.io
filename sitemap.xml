@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://11010101.xyz/cn/01_EDA_advance/</loc>
+    
+    <lastmod>2022-05-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://11010101.xyz/404.html</loc>
     
     <lastmod>2022-05-14</lastmod>

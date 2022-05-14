@@ -1,0 +1,2026 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-5GGTGE8BJS"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-5GGTGE8BJS');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+
+  <!-- Baidu Push -->
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <!-- <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/> -->
+  <meta name="google-site-verification" content="MnOJ4x6R2U5mM5X77Gw3bN3VcbjclS96MyKa6oZoMVk" />
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="人工智能的奇点，正在来临..."/>
+  <meta name="keyword" content="AI"/>
+  <link rel="shortcut icon" href="/img/avatar/tab.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+      <!-- gitalk start -->
+      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
+      <link rel="stylesheet" href="/css/gitalk.css"/>
+      <!-- gitalk end -->
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://11010101.xyz/cn/01_EDA_advance/">
+  <title>
+    
+      01_Advanced-EDA - Shawn Blog
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--light">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'light';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+		<!-- Gitter -->
+<!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'touch_fish/lie_down'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Shawn Blog</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">主页</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于我
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>搜索</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('/img/header_img/new_home_bg.jpg');
+      --intro-header-background-image-url-post: url('');
+      --intro-header-background-image-url-page: url('/img/header_img/archive_bg.jpg');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/new_home_bg.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/archive_bg.jpg');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url(''); */
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('/img/signature/my_signature.png');
+      }
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#EDA" title="EDA">EDA</a>
+              
+            </div>
+            <h1>01_Advanced-EDA</h1>
+            <h2 class="subheading">Advanced_EDA</h2>
+            <span class="meta">
+              Posted by 小于 on
+              2022-05-14
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">26</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">4.9k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h1 id="Advanced-EDA"><a href="#Advanced-EDA" class="headerlink" title="Advanced-EDA"></a>Advanced-EDA</h1><p>翻译自：<a target="_blank" rel="noopener" href="https://medium.com/epfl-extension-school/advanced-exploratory-data-analysis-eda-with-python-536fa83c578a">https://medium.com/epfl-extension-school/advanced-exploratory-data-analysis-eda-with-python-536fa83c578a</a></p>
+<h2 id="0-快速有效获取格式化数据集"><a href="#0-快速有效获取格式化数据集" class="headerlink" title="0. 快速有效获取格式化数据集"></a>0. 快速有效获取格式化数据集</h2><p>一个较好的EDA方式会帮助你方便的处理、理解数据的联系，但是这种相对较好的数据集并不容易获取。实际的所有数据分析过程中，全面理解数据是获得好的数据分析报告的关键，更多的需要花费时间放在合理的EDA方式上。</p>
+<h2 id="一、-研究数据结构、质量和内容"><a href="#一、-研究数据结构、质量和内容" class="headerlink" title="一、 研究数据结构、质量和内容"></a>一、 研究数据结构、质量和内容</h2><p>整体来看，EDA过程存在反复性，通常某个步骤是在每次分析中都会用到，这是很正常的，也方便我们提炼出pipeline的优势。</p>
+<ol>
+<li><strong>数据结构</strong>：数据维度、特种类型</li>
+<li><strong>数据质量</strong>：重复、缺失或无关实例</li>
+<li><strong>数据内容</strong>：更深的去研究和对比不同数据特征之间的关系，试图发现新的东西！</li>
+</ol>
+<p>更优雅的获取数据集得方式： <a target="_blank" rel="noopener" href="https://www.openml.org/d/42803">road safety dataset</a> from <a target="_blank" rel="noopener" href="https://www.openml.org/search?type=data">OpenML</a>.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> fetch_openml</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 按照data id获取数据，并转换为dataframe格式</span></span><br><span class="line">dataset = fetch_openml(data_id=<span class="number">42803</span>, as_frame=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 先只check特征frame</span></span><br><span class="line">df_X = dataset[<span class="string">&quot;frame&quot;</span>]</span><br><span class="line">df_X.sample(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+  <div id="df-78e80976-d520-40d7-b583-4359236cc2d5">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Accident_Index</th>
+      <th>Vehicle_Reference_df_res</th>
+      <th>Vehicle_Type</th>
+      <th>Towing_and_Articulation</th>
+      <th>Vehicle_Manoeuvre</th>
+      <th>Vehicle_Location-Restricted_Lane</th>
+      <th>Junction_Location</th>
+      <th>Skidding_and_Overturning</th>
+      <th>Hit_Object_in_Carriageway</th>
+      <th>Vehicle_Leaving_Carriageway</th>
+      <th>...</th>
+      <th>Age_Band_of_Casualty</th>
+      <th>Casualty_Severity</th>
+      <th>Pedestrian_Location</th>
+      <th>Pedestrian_Movement</th>
+      <th>Car_Passenger</th>
+      <th>Bus_or_Coach_Passenger</th>
+      <th>Pedestrian_Road_Maintenance_Worker</th>
+      <th>Casualty_Type</th>
+      <th>Casualty_Home_Area_Type</th>
+      <th>Casualty_IMD_Decile</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>27859</th>
+      <td>201501PL61017</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>9.0</td>
+      <td>0.0</td>
+      <td>8.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>6.0</td>
+      <td>3.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>252881</th>
+      <td>201543W228045</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>15.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>5.0</td>
+      <td>3.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>325681</th>
+      <td>2015551501386</td>
+      <td>1.0</td>
+      <td>9.0</td>
+      <td>0.0</td>
+      <td>9.0</td>
+      <td>0.0</td>
+      <td>8.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>4.0</td>
+      <td>3.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>350722</th>
+      <td>2015950003980</td>
+      <td>2.0</td>
+      <td>21.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>6.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>8.0</td>
+      <td>3.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>98.0</td>
+      <td>1.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>236599</th>
+      <td>201542I299509</td>
+      <td>1.0</td>
+      <td>9.0</td>
+      <td>0.0</td>
+      <td>16.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>7.0</td>
+      <td>...</td>
+      <td>7.0</td>
+      <td>3.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>9.0</td>
+      <td>3.0</td>
+      <td>10.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 67 columns</p>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-78e80976-d520-40d7-b583-4359236cc2d5')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-78e80976-d520-40d7-b583-4359236cc2d5 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-78e80976-d520-40d7-b583-4359236cc2d5');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+
+
+
+
+<h3 id="1-check数据结构"><a href="#1-check数据结构" class="headerlink" title="1.check数据结构"></a>1.check数据结构</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 处理数据前，先整体窥探一下数据结构，主要聚焦于columns，维度等。</span></span><br><span class="line">df_X.shape</span><br></pre></td></tr></table></figure>
+<pre><code>(363243, 67)
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 各feature column的数据类型呈现</span></span><br><span class="line">pd.value_counts(df_X.dtypes)</span><br></pre></td></tr></table></figure>
+<pre><code>float64    61
+object      6
+dtype: int64
+</code></pre><h4 id="1-1-非数值型数据"><a href="#1-1-非数值型数据" class="headerlink" title="1.1. 非数值型数据"></a>1.1. 非数值型数据</h4><p>更加聚焦于非数值型特征，因为他们占据更多的特征预处理的复杂成本</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df_X.select_dtypes(exclude=<span class="string">&quot;number&quot;</span>).head()</span><br></pre></td></tr></table></figure>
+  <div id="df-33c685aa-b10a-4163-ad6a-6bdb836cb689">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Accident_Index</th>
+      <th>Sex_of_Driver</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Local_Authority_(Highway)</th>
+      <th>LSOA_of_Accident_Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>201501BS70001</td>
+      <td>1.0</td>
+      <td>12/01/2015</td>
+      <td>18:45</td>
+      <td>E09000020</td>
+      <td>E01002825</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>201501BS70002</td>
+      <td>1.0</td>
+      <td>12/01/2015</td>
+      <td>07:50</td>
+      <td>E09000020</td>
+      <td>E01002820</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>201501BS70004</td>
+      <td>1.0</td>
+      <td>12/01/2015</td>
+      <td>18:08</td>
+      <td>E09000020</td>
+      <td>E01002833</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>201501BS70005</td>
+      <td>1.0</td>
+      <td>13/01/2015</td>
+      <td>07:40</td>
+      <td>E09000020</td>
+      <td>E01002874</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>201501BS70008</td>
+      <td>1.0</td>
+      <td>09/01/2015</td>
+      <td>07:30</td>
+      <td>E09000020</td>
+      <td>E01002814</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-33c685aa-b10a-4163-ad6a-6bdb836cb689')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-33c685aa-b10a-4163-ad6a-6bdb836cb689 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-33c685aa-b10a-4163-ad6a-6bdb836cb689');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+
+
+
+
+<p>但还是存在一些typo的特征类型存在</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># change data type</span></span><br><span class="line">df_X[<span class="string">&quot;Sex_of_Driver&quot;</span>] = df_X[<span class="string">&quot;Sex_of_Driver&quot;</span>].astype(<span class="string">&quot;float&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>对于非数值类型的feature column，很有必要使用<code>.describe()</code> 研究特征值的缺失情况、频次及分布。基于这种简单且直观的分布统计，可以令你对数据产生基本认识，甚至可以直接得出部分结论。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df_X.describe(exclude=<span class="string">&quot;number&quot;</span>)</span><br></pre></td></tr></table></figure>
+  <div id="df-565578ad-2cc6-4160-a7ab-6e0d80d18545">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Accident_Index</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Local_Authority_(Highway)</th>
+      <th>LSOA_of_Accident_Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>363243</td>
+      <td>319866</td>
+      <td>319822</td>
+      <td>319866</td>
+      <td>298758</td>
+    </tr>
+    <tr>
+      <th>unique</th>
+      <td>140056</td>
+      <td>365</td>
+      <td>1439</td>
+      <td>204</td>
+      <td>25979</td>
+    </tr>
+    <tr>
+      <th>top</th>
+      <td>201543P296025</td>
+      <td>14/02/2015</td>
+      <td>17:30</td>
+      <td>E10000017</td>
+      <td>E01028497</td>
+    </tr>
+    <tr>
+      <th>freq</th>
+      <td>1332</td>
+      <td>2144</td>
+      <td>2972</td>
+      <td>8457</td>
+      <td>1456</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-565578ad-2cc6-4160-a7ab-6e0d80d18545')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-565578ad-2cc6-4160-a7ab-6e0d80d18545 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-565578ad-2cc6-4160-a7ab-6e0d80d18545');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+
+
+
+
+<h4 id="1-2-数值型数据"><a href="#1-2-数值型数据" class="headerlink" title="1.2. 数值型数据"></a>1.2. 数值型数据</h4><p>对于数值型数据，统计去重值的分布。这在二值类型、多值类型（离散），和连续值类型（稠密）上具有不同的意义。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 所有数值型的feature column，统计特征值数，且排序，越连续值越高。</span></span><br><span class="line">unique_values = df_X.select_dtypes(include=<span class="string">&quot;number&quot;</span>).nunique().sort_values()</span><br><span class="line">unique_values.plot.bar(logy=<span class="literal">True</span>, figsize=(<span class="number">15</span>, <span class="number">4</span>), title=<span class="string">&quot;Unique values per feature&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p><img src="/cn/01_EDA_advance/01_EDA_advance_14_0.png" alt="png"></p>
+<h4 id="1-3-数据类型-结论"><a href="#1-3-数据类型-结论" class="headerlink" title="1.3. 数据类型-结论"></a>1.3. 数据类型-结论</h4><p>基于简单的数据类型的研究，可以对数据集得到基本的认识。包含什么数据类型？不同特征有多少可选值？特征值是离散还是稠密？ <code>df_X.info()</code> or <code>df_X.describe()</code>。</p>
+<h3 id="2-check数据质量"><a href="#2-check数据质量" class="headerlink" title="2.check数据质量"></a>2.check数据质量</h3><p>分析数据质量，对数据的缺失、重复、噪音等样本有个全局认识。</p>
+<h4 id="2-1-重复检测"><a href="#2-1-重复检测" class="headerlink" title="2.1. 重复检测"></a>2.1. 重复检测</h4><p>分析样本重复记录的情况。但是选择<strong>忽略</strong>哪种feature很重要，比如像index，sample_id等“主键”，这样的字段无意义。<strong>更应该聚焦于实际重要的核心feature</strong>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ignoring the index feature</span></span><br><span class="line">n_duplicates = df_X.drop(labels=[<span class="string">&quot;Accident_Index&quot;</span>], axis=<span class="number">1</span>).duplicated().<span class="built_in">sum</span>()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;You seem to have <span class="subst">&#123;n_duplicates&#125;</span> duplicates in your database.&quot;</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>You seem to have 22 duplicates in your database.
+</code></pre><p>丢掉<code>.drop_duplicates()</code>.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#  Extract column names of all features, except &#x27;Accident_Index&#x27;</span></span><br><span class="line">columns_to_consider = df_X.drop(labels=[<span class="string">&quot;Accident_Index&quot;</span>], axis=<span class="number">1</span>).columns</span><br><span class="line"></span><br><span class="line"><span class="comment"># Drop duplicates based on &#x27;columns_to_consider&#x27;</span></span><br><span class="line">df_X = df_X.drop_duplicates(subset=columns_to_consider)</span><br><span class="line">df_X.shape</span><br></pre></td></tr></table></figure>
+<pre><code>(363221, 67)
+</code></pre><h4 id="2-2-缺失值检测"><a href="#2-2-缺失值检测" class="headerlink" title="2.2 缺失值检测"></a>2.2 缺失值检测</h4><p>重心放在真正有效的数据上。</p>
+<h5 id="2-2-1-样本维度"><a href="#2-2-1-样本维度" class="headerlink" title="2.2.1 样本维度"></a>2.2.1 样本维度</h5><p>样本-特征图，查看miss hole</p>
+<p><code>df_X.isna()</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">8</span>))</span><br><span class="line">plt.imshow(df_X.isna(), aspect=<span class="string">&quot;auto&quot;</span>, interpolation=<span class="string">&quot;nearest&quot;</span>, cmap=<span class="string">&quot;gray&quot;</span>)</span><br><span class="line">plt.xlabel(<span class="string">&quot;Column Number&quot;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&quot;Sample Number&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p><img src="/cn/01_EDA_advance/01_EDA_advance_23_0.png" alt="png"></p>
+<p>y轴为样本id，x轴为特征num，白色为样本对应的feature为缺失。另miss check库：<a target="_blank" rel="noopener" href="https://github.com/ResidentMario/missingno">missingno</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> missingno <span class="keyword">as</span> msno</span><br><span class="line">msno.matrix(df_X, labels=<span class="literal">True</span>, sort=<span class="string">&quot;descending&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p><img src="/cn/01_EDA_advance/01_EDA_advance_25_0.png" alt="png"></p>
+<ul>
+<li>几乎一半以上的sample均有缺失hole</li>
+<li>or 替换填充？</li>
+</ul>
+<p>对于缺失较多的样本，建议drop；依据’Data Completeness’ column。发现最小的22个feature，最多的67个feature（无missing）。因此这给你一个较好的建议去做基于缺失值的样本过滤。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># thresh阈值是，对每行样本，保留data completness 80%以上的样本。</span></span><br><span class="line">df_X = df_X.dropna(thresh=df_X.shape[<span class="number">1</span>] * <span class="number">0.80</span>, axis=<span class="number">0</span>).reset_index(drop=<span class="literal">True</span>)</span><br><span class="line">df_X.shape</span><br></pre></td></tr></table></figure>
+<pre><code>(319790, 60)
+</code></pre><p>与上图相比，这里的图示按照data completeness进行样本排序。</p>
+<h5 id="2-2-2-特征维度"><a href="#2-2-2-特征维度" class="headerlink" title="2.2.2 特征维度"></a>2.2.2 特征维度</h5><p>从特征维度，查看缺失值分布。能看到基本同上图分布<code>2nd_Road_Class</code>特征的缺失比最大。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">df_X.isna().mean().sort_values().plot(</span><br><span class="line">    kind=<span class="string">&quot;bar&quot;</span>, figsize=(<span class="number">15</span>, <span class="number">4</span>),</span><br><span class="line">    title=<span class="string">&quot;Percentage of missing values per feature&quot;</span>,</span><br><span class="line">    ylabel=<span class="string">&quot;Ratio of missing values per feature&quot;</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fd3d0cefbd0&gt;
+</code></pre><p><img src="/cn/01_EDA_advance/01_EDA_advance_30_1.png" alt="png"></p>
+<p><code>2nd_Road_Class</code>, <code>Junction_Control</code>, <code>Age_of_Vehicle</code> 缺失值占比最高，后面按照 15% 比例进行缺失丢弃。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df_X = df_X.dropna(thresh=df_X.shape[<span class="number">0</span>] * <span class="number">0.85</span>, axis=<span class="number">1</span>) <span class="comment">#保留85%，同上保留80%</span></span><br><span class="line">df_X.shape</span><br></pre></td></tr></table></figure>
+<pre><code>(319790, 60)
+</code></pre><p>对于缺失值的处理：特征维度  &gt;  样本维度。以上只是缺失值的X、Y向的过滤，还不包括填充。</p>
+<h4 id="2-3-样本误差、和噪音"><a href="#2-3-样本误差、和噪音" class="headerlink" title="2.3. 样本误差、和噪音"></a>2.3. 样本误差、和噪音</h4><p>区分正常样本（不该存在）和异常点（影响特征分布）。或者说特征的重要性等等方面。</p>
+<p>下面以全局数据的角度，宏观甄别出不寻常的样本或特征。</p>
+<h3 id="2-3-1-Numerical-features"><a href="#2-3-1-Numerical-features" class="headerlink" title="2.3.1. Numerical features"></a>2.3.1. Numerical features</h3><p><code>.plot()</code></p>
+<ul>
+<li><code>lw=0</code>: <code>lw</code> stands for line width. <code>0</code> means that we don’t want to show any lines</li>
+<li><code>marker=&quot;.&quot;</code>: Instead of lines, we tell the plot to use <code>.</code> as markers for each data point</li>
+<li><code>subplots=True</code>: <code>subplots</code> tells <code>pandas</code> to plot each feature in a separate subplot</li>
+<li><code>layout=(-1, 4)</code>: This parameter tells <code>pandas</code> how many rows and columns to use for the subplots. The <code>-1</code> means “as many as needed”, while the <code>2</code> means to use 2 columns per row.</li>
+<li><code>figsize=(15, 30), markersize=1</code>: To make sure that the figure is big enough we recommend to have a figure height of roughly the number of features, and to adjust the <code>markersize</code> accordingly.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df_X.plot(lw=<span class="number">0</span>, marker=<span class="string">&quot;.&quot;</span>, subplots=<span class="literal">True</span>, layout=(-<span class="number">1</span>, <span class="number">4</span>),</span><br><span class="line">          figsize=(<span class="number">15</span>, <span class="number">30</span>), markersize=<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+<p><img src="/cn/01_EDA_advance/01_EDA_advance_36_0.png" alt="png"></p>
+<ul>
+<li>每个图，代表一个特征的分布；</li>
+<li>每个图中的每个点，代表该特征下，该样本的取值；能发现，有二值分布，有多值分布，也有稠密的区间连续值（如Y轴所示）；</li>
+</ul>
+<p>以上，为后续的数据清洗，和EDA过程。</p>
+<h5 id="2-3-2-非数值型特征"><a href="#2-3-2-非数值型特征" class="headerlink" title="2.3.2 非数值型特征"></a>2.3.2 非数值型特征</h5><p>基于非数值特征区分噪音和错误样本比较棘手，一般来说仅能查看各稀疏特征的频次和分布。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 按照特征的数值类型，展开统计</span></span><br><span class="line">df_X.describe(exclude=[<span class="string">&quot;number&quot;</span>, <span class="string">&quot;datetime&quot;</span>])</span><br></pre></td></tr></table></figure>
+  <div id="df-2002ea5c-c16f-42ec-8776-b45e1a9f8292">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Accident_Index</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Local_Authority_(Highway)</th>
+      <th>LSOA_of_Accident_Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>319790</td>
+      <td>319790</td>
+      <td>319746</td>
+      <td>319790</td>
+      <td>298693</td>
+    </tr>
+    <tr>
+      <th>unique</th>
+      <td>123645</td>
+      <td>365</td>
+      <td>1439</td>
+      <td>204</td>
+      <td>25977</td>
+    </tr>
+    <tr>
+      <th>top</th>
+      <td>201543P296025</td>
+      <td>14/02/2015</td>
+      <td>17:30</td>
+      <td>E10000017</td>
+      <td>E01028497</td>
+    </tr>
+    <tr>
+      <th>freq</th>
+      <td>1332</td>
+      <td>2144</td>
+      <td>2969</td>
+      <td>8457</td>
+      <td>1456</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-2002ea5c-c16f-42ec-8776-b45e1a9f8292')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-2002ea5c-c16f-42ec-8776-b45e1a9f8292 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-2002ea5c-c16f-42ec-8776-b45e1a9f8292');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+
+
+
+
+<p>这种类别稀疏特征，最好是分析每个特征值出现的频次，或者有序分析，反而能更直观的得到些结论。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Create figure object with 3 subplots</span></span><br><span class="line">fig, axes = plt.subplots(ncols=<span class="number">1</span>, nrows=<span class="number">3</span>, figsize=(<span class="number">12</span>, <span class="number">8</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Identify non-numerical features</span></span><br><span class="line">df_non_numerical = df_X.select_dtypes(exclude=[<span class="string">&quot;number&quot;</span>, <span class="string">&quot;datetime&quot;</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># Loop and plot</span></span><br><span class="line"><span class="keyword">for</span> col, ax <span class="keyword">in</span> <span class="built_in">zip</span>(df_non_numerical.columns, axes.ravel()):</span><br><span class="line">    <span class="comment"># per unique value, feature value, counts</span></span><br><span class="line">    df_non_numerical[col].value_counts().plot(</span><br><span class="line">        logy=<span class="literal">True</span>, title=col, lw=<span class="number">0</span>, marker=<span class="string">&quot;.&quot;</span>, ax=ax)</span><br><span class="line">plt.tight_layout();</span><br></pre></td></tr></table></figure>
+<p><img src="/cn/01_EDA_advance/01_EDA_advance_41_0.png" alt="png"></p>
+<ul>
+<li>图1. 100多人陷入该事故；</li>
+<li>图2. 在2015.2.14事故频发；</li>
+</ul>
+<p>删除10条最频繁的事故。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 得到top10频繁的事故index</span></span><br><span class="line">accident_ids = df_non_numerical[<span class="string">&quot;Accident_Index&quot;</span>].value_counts().head(<span class="number">10</span>).index</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除该类型事故</span></span><br><span class="line">df_X = df_X[~df_X[<span class="string">&quot;Accident_Index&quot;</span>].isin(accident_ids)]</span><br><span class="line">df_X.shape</span><br></pre></td></tr></table></figure>
+<pre><code>(317665, 60)
+</code></pre><h2 id="2-4-数据质量研究结论"><a href="#2-4-数据质量研究结论" class="headerlink" title="2.4. 数据质量研究结论"></a>2.4. 数据质量研究结论</h2><p>通过第二部分，应该更好的理解数据的总体质量，包括从样本重复、缺失值和异常样本三个角度。</p>
+<h1 id="3-数据内容分析"><a href="#3-数据内容分析" class="headerlink" title="3.数据内容分析"></a>3.数据内容分析</h1><p>分析数据内容，依次按照特征分析是高效的，但是特征数一上来便很笨重。</p>
+<p>三种分析数据的方式来研究数据的实际内容，以便快速的了解每个特征包含的内容以及他们的相关性。</p>
+<h2 id="3-1特征分布"><a href="#3-1特征分布" class="headerlink" title="3.1特征分布"></a>3.1特征分布</h2><p>观察特征分布，帮助你更好的理解数据内容。 此外更能辅助你的EDA过程，对于数据清洗和特征转换提供一些有用的信息。</p>
+<p>多值数值类型<code>.plot</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Plots the histogram for each numerical feature in a separate subplot</span></span><br><span class="line">df_X.hist(bins=<span class="number">25</span>, figsize=(<span class="number">15</span>, <span class="number">25</span>), layout=(-<span class="number">1</span>, <span class="number">5</span>), edgecolor=<span class="string">&quot;black&quot;</span>)</span><br><span class="line">plt.tight_layout();</span><br></pre></td></tr></table></figure>
+<p><img src="/cn/01_EDA_advance/01_EDA_advance_47_0.png" alt="png"></p>
+<p>特征值频次和分布。</p>
+<p>像<code>Towing_and_Articulation</code> or <code>Was_Vehicle_Left_Hand_Drive?</code>只是单类特征（特征重要性低）。 进一步的，从特征维度选择出样本中最高频的特征值。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 高频特征值</span></span><br><span class="line"><span class="comment"># Collects for each feature the most frequent entry</span></span><br><span class="line">most_frequent_entry = df_X.mode()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Checks for each entry if it contains the most frequent entry</span></span><br><span class="line">df_freq = df_X.eq(most_frequent_entry.values, axis=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Computes the mean of the &#x27;is_most_frequent&#x27; occurrence</span></span><br><span class="line">df_freq = df_freq.mean().sort_values(ascending=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Show the 5 top features with the highest ratio of singular value content</span></span><br><span class="line">display(df_freq.head())</span><br><span class="line"></span><br><span class="line"><span class="comment"># Visualize the &#x27;df_freq&#x27; table</span></span><br><span class="line">df_freq.plot.bar(figsize=(<span class="number">15</span>, <span class="number">4</span>));</span><br></pre></td></tr></table></figure>
+<pre><code>Pedestrian_Crossing-Human_Control    0.995259
+Was_Vehicle_Left_Hand_Drive?         0.990137
+Carriageway_Hazards                  0.983646
+Towing_and_Articulation              0.983221
+Vehicle_Location-Restricted_Lane     0.982088
+dtype: float64
+</code></pre><p><img src="/cn/01_EDA_advance/01_EDA_advance_49_1.png" alt="png"></p>
+<p>数据偏态分布（left、right）</p>
+<p>确定数值特征是非高斯分布.数值变换为正态分布，平滑数据<code>log</code></p>
+<h2 id="3-2-特征模式（or-how-should-i-say-）"><a href="#3-2-特征模式（or-how-should-i-say-）" class="headerlink" title="3.2. 特征模式（or how should i say?）"></a>3.2. 特征模式（or how should i say?）</h2><ol>
+<li>是否可以根据某个特征确定某种范式辅助删除一些数据？</li>
+<li>是否能区分特征间某种特定的关系，以更好的理解数据？</li>
+</ol>
+<p>解决两问题前，先随机选取几个特征看一下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">df_X[[<span class="string">&quot;Location_Northing_OSGR&quot;</span>, <span class="string">&quot;1st_Road_Number&quot;</span>,</span><br><span class="line">      <span class="string">&quot;Journey_Purpose_of_Driver&quot;</span>, <span class="string">&quot;Pedestrian_Crossing-Physical_Facilities&quot;</span>]].plot(</span><br><span class="line">    lw=<span class="number">0</span>, marker=<span class="string">&quot;.&quot;</span>, subplots=<span class="literal">True</span>, layout=(-<span class="number">1</span>, <span class="number">2</span>), markersize=<span class="number">0.1</span>, figsize=(<span class="number">15</span>, <span class="number">6</span>));</span><br></pre></td></tr></table></figure>
+<p><img src="/cn/01_EDA_advance/01_EDA_advance_52_0.png" alt="png"></p>
+<p>虽然有很多特定的模式来探索特征, 但是可以通过少于25个特征值得特征来缩减选择。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 超过25特征值的特征定为连续列</span></span><br><span class="line">cols_continuous = df_X.select_dtypes(include=<span class="string">&quot;number&quot;</span>).nunique() &gt;= <span class="number">25</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-2-1-连续特征"><a href="#3-2-1-连续特征" class="headerlink" title="3.2.1. 连续特征"></a>3.2.1. 连续特征</h3><p>如上定义连续特征，可视化如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 连续特征列</span></span><br><span class="line">df_continuous = df_X[cols_continuous[cols_continuous].index]</span><br><span class="line">df_continuous.shape</span><br></pre></td></tr></table></figure>
+<pre><code>(317665, 11)
+</code></pre><p>直接<code>pairplot</code>，或<code>df_continuous.iloc[:, :5]</code>，视特征而定</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line">sns.pairplot(df_continuous, height=<span class="number">1.5</span>, plot_kws=&#123;<span class="string">&quot;s&quot;</span>: <span class="number">2</span>, <span class="string">&quot;alpha&quot;</span>: <span class="number">0.2</span>&#125;);</span><br></pre></td></tr></table></figure>
+<p><img src="/cn/01_EDA_advance/01_EDA_advance_58_0.png" alt="png"></p>
+<p><code>Location_Easting_OSGR</code> and <code>Longitude</code>，<code>Location_Easting_OSGR</code> and <code>Latitude</code>强线性关系</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sns.pairplot(</span><br><span class="line">    df_X, plot_kws=&#123;<span class="string">&quot;s&quot;</span>: <span class="number">3</span>, <span class="string">&quot;alpha&quot;</span>: <span class="number">0.2</span>&#125;, hue=<span class="string">&quot;Police_Force&quot;</span>, palette=<span class="string">&quot;Spectral&quot;</span>,</span><br><span class="line">    x_vars=[<span class="string">&quot;Location_Easting_OSGR&quot;</span>, <span class="string">&quot;Location_Northing_OSGR&quot;</span>, <span class="string">&quot;Longitude&quot;</span>],</span><br><span class="line">    y_vars=<span class="string">&quot;Latitude&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p><img src="/cn/01_EDA_advance/01_EDA_advance_60_0.png" alt="png"></p>
+<h3 id="3-2-2-离散顺序特征"><a href="#3-2-2-离散顺序特征" class="headerlink" title="3.2.2.离散顺序特征"></a>3.2.2.离散顺序特征</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Create a new dataframe which doesn&#x27;t contain the numerical continuous features</span></span><br><span class="line">df_discrete = df_X[cols_continuous[~cols_continuous].index]</span><br><span class="line">df_discrete.shape</span><br></pre></td></tr></table></figure>
+<pre><code>(317665, 44)
+</code></pre><p>As always, there are multiple way for how we could investigate all of these features. Let’s try one example, using seaborn’s <code>stripplot()</code> together with a handy <code>zip()</code> for-loop for subplots.</p>
+<p><strong>Note</strong>, to spread the values out in the direction of the y-axis we need to chose one particular (hopefully informative) feature. While the ‘right’ feature can help to identify some interesting patterns, usually any continuous feature should do the trick. The main interest in this kind of plot is to see how many samples each discrete value contains.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># Establish number of columns and rows needed to plot all features</span></span><br><span class="line">n_cols = <span class="number">5</span></span><br><span class="line">n_elements = <span class="built_in">len</span>(df_discrete.columns)</span><br><span class="line">n_rows = np.ceil(n_elements / n_cols).astype(<span class="string">&quot;int&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Specify y_value to spread data (ideally a continuous feature)</span></span><br><span class="line">y_value = df_X[<span class="string">&quot;Age_of_Driver&quot;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create figure object with as many rows and columns as needed</span></span><br><span class="line">fig, axes = plt.subplots(ncols=n_cols, nrows=n_rows, figsize=(<span class="number">15</span>, n_rows * <span class="number">2.5</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Loop through features and put each subplot on a matplotlib axis object</span></span><br><span class="line"><span class="keyword">for</span> col, ax <span class="keyword">in</span> <span class="built_in">zip</span>(df_discrete.columns, axes.ravel()):</span><br><span class="line">    sns.stripplot(data=df_X, x=col, y=y_value, ax=ax, palette=<span class="string">&quot;tab10&quot;</span>, size=<span class="number">1</span>, alpha=<span class="number">0.5</span>)</span><br><span class="line">plt.tight_layout();</span><br></pre></td></tr></table></figure>
+<p><img src="/cn/01_EDA_advance/01_EDA_advance_64_0.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<p>There are too many things to comment here, so let’s just focus on a few. In particular, let’s focus on 6 features where the values appear in some particular pattern or where some categories seem to be much less frequent than others. And to shake things up a bit, let’s now use the <code>Longitude</code> feature to stretch the values over the y-axis.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Specify features of interest</span></span><br><span class="line">selected_features = [<span class="string">&quot;Vehicle_Reference_df_res&quot;</span>, <span class="string">&quot;Towing_and_Articulation&quot;</span>,</span><br><span class="line">                     <span class="string">&quot;Skidding_and_Overturning&quot;</span>, <span class="string">&quot;Bus_or_Coach_Passenger&quot;</span>,</span><br><span class="line">                     <span class="string">&quot;Pedestrian_Road_Maintenance_Worker&quot;</span>, <span class="string">&quot;Age_Band_of_Driver&quot;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create a figure with 3 x 2 subplots</span></span><br><span class="line">fig, axes = plt.subplots(ncols=<span class="number">3</span>, nrows=<span class="number">2</span>, figsize=(<span class="number">16</span>, <span class="number">8</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Loop through these features and plot entries from each feature against `Latitude`</span></span><br><span class="line"><span class="keyword">for</span> col, ax <span class="keyword">in</span> <span class="built_in">zip</span>(selected_features, axes.ravel()):</span><br><span class="line">    sns.stripplot(data=df_X, x=col, y=df_X[<span class="string">&quot;Latitude&quot;</span>], ax=ax,</span><br><span class="line">                  palette=<span class="string">&quot;tab10&quot;</span>, size=<span class="number">2</span>, alpha=<span class="number">0.5</span>)</span><br><span class="line">plt.tight_layout();</span><br></pre></td></tr></table></figure>
+<p><img src="/cn/01_EDA_advance/01_EDA_advance_67_0.png" alt="png"></p>
+<p>These kind of plots are already very informative, but they obscure regions where there are a lot of data points at once. For example, there seems to be a high density of points in some of the plots at the 52nd latitude. So let’s take a closer look with an appropriate plot, such as <code>violineplot</code> ( or <code>boxenplot</code> or <code>boxplot</code> for that matter). And to go a step further, let’s also separate each visualization by <code>Urban_or_Rural_Area</code>.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Create a figure with 3 x 2 subplots</span></span><br><span class="line">fig, axes = plt.subplots(ncols=<span class="number">3</span>, nrows=<span class="number">2</span>, figsize=(<span class="number">16</span>, <span class="number">8</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Loop through these features and plot entries from each feature against `Latitude`</span></span><br><span class="line"><span class="keyword">for</span> col, ax <span class="keyword">in</span> <span class="built_in">zip</span>(selected_features, axes.ravel()):</span><br><span class="line">    sns.violinplot(data=df_X, x=col, y=df_X[<span class="string">&quot;Latitude&quot;</span>], palette=<span class="string">&quot;Set2&quot;</span>,</span><br><span class="line">                   split=<span class="literal">True</span>, hue=<span class="string">&quot;Urban_or_Rural_Area&quot;</span>, ax=ax)</span><br><span class="line">plt.tight_layout();</span><br></pre></td></tr></table></figure>
+<p><img src="/cn/01_EDA_advance/01_EDA_advance_69_0.png" alt="png"></p>
+<p>Interesting! We can see that some values on features are more frequent in urban, than in rural areas (and vice versa). Furthermore, as suspected, there seems to be a high density peak at latitude 51.5. This is very likely due to the more densely populated region around London (at 51.5074°).</p>
+<h2 id="3-3-Feature-relationships"><a href="#3-3-Feature-relationships" class="headerlink" title="3.3. Feature relationships"></a>3.3. Feature relationships</h2><p>Last, but not least, let’s take a look at relationships between features. More precisely how they correlate. The quickest way to do so is via pandas’ <code>.corr()</code> function. So let’s go ahead and compute the feature to feature correlation matrix for all numerical features.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Computes feature correlation</span></span><br><span class="line">df_corr = df_X.corr(method=<span class="string">&quot;pearson&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>Note</strong>: Depending on the dataset and the kind of features (e.g. ordinal or continuous features) you might want to use the <code>spearman</code> method instead of the <code>pearson</code> method to compute the correlation. Whereas the <strong>Pearson</strong> correlation evaluates the linear relationship between two continuous variables, the <strong>Spearman</strong> correlation evaluates the monotonic relationship based on the ranked values for each feature. And to help with the interpretation of this correlation matrix, let’s use seaborn’s <code>.heatmap()</code> to visualize it.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Create labels for the correlation matrix</span></span><br><span class="line">labels = np.where(np.<span class="built_in">abs</span>(df_corr)&gt;<span class="number">0.75</span>, <span class="string">&quot;S&quot;</span>,</span><br><span class="line">                  np.where(np.<span class="built_in">abs</span>(df_corr)&gt;<span class="number">0.5</span>, <span class="string">&quot;M&quot;</span>,</span><br><span class="line">                           np.where(np.<span class="built_in">abs</span>(df_corr)&gt;<span class="number">0.25</span>, <span class="string">&quot;W&quot;</span>, <span class="string">&quot;&quot;</span>)))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Plot correlation matrix</span></span><br><span class="line">plt.figure(figsize=(<span class="number">15</span>, <span class="number">15</span>))</span><br><span class="line">sns.heatmap(df_corr, mask=np.eye(<span class="built_in">len</span>(df_corr)), square=<span class="literal">True</span>,</span><br><span class="line">            center=<span class="number">0</span>, annot=labels, fmt=<span class="string">&#x27;&#x27;</span>, linewidths=<span class="number">.5</span>,</span><br><span class="line">            cmap=<span class="string">&quot;vlag&quot;</span>, cbar_kws=&#123;<span class="string">&quot;shrink&quot;</span>: <span class="number">0.8</span>&#125;);</span><br></pre></td></tr></table></figure>
+<p><img src="/cn/01_EDA_advance/01_EDA_advance_74_0.png" alt="png"></p>
+<p>This looks already very interesting. We can see a few very strong correlations between some of the features. Now, if you’re interested actually ordering all of these different correlations, you could do something like this:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#  Creates a mask to remove the diagonal and the upper triangle.</span></span><br><span class="line">lower_triangle_mask = np.tril(np.ones(df_corr.shape), k=-<span class="number">1</span>).astype(<span class="string">&quot;bool&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#  Stack all correlations, after applying the mask</span></span><br><span class="line">df_corr_stacked = df_corr.where(lower_triangle_mask).stack().sort_values()</span><br><span class="line"></span><br><span class="line"><span class="comment">#  Showing the lowest and highest correlations in the correlation matrix</span></span><br><span class="line">display(df_corr_stacked)</span><br></pre></td></tr></table></figure>
+<pre><code>Local_Authority_(District)  Longitude                -0.509343
+                            Location_Easting_OSGR    -0.502919
+Police_Force                Longitude                -0.471327
+                            Location_Easting_OSGR    -0.461112
+Speed_limit                 1st_Road_Class           -0.438931
+                                                        ...
+Age_Band_of_Casualty        Age_of_Casualty           0.974397
+Age_Band_of_Driver          Age_of_Driver             0.979019
+Local_Authority_(District)  Police_Force              0.984819
+Longitude                   Location_Easting_OSGR     0.999363
+Latitude                    Location_Northing_OSGR    0.999974
+Length: 1485, dtype: float64
+</code></pre><p>As you can see, the investigation of feature correlations can be very informative. But looking at everything at once can sometimes be more confusing than helpful. So focusing only on one feature with something like <code>df_X.corrwith(df_X[&quot;Speed_limit&quot;])</code> might be a better approach.</p>
+<p>Furthermore, correlations can be deceptive if a feature still contains a lot of missing values or extreme outliers. Therefore, it is always important to first make sure that your feature matrix is properly prepared before investigating these correlations.</p>
+<h2 id="3-4-Conclusion-of-content-investigation"><a href="#3-4-Conclusion-of-content-investigation" class="headerlink" title="3.4. Conclusion of content investigation"></a>3.4. Conclusion of content investigation</h2><p>At the end of this third investigation, we should have a better understanding of the content in our dataset. We looked at value distribution, feature patterns and feature correlations. However, these are certainly not all possible content investigation and data cleaning steps you could do. Additional steps would for example be outlier detection and removal, feature engineering and transformation, and more.</p>
+<h1 id="Take-home-message"><a href="#Take-home-message" class="headerlink" title="Take home message"></a>Take home message</h1><p>A proper and detailed EDA takes time! It is a very iterative process that often makes you go back to the start, after you addressed another flaw in the dataset. This is normal! It’s the reason why we often say that 80% of any data science project is data preparation and EDA.</p>
+<p>But keep also in mind that an in-depth EDA can consume a lot of time. And just because something seems interesting doesn’t mean that you need to follow up on it. Always remind yourself what the dataset will be used for and tailor your investigations to support that goal. And sometimes it is also ok, to just do a quick-and-dirty data preparation and exploration. So that you can move on to the data modeling part rather quickly, and to establish a few preliminary baseline models perform some informative results investigation.</p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/cn/00_EDA_widget-factory/" data-toggle="tooltip" data-placement="top" title="00_widget-factory">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      如果您喜欢此博客或发现它对您有用，则欢迎对此发表评论。 也欢迎您共享此博客，以便更多人可以参与。 如果博客中使用的图像侵犯了您的版权，请与作者联系以将其删除。 谢谢 ！
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=01_Advanced-EDA&body=Hi,I found this website and thought you might like it https://11010101.xyz/cn/01_EDA_advance/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: 'a9a645b881c78d12baa8',
+      clientSecret: '144741a3fa325fe22d7207d5698374724cd412b7',
+      repo: 'Muzhi1920.github.io',
+      owner: 'Muzhi1920',
+      admin: 'Muzhi1920',
+      id: 'Sat May 14 2022 12:21:55 GMT+0000 | truncate: 50', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'zh-CN',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Advanced-EDA"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Advanced-EDA</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#0-%E5%BF%AB%E9%80%9F%E6%9C%89%E6%95%88%E8%8E%B7%E5%8F%96%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">0. 快速有效获取格式化数据集</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%80%E3%80%81-%E7%A0%94%E7%A9%B6%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E8%B4%A8%E9%87%8F%E5%92%8C%E5%86%85%E5%AE%B9"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">一、 研究数据结构、质量和内容</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-check%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">1.check数据结构</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-1-%E9%9D%9E%E6%95%B0%E5%80%BC%E5%9E%8B%E6%95%B0%E6%8D%AE"><span class="toc-nav-number">1.2.1.1.</span> <span class="toc-nav-text">1.1. 非数值型数据</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-2-%E6%95%B0%E5%80%BC%E5%9E%8B%E6%95%B0%E6%8D%AE"><span class="toc-nav-number">1.2.1.2.</span> <span class="toc-nav-text">1.2. 数值型数据</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-3-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-%E7%BB%93%E8%AE%BA"><span class="toc-nav-number">1.2.1.3.</span> <span class="toc-nav-text">1.3. 数据类型-结论</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-check%E6%95%B0%E6%8D%AE%E8%B4%A8%E9%87%8F"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">2.check数据质量</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-1-%E9%87%8D%E5%A4%8D%E6%A3%80%E6%B5%8B"><span class="toc-nav-number">1.2.2.1.</span> <span class="toc-nav-text">2.1. 重复检测</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-2-%E7%BC%BA%E5%A4%B1%E5%80%BC%E6%A3%80%E6%B5%8B"><span class="toc-nav-number">1.2.2.2.</span> <span class="toc-nav-text">2.2 缺失值检测</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#2-2-1-%E6%A0%B7%E6%9C%AC%E7%BB%B4%E5%BA%A6"><span class="toc-nav-number">1.2.2.2.1.</span> <span class="toc-nav-text">2.2.1 样本维度</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#2-2-2-%E7%89%B9%E5%BE%81%E7%BB%B4%E5%BA%A6"><span class="toc-nav-number">1.2.2.2.2.</span> <span class="toc-nav-text">2.2.2 特征维度</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-3-%E6%A0%B7%E6%9C%AC%E8%AF%AF%E5%B7%AE%E3%80%81%E5%92%8C%E5%99%AA%E9%9F%B3"><span class="toc-nav-number">1.2.2.3.</span> <span class="toc-nav-text">2.3. 样本误差、和噪音</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-3-1-Numerical-features"><span class="toc-nav-number">1.2.3.</span> <span class="toc-nav-text">2.3.1. Numerical features</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#2-3-2-%E9%9D%9E%E6%95%B0%E5%80%BC%E5%9E%8B%E7%89%B9%E5%BE%81"><span class="toc-nav-number">1.2.3.0.1.</span> <span class="toc-nav-text">2.3.2 非数值型特征</span></a></li></ol></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-4-%E6%95%B0%E6%8D%AE%E8%B4%A8%E9%87%8F%E7%A0%94%E7%A9%B6%E7%BB%93%E8%AE%BA"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">2.4. 数据质量研究结论</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#3-%E6%95%B0%E6%8D%AE%E5%86%85%E5%AE%B9%E5%88%86%E6%9E%90"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">3.数据内容分析</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-1%E7%89%B9%E5%BE%81%E5%88%86%E5%B8%83"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">3.1特征分布</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-2-%E7%89%B9%E5%BE%81%E6%A8%A1%E5%BC%8F%EF%BC%88or-how-should-i-say-%EF%BC%89"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">3.2. 特征模式（or how should i say?）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-2-1-%E8%BF%9E%E7%BB%AD%E7%89%B9%E5%BE%81"><span class="toc-nav-number">2.2.1.</span> <span class="toc-nav-text">3.2.1. 连续特征</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-2-2-%E7%A6%BB%E6%95%A3%E9%A1%BA%E5%BA%8F%E7%89%B9%E5%BE%81"><span class="toc-nav-number">2.2.2.</span> <span class="toc-nav-text">3.2.2.离散顺序特征</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-3-Feature-relationships"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">3.3. Feature relationships</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-4-Conclusion-of-content-investigation"><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">3.4. Conclusion of content investigation</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Take-home-message"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Take home message</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#EDA" title="EDA">EDA</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>链友</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/Muzhi1920">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+            <li>
+              <a target="_blank" href="https://www.zhihu.com/people/awesome-yyds">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa  fa-stack-1x fa-inverse">知</i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          小于
+          2022
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="https://hexo.io/themes/">Hexo</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://github.com/Muzhi1920/Muzhi1920.github.io">Muzhi1920</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=Muzhi1920&repo=Muzhi1920.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='统计学习方法三要素——模型、策略、算法,高斯证明了假定误差独立同分布，在所有无偏线性估计中，最小二乘法的方差最小,SGD算法：通过误分类点优化w，b的值，使超平面向另一侧移动,朴素贝叶斯法的基本假设是条件独立性（强假设所以叫“朴素”）,决策树特征选择：信息增益、信息增益比，基尼指数（越小越好）,逻辑回归是用线性变换表示输入的对数几率模型,最大熵原理认为在所有概率模型中，熵最大的模型是最好的模型,逻辑回归与最大熵模型都属于对数线性模型，采用极大似然估计学习,逻辑回归的优化，包括改进的迭代尺度法、梯度下降法、拟牛顿法' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033'></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://11010101.xyz/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
