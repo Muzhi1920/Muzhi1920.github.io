@@ -223,6 +223,17 @@
           
           
           <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
             <a href="/about/">
               
               关于我
@@ -237,17 +248,6 @@
             <a href="/categories/">
               
               分类
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/archive/">
-              
-              归档
               
               
             </a>
@@ -468,7 +468,7 @@
 <hr>
 <p>分离超平面：$w^Tx+b=0$</p>
 <p>点到直线距离：$r=\frac{|w^Tx+b|}{||w||_2}$</p>
-<p>$||w||<em>2$为2-范数：$||w||_2=\sqrt[2]{\sum^m</em>{i=1}w_i^2}$</p>
+<p>$||w||_2$为2-范数：$||w||_2=\sqrt[2]{\sum^m_{i=1}w_i^2}$</p>
 <p>直线为超平面，样本可表示为：</p>
 <p>$w^Tx+b\ \geq+1$</p>
 <p>$w^Tx+b\ \leq+1$</p>
@@ -485,12 +485,12 @@
 <p>根据KKT条件：</p>
 <script type="math/tex; mode=display">\frac{\partial }{\partial w}L(w, b, \alpha)=w-\sum\alpha_iy_ix_i=0,\ w=\sum\alpha_iy_ix_i</script><script type="math/tex; mode=display">\frac{\partial }{\partial b}L(w, b, \alpha)=\sum\alpha_iy_i=0</script><p>代入$ L(w, b, \alpha)$</p>
 <p>$\min\  L(w, b, \alpha)=\frac{1}{2}||w||^2+\sum^m_{i=1}\alpha_i(-y_i(w^Tx_i+b)+1)$</p>
-<p>$\qquad\qquad\qquad=\frac{1}{2}w^Tw-\sum^m<em>{i=1}\alpha_iy_iw^Tx_i-b\sum^m</em>{i=1}\alpha<em>iy_i+\sum^m</em>{i=1}\alpha_i$</p>
-<p>$\qquad\qquad\qquad=\frac{1}{2}w^T\sum\alpha<em>iy_ix_i-\sum^m</em>{i=1}\alpha<em>iy_iw^Tx_i+\sum^m</em>{i=1}\alpha_i$</p>
-<p>$\qquad\qquad\qquad=\sum^m<em>{i=1}\alpha_i-\frac{1}{2}\sum^m</em>{i=1}\alpha_iy_iw^Tx_i$</p>
-<p>$\qquad\qquad\qquad=\sum^m<em>{i=1}\alpha_i-\frac{1}{2}\sum^m</em>{i,j=1}\alpha_i\alpha_jy_iy_j(x_ix_j)$</p>
+<p>$\qquad\qquad\qquad=\frac{1}{2}w^Tw-\sum^m_{i=1}\alpha_iy_iw^Tx_i-b\sum^m_{i=1}\alpha_iy_i+\sum^m_{i=1}\alpha_i$</p>
+<p>$\qquad\qquad\qquad=\frac{1}{2}w^T\sum\alpha_iy_ix_i-\sum^m_{i=1}\alpha_iy_iw^Tx_i+\sum^m_{i=1}\alpha_i$</p>
+<p>$\qquad\qquad\qquad=\sum^m_{i=1}\alpha_i-\frac{1}{2}\sum^m_{i=1}\alpha_iy_iw^Tx_i$</p>
+<p>$\qquad\qquad\qquad=\sum^m_{i=1}\alpha_i-\frac{1}{2}\sum^m_{i,j=1}\alpha_i\alpha_jy_iy_j(x_ix_j)$</p>
 <p>再把max问题转成min问题：</p>
-<p>$\max\ \sum^m<em>{i=1}\alpha_i-\frac{1}{2}\sum^m</em>{i,j=1}\alpha<em>i\alpha_jy_iy_j(x_ix_j)=\min \frac{1}{2}\sum^m</em>{i,j=1}\alpha<em>i\alpha_jy_iy_j(x_ix_j)-\sum^m</em>{i=1}\alpha_i$</p>
+<p>$\max\ \sum^m_{i=1}\alpha_i-\frac{1}{2}\sum^m_{i,j=1}\alpha_i\alpha_jy_iy_j(x_ix_j)=\min \frac{1}{2}\sum^m_{i,j=1}\alpha_i\alpha_jy_iy_j(x_ix_j)-\sum^m_{i=1}\alpha_i$</p>
 <p>$s.t.\ \sum^m_{i=1}\alpha_iy_i=0,$</p>
 <p>$ \alpha_i \geq 0,i=1,2,…,m$</p>
 <p>以上为SVM对偶问题的对偶形式</p>
@@ -1314,6 +1314,6 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

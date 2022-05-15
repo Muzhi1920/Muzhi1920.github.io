@@ -223,6 +223,17 @@
           
           
           <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
             <a href="/about/">
               
               关于我
@@ -237,17 +248,6 @@
             <a href="/categories/">
               
               分类
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/archive/">
-              
-              归档
               
               
             </a>
@@ -456,7 +456,7 @@
 <script type="math/tex; mode=display">X \approx T Y</script><p>等价地，潜在语义分析将文本在单词向量空间的表示X通过线性变换$T$转换为话题向量空间中的表示$Y$。</p>
 <p>潜在语义分析的关键是对单词-文本矩阵进行以上的矩阵因子分解（话题分析）</p>
 <p>3.潜在语义分析的算法是奇异值分解。通过对单词文本矩阵进行截断奇异值分解，得到</p>
-<script type="math/tex; mode=display">X \approx U _ { k } \Sigma _ { k } V _ { k } ^ { T } = U _ { k } ( \Sigma _ { k } V _ { k } ^ { T } )</script><p>矩阵$U<em>k$表示话题空间，矩阵$( \Sigma </em> { k } V _ { k } ^ { T } )$是文本在话题空间的表示。</p>
+<script type="math/tex; mode=display">X \approx U _ { k } \Sigma _ { k } V _ { k } ^ { T } = U _ { k } ( \Sigma _ { k } V _ { k } ^ { T } )</script><p>矩阵$U_k$表示话题空间，矩阵$( \Sigma _ { k } V _ { k } ^ { T } )$是文本在话题空间的表示。</p>
 <p>4.非负矩阵分解也可以用于话题分析。非负矩阵分解将非负的单词文本矩阵近似分解成两个非负矩阵$W$和$H$的乘积，得到</p>
 <script type="math/tex; mode=display">X \approx W H</script><p>矩阵$W$表示话题空间，矩阵$H$是文本在话题空间的表示。</p>
 <p>非负矩阵分解可以表为以下的最优化问题：</p>
@@ -467,46 +467,46 @@
 <p><strong>非负矩阵分解</strong>（non-negative matrix factorization, NMF）是另一种矩阵的因子分解方法，其特点是分解的矩阵非负。</p>
 <h2 id="单词向量空间"><a href="#单词向量空间" class="headerlink" title="单词向量空间"></a>单词向量空间</h2><p>word vector space model</p>
 <p>给定一个文本，用一个向量表示该文本的”语义“， 向量的<strong>每一维对应一个单词</strong>，其数值为该单词在该文本中出现的频数或权值；基本假设是文本中所有单词的出现情况表示了文本的语义内容，文本集合中的每个文本都表示为一个向量，存在于一个向量空间；向量空间的度量，如内积或标准化<strong>内积</strong>表示文本之间的<strong>相似度</strong>。</p>
-<p>给定一个含有$n$个文本的集合$D=({d<em>{1}, d</em>{2},…,d<em>{n}})$，以及在所有文本中出现的$m$个单词的集合$W=({w</em>{1},w<em>{2},…,w</em>{m}})$. 将单词在文本的出现的数据用一个单词-文本矩阵（word-document matrix）表示，记作$X$:</p>
-<p>$<br>X = \begin{bmatrix}<br>x<em>{11} &amp;  x</em>{12}&amp;  x<em>{1n}&amp; \<br>x</em>{21}&amp;  x<em>{22}&amp;  x</em>{2n}&amp; \<br>\vdots &amp;  \vdots &amp;  \vdots &amp; \<br>x<em>{m1}&amp;  x</em>{m2}&amp;  x_{mn}&amp;<br>\end{bmatrix}<br>$</p>
-<p>这是一个$m*n$矩阵，元素$x<em>{ij}$表示单词$w</em>{i}$在文本$d_{j}$中出现的频数或权值。由于单词的种类很多，而每个文本中出现单词的种类通常较少，所有单词-文本矩阵是一个稀疏矩阵。</p>
+<p>给定一个含有$n$个文本的集合$D=({d_{1}, d_{2},…,d_{n}})$，以及在所有文本中出现的$m$个单词的集合$W=({w_{1},w_{2},…,w_{m}})$. 将单词在文本的出现的数据用一个单词-文本矩阵（word-document matrix）表示，记作$X$:</p>
+<p>$<br>X = \begin{bmatrix}<br>x_{11} &amp;  x_{12}&amp;  x_{1n}&amp; \\<br>x_{21}&amp;  x_{22}&amp;  x_{2n}&amp; \\<br>\vdots &amp;  \vdots &amp;  \vdots &amp; \\<br>x_{m1}&amp;  x_{m2}&amp;  x_{mn}&amp;<br>\end{bmatrix}<br>$</p>
+<p>这是一个$m*n$矩阵，元素$x_{ij}$表示单词$w_{i}$在文本$d_{j}$中出现的频数或权值。由于单词的种类很多，而每个文本中出现单词的种类通常较少，所有单词-文本矩阵是一个稀疏矩阵。</p>
 <p>权值通常用单词<strong>频率-逆文本率</strong>（term frequency-inverse document frequency, TF-IDF）表示：</p>
 <p>$TF-IDF(t, d ) = TF(t, d) * IDF(t)$,  </p>
 <p>其中，$TF(t,d)$为单词$t$在文本$d$中出现的概率，$IDF(t)$是逆文本率，用来衡量单词$t$对表示语义所起的重要性， </p>
 <p>$IDF(t) = log(\frac{len(D)}{len(t \in D) + 1})$.</p>
 <p>单词向量空间模型的优点是<strong>模型简单，计算效率高</strong>。因为单词向量通常是稀疏的，单词向量空间模型也有一定的局限性，体现在内积相似度未必能够准确表达两个文本的语义相似度上。因为自然语言的单词具有一词多义性（polysemy）及多词一义性（synonymy）。</p>
 <h2 id="话题向量空间"><a href="#话题向量空间" class="headerlink" title="话题向量空间"></a>话题向量空间</h2><p><strong>1. 话题向量空间</strong>：</p>
-<p>给定一个含有$n$个文本的集合$D=({d<em>{1}, d</em>{2},…,d<em>{n}})$，以及在所有文本中出现的$m$个单词的集合$W=({w</em>{1},w<em>{2},…,w</em>{m}})$. 可以获得其单词-文本矩阵$X$:  </p>
-<p>$<br>X = \begin{bmatrix}<br>x<em>{11} &amp;  x</em>{12}&amp;  x<em>{1n}&amp; \<br>x</em>{21}&amp;  x<em>{22}&amp;  x</em>{2n}&amp; \<br>\vdots &amp;  \vdots &amp;  \vdots &amp; \<br>x<em>{m1}&amp;  x</em>{m2}&amp;  x_{mn}&amp;<br>\end{bmatrix}<br>$</p>
-<p>假设所有文本共含有$k$个话题。假设每个话题由一个定义在单词集合$W$上的$m$维向量表示，称为话题向量，即：<br>$t<em>{l} = \begin{bmatrix}<br>t</em>{1l}\<br>t<em>{2l}\<br>\vdots \<br>t</em>{ml}\end{bmatrix},  l=1,2,…,k$</p>
-<p>其中$t<em>{il}$单词$w</em>{i}$在话题$t<em>{l}$的权值，$i=1,2,…,m$, 权值越大，该单词在该话题中的重要程度就越高。这$k$个话题向量 $t</em>{1},t<em>{2},…,t</em>{k}$张成一个话题向量空间（topic vector space）， 维数为$k$.<strong>话题向量空间是单词向量空间的一个子空间</strong>。</p>
+<p>给定一个含有$n$个文本的集合$D=({d_{1}, d_{2},…,d_{n}})$，以及在所有文本中出现的$m$个单词的集合$W=({w_{1},w_{2},…,w_{m}})$. 可以获得其单词-文本矩阵$X$:  </p>
+<p>$<br>X = \begin{bmatrix}<br>x_{11} &amp;  x_{12}&amp;  x_{1n}&amp; \\<br>x_{21}&amp;  x_{22}&amp;  x_{2n}&amp; \\<br>\vdots &amp;  \vdots &amp;  \vdots &amp; \\<br>x_{m1}&amp;  x_{m2}&amp;  x_{mn}&amp;<br>\end{bmatrix}<br>$</p>
+<p>假设所有文本共含有$k$个话题。假设每个话题由一个定义在单词集合$W$上的$m$维向量表示，称为话题向量，即：<br>$t_{l} = \begin{bmatrix}<br>t_{1l}\\<br>t_{2l}\\<br>\vdots \\<br>t_{ml}\end{bmatrix},  l=1,2,…,k$</p>
+<p>其中$t_{il}$单词$w_{i}$在话题$t_{l}$的权值，$i=1,2,…,m$, 权值越大，该单词在该话题中的重要程度就越高。这$k$个话题向量 $t_{1},t_{2},…,t_{k}$张成一个话题向量空间（topic vector space）， 维数为$k$.<strong>话题向量空间是单词向量空间的一个子空间</strong>。</p>
 <p>话题向量空间$T$：  </p>
-<p>$<br>T = \begin{bmatrix}<br>t<em>{11} &amp;  t</em>{12}&amp;  t<em>{1k}&amp; \<br>t</em>{21}&amp;  t<em>{22}&amp;  t</em>{2k}&amp; \<br>\vdots &amp;  \vdots &amp;  \vdots &amp; \<br>t<em>{m1}&amp;  t</em>{m2}&amp;  t_{mk}&amp;<br>\end{bmatrix}<br>$  </p>
-<p>矩阵$T$,称为<strong>单词-话题矩阵</strong>。 $T = [t<em>{1},  t</em>{2}, …, t_{k}]$</p>
+<p>$<br>T = \begin{bmatrix}<br>t_{11} &amp;  t_{12}&amp;  t_{1k}&amp; \\<br>t_{21}&amp;  t_{22}&amp;  t_{2k}&amp; \\<br>\vdots &amp;  \vdots &amp;  \vdots &amp; \\<br>t_{m1}&amp;  t_{m2}&amp;  t_{mk}&amp;<br>\end{bmatrix}<br>$  </p>
+<p>矩阵$T$,称为<strong>单词-话题矩阵</strong>。 $T = [t_{1},  t_{2}, …, t_{k}]$</p>
 <p><strong>2. 文本在话题向量空间中的表示</strong>  ：</p>
-<p>考虑文本集合$D$的文本$d<em>{j}$, 在单词向量空间中由一个向量$x</em>{j}$表示，将$x<em>{j}$投影到话题向量空间$T$中，得到话题向量空间的一个向量$y</em>{j}$, $y_{j}$是一个$k$维向量：  </p>
-<p>$y<em>{j} = \begin{bmatrix}<br>y</em>{1j}\<br>y<em>{2j}\<br>\vdots \<br>y</em>{kj}\end{bmatrix},  j=1,2,…,n$ </p>
-<p>其中，$y<em>{lj}$是文本$d</em>{j}$在话题$t_{l}$中的权值， $l = 1,2,…, k$, 权值越大，该话题在该文本中的重要程度就越高。  </p>
+<p>考虑文本集合$D$的文本$d_{j}$, 在单词向量空间中由一个向量$x_{j}$表示，将$x_{j}$投影到话题向量空间$T$中，得到话题向量空间的一个向量$y_{j}$, $y_{j}$是一个$k$维向量：  </p>
+<p>$y_{j} = \begin{bmatrix}<br>y_{1j}\\<br>y_{2j}\\<br>\vdots \\<br>y_{kj}\end{bmatrix},  j=1,2,…,n$ </p>
+<p>其中，$y_{lj}$是文本$d_{j}$在话题$t_{l}$中的权值， $l = 1,2,…, k$, 权值越大，该话题在该文本中的重要程度就越高。  </p>
 <p>矩阵$Y$ 表示话题在文本中出现的情况，称为话题-文本矩阵（topic-document matrix）,记作：  </p>
-<p>$<br>Y = \begin{bmatrix}<br>y<em>{11} &amp;  y</em>{12}&amp;  y<em>{1n}&amp; \<br>y</em>{21}&amp;  y<em>{22}&amp;  y</em>{2n}&amp; \<br>\vdots &amp;  \vdots &amp;  \vdots &amp; \<br>y<em>{k1}&amp;  y</em>{k2}&amp;  y_{kn}&amp;<br>\end{bmatrix}<br>$  </p>
-<p>也可写成： $Y = [y<em>{1}, y</em>{2} …, y_{n}]$</p>
+<p>$<br>Y = \begin{bmatrix}<br>y_{11} &amp;  y_{12}&amp;  y_{1n}&amp; \\<br>y_{21}&amp;  y_{22}&amp;  y_{2n}&amp; \\<br>\vdots &amp;  \vdots &amp;  \vdots &amp; \\<br>y_{k1}&amp;  y_{k2}&amp;  y_{kn}&amp;<br>\end{bmatrix}<br>$  </p>
+<p>也可写成： $Y = [y_{1}, y_{2} …, y_{n}]$</p>
 <p><strong>3. 从单词向量空间到话题向量空间的线性变换</strong>：  </p>
-<p>如此，单词向量空间的文本向量$x<em>{j}$可以通过他在话题空间中的向量$y</em>{j}$近似表示，具体地由$k$个话题向量以$y_{j}$为系数的线性组合近似表示：  </p>
-<p>$x<em>{j} = y</em>{1j}t<em>{1} + y</em>{2j}t<em>{2} + … + y</em>{yj}t_{k}, j = 1,2,…, n$  </p>
+<p>如此，单词向量空间的文本向量$x_{j}$可以通过他在话题空间中的向量$y_{j}$近似表示，具体地由$k$个话题向量以$y_{j}$为系数的线性组合近似表示：  </p>
+<p>$x_{j} = y_{1j}t_{1} + y_{2j}t_{2} + … + y_{yj}t_{k}, j = 1,2,…, n$  </p>
 <p>所以，单词-文本矩阵$X$可以近似的表示为单词-话题矩阵$T$与话题-文本矩阵$Y$的乘积形式。</p>
 <p>$X \approx TY$  </p>
 <p>直观上，潜在语义分析是将单词向量空间的表示通过线性变换转换为在话题向量空间中的表示。这个线性变换由矩阵因子分解式的形式体现。</p>
 <h3 id="潜在语义分析算法"><a href="#潜在语义分析算法" class="headerlink" title="潜在语义分析算法"></a>潜在语义分析算法</h3><p>潜在语义分析利用矩阵奇异值分解，具体地，对单词-文本矩阵进行奇异值分解，将其左矩阵作为话题向量空间，将其对角矩阵与右矩阵的乘积作为文本在话题向量空间的表示。</p>
-<p>给定一个含有$n$个文本的集合$D=({d<em>{1}, d</em>{2},…,d<em>{n}})$，以及在所有文本中出现的$m$个单词的集合$W=({w</em>{1},w<em>{2},…,w</em>{m}})$. 可以获得其单词-文本矩阵$X$:<br>$<br>X = \begin{bmatrix}<br>x<em>{11} &amp;  x</em>{12}&amp;  x<em>{1n}&amp; \<br>x</em>{21}&amp;  x<em>{22}&amp;  x</em>{2n}&amp; \<br>\vdots &amp;  \vdots &amp;  \vdots &amp; \<br>x<em>{m1}&amp;  x</em>{m2}&amp;  x_{mn}&amp;<br>\end{bmatrix}<br>$</p>
+<p>给定一个含有$n$个文本的集合$D=({d_{1}, d_{2},…,d_{n}})$，以及在所有文本中出现的$m$个单词的集合$W=({w_{1},w_{2},…,w_{m}})$. 可以获得其单词-文本矩阵$X$:<br>$<br>X = \begin{bmatrix}<br>x_{11} &amp;  x_{12}&amp;  x_{1n}&amp; \\<br>x_{21}&amp;  x_{22}&amp;  x_{2n}&amp; \\<br>\vdots &amp;  \vdots &amp;  \vdots &amp; \\<br>x_{m1}&amp;  x_{m2}&amp;  x_{mn}&amp;<br>\end{bmatrix}<br>$</p>
 <p><strong>截断奇异值分解</strong>：</p>
 <p>潜在语义分析根据确定的话题数$k$对单词-文本矩阵$X$进行截断奇异值分解：  </p>
-<p>$<br>X \approx U<em>{k}\Sigma </em>{k}V<em>{k}^{T} = \begin{bmatrix}<br>\mu </em>{1} &amp;  \mu <em>{2}&amp;  \cdots &amp; \mu </em>{k}<br>\end{bmatrix}\begin{bmatrix}<br>\sigma<em>{1} &amp;  0&amp;  0&amp; 0\<br> 0&amp;  \sigma</em>{2}&amp;  0&amp; 0\<br> 0&amp;  0&amp;  \ddots &amp; 0\<br> 0&amp;  0&amp;  0&amp; \sigma<em>{k}<br>\end{bmatrix}\begin{bmatrix}<br>v</em>{1}^{T}\<br>v<em>{2}^{T}\<br>\vdots \<br>v</em>{k}^{T}\end{bmatrix}<br>$</p>
-<p>矩阵$U<em>{k}$的每一个列向量 $u</em>{1}, u<em>{2},…, u</em>{k}$ 表示一个话题，称为<strong>话题向量</strong>。由这 $k$ 个话题向量张成一个子空间：  </p>
-<p>$<br>U<em>{k} = \begin{bmatrix}<br>u</em>{1} &amp;  u<em>{2}&amp;  \cdots &amp; u</em>{k}<br>\end{bmatrix}<br>$</p>
+<p>$<br>X \approx U_{k}\Sigma _{k}V_{k}^{T} = \begin{bmatrix}<br>\mu _{1} &amp;  \mu _{2}&amp;  \cdots &amp; \mu _{k}<br>\end{bmatrix}\begin{bmatrix}<br>\sigma_{1} &amp;  0&amp;  0&amp; 0\\<br> 0&amp;  \sigma_{2}&amp;  0&amp; 0\\<br> 0&amp;  0&amp;  \ddots &amp; 0\\<br> 0&amp;  0&amp;  0&amp; \sigma_{k}<br>\end{bmatrix}\begin{bmatrix}<br>v_{1}^{T}\\<br>v_{2}^{T}\\<br>\vdots \\<br>v_{k}^{T}\end{bmatrix}<br>$</p>
+<p>矩阵$U_{k}$的每一个列向量 $u_{1}, u_{2},…, u_{k}$ 表示一个话题，称为<strong>话题向量</strong>。由这 $k$ 个话题向量张成一个子空间：  </p>
+<p>$<br>U_{k} = \begin{bmatrix}<br>u_{1} &amp;  u_{2}&amp;  \cdots &amp; u_{k}<br>\end{bmatrix}<br>$</p>
 <p>称为<strong>话题向量空间</strong>。  </p>
 <p>综上， 可以通过对单词-文本矩阵的奇异值分解进行潜在语义分析：  </p>
-<p>$ X \approx U<em>{k} \Sigma</em>{k} V<em>{k}^{T} = U</em>{k}(\Sigma<em>{k}V</em>{k}^{T})$  </p>
-<p>得到话题空间 $U<em>{k}$ ， 以及文本在话题空间的表示($\Sigma</em>{k}V_{k}^{T}$). </p>
+<p>$ X \approx U_{k} \Sigma_{k} V_{k}^{T} = U_{k}(\Sigma_{k}V_{k}^{T})$  </p>
+<p>得到话题空间 $U_{k}$ ， 以及文本在话题空间的表示($\Sigma_{k}V_{k}^{T}$). </p>
 <h3 id="非负矩阵分解算法"><a href="#非负矩阵分解算法" class="headerlink" title="非负矩阵分解算法"></a>非负矩阵分解算法</h3><p>非负矩阵分解也可以用于话题分析。对单词-文本矩阵进行非负矩阵分解，将<strong>其左矩阵作为话题向量空间</strong>，将其<strong>右矩阵作为文本在话题向量空间的表示</strong>。</p>
 <h4 id="非负矩阵分解"><a href="#非负矩阵分解" class="headerlink" title="非负矩阵分解"></a>非负矩阵分解</h4><p>若一个矩阵的索引元素非负，则该矩阵为非负矩阵。若$X$是非负矩阵，则： $X &gt;= 0$.  </p>
 <p>给定一个非负矩阵$X$, 找到两个非负矩阵$W &gt;= 0$ 和 $H&gt;= 0$, 使得：  </p>
@@ -514,21 +514,21 @@
 <p>即非负矩阵$X$分解为两个非负矩阵$W$和$H$的乘积形式，成为非负矩阵分解。因为$WH$与$X$完全相等很难实现，所以只要求近似相等。  </p>
 <p>假设非负矩阵$X$是$m\times n$矩阵，非负矩阵$W$和$H$分别为 $m\times k$ 矩阵和 $k\times n$ 矩阵。假设 $k &lt; min(m, n)$ 即$W$ 和 $H$ 小于原矩阵 $X$, 所以非负矩阵分解是对原数据的压缩。</p>
 <p>称 $W$ 为基矩阵， $H$ 为系数矩阵。非负矩阵分解旨在用较少的基向量，系数向量来表示为较大的数据矩阵。</p>
-<p>令 $W = \begin{bmatrix}<br>w<em>{1} &amp;  w</em>{2}&amp;  \cdots&amp; w<em>{k}<br>\end{bmatrix}$<br>为话题向量空间， $w</em>{1}, w<em>{2}, …, w</em>{k}$ 表示文本集合的 $k$ 个话题， 令 $H = \begin{bmatrix}<br>h<em>{1} &amp;  h</em>{2}&amp;  \cdots&amp; h<em>{n}<br>\end{bmatrix}$<br>为文本在话题向量空间的表示， $h</em>{1}, h<em>{2},…, h</em>{n}$ 表示文本集合的 $n$ 个文本。</p>
+<p>令 $W = \begin{bmatrix}<br>w_{1} &amp;  w_{2}&amp;  \cdots&amp; w_{k}<br>\end{bmatrix}$<br>为话题向量空间， $w_{1}, w_{2}, …, w_{k}$ 表示文本集合的 $k$ 个话题， 令 $H = \begin{bmatrix}<br>h_{1} &amp;  h_{2}&amp;  \cdots&amp; h_{n}<br>\end{bmatrix}$<br>为文本在话题向量空间的表示， $h_{1}, h_{2},…, h_{n}$ 表示文本集合的 $n$ 个文本。</p>
 <h5 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h5><p>非负矩阵分解可以形式化为最优化问题求解。可以利用平方损失或散度来作为损失函数。</p>
 <p>目标函数 $|| X - WH ||^{2}$ 关于 $W$ 和 $H$ 的最小化，满足约束条件 $W, H &gt;= 0$, 即：  </p>
 <p>$\underset{W,H}{min} || X - WH ||^{2}$  </p>
 <p>$s.t.  W, H &gt;= 0$</p>
 <p>乘法更新规则： </p>
-<p>$W<em>{il} \leftarrow W</em>{il}\frac{(XH^{T})<em>{il}}{(WHH^{T})</em>{il}}$  （17.33）</p>
-<p>$H<em>{lj} \leftarrow H</em>{lj}\frac{(W^{T}X)<em>{lj}}{(W^{T}WH)</em>{lj}}$  （17.34）</p>
+<p>$W_{il} \leftarrow W_{il}\frac{(XH^{T})_{il}}{(WHH^{T})_{il}}$  （17.33）</p>
+<p>$H_{lj} \leftarrow H_{lj}\frac{(W^{T}X)_{lj}}{(W^{T}WH)_{lj}}$  （17.34）</p>
 <p>选择初始矩阵 $W$ 和 $H$ 为非负矩阵，可以保证迭代过程及结果的矩阵 $W$ 和 $H$ 非负。</p>
 <p><strong>算法 17.1 （非负矩阵分解的迭代算法）</strong></p>
 <p>输入： 单词-文本矩阵 $X &gt;= 0$, 文本集合的话题个数 $k$, 最大迭代次数 $t$；<br>输出： 话题矩阵 $W$, 文本表示矩阵 $H$。  </p>
 <p><strong>1)</strong>. 初始化</p>
 <p>$W&gt;=0$, 并对 $W$ 的每一列数据归一化；<br>$H&gt;=0$；</p>
 <p><strong>2)</strong>. 迭代  </p>
-<p>对迭代次数由1到$t$执行下列步骤：<br>a. 更新$W$的元素，对 $l$ 从1到 $k,i$从1到$m$按(17.33)更新 $W<em>{il}$;<br>a. 更新$H$的元素，对 $l$ 从1到 $k,j$从1到$m$按(17.34)更新 $H</em>{lj}$; </p>
+<p>对迭代次数由1到$t$执行下列步骤：<br>a. 更新$W$的元素，对 $l$ 从1到 $k,i$从1到$m$按(17.33)更新 $W_{il}$;<br>a. 更新$H$的元素，对 $l$ 从1到 $k,j$从1到$m$按(17.34)更新 $H_{lj}$; </p>
 <h3 id="图例-17-1"><a href="#图例-17-1" class="headerlink" title="图例 17.1"></a>图例 17.1</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> sklearn.decomposition <span class="keyword">import</span> TruncatedSVD</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">X = [[<span class="number">2</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">2</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>], [<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">1</span>]]</span><br><span class="line">X = np.asarray(X);X</span><br></pre></td></tr></table></figure>
 <pre><code>array([[2, 0, 0, 0],
@@ -1335,6 +1335,6 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

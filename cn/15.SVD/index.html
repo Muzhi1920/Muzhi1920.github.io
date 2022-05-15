@@ -223,6 +223,17 @@
           
           
           <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
             <a href="/about/">
               
               关于我
@@ -237,17 +248,6 @@
             <a href="/categories/">
               
               分类
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/archive/">
-              
-              归档
               
               
             </a>
@@ -448,18 +448,18 @@
 
         <h1 id="第15章-奇异值分解"><a href="#第15章-奇异值分解" class="headerlink" title="第15章 奇异值分解"></a>第15章 奇异值分解</h1><p>1.矩阵的奇异值分解是指将$m \times n$实矩阵$A$表示为以下三个实矩阵乘积形式的运算</p>
 <script type="math/tex; mode=display">A = U \Sigma V ^ { T }</script><p>其中$U$是$m$阶正交矩阵，$V$是$n$阶正交矩阵，$\Sigma$是$m \times n$矩形对角矩阵</p>
-<script type="math/tex; mode=display">\Sigma = \operatorname { diag } ( \sigma _ { 1 } , \sigma _ { 2 } , \cdots , \sigma _ { p } ) , \quad p = \operatorname { min } \{ m , n \}</script><p>其对角线元素非负，且满足$\sigma <em> { 1 } \geq \sigma </em> { 2 } \geq \cdots \geq \sigma _ { p } \geq 0$</p>
+<script type="math/tex; mode=display">\Sigma = \operatorname { diag } ( \sigma _ { 1 } , \sigma _ { 2 } , \cdots , \sigma _ { p } ) , \quad p = \operatorname { min } \{ m , n \}</script><p>其对角线元素非负，且满足$\sigma _ { 1 } \geq \sigma _ { 2 } \geq \cdots \geq \sigma _ { p } \geq 0$</p>
 <p>2.任意给定一个实矩阵，其奇异值分解一定存在，但并不唯一。</p>
 <p>3.奇异值分解包括紧奇异值分解和截断奇异值分解。紧奇异值分解是与原始矩阵等秩的奇异值分解，截断奇异值分解是比原始矩阵低秩的奇异值分解。</p>
 <p>4.奇异值分解有明确的几何解释。奇异值分解对应三个连续的线性变换：一个旋转变换，一个缩放变换和另一个旋转变换第一个和第三个旋转变换分别基于空间的标准正交基进行。</p>
 <p>5.设矩阵$A$的奇异值分解为$A = U \Sigma V ^ { T }$，则有</p>
 <script type="math/tex; mode=display">\left. \begin{array} { l } { A ^ { T } A = V ( \Sigma ^ { T } \Sigma ) V ^ { T } } \\ { A A ^ { T } = U ( \Sigma \Sigma ^ { T } ) U ^ { T } } \end{array} \right.</script><p>即对称矩阵$A^TA$和$AA^T$的特征分解可以由矩阵$A$的奇异值分解矩阵表示。</p>
-<p>6.矩阵$A$的奇异值分解可以通过求矩阵$A^TA$的特征值和特征向量得到：$A^TA$的特征向量构成正交矩阵$V$的列；从$A^TA$的特征值$\lambda <em> { j }$的平方根得到奇异值$\sigma </em> { i } $,即</p>
+<p>6.矩阵$A$的奇异值分解可以通过求矩阵$A^TA$的特征值和特征向量得到：$A^TA$的特征向量构成正交矩阵$V$的列；从$A^TA$的特征值$\lambda _ { j }$的平方根得到奇异值$\sigma _ { i } $,即</p>
 <script type="math/tex; mode=display">\sigma _ { j } = \sqrt { \lambda _ { j } } , \quad j = 1,2 , \cdots , n</script><p>对其由大到小排列，作为对角线元素，构成对角矩阵$\Sigma$;求正奇异值对应的左奇异向量，再求扩充的$A^T$的标准正交基，构成正交矩阵$U$的列。</p>
-<p>7.矩阵$A = [ a <em> { i j } ] </em> { m \times n }$的弗罗贝尼乌斯范数定义为</p>
+<p>7.矩阵$A = [ a _ { i j } ] _ { m \times n }$的弗罗贝尼乌斯范数定义为</p>
 <script type="math/tex; mode=display">\| A \| _ { F } = ( \sum _ { i = 1 } ^ { m } \sum _ { j = 1 } ^ { n } ( a _ { i j } ) ^ { 2 } ) ^ { \frac { 1 } { 2 } }</script><p>在秩不超过$k$的$m \times n$矩阵的集合中，存在矩阵$A$的弗罗贝尼乌斯范数意义下的最优近似矩阵$X$。秩为$k$的截断奇异值分解得到的矩阵$A_k$能够达到这个最优值。奇异值分解是弗罗贝尼乌斯范数意义下，也就是平方损失意义下的矩阵最优近似。</p>
 <p>8.任意一个实矩阵$A$可以由其外积展开式表示</p>
-<script type="math/tex; mode=display">A = \sigma _ { 1 } u _ { 1 } v _ { 1 } ^ { T } + \sigma _ { 2 } u _ { 2 } v _ { 2 } ^ { T } + \cdots + \sigma _ { n } u _ { n } v _ { n } ^ { T }</script><p>其中$u <em> { k } v </em> { k } ^ { T }$为$m \times n$矩阵，是列向量$u <em> { k }$和行向量$v </em> { k } ^ { T }$的外积，$\sigma <em> { k }$为奇异值，$u </em> { k } , v <em> { k } ^ { T } , \sigma </em> { k }$通过矩阵$A$的奇异值分解得到。</p>
+<script type="math/tex; mode=display">A = \sigma _ { 1 } u _ { 1 } v _ { 1 } ^ { T } + \sigma _ { 2 } u _ { 2 } v _ { 2 } ^ { T } + \cdots + \sigma _ { n } u _ { n } v _ { n } ^ { T }</script><p>其中$u _ { k } v _ { k } ^ { T }$为$m \times n$矩阵，是列向量$u _ { k }$和行向量$v _ { k } ^ { T }$的外积，$\sigma _ { k }$为奇异值，$u _ { k } , v _ { k } ^ { T } , \sigma _ { k }$通过矩阵$A$的奇异值分解得到。</p>
 <hr>
 <p>任意一个$m$ x $n$ 矩阵，都可以表示为三个矩阵的乘积（因子分解）形式，分别是$m$阶<strong>正交矩阵</strong>，由<strong>降序</strong>排列的<strong>非负</strong>的对角线元素组成的$m$ x $n$ 矩形对角矩阵，和$n$阶<strong>正交矩阵</strong>，称为该矩阵的奇异值分解。矩阵的奇异值分解一定存在，但不唯一。  </p>
 <p>奇异值分解可以看作是矩阵数据压缩的一种方法，即用因子分解的方式近似地表示原始矩阵，这种近似是在平方损失意义下的最优近似。</p>
@@ -1253,6 +1253,6 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

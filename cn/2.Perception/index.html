@@ -223,6 +223,17 @@
           
           
           <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
             <a href="/about/">
               
               关于我
@@ -237,17 +248,6 @@
             <a href="/categories/">
               
               分类
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/archive/">
-              
-              归档
               
               
             </a>
@@ -450,7 +450,7 @@
 <script type="math/tex; mode=display">
 f(x)=\operatorname{sign}(w \cdot x+b)</script><p>感知机模型优化的策略是极小化损失函数：</p>
 <script type="math/tex; mode=display">
-\min _{w, b} L(w, b)=-\sum_{x_{i} \in M} y_{i}\left(w \cdot x_{i}+b\right)</script><p>损失函数的物理意义是，所有误分类点到该分离超平面的总距离。感知机基于SGD的对损失优化，每次随机选取一个误分类点使其梯度下降。<br>$w = w + \eta y<em>{i}x</em>{i}$</p>
+\min _{w, b} L(w, b)=-\sum_{x_{i} \in M} y_{i}\left(w \cdot x_{i}+b\right)</script><p>损失函数的物理意义是，所有误分类点到该分离超平面的总距离。感知机基于SGD的对损失优化，每次随机选取一个误分类点使其梯度下降。<br>$w = w + \eta y_{i}x_{i}$</p>
 <p>$b = b + \eta y_{i}$</p>
 <p>通过调整$w$, $b$的值，使分离超平面向该无分类点的一侧移动，直至误分类点被正确分类。感知机的解是无穷的，由初值和迭代顺序决定。</p>
 <p>当训练数据集线性可分时，感知机学习算法是收敛的。感知机算法在训练数据集上的误分类次数$k$满足不等式：</p>
@@ -1219,6 +1219,6 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

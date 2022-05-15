@@ -223,6 +223,17 @@
           
           
           <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
             <a href="/about/">
               
               关于我
@@ -237,17 +248,6 @@
             <a href="/categories/">
               
               分类
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/archive/">
-              
-              归档
               
               
             </a>
@@ -481,7 +481,7 @@
 <li>结束条件为index==length-1时，构成1个数。</li>
 </ul>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (n &lt;= <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">char</span> *number = <span class="keyword">new</span> <span class="keyword">char</span>[n + <span class="number">1</span>];</span><br><span class="line">        number[n] = <span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; ++i) &#123;</span><br><span class="line">            number[<span class="number">0</span>] = i + <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">            <span class="built_in">core</span>(number, n, <span class="number">0</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//核心部分</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">core</span><span class="params">(<span class="keyword">char</span> *number, <span class="keyword">int</span> length, <span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (index == length - <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="built_in">PrintNumber</span>(number);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; ++i) &#123;</span><br><span class="line">            number[index + <span class="number">1</span>] = i + <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">            <span class="built_in">core</span>(number, length, index + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//打印部分，主要过滤front &#x27;0&#x27;</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">PrintNumber</span><span class="params">(<span class="keyword">char</span> *number)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">bool</span> isBeginning0 = <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">int</span> nLength = <span class="built_in">strlen</span>(number);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nLength; ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (isBeginning0 &amp;&amp; number[i] != <span class="string">&#x27;0&#x27;</span>)</span><br><span class="line">                isBeginning0 = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">if</span> (!isBeginning0)</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>, number[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&#x27;\t&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="43-1-N中1出现的次数"><a href="#43-1-N中1出现的次数" class="headerlink" title="43. 1~N中1出现的次数"></a>43. 1~N中1出现的次数</h2><p>$n<em>x,n</em>{x-1},n_{x-2},,,n_3,n_2,n_1$</p>
+<h2 id="43-1-N中1出现的次数"><a href="#43-1-N中1出现的次数" class="headerlink" title="43. 1~N中1出现的次数"></a>43. 1~N中1出现的次数</h2><p>$n_x,n_{x-1},n_{x-2},,,n_3,n_2,n_1$</p>
 <ol>
 <li>x为数位；</li>
 <li>n为0～9可能出现的数</li>
@@ -1309,6 +1309,6 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

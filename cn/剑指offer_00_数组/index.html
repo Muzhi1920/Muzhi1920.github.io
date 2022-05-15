@@ -223,6 +223,17 @@
           
           
           <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
             <a href="/about/">
               
               关于我
@@ -237,17 +248,6 @@
             <a href="/categories/">
               
               分类
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/archive/">
-              
-              归档
               
               
             </a>
@@ -567,7 +567,7 @@
 <li>如果把当前第<code>1</code>位和第<code>i-1</code>位组成一位，且在<code>10</code>到<code>25</code>之间，那么当前的次数就是取<code>f(i-2)</code>；</li>
 </ol>
 </li>
-<li>因此：$f(i) = f(i-1) +f(i-2) {10&lt;= x(i,i-1) &lt;=25}$</li>
+<li>因此：$f(i) = f(i-1) +f(i-2) \{10&lt;= x(i,i-1) &lt;=25\}$</li>
 </ol>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">translateNum</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        string src = <span class="built_in">to_string</span>(num);</span><br><span class="line">        <span class="keyword">int</span> p = <span class="number">0</span>, q = <span class="number">1</span>, r = <span class="number">1</span>;<span class="comment">// 变量替换数组</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; src.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">            p = q;</span><br><span class="line">            q = r;</span><br><span class="line">            <span class="keyword">auto</span> pre = src.<span class="built_in">substr</span>(i - <span class="number">1</span>, <span class="number">2</span>);<span class="comment">//取最近两位构成数字</span></span><br><span class="line">            <span class="keyword">if</span> (pre &lt;= <span class="string">&quot;25&quot;</span> &amp;&amp; pre &gt;= <span class="string">&quot;10&quot;</span>)</span><br><span class="line">                r += p; <span class="comment">// 之前的累加，实际上是子串种类数，累乘。</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> r;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h2 id="51-数组的逆序对"><a href="#51-数组的逆序对" class="headerlink" title="51. 数组的逆序对"></a>51. 数组的逆序对</h2><p>利用归并排序中，合并过程中，<code>left</code>部分有大于<code>right</code>部分的，那么逆序数与右侧剩余长度有关；</p>
@@ -1353,6 +1353,6 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

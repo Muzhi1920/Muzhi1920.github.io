@@ -223,6 +223,17 @@
           
           
           <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
             <a href="/about/">
               
               关于我
@@ -237,17 +248,6 @@
             <a href="/categories/">
               
               分类
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/archive/">
-              
-              归档
               
               
             </a>
@@ -447,7 +447,7 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <h1 id="第20章-潜在狄利克雷分配"><a href="#第20章-潜在狄利克雷分配" class="headerlink" title="第20章 潜在狄利克雷分配"></a>第20章 潜在狄利克雷分配</h1><p>1.狄利克雷分布的概率密度函数为</p>
-<script type="math/tex; mode=display">p ( \theta | \alpha ) = \frac { \Gamma ( \sum _ { i = 1 } ^ { k } \alpha _ { i } ) } { \prod _ { i = 1 } ^ { k } \Gamma ( \alpha _ { i } ) } \prod _ { i = 1 } ^ { k } \theta _ { i } ^ { \alpha _ { i } - 1 }</script><p>其中$\sum <em> { i = 1 } ^ { k } \theta </em> { i } = 1 , \theta <em> { i } \geq 0 , \alpha = ( \alpha </em> { 1 } , \alpha <em> { 2 } , \cdots , \alpha </em> { k } ) , \alpha _ { i } &gt; 0 , i = 1,2 , \cdots , $狄利克雷分布是多项分布的共轭先验。</p>
+<script type="math/tex; mode=display">p ( \theta | \alpha ) = \frac { \Gamma ( \sum _ { i = 1 } ^ { k } \alpha _ { i } ) } { \prod _ { i = 1 } ^ { k } \Gamma ( \alpha _ { i } ) } \prod _ { i = 1 } ^ { k } \theta _ { i } ^ { \alpha _ { i } - 1 }</script><p>其中$\sum _ { i = 1 } ^ { k } \theta _ { i } = 1 , \theta _ { i } \geq 0 , \alpha = ( \alpha _ { 1 } , \alpha _ { 2 } , \cdots , \alpha _ { k } ) , \alpha _ { i } &gt; 0 , i = 1,2 , \cdots , $狄利克雷分布是多项分布的共轭先验。</p>
 <p>2.潜在狄利克雷分配2.潜在狄利克雷分配（LDA）是文本集合的生成概率模型。模型假设话题由单词的多项分布表示，文本由话题的多项分布表示，单词分布和话题分布的先验分布都是狄利克雷分布。LDA模型属于概率图模型可以由板块表示法表示LDA模型中，每个话题的单词分布、每个文本的话题分布、文本的每个位置的话题是隐变量，文本的每个位置的单词是观测变量。</p>
 <p>3.LDA生成文本集合的生成过程如下：</p>
 <p>（1）话题的单词分布：随机生成所有话题的单词分布，话题的单词分布是多项分布，其先验分布是狄利克雷分布。</p>
@@ -1381,6 +1381,6 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

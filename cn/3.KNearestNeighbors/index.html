@@ -223,6 +223,17 @@
           
           
           <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
             <a href="/about/">
               
               关于我
@@ -237,17 +248,6 @@
             <a href="/categories/">
               
               分类
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/archive/">
-              
-              归档
               
               
             </a>
@@ -457,8 +457,8 @@
 <li>常用的分类决策规则是多数表决，对应于经验风险最小化。</li>
 <li><strong>kd</strong>树是一种便于对k维空间中的数据进行快速检索的数据结构。kd树是二叉树，表示对$k$维空间的一个划分，其每个结点对应于$k$维空间划分中的一个超矩形区域。利用<strong>kd</strong>树可以省去对大部分数据点的搜索， 从而减少搜索的计算量。</li>
 </ul>
-<h3 id="距离度量"><a href="#距离度量" class="headerlink" title="距离度量"></a>距离度量</h3><p>设特征空间$x$是$n$维实数向量空间 ，$x<em>{i}, x</em>{j} \in \mathcal{X}$,$x<em>{i}=\left(x</em>{i}^{(1)}, x<em>{i}^{(2)}, \cdots, x</em>{i}^{(n)}\right)^{\mathrm{T}}$,$x<em>{j}=\left(x</em>{j}^{(1)}, x<em>{j}^{(2)}, \cdots, x</em>{j}^{(n)}\right)^{\mathrm{T}}$<br>，则：$x_i$,$x_j$的$L_p$距离定义为:</p>
-<p>$L<em>{p}\left(x</em>{i}, x<em>{j}\right)=\left(\sum</em>{i=1}^{n}\left|x<em>{i}^{(i)}-x</em>{j}^{(l)}\right|^{p}\right)^{\frac{1}{p}}$</p>
+<h3 id="距离度量"><a href="#距离度量" class="headerlink" title="距离度量"></a>距离度量</h3><p>设特征空间$x$是$n$维实数向量空间 ，$x_{i}, x_{j} \in \mathcal{X}$,$x_{i}=\left(x_{i}^{(1)}, x_{i}^{(2)}, \cdots, x_{i}^{(n)}\right)^{\mathrm{T}}$,$x_{j}=\left(x_{j}^{(1)}, x_{j}^{(2)}, \cdots, x_{j}^{(n)}\right)^{\mathrm{T}}$<br>，则：$x_i$,$x_j$的$L_p$距离定义为:</p>
+<p>$L_{p}\left(x_{i}, x_{j}\right)=\left(\sum_{i=1}^{n}\left|x_{i}^{(i)}-x_{j}^{(l)}\right|^{p}\right)^{\frac{1}{p}}$</p>
 <ul>
 <li>$p= 1$  曼哈顿距离</li>
 <li>$p= 2$  欧氏距离</li>
@@ -1218,6 +1218,6 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

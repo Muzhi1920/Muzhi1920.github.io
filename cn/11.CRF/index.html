@@ -223,6 +223,17 @@
           
           
           <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
             <a href="/about/">
               
               关于我
@@ -237,17 +248,6 @@
             <a href="/categories/">
               
               分类
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/archive/">
-              
-              归档
               
               
             </a>
@@ -384,7 +384,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">2.1k</span> In Total
+              Words <span class="post-count">2.2k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -467,7 +467,7 @@ Z(x)=\sum_{y} \exp \left(\sum_{i, k} \lambda_{k} t_{k}\left(y_{i-1}, y_{i}, x, i
 </code></pre><h3 id="例11-2"><a href="#例11-2" class="headerlink" title="例11.2"></a>例11.2</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#这里根据例11.2的启发整合为一个矩阵</span></span><br><span class="line">F0 = S0</span><br><span class="line">F1 = T1 + array(S1 * <span class="built_in">len</span>(T1)).reshape(shape(T1))</span><br><span class="line">F2 = T2 + array(S2 * <span class="built_in">len</span>(T2)).reshape(shape(T2))</span><br><span class="line">Y = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>]  <span class="comment">#即书上例一需要计算的非规划条件概率的标记序列</span></span><br><span class="line">Y = array(Y) - <span class="number">1</span></span><br><span class="line"></span><br><span class="line">P = exp(F0[Y[<span class="number">0</span>]])</span><br><span class="line">Sum = P</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(Y)):</span><br><span class="line">    PIter = exp((<span class="built_in">eval</span>(<span class="string">&#x27;F%d&#x27;</span> % i)[Y[i - <span class="number">1</span>]][Y[i]]))</span><br><span class="line">    P *= PIter</span><br><span class="line">    Sum += PIter</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;非规范化概率&#x27;</span>, P)</span><br></pre></td></tr></table></figure>
 <pre><code>非规范化概率 24.532530197109345
 </code></pre><h2 id="第11章条件随机场-习题"><a href="#第11章条件随机场-习题" class="headerlink" title="第11章条件随机场-习题"></a>第11章条件随机场-习题</h2><h3 id="习题11-1"><a href="#习题11-1" class="headerlink" title="习题11.1"></a>习题11.1</h3><p>写出图11.3中无向图描述的概率图模型的因子分解式。<br><img src="/cn/11.CRF/11-1-Maximal-Clique.png" alt="图11.3 无向图的团和最大团"></p>
-<p><strong>解答：</strong><br>&emsp;&emsp;图11.3表示由4个结点组成的无向图。图中由2个结点组成的团有5个：${Y_1,Y_2},{Y_2,Y_3},{Y_3,Y_4},{Y_4,Y_2}$和${Y_1,Y_3}$，有2个最大团：${Y_1,Y_2,Y_3}$和${Y_2,Y_3,Y_4}$，而${Y_1,Y_2,Y_3,Y_4}$不是一个团，因为$Y_1$和$Y_4$没有边连接。<br>&emsp;&emsp;根据概率图模型的因子分解定义：将概率无向图模型的联合概率分布表示为其最大团上的随机变量的函数的乘积形式的操作。公式在书中(11.5)，(11.6)。 </p>
+<p><strong>解答：</strong><br>&emsp;&emsp;图11.3表示由4个结点组成的无向图。图中由2个结点组成的团有5个：$\{Y_1,Y_2\},\{Y_2,Y_3\},\{Y_3,Y_4\},\{Y_4,Y_2\}$和$\{Y_1,Y_3\}$，有2个最大团：$\{Y_1,Y_2,Y_3\}$和$\{Y_2,Y_3,Y_4\}$，而$\{Y_1,Y_2,Y_3,Y_4\}$不是一个团，因为$Y_1$和$Y_4$没有边连接。<br>&emsp;&emsp;根据概率图模型的因子分解定义：将概率无向图模型的联合概率分布表示为其最大团上的随机变量的函数的乘积形式的操作。公式在书中(11.5)，(11.6)。 </p>
 <script type="math/tex; mode=display">P(Y)=\frac{\Psi_{(1,2,3)}(Y_{(1,2,3)})\cdot\Psi_{(2,3,4)}(Y_{(2,3,4)})}{\displaystyle \sum_Y \left[ \Psi_{(1,2,3)}(Y_{(1,2,3)})\cdot\Psi_{(2,3,4)}(Y_{(2,3,4)})\right]}</script><h3 id="习题11-2"><a href="#习题11-2" class="headerlink" title="习题11.2"></a>习题11.2</h3><p>&emsp;&emsp;证明$Z(x)=a_n^T(x) \cdot \boldsymbol{1} = \boldsymbol{1}^T\cdot\beta_1(x)$，其中$\boldsymbol{1}$是元素均为1的$m$维列向量。</p>
 <p><strong>解答：</strong><br><strong>第1步：</strong>证明$Z(x)=a_n^T(x) \cdot \boldsymbol{1}$<br>根据条件随机场的矩阵形式：</p>
 <script type="math/tex; mode=display">(M_{n+1}(x))_{i,j}=\begin{cases}
@@ -477,7 +477,7 @@ Z(x)=\sum_{y} \exp \left(\sum_{i, k} \lambda_{k} t_{k}\left(y_{i-1}, y_{i}, x, i
 <script type="math/tex; mode=display">\alpha_0(y|x)=\begin{cases}
 1,&y=\text{start} \\
 0,&\text{otherwise}
-\end{cases}</script><p>$\begin{aligned}<br>\therefore Z<em>n(x)<br>&amp;= \left(M_1(x)M_2(x){\cdots}M</em>{n+1}(x)\right)_{(\text{start},\text{stop})} \<br>&amp;= \alpha_0(x)^T M_1(x)M_2(x){\cdots}M_n(x) \cdot 1\<br>&amp;=\alpha_n(x)^T\cdot \boldsymbol{1}<br>\end{aligned}$  </p>
+\end{cases}</script><p>$\begin{aligned}<br>\therefore Z_n(x)<br>&amp;= \left(M_1(x)M_2(x){\cdots}M_{n+1}(x)\right)_{(\text{start},\text{stop})} \\<br>&amp;= \alpha_0(x)^T M_1(x)M_2(x){\cdots}M_n(x) \cdot 1\\<br>&amp;=\alpha_n(x)^T\cdot \boldsymbol{1}<br>\end{aligned}$  </p>
 <hr>
 <p><strong>第2步：</strong>证明$Z(x)=\boldsymbol{1}^T \cdot \beta_1(x)$<br>根据条件随机场的矩阵形式：</p>
 <script type="math/tex; mode=display">(M_{n+1}(x))_{i,j}=\begin{cases}
@@ -488,7 +488,7 @@ Z(x)=\sum_{y} \exp \left(\sum_{i, k} \lambda_{k} t_{k}\left(y_{i-1}, y_{i}, x, i
 \begin{cases}
 1,& y_{n+1}=\text{stop} \\
 0,& \text{otherwise}
-\end{cases}</script><p>$\begin{aligned}<br>\therefore Z<em>n(x)<br>&amp;= (M_1(x)M_2(x) \cdots M</em>{n+1}(x))<em>{(\text{start},\text{stop})} \<br>&amp;= (M_1(x)M_2(x) \cdots M_n(x) \beta</em>{n+1}(x))<em>{\text{start}} \<br>&amp;=(\beta_1(x))</em>{\text{start}} \<br>&amp;=\boldsymbol{1}^T \cdot \beta_1(x)<br>\end{aligned}$<br>综上所述：$Z(x)=a_n^T(x) \cdot \boldsymbol{1} = \boldsymbol{1}^T \cdot \beta_1(x)$，命题得证。  </p>
+\end{cases}</script><p>$\begin{aligned}<br>\therefore Z_n(x)<br>&amp;= (M_1(x)M_2(x) \cdots M_{n+1}(x))_{(\text{start},\text{stop})} \\<br>&amp;= (M_1(x)M_2(x) \cdots M_n(x) \beta_{n+1}(x))_{\text{start}} \\<br>&amp;=(\beta_1(x))_{\text{start}} \\<br>&amp;=\boldsymbol{1}^T \cdot \beta_1(x)<br>\end{aligned}$<br>综上所述：$Z(x)=a_n^T(x) \cdot \boldsymbol{1} = \boldsymbol{1}^T \cdot \beta_1(x)$，命题得证。  </p>
 <h3 id="习题11-3"><a href="#习题11-3" class="headerlink" title="习题11.3"></a>习题11.3</h3><p>&emsp;&emsp;写出条件随机场模型学习的梯度下降法。</p>
 <p><strong>解答：</strong><br>条件随机场的对数极大似然函数为：</p>
 <script type="math/tex; mode=display">L(w)=\sum^N_{j=1} \sum^K_{k=1} w_k f_k(y_j,x_j)-\sum^N_{j=1} \log{Z_w(x_j)}</script><p>梯度下降算法的目标函数是$f(w)=-L(w)$<br>目标函数的梯度为：</p>
@@ -1272,6 +1272,6 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

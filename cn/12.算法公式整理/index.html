@@ -223,6 +223,17 @@
           
           
           <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
             <a href="/about/">
               
               关于我
@@ -237,17 +248,6 @@
             <a href="/categories/">
               
               分类
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/archive/">
-              
-              归档
               
               
             </a>
@@ -487,7 +487,7 @@ Q_i(z^{(i)})&=\dfrac{p(x^{(i)},z^{(i)};\theta)}{\sum\limits_{z^{(i)}}p(x^{(i)},z
 \mathop{\arg\max}_{\theta}\sum\limits_{i=1}^m\sum\limits_{z^{(i)}}Q_i(z^{(i)})\left[\log p(x^{(i)},z^{(i)};\theta)-\log Q_i(z^{(i)})\right]\\
 &\Leftrightarrow
 \mathop{\arg\max}_{\theta}\sum\limits_{i=1}^m\sum\limits_{z^{(i)}}Q_i(z^{(i)})\log p(x^{(i)},z^{(i)};\theta)
-\end{aligned}</script><p>因此EM算法的迭代形式为<br>Repeats until it converges{<br>$E$ step：for every  $x^{(i)}$ calculate<br>$Q<em>i(z^{(i)})=p(z^{(i)}|x^{(i)};\theta)$<br>$M$ step：update  $\theta$<br>$\begin{aligned} \theta:=\mathop{\arg\max}</em>{\theta}\sum\limits<em>{i=1}^m\sum\limits</em>{z^{(i)}}Q_i(z^{(i)})\log p(x^{(i)},z^{(i)};\theta) \end{aligned}$<br>}</p>
+\end{aligned}</script><p>因此EM算法的迭代形式为<br>Repeats until it converges{<br>$E$ step：for every  $x^{(i)}$ calculate<br>$Q_i(z^{(i)})=p(z^{(i)}|x^{(i)};\theta)$<br>$M$ step：update  $\theta$<br>$\begin{aligned} \theta:=\mathop{\arg\max}_{\theta}\sum\limits_{i=1}^m\sum\limits_{z^{(i)}}Q_i(z^{(i)})\log p(x^{(i)},z^{(i)};\theta) \end{aligned}$<br>}</p>
 <h3 id="收敛性证明"><a href="#收敛性证明" class="headerlink" title="收敛性证明"></a>收敛性证明</h3><script type="math/tex; mode=display">
 \begin{aligned}
 \mathcal{L}(\theta^{(k)})&=\sum\limits_{i=1}^m\sum\limits_{z^{(i)}}Q_i^{(k)}(z^{(i)})\log \dfrac{p(x^{(i)},z^{(i)};\theta^{(k)})}{Q_i(z^{(i)})} \ \ \ \ \ \ \ \ \ \ (a)\\
@@ -509,7 +509,7 @@ P(Y=c_k|X=x^{(i)}) =\dfrac{\prod\limits_{j=1}^n P(X_j^{(i)}=x_j^{(i)}|Y=c_k)}{\s
 \begin{aligned}
 \mathop{\arg\max}_{c_k}\ P(Y=c_k|X=x^{(i)})&=\mathop{\arg\max}_{c_k}\ \dfrac{\prod\limits_{j=1}^n P(X_j^{(i)}=x_j^{(i)}|Y=c_k)}{\sum\limits_{k=1}^t P(Y=c_k)\prod\limits_{j=1}^n P(X_j^{(i)}=x_j^{(i)}|Y=c_k)}P(Y=c_k)\\
 &=\mathop{\arg\max}_{c_k}\ P(Y=c_k)\prod\limits_{j=1}^n P(X_j^{(i)}=x_j^{(i)}|Y=c_k)
-\end{aligned}</script><p>因为对于每一个类别$c<em>k$，分母$\sum\limits</em>{k=1}^t P(Y=c<em>k)\prod\limits</em>{j=1}^n P(X_j^{(i)}=x_j^{(i)}|Y=c_k)$的值都是相同的。</p>
+\end{aligned}</script><p>因为对于每一个类别$c_k$，分母$\sum\limits_{k=1}^t P(Y=c_k)\prod\limits_{j=1}^n P(X_j^{(i)}=x_j^{(i)}|Y=c_k)$的值都是相同的。</p>
 <h4 id="朴素贝叶斯模型的求解"><a href="#朴素贝叶斯模型的求解" class="headerlink" title="朴素贝叶斯模型的求解"></a>朴素贝叶斯模型的求解</h4><p>​求解朴素贝叶斯模型相当于求解几个概率值，对于样本数据集可以求出先验概率</p>
 <ul>
 <li>$p(Y=c_k)$<script type="math/tex; mode=display">
@@ -519,22 +519,22 @@ p(Y=c_k)=\dfrac{\sum\limits_{i=1}^mI(y^{(i)}=c_k)}{t}\ \ \ \ \ k=1,2,\cdots,t</s
 P(X_j^{(i)}=x_j^{(i)}|Y&=c_k)=\dfrac{\sum\limits_{i=1}^mI(x_j^{(i)}=a_{jl},y^{(i)}=c_k)}{\sum\limits_{i=1}^m I(y^{(i)}=c_k)}\\
 &j=1,2,\cdots,n\\
 &l=1,2,\cdots,S_j
-\end{aligned}</script>其中$x<em>j^{(i)}$代表第$i$个样本的第$j$个特征$x_j^{(i)}\in{a</em>{j1},a<em>{j2},\cdots,a</em>{jS<em>j}}$，$a</em>{jl}$表示第$j$个特征取得第$l$个值。</li>
+\end{aligned}</script>其中$x_j^{(i)}$代表第$i$个样本的第$j$个特征$x_j^{(i)}\in\{a_{j1},a_{j2},\cdots,a_{jS_j}\}$，$a_{jl}$表示第$j$个特征取得第$l$个值。</li>
 </ul>
 <h2 id="GBDT-vs-XGBDT"><a href="#GBDT-vs-XGBDT" class="headerlink" title="GBDT vs XGBDT"></a>GBDT vs XGBDT</h2><p>GBDT目标函数最终形式为：</p>
 <script type="math/tex; mode=display">Obj^{(k)}=\sum\limits_{i=1}^m L(y^{(i)},\hat{y}^{(i)}_{k-1})+g_if_k(x^{(i)})</script><p>XGBDT目标函数最终形式为：</p>
 <script type="math/tex; mode=display">\begin{aligned} Obj^{(k)}&==\sum\limits_{i=1}^mL(y^{(i)},\hat{y}^{(i)}_{k-1}+f_k(x^{(i)}))+\Omega(f_k)+C \end{aligned}</script><hr>
-<h3 id="目标函数"><a href="#目标函数" class="headerlink" title="目标函数"></a>目标函数</h3><p>为了求损失函数$L(y^{(i)},\hat{y}^{(i)}<em>{k-1}+f_k(x^{(i)}))​$在$\ \hat{y}^{(i)}</em>{k-1} \ ​$处的二阶展开，且记$\nabla<em>{\hat{y}^{(i)}</em>{k-1}}L\left(y^{(i)},\hat{y}^{(i)}<em>{k-1}\right)$为$g_i$、$\nabla^2</em>{\hat{y}^{(i)}<em>{k-1}}L\left(y^{(i)},\hat{y}^{(i)}</em>{k-1}\right)$为$h_i​$则有：</p>
+<h3 id="目标函数"><a href="#目标函数" class="headerlink" title="目标函数"></a>目标函数</h3><p>为了求损失函数$L(y^{(i)},\hat{y}^{(i)}_{k-1}+f_k(x^{(i)}))​$在$\ \hat{y}^{(i)}_{k-1} \ ​$处的二阶展开，且记$\nabla_{\hat{y}^{(i)}_{k-1}}L\left(y^{(i)},\hat{y}^{(i)}_{k-1}\right)$为$g_i$、$\nabla^2_{\hat{y}^{(i)}_{k-1}}L\left(y^{(i)},\hat{y}^{(i)}_{k-1}\right)$为$h_i​$则有：</p>
 <script type="math/tex; mode=display">
-L\left(y^{(i)},\hat{y}^{(i)}_{k-1}+f_k(x^{(i)})\right)\simeq L(y^{(i)},\hat{y}^{(i)}_{k-1})+g_if_k(x^{(i)})+\dfrac{1}{2}h_if^2_k(x^{(i)})</script><p>又因为在第$k$步$\hat{y}^{(i)}<em>{k-1}$其实是已知的，所以$l(y^{(i)},\hat{y}^{(i)}</em>{k-1})$是一个常数函数，故对优化目标函数不会产生影响，将上述结论带入目标函数$Obj^{(k)}$可得：</p>
-<script type="math/tex; mode=display">Obj^{(k)}\simeq\sum\limits_{i=1}^m\bigg[ g_if_k(x^{(i)})+\dfrac{1}{2}h_if^2_k(x^{(i)})\bigg]+\Omega(f_k)</script><h4 id="决策树函数-f-k"><a href="#决策树函数-f-k" class="headerlink" title="决策树函数$f_k$"></a>决策树函数$f_k$</h4><p>对于任意决策树$f<em>k$，假设其叶子结点个数$T​$，该决策树是由所有结点对应的值组成的向量$\ w\in\mathbb{R}^T\ ​$，以及能够把特征向量映射到叶子结点的函数$\ q(*):\mathbb{R}^d\rightarrow {1,2,\cdots,T } \ ​$构造而成的，且每个样本数据都存在唯一的叶子结点上。因此决策树$\ f_k\ ​$可以定义为$\ f_k(x)=w</em>{q(x)} \ ​$。</p>
-<h4 id="决策树的复杂度"><a href="#决策树的复杂度" class="headerlink" title="决策树的复杂度"></a>决策树的复杂度</h4><p>由正则项$\ \Omega(f<em>k)=\gamma T+\dfrac{1}{2}\lambda\sum\limits</em>{j=1}^Tw_j^2 \ ​$来定义，该正则项表明决策树模型的复杂度可以由叶子结点的数量和叶子结点对应值向量$\ w \ ​$的$\ L2\ ​$范数决定。定义集合$\ I_j={i|q(x^{(i)})=j }\ ​$为划分到叶子结点$\ j \ ​$的所有训练样本的集合，即之前训练样本的集合，现在都改写成叶子结点的集合。</p>
+L\left(y^{(i)},\hat{y}^{(i)}_{k-1}+f_k(x^{(i)})\right)\simeq L(y^{(i)},\hat{y}^{(i)}_{k-1})+g_if_k(x^{(i)})+\dfrac{1}{2}h_if^2_k(x^{(i)})</script><p>又因为在第$k$步$\hat{y}^{(i)}_{k-1}$其实是已知的，所以$l(y^{(i)},\hat{y}^{(i)}_{k-1})$是一个常数函数，故对优化目标函数不会产生影响，将上述结论带入目标函数$Obj^{(k)}$可得：</p>
+<script type="math/tex; mode=display">Obj^{(k)}\simeq\sum\limits_{i=1}^m\bigg[ g_if_k(x^{(i)})+\dfrac{1}{2}h_if^2_k(x^{(i)})\bigg]+\Omega(f_k)</script><h4 id="决策树函数-f-k"><a href="#决策树函数-f-k" class="headerlink" title="决策树函数$f_k$"></a>决策树函数$f_k$</h4><p>对于任意决策树$f_k$，假设其叶子结点个数$T​$，该决策树是由所有结点对应的值组成的向量$\ w\in\mathbb{R}^T\ ​$，以及能够把特征向量映射到叶子结点的函数$\ q(*):\mathbb{R}^d\rightarrow \{1,2,\cdots,T \} \ ​$构造而成的，且每个样本数据都存在唯一的叶子结点上。因此决策树$\ f_k\ ​$可以定义为$\ f_k(x)=w_{q(x)} \ ​$。</p>
+<h4 id="决策树的复杂度"><a href="#决策树的复杂度" class="headerlink" title="决策树的复杂度"></a>决策树的复杂度</h4><p>由正则项$\ \Omega(f_k)=\gamma T+\dfrac{1}{2}\lambda\sum\limits_{j=1}^Tw_j^2 \ ​$来定义，该正则项表明决策树模型的复杂度可以由叶子结点的数量和叶子结点对应值向量$\ w \ ​$的$\ L2\ ​$范数决定。定义集合$\ I_j=\{i|q(x^{(i)})=j \}\ ​$为划分到叶子结点$\ j \ ​$的所有训练样本的集合，即之前训练样本的集合，现在都改写成叶子结点的集合。</p>
 <h4 id="XGBoost的目标函数"><a href="#XGBoost的目标函数" class="headerlink" title="XGBoost的目标函数"></a>XGBoost的目标函数</h4><p>因此$\ XGBoost\ ​$算法的目标函数可以改写为：</p>
 <script type="math/tex; mode=display">\begin{aligned}
 Obj^{(k)}&\simeq\sum\limits_{i=1}^m\bigg[ g_if_k(x^{(i)})+\dfrac{1}{2}h_if^2_k(x^{(i)})\bigg]+\Omega(f_k)\\
 &=\sum\limits_{i=1}^m\bigg[g_iw_{q(x^{(i)})}+\dfrac{1}{2}h_jw^2_{q(x^{(i)})} \bigg]+\gamma T+\dfrac{1}{2}\lambda\sum\limits_{j=1}^Tw_j^2\\
 &=\sum\limits_{j=1}^T\bigg[(\sum\limits_{i\in I_j}g_i)w_j+\dfrac{1}{2}(\sum\limits_{i\in I_j}h_i+\lambda)w_j^2 \bigg]+\gamma T
-\end{aligned}</script><p>令$G<em>j=\sum\limits</em>{i\in I<em>j}g_i ,\ H_j=\sum\limits</em>{i\in I_j}h_i$则有：</p>
+\end{aligned}</script><p>令$G_j=\sum\limits_{i\in I_j}g_i ,\ H_j=\sum\limits_{i\in I_j}h_i$则有：</p>
 <script type="math/tex; mode=display">Obj^{(k)}\simeq\sum\limits_{j=1}^T\bigg[G_jw_j+\dfrac{1}{2}(H_j+\lambda)w_j^2 \bigg]</script><p>分析可知当更新到第$\ k\ ​$步时，此时<strong>决策树结构固定的情况下</strong>，每个叶子结点有哪些样本是已知的，那么$\ q(*)\ ​$和$\ I_j\ ​$也是已知的；又因为$\ g_i\ ​$和$\ h_i\ ​$是第$\ k-1\ ​$步的导数，那么也是已知的，因此$\ G_j\ ​$和$\ H_j\ ​$都是已知的。令目标函数$\ Obj^{(k)}\ ​$的一阶导数为$\ 0\ ​$，即可求得叶子结点$\ j\ ​$对应的值为：</p>
 <script type="math/tex; mode=display">w^*_j=-\dfrac{G_j}{H_j+\lambda}</script><p>因此针对于结构固定的决策树，最优的目标函数$Obj$为：</p>
 <script type="math/tex; mode=display">Obj=-\dfrac{1}{2}\sum\limits_{j=1}^T\dfrac{G_j^2}{H_j+\lambda}+\gamma T</script><h3 id="决策树构造"><a href="#决策树构造" class="headerlink" title="决策树构造"></a>决策树构造</h3><p>通常使用贪心策略来生成决策树的每个结点，$XGBoost$算法的在决策树的生成阶段就对过拟合的问题进行了处理，因此无需独立的剪枝阶段，具体步骤可以归纳为：</p>
@@ -552,7 +552,7 @@ Gain&=Obj^{(before)}-Obj^{(later)}\\
 &=\dfrac{1}{2}\bigg[\dfrac{G_L^2}{H_L+\lambda}+\dfrac{G_R^2}{H_R+\lambda}-\dfrac{(G_L+G_R)^2}{(H_L+H_R)+\lambda} \bigg]-\gamma
 \end{aligned}</script><p>故可以用上述公式来决定最有分裂特征和最优特征分裂点。</p>
 <h2 id="FM算法"><a href="#FM算法" class="headerlink" title="$FM算法$"></a>$FM算法$</h2><script type="math/tex; mode=display">LR：
-y=w_0+\sum\limits_{i=1}^nw_ix_i</script><p><strong>在数据非常稀疏的情况下很难满足$x<em>i、x_j$都不为$0$，这样将会导致$w</em>{ij}$不能够通过训练得到</strong>，引入辅助向量$V$用$w_{ij}=\mathbf{v}_i\mathbf{v}_j^T$对$w$进行分解</p>
+y=w_0+\sum\limits_{i=1}^nw_ix_i</script><p><strong>在数据非常稀疏的情况下很难满足$x_i、x_j$都不为$0$，这样将会导致$w_{ij}$不能够通过训练得到</strong>，引入辅助向量$V$用$w_{ij}=\mathbf{v}_i\mathbf{v}_j^T$对$w$进行分解</p>
 <script type="math/tex; mode=display">
 w=VV^T=
 \begin{bmatrix}
@@ -571,7 +571,7 @@ w=VV^T=
 \begin{aligned}
 \langle\mathbf{v}_t,\mathbf{v}_i\rangle&=\sum\limits_{f=1}^k\mathbf{v}_{tf}\cdot\mathbf{v}_{if}\\
 \langle\mathbf{v}_i,\mathbf{v}_j\rangle&=\sum\limits_{f=1}^k\mathbf{v}_{if}\cdot\mathbf{v}_{jf}
-\end{aligned}</script><p><strong>$x<em>tx_i$和$x_ix_j$的参数分别为$\langle\mathbf{v}</em>{t},\mathbf{v}<em>i \rangle$和$\langle\mathbf{v}</em>{i},\mathbf{v}<em>j \rangle$，它们之间拥有共同项$\mathbf{v}_i$，即所有包含$\mathbf{v}_i$的非零组合特征的样本都可以用来学习隐向量$\mathbf{v}_i$，而原始模型中$w</em>{ti}$和$w_{ij}$却是相互独立的，这在很大程度上避免了数据稀疏造成的参数估计不准确的影响。因此原始模型可以改写为最终的$FM$算法</strong></p>
+\end{aligned}</script><p><strong>$x_tx_i$和$x_ix_j$的参数分别为$\langle\mathbf{v}_{t},\mathbf{v}_i \rangle$和$\langle\mathbf{v}_{i},\mathbf{v}_j \rangle$，它们之间拥有共同项$\mathbf{v}_i$，即所有包含$\mathbf{v}_i$的非零组合特征的样本都可以用来学习隐向量$\mathbf{v}_i$，而原始模型中$w_{ti}$和$w_{ij}$却是相互独立的，这在很大程度上避免了数据稀疏造成的参数估计不准确的影响。因此原始模型可以改写为最终的$FM$算法</strong></p>
 <script type="math/tex; mode=display">
 y=w_0+\sum\limits_{i=1}^nw_ix_i+\sum\limits_{i=1}^{n-1}\sum\limits_{j=i+1}^n \langle\mathbf{v}_i,\mathbf{v}_j \rangle x_ix_j</script><p>由于求解上述式子的时间复杂度为$\mathcal{O}(n^2)$，可以看出主要是最后一项计算比较复杂，因此从数学上对该式最后一项进行一些改写可以把时间复杂度降为$\mathcal{O}(kn)$</p>
 <script type="math/tex; mode=display">
@@ -643,7 +643,7 @@ y=w_0+\sum\limits_{i=1}^nw_ix_i+\sum\limits_{i=1}^{n-1}\sum\limits_{j=i+1}^n \la
 =\sum_{k\in Downstream(j)}-\delta_k·w_{kj}·\frac{\partial{a_j}}{\partial{net_j}}\\
 =\sum_{k\in Downstream(j)}-\delta_k·w_{kj}·a_j(1-a_j)\\
 =-a_j(1-a_j)\sum_{k\in Downstream(j)}\delta_kw_{kj}</script><p>因为$\delta_j=-\frac{\partial{E_d}}{\partial{net_j}}$，带入上式得到：</p>
-<script type="math/tex; mode=display">\delta_j=a_j(1-a_j)\sum_{k\in Downstream(j)}\delta_kw_{kj}</script><h2 id="回归算法与最小二乘"><a href="#回归算法与最小二乘" class="headerlink" title="回归算法与最小二乘"></a>回归算法与最小二乘</h2><p>对于二次函数梯度下降算法最终会收敛到全局最小值。下面使用梯度下降算法求解上面推导出的线性回归模型的损失函数$\ J(\theta)=\dfrac{1}{2}\sum\limits<em>{i=1}^m(h</em>\theta(x^{(i)})-y^{(i)})^2$，为了实现该算法首先要求出损失函数$J(\theta)$对参数$\theta_j$的梯度：</p>
+<script type="math/tex; mode=display">\delta_j=a_j(1-a_j)\sum_{k\in Downstream(j)}\delta_kw_{kj}</script><h2 id="回归算法与最小二乘"><a href="#回归算法与最小二乘" class="headerlink" title="回归算法与最小二乘"></a>回归算法与最小二乘</h2><p>对于二次函数梯度下降算法最终会收敛到全局最小值。下面使用梯度下降算法求解上面推导出的线性回归模型的损失函数$\ J(\theta)=\dfrac{1}{2}\sum\limits_{i=1}^m(h_\theta(x^{(i)})-y^{(i)})^2$，为了实现该算法首先要求出损失函数$J(\theta)$对参数$\theta_j$的梯度：</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
 \nabla_{\theta_j} J(\theta) &=\nabla_{\theta_j} \dfrac{1}{2} \sum\limits_{i=1}^m(h_\theta(x^{(i)})-y^{(i)})^2\\
@@ -679,9 +679,9 @@ y=w_0+\sum\limits_{i=1}^nw_ix_i+\sum\limits_{i=1}^{n-1}\sum\limits_{j=i+1}^n \la
   \begin{bmatrix}
  y_1\\y_2\\ \vdots \\ y_n
  \end{bmatrix}</script><p>可以看出通过正规方程求解线性回归模型就转化为如何构造$X$矩阵，只要$X$矩阵构造出来后剩下的就是交给计算机做矩阵乘法运算就可以了。</p>
-<h2 id="K-means"><a href="#K-means" class="headerlink" title="K-means"></a>K-means</h2><h3 id="k-means算法的损失函数"><a href="#k-means算法的损失函数" class="headerlink" title="k-means算法的损失函数"></a>k-means算法的损失函数</h3><p>假设输入空间 $X \in R^n$ 为$n$维向量的集合，$X={x^{(1)} ,x^{(2)},\cdots,x^{(m)} }$，$\mathcal  C$为输入空间$X$的一个划分，不妨令$\mathcal C={ \mathbb C_1,\mathbb C_2,\cdots,\mathbb C_K }$，因此可以定义$k-means$算法的损失函数为</p>
+<h2 id="K-means"><a href="#K-means" class="headerlink" title="K-means"></a>K-means</h2><h3 id="k-means算法的损失函数"><a href="#k-means算法的损失函数" class="headerlink" title="k-means算法的损失函数"></a>k-means算法的损失函数</h3><p>假设输入空间 $X \in R^n$ 为$n$维向量的集合，$X=\{x^{(1)} ,x^{(2)},\cdots,x^{(m)} \}$，$\mathcal  C$为输入空间$X$的一个划分，不妨令$\mathcal C=\{ \mathbb C_1,\mathbb C_2,\cdots,\mathbb C_K \}$，因此可以定义$k-means$算法的损失函数为</p>
 <script type="math/tex; mode=display">
-J(\mathcal C)=\sum\limits_{k=1}^K\sum\limits_{x^{(i)}\in \mathbb C_k}\Vert x^{(i)}-\mu^{(k)} \Vert_2^2</script><p>其中$\mu^{(k)}=\frac{1}{\vert \mathbb C<em>k \vert}\sum\limits</em>{x^{(i)}\in\mathbb C_k}x^{(i)}$是簇$\mathbb C_k$的聚类中心。</p>
+J(\mathcal C)=\sum\limits_{k=1}^K\sum\limits_{x^{(i)}\in \mathbb C_k}\Vert x^{(i)}-\mu^{(k)} \Vert_2^2</script><p>其中$\mu^{(k)}=\frac{1}{\vert \mathbb C_k \vert}\sum\limits_{x^{(i)}\in\mathbb C_k}x^{(i)}$是簇$\mathbb C_k$的聚类中心。</p>
 <h3 id="优化损失函数"><a href="#优化损失函数" class="headerlink" title="优化损失函数"></a>优化损失函数</h3><p>$k\text{-}means$算法的损失函数$J(\mathcal C)$描述了簇类样本围绕簇聚类中心的紧密程度，其值越小，则簇内样本的相似度越高。故$k\text{-}means$算法的优化目标为最小化损失函数</p>
 <script type="math/tex; mode=display">argmin_{c} J(\mathcal C)=\sum\limits_{k=1}^K\sum\limits_{x^{(i)}\in \mathbb C_k}\Vert x^{(i)}-\mu^{(k)} \Vert_2^2</script><p>如果要优化该损失函数就需要考虑输入空间$\mathcal X$的所有划分，这是一个$NP\text{-}hard$问题，实际上是采取贪心的策略通过迭代优化来近似求解，该过程等价于<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/39490840">$EM$算法</a>。</p>
 <ol>
@@ -1440,6 +1440,6 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

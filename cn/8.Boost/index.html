@@ -223,6 +223,17 @@
           
           
           <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
             <a href="/about/">
               
               关于我
@@ -237,17 +248,6 @@
             <a href="/categories/">
               
               分类
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/archive/">
-              
-              归档
               
               
             </a>
@@ -451,7 +451,7 @@
 <script type="math/tex; mode=display">f(x)=\sum_{m=1}^{M} \alpha_{m} G_{m}(x)</script><p>2．AdaBoost算法的特点是通过迭代每次学习一个基本分类器。每次迭代中，提高那些被前一轮分类器错误分类数据的权值，而降低那些被正确分类的数据的权值。最后，AdaBoost将基本分类器的线性组合作为强分类器，其中给分类误差率小的基本分类器以大的权值，给分类误差率大的基本分类器以小的权值。</p>
 <p>3．AdaBoost的训练误差分析表明，AdaBoost的每次迭代可以减少它在训练数据集上的分类误差率，这说明了它作为提升方法的有效性。</p>
 <p>4．AdaBoost算法的一个解释是该算法实际是前向分步算法的一个实现。在这个方法里，模型是加法模型，损失函数是指数损失，算法是前向分步算法。<br>每一步中极小化损失函数</p>
-<script type="math/tex; mode=display">\left(\beta_{m}, \gamma_{m}\right)=\arg \min _{\beta, \gamma} \sum_{i=1}^{N} L\left(y_{i}, f_{m-1}\left(x_{i}\right)+\beta b\left(x_{i} ; \gamma\right)\right)</script><p>得 到 参 数$\beta<em>{m}, \gamma</em>{m}$。</p>
+<script type="math/tex; mode=display">\left(\beta_{m}, \gamma_{m}\right)=\arg \min _{\beta, \gamma} \sum_{i=1}^{N} L\left(y_{i}, f_{m-1}\left(x_{i}\right)+\beta b\left(x_{i} ; \gamma\right)\right)</script><p>得 到 参 数$\beta_{m}, \gamma_{m}$。</p>
 <p>5．提升树是以分类树或回归树为基本分类器的提升方法。提升树被认为是统计学习中最有效的方法之一。</p>
 <h1 id="Boost"><a href="#Boost" class="headerlink" title="Boost"></a>Boost</h1><p>“装袋”（bagging）和“提升”（boost）是构建组合模型的两种最主要的方法，组合模型的预测效果往往比任意一个基本模型的效果都要好。</p>
 <ul>
@@ -462,11 +462,11 @@
 </ul>
 <h3 id="AdaBoost"><a href="#AdaBoost" class="headerlink" title="AdaBoost"></a>AdaBoost</h3><p>AdaBoost是AdaptiveBoost的缩写，表明该算法是具有适应性的提升算法。</p>
 <p>算法的步骤如下：</p>
-<p>1）给每个训练样本（$x<em>{1},x</em>{2},….,x<em>{N}$）分配权重，初始权重$w</em>{1}$均为1/N。</p>
+<p>1）给每个训练样本（$x_{1},x_{2},….,x_{N}$）分配权重，初始权重$w_{1}$均为1/N。</p>
 <p>2）针对带有权值的样本进行训练，得到模型$G_m$（初始模型为G1）。</p>
-<p>3）计算模型$G<em>m$的误分率$e_m=\sum</em>{i=1}^Nw_iI(y_i\not= G_m(x_i))$</p>
+<p>3）计算模型$G_m$的误分率$e_m=\sum_{i=1}^Nw_iI(y_i\not= G_m(x_i))$</p>
 <p>4）计算模型$G_m$的系数$\alpha_m=0.5\log[(1-e_m)/e_m]$</p>
-<p>5）根据误分率e和当前权重向量$w<em>m$更新权重向量$w</em>{m+1}$。</p>
+<p>5）根据误分率e和当前权重向量$w_m$更新权重向量$w_{m+1}$。</p>
 <p>6）计算组合模型$f(x)=\sum_{m=1}^M\alpha_mG_m(x_i)$的误分率。</p>
 <p>7）当组合模型的误分率或迭代次数低于一定阈值，停止迭代；否则，回到步骤2）</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection  <span class="keyword">import</span> train_test_split</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">%matplotlib inline</span><br></pre></td></tr></table></figure>
@@ -1241,6 +1241,6 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

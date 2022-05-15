@@ -223,6 +223,17 @@
           
           
           <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
             <a href="/about/">
               
               关于我
@@ -237,17 +248,6 @@
             <a href="/categories/">
               
               分类
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/archive/">
-              
-              归档
               
               
             </a>
@@ -620,7 +620,7 @@
 <script type="math/tex; mode=display">L=\sum_{i=1}^{N}l(y_i,F_{m-1}(x)+h_m(x_i))</script><script type="math/tex; mode=display">L=\sum_{i=1}^{N}(y_i-F_{m-1}(x)-h_m(x_i))^2</script><p>欲使损失最小，很显然则需要满足</p>
 <script type="math/tex; mode=display">h_m(x_i)=r=(y_i-F_{m-1}(x))</script><p>拟合残差即可。—<strong>《统计学习方法》</strong><br>或者<strong>通过求取负梯度，使$h_m(x_i)=T(x_i,\theta_m)$拟合</strong>，满足损失最小</p>
 <script type="math/tex; mode=display">L=\sum_{i=1}^{N}(y_i-F_{m-1}(x_i))^2</script><p>求导得到</p>
-<script type="math/tex; mode=display">\frac{\partial L}{\partial {F_{m-1}(x)}}|_{x_i,y_i}=-2\sum_{i=1}^{N}(y_i-F(x_i))</script><p>因此新的一棵树$T(x<em>i,\theta_m)$应该对于样本$(x_i,y_i)$需要拟合$r=y_i-F</em>{m-1}(x_i)$<br>两种方法是相似的，对于回归任务，新的一棵树的权重拟合的是负梯度(伪残差）</p>
+<script type="math/tex; mode=display">\frac{\partial L}{\partial {F_{m-1}(x)}}|_{x_i,y_i}=-2\sum_{i=1}^{N}(y_i-F(x_i))</script><p>因此新的一棵树$T(x_i,\theta_m)$应该对于样本$(x_i,y_i)$需要拟合$r=y_i-F_{m-1}(x_i)$<br>两种方法是相似的，对于回归任务，新的一棵树的权重拟合的是负梯度(伪残差）</p>
 <blockquote>
 <blockquote>
 <p>对于第一棵树，作为弱分类器，样本预测值为所有样本真实结果的均值；而后每增加一棵树，使得样本在前面所有的树中得到的损失都小。因此新的树权重的拟合方向，就是所有样本在函数空间得到的损失减小的负梯度方向，构成的合矢量方向，保证所有样本损失减小。</p>
@@ -1381,6 +1381,6 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

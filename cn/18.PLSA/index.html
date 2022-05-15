@@ -223,6 +223,17 @@
           
           
           <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
             <a href="/about/">
               
               关于我
@@ -237,17 +248,6 @@
             <a href="/categories/">
               
               分类
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/archive/">
-              
-              归档
               
               
             </a>
@@ -457,7 +457,7 @@
 <hr>
 <p>概率潜在语义分析（probabilistic latent semantic analysis, PLSA）,也称概率潜在语义索引（probabilistic latent semantic indexing, PLSI）,是一种利用概率生成模型对文本集合进行话题分析的无监督学习方法。</p>
 <p>模型最大特点是用隐变量表示话题，整个模型表示文本生成话题，话题生成单词，从而得到单词-文本共现数据的过程；假设每个文本由一个话题分布决定，每个话题由一个单词分布决定。</p>
-<h3 id="18-1-2-生成模型"><a href="#18-1-2-生成模型" class="headerlink" title="18.1.2 生成模型"></a><strong>18.1.2 生成模型</strong></h3><p>假设有单词集合 $W = $ {$w<em>{1}, w</em>{2}, …, w<em>{M}$}， 其中M是单词个数；文本（指标）集合$D = $ {$d</em>{1}, d<em>{2}, …, d</em>{N}$}, 其中N是文本个数；话题集合$Z = $ {$z<em>{1}, z</em>{2}, …, z_{K}$}，其中$K$是预先设定的话题个数。随机变量 $w$ 取值于单词集合；随机变量 $d$ 取值于文本集合，随机变量 $z$ 取值于话题集合。概率分布 $P(d)$、条件概率分布 $P(z|d)$、条件概率分布 $P(w|z)$ 皆属于多项分布，其中 $P(d)$ 表示生成文本 $d$ 的概率，$P(z|d)$ 表示文本 $d$ 生成话题 $z$ 的概率，$P(w|z)$ 表示话题 $z$ 生成单词 $w$ 的概率。</p>
+<h3 id="18-1-2-生成模型"><a href="#18-1-2-生成模型" class="headerlink" title="18.1.2 生成模型"></a><strong>18.1.2 生成模型</strong></h3><p>假设有单词集合 $W = $ {$w_{1}, w_{2}, …, w_{M}$}， 其中M是单词个数；文本（指标）集合$D = $ {$d_{1}, d_{2}, …, d_{N}$}, 其中N是文本个数；话题集合$Z = $ {$z_{1}, z_{2}, …, z_{K}$}，其中$K$是预先设定的话题个数。随机变量 $w$ 取值于单词集合；随机变量 $d$ 取值于文本集合，随机变量 $z$ 取值于话题集合。概率分布 $P(d)$、条件概率分布 $P(z|d)$、条件概率分布 $P(w|z)$ 皆属于多项分布，其中 $P(d)$ 表示生成文本 $d$ 的概率，$P(z|d)$ 表示文本 $d$ 生成话题 $z$ 的概率，$P(w|z)$ 表示话题 $z$ 生成单词 $w$ 的概率。</p>
 <p>   每个文本 $d$ 拥有自己的话题概率分布 $P(z|d)$，每个话题 $z$ 拥有自己的单词概率分布 $P(w|z)$；也就是说<strong>一个文本的内容由其相关话题决定，一个话题的内容由其相关单词决定</strong>。</p>
 <p>   生成模型通过以下步骤生成文本·单词共现数据：<br>   （1）依据概率分布 $P(d)$，从文本（指标）集合中随机选取一个文本 $d$ , 共生成 $N$  个文本；针对每个文本，执行以下操作；<br>   （2）在文本$d$ 给定条件下，依据条件概率分布 $P(z|d)$, 从话题集合随机选取一个话题 $z$, 共生成 $L$ 个话题，这里 $L$ 是文本长度；<br>   （3）在话题 $z$ 给定条件下，依据条件概率分布 $P(w|z)$ , 从单词集合中随机选取一个单词 $w$. </p>
 <p> 注意这里为叙述方便，假设文本都是等长的，现实中不需要这个假设。</p>
@@ -471,15 +471,15 @@
 <h3 id="18-1-3-共现模型"><a href="#18-1-3-共现模型" class="headerlink" title="18.1.3 共现模型"></a><strong>18.1.3 共现模型</strong></h3><p>$P(w,d) = \sum_{z\in Z}P(z)P(w|z)P(d|z)$</p>
 <p>虽然生成模型与共现模型在概率公式意义上是等价的，但是拥有不同的性质。生成模型刻画文本-单词共现数据生成的过程，共现模型描述文本-单词共现数据拥有的模式。  </p>
 <p>如果直接定义单词与文本的共现概率 $P(w,d)$, 模型参数的个数是 $O(M<em>N)$, 其中 $M$ 是单词数， $N$ 是文本数。 概率潜在语义分析的生成模型和共现模型的参数个数是 $O(M</em>K + N<em>K)$, 其中 $K$ 是话题数。 现实中 $K&lt;&lt;M$, 所以<em>*概率潜在语义分析通过话题对数据进行了更简洁的表示，减少了学习过程中过拟合的可能性</em></em>。</p>
-<h3 id="算法-18-1-（概率潜在语义模型参数估计的EM算法）"><a href="#算法-18-1-（概率潜在语义模型参数估计的EM算法）" class="headerlink" title="算法 18.1 （概率潜在语义模型参数估计的EM算法）"></a>算法 18.1 （概率潜在语义模型参数估计的EM算法）</h3><p>输入： 设单词集合为 $W = ${$w<em>{1}, w</em>{2},…, w<em>{M}$}, 文本集合为 $D=${$d</em>{1}, d<em>{2},…, d</em>{N}$}, 话题集合为 $Z=${$z<em>{1}, z</em>{2},…, z<em>{K}$}, 共现数据 $\left { n(w</em>{i}, d_{j}) \right }, i = 1,2,…, M, j = 1,2,…,N;$  </p>
-<p>输出： $P(w<em>{i}|z</em>{k})$ 和 $P(z<em>{k}|d</em>{j})$.</p>
+<h3 id="算法-18-1-（概率潜在语义模型参数估计的EM算法）"><a href="#算法-18-1-（概率潜在语义模型参数估计的EM算法）" class="headerlink" title="算法 18.1 （概率潜在语义模型参数估计的EM算法）"></a>算法 18.1 （概率潜在语义模型参数估计的EM算法）</h3><p>输入： 设单词集合为 $W = ${$w_{1}, w_{2},…, w_{M}$}, 文本集合为 $D=${$d_{1}, d_{2},…, d_{N}$}, 话题集合为 $Z=${$z_{1}, z_{2},…, z_{K}$}, 共现数据 $\left \{ n(w_{i}, d_{j}) \right \}, i = 1,2,…, M, j = 1,2,…,N;$  </p>
+<p>输出： $P(w_{i}|z_{k})$ 和 $P(z_{k}|d_{j})$.</p>
 <ol>
-<li><p>设置参数 $P(w<em>{i}|z</em>{k})$ 和 $P(z<em>{k}|d</em>{j})$ 的初始值。</p>
+<li><p>设置参数 $P(w_{i}|z_{k})$ 和 $P(z_{k}|d_{j})$ 的初始值。</p>
 </li>
 <li><p>迭代执行以下E步，M步，直到收敛为止。  </p>
-<p>E步：<br> $P(z<em>{k}|w</em>{i},d<em>{j})=\frac{P(w</em>{i}|z<em>{k})P(z</em>{k}|d<em>{j})}{\sum</em>{k=1}^{K}P(w<em>{i}|z</em>{k})P(z<em>{k}|d</em>{j})}$  </p>
-<p>M步：<br> $P(w<em>{i}|z</em>{k})=\frac{\sum<em>{j=1}^{N}n(w</em>{i},d<em>{j})P(z</em>{k}|w<em>{i},d</em>{j})}{\sum<em>{m=1}^{M}\sum</em>{j=1}^{N}n(w<em>{m},d</em>{j})P(z<em>{k}|w</em>{m},d_{j})}$  </p>
-<p> $P(z<em>{k}|d</em>{j}) = \frac{\sum<em>{i=1}^{M}n(w</em>{i},d<em>{j})P(z</em>{k}|w<em>{i},d</em>{j})}{n(d_{j})}$</p>
+<p>E步：<br> $P(z_{k}|w_{i},d_{j})=\frac{P(w_{i}|z_{k})P(z_{k}|d_{j})}{\sum_{k=1}^{K}P(w_{i}|z_{k})P(z_{k}|d_{j})}$  </p>
+<p>M步：<br> $P(w_{i}|z_{k})=\frac{\sum_{j=1}^{N}n(w_{i},d_{j})P(z_{k}|w_{i},d_{j})}{\sum_{m=1}^{M}\sum_{j=1}^{N}n(w_{m},d_{j})P(z_{k}|w_{m},d_{j})}$  </p>
+<p> $P(z_{k}|d_{j}) = \frac{\sum_{i=1}^{M}n(w_{i},d_{j})P(z_{k}|w_{i},d_{j})}{n(d_{j})}$</p>
 </li>
 </ol>
 <h4 id="习题-18-3"><a href="#习题-18-3" class="headerlink" title="习题 18.3"></a>习题 18.3</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br></pre></td></tr></table></figure>
@@ -1269,6 +1269,6 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

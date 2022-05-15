@@ -223,6 +223,17 @@
           
           
           <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
             <a href="/about/">
               
               关于我
@@ -237,17 +248,6 @@
             <a href="/categories/">
               
               分类
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/archive/">
-              
-              归档
               
               
             </a>
@@ -449,7 +449,7 @@
         <h1 id="第19章-马尔可夫链蒙特卡罗法"><a href="#第19章-马尔可夫链蒙特卡罗法" class="headerlink" title="第19章 马尔可夫链蒙特卡罗法"></a>第19章 马尔可夫链蒙特卡罗法</h1><p>蒙特卡罗法是通过基于概率模型的抽样进行数值近似计算的方法，蒙特卡罗法可以用于概率分布的抽样、概率分布数学期望的估计、定积分的近似计算。</p>
 <p>随机抽样是蒙特卡罗法的一种应用，有直接抽样法、接受拒绝抽样法等。接受拒绝法的基本想法是，找一个容易抽样的建议分布，其密度函数的数倍大于等于想要抽样的概率分布的密度函数。按照建议分布随机抽样得到样本，再按要抽样的概率分布与建议分布的倍数的比例随机决定接受或拒绝该样本，循环执行以上过程。</p>
 <p>马尔可夫链蒙特卡罗法数学期望估计是蒙特卡罗法的另一种应用，按照概率分布$p(x)$抽取随机变量$x$的$n$个独立样本，根据大数定律可知，当样本容量增大时，函数的样本均值以概率1收敛于函数的数学期望</p>
-<script type="math/tex; mode=display">\hat { f } _ { n } \rightarrow E _ { p ( x ) } [ {f ( x )} ] , \quad n \rightarrow \infty</script><p>计算样本均值$\hat { f } <em> { n } $，作为数学期望$E </em> { p ( x ) } [ {f ( x )} ] $的估计值。</p>
+<script type="math/tex; mode=display">\hat { f } _ { n } \rightarrow E _ { p ( x ) } [ {f ( x )} ] , \quad n \rightarrow \infty</script><p>计算样本均值$\hat { f } _ { n } $，作为数学期望$E _ { p ( x ) } [ {f ( x )} ] $的估计值。</p>
 <p>马尔可夫链是具有马尔可夫性的随机过程</p>
 <script type="math/tex; mode=display">P ( X _ { t } | X _ { 0 } X _ { 1 } \cdots X _ { t - 1 } ) = P ( X _ { t } | X _ { t - 1 } ) , \quad t = 1,2 , \cdots</script><p>通常考虑时间齐次马尔可夫链。有离散状态马尔可夫链和连续状态马尔可夫链，分别由概率转移矩阵$P$和概率转移核$p(x,y)$定义。</p>
 <p>满足$\pi = P \pi$或$\pi ( y ) = \int p ( x , y ) \pi ( x ) d x$的状态分布称为马尔可夫链的平稳分布。</p>
@@ -457,11 +457,11 @@
 <script type="math/tex; mode=display">\operatorname { lim } _ { t \rightarrow \infty } P ( X _ { t } = i | X _ { 0 } = j ) = \pi _ { i } , \quad i = 1,2 , \cdots ; \quad j = 1,2</script><script type="math/tex; mode=display">\hat { f } _ { t } \rightarrow E _ { \pi } [ {f ( X )} ] , \quad t \rightarrow \infty</script><p>可逆马尔可夫链是满足遍历定理的充分条件。</p>
 <p>马尔可夫链蒙特卡罗法是以马尔可夫链为概率模型的蒙特卡罗积分方法，其基本想法如下：</p>
 <p>（1）在随机变量$x$的状态空间$\chi$上构造一个满足遍历定理条件的马尔可夫链，其平稳分布为目标分布$p(x)$；</p>
-<p>（2）由状态空间的某一点$X<em>0$出发，用所构造的马尔可夫链进行随机游走，产生样本序列$X </em> { 1 } , X <em> { 2 } , \cdots , X </em> { t } , \cdots$；</p>
-<p>（3）应用马尔可夫链遍历定理，确定正整数$m$和$n(m&lt;n)$，得到样本集合${ x <em> { m + 1 } , x </em> { m + 2 } , \cdots , x _ { n } }$，进行函数$f(x)$的均值（遍历均值）估计：</p>
+<p>（2）由状态空间的某一点$X_0$出发，用所构造的马尔可夫链进行随机游走，产生样本序列$X _ { 1 } , X _ { 2 } , \cdots , X _ { t } , \cdots$；</p>
+<p>（3）应用马尔可夫链遍历定理，确定正整数$m$和$n(m&lt;n)$，得到样本集合$\{ x _ { m + 1 } , x _ { m + 2 } , \cdots , x _ { n } \}$，进行函数$f(x)$的均值（遍历均值）估计：</p>
 <script type="math/tex; mode=display">\hat { E } f = \frac { 1 } { n - m } \sum _ { i = m + 1 } ^ { n } {f ( x _ { i } )}</script><p>Metropolis-Hastings算法是最基本的马尔可夫链蒙特卡罗法。假设目标是对概率分布$p ( x )$进行抽样，构造建议分布$q ( x , x ^ { \prime } )$，定义接受分布$\alpha ( x , x ^ { \prime } )$进行随机游走，假设当前处于状态$x$，按照建议分布$q ( x , x ^ { \prime } )$机抽样，按照概率$\alpha ( x , x ^ { \prime } )$接受抽样，转移到状态 $x ^ { \prime }$，按照概率$1- \alpha ( x , x ^ { \prime } )$拒绝抽样，停留在状态$x$，持续以上操作，得到一系列样本。这样的随机游走是根据转移核为$p ( x , x ^ { \prime } ) = q ( x , x ^ { \prime } ) \alpha ( x , x ^ { \prime } )$的可逆马尔可夫链（满足遍历定理条件）进行的，其平稳分布就是要抽样的目标分布$p ( x )$。</p>
 <p>吉布斯抽样（Gibbs sampling）用于多元联合分布的抽样和估计吉布斯抽样是单分量 Metropolis-Hastings-算法的特殊情况。这时建议分布为满条件概率分布</p>
-<script type="math/tex; mode=display">q ( x , x ^ { \prime } ) = p ( x _ { j } ^ { \prime } | x _ { - j } )</script><p>吉布斯抽样的基本做法是，从联合分布定义满条件概率分布，依次从满条件概率分布进行抽样，得到联合分布的随机样本。假设多元联合概率分布为$p ( x ) = p ( x <em> { 1 } , x </em> { 2 } , \cdots , x <em> { k } )$，吉布斯抽样从一个初始样本$x ^ { ( 0 ) } = ( x </em> { 1 } ^ { ( 0 ) } , x <em> { 2 } ^ { ( 0 ) } , \cdots , x </em> { k } ^ { ( 0 ) } ) ^ { T }$出发，不断进行迭代，每一次迭代得到联合分布的一个样本$x ^ { ( i ) } = ( x <em> { 1 } ^ { ( i ) } , x </em> { 2 } ^ { ( i ) } , \cdots , x <em> { k } ^ { ( i ) } ) ^ { T }$，在第$i$次迭代中，依次对第$j$个变量按照满条件概率分布随机抽样$p ( x </em> { j } | x <em> { 1 } ^ { ( i ) } , \cdots , x </em> { j - 1 } ^ { ( i ) },x <em> { j + 1 } ^ { ( i - 1 ) } , \cdots , x </em> { k } ^ { ( i - 1 ) } ) , j = 1,2 , \cdots , k$，得到$x _ { j } ^ { ( i ) }$最终得到样本序列${ x ^ { ( 0 ) } , x ^ { ( 1 ) } , \cdots , x ^ { ( n ) } }$。</p>
+<script type="math/tex; mode=display">q ( x , x ^ { \prime } ) = p ( x _ { j } ^ { \prime } | x _ { - j } )</script><p>吉布斯抽样的基本做法是，从联合分布定义满条件概率分布，依次从满条件概率分布进行抽样，得到联合分布的随机样本。假设多元联合概率分布为$p ( x ) = p ( x _ { 1 } , x _ { 2 } , \cdots , x _ { k } )$，吉布斯抽样从一个初始样本$x ^ { ( 0 ) } = ( x _ { 1 } ^ { ( 0 ) } , x _ { 2 } ^ { ( 0 ) } , \cdots , x _ { k } ^ { ( 0 ) } ) ^ { T }$出发，不断进行迭代，每一次迭代得到联合分布的一个样本$x ^ { ( i ) } = ( x _ { 1 } ^ { ( i ) } , x _ { 2 } ^ { ( i ) } , \cdots , x _ { k } ^ { ( i ) } ) ^ { T }$，在第$i$次迭代中，依次对第$j$个变量按照满条件概率分布随机抽样$p ( x _ { j } | x _ { 1 } ^ { ( i ) } , \cdots , x _ { j - 1 } ^ { ( i ) },x _ { j + 1 } ^ { ( i - 1 ) } , \cdots , x _ { k } ^ { ( i - 1 ) } ) , j = 1,2 , \cdots , k$，得到$x _ { j } ^ { ( i ) }$最终得到样本序列$\{ x ^ { ( 0 ) } , x ^ { ( 1 ) } , \cdots , x ^ { ( n ) } \}$。</p>
 <hr>
 <p>蒙特卡洛法（Monte Carlo method) ， 也称为统计模拟方法 (statistical simulation method) ， 是通过从概率模型的随机抽样进行近似数值计</p>
 <p>算的方法。 马尔可夫链陟特卡罗法 (Markov Chain Monte Carlo, MCMC)， 则是以马尔可夫链 (Markov chain）为概率模型的蒙特卡洛法。</p>
@@ -475,60 +475,60 @@
 <p>接受-拒绝抽样法、重要性抽样法适合于概率密度函数复杂 （如密度函数含有多个变量，各变量相互不独立，密度函数形式复杂），不能直接抽样的情况。</p>
 <h3 id="19-1-2-数学期望估计"><a href="#19-1-2-数学期望估计" class="headerlink" title="19.1.2 数学期望估计"></a>19.1.2 数学期望估计</h3><p>一舣的蒙特卡罗法， 如直接抽样法、接受·拒绝抽样法、重要性抽样法， 也可以用于数学期望估计 （estimation Of mathematical expectation)。</p>
 <p>假设有随机变量$x$， 取值 $x\in X$, 其概率密度函数为 $p(x)$, $f(x)$ 为定义在 $X$ 上的函数， 目标是求函数 $f(x)$ 关于密度函数 $p(x)$ 的数学期望 $E_{p(x)}[f(x)]$。</p>
-<p>针对这个问题，蒙特卡罗法按照概率分布 $p(x)$ 独立地抽取 $n$ 个样本$x<em>{1}, x</em>{2},…,x_{n}$，比如用以上的抽样方法，之后计算函</p>
+<p>针对这个问题，蒙特卡罗法按照概率分布 $p(x)$ 独立地抽取 $n$ 个样本$x_{1}, x_{2},…,x_{n}$，比如用以上的抽样方法，之后计算函</p>
 <p>数$f(x)$的样本均值$\hat f_{n}$  </p>
-<p>$\hat f<em>{n} = \frac{1} {n}\sum</em>{i=1}^{n}f(x_{i})$</p>
+<p>$\hat f_{n} = \frac{1} {n}\sum_{i=1}^{n}f(x_{i})$</p>
 <p>作为数学期望$E_{p(x)}[f(x)]$近似值。</p>
 <p>根据大数定律可知， 当样本容量增大时， 样本均值以概率1收敛于数学期望：  </p>
-<p>$\hat f<em>{n} \rightarrow E</em>{p(x)}[f(x)], n \rightarrow \infty $</p>
+<p>$\hat f_{n} \rightarrow E_{p(x)}[f(x)], n \rightarrow \infty $</p>
 <p>这样就得到了数学期望的近似计算方法：  </p>
-<p>$E<em>{p(x)}[f(x)] \approx \frac{1} {n}\sum</em>{i=1}^{n}f(x_{i})$</p>
-<h3 id="马尔可夫链"><a href="#马尔可夫链" class="headerlink" title="马尔可夫链"></a>马尔可夫链</h3><p>考虑一个随机变量的序列 $X = {X<em>{0}, X</em>{1},…, X(t),…}$ 这里 $X_{t}$，表示时刻 $t$ 的随机变量， $t = 0, 1, 2…$. </p>
+<p>$E_{p(x)}[f(x)] \approx \frac{1} {n}\sum_{i=1}^{n}f(x_{i})$</p>
+<h3 id="马尔可夫链"><a href="#马尔可夫链" class="headerlink" title="马尔可夫链"></a>马尔可夫链</h3><p>考虑一个随机变量的序列 $X = {X_{0}, X_{1},…, X(t),…}$ 这里 $X_{t}$，表示时刻 $t$ 的随机变量， $t = 0, 1, 2…$. </p>
 <p>每个随机变量 $X_{t}(t=0,1,2,…)$ 的取值集合相同， 称为状态空间， 表示为$S$.  随机变量可以是离散的， 也可以是连续的。</p>
 <p>以上随机变量的序列构成随机过程（stochastic process)。</p>
-<p>假设在时刻 $0$ 的随机变量 $X<em>{0}$ 遵循概率分布 $P(X</em>{0}) = \pi$，称为初始状态分布。在某个时刻 $t&gt;=1$ 的随机变量 $X_{t}$与前</p>
-<p>一个时刻的随机变量 $X<em>{t-1}$ 之间有条件分布 $P(X</em>{t}|X<em>{t-1})$ 如果 $X</em>{t}$ 只依赖于 $X_{t-1}$, 而不依赖于过去的随机变量 </p>
-<p>${X<em>{0}，X</em>{1},…，X_{t-2}}$ 这一性质称为马尔可夫性，即  </p>
-<p>$P(X<em>{t}|X</em>{0},X<em>{1},…,X</em>{t-1}) = P(X<em>{t}|X</em>{t-1}), t=1,2,…$</p>
-<p>具有马尔可夫性的随机序列$X = {X<em>{0}, X</em>{1},…, X(t),…}$称为马尔可夫链， 或马尔可夫过程（Markov process)。 条件概率分布 </p>
-<p>$P(X<em>{t}|X</em>{t-1})$ 称为<strong>马尔可夫链的转移概率分布</strong>。 <strong>转移概率分布决定了马尔可夫裢的特性</strong>。</p>
-<h4 id="平稳分布"><a href="#平稳分布" class="headerlink" title="平稳分布"></a>平稳分布</h4><p>设有马尔可夫链$X = {X<em>{0}, X</em>{1},…, X(t),…}$，其状态空间为 $S$,转移概率矩阵为 $P=(p_{ij})$， 如果存在状态空间 $S$ 上的一个分布  </p>
-<p>$\pi = \begin{bmatrix}<br>\pi<em>{1}\<br>\pi</em>{2}\<br>\vdots \end{bmatrix}$</p>
+<p>假设在时刻 $0$ 的随机变量 $X_{0}$ 遵循概率分布 $P(X_{0}) = \pi$，称为初始状态分布。在某个时刻 $t&gt;=1$ 的随机变量 $X_{t}$与前</p>
+<p>一个时刻的随机变量 $X_{t-1}$ 之间有条件分布 $P(X_{t}|X_{t-1})$ 如果 $X_{t}$ 只依赖于 $X_{t-1}$, 而不依赖于过去的随机变量 </p>
+<p>${X_{0}，X_{1},…，X_{t-2}}$ 这一性质称为马尔可夫性，即  </p>
+<p>$P(X_{t}|X_{0},X_{1},…,X_{t-1}) = P(X_{t}|X_{t-1}), t=1,2,…$</p>
+<p>具有马尔可夫性的随机序列$X = {X_{0}, X_{1},…, X(t),…}$称为马尔可夫链， 或马尔可夫过程（Markov process)。 条件概率分布 </p>
+<p>$P(X_{t}|X_{t-1})$ 称为<strong>马尔可夫链的转移概率分布</strong>。 <strong>转移概率分布决定了马尔可夫裢的特性</strong>。</p>
+<h4 id="平稳分布"><a href="#平稳分布" class="headerlink" title="平稳分布"></a>平稳分布</h4><p>设有马尔可夫链$X = {X_{0}, X_{1},…, X(t),…}$，其状态空间为 $S$,转移概率矩阵为 $P=(p_{ij})$， 如果存在状态空间 $S$ 上的一个分布  </p>
+<p>$\pi = \begin{bmatrix}<br>\pi_{1}\\<br>\pi_{2}\\<br>\vdots \end{bmatrix}$</p>
 <p>使得  </p>
 <p>$\pi = P\pi$</p>
-<p>则称丌为马尔可夫裢$X = {X<em>{0}, X</em>{1},…, X(t),…}$的平稳分布。</p>
+<p>则称丌为马尔可夫裢$X = {X_{0}, X_{1},…, X(t),…}$的平稳分布。</p>
 <p>直观上，如果马尔可夫链的平稳分布存在，那么以该平稳分布作为初始分布，面向未来进行随机状态转移，之后任何一个时刻的状态分布都是该平稳分布。</p>
 <p><strong>引理19．1</strong></p>
-<p>给定一个马尔可夫链$X = {X<em>{0}, X</em>{1},…, X(t),…}$, 状态空间为$S$, 移概率矩阵为$P=(p<em>{ij})$， 则分布 $\pi=(\pi</em>{1}, \pi<em>{2},…)^{T}$ 为 $X$ 的平稳分布的充要条件是$\pi=(\pi</em>{1}, \pi_{2},…)^{T}$是下列方程组的解：</p>
-<p>$x<em>{i} = \sum</em>{j}p<em>{ij}x</em>{j}, i=1,2,…$  </p>
+<p>给定一个马尔可夫链$X = {X_{0}, X_{1},…, X(t),…}$, 状态空间为$S$, 移概率矩阵为$P=(p_{ij})$， 则分布 $\pi=(\pi_{1}, \pi_{2},…)^{T}$ 为 $X$ 的平稳分布的充要条件是$\pi=(\pi_{1}, \pi_{2},…)^{T}$是下列方程组的解：</p>
+<p>$x_{i} = \sum_{j}p_{ij}x_{j}, i=1,2,…$  </p>
 <p>$x_{i} &gt;= 0, i = 1,2,…$  </p>
-<p>$\sum<em>{i}x</em>{i} = 1$  </p>
+<p>$\sum_{i}x_{i} = 1$  </p>
 <h3 id="吉布斯采样"><a href="#吉布斯采样" class="headerlink" title="吉布斯采样"></a>吉布斯采样</h3><p>输入： 目标概率分布的密度函数$p(x)$, 函数$f(x)$;</p>
-<p>输出： $p(x)$的随机样本 $x<em>{m+1}, x</em>{m+2}, …, x<em>{n}$，函数样本均值 $f</em>{mn}$;</p>
+<p>输出： $p(x)$的随机样本 $x_{m+1}, x_{m+2}, …, x_{n}$，函数样本均值 $f_{mn}$;</p>
 <p>参数： 收敛步数$m$, 迭代步数 $n$.</p>
 <ol>
-<li><p>初始化。给出初始样本 $x^{0} = $($x^{0}<em>{1}, x^{0}</em>{2},…, x^{0}_{k}$)$^{T}$.</p>
+<li><p>初始化。给出初始样本 $x^{0} = $($x^{0}_{1}, x^{0}_{2},…, x^{0}_{k}$)$^{T}$.</p>
 </li>
-<li><p>对$i$循环执行<br>设第$i-1$次迭代结束前的样本为$x^{i-1} = $($x^{i-1}<em>{1}, x^{i-1}</em>{2},…, x^{i-1}_{k}$)$^{T}$，则第$i$次迭代进行如下几步操作：  </p>
+<li><p>对$i$循环执行<br>设第$i-1$次迭代结束前的样本为$x^{i-1} = $($x^{i-1}_{1}, x^{i-1}_{2},…, x^{i-1}_{k}$)$^{T}$，则第$i$次迭代进行如下几步操作：  </p>
 <ul>
-<li><p>(1)由满条件分布 $p(x<em>{1}|x^{i-1}</em>{2},…,x^{i-1}<em>{k})$ 抽取 $x^{i}</em>{1}$  </p>
+<li><p>(1)由满条件分布 $p(x_{1}|x^{i-1}_{2},…,x^{i-1}_{k})$ 抽取 $x^{i}_{1}$  </p>
 </li>
 <li><p>…</p>
 </li>
-<li><p>(j)由满条件分布 $p(x<em>{j}|x^{i}</em>{1},…,x^{i}<em>{j-1}, x^{i-1}</em>{j+1},…, x^{i-1}<em>{k})$ 抽取 $x^{i}</em>{j}$   </p>
+<li><p>(j)由满条件分布 $p(x_{j}|x^{i}_{1},…,x^{i}_{j-1}, x^{i-1}_{j+1},…, x^{i-1}_{k})$ 抽取 $x^{i}_{j}$   </p>
 </li>
-<li><p>(k)由满条件分布 $p(x<em>{k}|x^{i}</em>{1},…,x^{i}<em>{k})$ 抽取 $x^{i}</em>{k}$ </p>
+<li><p>(k)由满条件分布 $p(x_{k}|x^{i}_{1},…,x^{i}_{k})$ 抽取 $x^{i}_{k}$ </p>
 </li>
 </ul>
 </li>
 </ol>
-<p>得到第 $i$ 次迭代值 $x^{(i)} = (x^{(i)}<em>{1}, x^{(i)}</em>{2},…, x^{(i)}_{k})^{T}$.</p>
+<p>得到第 $i$ 次迭代值 $x^{(i)} = (x^{(i)}_{1}, x^{(i)}_{2},…, x^{(i)}_{k})^{T}$.</p>
 <ol>
 <li><p>得到样本集合</p>
 <p>{$x^{(m+1)}, x^{(m+2)},…, x^{(n)}$}</p>
 </li>
 <li><p>计算</p>
-<p>$f<em>{mn} = \frac{1}{n-m}\sum</em>{i=m+1}^{n}f(x^{(i)})$</p>
+<p>$f_{mn} = \frac{1}{n-m}\sum_{i=m+1}^{n}f(x^{(i)})$</p>
 </li>
 </ol>
 <hr>
@@ -544,10 +544,10 @@
 <p>假设目标平稳分布是一个均值3，标准差2的正态分布，而选择的马尔可夫链状态转移矩阵 $Q(i,j)$ 的条件转移概率是以 $i$ 为均值,方差1的正态分布在位置 $j$ 的值。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy.stats <span class="keyword">import</span> norm</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">norm_dist_prob</span>(<span class="params">theta</span>):</span></span><br><span class="line">    y = norm.pdf(theta, loc=<span class="number">3</span>, scale=<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">return</span> y</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">T = <span class="number">5000</span></span><br><span class="line">pi = [<span class="number">0</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(T)]</span><br><span class="line">sigma = <span class="number">1</span></span><br><span class="line">t = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> t &lt; T - <span class="number">1</span>:</span><br><span class="line">    t = t + <span class="number">1</span></span><br><span class="line">    pi_star = norm.rvs(loc=pi[t - <span class="number">1</span>], scale=sigma, size=<span class="number">1</span>,</span><br><span class="line">                       random_state=<span class="literal">None</span>)  <span class="comment">#状态转移进行随机抽样</span></span><br><span class="line">    alpha = <span class="built_in">min</span>(</span><br><span class="line">        <span class="number">1</span>, (norm_dist_prob(pi_star[<span class="number">0</span>]) / norm_dist_prob(pi[t - <span class="number">1</span>])))  <span class="comment">#alpha值</span></span><br><span class="line"></span><br><span class="line">    u = random.uniform(<span class="number">0</span>, <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">if</span> u &lt; alpha:</span><br><span class="line">        pi[t] = pi_star[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        pi[t] = pi[t - <span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">plt.scatter(pi, norm.pdf(pi, loc=<span class="number">3</span>, scale=<span class="number">2</span>), label=<span class="string">&#x27;Target Distribution&#x27;</span>)</span><br><span class="line">num_bins = <span class="number">50</span></span><br><span class="line">plt.hist(pi,</span><br><span class="line">         num_bins,</span><br><span class="line">         density=<span class="number">1</span>,</span><br><span class="line">         facecolor=<span class="string">&#x27;red&#x27;</span>,</span><br><span class="line">         alpha=<span class="number">0.7</span>,</span><br><span class="line">         label=<span class="string">&#x27;Samples Distribution&#x27;</span>)</span><br><span class="line">plt.legend()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 <p><img src="/cn/19.MCMC/output_14_0.png" alt="png"></p>
-<h4 id="二维Gibbs采样实例python实现"><a href="#二维Gibbs采样实例python实现" class="headerlink" title="二维Gibbs采样实例python实现"></a>二维Gibbs采样实例python实现</h4><p>假设我们要采样的是一个二维正态分布 $N(\mu, \Sigma)$ ，其中： $\mu=(\mu<em>{1}, \mu</em>{2})= (5, -1)$ , $\Sigma = \begin{pmatrix}<br>\sigma^{2}<em>{1} &amp;   \rho \sigma</em>{1}\sigma<em>{2}b\rho \sigma</em>{2}&amp;<br>\sigma^{2}_{2}\end{pmatrix} = \begin{pmatrix}<br> 1&amp; 1b1 &amp;<br>4\end{pmatrix}$;</p>
+<h4 id="二维Gibbs采样实例python实现"><a href="#二维Gibbs采样实例python实现" class="headerlink" title="二维Gibbs采样实例python实现"></a>二维Gibbs采样实例python实现</h4><p>假设我们要采样的是一个二维正态分布 $N(\mu, \Sigma)$ ，其中： $\mu=(\mu_{1}, \mu_{2})= (5, -1)$ , $\Sigma = \begin{pmatrix}<br>\sigma^{2}_{1} &amp;   \rho \sigma_{1}\sigma_{2}b\rho \sigma_{2}&amp;<br>\sigma^{2}_{2}\end{pmatrix} = \begin{pmatrix}<br> 1&amp; 1b1 &amp;<br>4\end{pmatrix}$;</p>
 <p>而采样过程中的需要的状态转移条件分布为：</p>
-<p>$P(x<em>{1}|x</em>{2}) = N(\mu<em>{1}+ \rho \sigma</em>{1}/\sigma<em>{2}(x</em>{2} - \mu<em>{2}), (1 - \rho^{2})\sigma^{2}</em>{1})$</p>
-<p>$P(x<em>{2}|x</em>{1}) = N(\mu<em>{2}+ \rho \sigma</em>{2}/\sigma<em>{1}(x</em>{1} - \mu<em>{1}), (1 - \rho^{2})\sigma^{2}</em>{2})$</p>
+<p>$P(x_{1}|x_{2}) = N(\mu_{1}+ \rho \sigma_{1}/\sigma_{2}(x_{2} - \mu_{2}), (1 - \rho^{2})\sigma^{2}_{1})$</p>
+<p>$P(x_{2}|x_{1}) = N(\mu_{2}+ \rho \sigma_{2}/\sigma_{1}(x_{1} - \mu_{1}), (1 - \rho^{2})\sigma^{2}_{2})$</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> mpl_toolkits.mplot3d <span class="keyword">import</span> Axes3D</span><br><span class="line"><span class="keyword">from</span> scipy.stats <span class="keyword">import</span> multivariate_normal</span><br><span class="line"></span><br><span class="line">samplesource = multivariate_normal(mean=[<span class="number">5</span>,-<span class="number">1</span>], cov=[[<span class="number">1</span>,<span class="number">0.5</span>],[<span class="number">0.5</span>,<span class="number">2</span>]])</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">p_ygivenx</span>(<span class="params">x, m1, m2, s1, s2</span>):</span></span><br><span class="line">    <span class="keyword">return</span> (random.normalvariate(m2 + rho * s2 / s1 * (x - m1), math.sqrt(<span class="number">1</span> - rho ** <span class="number">2</span>) * s2))</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">p_xgiveny</span>(<span class="params">y, m1, m2, s1, s2</span>):</span></span><br><span class="line">    <span class="keyword">return</span> (random.normalvariate(m1 + rho * s1 / s2 * (y - m2), math.sqrt(<span class="number">1</span> - rho ** <span class="number">2</span>) * s1))</span><br><span class="line"></span><br><span class="line">N = <span class="number">5000</span></span><br><span class="line">K = <span class="number">20</span></span><br><span class="line">x_res = []</span><br><span class="line">y_res = []</span><br><span class="line">z_res = []</span><br><span class="line">m1 = <span class="number">5</span></span><br><span class="line">m2 = -<span class="number">1</span></span><br><span class="line">s1 = <span class="number">1</span></span><br><span class="line">s2 = <span class="number">2</span></span><br><span class="line"></span><br><span class="line">rho = <span class="number">0.5</span></span><br><span class="line">y = m2</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(N):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(K):</span><br><span class="line">        x = p_xgiveny(y, m1, m2, s1, s2)   <span class="comment">#y给定得到x的采样</span></span><br><span class="line">        y = p_ygivenx(x, m1, m2, s1, s2)   <span class="comment">#x给定得到y的采样</span></span><br><span class="line">        z = samplesource.pdf([x,y])</span><br><span class="line">        x_res.append(x)</span><br><span class="line">        y_res.append(y)</span><br><span class="line">        z_res.append(z)</span><br><span class="line"></span><br><span class="line">num_bins = <span class="number">50</span></span><br><span class="line">plt.hist(x_res, num_bins,density=<span class="number">1</span>, facecolor=<span class="string">&#x27;green&#x27;</span>, alpha=<span class="number">0.5</span>,label=<span class="string">&#x27;x&#x27;</span>)</span><br><span class="line">plt.hist(y_res, num_bins, density=<span class="number">1</span>, facecolor=<span class="string">&#x27;red&#x27;</span>, alpha=<span class="number">0.5</span>,label=<span class="string">&#x27;y&#x27;</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;Histogram&#x27;</span>)</span><br><span class="line">plt.legend()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 <p><img src="/cn/19.MCMC/output_16_0.png" alt="png"></p>
 
@@ -1293,6 +1293,6 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
