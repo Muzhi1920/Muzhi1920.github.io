@@ -118,7 +118,7 @@
   <link rel="canonical" href="https://11010101.xyz/cn/01_EDA_advance/">
   <title>
     
-      01_Advanced-EDA - Shawn Blog
+      01_EDA_advance - Shawn Blog
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -223,9 +223,9 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/about/">
               
-              归档
+              关于我
               
               
             </a>
@@ -234,9 +234,9 @@
           
           
           <li>
-            <a href="/about/">
+            <a href="/archive/">
               
-              关于我
+              归档
               
               
             </a>
@@ -368,11 +368,11 @@
               <a class="tag" href="/tags/#EDA" title="EDA">EDA</a>
               
             </div>
-            <h1>01_Advanced-EDA</h1>
-            <h2 class="subheading">Advanced_EDA</h2>
+            <h1>01_EDA_advance</h1>
+            <h2 class="subheading">Advance EDA</h2>
             <span class="meta">
               Posted by 小于 on
-              2022-05-14
+              2022-05-15
             </span>
 
 
@@ -380,11 +380,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">26</span> Minutes
+              Estimated Reading Time <span class="post-count">23</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">4.9k</span> In Total
+              Words <span class="post-count">4.7k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -447,15 +447,15 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <h1 id="Advanced-EDA"><a href="#Advanced-EDA" class="headerlink" title="Advanced-EDA"></a>Advanced-EDA</h1><p>翻译自：<a target="_blank" rel="noopener" href="https://medium.com/epfl-extension-school/advanced-exploratory-data-analysis-eda-with-python-536fa83c578a">https://medium.com/epfl-extension-school/advanced-exploratory-data-analysis-eda-with-python-536fa83c578a</a></p>
-<h2 id="0-快速有效获取格式化数据集"><a href="#0-快速有效获取格式化数据集" class="headerlink" title="0. 快速有效获取格式化数据集"></a>0. 快速有效获取格式化数据集</h2><p>一个较好的EDA方式会帮助你方便的处理、理解数据的联系，但是这种相对较好的数据集并不容易获取。实际的所有数据分析过程中，全面理解数据是获得好的数据分析报告的关键，更多的需要花费时间放在合理的EDA方式上。</p>
-<h2 id="一、-研究数据结构、质量和内容"><a href="#一、-研究数据结构、质量和内容" class="headerlink" title="一、 研究数据结构、质量和内容"></a>一、 研究数据结构、质量和内容</h2><p>整体来看，EDA过程存在反复性，通常某个步骤是在每次分析中都会用到，这是很正常的，也方便我们提炼出pipeline的优势。</p>
+<p>快速有效获取格式化数据集<br>一个较好的EDA方式会帮助你方便的处理、理解数据的联系，但是这种相对较好的数据集并不容易获取。实际的所有数据分析过程中，全面理解数据是获得好的数据分析报告的关键，更多的需要花费时间放在合理的EDA方式上。</p>
+<p>整体来看，EDA过程存在反复性，通常某个步骤是在每次分析中都会用到，这是很正常的，也方便我们提炼出pipeline的优势。</p>
 <ol>
 <li><strong>数据结构</strong>：数据维度、特种类型</li>
 <li><strong>数据质量</strong>：重复、缺失或无关实例</li>
 <li><strong>数据内容</strong>：更深的去研究和对比不同数据特征之间的关系，试图发现新的东西！</li>
 </ol>
 <p>更优雅的获取数据集得方式： <a target="_blank" rel="noopener" href="https://www.openml.org/d/42803">road safety dataset</a> from <a target="_blank" rel="noopener" href="https://www.openml.org/search?type=data">OpenML</a>.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> fetch_openml</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 按照data id获取数据，并转换为dataframe格式</span></span><br><span class="line">dataset = fetch_openml(data_id=<span class="number">42803</span>, as_frame=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 先只check特征frame</span></span><br><span class="line">df_X = dataset[<span class="string">&quot;frame&quot;</span>]</span><br><span class="line">df_X.sample(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="1-check数据结构"><a href="#1-check数据结构" class="headerlink" title="1.check数据结构"></a>1.check数据结构</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> fetch_openml</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 按照data id获取数据，并转换为dataframe格式</span></span><br><span class="line">dataset = fetch_openml(data_id=<span class="number">42803</span>, as_frame=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 先只check特征frame</span></span><br><span class="line">df_X = dataset[<span class="string">&quot;frame&quot;</span>]</span><br><span class="line">df_X.sample(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
   <div id="df-78e80976-d520-40d7-b583-4359236cc2d5">
     <div class="colab-df-container">
       <div>
@@ -700,13 +700,14 @@
 
 
 
-<h3 id="1-check数据结构"><a href="#1-check数据结构" class="headerlink" title="1.check数据结构"></a>1.check数据结构</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 处理数据前，先整体窥探一下数据结构，主要聚焦于columns，维度等。</span></span><br><span class="line">df_X.shape</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 处理数据前，先整体窥探一下数据结构，主要聚焦于columns，维度等。</span></span><br><span class="line">df_X.shape</span><br></pre></td></tr></table></figure>
 <pre><code>(363243, 67)
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 各feature column的数据类型呈现</span></span><br><span class="line">pd.value_counts(df_X.dtypes)</span><br></pre></td></tr></table></figure>
 <pre><code>float64    61
 object      6
 dtype: int64
-</code></pre><h4 id="1-1-非数值型数据"><a href="#1-1-非数值型数据" class="headerlink" title="1.1. 非数值型数据"></a>1.1. 非数值型数据</h4><p>更加聚焦于非数值型特征，因为他们占据更多的特征预处理的复杂成本</p>
+</code></pre><h3 id="1-1-非数值型数据"><a href="#1-1-非数值型数据" class="headerlink" title="1.1. 非数值型数据"></a>1.1. 非数值型数据</h3><p>更加聚焦于非数值型特征，因为他们占据更多的特征预处理的复杂成本</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df_X.select_dtypes(exclude=<span class="string">&quot;number&quot;</span>).head()</span><br></pre></td></tr></table></figure>
   <div id="df-33c685aa-b10a-4163-ad6a-6bdb836cb689">
     <div class="colab-df-container">
@@ -1004,25 +1005,25 @@ dtype: int64
 
 
 
-<h4 id="1-2-数值型数据"><a href="#1-2-数值型数据" class="headerlink" title="1.2. 数值型数据"></a>1.2. 数值型数据</h4><p>对于数值型数据，统计去重值的分布。这在二值类型、多值类型（离散），和连续值类型（稠密）上具有不同的意义。</p>
+<h3 id="1-2-数值型数据"><a href="#1-2-数值型数据" class="headerlink" title="1.2. 数值型数据"></a>1.2. 数值型数据</h3><p>对于数值型数据，统计去重值的分布。这在二值类型、多值类型（离散），和连续值类型（稠密）上具有不同的意义。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 所有数值型的feature column，统计特征值数，且排序，越连续值越高。</span></span><br><span class="line">unique_values = df_X.select_dtypes(include=<span class="string">&quot;number&quot;</span>).nunique().sort_values()</span><br><span class="line">unique_values.plot.bar(logy=<span class="literal">True</span>, figsize=(<span class="number">15</span>, <span class="number">4</span>), title=<span class="string">&quot;Unique values per feature&quot;</span>);</span><br></pre></td></tr></table></figure>
-<p><img src="/cn/01_EDA_advance/01_EDA_advance_14_0.png" alt="png"></p>
-<h4 id="1-3-数据类型-结论"><a href="#1-3-数据类型-结论" class="headerlink" title="1.3. 数据类型-结论"></a>1.3. 数据类型-结论</h4><p>基于简单的数据类型的研究，可以对数据集得到基本的认识。包含什么数据类型？不同特征有多少可选值？特征值是离散还是稠密？ <code>df_X.info()</code> or <code>df_X.describe()</code>。</p>
-<h3 id="2-check数据质量"><a href="#2-check数据质量" class="headerlink" title="2.check数据质量"></a>2.check数据质量</h3><p>分析数据质量，对数据的缺失、重复、噪音等样本有个全局认识。</p>
-<h4 id="2-1-重复检测"><a href="#2-1-重复检测" class="headerlink" title="2.1. 重复检测"></a>2.1. 重复检测</h4><p>分析样本重复记录的情况。但是选择<strong>忽略</strong>哪种feature很重要，比如像index，sample_id等“主键”，这样的字段无意义。<strong>更应该聚焦于实际重要的核心feature</strong>。</p>
+<p><img src="/cn/01_EDA_advance/01_EDA_advance_12_0.png" alt="png"></p>
+<h3 id="1-3-数据类型-结论"><a href="#1-3-数据类型-结论" class="headerlink" title="1.3. 数据类型-结论"></a>1.3. 数据类型-结论</h3><p>基于简单的数据类型的研究，可以对数据集得到基本的认识。包含什么数据类型？不同特征有多少可选值？特征值是离散还是稠密？ <code>df_X.info()</code> or <code>df_X.describe()</code>。</p>
+<h2 id="2-check数据质量"><a href="#2-check数据质量" class="headerlink" title="2.check数据质量"></a>2.check数据质量</h2><p>分析数据质量，对数据的缺失、重复、噪音等样本有个全局认识。</p>
+<h3 id="2-1-重复检测"><a href="#2-1-重复检测" class="headerlink" title="2.1. 重复检测"></a>2.1. 重复检测</h3><p>分析样本重复记录的情况。但是选择<strong>忽略</strong>哪种feature很重要，比如像index，sample_id等“主键”，这样的字段无意义。<strong>更应该聚焦于实际重要的核心feature</strong>。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ignoring the index feature</span></span><br><span class="line">n_duplicates = df_X.drop(labels=[<span class="string">&quot;Accident_Index&quot;</span>], axis=<span class="number">1</span>).duplicated().<span class="built_in">sum</span>()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;You seem to have <span class="subst">&#123;n_duplicates&#125;</span> duplicates in your database.&quot;</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>You seem to have 22 duplicates in your database.
 </code></pre><p>丢掉<code>.drop_duplicates()</code>.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#  Extract column names of all features, except &#x27;Accident_Index&#x27;</span></span><br><span class="line">columns_to_consider = df_X.drop(labels=[<span class="string">&quot;Accident_Index&quot;</span>], axis=<span class="number">1</span>).columns</span><br><span class="line"></span><br><span class="line"><span class="comment"># Drop duplicates based on &#x27;columns_to_consider&#x27;</span></span><br><span class="line">df_X = df_X.drop_duplicates(subset=columns_to_consider)</span><br><span class="line">df_X.shape</span><br></pre></td></tr></table></figure>
 <pre><code>(363221, 67)
-</code></pre><h4 id="2-2-缺失值检测"><a href="#2-2-缺失值检测" class="headerlink" title="2.2 缺失值检测"></a>2.2 缺失值检测</h4><p>重心放在真正有效的数据上。</p>
-<h5 id="2-2-1-样本维度"><a href="#2-2-1-样本维度" class="headerlink" title="2.2.1 样本维度"></a>2.2.1 样本维度</h5><p>样本-特征图，查看miss hole</p>
+</code></pre><h3 id="2-2-缺失值检测"><a href="#2-2-缺失值检测" class="headerlink" title="2.2 缺失值检测"></a>2.2 缺失值检测</h3><p>重心放在真正有效的数据上。</p>
+<h4 id="2-2-1-样本维度"><a href="#2-2-1-样本维度" class="headerlink" title="2.2.1 样本维度"></a>2.2.1 样本维度</h4><p>样本-特征图，查看miss hole</p>
 <p><code>df_X.isna()</code></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">8</span>))</span><br><span class="line">plt.imshow(df_X.isna(), aspect=<span class="string">&quot;auto&quot;</span>, interpolation=<span class="string">&quot;nearest&quot;</span>, cmap=<span class="string">&quot;gray&quot;</span>)</span><br><span class="line">plt.xlabel(<span class="string">&quot;Column Number&quot;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&quot;Sample Number&quot;</span>);</span><br></pre></td></tr></table></figure>
-<p><img src="/cn/01_EDA_advance/01_EDA_advance_23_0.png" alt="png"></p>
+<p><img src="/cn/01_EDA_advance/01_EDA_advance_21_0.png" alt="png"></p>
 <p>y轴为样本id，x轴为特征num，白色为样本对应的feature为缺失。另miss check库：<a target="_blank" rel="noopener" href="https://github.com/ResidentMario/missingno">missingno</a></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> missingno <span class="keyword">as</span> msno</span><br><span class="line">msno.matrix(df_X, labels=<span class="literal">True</span>, sort=<span class="string">&quot;descending&quot;</span>);</span><br></pre></td></tr></table></figure>
-<p><img src="/cn/01_EDA_advance/01_EDA_advance_25_0.png" alt="png"></p>
+<p><img src="/cn/01_EDA_advance/01_EDA_advance_23_0.png" alt="png"></p>
 <ul>
 <li>几乎一半以上的sample均有缺失hole</li>
 <li>or 替换填充？</li>
@@ -1031,17 +1032,17 @@ dtype: int64
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># thresh阈值是，对每行样本，保留data completness 80%以上的样本。</span></span><br><span class="line">df_X = df_X.dropna(thresh=df_X.shape[<span class="number">1</span>] * <span class="number">0.80</span>, axis=<span class="number">0</span>).reset_index(drop=<span class="literal">True</span>)</span><br><span class="line">df_X.shape</span><br></pre></td></tr></table></figure>
 <pre><code>(319790, 60)
 </code></pre><p>与上图相比，这里的图示按照data completeness进行样本排序。</p>
-<h5 id="2-2-2-特征维度"><a href="#2-2-2-特征维度" class="headerlink" title="2.2.2 特征维度"></a>2.2.2 特征维度</h5><p>从特征维度，查看缺失值分布。能看到基本同上图分布<code>2nd_Road_Class</code>特征的缺失比最大。</p>
+<h4 id="2-2-2-特征维度"><a href="#2-2-2-特征维度" class="headerlink" title="2.2.2 特征维度"></a>2.2.2 特征维度</h4><p>从特征维度，查看缺失值分布。能看到基本同上图分布<code>2nd_Road_Class</code>特征的缺失比最大。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">df_X.isna().mean().sort_values().plot(</span><br><span class="line">    kind=<span class="string">&quot;bar&quot;</span>, figsize=(<span class="number">15</span>, <span class="number">4</span>),</span><br><span class="line">    title=<span class="string">&quot;Percentage of missing values per feature&quot;</span>,</span><br><span class="line">    ylabel=<span class="string">&quot;Ratio of missing values per feature&quot;</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fd3d0cefbd0&gt;
-</code></pre><p><img src="/cn/01_EDA_advance/01_EDA_advance_30_1.png" alt="png"></p>
+</code></pre><p><img src="/cn/01_EDA_advance/01_EDA_advance_28_1.png" alt="png"></p>
 <p><code>2nd_Road_Class</code>, <code>Junction_Control</code>, <code>Age_of_Vehicle</code> 缺失值占比最高，后面按照 15% 比例进行缺失丢弃。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df_X = df_X.dropna(thresh=df_X.shape[<span class="number">0</span>] * <span class="number">0.85</span>, axis=<span class="number">1</span>) <span class="comment">#保留85%，同上保留80%</span></span><br><span class="line">df_X.shape</span><br></pre></td></tr></table></figure>
 <pre><code>(319790, 60)
 </code></pre><p>对于缺失值的处理：特征维度  &gt;  样本维度。以上只是缺失值的X、Y向的过滤，还不包括填充。</p>
-<h4 id="2-3-样本误差、和噪音"><a href="#2-3-样本误差、和噪音" class="headerlink" title="2.3. 样本误差、和噪音"></a>2.3. 样本误差、和噪音</h4><p>区分正常样本（不该存在）和异常点（影响特征分布）。或者说特征的重要性等等方面。</p>
+<h3 id="2-3-样本误差、和噪音"><a href="#2-3-样本误差、和噪音" class="headerlink" title="2.3. 样本误差、和噪音"></a>2.3. 样本误差、和噪音</h3><p>区分正常样本（不该存在）和异常点（影响特征分布）。或者说特征的重要性等等方面。</p>
 <p>下面以全局数据的角度，宏观甄别出不寻常的样本或特征。</p>
-<h3 id="2-3-1-Numerical-features"><a href="#2-3-1-Numerical-features" class="headerlink" title="2.3.1. Numerical features"></a>2.3.1. Numerical features</h3><p><code>.plot()</code></p>
+<h4 id="2-3-1-Numerical-features"><a href="#2-3-1-Numerical-features" class="headerlink" title="2.3.1. Numerical features"></a>2.3.1. Numerical features</h4><p><code>.plot()</code></p>
 <ul>
 <li><code>lw=0</code>: <code>lw</code> stands for line width. <code>0</code> means that we don’t want to show any lines</li>
 <li><code>marker=&quot;.&quot;</code>: Instead of lines, we tell the plot to use <code>.</code> as markers for each data point</li>
@@ -1050,13 +1051,13 @@ dtype: int64
 <li><code>figsize=(15, 30), markersize=1</code>: To make sure that the figure is big enough we recommend to have a figure height of roughly the number of features, and to adjust the <code>markersize</code> accordingly.</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df_X.plot(lw=<span class="number">0</span>, marker=<span class="string">&quot;.&quot;</span>, subplots=<span class="literal">True</span>, layout=(-<span class="number">1</span>, <span class="number">4</span>),</span><br><span class="line">          figsize=(<span class="number">15</span>, <span class="number">30</span>), markersize=<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
-<p><img src="/cn/01_EDA_advance/01_EDA_advance_36_0.png" alt="png"></p>
+<p><img src="/cn/01_EDA_advance/01_EDA_advance_34_0.png" alt="png"></p>
 <ul>
 <li>每个图，代表一个特征的分布；</li>
 <li>每个图中的每个点，代表该特征下，该样本的取值；能发现，有二值分布，有多值分布，也有稠密的区间连续值（如Y轴所示）；</li>
 </ul>
 <p>以上，为后续的数据清洗，和EDA过程。</p>
-<h5 id="2-3-2-非数值型特征"><a href="#2-3-2-非数值型特征" class="headerlink" title="2.3.2 非数值型特征"></a>2.3.2 非数值型特征</h5><p>基于非数值特征区分噪音和错误样本比较棘手，一般来说仅能查看各稀疏特征的频次和分布。</p>
+<h4 id="2-3-2-非数值型特征"><a href="#2-3-2-非数值型特征" class="headerlink" title="2.3.2 非数值型特征"></a>2.3.2 非数值型特征</h4><p>基于非数值特征区分噪音和错误样本比较棘手，一般来说仅能查看各稀疏特征的频次和分布。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 按照特征的数值类型，展开统计</span></span><br><span class="line">df_X.describe(exclude=[<span class="string">&quot;number&quot;</span>, <span class="string">&quot;datetime&quot;</span>])</span><br></pre></td></tr></table></figure>
   <div id="df-2002ea5c-c16f-42ec-8776-b45e1a9f8292">
     <div class="colab-df-container">
@@ -1199,7 +1200,7 @@ dtype: int64
 
 <p>这种类别稀疏特征，最好是分析每个特征值出现的频次，或者有序分析，反而能更直观的得到些结论。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Create figure object with 3 subplots</span></span><br><span class="line">fig, axes = plt.subplots(ncols=<span class="number">1</span>, nrows=<span class="number">3</span>, figsize=(<span class="number">12</span>, <span class="number">8</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Identify non-numerical features</span></span><br><span class="line">df_non_numerical = df_X.select_dtypes(exclude=[<span class="string">&quot;number&quot;</span>, <span class="string">&quot;datetime&quot;</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># Loop and plot</span></span><br><span class="line"><span class="keyword">for</span> col, ax <span class="keyword">in</span> <span class="built_in">zip</span>(df_non_numerical.columns, axes.ravel()):</span><br><span class="line">    <span class="comment"># per unique value, feature value, counts</span></span><br><span class="line">    df_non_numerical[col].value_counts().plot(</span><br><span class="line">        logy=<span class="literal">True</span>, title=col, lw=<span class="number">0</span>, marker=<span class="string">&quot;.&quot;</span>, ax=ax)</span><br><span class="line">plt.tight_layout();</span><br></pre></td></tr></table></figure>
-<p><img src="/cn/01_EDA_advance/01_EDA_advance_41_0.png" alt="png"></p>
+<p><img src="/cn/01_EDA_advance/01_EDA_advance_39_0.png" alt="png"></p>
 <ul>
 <li>图1. 100多人陷入该事故；</li>
 <li>图2. 在2015.2.14事故频发；</li>
@@ -1207,13 +1208,13 @@ dtype: int64
 <p>删除10条最频繁的事故。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 得到top10频繁的事故index</span></span><br><span class="line">accident_ids = df_non_numerical[<span class="string">&quot;Accident_Index&quot;</span>].value_counts().head(<span class="number">10</span>).index</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除该类型事故</span></span><br><span class="line">df_X = df_X[~df_X[<span class="string">&quot;Accident_Index&quot;</span>].isin(accident_ids)]</span><br><span class="line">df_X.shape</span><br></pre></td></tr></table></figure>
 <pre><code>(317665, 60)
-</code></pre><h2 id="2-4-数据质量研究结论"><a href="#2-4-数据质量研究结论" class="headerlink" title="2.4. 数据质量研究结论"></a>2.4. 数据质量研究结论</h2><p>通过第二部分，应该更好的理解数据的总体质量，包括从样本重复、缺失值和异常样本三个角度。</p>
-<h1 id="3-数据内容分析"><a href="#3-数据内容分析" class="headerlink" title="3.数据内容分析"></a>3.数据内容分析</h1><p>分析数据内容，依次按照特征分析是高效的，但是特征数一上来便很笨重。</p>
+</code></pre><h3 id="2-4-数据质量研究结论"><a href="#2-4-数据质量研究结论" class="headerlink" title="2.4. 数据质量研究结论"></a>2.4. 数据质量研究结论</h3><p>通过第二部分，应该更好的理解数据的总体质量，包括从样本重复、缺失值和异常样本三个角度。</p>
+<h2 id="3-数据内容分析"><a href="#3-数据内容分析" class="headerlink" title="3.数据内容分析"></a>3.数据内容分析</h2><p>分析数据内容，依次按照特征分析是高效的，但是特征数一上来便很笨重。</p>
 <p>三种分析数据的方式来研究数据的实际内容，以便快速的了解每个特征包含的内容以及他们的相关性。</p>
-<h2 id="3-1特征分布"><a href="#3-1特征分布" class="headerlink" title="3.1特征分布"></a>3.1特征分布</h2><p>观察特征分布，帮助你更好的理解数据内容。 此外更能辅助你的EDA过程，对于数据清洗和特征转换提供一些有用的信息。</p>
+<h3 id="3-1特征分布"><a href="#3-1特征分布" class="headerlink" title="3.1特征分布"></a>3.1特征分布</h3><p>观察特征分布，帮助你更好的理解数据内容。 此外更能辅助你的EDA过程，对于数据清洗和特征转换提供一些有用的信息。</p>
 <p>多值数值类型<code>.plot</code></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Plots the histogram for each numerical feature in a separate subplot</span></span><br><span class="line">df_X.hist(bins=<span class="number">25</span>, figsize=(<span class="number">15</span>, <span class="number">25</span>), layout=(-<span class="number">1</span>, <span class="number">5</span>), edgecolor=<span class="string">&quot;black&quot;</span>)</span><br><span class="line">plt.tight_layout();</span><br></pre></td></tr></table></figure>
-<p><img src="/cn/01_EDA_advance/01_EDA_advance_47_0.png" alt="png"></p>
+<p><img src="/cn/01_EDA_advance/01_EDA_advance_45_0.png" alt="png"></p>
 <p>特征值频次和分布。</p>
 <p>像<code>Towing_and_Articulation</code> or <code>Was_Vehicle_Left_Hand_Drive?</code>只是单类特征（特征重要性低）。 进一步的，从特征维度选择出样本中最高频的特征值。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 高频特征值</span></span><br><span class="line"><span class="comment"># Collects for each feature the most frequent entry</span></span><br><span class="line">most_frequent_entry = df_X.mode()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Checks for each entry if it contains the most frequent entry</span></span><br><span class="line">df_freq = df_X.eq(most_frequent_entry.values, axis=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Computes the mean of the &#x27;is_most_frequent&#x27; occurrence</span></span><br><span class="line">df_freq = df_freq.mean().sort_values(ascending=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Show the 5 top features with the highest ratio of singular value content</span></span><br><span class="line">display(df_freq.head())</span><br><span class="line"></span><br><span class="line"><span class="comment"># Visualize the &#x27;df_freq&#x27; table</span></span><br><span class="line">df_freq.plot.bar(figsize=(<span class="number">15</span>, <span class="number">4</span>));</span><br></pre></td></tr></table></figure>
@@ -1223,47 +1224,50 @@ Carriageway_Hazards                  0.983646
 Towing_and_Articulation              0.983221
 Vehicle_Location-Restricted_Lane     0.982088
 dtype: float64
-</code></pre><p><img src="/cn/01_EDA_advance/01_EDA_advance_49_1.png" alt="png"></p>
+</code></pre><p><img src="/cn/01_EDA_advance/01_EDA_advance_47_1.png" alt="png"></p>
 <p>数据偏态分布（left、right）</p>
 <p>确定数值特征是非高斯分布.数值变换为正态分布，平滑数据<code>log</code></p>
-<h2 id="3-2-特征模式（or-how-should-i-say-）"><a href="#3-2-特征模式（or-how-should-i-say-）" class="headerlink" title="3.2. 特征模式（or how should i say?）"></a>3.2. 特征模式（or how should i say?）</h2><ol>
+<h3 id="3-2-特征模式（or-how-should-i-say-）"><a href="#3-2-特征模式（or-how-should-i-say-）" class="headerlink" title="3.2. 特征模式（or how should i say?）"></a>3.2. 特征模式（or how should i say?）</h3><ol>
 <li>是否可以根据某个特征确定某种范式辅助删除一些数据？</li>
 <li>是否能区分特征间某种特定的关系，以更好的理解数据？</li>
 </ol>
 <p>解决两问题前，先随机选取几个特征看一下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">df_X[[<span class="string">&quot;Location_Northing_OSGR&quot;</span>, <span class="string">&quot;1st_Road_Number&quot;</span>,</span><br><span class="line">      <span class="string">&quot;Journey_Purpose_of_Driver&quot;</span>, <span class="string">&quot;Pedestrian_Crossing-Physical_Facilities&quot;</span>]].plot(</span><br><span class="line">    lw=<span class="number">0</span>, marker=<span class="string">&quot;.&quot;</span>, subplots=<span class="literal">True</span>, layout=(-<span class="number">1</span>, <span class="number">2</span>), markersize=<span class="number">0.1</span>, figsize=(<span class="number">15</span>, <span class="number">6</span>));</span><br></pre></td></tr></table></figure>
-<p><img src="/cn/01_EDA_advance/01_EDA_advance_52_0.png" alt="png"></p>
+<p><img src="/cn/01_EDA_advance/01_EDA_advance_50_0.png" alt="png"></p>
 <p>虽然有很多特定的模式来探索特征, 但是可以通过少于25个特征值得特征来缩减选择。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 超过25特征值的特征定为连续列</span></span><br><span class="line">cols_continuous = df_X.select_dtypes(include=<span class="string">&quot;number&quot;</span>).nunique() &gt;= <span class="number">25</span></span><br></pre></td></tr></table></figure>
-<h3 id="3-2-1-连续特征"><a href="#3-2-1-连续特征" class="headerlink" title="3.2.1. 连续特征"></a>3.2.1. 连续特征</h3><p>如上定义连续特征，可视化如下：</p>
+<h4 id="3-2-1-连续特征"><a href="#3-2-1-连续特征" class="headerlink" title="3.2.1. 连续特征"></a>3.2.1. 连续特征</h4><p>如上定义连续特征，可视化如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 连续特征列</span></span><br><span class="line">df_continuous = df_X[cols_continuous[cols_continuous].index]</span><br><span class="line">df_continuous.shape</span><br></pre></td></tr></table></figure>
 <pre><code>(317665, 11)
 </code></pre><p>直接<code>pairplot</code>，或<code>df_continuous.iloc[:, :5]</code>，视特征而定</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line">sns.pairplot(df_continuous, height=<span class="number">1.5</span>, plot_kws=&#123;<span class="string">&quot;s&quot;</span>: <span class="number">2</span>, <span class="string">&quot;alpha&quot;</span>: <span class="number">0.2</span>&#125;);</span><br></pre></td></tr></table></figure>
-<p><img src="/cn/01_EDA_advance/01_EDA_advance_58_0.png" alt="png"></p>
+<p><img src="/cn/01_EDA_advance/01_EDA_advance_56_0.png" alt="png"></p>
 <p><code>Location_Easting_OSGR</code> and <code>Longitude</code>，<code>Location_Easting_OSGR</code> and <code>Latitude</code>强线性关系</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sns.pairplot(</span><br><span class="line">    df_X, plot_kws=&#123;<span class="string">&quot;s&quot;</span>: <span class="number">3</span>, <span class="string">&quot;alpha&quot;</span>: <span class="number">0.2</span>&#125;, hue=<span class="string">&quot;Police_Force&quot;</span>, palette=<span class="string">&quot;Spectral&quot;</span>,</span><br><span class="line">    x_vars=[<span class="string">&quot;Location_Easting_OSGR&quot;</span>, <span class="string">&quot;Location_Northing_OSGR&quot;</span>, <span class="string">&quot;Longitude&quot;</span>],</span><br><span class="line">    y_vars=<span class="string">&quot;Latitude&quot;</span>);</span><br></pre></td></tr></table></figure>
-<p><img src="/cn/01_EDA_advance/01_EDA_advance_60_0.png" alt="png"></p>
-<h3 id="3-2-2-离散顺序特征"><a href="#3-2-2-离散顺序特征" class="headerlink" title="3.2.2.离散顺序特征"></a>3.2.2.离散顺序特征</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Create a new dataframe which doesn&#x27;t contain the numerical continuous features</span></span><br><span class="line">df_discrete = df_X[cols_continuous[~cols_continuous].index]</span><br><span class="line">df_discrete.shape</span><br></pre></td></tr></table></figure>
+<p><img src="/cn/01_EDA_advance/01_EDA_advance_58_0.png" alt="png"></p>
+<h4 id="3-2-2-离散顺序特征"><a href="#3-2-2-离散顺序特征" class="headerlink" title="3.2.2.离散顺序特征"></a>3.2.2.离散顺序特征</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Create a new dataframe which doesn&#x27;t contain the numerical continuous features</span></span><br><span class="line">df_discrete = df_X[cols_continuous[~cols_continuous].index]</span><br><span class="line">df_discrete.shape</span><br></pre></td></tr></table></figure>
 <pre><code>(317665, 44)
-</code></pre><p>As always, there are multiple way for how we could investigate all of these features. Let’s try one example, using seaborn’s <code>stripplot()</code> together with a handy <code>zip()</code> for-loop for subplots.</p>
-<p><strong>Note</strong>, to spread the values out in the direction of the y-axis we need to chose one particular (hopefully informative) feature. While the ‘right’ feature can help to identify some interesting patterns, usually any continuous feature should do the trick. The main interest in this kind of plot is to see how many samples each discrete value contains.</p>
+</code></pre><p>有很多方式来分析这些特征之间的关系，每一个离散值包含多少样本。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># Establish number of columns and rows needed to plot all features</span></span><br><span class="line">n_cols = <span class="number">5</span></span><br><span class="line">n_elements = <span class="built_in">len</span>(df_discrete.columns)</span><br><span class="line">n_rows = np.ceil(n_elements / n_cols).astype(<span class="string">&quot;int&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Specify y_value to spread data (ideally a continuous feature)</span></span><br><span class="line">y_value = df_X[<span class="string">&quot;Age_of_Driver&quot;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create figure object with as many rows and columns as needed</span></span><br><span class="line">fig, axes = plt.subplots(ncols=n_cols, nrows=n_rows, figsize=(<span class="number">15</span>, n_rows * <span class="number">2.5</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Loop through features and put each subplot on a matplotlib axis object</span></span><br><span class="line"><span class="keyword">for</span> col, ax <span class="keyword">in</span> <span class="built_in">zip</span>(df_discrete.columns, axes.ravel()):</span><br><span class="line">    sns.stripplot(data=df_X, x=col, y=y_value, ax=ax, palette=<span class="string">&quot;tab10&quot;</span>, size=<span class="number">1</span>, alpha=<span class="number">0.5</span>)</span><br><span class="line">plt.tight_layout();</span><br></pre></td></tr></table></figure>
-<p><img src="/cn/01_EDA_advance/01_EDA_advance_64_0.png" alt="png"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-<p>There are too many things to comment here, so let’s just focus on a few. In particular, let’s focus on 6 features where the values appear in some particular pattern or where some categories seem to be much less frequent than others. And to shake things up a bit, let’s now use the <code>Longitude</code> feature to stretch the values over the y-axis.</p>
+<p><img src="/cn/01_EDA_advance/01_EDA_advance_62_0.png" alt="png"></p>
+<p>聚焦特定值和低频类别，进一步的使用 <code>Longitude</code>延展。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Specify features of interest</span></span><br><span class="line">selected_features = [<span class="string">&quot;Vehicle_Reference_df_res&quot;</span>, <span class="string">&quot;Towing_and_Articulation&quot;</span>,</span><br><span class="line">                     <span class="string">&quot;Skidding_and_Overturning&quot;</span>, <span class="string">&quot;Bus_or_Coach_Passenger&quot;</span>,</span><br><span class="line">                     <span class="string">&quot;Pedestrian_Road_Maintenance_Worker&quot;</span>, <span class="string">&quot;Age_Band_of_Driver&quot;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create a figure with 3 x 2 subplots</span></span><br><span class="line">fig, axes = plt.subplots(ncols=<span class="number">3</span>, nrows=<span class="number">2</span>, figsize=(<span class="number">16</span>, <span class="number">8</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Loop through these features and plot entries from each feature against `Latitude`</span></span><br><span class="line"><span class="keyword">for</span> col, ax <span class="keyword">in</span> <span class="built_in">zip</span>(selected_features, axes.ravel()):</span><br><span class="line">    sns.stripplot(data=df_X, x=col, y=df_X[<span class="string">&quot;Latitude&quot;</span>], ax=ax,</span><br><span class="line">                  palette=<span class="string">&quot;tab10&quot;</span>, size=<span class="number">2</span>, alpha=<span class="number">0.5</span>)</span><br><span class="line">plt.tight_layout();</span><br></pre></td></tr></table></figure>
-<p><img src="/cn/01_EDA_advance/01_EDA_advance_67_0.png" alt="png"></p>
-<p>These kind of plots are already very informative, but they obscure regions where there are a lot of data points at once. For example, there seems to be a high density of points in some of the plots at the 52nd latitude. So let’s take a closer look with an appropriate plot, such as <code>violineplot</code> ( or <code>boxenplot</code> or <code>boxplot</code> for that matter). And to go a step further, let’s also separate each visualization by <code>Urban_or_Rural_Area</code>.</p>
+<p><img src="/cn/01_EDA_advance/01_EDA_advance_64_0.png" alt="png"></p>
+<p>52nd latitude更为稠密，进一步使用 <code>violineplot</code> ( or <code>boxenplot</code> or <code>boxplot</code>)，和<code>Urban_or_Rural_Area</code>，可视化特征值分布。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Create a figure with 3 x 2 subplots</span></span><br><span class="line">fig, axes = plt.subplots(ncols=<span class="number">3</span>, nrows=<span class="number">2</span>, figsize=(<span class="number">16</span>, <span class="number">8</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Loop through these features and plot entries from each feature against `Latitude`</span></span><br><span class="line"><span class="keyword">for</span> col, ax <span class="keyword">in</span> <span class="built_in">zip</span>(selected_features, axes.ravel()):</span><br><span class="line">    sns.violinplot(data=df_X, x=col, y=df_X[<span class="string">&quot;Latitude&quot;</span>], palette=<span class="string">&quot;Set2&quot;</span>,</span><br><span class="line">                   split=<span class="literal">True</span>, hue=<span class="string">&quot;Urban_or_Rural_Area&quot;</span>, ax=ax)</span><br><span class="line">plt.tight_layout();</span><br></pre></td></tr></table></figure>
-<p><img src="/cn/01_EDA_advance/01_EDA_advance_69_0.png" alt="png"></p>
-<p>Interesting! We can see that some values on features are more frequent in urban, than in rural areas (and vice versa). Furthermore, as suspected, there seems to be a high density peak at latitude 51.5. This is very likely due to the more densely populated region around London (at 51.5074°).</p>
-<h2 id="3-3-Feature-relationships"><a href="#3-3-Feature-relationships" class="headerlink" title="3.3. Feature relationships"></a>3.3. Feature relationships</h2><p>Last, but not least, let’s take a look at relationships between features. More precisely how they correlate. The quickest way to do so is via pandas’ <code>.corr()</code> function. So let’s go ahead and compute the feature to feature correlation matrix for all numerical features.</p>
+<p><img src="/cn/01_EDA_advance/01_EDA_advance_66_0.png" alt="png"></p>
+<p>能得到结论，郊区频发；latitude 51.5高峰，像是London (at 51.5074°)所在位置。</p>
+<h3 id="3-3-特征关系"><a href="#3-3-特征关系" class="headerlink" title="3.3. 特征关系"></a>3.3. 特征关系</h3><p>更为精准的刻画特征间的关系。使用pandas’ <code>.corr()</code> 计算数值特征的线性相关关系。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Computes feature correlation</span></span><br><span class="line">df_corr = df_X.corr(method=<span class="string">&quot;pearson&quot;</span>)</span><br></pre></td></tr></table></figure>
-<p><strong>Note</strong>: Depending on the dataset and the kind of features (e.g. ordinal or continuous features) you might want to use the <code>spearman</code> method instead of the <code>pearson</code> method to compute the correlation. Whereas the <strong>Pearson</strong> correlation evaluates the linear relationship between two continuous variables, the <strong>Spearman</strong> correlation evaluates the monotonic relationship based on the ranked values for each feature. And to help with the interpretation of this correlation matrix, let’s use seaborn’s <code>.heatmap()</code> to visualize it.</p>
+<p><code>spearman</code> method &gt; <code>pearson</code> method：</p>
+<ul>
+<li><strong>Pearson</strong> 两连续变量的线性相关预估；</li>
+<li><strong>Spearman</strong> 对每个特征线性相关预估单调关系。</li>
+</ul>
+<p>用 <code>.heatmap()</code>可视化线性相关矩阵。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Create labels for the correlation matrix</span></span><br><span class="line">labels = np.where(np.<span class="built_in">abs</span>(df_corr)&gt;<span class="number">0.75</span>, <span class="string">&quot;S&quot;</span>,</span><br><span class="line">                  np.where(np.<span class="built_in">abs</span>(df_corr)&gt;<span class="number">0.5</span>, <span class="string">&quot;M&quot;</span>,</span><br><span class="line">                           np.where(np.<span class="built_in">abs</span>(df_corr)&gt;<span class="number">0.25</span>, <span class="string">&quot;W&quot;</span>, <span class="string">&quot;&quot;</span>)))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Plot correlation matrix</span></span><br><span class="line">plt.figure(figsize=(<span class="number">15</span>, <span class="number">15</span>))</span><br><span class="line">sns.heatmap(df_corr, mask=np.eye(<span class="built_in">len</span>(df_corr)), square=<span class="literal">True</span>,</span><br><span class="line">            center=<span class="number">0</span>, annot=labels, fmt=<span class="string">&#x27;&#x27;</span>, linewidths=<span class="number">.5</span>,</span><br><span class="line">            cmap=<span class="string">&quot;vlag&quot;</span>, cbar_kws=&#123;<span class="string">&quot;shrink&quot;</span>: <span class="number">0.8</span>&#125;);</span><br></pre></td></tr></table></figure>
-<p><img src="/cn/01_EDA_advance/01_EDA_advance_74_0.png" alt="png"></p>
-<p>This looks already very interesting. We can see a few very strong correlations between some of the features. Now, if you’re interested actually ordering all of these different correlations, you could do something like this:</p>
+<p><img src="/cn/01_EDA_advance/01_EDA_advance_71_0.png" alt="png"></p>
+<p>能发现几个强线性相关的特征。按如下排序它们间的相关关系：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#  Creates a mask to remove the diagonal and the upper triangle.</span></span><br><span class="line">lower_triangle_mask = np.tril(np.ones(df_corr.shape), k=-<span class="number">1</span>).astype(<span class="string">&quot;bool&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#  Stack all correlations, after applying the mask</span></span><br><span class="line">df_corr_stacked = df_corr.where(lower_triangle_mask).stack().sort_values()</span><br><span class="line"></span><br><span class="line"><span class="comment">#  Showing the lowest and highest correlations in the correlation matrix</span></span><br><span class="line">display(df_corr_stacked)</span><br></pre></td></tr></table></figure>
 <pre><code>Local_Authority_(District)  Longitude                -0.509343
                             Location_Easting_OSGR    -0.502919
@@ -1277,11 +1281,17 @@ Local_Authority_(District)  Police_Force              0.984819
 Longitude                   Location_Easting_OSGR     0.999363
 Latitude                    Location_Northing_OSGR    0.999974
 Length: 1485, dtype: float64
-</code></pre><p>As you can see, the investigation of feature correlations can be very informative. But looking at everything at once can sometimes be more confusing than helpful. So focusing only on one feature with something like <code>df_X.corrwith(df_X[&quot;Speed_limit&quot;])</code> might be a better approach.</p>
-<p>Furthermore, correlations can be deceptive if a feature still contains a lot of missing values or extreme outliers. Therefore, it is always important to first make sure that your feature matrix is properly prepared before investigating these correlations.</p>
-<h2 id="3-4-Conclusion-of-content-investigation"><a href="#3-4-Conclusion-of-content-investigation" class="headerlink" title="3.4. Conclusion of content investigation"></a>3.4. Conclusion of content investigation</h2><p>At the end of this third investigation, we should have a better understanding of the content in our dataset. We looked at value distribution, feature patterns and feature correlations. However, these are certainly not all possible content investigation and data cleaning steps you could do. Additional steps would for example be outlier detection and removal, feature engineering and transformation, and more.</p>
-<h1 id="Take-home-message"><a href="#Take-home-message" class="headerlink" title="Take home message"></a>Take home message</h1><p>A proper and detailed EDA takes time! It is a very iterative process that often makes you go back to the start, after you addressed another flaw in the dataset. This is normal! It’s the reason why we often say that 80% of any data science project is data preparation and EDA.</p>
-<p>But keep also in mind that an in-depth EDA can consume a lot of time. And just because something seems interesting doesn’t mean that you need to follow up on it. Always remind yourself what the dataset will be used for and tailor your investigations to support that goal. And sometimes it is also ok, to just do a quick-and-dirty data preparation and exploration. So that you can move on to the data modeling part rather quickly, and to establish a few preliminary baseline models perform some informative results investigation.</p>
+</code></pre><p>特征相关性分析可以暴露很多信息，整体来看会比较令人困惑。因此需要结合数据情况，聚焦关键特征的关系，比如<code>df_X.corrwith(df_X[&quot;Speed_limit&quot;])</code> 。</p>
+<p>前提是数据去掉了大量缺失值和异常点，特征矩阵做好了数据的准备。</p>
+<h3 id="3-4-内容分析结论"><a href="#3-4-内容分析结论" class="headerlink" title="3.4. 内容分析结论"></a>3.4. 内容分析结论</h3><p>基于此，相信已经对内容分析有了较好的理解：</p>
+<ul>
+<li>value distribution</li>
+<li>feature patterns</li>
+<li>feature correlations.<br>并非全部可能的内容分析和数据处理的步骤，比如异常点检测与清理，特征工程与转换等等。</li>
+</ul>
+<h2 id="4-Take-home-message"><a href="#4-Take-home-message" class="headerlink" title="4. Take home message"></a>4. Take home message</h2><p>一个合理的并且细致化的EDA总是花费较长时间，而且总会因为数据的问题，让你重新开始，这是一个反复的分析过程。很正常，这就是为什么在科学项目中80%的精力放在了数据准备和EDA阶段。</p>
+<p>部分原因是，看起来有趣的事情，并不意味着真的有用。因此需要反复提醒自己，到底用这份数据是来干什么的，然后去定制分析过程，实现这一目标。</p>
+<p>如果只做quick-and-dirty的数据准备和挖掘，也还好. 因为你可以更多的聚焦于数据建模部分，构建初步的baseline 模型和基本有用的表现。</p>
 
 
         <hr>
@@ -1339,7 +1349,7 @@ Length: 1485, dtype: float64
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=01_Advanced-EDA&body=Hi,I found this website and thought you might like it https://11010101.xyz/cn/01_EDA_advance/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=01_EDA_advance&body=Hi,I found this website and thought you might like it https://11010101.xyz/cn/01_EDA_advance/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -1374,7 +1384,7 @@ Length: 1485, dtype: float64
       repo: 'Muzhi1920.github.io',
       owner: 'Muzhi1920',
       admin: 'Muzhi1920',
-      id: 'Sat May 14 2022 12:21:55 GMT+0000 | truncate: 50', // Ensure uniqueness and length less than 50
+      id: 'Sun May 15 2022 13:21:55 GMT+0000 | truncate: 50', // Ensure uniqueness and length less than 50
       distractionFreeMode: false, // Facebook-like distraction free mode
       perPage: 10,
       pagerDirection: 'last',
@@ -1427,7 +1437,7 @@ Length: 1485, dtype: float64
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Advanced-EDA"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Advanced-EDA</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#0-%E5%BF%AB%E9%80%9F%E6%9C%89%E6%95%88%E8%8E%B7%E5%8F%96%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">0. 快速有效获取格式化数据集</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%80%E3%80%81-%E7%A0%94%E7%A9%B6%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E8%B4%A8%E9%87%8F%E5%92%8C%E5%86%85%E5%AE%B9"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">一、 研究数据结构、质量和内容</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-check%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">1.check数据结构</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-1-%E9%9D%9E%E6%95%B0%E5%80%BC%E5%9E%8B%E6%95%B0%E6%8D%AE"><span class="toc-nav-number">1.2.1.1.</span> <span class="toc-nav-text">1.1. 非数值型数据</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-2-%E6%95%B0%E5%80%BC%E5%9E%8B%E6%95%B0%E6%8D%AE"><span class="toc-nav-number">1.2.1.2.</span> <span class="toc-nav-text">1.2. 数值型数据</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-3-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-%E7%BB%93%E8%AE%BA"><span class="toc-nav-number">1.2.1.3.</span> <span class="toc-nav-text">1.3. 数据类型-结论</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-check%E6%95%B0%E6%8D%AE%E8%B4%A8%E9%87%8F"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">2.check数据质量</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-1-%E9%87%8D%E5%A4%8D%E6%A3%80%E6%B5%8B"><span class="toc-nav-number">1.2.2.1.</span> <span class="toc-nav-text">2.1. 重复检测</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-2-%E7%BC%BA%E5%A4%B1%E5%80%BC%E6%A3%80%E6%B5%8B"><span class="toc-nav-number">1.2.2.2.</span> <span class="toc-nav-text">2.2 缺失值检测</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#2-2-1-%E6%A0%B7%E6%9C%AC%E7%BB%B4%E5%BA%A6"><span class="toc-nav-number">1.2.2.2.1.</span> <span class="toc-nav-text">2.2.1 样本维度</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#2-2-2-%E7%89%B9%E5%BE%81%E7%BB%B4%E5%BA%A6"><span class="toc-nav-number">1.2.2.2.2.</span> <span class="toc-nav-text">2.2.2 特征维度</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-3-%E6%A0%B7%E6%9C%AC%E8%AF%AF%E5%B7%AE%E3%80%81%E5%92%8C%E5%99%AA%E9%9F%B3"><span class="toc-nav-number">1.2.2.3.</span> <span class="toc-nav-text">2.3. 样本误差、和噪音</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-3-1-Numerical-features"><span class="toc-nav-number">1.2.3.</span> <span class="toc-nav-text">2.3.1. Numerical features</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#2-3-2-%E9%9D%9E%E6%95%B0%E5%80%BC%E5%9E%8B%E7%89%B9%E5%BE%81"><span class="toc-nav-number">1.2.3.0.1.</span> <span class="toc-nav-text">2.3.2 非数值型特征</span></a></li></ol></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-4-%E6%95%B0%E6%8D%AE%E8%B4%A8%E9%87%8F%E7%A0%94%E7%A9%B6%E7%BB%93%E8%AE%BA"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">2.4. 数据质量研究结论</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#3-%E6%95%B0%E6%8D%AE%E5%86%85%E5%AE%B9%E5%88%86%E6%9E%90"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">3.数据内容分析</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-1%E7%89%B9%E5%BE%81%E5%88%86%E5%B8%83"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">3.1特征分布</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-2-%E7%89%B9%E5%BE%81%E6%A8%A1%E5%BC%8F%EF%BC%88or-how-should-i-say-%EF%BC%89"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">3.2. 特征模式（or how should i say?）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-2-1-%E8%BF%9E%E7%BB%AD%E7%89%B9%E5%BE%81"><span class="toc-nav-number">2.2.1.</span> <span class="toc-nav-text">3.2.1. 连续特征</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-2-2-%E7%A6%BB%E6%95%A3%E9%A1%BA%E5%BA%8F%E7%89%B9%E5%BE%81"><span class="toc-nav-number">2.2.2.</span> <span class="toc-nav-text">3.2.2.离散顺序特征</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-3-Feature-relationships"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">3.3. Feature relationships</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-4-Conclusion-of-content-investigation"><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">3.4. Conclusion of content investigation</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Take-home-message"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Take home message</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Advanced-EDA"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Advanced-EDA</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-check%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">1.check数据结构</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-1-%E9%9D%9E%E6%95%B0%E5%80%BC%E5%9E%8B%E6%95%B0%E6%8D%AE"><span class="toc-nav-number">1.1.1.</span> <span class="toc-nav-text">1.1. 非数值型数据</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-2-%E6%95%B0%E5%80%BC%E5%9E%8B%E6%95%B0%E6%8D%AE"><span class="toc-nav-number">1.1.2.</span> <span class="toc-nav-text">1.2. 数值型数据</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-3-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-%E7%BB%93%E8%AE%BA"><span class="toc-nav-number">1.1.3.</span> <span class="toc-nav-text">1.3. 数据类型-结论</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-check%E6%95%B0%E6%8D%AE%E8%B4%A8%E9%87%8F"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">2.check数据质量</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-1-%E9%87%8D%E5%A4%8D%E6%A3%80%E6%B5%8B"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">2.1. 重复检测</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-2-%E7%BC%BA%E5%A4%B1%E5%80%BC%E6%A3%80%E6%B5%8B"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">2.2 缺失值检测</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-2-1-%E6%A0%B7%E6%9C%AC%E7%BB%B4%E5%BA%A6"><span class="toc-nav-number">1.2.2.1.</span> <span class="toc-nav-text">2.2.1 样本维度</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-2-2-%E7%89%B9%E5%BE%81%E7%BB%B4%E5%BA%A6"><span class="toc-nav-number">1.2.2.2.</span> <span class="toc-nav-text">2.2.2 特征维度</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-3-%E6%A0%B7%E6%9C%AC%E8%AF%AF%E5%B7%AE%E3%80%81%E5%92%8C%E5%99%AA%E9%9F%B3"><span class="toc-nav-number">1.2.3.</span> <span class="toc-nav-text">2.3. 样本误差、和噪音</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-3-1-Numerical-features"><span class="toc-nav-number">1.2.3.1.</span> <span class="toc-nav-text">2.3.1. Numerical features</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-3-2-%E9%9D%9E%E6%95%B0%E5%80%BC%E5%9E%8B%E7%89%B9%E5%BE%81"><span class="toc-nav-number">1.2.3.2.</span> <span class="toc-nav-text">2.3.2 非数值型特征</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-4-%E6%95%B0%E6%8D%AE%E8%B4%A8%E9%87%8F%E7%A0%94%E7%A9%B6%E7%BB%93%E8%AE%BA"><span class="toc-nav-number">1.2.4.</span> <span class="toc-nav-text">2.4. 数据质量研究结论</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-%E6%95%B0%E6%8D%AE%E5%86%85%E5%AE%B9%E5%88%86%E6%9E%90"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">3.数据内容分析</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-1%E7%89%B9%E5%BE%81%E5%88%86%E5%B8%83"><span class="toc-nav-number">1.3.1.</span> <span class="toc-nav-text">3.1特征分布</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-2-%E7%89%B9%E5%BE%81%E6%A8%A1%E5%BC%8F%EF%BC%88or-how-should-i-say-%EF%BC%89"><span class="toc-nav-number">1.3.2.</span> <span class="toc-nav-text">3.2. 特征模式（or how should i say?）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#3-2-1-%E8%BF%9E%E7%BB%AD%E7%89%B9%E5%BE%81"><span class="toc-nav-number">1.3.2.1.</span> <span class="toc-nav-text">3.2.1. 连续特征</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#3-2-2-%E7%A6%BB%E6%95%A3%E9%A1%BA%E5%BA%8F%E7%89%B9%E5%BE%81"><span class="toc-nav-number">1.3.2.2.</span> <span class="toc-nav-text">3.2.2.离散顺序特征</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-3-%E7%89%B9%E5%BE%81%E5%85%B3%E7%B3%BB"><span class="toc-nav-number">1.3.3.</span> <span class="toc-nav-text">3.3. 特征关系</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-4-%E5%86%85%E5%AE%B9%E5%88%86%E6%9E%90%E7%BB%93%E8%AE%BA"><span class="toc-nav-number">1.3.4.</span> <span class="toc-nav-text">3.4. 内容分析结论</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#4-Take-home-message"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">4. Take home message</span></a></li></ol></li></ol>
         
         </div>
       </aside>

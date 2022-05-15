@@ -4,7 +4,7 @@
   <url>
     <loc>https://11010101.xyz/cn/01_EDA_advance/</loc>
     
-    <lastmod>2022-05-14</lastmod>
+    <lastmod>2022-05-15</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -668,13 +668,6 @@
   </url>
   
   <url>
-    <loc>https://11010101.xyz/tags/linux/</loc>
-    <lastmod>2022-05-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://11010101.xyz/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E8%B0%83%E4%BC%98/</loc>
     <lastmod>2022-05-15</lastmod>
     <changefreq>weekly</changefreq>
@@ -703,6 +696,13 @@
   </url>
   
   <url>
+    <loc>https://11010101.xyz/tags/linux/</loc>
+    <lastmod>2022-05-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://11010101.xyz/tags/sql/</loc>
     <lastmod>2022-05-15</lastmod>
     <changefreq>weekly</changefreq>
@@ -724,14 +724,14 @@
   </url>
   
   <url>
-    <loc>https://11010101.xyz/tags/Estimator/</loc>
+    <loc>https://11010101.xyz/tags/NLP/</loc>
     <lastmod>2022-05-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://11010101.xyz/tags/NLP/</loc>
+    <loc>https://11010101.xyz/tags/Estimator/</loc>
     <lastmod>2022-05-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
