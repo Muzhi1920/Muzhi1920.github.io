@@ -380,11 +380,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">16</span> Minutes
+              Estimated Reading Time <span class="post-count">19</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">2.8k</span> In Total
+              Words <span class="post-count">3.6k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -469,7 +469,30 @@
 <li>Scala 类与对象</li>
 <li>Scala 并发处理</li>
 </ol>
-<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><ol>
+<ul>
+<li>case class：自动生成常用方法(equals&amp;hashCode,toString,copy)；自动生成伴生对象；实现了 apply 方法让你不需要通过 new 来创建类实例</li>
+<li>宽依赖，窄依赖：窄依赖：map和filter，一个父RDD对应一个子RDD；宽依赖：一个父RDD对应非全部的子RDD；</li>
+<li>Transformation与Action：Transformation 操作是延迟计算的，也就是说从一个RDD 转换生成另一个 RDD 的转换操作不是马上执行，需要等到有 Action 操作的时候才会真正触发运算（map, filter）；Action是count之类的算子出发计算；</li>
+<li>存在shuffle的spark算子：distinct、groupByKey，reduceByKey、repartition，coalesce、interection，join；</li>
+<li>collect: Spark的collect方法，是Action类型的一个算子，收集一个弹性分布式数据集的所有元素到一个数组中。从远程集群拉取数据到driver端将大量数据汇集到一个driver节点上，将数据用数组存放，占用jvm堆内存容易造成内存溢出，只用作小型数据收集。</li>
+<li>persist:读取数据转为多个RDD时暂存；提高效率，没必要重复多次读取</li>
+</ul>
+<h3 id="Shuffle的操作"><a href="#Shuffle的操作" class="headerlink" title="Shuffle的操作"></a>Shuffle的操作</h3><p>由于 Shuffle 操作对性能的影响比较大，所以需要特别注意使用，以下操作都会导致 Shuffle：</p>
+<ul>
+<li>涉及到重新分区操作： 如 repartition 和 coalesce；</li>
+<li>所有涉及到 ByKey 的操作：如 groupByKey 和 reduceByKey，但 countByKey 除外；</li>
+<li>联结操作：如 cogroup 和 join。</li>
+</ul>
+<h3 id="广播变量"><a href="#广播变量" class="headerlink" title="广播变量"></a>广播变量</h3><p>每个Task任务的闭包都会持有自由变量的副本，如果变量很大且 Task 任务很多的情况下，这必然会对网络 IO 造成压力，为了解决这个情况，Spark 提供了广播变量。<strong>广播变量后不把副本变量分发到每个 Task 中，而是将其分发到每个 Executor，Executor 中的所有 Task 共享一个副本变量。</strong></p>
+<h3 id="RDD"><a href="#RDD" class="headerlink" title="RDD"></a>RDD</h3><ul>
+<li><strong>全局变量应用在rdd中运算为副本运算，变量并不改变；rdd中定义变量可改变。</strong></li>
+<li>一个RDD由多个分区（Partitions）组成。<strong>对于RDD的每个分区会被一个计算任务所处理，用户可以在创建 RDD 时指定其分区个数，如果没有指定，则默认采用程序所分配到的 CPU 的核心数；</strong> RDD的每次转换都会生成一个新的依赖关系，如果分区数据丢失后，可以通过依赖关系重新计算对RDD的所有分区进行重新计算；</li>
+<li>Key-Value 型的 RDD 还拥有 Partitioner(分区器)，用于决定数据被存储在哪个分区中，目前 Spark 中支持 HashPartitioner(按照哈希分区) 和 RangeParationer(按照范围进行分区)；</li>
+<li>Spark进行任务调度会尽可能的将计算任务分配到其所要处理数据块的存储位置。</li>
+<li>RDD 支持两种类型的操作：transformations（转换，从现有数据集创建新数据集）和 actions（在数据集上运行计算后将值返回到驱动程序）。</li>
+<li>RDD 中的所有转换操作都是惰性的，它们只是记住这些转换操作，但不会立即执行，只有遇到 action 操作后才会真正的进行计算，这类似于函数式编程中的惰性求值</li>
+</ul>
+<h2 id="Scala-Programming"><a href="#Scala-Programming" class="headerlink" title="Scala Programming"></a>Scala Programming</h2><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><ol>
 <li><p><strong>Scala 数据类型:</strong> Int , Char, Float, Double, Long, Short, Boolean</p>
 </li>
 <li><p><strong>Scala 集合:</strong> Arrays , Vectors</p>
@@ -799,7 +822,7 @@ c = 41
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Episode-01-03-%E5%9F%BA%E4%BA%8EScala-amp-Spark%E7%9A%84%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%92%8C%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">(Episode 01&#x2F;03)基于Scala&amp;Spark的数据科学和机器学习</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%8E%AF%E5%A2%83%E6%9E%84%E5%BB%BA"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">环境构建</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Introduction-to-Scala"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">Introduction to Scala</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">数据类型</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Scala-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-nav-number">1.2.1.1.</span> <span class="toc-nav-text">Scala 数据类型</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Scala-%E9%9B%86%E5%90%88"><span class="toc-nav-number">1.2.1.2.</span> <span class="toc-nav-text">Scala 集合</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Scala-maps"><span class="toc-nav-number">1.2.1.3.</span> <span class="toc-nav-text">Scala maps</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Scala-%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">Scala 表达式</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Scala-%E5%87%BD%E6%95%B0"><span class="toc-nav-number">1.2.3.</span> <span class="toc-nav-text">Scala 函数</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Scala-%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1"><span class="toc-nav-number">1.2.4.</span> <span class="toc-nav-text">Scala 类与对象</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Scala-%E5%B9%B6%E5%8F%91%E5%A4%84%E7%90%86"><span class="toc-nav-number">1.2.5.</span> <span class="toc-nav-text">Scala 并发处理</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Episode-01-03-%E5%9F%BA%E4%BA%8EScala-amp-Spark%E7%9A%84%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%92%8C%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">(Episode 01&#x2F;03)基于Scala&amp;Spark的数据科学和机器学习</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%8E%AF%E5%A2%83%E6%9E%84%E5%BB%BA"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">环境构建</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Introduction-to-Scala"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">Introduction to Scala</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Shuffle%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">Shuffle的操作</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%B9%BF%E6%92%AD%E5%8F%98%E9%87%8F"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">广播变量</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#RDD"><span class="toc-nav-number">1.2.3.</span> <span class="toc-nav-text">RDD</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Scala-Programming"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">Scala Programming</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-nav-number">1.3.1.</span> <span class="toc-nav-text">数据类型</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Scala-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-nav-number">1.3.1.1.</span> <span class="toc-nav-text">Scala 数据类型</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Scala-%E9%9B%86%E5%90%88"><span class="toc-nav-number">1.3.1.2.</span> <span class="toc-nav-text">Scala 集合</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Scala-maps"><span class="toc-nav-number">1.3.1.3.</span> <span class="toc-nav-text">Scala maps</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Scala-%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-nav-number">1.3.2.</span> <span class="toc-nav-text">Scala 表达式</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Scala-%E5%87%BD%E6%95%B0"><span class="toc-nav-number">1.3.3.</span> <span class="toc-nav-text">Scala 函数</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Scala-%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1"><span class="toc-nav-number">1.3.4.</span> <span class="toc-nav-text">Scala 类与对象</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Scala-%E5%B9%B6%E5%8F%91%E5%A4%84%E7%90%86"><span class="toc-nav-number">1.3.5.</span> <span class="toc-nav-text">Scala 并发处理</span></a></li></ol></li></ol></li></ol>
         
         </div>
       </aside>

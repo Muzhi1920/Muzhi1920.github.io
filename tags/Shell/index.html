@@ -115,10 +115,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://11010101.xyz/cn/bigdata-03-linux/">
+  <link rel="canonical" href="https://11010101.xyz/tags/Shell/">
   <title>
     
-      BigData-Linux - Shawn Blog
+      Shawn Blog
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -276,7 +276,29 @@
           <!-- LangSelect -->
           
           
-          
+          <!-- LangSelect start -->
+          <!-- LangSelect -->
+<li>
+  <a id="lang-select-label"><i class="fa fa-globe"></i>
+    <span>
+      简体中文
+    </span>
+    <select id="lang-select" data-canonical="tags/Shell/index.html">
+      
+      
+      <option value="cn"  selected >
+        简体中文
+      </option>
+      
+      <option value="en" >
+        English
+      </option>
+      
+    </select>
+  </a>
+</li>
+
+          <!-- LangSelect end -->
           
           
         </ul>
@@ -338,9 +360,9 @@
     }
 
     header.intro-header {
-       /*post*/
-        background-image: var(--intro-header-background-image-url-post);
-        /* background-image: url(''); */
+       /*page*/
+        background-image: var(--intro-header-background-image-url-page);
+        /* background-image: url('/img/header_img/archive_bg.jpg'); */
       
     }
 
@@ -362,42 +384,10 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="post-heading">
-            <div class="tags">
-              
-              <a class="tag" href="/tags/#Linux" title="Linux">Linux</a>
-              
-            </div>
-            <h1>BigData-Linux</h1>
-            <h2 class="subheading">Linux</h2>
-            <span class="meta">
-              Posted by 小于 on
-              2019-10-25
-            </span>
-
-
-            
-            <!-- WordCount start -->
-            <div class="blank_box"></div>
-            <span class="meta">
-              Estimated Reading Time <span class="post-count">14</span> Minutes
-            </span>
-            <div class="blank_box"></div>
-            <span class="meta">
-              Words <span class="post-count">3.5k</span> In Total
-            </span>
-            <div class="blank_box"></div>
-            <!-- WordCount end -->
-            
-            
-            <!-- 不蒜子统计 start -->
-            <span class="meta" id="busuanzi_container_page_pv">
-              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
-            </span>
-            <!-- 不蒜子统计 end -->
-            
-
-
+          <div class="site-heading">
+            <h1>Shawn Blog</h1>
+            <!--<hr class="small">-->
+            <span class="subheading">会有成为大佬的那一天</span>
           </div>
           
         </div>
@@ -438,501 +428,1116 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Modify by Yu-Hsuan Yen -->
-<!-- Post Content -->
-<article>
-  <div class="container">
-    <div class="row">
-      <!-- Post Container -->
-      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+		<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    
 
-        <h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><p>更多命令参考<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/36093355">Linux常用命令总结</a></p>
-<ul>
-<li>ps：查看当前进程<ol>
-<li>ps -ef (system v 输出)</li>
-<li>ps -aux bsd 格式输出</li>
-<li>ps -ef | grep pid</li>
-</ol>
-</li>
-<li>ln：软连接，快捷方式；硬链接：同步更改。</li>
-<li>chmod abc file a,b,c：分别表示User、Group、及Other的权限。若要rwx属性则4+2+1=7</li>
-<li>vi 文件名编辑 cat file | more | less<ol>
-<li>more 分页</li>
-<li>less 分页可回翻</li>
-<li>tail 尾部</li>
-<li>head 头部</li>
-</ol>
-</li>
-</ul>
-<ul>
-<li>wc 命令 - c 统计字节数 - l 统计行数 - w 统计字数。</li>
-<li>grep [string] filename grep <sup><a href="#fn_string" id="reffn_string">string</a></sup> filename```</li>
-<li>nohup sh **.sh &amp; 后台运行 job -l fg bg</li>
-<li>kill -9 pid</li>
-<li><ol>
-<li>find &lt;指定目录&gt; &lt;指定条件&gt; &lt;指定动作&gt;</li>
-<li>whereis 加参数与文件名</li>
-<li>locate 只加文件名</li>
-</ol>
-</li>
-<li>history ,who am i,</li>
-<li>df -hl 磁盘使用</li>
-<li>hash：记录了已执行过的命令的完整路径, 用该命令可以打印出你所使用过的命令以及执行的次数。</li>
-<li>let 可以进行整型数的数学运算</li>
-</ul>
-<h2 id="一、man-page"><a href="#一、man-page" class="headerlink" title="一、man_page"></a>一、man_page</h2><ol>
-<li>内部命令：echo<br>查看内部命令帮助：help echo 或者 man echo</li>
-<li>外部命令：ls<br>查看外部命令帮助：ls —help 或者 man ls 或者 info ls</li>
-<li>快捷键：<br>ctrl + c：停止进程<br>ctrl + l：清屏<br>ctrl + r：搜索历史命令<br>ctrl + q：退出<br>4.善于用tab键：文件名补全</li>
-</ol>
-<h2 id="二、常用命令"><a href="#二、常用命令" class="headerlink" title="二、常用命令"></a>二、常用命令</h2><ol>
-<li>进入到用户根目录<br>cd ~ 或 cd</li>
-<li>查看当前所在目录<br>pwd</li>
-<li>进入到itcast用户根目录<br>cd ~itcast</li>
-<li>返回到原来目录<br>cd -</li>
-<li>返回到上一级目录<br>cd ..</li>
-<li>查看itcast用户根目录下的所有文件<br>ls -la</li>
-<li>在根目录下创建一个itcast的文件夹<br>mkdir /itcast</li>
-<li>查看/itcast目录下面的所有文件<br>ls -la</li>
-<li>在/itcast目录下面创建一个test.txt文件,同时写入内容”this is test”<br>echo “this is test” &gt; test.txt</li>
-<li>查看一下test.txt的内容<br>cat test.txt<br>more test.txt<br>less test.txt</li>
-<li>向README文件追加写入”please read me first”<br>echo “please read me first” &gt;&gt; README</li>
-<li>将test.txt的内容追加到README文件中<br>cat test.txt &gt;&gt; README</li>
-<li>拷贝/itcast目录下的所有文件到/itcast-bak<br>cp -r /itcast /itcast-bak</li>
-<li>进入到/itcast-bak目录，将test.txt移动到src目录下，并修改文件名为Student.java<br>mv test.txt src/Student.java</li>
-<li>在src目录下创建一个struts.xml<blockquote>
-<p>struts.xml</p>
-</blockquote>
-</li>
-<li>删除所有的xml类型的文件<br>rm -rf *.xml</li>
-<li>删除/itcast-bak目录和下面的所有文件<br>rm -rf /itcast-bak</li>
-<li>返回到/itcast目录，查看一下README文件有多单词，多少个少行<br>wc -w README<br>wc -l README</li>
-<li>返回到根目录，将/itcast目录先打包，再用gzip压缩<br>分步完成：tar -cvf itcast.tar itcast    gzip itcast.tar<br>一步完成：tar -zcvf itcast.tar.gz itcast</li>
-<li>将其解压缩，再取消打包<br>分步完成：gzip -d itcast.tar.gz 或 gunzip itcast.tar.gz<br>一步完成：tar -zxvf itcast.tar.gz<br>将/itcast目录先打包，同时用bzip2压缩，并保存到/tmp目录下<br>tar -jcvf /tmp/itcast.tar.bz2 itcast<br>将/tmp/itcast.tar.bz2解压到/usr目录下面<br>tar -jxvf itcast.tar.bz2 -C /usr/</li>
-</ol>
-<p>三、文件相关命令</p>
-<ol>
-<li>进入到用户根目录<br>cd ~ 或者 cd<br>cd ~hadoop<br>回到原来路径<br>cd -</li>
-<li>查看文件详情<br>stat a.txt</li>
-<li>移动<br>mv a.txt /ect/<br>改名<br>mv b.txt a.txt<br>移动并改名<br>mv a.txt ../b.txt</li>
-<li>拷贝并改名<br>cp a.txt /etc/b.txt</li>
-<li>vi撤销修改<br>ctrl + u (undo)<br>恢复<br>ctrl + r (redo)</li>
-<li>名令设置别名(重启后无效)<br>alias ll=”ls -l”<br>取消<br>unalias ll</li>
-<li>如果想让别名重启后仍然有效需要修改<br>vi ~/.bashrc</li>
-<li>添加用户<br>useradd hadoop<br>passwd hadoop</li>
-<li>创建多个文件<br>touch a.txt b.txt<br>touch /home/{a.txt,b.txt}</li>
-<li>将一个文件的内容复制到里另一个文件中<br>cat a.txt &gt; b.txt<br>追加内容<br>cat a.txt &gt;&gt; b.txt</li>
-<li>将a.txt 与b.txt设为其拥有者和其所属同一个组者可写入，但其他以外的人则不可写入:<br>chmod ug+w,o-w a.txt b.txt<br>chmod a=wx c.txt</li>
-<li>将当前目录下的所有文件与子目录皆设为任何人可读取:<br>chmod -R a+r *</li>
-<li>将a.txt的用户拥有者设为users,组的拥有者设为jessie:<br>chown users:jessie a.txt</li>
-<li>将当前目录下的所有文件与子目录的用户的使用者为lamport,组拥有者皆设为users<br>chown -R lamport:users *</li>
-<li>将所有的java语言程式拷贝至finished子目录中:<br>cp *.java finished</li>
-<li>将目前目录及其子目录下所有扩展名是java的文件列出来。<br>find -name “<em>.java”<br>查找当前目录下扩展名是java 的文件<br>find -name </em>.java</li>
-<li>删除当前目录下扩展名是java的文件<br>rm -f *.java</li>
-</ol>
-<h2 id="四、系统命令"><a href="#四、系统命令" class="headerlink" title="四、系统命令"></a>四、系统命令</h2><ol>
-<li>查看主机名<br>hostname</li>
-<li>修改主机名(重启后无效)<br>hostname hadoop</li>
-<li>修改主机名(重启后永久生效)<br>vi /ect/sysconfig/network</li>
-<li>修改IP(重启后无效)<br>ifconfig eth0 192.168.12.22</li>
-<li>修改IP(重启后永久生效)<br>vi /etc/sysconfig/network-scripts/ifcfg-eth0</li>
-<li>查看系统信息<br>uname -a<br>uname -r</li>
-<li>查看ID命令<br>id -u<br>id -g</li>
-<li>日期<br>date<br>date +%Y-%m-%d<br>date +%T<br>date +%Y-%m-%d” “%T</li>
-<li>日历<br>cal 2012</li>
-<li>查看文件信息<br>file filename</li>
-<li>挂载硬盘<br>mount<br>umount<br>加载windows共享<br>mount -t cifs //192.168.1.100/tools /mnt</li>
-<li>查看文件大小<br>du -h<br>du -ah</li>
-<li>查看分区<br>df -h</li>
-<li>ssh<br>ssh hadoop@192.168.1.1</li>
-<li>关机<br>shutdown -h now /init 0<br>shutdown -r now /reboot</li>
-</ol>
-<h2 id="五、用户和组"><a href="#五、用户和组" class="headerlink" title="五、用户和组"></a>五、用户和组</h2><ol>
-<li><p>添加一个tom用户，设置它属于users组，并添加注释信息<br>分步完成：useradd tom</p>
-<pre><code>   usermod -g users tom
-   usermod -c &quot;hr tom&quot; tom
-</code></pre><p>一步完成：useradd -g users -c “hr tom” tom</p>
-</li>
-<li><p>设置tom用户的密码<br>passwd tom</p>
-</li>
-<li>修改tom用户的登陆名为tomcat<br>usermod -l tomcat tom</li>
-<li>将tomcat添加到sys和root组中<br>usermod -G sys,root tomcat</li>
-<li>查看tomcat的组信息<br>groups tomcat</li>
-<li>添加一个jerry用户并设置密码<br>useradd jerry<br>passwd jerry</li>
-<li>添加一个交america的组<br>groupadd america</li>
-<li>将jerry添加到america组中<br>usermod -g america jerry</li>
-<li>将tomcat用户从root组和sys组删除<br>gpasswd -d tomcat root<br>gpasswd -d tomcat sys</li>
-<li>将america组名修改为am<br>groupmod -n am america</li>
-</ol>
-<h2 id="六、权限"><a href="#六、权限" class="headerlink" title="六、权限"></a>六、权限</h2><p>创建a.txt和b.txt文件，将他们设为其拥有者和所在组可写入，但其他以外的人则不可写入:<br>chmod ug+w,o-w a.txt b.txt</p>
-<p>创建c.txt文件所有人都可以写和执行<br>chmod a=wx c.txt 或chmod 666 c.txt</p>
-<p>将/itcast目录下的所有文件与子目录皆设为任何人可读取<br>chmod -R a+r /itcast</p>
-<p>将/itcast目录下的所有文件与子目录的拥有者设为root，用户拥有组为users<br>chown -R root:users /itcast</p>
-<p>将当前目录下的所有文件与子目录的用户皆设为itcast，组设为users<br>chown -R itcast:users *</p>
-<h2 id="七、文件夹属性"><a href="#七、文件夹属性" class="headerlink" title="七、文件夹属性"></a>七、文件夹属性</h2><ol>
-<li><p>查看文件夹属性<br>ls -ld test</p>
-</li>
-<li><p>文件夹的rwx<br>—x:可以cd进去\<br>r-x:可以cd进去并ls\<br>-wx:可以cd进去并touch，rm自己的文件，并且可以vi其他用户的文件\<br>-wt:可以cd进去并touch，rm自己的文件\<br>ls -ld /tmp\<br>drwxrwxrwt的权限值是1777(sticky)\</p>
-</li>
-</ol>
-<h2 id="八、vim"><a href="#八、vim" class="headerlink" title="八、vim"></a>八、vim</h2><ul>
-<li>i   插入编辑操作</li>
-<li>a/A</li>
-<li>o/O</li>
-<li>r + ?替换</li>
-<li>0:文件当前行的开头</li>
-<li>$:文件当前行的末尾</li>
-<li>G:文件的最后一行开头</li>
-<li>1 + G到第一行</li>
-<li>9 + G到第九行 = :9</li>
-<li>dd:删除一行</li>
-<li>3dd：删除3行</li>
-<li>yy:复制一行</li>
-<li>3yy:复制3行</li>
-<li>p:粘贴</li>
-<li>u:undo</li>
-<li>ctrl + r:redo</li>
-<li>“a剪切板a</li>
-<li>“b剪切板b</li>
-<li>“ap粘贴剪切板a的内容</li>
-<li>每次进入vi就有行号</li>
-<li>vi ~/.vimrc</li>
-<li>set nu</li>
-<li>:w a.txt另存为</li>
-<li>:w &gt;&gt; a.txt内容追加到a.txt</li>
-<li>:e!恢复到最初状态</li>
-<li>:1,$s/hadoop/root/g 将第一行到追后一行的hadoop替换为root</li>
-<li>:1,$s/hadoop/root/c 将第一行到追后一行的hadoop替换为root(有提示)</li>
-</ul>
-<h2 id="九、查找"><a href="#九、查找" class="headerlink" title="九、查找"></a>九、查找</h2><ol>
-<li>查找可执行的命令：<br>which ls</li>
-<li>查找可执行的命令和帮助的位置：<br>whereis ls</li>
-<li>查找文件(需要更新库:updatedb)<br>locate hadoop.txt</li>
-<li>从某个文件夹开始查找<br>find / -name “hadooop<em>“<br>find / -name “hadooop</em>“ -ls</li>
-<li>查找并删除<br>find / -name “hadooop<em>“ -ok rm {} \;<br>find / -name “hadooop</em>“ -exec rm {} \;</li>
-<li>查找用户为hadoop的文件<br>find /usr -user hadoop -ls</li>
-<li>查找用户为hadoop并且(-a)拥有组为root的文件<br>find /usr -user hadoop -a -group root -ls</li>
-<li>查找用户为hadoop或者(-o)拥有组为root并且是文件夹类型的文件<br>find /usr -user hadoop -o -group root -a -type d</li>
-<li>查找权限为777的文件<br>find / -perm -777 -type d -ls</li>
-<li>显示命令历史<br>history</li>
-<li>grep<br>grep hadoop /etc/password</li>
-</ol>
-<h2 id="十、打包与压缩"><a href="#十、打包与压缩" class="headerlink" title="十、打包与压缩"></a>十、打包与压缩</h2><ol>
-<li>gzip压缩<br>gzip a.txt</li>
-<li>解压<br>gunzip a.txt.gz<br>gzip -d a.txt.gz</li>
-<li>bzip2压缩<br>bzip2 a</li>
-<li>解压<br>bunzip2 a.bz2<br>bzip2 -d a.bz2</li>
-<li>将当前目录的文件打包<br>tar -cvf bak.tar .<br>将/etc/password追加文件到bak.tar中(r)<br>tar -rvf bak.tar /etc/password</li>
-<li>解压<br>tar -xvf bak.tar</li>
-<li>打包并压缩gzip<br>tar -zcvf a.tar.gz</li>
-<li>解压缩<br>tar -zxvf a.tar.gz<br>解压到/usr/下<br>tar -zxvf a.tar.gz -C /usr</li>
-<li>查看压缩包内容<br>tar -ztvf a.tar.gz<br>zip/unzip</li>
-<li>打包并压缩成bz2<br>tar -jcvf a.tar.bz2</li>
-<li>解压bz2<br>tar -jxvf a.tar.bz2</li>
-</ol>
-<h2 id="十一、正则表达式"><a href="#十一、正则表达式" class="headerlink" title="十一、正则表达式"></a>十一、正则表达式</h2><ol>
-<li>cut截取以:分割保留第七段<br>grep hadoop /etc/passwd | cut -d: -f7</li>
-<li>排序<br>du | sort -n</li>
-<li>查询不包含hadoop的<br>grep -v hadoop /etc/passwd</li>
-<li>正则表达包含hadoop<br>grep ‘hadoop’ /etc/passwd</li>
-<li>正则表达(点代表任意一个字符)<br>grep ‘h.*p’ /etc/passwd</li>
-<li>正则表达以hadoop开头<br>grep ‘^hadoop’ /etc/passwd</li>
-<li>正则表达以hadoop结尾<br>grep ‘hadoop$’ /etc/passwd</li>
-</ol>
-<p><code>.  : 任意一个字符</code><br><code>a* : 任意多个a(零个或多个a)</code><br><code>a? : 零个或一个a</code><br><code>a+ : 一个或多个a</code><br><code>.* : 任意多个任意字符</code><br>查找不是以#开头的行\<br><code>grep -v &#39;^#&#39; a.txt | grep -v &#39;^$&#39;</code><br>以h或r开头的\<br><code>grep &#39;^[hr]&#39; /etc/passwd</code><br>不是以h和r开头的\<br><code>grep &#39;^[^hr]&#39; /etc/passwd</code><br>不是以h到r开头的\<br><code>grep &#39;^[^h-r]&#39; /etc/passwd</code></p>
-<h2 id="十二、进程控制"><a href="#十二、进程控制" class="headerlink" title="十二、进程控制"></a>十二、进程控制</h2><ol>
-<li>查看用户最近登录情况<br>last<br>lastlog</li>
-<li>查看硬盘使用情况<br>df</li>
-<li>查看文件大小<br>du</li>
-<li>查看内存使用情况<br>free</li>
-<li>查看文件系统<br>/proc</li>
-<li>查看日志<br>ls /var/log/</li>
-<li>查看系统报错日志<br>tail /var/log/messages</li>
-<li>查看进程<br>top</li>
-<li>结束进程<br>kill 1234<br>kill -9 4333</li>
-</ol>
-<h2 id="十三、linux的命令操作"><a href="#十三、linux的命令操作" class="headerlink" title="十三、linux的命令操作"></a>十三、linux的命令操作</h2><p>用vi文本编辑器来编辑生成文件<br><strong>**</strong>最基本用法<br>vi  somefile.4</p>
-<ol>
-<li>首先会进入“一般模式”，此模式只接受各种快捷键，不能编辑文件内容</li>
-<li>按i键，就会从一般模式进入编辑模式，此模式下，敲入的都是文件内容</li>
-<li>编辑完成之后，按Esc键退出编辑模式，回到一般模式；</li>
-<li>再按：，进入“底行命令模式”，输入wq命令，回车即可</li>
-</ol>
-<h3 id="查看文件内容"><a href="#查看文件内容" class="headerlink" title="查看文件内容"></a>查看文件内容</h3><p>cat    somefile    一次性将文件内容全部输出（控制台）\<br>more  somefile    可以翻页查看, 下翻一页(空格)    上翻一页（b）  退出（q）\<br>less  somefile      可以翻页查看,下翻一页(空格)    上翻一页（b），上翻一行(↑)  下翻一行（↓）  可以搜索关键字（/keyword）</p>
-<p>tail -10  install.log  查看文件尾部的10行\<br>tail -f install.log    小f跟踪文件的唯一inode号，就算文件改名后，还是跟踪原来这个inode表示的文件\<br>tail -F install.log    大F按照文件名来跟踪\<br>head -10  install.log  查看文件头部的10行</p>
-<p>文件内容查阅\<br>head -10 a.log 取前10行\<br>tail -10 a.log 取后10行\<br>tail -f a.log 实时检测日志更新\<br>tail -f30 a.log 实时监测该日志的后30行\<br>tab：代码补全，文件名补全\<br>文件类型权限 drwxrwx user，group / 4,2,1打分\<br>查看日志var/log\</p>
-<h3 id="3、文件权限的操作"><a href="#3、文件权限的操作" class="headerlink" title="3、文件权限的操作"></a>3、文件权限的操作</h3><p>drwxr-xr-x      （也可以用二进制表示  111 101 101  —&gt;  755）<br>d：标识节点类型（d：文件夹  -：文件  l:链接）\<br>r：可读  w：可写    x：可执行 \<br>第一组rwx：  表示这个文件的拥有者对它的权限：可读可写可执行\<br>第二组r-x：  表示这个文件的所属组对它的权限：可读，不可写，可执行\<br>第三组r-x：  表示这个文件的其他用户（相对于上面两类用户）对它的权限：可读，不可写，可执行</p>
-<p>chmod g-rw haha.dat    表示将haha.dat对所属组的rw权限取消\<br>chmod o-rw haha.dat    表示将haha.dat对其他人的rw权限取消\<br>chmod u+x haha.dat      表示将haha.dat对所属用户的权限增加x</p>
-<p>也可以用数字的方式来修改权限\<br>chmod 664 haha.dat  \<br>就会修改成  rw-rw-r—</p>
-<p>如果要将一个文件夹的所有内容权限统一修改，则可以-R参数\<br>chmod -R 770 aaa/\<br>chown angela:angela aaa/    &lt;只有root能执行&gt;</p>
-<p>4、基本的用户管理<br>useradd  angela<br>要修改密码才能登陆<br>passwd angela  按提示输入密码即可</p>
-<p>**为用户配置sudo权限<br>用root编辑 vi /etc/sudoers<br>在文件的如下位置，为hadoop添加一行即可<br>root    ALL=(ALL)      ALL    \<br>hadoop  ALL=(ALL)      ALL</p>
-<p>然后，hadoop用户就可以用sudo来执行系统级别的指令<br>[hadoop@shizhan ~]$ sudo useradd huangxiaoming</p>
-<p>5、系统管理操作</p>
-<ul>
-<li>查看主机名<br>hostname</li>
-<li>修改主机名(重启后无效)<br>hostname hadoop</li>
-<li>修改主机名(重启后永久生效)<br>vi /ect/sysconfig/network</li>
-<li><p>修改IP(重启后无效)<br>ifconfig eth0 192.168.12.22</p>
-</li>
-<li><p>修改IP(重启后永久生效)<br>vi /etc/sysconfig/network-scripts/ifcfg-eth0</p>
-</li>
-</ul>
-<p>mkdir  /mnt/cdrom      创建一个目录，用来挂载\<br>mount -t iso9660 -o ro /dev/cdrom /mnt/cdrom/    将设备/dev/cdrom挂载到 挂载点 ：  /mnt/cdrom中</p>
-<ul>
-<li><p>umount<br>umount /mnt/cdrom</p>
-</li>
-<li><p>统计文件或文件夹的大小<br>du -sh  /mnt/cdrom/Packages\<br>df -h    查看磁盘的空间</p>
-</li>
-<li>关机<br>halt</li>
-<li>重启<br>reboot</li>
-</ul>
-<p><strong>**</strong>配置主机之间的免密ssh登陆\<br>假如 A  要登陆  B\<br>在A上操作：\<br>%%首先生成密钥对\<br>ssh-keygen  (提示时，直接回车即可)\<br>%%再将A自己的公钥拷贝并追加到B的授权列表文件authorized_keys中\<br>ssh-copy-id  B</p>
-<p><strong>**</strong>后台服务管理<br>service network status  查看指定服务的状态\<br>service network stop    停止指定服务\<br>service network start    启动指定服务\<br>service network restart  重启指定服务\<br>service —status-all  查看系统中所有的后台服务</p>
-<p>设置后台服务的自启配置\<br>chkconfig  查看所有服务器自启配置\<br>chkconfig iptables off  关掉指定服务的自动启动\<br>chkconfig iptables on  开启指定服务的自动启动</p>
+    <!-- USE SIDEBAR -->
+    <!-- Post Container -->
+    <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container
+            ">
 
+      <!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
+      <!-- 归档列表 -->
 
-        <hr>
-        <!-- Pager -->
-        <ul class="pager">
+      
+
+      <!-- 归档列表 -->
+      
+      <div class="one-tag-list">
+        <span class="fa fa-calendar-times-o listing-seperator" id="2022">
+          <span class="tag-text">2022</span>
+        </span>
+        <ul>
           
-          <li class="previous">
-            <a href="/cn/推荐系统-00-基础/" data-toggle="tooltip" data-placement="top" title="推荐系统基础">&larr; Previous Post</a>
+          <li>
+            05-15
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/02_eda_pipeline/" style="color: #0085a1">
+              <span>
+                02_EDA_Pipeline
+                
+                -- cn
+                
+              </span>
+            </a>
           </li>
           
+          <li>
+            05-15
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/01_EDA_advance/" style="color: #0085a1">
+              <span>
+                01_EDA_advance
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
           
-          <li class="next">
-            <a href="/cn/bigdata-04-调优/" data-toggle="tooltip" data-placement="top" title="BigData-调优">Next Post &rarr;</a>
+          <li>
+            05-13
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/00_EDA_widget-factory/" style="color: #0085a1">
+              <span>
+                00_widget-factory
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            05-12
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/bigdata-PySpark/" style="color: #0085a1">
+              <span>
+                BigData-PySpark
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            05-11
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/bigdata-Spark/" style="color: #0085a1">
+              <span>
+                BigData-Spark
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            05-10
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/bigdata-Scala/" style="color: #0085a1">
+              <span>
+                BigData-Scala
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            05-06
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/推荐系统-01-TF/" style="color: #0085a1">
+              <span>
+                （全网最详细）基于TensorFlow的Estimator实现Wide&Deep模型
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            04-20
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/12.算法公式整理/" style="color: #0085a1">
+              <span>
+                第12章 算法公式总结
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            04-06
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/21.PageRank/" style="color: #0085a1">
+              <span>
+                第21章 PageRank算法
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            04-04
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/20.LDA/" style="color: #0085a1">
+              <span>
+                第20章 潜在狄利克雷分配
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            04-03
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/19.MCMC/" style="color: #0085a1">
+              <span>
+                第19章 马尔可夫链蒙特卡罗法
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            04-02
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/18.PLSA/" style="color: #0085a1">
+              <span>
+                第18章 概率潜在语义分析
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            04-01
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/17.LSA/" style="color: #0085a1">
+              <span>
+                第17章 潜在语义分析
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            04-01
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/16.PCA/" style="color: #0085a1">
+              <span>
+                第16章 主成分分析
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            03-30
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/15.SVD/" style="color: #0085a1">
+              <span>
+                第15章 奇异值分解
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            03-29
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/14.Clustering/" style="color: #0085a1">
+              <span>
+                第14章 聚类方法
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            03-28
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/13.无监督知识点总结/" style="color: #0085a1">
+              <span>
+                第13章 无监督学习方法
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            03-25
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/10.HMM/" style="color: #0085a1">
+              <span>
+                第10章 隐马尔可夫模型
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            03-24
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/9.Expectation_Maximization/" style="color: #0085a1">
+              <span>
+                第9章 EM算法及其推广
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            03-24
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/11.CRF/" style="color: #0085a1">
+              <span>
+                第11章 条件随机场
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            03-23
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/8.Boost/" style="color: #0085a1">
+              <span>
+                第8章 提升方法
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            03-22
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/7.support-vector-machine/" style="color: #0085a1">
+              <span>
+                第7章 支持向量机
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            03-21
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/6.LogisticRegression/" style="color: #0085a1">
+              <span>
+                第6章 逻辑斯谛回归
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            03-20
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/5.DecisonTree/" style="color: #0085a1">
+              <span>
+                第5章 决策树
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            03-19
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/4.NaiveBayes/" style="color: #0085a1">
+              <span>
+                第4章 朴素贝叶斯
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            03-19
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/3.KNearestNeighbors/" style="color: #0085a1">
+              <span>
+                第3章 k近邻法
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            03-18
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/2.Perception/" style="color: #0085a1">
+              <span>
+                第2章 感知机
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            03-17
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/1.监督学习/" style="color: #0085a1">
+              <span>
+                第1章 统计学习方法概论
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            01-01
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/LeetCode_动态规划/" style="color: #0085a1">
+              <span>
+                LeetCode_动态规划
+                
+                -- cn
+                
+              </span>
+            </a>
           </li>
           
         </ul>
-
-        
-        <!-- tip start -->
-        <!-- tip -->
-<!-- tip start -->
-<div class="tip">
-  <p>
-    
-      如果您喜欢此博客或发现它对您有用，则欢迎对此发表评论。 也欢迎您共享此博客，以便更多人可以参与。 如果博客中使用的图像侵犯了您的版权，请与作者联系以将其删除。 谢谢 ！
-    
-  </p>
+      </div>
+      
+      <div class="one-tag-list">
+        <span class="fa fa-calendar-times-o listing-seperator" id="2021">
+          <span class="tag-text">2021</span>
+        </span>
+        <ul>
+          
+          <li>
+            12-15
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/LeetCode_数据结构/" style="color: #0085a1">
+              <span>
+                LeetCode_数据结构
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            12-13
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/LeetCode_贪心/" style="color: #0085a1">
+              <span>
+                LeetCode_贪心
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            12-12
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/剑指offer_05_数与数列/" style="color: #0085a1">
+              <span>
+                剑指offer_06_数与数列
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            12-03
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/LeetCode_字符串/" style="color: #0085a1">
+              <span>
+                LeetCode_字符串
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            12-03
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/剑指offer_04_栈与队列/" style="color: #0085a1">
+              <span>
+                剑指offer_05_栈与队列
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            12-02
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/剑指offer_04_树/" style="color: #0085a1">
+              <span>
+                剑指offer_04_树
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            11-25
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/LeetCode_搜索/" style="color: #0085a1">
+              <span>
+                LeetCode_搜索
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            11-15
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/剑指offer_03_链表与树/" style="color: #0085a1">
+              <span>
+                剑指offer_03_链表与树
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            11-11
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/剑指offer_02_字符串/" style="color: #0085a1">
+              <span>
+                剑指offer_02_字符串
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            11-03
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/剑指offer_01_二维搜索/" style="color: #0085a1">
+              <span>
+                剑指offer_01_二维搜索
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            11-01
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/LeetCode_滑动窗口/" style="color: #0085a1">
+              <span>
+                LeetCode_滑动窗口
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            11-01
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/剑指offer_00_数组/" style="color: #0085a1">
+              <span>
+                剑指offer_00_数组
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            10-25
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/LeetCode_回溯/" style="color: #0085a1">
+              <span>
+                LeetCode_回溯
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            10-25
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/bigdata-jvm/" style="color: #0085a1">
+              <span>
+                BigData-JVM与网络层
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      
+      <div class="one-tag-list">
+        <span class="fa fa-calendar-times-o listing-seperator" id="2020">
+          <span class="tag-text">2020</span>
+        </span>
+        <ul>
+          
+          <li>
+            04-17
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/hexo/" style="color: #0085a1">
+              <span>
+                Hexo-Theme
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            04-17
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/en/hexo/" style="color: #0085a1">
+              <span>
+                Hexo-Theme
+                
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      
+      <div class="one-tag-list">
+        <span class="fa fa-calendar-times-o listing-seperator" id="2019">
+          <span class="tag-text">2019</span>
+        </span>
+        <ul>
+          
+          <li>
+            12-25
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/bigdata-SQL/" style="color: #0085a1">
+              <span>
+                BigData-SQL
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            11-04
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/LeetCode_拓展/" style="color: #0085a1">
+              <span>
+                LeetCode_拓展
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            10-29
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/算法导论-00-CPP基础/" style="color: #0085a1">
+              <span>
+                算法导论-00-CPP基础
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            10-29
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/推荐系统-02-语言模型/" style="color: #0085a1">
+              <span>
+                推荐系统-01-语言模型
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            10-26
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/算法导论-01-动态规划/" style="color: #0085a1">
+              <span>
+                算法导论-01-动态规划
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            10-25
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/推荐系统-00-基础/" style="color: #0085a1">
+              <span>
+                推荐系统基础
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            10-25
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/bigdata-调优/" style="color: #0085a1">
+              <span>
+                BigData-调优
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            10-25
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/bigdata-Linux/" style="color: #0085a1">
+              <span>
+                BigData-Linux
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            10-24
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/bigdata-Hadoop/" style="color: #0085a1">
+              <span>
+                BigData-Hadoop基础
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            04-25
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/bigdata-Git/" style="color: #0085a1">
+              <span>
+                BigData-Git
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            01-01
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/LeetCode_Easy/" style="color: #0085a1">
+              <span>
+                LeetCode_Easy
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+  </div>
 </div>
-<!-- tip end -->
 
-        <!-- tip end -->
-        
 
-        
-        <!-- Sharing Srtart -->
-        <!-- Social Social Share Post -->
-<!-- Docs:https://github.com/overtrue/share.js -->
+      <!-- 如果开启评论功能 -->
+      
+    </div>
 
-<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
-  <ul class="list-inline text-center social-share-ul">
-    <li class="social-share-li">
-      <a target="_blank" class="social-share-icon icon-twitter">
-        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
-      </a>
-    </li>
-    <li class="social-share-li">
-      <a class="social-share-icon icon-wechat">
-        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
-      </a>
-    </li>
-    <li class="social-share-li">
-      <a target="_blank" class="social-share-icon icon-weibo">
-        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
-      </a>
-    </li>
-    <li class="social-share-li">
-      <a target="_blank" class="social-share-icon icon-qq">
-        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
-      </a>
-    </li>
-    <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=BigData-Linux&body=Hi,I found this website and thought you might like it https://11010101.xyz/cn/bigdata-03-linux/">
-        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
-      </a>
-    </li>
+    <!-- Sidebar Container -->
+<div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+    
+        <!-- Visitors -->
+<h5><a href="/">来访者</a></h5>
+
+<div class="widget">
+  <span>
+    Viewed <b><i><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Times
+  </span>
+  <br />
+  <span>
+    <b><i><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Visitors In Total
+  </span>
+</div>
+
+
+        <hr>
+    
+        <!-- Categories -->
+
+<h5><a href="/categories/">categories</a></h5>
+<div class="widget">
+  <ul>
+    
+    <a href="/categories/#工具">
+      <li>工具</li>
+    </a>
+    
+    <a href="/categories/#Take-home_Challenge">
+      <li>Take-home_Challenge</li>
+    </a>
+    
+    <a href="/categories/#统计学习方法">
+      <li>统计学习方法</li>
+    </a>
+    
+    <a href="/categories/#LeetCode">
+      <li>LeetCode</li>
+    </a>
+    
+    <a href="/categories/#Big_Data">
+      <li>Big_Data</li>
+    </a>
+    
+    <a href="/categories/#剑指offer">
+      <li>剑指offer</li>
+    </a>
+    
+    <a href="/categories/#推荐系统">
+      <li>推荐系统</li>
+    </a>
+    
+    <a href="/categories/#算法">
+      <li>算法</li>
+    </a>
+    
   </ul>
 </div>
 
-<!-- css & js -->
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
-<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
 
-        <!-- Sharing End -->
-        
         <hr>
+    
+        <!-- RECENT POSTS -->
 
-        <!-- comments start -->
-        <!-- 1. gitalk comment -->
-
-  <!-- gitalk start -->
-  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
-
-  <div id="gitalk-container"></div>
-
-  
-    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
-    <script src="/js/comment/gitalk.js"></script>
-  
-
-  <script>
-    var gitalk = new Gitalk({
-      clientID: 'a9a645b881c78d12baa8',
-      clientSecret: '144741a3fa325fe22d7207d5698374724cd412b7',
-      repo: 'Muzhi1920.github.io',
-      owner: 'Muzhi1920',
-      admin: 'Muzhi1920',
-      id: 'Fri Oct 25 2019 13:31:36 GMT+0000 | truncate: 50', // Ensure uniqueness and length less than 50
-      distractionFreeMode: false, // Facebook-like distraction free mode
-      perPage: 10,
-      pagerDirection: 'last',
-      createIssueManually: false,
-      language: 'zh-CN',
-      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
-    });
-    gitalk.render('gitalk-container');
-
-    var gtFolded = () => {
-      setTimeout(function () {
-        let markdownBody = document.getElementsByClassName("markdown-body");
-        let list = Array.from(markdownBody);
-        list.forEach(item => {
-          if (item.clientHeight > 250) {
-            item.classList.add('gt-comment-body-folded');
-            item.style.maxHeight = '250px';
-            item.title = 'Click to Expand';
-            item.onclick = function () {
-              item.classList.remove('gt-comment-body-folded');
-              item.style.maxHeight = '';
-              item.title = '';
-              item.onclick = null;
-            };
-          }
-        })
-      }, 800);
-    }
-  </script>
-
-  <!-- gitalk end -->
+<h5><a href="/">最近博文</a></h5>
+<div class="widget">
+  <ul>
+    
+    <a href="../../cn/01_EDA_advance/">
+      <li>01_EDA_advance</li>
+    </a>
+    
+    <a href="../../cn/02_eda_pipeline/">
+      <li>02_EDA_Pipeline</li>
+    </a>
+    
+    <a href="../../cn/00_EDA_widget-factory/">
+      <li>00_widget-factory</li>
+    </a>
+    
+    <a href="../../cn/bigdata-PySpark/">
+      <li>BigData-PySpark</li>
+    </a>
+    
+    <a href="../../cn/bigdata-Spark/">
+      <li>BigData-Spark</li>
+    </a>
+    
+  </ul>
+</div>
 
 
-<!-- 2. gitment comment -->
-
-
-<!-- 3. disqus comment -->
-
-
-        <!-- comments end -->
         <hr>
-
-      </div>
-
-      <!-- Catalog: Tabe of Content -->
-      <!-- Table of Contents -->
+    
+        <!-- Short About -->
+<section class="visible-md visible-lg">
+  <h5><a href="/about/">关于我</a></h5>
+  <div class="short-about">
 
     
-      <aside id="sidebar">
-        <div id="toc" class="toc-article">
-        <strong class="toc-title">目录</strong>
-        
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Linux"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Linux</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%80%E3%80%81man-page"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">一、man_page</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BA%8C%E3%80%81%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">二、常用命令</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%9B%9B%E3%80%81%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">四、系统命令</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BA%94%E3%80%81%E7%94%A8%E6%88%B7%E5%92%8C%E7%BB%84"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">五、用户和组</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%85%AD%E3%80%81%E6%9D%83%E9%99%90"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">六、权限</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%83%E3%80%81%E6%96%87%E4%BB%B6%E5%A4%B9%E5%B1%9E%E6%80%A7"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">七、文件夹属性</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%85%AB%E3%80%81vim"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">八、vim</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B9%9D%E3%80%81%E6%9F%A5%E6%89%BE"><span class="toc-nav-number">1.8.</span> <span class="toc-nav-text">九、查找</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%8D%81%E3%80%81%E6%89%93%E5%8C%85%E4%B8%8E%E5%8E%8B%E7%BC%A9"><span class="toc-nav-number">1.9.</span> <span class="toc-nav-text">十、打包与压缩</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%8D%81%E4%B8%80%E3%80%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-nav-number">1.10.</span> <span class="toc-nav-text">十一、正则表达式</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%8D%81%E4%BA%8C%E3%80%81%E8%BF%9B%E7%A8%8B%E6%8E%A7%E5%88%B6"><span class="toc-nav-number">1.11.</span> <span class="toc-nav-text">十二、进程控制</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%8D%81%E4%B8%89%E3%80%81linux%E7%9A%84%E5%91%BD%E4%BB%A4%E6%93%8D%E4%BD%9C"><span class="toc-nav-number">1.12.</span> <span class="toc-nav-text">十三、linux的命令操作</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9"><span class="toc-nav-number">1.12.1.</span> <span class="toc-nav-text">查看文件内容</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3%E3%80%81%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="toc-nav-number">1.12.2.</span> <span class="toc-nav-text">3、文件权限的操作</span></a></li></ol></li></ol></li></ol>
-        
-        </div>
-      </aside>
+    <img id="avatar_pic" src="/img/avatar/me.jpg" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
     
 
+    
+    <p>桃花飞绿水，一庭芳草围新绿；有情芍药含春泪，野竹上青霄；十亩藤花落古香，无力蔷薇卧晓枝。 我愿暂求造化力，减却牡丹妖艳色； 花非花，梦非梦，花如梦，梦似花；梦里有花，花开如梦 心非心，镜非镜，心如镜，镜似心；镜中有心，心如明镜。</p>
+    
 
+    <!-- SNS Link -->
+    <ul class="list-inline">
+      
 
-      <!-- Sidebar Container -->
-      <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-10 col-md-offset-1
-                sidebar-container">
+      
+      <li>
+        <a target="_blank" href="https://github.com/Muzhi1920">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
+      </li>
+      
 
-        <!-- Featured Tags -->
-        
-        <section>
-          <!-- no hr -->
-          <h5>
-            <a href="/tags/">特色标签</a>
-          </h5>
-          <div class="tags">
-            
-            <a class="tag" href="/tags/#Linux" title="Linux">Linux</a>
-            
-          </div>
-        </section>
-        
+      
 
-        <!-- Friends Blog -->
-        
-        <hr>
-        <h5>链友</h5>
-        <ul class="list-inline">
+      
 
-          
-          <li>
-            <a href="https://hexo.io/" target="_blank">Hexo</a>
-          </li>
-          
-        </ul>
-        
-      </div>
-    </div>
+      
+
+      
+
+      
+      <li>
+        <a target="_blank" href="https://www.zhihu.com/people/awesome-yyds">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa  fa-stack-1x fa-inverse">知</i>
+          </span>
+        </a>
+      </li>
+      
+
+      
+
+    </ul>
   </div>
-</article>
+</section>
+
+        <hr>
+    
+        <!-- Featured Tags -->
+
+<section>
+  <h5><a href="/tags/">特色标签</a></h5>
+  <div class="tags">
+    
+    
+    <a href="/tags/#Blog" title="Blog" rel="2">Blog</a>
+    
+    
+    
+    <a href="/tags/#EDA" title="EDA" rel="3">EDA</a>
+    
+    
+    
+    <a href="/tags/#机器学习" title="机器学习" rel="21">机器学习</a>
+    
+    
+    
+    <a href="/tags/#coding" title="coding" rel="6">coding</a>
+    
+    
+    
+    <a href="/tags/#leetcode" title="leetcode" rel="5">leetcode</a>
+    
+    
+    
+    <a href="/tags/#数组" title="数组" rel="4">数组</a>
+    
+    
+    
+    <a href="/tags/#贪心" title="贪心" rel="1">贪心</a>
+    
+    
+    
+    <a href="/tags/#git" title="git" rel="1">git</a>
+    
+    
+    
+    <a href="/tags/#大数据基础" title="大数据基础" rel="1">大数据基础</a>
+    
+    
+    
+    <a href="/tags/#Linux" title="Linux" rel="1">Linux</a>
+    
+    
+    
+    <a href="/tags/#Shell" title="Shell" rel="1">Shell</a>
+    
+    
+    
+    <a href="/tags/#Spark" title="Spark" rel="2">Spark</a>
+    
+    
+    
+    <a href="/tags/#SQL" title="SQL" rel="1">SQL</a>
+    
+    
+    
+    <a href="/tags/#Scala" title="Scala" rel="1">Scala</a>
+    
+    
+    
+    <a href="/tags/#JVM" title="JVM" rel="1">JVM</a>
+    
+    
+    
+    <a href="/tags/#计算机网络" title="计算机网络" rel="1">计算机网络</a>
+    
+    
+    
+    <a href="/tags/#操作系统" title="操作系统" rel="1">操作系统</a>
+    
+    
+    
+    <a href="/tags/#数据倾斜" title="数据倾斜" rel="1">数据倾斜</a>
+    
+    
+    
+    <a href="/tags/#剑指offer" title="剑指offer" rel="7">剑指offer</a>
+    
+    
+    
+    <a href="/tags/#搜索" title="搜索" rel="1">搜索</a>
+    
+    
+    
+    <a href="/tags/#字符串" title="字符串" rel="1">字符串</a>
+    
+    
+    
+    <a href="/tags/#链表" title="链表" rel="1">链表</a>
+    
+    
+    
+    <a href="/tags/#树" title="树" rel="2">树</a>
+    
+    
+    
+    <a href="/tags/#栈与队列" title="栈与队列" rel="1">栈与队列</a>
+    
+    
+    
+    <a href="/tags/#数列" title="数列" rel="1">数列</a>
+    
+    
+    
+    <a href="/tags/#推荐系统" title="推荐系统" rel="1">推荐系统</a>
+    
+    
+    
+    <a href="/tags/#Estimator" title="Estimator" rel="1">Estimator</a>
+    
+    
+    
+    <a href="/tags/#NLP" title="NLP" rel="1">NLP</a>
+    
+    
+    
+    <a href="/tags/#c++" title="c++" rel="2">c++</a>
+    
+    
+  </div>
+</section>
 
 
+        <hr>
+    
+        <!-- Archives -->
 
-<!-- anchorjs start -->
-<!-- async load function -->
-<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
-<script type="text/javascript">
-  // async load function
-  function async (u, c) {
-    var d = document,
-      t = 'script',
-      o = d.createElement(t),
-      s = d.getElementsByTagName(t)[0];
-    o.src = u;
-    if (c) {
-      o.addEventListener('load', function(e) {
-        c(null, e);
-      }, false);
-    }
-    s.parentNode.insertBefore(o, s);
-  };
-</script>
-<script type="text/javascript">
-  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
-  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
-    anchors.options = {
-      visible: 'hover',
-      placement: 'left',
-      // icon: 'ℬ'
-      icon: '❡'
-    };
-    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
-  });
-</script>
-<style>
-  /* place left on bigger screen */
-  @media all and (min-width: 800px) {
-    .anchorjs-link {
-      position: absolute;
-      left: -0.75em;
-      font-size: 1.1em;
-      margin-top: -0.1em;
-    }
-  }
-</style>
+<h5><a href="/archives/">archives</a></h5>
+<div class="widget">
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2022/05/">May 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2022/04/">April 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2022/03/">March 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2021/12/">December 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2021/11/">November 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2021/10/">October 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/04/">April 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/12/">December 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/11/">November 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/10/">October 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/04/">April 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/01/">January 2019</a><span class="archive-list-count">1</span></li></ul>
+</div>
 
-<!-- anchorjs end -->
 
+        <hr>
+    
+        <!-- Friends Blog -->
+
+<h5><a href="/">链友</a></h5>
+<ul class="list-inline">
+  
+  <li><a href="https://hexo.io/" target="_blank">Hexo</a></li>
+  
+</ul>
+
+
+        <hr>
+    
+</div>
+
+
+    
+  </div>
+</div>
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->

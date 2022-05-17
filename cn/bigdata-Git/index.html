@@ -115,10 +115,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://11010101.xyz/cn/bigdata-04-调优/">
+  <link rel="canonical" href="https://11010101.xyz/cn/bigdata-Git/">
   <title>
     
-      BigData-调优 - Shawn Blog
+      BigData-Git - Shawn Blog
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -365,14 +365,14 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/tags/#数据倾斜" title="数据倾斜">数据倾斜</a>
+              <a class="tag" href="/tags/#git" title="git">git</a>
               
             </div>
-            <h1>BigData-调优</h1>
-            <h2 class="subheading">大数据调优</h2>
+            <h1>BigData-Git</h1>
+            <h2 class="subheading">Git基础</h2>
             <span class="meta">
               Posted by 小于 on
-              2019-10-25
+              2019-04-25
             </span>
 
 
@@ -384,7 +384,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">357</span> In Total
+              Words <span class="post-count">176</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -446,51 +446,38 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1 id="大数据调优"><a href="#大数据调优" class="headerlink" title="大数据调优"></a>大数据调优</h1><h2 id="Hive"><a href="#Hive" class="headerlink" title="Hive"></a>Hive</h2><p>不怕数据大，就怕数据斜。报错：<code>reduce.shuffle出错，java heap space造成OOM</code></p>
-<p>map读入文件的时候每一个切片对应一个map task；到reduce时shuffle某个key数据太多造成reduce运行缓慢</p>
-<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><ol>
-<li>过滤空值；空值可能会造成大量数据进入到一个reduce中造成内存不足</li>
-<li>预跑+设定最大；每个Reduce处理的数据默认是256MB<code>hive.exec.reducers.bytes.per.reducer=256000000</code>;每个任务最大的reduce数，默认为1009<code>hive.exec.reducers.max=1009</code>;<code>N=min(参数2，总输入数据量/参数1)</code>设置Reducer的数量<code>set mapreduce.job.reduces=n</code></li>
+        <h2 id="git操作"><a href="#git操作" class="headerlink" title="git操作"></a>git操作</h2><h3 id="新建分支以及远程分支"><a href="#新建分支以及远程分支" class="headerlink" title="新建分支以及远程分支"></a>新建分支以及远程分支</h3><p>git branch xx<br>git checkout -b xx<br>git push —set-upstream origin xx</p>
+<h3 id="新本地分支追溯远程分支"><a href="#新本地分支追溯远程分支" class="headerlink" title="新本地分支追溯远程分支"></a>新本地分支追溯远程分支</h3><p>git checkout -b xx<br>git branch —set-upstream-to=origin/xx</p>
+<h4 id="删除分支以及远程分支"><a href="#删除分支以及远程分支" class="headerlink" title="删除分支以及远程分支"></a>删除分支以及远程分支</h4><p>git checkout master<br>git push origin —delete xx<br>git branch -D xx</p>
+<h3 id="拉推"><a href="#拉推" class="headerlink" title="拉推"></a>拉推</h3><p>commit,master,pull,checkout本地,merge master,push</p>
+<h2 id="commit"><a href="#commit" class="headerlink" title="commit"></a>commit</h2><ol>
+<li>对于一个任务修改多次，提交多次（amend），一次push；（添加时选中amend即可）</li>
+<li>对于一个任务修改多次，提交多次（amend），多次push；（push时使用下句）<code>git push --force-with-lease origin new_branch</code></li>
 </ol>
-<h2 id="Spark"><a href="#Spark" class="headerlink" title="Spark"></a>Spark</h2><p>RDD窄依赖没有shuffle过程；RDD在遇到宽依赖时shuffle就是一个stage。更多spark内容参考<br><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/-nP26zi8B2PLpVmHorfzbA">30分钟理解Spark的基本原理</a></p>
-<h3 id="调优"><a href="#调优" class="headerlink" title="调优"></a>调优</h3><h4 id="提高executor内存"><a href="#提高executor内存" class="headerlink" title="提高executor内存"></a>提高executor内存</h4><div class="table-container">
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th>参数</th>
-<th>值</th>
+<th>命令</th>
 <th>作用</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>driverMemory</td>
-<td>4</td>
-<td>dirver创建sc，初始化DAG和任务调度</td>
+<td>revert</td>
+<td>修改编辑后，点击revert则撤回修改；commit之前可用</td>
 </tr>
 <tr>
-<td>driverCores</td>
-<td>2</td>
+<td>commit</td>
+<td>amend，参考上述commit</td>
 </tr>
 <tr>
-<td>numExecutors</td>
-<td>64</td>
-<td>执行器个数</td>
-</tr>
-<tr>
-<td>executorCores</td>
-<td>4</td>
-</tr>
-<tr>
-<td>executorMemory</td>
-<td>16</td>
+<td>push</td>
+<td>多次amend提交用<code>git push --force-with-lease origin new_branch</code></td>
 </tr>
 </tbody>
 </table>
 </div>
-<h3 id="RDD的分区数"><a href="#RDD的分区数" class="headerlink" title="RDD的分区数"></a>RDD的分区数</h3><p>一个文件多个block，若干个block合并为一个输入分片InputSplit，对应一个task，合并RDD后对应输出RDD的一个partition；<br>InputSplit不跨越文件；<br>map阶段不改变rdd的partition数量，reduce阶段shuffle后改变rdd的partiiton数量<br>task的并行度：executor_num <em> cores /task个数<br>map_task数=读取分片数<br>reduce_task数=executor数量</em>executor_cores核数</p>
-<p>序列化Kryo序列<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">extraSparkConf	--conf spark.serializer&#x3D;org.apache.spark.serializer.</span><br><span class="line">KryoSerializer --conf spark.kryoserializer.buffer.max.mb&#x3D;2000</span><br></pre></td></tr></table></figure></p>
-<p>其他参数优化参考<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/108454557">超全spark性能优化总结</a></p>
 
 
         <hr>
@@ -498,12 +485,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/cn/bigdata-03-linux/" data-toggle="tooltip" data-placement="top" title="BigData-Linux">&larr; Previous Post</a>
+            <a href="/cn/bigdata-Hadoop/" data-toggle="tooltip" data-placement="top" title="BigData-Hadoop基础">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/cn/bigdata-05-shell/" data-toggle="tooltip" data-placement="top" title="BigData-Shell">Next Post &rarr;</a>
+            <a href="/cn/LeetCode_Easy/" data-toggle="tooltip" data-placement="top" title="LeetCode_Easy">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -552,7 +539,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=BigData-调优&body=Hi,I found this website and thought you might like it https://11010101.xyz/cn/bigdata-04-调优/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=BigData-Git&body=Hi,I found this website and thought you might like it https://11010101.xyz/cn/bigdata-Git/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -587,7 +574,7 @@
       repo: 'Muzhi1920.github.io',
       owner: 'Muzhi1920',
       admin: 'Muzhi1920',
-      id: 'Fri Oct 25 2019 13:31:36 GMT+0000 | truncate: 50', // Ensure uniqueness and length less than 50
+      id: 'Thu Apr 25 2019 13:31:36 GMT+0000 | truncate: 50', // Ensure uniqueness and length less than 50
       distractionFreeMode: false, // Facebook-like distraction free mode
       perPage: 10,
       pagerDirection: 'last',
@@ -640,7 +627,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%A4%A7%E6%95%B0%E6%8D%AE%E8%B0%83%E4%BC%98"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">大数据调优</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Hive"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">Hive</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="toc-nav-number">1.1.1.</span> <span class="toc-nav-text">解决办法</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Spark"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">Spark</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%B0%83%E4%BC%98"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">调优</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E6%8F%90%E9%AB%98executor%E5%86%85%E5%AD%98"><span class="toc-nav-number">1.2.1.1.</span> <span class="toc-nav-text">提高executor内存</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#RDD%E7%9A%84%E5%88%86%E5%8C%BA%E6%95%B0"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">RDD的分区数</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#git%E6%93%8D%E4%BD%9C"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">git操作</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF%E4%BB%A5%E5%8F%8A%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">新建分支以及远程分支</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%96%B0%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF%E8%BF%BD%E6%BA%AF%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">新本地分支追溯远程分支</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%88%A0%E9%99%A4%E5%88%86%E6%94%AF%E4%BB%A5%E5%8F%8A%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">删除分支以及远程分支</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%8B%89%E6%8E%A8"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">拉推</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#commit"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">commit</span></a></li></ol>
         
         </div>
       </aside>
@@ -663,7 +650,7 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#数据倾斜" title="数据倾斜">数据倾斜</a>
+            <a class="tag" href="/tags/#git" title="git">git</a>
             
           </div>
         </section>

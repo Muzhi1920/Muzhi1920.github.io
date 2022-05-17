@@ -407,7 +407,7 @@
   </url>
   
   <url>
-    <loc>https://11010101.xyz/cn/bigdata-00-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
+    <loc>https://11010101.xyz/cn/bigdata-jvm/</loc>
     
     <lastmod>2021-10-25</lastmod>
     
@@ -434,7 +434,7 @@
   </url>
   
   <url>
-    <loc>https://11010101.xyz/cn/bigdata-06-Sql/</loc>
+    <loc>https://11010101.xyz/cn/bigdata-SQL/</loc>
     
     <lastmod>2019-12-25</lastmod>
     
@@ -488,7 +488,7 @@
   </url>
   
   <url>
-    <loc>https://11010101.xyz/cn/bigdata-03-linux/</loc>
+    <loc>https://11010101.xyz/cn/bigdata-Linux/</loc>
     
     <lastmod>2019-10-25</lastmod>
     
@@ -497,7 +497,7 @@
   </url>
   
   <url>
-    <loc>https://11010101.xyz/cn/bigdata-04-%E8%B0%83%E4%BC%98/</loc>
+    <loc>https://11010101.xyz/cn/bigdata-%E8%B0%83%E4%BC%98/</loc>
     
     <lastmod>2019-10-25</lastmod>
     
@@ -506,16 +506,7 @@
   </url>
   
   <url>
-    <loc>https://11010101.xyz/cn/bigdata-05-shell/</loc>
-    
-    <lastmod>2019-10-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://11010101.xyz/cn/bigdata-01-%E5%9F%BA%E7%A1%80/</loc>
+    <loc>https://11010101.xyz/cn/bigdata-Hadoop/</loc>
     
     <lastmod>2019-10-24</lastmod>
     
@@ -524,16 +515,7 @@
   </url>
   
   <url>
-    <loc>https://11010101.xyz/cn/bigdata-02-Java/</loc>
-    
-    <lastmod>2019-10-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://11010101.xyz/cn/bigdata-07-git/</loc>
+    <loc>https://11010101.xyz/cn/bigdata-Git/</loc>
     
     <lastmod>2019-04-25</lastmod>
     
@@ -627,7 +609,7 @@
   </url>
   
   <url>
-    <loc>https://11010101.xyz/tags/%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B/</loc>
+    <loc>https://11010101.xyz/tags/git/</loc>
     <lastmod>2022-05-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -641,13 +623,6 @@
   </url>
   
   <url>
-    <loc>https://11010101.xyz/tags/jvm/</loc>
-    <lastmod>2022-05-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://11010101.xyz/tags/Linux/</loc>
     <lastmod>2022-05-17</lastmod>
     <changefreq>weekly</changefreq>
@@ -655,28 +630,7 @@
   </url>
   
   <url>
-    <loc>https://11010101.xyz/tags/%E6%95%B0%E6%8D%AE%E5%80%BE%E6%96%9C/</loc>
-    <lastmod>2022-05-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://11010101.xyz/tags/shell/</loc>
-    <lastmod>2022-05-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://11010101.xyz/tags/SQL/</loc>
-    <lastmod>2022-05-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://11010101.xyz/tags/git/</loc>
+    <loc>https://11010101.xyz/tags/Shell/</loc>
     <lastmod>2022-05-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -690,7 +644,42 @@
   </url>
   
   <url>
+    <loc>https://11010101.xyz/tags/SQL/</loc>
+    <lastmod>2022-05-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://11010101.xyz/tags/Scala/</loc>
+    <lastmod>2022-05-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://11010101.xyz/tags/JVM/</loc>
+    <lastmod>2022-05-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://11010101.xyz/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
+    <lastmod>2022-05-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://11010101.xyz/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
+    <lastmod>2022-05-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://11010101.xyz/tags/%E6%95%B0%E6%8D%AE%E5%80%BE%E6%96%9C/</loc>
     <lastmod>2022-05-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

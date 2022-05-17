@@ -115,10 +115,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://11010101.xyz/cn/bigdata-01-基础/">
+  <link rel="canonical" href="https://11010101.xyz/cn/bigdata-Hadoop/">
   <title>
     
-      BigData-大数据基础 - Shawn Blog
+      BigData-Hadoop基础 - Shawn Blog
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -368,7 +368,7 @@
               <a class="tag" href="/tags/#大数据基础" title="大数据基础">大数据基础</a>
               
             </div>
-            <h1>BigData-大数据基础</h1>
+            <h1>BigData-Hadoop基础</h1>
             <h2 class="subheading">Hadoop全家桶</h2>
             <span class="meta">
               Posted by 小于 on
@@ -380,11 +380,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">17</span> Minutes
+              Estimated Reading Time <span class="post-count">14</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">4.4k</span> In Total
+              Words <span class="post-count">3.6k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -448,30 +448,7 @@
 
         <h1 id="大数据"><a href="#大数据" class="headerlink" title="大数据"></a>大数据</h1><p>大数据Hadoop和Spark基础知识，涉及Scala语言，Maven包管理，Hadoop/Hbase/Hive/Spark等大数据工具。(不断更新中，图片源自网络，侵删)</p>
 <hr>
-<h2 id="0-Scala基础"><a href="#0-Scala基础" class="headerlink" title="0. Scala基础"></a>0. Scala基础</h2><ul>
-<li>case class：自动生成常用方法(equals&amp;hashCode,toString,copy)；自动生成伴生对象；实现了 apply 方法让你不需要通过 new 来创建类实例</li>
-<li>宽依赖，窄依赖：窄依赖：map和filter，一个父RDD对应一个子RDD；宽依赖：一个父RDD对应非全部的子RDD；</li>
-<li>Transformation与Action：Transformation 操作是延迟计算的，也就是说从一个RDD 转换生成另一个 RDD 的转换操作不是马上执行，需要等到有 Action 操作的时候才会真正触发运算（map, filter）；Action是count之类的算子出发计算；</li>
-<li>存在shuffle的spark算子：distinct、groupByKey，reduceByKey、repartition，coalesce、interection，join；</li>
-<li>collect: Spark的collect方法，是Action类型的一个算子，收集一个弹性分布式数据集的所有元素到一个数组中。从远程集群拉取数据到driver端将大量数据汇集到一个driver节点上，将数据用数组存放，占用jvm堆内存容易造成内存溢出，只用作小型数据收集。</li>
-<li>persist:读取数据转为多个RDD时暂存；提高效率，没必要重复多次读取</li>
-</ul>
-<h3 id="Shuffle的操作"><a href="#Shuffle的操作" class="headerlink" title="Shuffle的操作"></a>Shuffle的操作</h3><p>由于 Shuffle 操作对性能的影响比较大，所以需要特别注意使用，以下操作都会导致 Shuffle：</p>
-<ul>
-<li>涉及到重新分区操作： 如 repartition 和 coalesce；</li>
-<li>所有涉及到 ByKey 的操作：如 groupByKey 和 reduceByKey，但 countByKey 除外；</li>
-<li>联结操作：如 cogroup 和 join。</li>
-</ul>
-<h3 id="广播变量"><a href="#广播变量" class="headerlink" title="广播变量"></a>广播变量</h3><p>每个Task任务的闭包都会持有自由变量的副本，如果变量很大且 Task 任务很多的情况下，这必然会对网络 IO 造成压力，为了解决这个情况，Spark 提供了广播变量。<strong>广播变量后不把副本变量分发到每个 Task 中，而是将其分发到每个 Executor，Executor 中的所有 Task 共享一个副本变量。</strong></p>
-<h3 id="RDD"><a href="#RDD" class="headerlink" title="RDD"></a>RDD</h3><ul>
-<li><strong>全局变量应用在rdd中运算为副本运算，变量并不改变；rdd中定义变量可改变。</strong></li>
-<li>一个RDD由多个分区（Partitions）组成。<strong>对于RDD的每个分区会被一个计算任务所处理，用户可以在创建 RDD 时指定其分区个数，如果没有指定，则默认采用程序所分配到的 CPU 的核心数；</strong> RDD的每次转换都会生成一个新的依赖关系，如果分区数据丢失后，可以通过依赖关系重新计算对RDD的所有分区进行重新计算；</li>
-<li>Key-Value 型的 RDD 还拥有 Partitioner(分区器)，用于决定数据被存储在哪个分区中，目前 Spark 中支持 HashPartitioner(按照哈希分区) 和 RangeParationer(按照范围进行分区)；</li>
-<li>Spark进行任务调度会尽可能的将计算任务分配到其所要处理数据块的存储位置。</li>
-<li>RDD 支持两种类型的操作：transformations（转换，从现有数据集创建新数据集）和 actions（在数据集上运行计算后将值返回到驱动程序）。</li>
-<li>RDD 中的所有转换操作都是惰性的，它们只是记住这些转换操作，但不会立即执行，只有遇到 action 操作后才会真正的进行计算，这类似于函数式编程中的惰性求值</li>
-</ul>
-<h2 id="1-Maven"><a href="#1-Maven" class="headerlink" title="1. Maven"></a>1. Maven</h2><ul>
+<h2 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h2><ul>
 <li>mvn clean compile  编译</li>
 <li>mvn clean test 测试</li>
 <li><strong>mvn clean package 打包</strong></li>
@@ -481,7 +458,7 @@
 <li>mvn cargo:redeploy 通过cargo插件，把生成的war包部署到远程服务器：如果存在，就先undeploy再deploy，如果没有直接deploy（注意要先运行 mvn clean package 打包，并且远程服务器是启动的）</li>
 </ul>
 <h3 id="scope"><a href="#scope" class="headerlink" title="scope"></a>scope</h3><p>org.apache.等外公司名下的包在集群上有相关容器提供，故scope为provide然后提交；<br>私服内公司名下的工程下的包集群上是没有容器提供的，故scope不可以添加provide默认compile，然后提交；<br>本地运行测试时，在应用中勾选“include dependencies with Provided scope”，后成功运行。</p>
-<h2 id="2-Hadoop"><a href="#2-Hadoop" class="headerlink" title="2. Hadoop"></a>2. Hadoop</h2><div class="table-container">
+<h2 id="Hadoop"><a href="#Hadoop" class="headerlink" title="Hadoop"></a>Hadoop</h2><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -513,28 +490,28 @@
 <h3 id="SecondaryNamenode"><a href="#SecondaryNamenode" class="headerlink" title="SecondaryNamenode"></a>SecondaryNamenode</h3><p>SecondaryNameNode：周期性保存NameNode的元数据，在namenode失效时恢复出namenode上的元数据。</p>
 <h4 id="元数据"><a href="#元数据" class="headerlink" title="元数据"></a>元数据</h4><p>包括文件镜像数据FSImage和编辑日志EditLog。FSImage相当于HDFS的检查点，namenode启动时候会读取FSImage的内容到内存，并将其与EditLog日志中的所有修改信息合并生成新的FSImage；在namenode运行过程中，所有关于HDFS的修改都将写入EditLog。这样，如果namenode失效，可以通过SecondaryNameNode中保存的FSImage和EditLog数据恢复出namenode最近的状态。</p>
 <h3 id="HDFS读写流程"><a href="#HDFS读写流程" class="headerlink" title="HDFS读写流程"></a>HDFS读写流程</h3><ol>
-<li>向HDFS写数据<br><img src="/cn/bigdata-01-%E5%9F%BA%E7%A1%80/write.png" alt></li>
-<li>从HDFS读数据<br><img src="/cn/bigdata-01-%E5%9F%BA%E7%A1%80/read.png" alt></li>
+<li>向HDFS写数据<br><img src="/cn/bigdata-Hadoop/write.png" alt></li>
+<li>从HDFS读数据<br><img src="/cn/bigdata-Hadoop/read.png" alt></li>
 </ol>
 <h3 id="提交job应用流程"><a href="#提交job应用流程" class="headerlink" title="提交job应用流程"></a>提交job应用流程</h3><p>提交job的全过程：提交job给YARN，执行MapReduce、HDFS读数据，HDFS写数据。<br>提交job给YARN的过程：提交job，job的初始化，任务分配，任务运行，作业完成<br>作业换队列：<code>yarn application -movetoqueue application_1563931265452_2009268 -queue root.a.b</code></p>
 <hr>
-<p><img src="/cn/bigdata-01-%E5%9F%BA%E7%A1%80/job.png" alt></p>
+<p><img src="/cn/bigdata-Hadoop/job.png" alt></p>
 <p>1、客户端向Resource Manager申请一个job_id和job资源的提交路径；提交后向Resource manager申请运行 MRAppMaster。</p>
 <p>2、Resource Manager将job分配给某一个空闲的NodeManager，创建容器得到MRAppmaster，再把客户端提交的资源下载到本地。</p>
 <p>3、MRAppMaster向Resource Manager申请运行多个mapTask任务资源。Resource Manager将mapTask分配给其他NodeManager。</p>
 <p>4、Resource Manager向NodeManager发送脚本启动map任务，等所有map任务运行完毕后，向Resource Manager申请容器，运行 reduce任务，运行完后向Resource Manager申请注销。</p>
 <h3 id="MapReduce"><a href="#MapReduce" class="headerlink" title="MapReduce"></a>MapReduce</h3><p>详解shuffle过程：<br>map-&gt;buff环形缓存区-&gt;溢出合并与归并排序-&gt;按分区号将不同的mapTask数据合并到reduceTask-&gt;同一reduceTask归并排序-&gt;对reduceTask中的value计算</p>
 <hr>
-<p>从文件中获取block<br><img src="/cn/bigdata-01-%E5%9F%BA%E7%A1%80/spark.png" alt></p>
+<p>从文件中获取block<br><img src="/cn/bigdata-Hadoop/spark.png" alt></p>
 <ul>
 <li>本文件内若干个Block合并成一个输入分片split；不能跨越文件；</li>
 <li>一个split对应一个Task；</li>
 <li>一个Task执行结果对应RDD的partition<strong>增大分区数，增大task数，增大并行度</strong></li>
 <li>一个Executor数目包含多个core；</li>
 </ul>
-<p><img src="/cn/bigdata-01-%E5%9F%BA%E7%A1%80/mr.jpg" alt="avatar"></p>
+<p><img src="/cn/bigdata-Hadoop/mr.jpg" alt="avatar"></p>
 <p>map task读取文件写入环形缓冲区（100M），一次溢出后按照key进行hash分区，多次溢出的文件按照分区合并(归并排序)；对多个map task的相同分区内的key进行归并排序，然后传给reduce task。</p>
-<h3 id="详解shuffle过程"><a href="#详解shuffle过程" class="headerlink" title="详解shuffle过程"></a>详解shuffle过程</h3><p><img src="/cn/bigdata-01-%E5%9F%BA%E7%A1%80/shuffle1.png" alt><br><img src="/cn/bigdata-01-%E5%9F%BA%E7%A1%80/shuffle2.png" alt></p>
+<h3 id="详解shuffle过程"><a href="#详解shuffle过程" class="headerlink" title="详解shuffle过程"></a>详解shuffle过程</h3><p><img src="/cn/bigdata-Hadoop/shuffle1.png" alt><br><img src="/cn/bigdata-Hadoop/shuffle2.png" alt></p>
 <p>上面的流程是整个mapreduce最全工作流程，但是shuffle过程只是从第7步开始到第16步结束，具体shuffle过程详解，如下：</p>
 <ol>
 <li>maptask收集我们的map()方法输出的kv对，放到内存缓冲区中</li>
@@ -549,7 +526,7 @@
 <li>Shuffle中的缓冲区大小会影响到mapreduce程序的执行效率，原则上说，缓冲区越大，磁盘io的次数越少，执行速度就越快。</li>
 <li>缓冲区的大小可以通过参数调整，参数：io.sort.mb  默认100M</li>
 </ul>
-<p><img src="/cn/bigdata-01-%E5%9F%BA%E7%A1%80/mr.png" alt="avatar"></p>
+<p><img src="/cn/bigdata-Hadoop/mr.png" alt="avatar"></p>
 <h3 id="Partition"><a href="#Partition" class="headerlink" title="Partition"></a>Partition</h3><p>map端输出(k,v)对key取hash值实现分区负载均衡算法</p>
 <h3 id="Combiner"><a href="#Combiner" class="headerlink" title="Combiner"></a>Combiner</h3><p>每一个map都可能会产生大量的本地输出，Combiner的作用就是对<strong>本地的map端的输出先做一次合并</strong>key下value以list形式存储，<strong>大大减少在map和reduce节点之间的数据传输量，以提高网络IO性能</strong>是MapReduce的一种优化手段之一。就在part下对相同的key提前合并一下</p>
 <ul>
@@ -560,7 +537,7 @@
 <li>combiner能够应用的前提是不能影响最终的业务逻辑，而且，combiner的输出kv应该跟reducer的输入kv类型要对应起来</li>
 </ul>
 <h3 id="二次排序"><a href="#二次排序" class="headerlink" title="二次排序"></a>二次排序</h3><p>如何做到在Reduce阶段，先对Key排序，再对Value排序<br>该问题通常称为”二次排序“，最常用的方法是将Value放到Key中，实现一个组合Key，然后自定义Key排序规则（为Key实现一个WritableComparable）</p>
-<h2 id="3-Spark"><a href="#3-Spark" class="headerlink" title="3. Spark"></a>3. Spark</h2><h3 id="Spark-job资源分配"><a href="#Spark-job资源分配" class="headerlink" title="Spark job资源分配"></a>Spark job资源分配</h3><div class="table-container">
+<h2 id="Spark"><a href="#Spark" class="headerlink" title="Spark"></a>Spark</h2><h3 id="Spark-job资源分配"><a href="#Spark-job资源分配" class="headerlink" title="Spark job资源分配"></a>Spark job资源分配</h3><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -593,12 +570,12 @@
 </tbody>
 </table>
 </div>
-<p><img src="/cn/bigdata-01-%E5%9F%BA%E7%A1%80/cluster.jpg" alt="avatar"></p>
+<p><img src="/cn/bigdata-Hadoop/cluster.jpg" alt="avatar"></p>
 <ul>
 <li>数据倾斜：某个key下value过多，reduce_task处理任务过重导致运行特别慢。shuffle出现在期间。造成后果：有得任务执行完毕，某个任务执行很慢而且可能出现OOM错误；一般增大执行器与核数，并行数，自定义partition</li>
 <li>尽量减少spark任务的空间占用，同时加速spark任务运行速度</li>
 </ul>
-<h2 id="4-HBase"><a href="#4-HBase" class="headerlink" title="4. HBase"></a>4. HBase</h2><ul>
+<h2 id="HBase"><a href="#HBase" class="headerlink" title="HBase"></a>HBase</h2><ul>
 <li>行键：是hbase表自带的，每个行键对应一条数据。</li>
 <li>列族：是创建表时指定的，为列的集合，每个列族作为一个文件单独存储，存储的数据都是字节数组，其中数据可以有很多，通过时间戳来区分。</li>
 <li>物理模型：整个hbase表会拆分成多个region，每个region记录着行键的起始点保存在不同的节点上，查询时就是对各个节点的并行查询，当region很大时使用.META表存储各个region的起始点，-ROOT又可以存储.META的起始点。</li>
@@ -608,7 +585,7 @@
 <li>列族的设计原则：尽可能少(按照列族进行存储，按照region进行读取，不必要的io操作)，经常和不经常使用的两类数据放入不同列族中，列族名字尽可能短</li>
 </ol>
 <h3 id="hbase-shell"><a href="#hbase-shell" class="headerlink" title="hbase shell"></a>hbase shell</h3><p>hbase扫的是key，非视频id，哈希后的数据对应的key<br><code>get &#39;hbasehhhhh&#39;,&#39;000005020000&#39;</code><br><code>scan &#39;hbasehhhhh&#39;</code></p>
-<h2 id="5-Hive"><a href="#5-Hive" class="headerlink" title="5. Hive"></a>5. Hive</h2><h3 id="内部表与外部表"><a href="#内部表与外部表" class="headerlink" title="内部表与外部表"></a>内部表与外部表</h3><ol>
+<h2 id="Hive"><a href="#Hive" class="headerlink" title="Hive"></a>Hive</h2><h3 id="内部表与外部表"><a href="#内部表与外部表" class="headerlink" title="内部表与外部表"></a>内部表与外部表</h3><ol>
 <li>一般为内部表，<strong>删除内部表时相应数据也会删除</strong></li>
 <li>内部表数据由Hive自身管理，外部表数据由HDFS管理。</li>
 <li>内部表数据存储在hive.metastore.warehouse.dir【默认:/user/hive/warehouse】，外部表数据存储位置由用户自己决定。</li>
@@ -737,12 +714,12 @@
 <li>数据规模：hive存储的数据量超级大，而mysql只是存储一些少量的业务数据；</li>
 <li>底层执行原理：hive底层是用的mapreduce，而mysql是excutor执行器</li>
 </ul>
-<h2 id="6-Kafka"><a href="#6-Kafka" class="headerlink" title="6. Kafka"></a>6. Kafka</h2><p>消息是kafka主要处理的对象，在某个主题之下，生产者向主题发布新消息，消费者从主题订阅新消息。<br>异步处理、应用解耦、流量缓冲、日志采集</p>
+<h2 id="Kafka"><a href="#Kafka" class="headerlink" title="Kafka"></a>Kafka</h2><p>消息是kafka主要处理的对象，在某个主题之下，生产者向主题发布新消息，消费者从主题订阅新消息。<br>异步处理、应用解耦、流量缓冲、日志采集</p>
 <ul>
 <li>消息队列实现订单系统与库存系统的解耦，到应用层的解耦，防止短时间压垮应用；</li>
 <li>负责日志数据接收存储与转发</li>
 </ul>
-<h2 id="7-Flink"><a href="#7-Flink" class="headerlink" title="7. Flink"></a>7. Flink</h2><h3 id="流处理与批处理"><a href="#流处理与批处理" class="headerlink" title="流处理与批处理"></a>流处理与批处理</h3><ol>
+<h2 id="Flink"><a href="#Flink" class="headerlink" title="Flink"></a>Flink</h2><h3 id="流处理与批处理"><a href="#流处理与批处理" class="headerlink" title="流处理与批处理"></a>流处理与批处理</h3><ol>
 <li>流处理系统：一条数据被处理完成后，序列化到缓存中，通过网络传输到下一个节点，由下一个节点继续处理。</li>
 <li>批处理系统：一条数据被处理完成后，序列化到缓存中，并不会立刻通过网络传输到下一个节点，当缓存写满，就持久化到本地硬盘上，当所有数据都被处理完成后，才数据通过网络传输到下一个节点。</li>
 </ol>
@@ -758,12 +735,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/cn/bigdata-05-shell/" data-toggle="tooltip" data-placement="top" title="BigData-Shell">&larr; Previous Post</a>
+            <a href="/cn/bigdata-调优/" data-toggle="tooltip" data-placement="top" title="BigData-调优">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/cn/bigdata-02-Java/" data-toggle="tooltip" data-placement="top" title="BigData-JVM">Next Post &rarr;</a>
+            <a href="/cn/bigdata-Git/" data-toggle="tooltip" data-placement="top" title="BigData-Git">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -812,7 +789,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=BigData-大数据基础&body=Hi,I found this website and thought you might like it https://11010101.xyz/cn/bigdata-01-基础/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=BigData-Hadoop基础&body=Hi,I found this website and thought you might like it https://11010101.xyz/cn/bigdata-Hadoop/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -900,7 +877,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%A4%A7%E6%95%B0%E6%8D%AE"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">大数据</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#0-Scala%E5%9F%BA%E7%A1%80"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">0. Scala基础</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Shuffle%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="toc-nav-number">1.1.1.</span> <span class="toc-nav-text">Shuffle的操作</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%B9%BF%E6%92%AD%E5%8F%98%E9%87%8F"><span class="toc-nav-number">1.1.2.</span> <span class="toc-nav-text">广播变量</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#RDD"><span class="toc-nav-number">1.1.3.</span> <span class="toc-nav-text">RDD</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-Maven"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">1. Maven</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#scope"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">scope</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-Hadoop"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">2. Hadoop</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#SecondaryNamenode"><span class="toc-nav-number">1.3.1.</span> <span class="toc-nav-text">SecondaryNamenode</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%85%83%E6%95%B0%E6%8D%AE"><span class="toc-nav-number">1.3.1.1.</span> <span class="toc-nav-text">元数据</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#HDFS%E8%AF%BB%E5%86%99%E6%B5%81%E7%A8%8B"><span class="toc-nav-number">1.3.2.</span> <span class="toc-nav-text">HDFS读写流程</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%8F%90%E4%BA%A4job%E5%BA%94%E7%94%A8%E6%B5%81%E7%A8%8B"><span class="toc-nav-number">1.3.3.</span> <span class="toc-nav-text">提交job应用流程</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#MapReduce"><span class="toc-nav-number">1.3.4.</span> <span class="toc-nav-text">MapReduce</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%AF%A6%E8%A7%A3shuffle%E8%BF%87%E7%A8%8B"><span class="toc-nav-number">1.3.5.</span> <span class="toc-nav-text">详解shuffle过程</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#tips"><span class="toc-nav-number">1.3.5.1.</span> <span class="toc-nav-text">tips</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Partition"><span class="toc-nav-number">1.3.6.</span> <span class="toc-nav-text">Partition</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Combiner"><span class="toc-nav-number">1.3.7.</span> <span class="toc-nav-text">Combiner</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BA%8C%E6%AC%A1%E6%8E%92%E5%BA%8F"><span class="toc-nav-number">1.3.8.</span> <span class="toc-nav-text">二次排序</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-Spark"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">3. Spark</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Spark-job%E8%B5%84%E6%BA%90%E5%88%86%E9%85%8D"><span class="toc-nav-number">1.4.1.</span> <span class="toc-nav-text">Spark job资源分配</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#4-HBase"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">4. HBase</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#hbase-shell"><span class="toc-nav-number">1.5.1.</span> <span class="toc-nav-text">hbase shell</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#5-Hive"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">5. Hive</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%86%85%E9%83%A8%E8%A1%A8%E4%B8%8E%E5%A4%96%E9%83%A8%E8%A1%A8"><span class="toc-nav-number">1.6.1.</span> <span class="toc-nav-text">内部表与外部表</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%8A%A0%E8%BD%BD%E4%B8%8E%E5%88%A0%E9%99%A4%E5%88%86%E5%8C%BA"><span class="toc-nav-number">1.6.2.</span> <span class="toc-nav-text">加载与删除分区</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%BB%BA%E8%A1%A8"><span class="toc-nav-number">1.6.3.</span> <span class="toc-nav-text">建表</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BF%AE%E6%94%B9%E8%A1%A8"><span class="toc-nav-number">1.6.4.</span> <span class="toc-nav-text">修改表</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-nav-number">1.6.5.</span> <span class="toc-nav-text">关键字</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Hive%E4%B8%8ESQL"><span class="toc-nav-number">1.6.6.</span> <span class="toc-nav-text">Hive与SQL</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#6-Kafka"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">6. Kafka</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#7-Flink"><span class="toc-nav-number">1.8.</span> <span class="toc-nav-text">7. Flink</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%B5%81%E5%A4%84%E7%90%86%E4%B8%8E%E6%89%B9%E5%A4%84%E7%90%86"><span class="toc-nav-number">1.8.1.</span> <span class="toc-nav-text">流处理与批处理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Flink%E5%AE%B9%E9%94%99%E6%80%A7%E9%AB%98%EF%BC%8C%E5%BF%AB%E7%85%A7%E6%81%A2%E5%A4%8D"><span class="toc-nav-number">1.8.1.1.</span> <span class="toc-nav-text">Flink容错性高，快照恢复</span></a></li></ol></li></ol></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%A4%A7%E6%95%B0%E6%8D%AE"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">大数据</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Maven"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">Maven</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#scope"><span class="toc-nav-number">1.1.1.</span> <span class="toc-nav-text">scope</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Hadoop"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">Hadoop</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#SecondaryNamenode"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">SecondaryNamenode</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%85%83%E6%95%B0%E6%8D%AE"><span class="toc-nav-number">1.2.1.1.</span> <span class="toc-nav-text">元数据</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#HDFS%E8%AF%BB%E5%86%99%E6%B5%81%E7%A8%8B"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">HDFS读写流程</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%8F%90%E4%BA%A4job%E5%BA%94%E7%94%A8%E6%B5%81%E7%A8%8B"><span class="toc-nav-number">1.2.3.</span> <span class="toc-nav-text">提交job应用流程</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#MapReduce"><span class="toc-nav-number">1.2.4.</span> <span class="toc-nav-text">MapReduce</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%AF%A6%E8%A7%A3shuffle%E8%BF%87%E7%A8%8B"><span class="toc-nav-number">1.2.5.</span> <span class="toc-nav-text">详解shuffle过程</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#tips"><span class="toc-nav-number">1.2.5.1.</span> <span class="toc-nav-text">tips</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Partition"><span class="toc-nav-number">1.2.6.</span> <span class="toc-nav-text">Partition</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Combiner"><span class="toc-nav-number">1.2.7.</span> <span class="toc-nav-text">Combiner</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BA%8C%E6%AC%A1%E6%8E%92%E5%BA%8F"><span class="toc-nav-number">1.2.8.</span> <span class="toc-nav-text">二次排序</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Spark"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">Spark</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Spark-job%E8%B5%84%E6%BA%90%E5%88%86%E9%85%8D"><span class="toc-nav-number">1.3.1.</span> <span class="toc-nav-text">Spark job资源分配</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#HBase"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">HBase</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#hbase-shell"><span class="toc-nav-number">1.4.1.</span> <span class="toc-nav-text">hbase shell</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Hive"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">Hive</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%86%85%E9%83%A8%E8%A1%A8%E4%B8%8E%E5%A4%96%E9%83%A8%E8%A1%A8"><span class="toc-nav-number">1.5.1.</span> <span class="toc-nav-text">内部表与外部表</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%8A%A0%E8%BD%BD%E4%B8%8E%E5%88%A0%E9%99%A4%E5%88%86%E5%8C%BA"><span class="toc-nav-number">1.5.2.</span> <span class="toc-nav-text">加载与删除分区</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%BB%BA%E8%A1%A8"><span class="toc-nav-number">1.5.3.</span> <span class="toc-nav-text">建表</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BF%AE%E6%94%B9%E8%A1%A8"><span class="toc-nav-number">1.5.4.</span> <span class="toc-nav-text">修改表</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-nav-number">1.5.5.</span> <span class="toc-nav-text">关键字</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Hive%E4%B8%8ESQL"><span class="toc-nav-number">1.5.6.</span> <span class="toc-nav-text">Hive与SQL</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Kafka"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">Kafka</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Flink"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">Flink</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%B5%81%E5%A4%84%E7%90%86%E4%B8%8E%E6%89%B9%E5%A4%84%E7%90%86"><span class="toc-nav-number">1.7.1.</span> <span class="toc-nav-text">流处理与批处理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Flink%E5%AE%B9%E9%94%99%E6%80%A7%E9%AB%98%EF%BC%8C%E5%BF%AB%E7%85%A7%E6%81%A2%E5%A4%8D"><span class="toc-nav-number">1.7.1.1.</span> <span class="toc-nav-text">Flink容错性高，快照恢复</span></a></li></ol></li></ol></li></ol></li></ol>
         
         </div>
       </aside>
