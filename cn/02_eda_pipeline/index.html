@@ -1,0 +1,2820 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-5GGTGE8BJS"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-5GGTGE8BJS');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+
+  <!-- Baidu Push -->
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <!-- <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/> -->
+  <meta name="google-site-verification" content="MnOJ4x6R2U5mM5X77Gw3bN3VcbjclS96MyKa6oZoMVk" />
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="人工智能的奇点，正在来临..."/>
+  <meta name="keyword" content="AI"/>
+  <link rel="shortcut icon" href="/img/avatar/tab.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+      <!-- gitalk start -->
+      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
+      <link rel="stylesheet" href="/css/gitalk.css"/>
+      <!-- gitalk end -->
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://11010101.xyz/cn/02_eda_pipeline/">
+  <title>
+    
+      02_EDA_Pipeline - Shawn Blog
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--light">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'light';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+		<!-- Gitter -->
+<!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'touch_fish/lie_down'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Shawn Blog</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">主页</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于我
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>搜索</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('/img/header_img/new_home_bg.jpg');
+      --intro-header-background-image-url-post: url('');
+      --intro-header-background-image-url-page: url('/img/header_img/archive_bg.jpg');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/new_home_bg.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/archive_bg.jpg');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url(''); */
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('/img/signature/my_signature.png');
+      }
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#EDA" title="EDA">EDA</a>
+              
+            </div>
+            <h1>02_EDA_Pipeline</h1>
+            <h2 class="subheading">EDA Pipeline</h2>
+            <span class="meta">
+              Posted by 小于 on
+              2022-05-15
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">31</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">5.7k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h1 id="EDA-Pipeline"><a href="#EDA-Pipeline" class="headerlink" title="EDA Pipeline"></a>EDA Pipeline</h1><p>原版notebooks：<a target="_blank" rel="noopener" href="https://github.com/miykael/miykael.github.io/blob/master/assets/nb/03_advanced_eda/nb_advanced_eda.ipynb">https://github.com/miykael/miykael.github.io/blob/master/assets/nb/03_advanced_eda/nb_advanced_eda.ipynb</a></p>
+<ol>
+<li><strong>数据结构</strong>：数据维度、特种类型</li>
+<li><strong>数据质量</strong>：重复、缺失或无关实例</li>
+<li><strong>数据内容</strong>：更深的去研究和对比不同数据特征之间的关系，试图发现新的东西！</li>
+</ol>
+<h2 id="1-check数据结构"><a href="#1-check数据结构" class="headerlink" title="1.check数据结构"></a>1.check数据结构</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> fetch_openml</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 按照data id获取数据，并转换为dataframe格式</span></span><br><span class="line">dataset = fetch_openml(data_id=<span class="number">42803</span>, as_frame=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 先只check特征frame</span></span><br><span class="line">df = dataset[<span class="string">&quot;frame&quot;</span>]</span><br><span class="line">df.sample(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+  <div id="df-49533201-3cdb-4f5d-be7f-52981204d02c">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Accident_Index</th>
+      <th>Vehicle_Reference_df_res</th>
+      <th>Vehicle_Type</th>
+      <th>Towing_and_Articulation</th>
+      <th>Vehicle_Manoeuvre</th>
+      <th>Vehicle_Location-Restricted_Lane</th>
+      <th>Junction_Location</th>
+      <th>Skidding_and_Overturning</th>
+      <th>Hit_Object_in_Carriageway</th>
+      <th>Vehicle_Leaving_Carriageway</th>
+      <th>...</th>
+      <th>Age_Band_of_Casualty</th>
+      <th>Casualty_Severity</th>
+      <th>Pedestrian_Location</th>
+      <th>Pedestrian_Movement</th>
+      <th>Car_Passenger</th>
+      <th>Bus_or_Coach_Passenger</th>
+      <th>Pedestrian_Road_Maintenance_Worker</th>
+      <th>Casualty_Type</th>
+      <th>Casualty_Home_Area_Type</th>
+      <th>Casualty_IMD_Decile</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>39691</th>
+      <td>201501TX20367</td>
+      <td>1.0</td>
+      <td>9.0</td>
+      <td>0.0</td>
+      <td>18.0</td>
+      <td>0.0</td>
+      <td>8.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>3.0</td>
+      <td>3.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>9.0</td>
+      <td>1.0</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>300062</th>
+      <td>201550BC2E001</td>
+      <td>3.0</td>
+      <td>9.0</td>
+      <td>0.0</td>
+      <td>3.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>6.0</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>9.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>193424</th>
+      <td>2015320130924</td>
+      <td>2.0</td>
+      <td>9.0</td>
+      <td>0.0</td>
+      <td>18.0</td>
+      <td>0.0</td>
+      <td>8.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>7.0</td>
+      <td>3.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>9.0</td>
+      <td>1.0</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>289801</th>
+      <td>2015471501759</td>
+      <td>2.0</td>
+      <td>9.0</td>
+      <td>0.0</td>
+      <td>3.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>10.0</td>
+      <td>3.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>9.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>305777</th>
+      <td>201550GT3F021</td>
+      <td>2.0</td>
+      <td>9.0</td>
+      <td>0.0</td>
+      <td>18.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>5.0</td>
+      <td>3.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>9.0</td>
+      <td>1.0</td>
+      <td>8.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 67 columns</p>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-49533201-3cdb-4f5d-be7f-52981204d02c')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-49533201-3cdb-4f5d-be7f-52981204d02c button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-49533201-3cdb-4f5d-be7f-52981204d02c');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看数据量与特征类型，pandas统计dataframe的数据类型</span></span><br><span class="line">df.shape, pd.value_counts(df.dtypes)</span><br></pre></td></tr></table></figure>
+<pre><code>((363243, 67), float64    61
+ object      6
+ dtype: int64)
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 重点查看非数值特征是什么类型</span></span><br><span class="line">df.select_dtypes(exclude = [<span class="string">&#x27;number&#x27;</span>]).head()</span><br></pre></td></tr></table></figure>
+  <div id="df-f15efd60-2ab1-4dd9-ae9e-644bc34cc4a8">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Accident_Index</th>
+      <th>Sex_of_Driver</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Local_Authority_(Highway)</th>
+      <th>LSOA_of_Accident_Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>201501BS70001</td>
+      <td>1.0</td>
+      <td>12/01/2015</td>
+      <td>18:45</td>
+      <td>E09000020</td>
+      <td>E01002825</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>201501BS70002</td>
+      <td>1.0</td>
+      <td>12/01/2015</td>
+      <td>07:50</td>
+      <td>E09000020</td>
+      <td>E01002820</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>201501BS70004</td>
+      <td>1.0</td>
+      <td>12/01/2015</td>
+      <td>18:08</td>
+      <td>E09000020</td>
+      <td>E01002833</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>201501BS70005</td>
+      <td>1.0</td>
+      <td>13/01/2015</td>
+      <td>07:40</td>
+      <td>E09000020</td>
+      <td>E01002874</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>201501BS70008</td>
+      <td>1.0</td>
+      <td>09/01/2015</td>
+      <td>07:30</td>
+      <td>E09000020</td>
+      <td>E01002814</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-f15efd60-2ab1-4dd9-ae9e-644bc34cc4a8')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-f15efd60-2ab1-4dd9-ae9e-644bc34cc4a8 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-f15efd60-2ab1-4dd9-ae9e-644bc34cc4a8');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 明确各特征类型</span></span><br><span class="line">df[<span class="string">&quot;Sex_of_Driver&quot;</span>] = df[<span class="string">&quot;Sex_of_Driver&quot;</span>].astype(<span class="string">&quot;float&quot;</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.describe(exclude=<span class="string">&quot;number&quot;</span>)</span><br></pre></td></tr></table></figure>
+  <div id="df-8a63cc31-62c7-4ccb-bf23-a6cfbbcae531">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Accident_Index</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Local_Authority_(Highway)</th>
+      <th>LSOA_of_Accident_Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>363243</td>
+      <td>319866</td>
+      <td>319822</td>
+      <td>319866</td>
+      <td>298758</td>
+    </tr>
+    <tr>
+      <th>unique</th>
+      <td>140056</td>
+      <td>365</td>
+      <td>1439</td>
+      <td>204</td>
+      <td>25979</td>
+    </tr>
+    <tr>
+      <th>top</th>
+      <td>201543P296025</td>
+      <td>14/02/2015</td>
+      <td>17:30</td>
+      <td>E10000017</td>
+      <td>E01028497</td>
+    </tr>
+    <tr>
+      <th>freq</th>
+      <td>1332</td>
+      <td>2144</td>
+      <td>2972</td>
+      <td>8457</td>
+      <td>1456</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-8a63cc31-62c7-4ccb-bf23-a6cfbbcae531')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-8a63cc31-62c7-4ccb-bf23-a6cfbbcae531 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-8a63cc31-62c7-4ccb-bf23-a6cfbbcae531');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.describe(include=[<span class="string">&#x27;number&#x27;</span>])</span><br></pre></td></tr></table></figure>
+  <div id="df-7a1bc5ef-f1cf-40d5-a8b7-c9505970e118">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Vehicle_Reference_df_res</th>
+      <th>Vehicle_Type</th>
+      <th>Towing_and_Articulation</th>
+      <th>Vehicle_Manoeuvre</th>
+      <th>Vehicle_Location-Restricted_Lane</th>
+      <th>Junction_Location</th>
+      <th>Skidding_and_Overturning</th>
+      <th>Hit_Object_in_Carriageway</th>
+      <th>Vehicle_Leaving_Carriageway</th>
+      <th>Hit_Object_off_Carriageway</th>
+      <th>...</th>
+      <th>Age_Band_of_Casualty</th>
+      <th>Casualty_Severity</th>
+      <th>Pedestrian_Location</th>
+      <th>Pedestrian_Movement</th>
+      <th>Car_Passenger</th>
+      <th>Bus_or_Coach_Passenger</th>
+      <th>Pedestrian_Road_Maintenance_Worker</th>
+      <th>Casualty_Type</th>
+      <th>Casualty_Home_Area_Type</th>
+      <th>Casualty_IMD_Decile</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>363243.000000</td>
+      <td>363181.000000</td>
+      <td>362864.000000</td>
+      <td>363059.000000</td>
+      <td>363067.000000</td>
+      <td>363159.000000</td>
+      <td>363067.000000</td>
+      <td>363080.000000</td>
+      <td>363084.000000</td>
+      <td>363242.000000</td>
+      <td>...</td>
+      <td>357674.000000</td>
+      <td>363243.000000</td>
+      <td>363241.000000</td>
+      <td>363241.000000</td>
+      <td>362481.000000</td>
+      <td>363197.000000</td>
+      <td>363077.000000</td>
+      <td>363243.000000</td>
+      <td>323448.000000</td>
+      <td>293666.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>1.696203</td>
+      <td>9.756953</td>
+      <td>0.029766</td>
+      <td>12.607326</td>
+      <td>0.109233</td>
+      <td>2.609361</td>
+      <td>0.188139</td>
+      <td>0.307480</td>
+      <td>0.366689</td>
+      <td>0.546699</td>
+      <td>...</td>
+      <td>6.431284</td>
+      <td>2.875725</td>
+      <td>0.380731</td>
+      <td>0.276467</td>
+      <td>0.281027</td>
+      <td>0.066127</td>
+      <td>0.032833</td>
+      <td>7.840080</td>
+      <td>1.308186</td>
+      <td>5.107323</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>1.487094</td>
+      <td>8.315189</td>
+      <td>0.294127</td>
+      <td>6.218689</td>
+      <td>0.903131</td>
+      <td>3.249245</td>
+      <td>0.714243</td>
+      <td>1.595551</td>
+      <td>1.374107</td>
+      <td>2.094845</td>
+      <td>...</td>
+      <td>2.157860</td>
+      <td>0.355195</td>
+      <td>1.522220</td>
+      <td>1.294574</td>
+      <td>0.591239</td>
+      <td>0.493174</td>
+      <td>0.253780</td>
+      <td>7.366436</td>
+      <td>0.657776</td>
+      <td>2.829458</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>1.000000</td>
+      <td>9.000000</td>
+      <td>0.000000</td>
+      <td>6.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>5.000000</td>
+      <td>3.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>5.000000</td>
+      <td>1.000000</td>
+      <td>3.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>1.000000</td>
+      <td>9.000000</td>
+      <td>0.000000</td>
+      <td>17.000000</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>6.000000</td>
+      <td>3.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>9.000000</td>
+      <td>1.000000</td>
+      <td>5.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>2.000000</td>
+      <td>9.000000</td>
+      <td>0.000000</td>
+      <td>18.000000</td>
+      <td>0.000000</td>
+      <td>6.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>8.000000</td>
+      <td>3.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>9.000000</td>
+      <td>1.000000</td>
+      <td>7.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>37.000000</td>
+      <td>98.000000</td>
+      <td>5.000000</td>
+      <td>18.000000</td>
+      <td>9.000000</td>
+      <td>8.000000</td>
+      <td>5.000000</td>
+      <td>12.000000</td>
+      <td>8.000000</td>
+      <td>11.000000</td>
+      <td>...</td>
+      <td>11.000000</td>
+      <td>3.000000</td>
+      <td>10.000000</td>
+      <td>9.000000</td>
+      <td>2.000000</td>
+      <td>4.000000</td>
+      <td>2.000000</td>
+      <td>98.000000</td>
+      <td>3.000000</td>
+      <td>10.000000</td>
+    </tr>
+  </tbody>
+</table>
+<p>8 rows × 62 columns</p>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-7a1bc5ef-f1cf-40d5-a8b7-c9505970e118')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-7a1bc5ef-f1cf-40d5-a8b7-c9505970e118 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-7a1bc5ef-f1cf-40d5-a8b7-c9505970e118');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+
+
+
+
+<h3 id="1-2-数值型数据"><a href="#1-2-数值型数据" class="headerlink" title="1.2. 数值型数据"></a>1.2. 数值型数据</h3><p>df.plot.bar() 参考：<a target="_blank" rel="noopener" href="https://github.com/pandas-dev/pandas/blob/v1.4.2/pandas/plotting/_core.py#L1043-L1131">https://github.com/pandas-dev/pandas/blob/v1.4.2/pandas/plotting/_core.py#L1043-L1131</a></p>
+<p>对长尾数据可视化，对纵轴进行logy缩放表示</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 数值型特征，各column的去重个数</span></span><br><span class="line">unique_values = df.select_dtypes(include=[<span class="string">&quot;number&quot;</span>]).nunique().sort_values()</span><br><span class="line">unique_values.plot.bar(figsize=(<span class="number">15</span>, <span class="number">4</span>), title=<span class="string">&quot;Unique values per feature&quot;</span>, logy=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f26f3f94650&gt;
+</code></pre><p><img src="/cn/02_eda_pipeline/output_9_1.png" alt="png"></p>
+<p><code>df.info(),df.describe()</code></p>
+<h2 id="2-check数据质量"><a href="#2-check数据质量" class="headerlink" title="2.check数据质量"></a>2.check数据质量</h2><h3 id="2-1-重复检测"><a href="#2-1-重复检测" class="headerlink" title="2.1. 重复检测"></a>2.1. 重复检测</h3><ol>
+<li><p>字符串前加 u：后面字符串以 Unicode 格式 进行编码，一般用在中文字符串前面，防止因为源码储存格式问题，导致再次使用时出现乱码。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ss = <span class="string">u&quot;我是含有中文字符组成的字符串。&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>字符串前加 r：去掉反斜杠的转移机制。常用于正则表达式，对应着re模块。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ss = <span class="string">r&quot;\n\n\n\n&quot;</span>  <span class="comment">#表示一个普通生字符串 \n\n\n\n，而不表示换行。</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>字符串前加 b：后面字符串是bytes 类型。网络编程中，服务器和浏览器只认bytes 类型数据。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response = <span class="string">b&#x27;Hello World!&#x27;</span> <span class="comment"># b&#x27; &#x27; 表示这是一个 bytes 对象</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在 Python3 中，bytes 和 str 的互相转换方式是</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">str</span>.encode(‘utf-<span class="number">8</span><span class="string">&#x27;)</span></span><br><span class="line"><span class="string">bytes.decode(‘utf-8&#x27;</span>)</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>字符串前加 f：表示在字符串内支持大括号内的python 表达式</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">t0 = time.time()</span><br><span class="line">time.sleep(<span class="number">1</span>)</span><br><span class="line">name = <span class="string">&#x27;processing&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;<span class="subst">&#123;name&#125;</span> done in <span class="subst">&#123;time.time() - t0:<span class="number">.2</span>f&#125;</span> s&#x27;</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 检测重复样本数。构成事故index的条件作为样本唯一性的基准，因此不参与进重复判断，保留一种index即可。</span></span><br><span class="line">num_duplicates = df.drop(labels=[<span class="string">&quot;Accident_Index&quot;</span>], axis=<span class="number">1</span>).duplicated().<span class="built_in">sum</span>()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;You seem to have <span class="subst">&#123;num_duplicates&#125;</span> duplicates in your database.&quot;</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>You seem to have 22 duplicates in your database.
+</code></pre><p>丢掉<code>.drop_duplicates()</code>.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 除去事故index后，基于剩余特征进行重复判断并进行丢弃。</span></span><br><span class="line">columns_to_consider = df.drop(labels=[<span class="string">&quot;Accident_Index&quot;</span>], axis=<span class="number">1</span>).columns</span><br><span class="line">df = df.drop_duplicates(subset=columns_to_consider)</span><br><span class="line">df.shape</span><br></pre></td></tr></table></figure>
+<pre><code>(363221, 67)
+</code></pre><h3 id="2-2-缺失值检测"><a href="#2-2-缺失值检测" class="headerlink" title="2.2 缺失值检测"></a>2.2 缺失值检测</h3><p><code>df.dropna(, axis=0)</code>，drop函数，定义横向和纵向进行去重。</p>
+<ul>
+<li>横向：该样本丢弃</li>
+<li>纵向：该特征列丢弃</li>
+</ul>
+<h4 id="2-2-1-样本维度"><a href="#2-2-1-样本维度" class="headerlink" title="2.2.1 样本维度"></a>2.2.1 样本维度</h4><p>样本-特征图，查看miss hole</p>
+<p><code>df_X.isna()</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">8</span>))</span><br><span class="line">plt.imshow(df.isna(), aspect=<span class="string">&quot;auto&quot;</span>, interpolation=<span class="string">&quot;nearest&quot;</span>, cmap=<span class="string">&quot;gray&quot;</span>)</span><br><span class="line">plt.xlabel(<span class="string">&quot;Feature Column Number&quot;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&quot;Sample Number&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p><img src="/cn/02_eda_pipeline/output_19_0.png" alt="png"></p>
+<p>该图为整个dataframe矩阵形式，缺失情况的overview，空白部分表明这些样本的特征缺失。</p>
+<blockquote>
+<p>另miss check库：<a target="_blank" rel="noopener" href="https://github.com/ResidentMario/missingno">missingno</a> ，支持对样本维度，根据特征缺失情况排序。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> missingno <span class="keyword">as</span> msno</span><br><span class="line">msno.matrix(df, labels=<span class="literal">True</span>, sort=<span class="string">&quot;descending&quot;</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f26d847c1d0&gt;
+</code></pre><p><img src="/cn/02_eda_pipeline/output_21_1.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># thresh阈值的意义是：保留data completness 80%以上的样本；即保留特征缺失少于20%的样本。</span></span><br><span class="line">df_X = df.dropna(thresh=df.shape[<span class="number">1</span>] * <span class="number">0.80</span>, axis=<span class="number">0</span>).reset_index(drop=<span class="literal">True</span>)</span><br><span class="line">df_X.shape</span><br></pre></td></tr></table></figure>
+<pre><code>(319790, 67)
+</code></pre><h4 id="2-2-2-特征维度"><a href="#2-2-2-特征维度" class="headerlink" title="2.2.2 特征维度"></a>2.2.2 特征维度</h4><p>从特征维度，查看缺失值分布。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">df_X.isna().mean().sort_values().plot(</span><br><span class="line">    kind=<span class="string">&quot;bar&quot;</span>,</span><br><span class="line">    figsize=(<span class="number">15</span>, <span class="number">4</span>),</span><br><span class="line">    title=<span class="string">&quot;Percentage of missing values per feature&quot;</span>,</span><br><span class="line">    ylabel=<span class="string">&quot;Ratio of missing values per feature&quot;</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f26a72b2950&gt;
+</code></pre><p><img src="/cn/02_eda_pipeline/output_24_1.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 纵向特征列：特诊覆盖度超过85%的特征才予以保留</span></span><br><span class="line">df_X = df_X.dropna(thresh=df_X.shape[<span class="number">0</span>] * <span class="number">0.85</span>, axis=<span class="number">1</span>)</span><br><span class="line">df_X.shape</span><br></pre></td></tr></table></figure>
+<pre><code>(319790, 60)
+</code></pre><h3 id="2-3-样本误差、噪音分析"><a href="#2-3-样本误差、噪音分析" class="headerlink" title="2.3. 样本误差、噪音分析"></a>2.3. 样本误差、噪音分析</h3><p>其实是在说<strong>特征的重要性</strong>的问题。</p>
+<h4 id="2-3-1-Numerical-features"><a href="#2-3-1-Numerical-features" class="headerlink" title="2.3.1. Numerical features"></a>2.3.1. Numerical features</h4><p><code>.plot()</code></p>
+<ul>
+<li><code>lw=0</code>: <code>lw</code> stands for line width. <code>0</code> means that we don’t want to show any lines</li>
+<li><code>marker=&quot;.&quot;</code>: Instead of lines, we tell the plot to use <code>.</code> as markers for each data point</li>
+<li><code>subplots=True</code>: <code>subplots</code> tells <code>pandas</code> to plot each feature in a separate subplot</li>
+<li><code>layout=(-1, 4)</code>: This parameter tells <code>pandas</code> how many rows and columns to use for the subplots. The <code>-1</code> means “as many as needed”, while the <code>2</code> means to use 2 columns per row.</li>
+<li><code>figsize=(15, 30), markersize=1</code>: To make sure that the figure is big enough we recommend to have a figure height of roughly the number of features, and to adjust the <code>markersize</code> accordingly.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">df_X.plot(</span><br><span class="line">    lw=<span class="number">0</span>,</span><br><span class="line">    marker=<span class="string">&quot;.&quot;</span>,</span><br><span class="line">    subplots=<span class="literal">True</span>,</span><br><span class="line">    layout=(-<span class="number">1</span>, <span class="number">4</span>),</span><br><span class="line">    figsize=(<span class="number">15</span>, <span class="number">30</span>),</span><br><span class="line">    markersize=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>array([[&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26d9f6a750&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26ee0a8410&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26d9f6a290&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26e60b9a90&gt;],
+       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26e5c4ae10&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26cb8111d0&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26f317f5d0&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26ec475890&gt;],
+       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26ec4758d0&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26e8511d50&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26e42a8390&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26e6b01710&gt;],
+       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26ee01fa90&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26e5940e10&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26ecce21d0&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26e5393550&gt;],
+       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26e5d3e8d0&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26e6551c50&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26e5619b10&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26ef2f4390&gt;],
+       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26ee55e710&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26ea972a90&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26ee7f4e10&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26e8a041d0&gt;],
+       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26e97d2550&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26e5ac38d0&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26ee205c50&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26eb15bb10&gt;],
+       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26e683e390&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26e58c3710&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26ec8eea90&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26ecad1e10&gt;],
+       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26e6ecd1d0&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26eb33a550&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26edae6990&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26e6200d50&gt;],
+       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26ec6e8110&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26ea69c1d0&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26e6c1c710&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26e6983a90&gt;],
+       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26e67b2e10&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26ebea41d0&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26e9a2b550&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26e78b98d0&gt;],
+       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26d4b98c50&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26eddd6b10&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26de002390&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26ddaa0710&gt;],
+       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26ee757a90&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26ee45ce10&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26ea0dd1d0&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26e6a1b550&gt;],
+       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26eda638d0&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26e72fec50&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26e738eb10&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26e7b1a390&gt;]],
+      dtype=object)
+</code></pre><p><img src="/cn/02_eda_pipeline/output_28_1.png" alt="png"></p>
+<h4 id="2-3-2-非数值型特征"><a href="#2-3-2-非数值型特征" class="headerlink" title="2.3.2 非数值型特征"></a>2.3.2 非数值型特征</h4><p>查看各稀疏特征的可取值数，及其出现频次。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 除去数值类型、时间类型，查看数值表示的类型特征。</span></span><br><span class="line">df_X.describe(exclude=[<span class="string">&quot;number&quot;</span>, <span class="string">&quot;datetime&quot;</span>])</span><br></pre></td></tr></table></figure>
+  <div id="df-f00eadda-cafe-45c4-a9dd-61f70073b661">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Accident_Index</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Local_Authority_(Highway)</th>
+      <th>LSOA_of_Accident_Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>319790</td>
+      <td>319790</td>
+      <td>319746</td>
+      <td>319790</td>
+      <td>298693</td>
+    </tr>
+    <tr>
+      <th>unique</th>
+      <td>123645</td>
+      <td>365</td>
+      <td>1439</td>
+      <td>204</td>
+      <td>25977</td>
+    </tr>
+    <tr>
+      <th>top</th>
+      <td>201543P296025</td>
+      <td>14/02/2015</td>
+      <td>17:30</td>
+      <td>E10000017</td>
+      <td>E01028497</td>
+    </tr>
+    <tr>
+      <th>freq</th>
+      <td>1332</td>
+      <td>2144</td>
+      <td>2969</td>
+      <td>8457</td>
+      <td>1456</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-f00eadda-cafe-45c4-a9dd-61f70073b661')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-f00eadda-cafe-45c4-a9dd-61f70073b661 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-f00eadda-cafe-45c4-a9dd-61f70073b661');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">fig, axes = plt.subplots(ncols=<span class="number">1</span>, nrows=<span class="number">5</span>, figsize=(<span class="number">12</span>, <span class="number">8</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 按照数据类型，选取特征列</span></span><br><span class="line">df_non_numerical = df_X.select_dtypes(exclude=[<span class="string">&quot;number&quot;</span>, <span class="string">&quot;datetime&quot;</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 依次绘制每个特征列：特征值-频次</span></span><br><span class="line"><span class="keyword">for</span> col, ax <span class="keyword">in</span> <span class="built_in">zip</span>(df_non_numerical.columns, axes.ravel()):</span><br><span class="line">    df_non_numerical[col].value_counts().plot(logy=<span class="literal">True</span>, title=col, lw=<span class="number">0</span>, marker=<span class="string">&quot;.&quot;</span>, ax=ax)</span><br><span class="line">plt.tight_layout()</span><br></pre></td></tr></table></figure>
+<p><img src="/cn/02_eda_pipeline/output_31_0.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 得到top10频繁的事故index set</span></span><br><span class="line">accident_ids = df_non_numerical[<span class="string">&quot;Accident_Index&quot;</span>].value_counts().head(<span class="number">10</span>).index</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除该类型事故</span></span><br><span class="line">df_X = df_X[~df_X[<span class="string">&quot;Accident_Index&quot;</span>].isin(accident_ids)]</span><br><span class="line">df_X.shape,accident_ids</span><br></pre></td></tr></table></figure>
+<pre><code>((317665, 60),
+ Index([&#39;201543P296025&#39;, &#39;2015621500156&#39;, &#39;201597AC70404&#39;, &#39;2015984141415&#39;,
+        &#39;201522D501706&#39;, &#39;201501RY10259&#39;, &#39;201542I309809&#39;, &#39;2015160C06511&#39;,
+        &#39;20154100T3095&#39;, &#39;2015300013662&#39;],
+       dtype=&#39;object&#39;))
+</code></pre><h2 id="3-数据内容分析"><a href="#3-数据内容分析" class="headerlink" title="3.数据内容分析"></a>3.数据内容分析</h2><p>即查看各特征的频次分布，能更加直观的从特征粒度，看整个数据表达的结论。</p>
+<h3 id="3-1特征分布"><a href="#3-1特征分布" class="headerlink" title="3.1特征分布"></a>3.1特征分布</h3><p><code>.plot</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df_X.hist(bins=<span class="number">25</span>, figsize=(<span class="number">15</span>, <span class="number">25</span>), layout=(-<span class="number">1</span>, <span class="number">5</span>), edgecolor=<span class="string">&quot;black&quot;</span>)</span><br><span class="line">plt.tight_layout()</span><br></pre></td></tr></table></figure>
+<p><img src="/cn/02_eda_pipeline/output_35_0.png" alt="png"></p>
+<p>像<code>Towing_and_Articulation</code> or <code>Was_Vehicle_Left_Hand_Drive?</code>这类特征，分布单一。只是单类特征（特征重要性低），<strong>信息熵太少，太低。</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 对每个特征取高频取值</span></span><br><span class="line">most_frequent_entry = df_X.mode()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 包含高频特征值的样本</span></span><br><span class="line">df_freq = df_X.eq(most_frequent_entry.values, axis=<span class="number">1</span>)</span><br><span class="line">most_frequent_entry</span><br></pre></td></tr></table></figure>
+  <div id="df-2814dc2e-6796-4c48-8e6d-200260da0728">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Accident_Index</th>
+      <th>Vehicle_Reference_df_res</th>
+      <th>Vehicle_Type</th>
+      <th>Towing_and_Articulation</th>
+      <th>Vehicle_Manoeuvre</th>
+      <th>Vehicle_Location-Restricted_Lane</th>
+      <th>Junction_Location</th>
+      <th>Skidding_and_Overturning</th>
+      <th>Hit_Object_in_Carriageway</th>
+      <th>Vehicle_Leaving_Carriageway</th>
+      <th>...</th>
+      <th>Age_of_Casualty</th>
+      <th>Age_Band_of_Casualty</th>
+      <th>Casualty_Severity</th>
+      <th>Pedestrian_Location</th>
+      <th>Pedestrian_Movement</th>
+      <th>Car_Passenger</th>
+      <th>Bus_or_Coach_Passenger</th>
+      <th>Pedestrian_Road_Maintenance_Worker</th>
+      <th>Casualty_Type</th>
+      <th>Casualty_Home_Area_Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2015521501170</td>
+      <td>1.0</td>
+      <td>9.0</td>
+      <td>0.0</td>
+      <td>18.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>25.0</td>
+      <td>6.0</td>
+      <td>3.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>9.0</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>1 rows × 60 columns</p>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-2814dc2e-6796-4c48-8e6d-200260da0728')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-2814dc2e-6796-4c48-8e6d-200260da0728 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-2814dc2e-6796-4c48-8e6d-200260da0728');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 对每个样本，其特征是否是对应的高频特征值</span></span><br><span class="line">df_freq.head()</span><br></pre></td></tr></table></figure>
+  <div id="df-1228b20f-c266-46b5-ac2b-1084308b91c8">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Accident_Index</th>
+      <th>Vehicle_Reference_df_res</th>
+      <th>Vehicle_Type</th>
+      <th>Towing_and_Articulation</th>
+      <th>Vehicle_Manoeuvre</th>
+      <th>Vehicle_Location-Restricted_Lane</th>
+      <th>Junction_Location</th>
+      <th>Skidding_and_Overturning</th>
+      <th>Hit_Object_in_Carriageway</th>
+      <th>Vehicle_Leaving_Carriageway</th>
+      <th>...</th>
+      <th>Age_of_Casualty</th>
+      <th>Age_Band_of_Casualty</th>
+      <th>Casualty_Severity</th>
+      <th>Pedestrian_Location</th>
+      <th>Pedestrian_Movement</th>
+      <th>Car_Passenger</th>
+      <th>Bus_or_Coach_Passenger</th>
+      <th>Pedestrian_Road_Maintenance_Worker</th>
+      <th>Casualty_Type</th>
+      <th>Casualty_Home_Area_Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>...</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>...</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>...</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>...</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>...</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 60 columns</p>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-1228b20f-c266-46b5-ac2b-1084308b91c8')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-1228b20f-c266-46b5-ac2b-1084308b91c8 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-1228b20f-c266-46b5-ac2b-1084308b91c8');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 对每个特征，高频特征值的覆盖度，或高频次</span></span><br><span class="line">df_freq_ration = df_freq.mean().sort_values(ascending=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># top 5</span></span><br><span class="line"><span class="comment">#display(df_freq_ration.head())</span></span><br><span class="line">df_freq_ration.head()</span><br></pre></td></tr></table></figure>
+<pre><code>Pedestrian_Crossing-Human_Control    0.995259
+Was_Vehicle_Left_Hand_Drive?         0.990137
+Carriageway_Hazards                  0.983646
+Towing_and_Articulation              0.983221
+Vehicle_Location-Restricted_Lane     0.982088
+dtype: float64
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#各特征高频特征值的覆盖度，同时基本对应该特征的信息熵，和特征重要性！！</span></span><br><span class="line">df_freq_ration.plot.bar(figsize=(<span class="number">15</span>, <span class="number">4</span>))</span><br></pre></td></tr></table></figure>
+<p><img src="/cn/02_eda_pipeline/output_40_0.png" alt="png"></p>
+<h3 id="3-2-特征范式（or-how-should-i-say-）"><a href="#3-2-特征范式（or-how-should-i-say-）" class="headerlink" title="3.2. 特征范式（or how should i say?）"></a>3.2. 特征范式（or how should i say?）</h3><ol>
+<li>是否可以根据某种范式辅助理解一些特征，并剔除这些不太重要的特征？</li>
+<li>是否能基于给定特征，研究其某种特定的关系，以更好的理解数据？<br>先随机选取几个特征看一下：</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">df_X[</span><br><span class="line">     [<span class="string">&quot;Location_Northing_OSGR&quot;</span>, <span class="string">&quot;1st_Road_Number&quot;</span>,<span class="string">&quot;Journey_Purpose_of_Driver&quot;</span>, <span class="string">&quot;Pedestrian_Crossing-Physical_Facilities&quot;</span>]</span><br><span class="line">     ].plot(lw=<span class="number">0</span>, marker=<span class="string">&quot;.&quot;</span>, subplots=<span class="literal">True</span>, layout=(-<span class="number">1</span>, <span class="number">2</span>), markersize=<span class="number">0.1</span>, figsize=(<span class="number">15</span>, <span class="number">6</span>))</span><br></pre></td></tr></table></figure>
+<pre><code>array([[&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26dbd25590&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26dc01bb10&gt;],
+       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26dbd25150&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26dc533210&gt;]],
+      dtype=object)
+</code></pre><p><img src="/cn/02_eda_pipeline/output_42_1.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可以理解为所有特征都为离散特征。。。此处将超过25种特征值的特征列定为连续特征。</span></span><br><span class="line">cols_continuous = df_X.select_dtypes(include=<span class="string">&quot;number&quot;</span>).nunique() &gt;= <span class="number">25</span></span><br><span class="line">cols_continuous.head()</span><br></pre></td></tr></table></figure>
+<pre><code>Vehicle_Reference_df_res            False
+Vehicle_Type                        False
+Towing_and_Articulation             False
+Vehicle_Manoeuvre                   False
+Vehicle_Location-Restricted_Lane    False
+dtype: bool
+</code></pre><h4 id="3-2-1-连续特征"><a href="#3-2-1-连续特征" class="headerlink" title="3.2.1. 连续特征"></a>3.2.1. 连续特征</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cols_continuous[cols_continuous].index</span><br></pre></td></tr></table></figure>
+<pre><code>Index([&#39;Age_of_Driver&#39;, &#39;Location_Easting_OSGR&#39;, &#39;Location_Northing_OSGR&#39;,
+       &#39;Longitude&#39;, &#39;Latitude&#39;, &#39;Police_Force&#39;, &#39;Local_Authority_(District)&#39;,
+       &#39;1st_Road_Number&#39;, &#39;2nd_Road_Number&#39;, &#39;Casualty_Reference&#39;,
+       &#39;Age_of_Casualty&#39;],
+      dtype=&#39;object&#39;)
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 纵向提取出所有连续特征的列，11种</span></span><br><span class="line">df_continuous = df_X[cols_continuous[cols_continuous].index]</span><br><span class="line">df_continuous.shape</span><br></pre></td></tr></table></figure>
+<pre><code>(317665, 11)
+</code></pre><p>直接<code>pairplot</code>，或<code>df_continuous.iloc[:, :5]</code>，视特征而定</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用pairplot分析，任意两个连续特征的相关性。横纵轴都是特征，对应的图为两特征的线性关系。</span></span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line">sns.pairplot(df_continuous, height=<span class="number">1.5</span>, plot_kws=&#123;<span class="string">&quot;s&quot;</span>: <span class="number">2</span>, <span class="string">&quot;alpha&quot;</span>: <span class="number">0.2</span>&#125;);</span><br></pre></td></tr></table></figure>
+<p><img src="/cn/02_eda_pipeline/output_48_0.png" alt="png"></p>
+<p>结果来看，还是能发现一些强线性关系的特征的，比如：<code>Location_Easting_OSGR</code> and <code>Longitude</code>，<code>Location_Easting_OSGR</code> and <code>Latitude</code>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sns.pairplot(</span><br><span class="line">    df_X, plot_kws=&#123;<span class="string">&quot;s&quot;</span>: <span class="number">3</span>, <span class="string">&quot;alpha&quot;</span>: <span class="number">0.2</span>&#125;, hue=<span class="string">&quot;Police_Force&quot;</span>, palette=<span class="string">&quot;Spectral&quot;</span>,</span><br><span class="line">    x_vars=[<span class="string">&quot;Location_Easting_OSGR&quot;</span>, <span class="string">&quot;Location_Northing_OSGR&quot;</span>, <span class="string">&quot;Longitude&quot;</span>],</span><br><span class="line">    y_vars=<span class="string">&quot;Latitude&quot;</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;seaborn.axisgrid.PairGrid at 0x7f26e15d33d0&gt;
+</code></pre><p><img src="/cn/02_eda_pipeline/output_50_1.png" alt="png"></p>
+<h4 id="3-2-2-离散顺序特征"><a href="#3-2-2-离散顺序特征" class="headerlink" title="3.2.2.离散顺序特征"></a>3.2.2.离散顺序特征</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 除去数值型的数据，查看离散型特征列</span></span><br><span class="line">df_discrete = df_X[cols_continuous[~cols_continuous].index]</span><br><span class="line">df_discrete.shape</span><br></pre></td></tr></table></figure>
+<pre><code>(317665, 44)
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="comment"># 绘制5 * n_rows 个子图</span></span><br><span class="line">n_cols = <span class="number">5</span></span><br><span class="line">n_elements = <span class="built_in">len</span>(df_discrete.columns)</span><br><span class="line">n_rows = np.ceil(n_elements / n_cols).astype(<span class="string">&quot;int&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 确定y轴</span></span><br><span class="line">y_value = df_X[<span class="string">&quot;Age_of_Driver&quot;</span>]</span><br><span class="line"></span><br><span class="line">fig, axes = plt.subplots(ncols=n_cols, nrows=n_rows, figsize=(<span class="number">15</span>, n_rows * <span class="number">2.5</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 基于每个离散特征列，刻画每个子图</span></span><br><span class="line"><span class="keyword">for</span> col, ax <span class="keyword">in</span> <span class="built_in">zip</span>(df_discrete.columns, axes.ravel()):</span><br><span class="line">    sns.stripplot(data=df_X, x=col, y=y_value, ax=ax, palette=<span class="string">&quot;tab10&quot;</span>, size=<span class="number">1</span>, alpha=<span class="number">0.5</span>)</span><br><span class="line">plt.tight_layout();</span><br></pre></td></tr></table></figure>
+<p><img src="/cn/02_eda_pipeline/output_53_0.png" alt="png"></p>
+<blockquote>
+<p>数值型特征，研究其线性关系。</p>
+</blockquote>
+<p>基于此图，可以观测离散特征的分布关系，相比连续数值型特征，离散型更能获得特征内部的逻辑关系。比如左侧驾驶的横跨所有年龄段，右侧驾驶的只是分布在中年人士中。等等诸如此类的逻辑关系。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 抽取部分感兴趣的特征，联合分析</span></span><br><span class="line">selected_features = [<span class="string">&quot;Vehicle_Reference_df_res&quot;</span>, <span class="string">&quot;Towing_and_Articulation&quot;</span>,</span><br><span class="line">                     <span class="string">&quot;Skidding_and_Overturning&quot;</span>, <span class="string">&quot;Bus_or_Coach_Passenger&quot;</span>,</span><br><span class="line">                     <span class="string">&quot;Pedestrian_Road_Maintenance_Worker&quot;</span>, <span class="string">&quot;Age_Band_of_Driver&quot;</span>]</span><br><span class="line"></span><br><span class="line">fig, axes = plt.subplots(ncols=<span class="number">3</span>, nrows=<span class="number">2</span>, figsize=(<span class="number">16</span>, <span class="number">8</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> col, ax <span class="keyword">in</span> <span class="built_in">zip</span>(selected_features, axes.ravel()):</span><br><span class="line">    sns.stripplot(data=df_X, x=col, y=df_X[<span class="string">&quot;Latitude&quot;</span>], ax=ax,</span><br><span class="line">                  palette=<span class="string">&quot;tab10&quot;</span>, size=<span class="number">2</span>, alpha=<span class="number">0.5</span>)</span><br><span class="line">plt.tight_layout()</span><br></pre></td></tr></table></figure>
+<p><img src="/cn/02_eda_pipeline/output_55_0.png" alt="png"></p>
+<p>latitude:52的数据点更为稠密，进一步使用 <code>violineplot</code> (<code>boxenplot</code> or <code>boxplot</code>函数)，观测<code>Urban_or_Rural_Area</code>，特征值分布。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 峰值宽度代表数据点分布数</span></span><br><span class="line">fig, axes = plt.subplots(ncols=<span class="number">3</span>, nrows=<span class="number">2</span>, figsize=(<span class="number">16</span>, <span class="number">8</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> col, ax <span class="keyword">in</span> <span class="built_in">zip</span>(selected_features, axes.ravel()):</span><br><span class="line">    sns.violinplot(data=df_X, x=col, y=df_X[<span class="string">&quot;Latitude&quot;</span>], palette=<span class="string">&quot;Set2&quot;</span>,</span><br><span class="line">                   split=<span class="literal">True</span>, hue=<span class="string">&quot;Urban_or_Rural_Area&quot;</span>, ax=ax)</span><br><span class="line">plt.tight_layout()</span><br></pre></td></tr></table></figure>
+<p><img src="/cn/02_eda_pipeline/output_57_0.png" alt="png"></p>
+<h3 id="3-3-特征关系"><a href="#3-3-特征关系" class="headerlink" title="3.3. 特征关系"></a>3.3. 特征关系</h3><p>更为精准的刻画特征间的关系。使用<code>.corr()</code> 计算数值特征的线性相关关系。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df_corr = df_X.corr(method=<span class="string">&quot;pearson&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p><code>spearman</code> method &gt; <code>pearson</code> method：</p>
+<ul>
+<li><strong>Pearson</strong> 两连续变量的线性相关预估；</li>
+<li><strong>Spearman</strong> 对每个特征线性相关预估单调关系。</li>
+</ul>
+<p>用 <code>.heatmap()</code>可视化线性相关矩阵。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 相关矩阵创建label，相关性按照1/4分位数划分</span></span><br><span class="line">labels = np.where(np.<span class="built_in">abs</span>(df_corr)&gt;<span class="number">0.75</span>, <span class="string">&quot;S&quot;</span>,</span><br><span class="line">                  np.where(np.<span class="built_in">abs</span>(df_corr)&gt;<span class="number">0.5</span>, <span class="string">&quot;M&quot;</span>,</span><br><span class="line">                           np.where(np.<span class="built_in">abs</span>(df_corr)&gt;<span class="number">0.25</span>, <span class="string">&quot;W&quot;</span>, <span class="string">&quot;&quot;</span>)))</span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">15</span>, <span class="number">15</span>))</span><br><span class="line">sns.heatmap(df_corr, mask=np.eye(<span class="built_in">len</span>(df_corr)), square=<span class="literal">True</span>,</span><br><span class="line">            center=<span class="number">0</span>, annot=labels, fmt=<span class="string">&#x27;&#x27;</span>, linewidths=<span class="number">.5</span>,</span><br><span class="line">            cmap=<span class="string">&quot;vlag&quot;</span>, cbar_kws=&#123;<span class="string">&quot;shrink&quot;</span>: <span class="number">0.8</span>&#125;);</span><br></pre></td></tr></table></figure>
+<p><img src="/cn/02_eda_pipeline/output_61_0.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mask掉中间自身相似性计算</span></span><br><span class="line">lower_triangle_mask = np.tril(np.ones(df_corr.shape), k=-<span class="number">1</span>).astype(<span class="string">&quot;bool&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 按照特征间相关性排序</span></span><br><span class="line">df_corr_stacked = df_corr.where(lower_triangle_mask).stack().sort_values()</span><br><span class="line">display(df_corr_stacked)</span><br></pre></td></tr></table></figure>
+<pre><code>Local_Authority_(District)  Longitude                -0.509343
+                            Location_Easting_OSGR    -0.502919
+Police_Force                Longitude                -0.471327
+                            Location_Easting_OSGR    -0.461112
+Speed_limit                 1st_Road_Class           -0.438931
+                                                        ...
+Age_Band_of_Casualty        Age_of_Casualty           0.974397
+Age_Band_of_Driver          Age_of_Driver             0.979019
+Local_Authority_(District)  Police_Force              0.984819
+Longitude                   Location_Easting_OSGR     0.999363
+Latitude                    Location_Northing_OSGR    0.999974
+Length: 1485, dtype: float64
+</code></pre><p><code>df_X.corrwith(df_X[&quot;Speed_limit&quot;])</code></p>
+<h3 id="3-4-内容分析"><a href="#3-4-内容分析" class="headerlink" title="3.4. 内容分析"></a>3.4. 内容分析</h3><ul>
+<li>value distribution</li>
+<li>feature patterns</li>
+<li>feature correlations</li>
+</ul>
+<h2 id="4-结论"><a href="#4-结论" class="headerlink" title="4. 结论"></a>4. 结论</h2>
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/cn/01_EDA_advance/" data-toggle="tooltip" data-placement="top" title="01_EDA_advance">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/cn/00_EDA_widget-factory/" data-toggle="tooltip" data-placement="top" title="00_widget-factory">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      如果您喜欢此博客或发现它对您有用，则欢迎对此发表评论。 也欢迎您共享此博客，以便更多人可以参与。 如果博客中使用的图像侵犯了您的版权，请与作者联系以将其删除。 谢谢 ！
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=02_EDA_Pipeline&body=Hi,I found this website and thought you might like it https://11010101.xyz/cn/02_eda_pipeline/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: 'a9a645b881c78d12baa8',
+      clientSecret: '144741a3fa325fe22d7207d5698374724cd412b7',
+      repo: 'Muzhi1920.github.io',
+      owner: 'Muzhi1920',
+      admin: 'Muzhi1920',
+      id: 'Sun May 15 2022 13:21:55 GMT+0000 | truncate: 50', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'zh-CN',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#EDA-Pipeline"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">EDA Pipeline</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-check%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">1.check数据结构</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-2-%E6%95%B0%E5%80%BC%E5%9E%8B%E6%95%B0%E6%8D%AE"><span class="toc-nav-number">1.1.1.</span> <span class="toc-nav-text">1.2. 数值型数据</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-check%E6%95%B0%E6%8D%AE%E8%B4%A8%E9%87%8F"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">2.check数据质量</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-1-%E9%87%8D%E5%A4%8D%E6%A3%80%E6%B5%8B"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">2.1. 重复检测</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-2-%E7%BC%BA%E5%A4%B1%E5%80%BC%E6%A3%80%E6%B5%8B"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">2.2 缺失值检测</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-2-1-%E6%A0%B7%E6%9C%AC%E7%BB%B4%E5%BA%A6"><span class="toc-nav-number">1.2.2.1.</span> <span class="toc-nav-text">2.2.1 样本维度</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-2-2-%E7%89%B9%E5%BE%81%E7%BB%B4%E5%BA%A6"><span class="toc-nav-number">1.2.2.2.</span> <span class="toc-nav-text">2.2.2 特征维度</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-3-%E6%A0%B7%E6%9C%AC%E8%AF%AF%E5%B7%AE%E3%80%81%E5%99%AA%E9%9F%B3%E5%88%86%E6%9E%90"><span class="toc-nav-number">1.2.3.</span> <span class="toc-nav-text">2.3. 样本误差、噪音分析</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-3-1-Numerical-features"><span class="toc-nav-number">1.2.3.1.</span> <span class="toc-nav-text">2.3.1. Numerical features</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-3-2-%E9%9D%9E%E6%95%B0%E5%80%BC%E5%9E%8B%E7%89%B9%E5%BE%81"><span class="toc-nav-number">1.2.3.2.</span> <span class="toc-nav-text">2.3.2 非数值型特征</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-%E6%95%B0%E6%8D%AE%E5%86%85%E5%AE%B9%E5%88%86%E6%9E%90"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">3.数据内容分析</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-1%E7%89%B9%E5%BE%81%E5%88%86%E5%B8%83"><span class="toc-nav-number">1.3.1.</span> <span class="toc-nav-text">3.1特征分布</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-2-%E7%89%B9%E5%BE%81%E8%8C%83%E5%BC%8F%EF%BC%88or-how-should-i-say-%EF%BC%89"><span class="toc-nav-number">1.3.2.</span> <span class="toc-nav-text">3.2. 特征范式（or how should i say?）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#3-2-1-%E8%BF%9E%E7%BB%AD%E7%89%B9%E5%BE%81"><span class="toc-nav-number">1.3.2.1.</span> <span class="toc-nav-text">3.2.1. 连续特征</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#3-2-2-%E7%A6%BB%E6%95%A3%E9%A1%BA%E5%BA%8F%E7%89%B9%E5%BE%81"><span class="toc-nav-number">1.3.2.2.</span> <span class="toc-nav-text">3.2.2.离散顺序特征</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-3-%E7%89%B9%E5%BE%81%E5%85%B3%E7%B3%BB"><span class="toc-nav-number">1.3.3.</span> <span class="toc-nav-text">3.3. 特征关系</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-4-%E5%86%85%E5%AE%B9%E5%88%86%E6%9E%90"><span class="toc-nav-number">1.3.4.</span> <span class="toc-nav-text">3.4. 内容分析</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#4-%E7%BB%93%E8%AE%BA"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">4. 结论</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#EDA" title="EDA">EDA</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>链友</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/Muzhi1920">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+            <li>
+              <a target="_blank" href="https://www.zhihu.com/people/awesome-yyds">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa  fa-stack-1x fa-inverse">知</i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          小于
+          2022
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="https://hexo.io/themes/">Hexo</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://github.com/Muzhi1920/Muzhi1920.github.io">Muzhi1920</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=Muzhi1920&repo=Muzhi1920.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='统计学习方法三要素——模型、策略、算法,高斯证明了假定误差独立同分布，在所有无偏线性估计中，最小二乘法的方差最小,SGD算法：通过误分类点优化w，b的值，使超平面向另一侧移动,朴素贝叶斯法的基本假设是条件独立性（强假设所以叫“朴素”）,决策树特征选择：信息增益、信息增益比，基尼指数（越小越好）,逻辑回归是用线性变换表示输入的对数几率模型,最大熵原理认为在所有概率模型中，熵最大的模型是最好的模型,逻辑回归与最大熵模型都属于对数线性模型，采用极大似然估计学习,逻辑回归的优化，包括改进的迭代尺度法、梯度下降法、拟牛顿法' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033'></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://11010101.xyz/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
