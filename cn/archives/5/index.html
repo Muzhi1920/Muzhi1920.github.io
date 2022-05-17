@@ -223,6 +223,17 @@
           
           
           <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
             <a href="/about/">
               
               关于我
@@ -237,17 +248,6 @@
             <a href="/categories/">
               
               分类
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/archive/">
-              
-              归档
               
               
             </a>
@@ -451,32 +451,34 @@
   
   <!-- top start (article top hot config) -->
   
+  <div class="top">
+    <div class="iconfont icon-hot animated infinite tada"></div>
+  </div>
+  
   <!-- top end -->
   
 
-  <a href="/cn/大数据-01-基础/">
+  <a href="/cn/推荐系统-00-基础/">
     <h2 class="post-title">
-      大数据-01-基础
+      推荐系统基础
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      大数据大数据Hadoop和Spark基础知识，涉及Scala语言，Maven包管理，Hadoop/Hbase/Hive/Spark等大数据工具。(不断更新中，图片源自网络，侵删)
-
-0. Scala基础
-case class：自动生成常用方法(equals&amp;hashCode,toString,copy)；自动生成伴生对象；实现了 apply 方法让你不需要通过 new 来创建类实例
-......
+      推荐系统基础目标主要包括：用户满意性，多样性，新颖性，惊喜度，实时性，推荐透明度，覆盖率。热门、人工、相关、个性化推荐
+0. 推荐系统简介$U$ 表示所有用户(user)的集合,用 $I$ 表示所有项目(item)的集合。在实际系统中，$U$ 和 $I$ 具有非常大的规模。定义一个效用函数$s$，用来计算项目$i$对用户$u$的推荐度,即$s$:
+U×I→R，其中$R$是一个全序集合(在一定......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by 小于 on
-    2021-10-24
+    2019-10-25
   </p>
   <div class="tags">
     
-    <a href="/tags/#大数据" title="大数据">大数据</a>
+    <a href="/tags/#推荐系统" title="推荐系统">推荐系统</a>
     
   </div>
   
@@ -491,34 +493,27 @@ case class：自动生成常用方法(equals&amp;hashCode,toString,copy)；自�
   <!-- top end -->
   
 
-  <a href="/cn/大数据-02-Java/">
+  <a href="/cn/剑指offer_00_数组/">
     <h2 class="post-title">
-      大数据-02-Java理论基础
+      剑指offer_00_数组
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      Java基础包括Java基础和计算机基础，主要包括GC，JVM，线程进程，同步互斥等
-
-JVM与GCJVM
-程序计数器—与每个线程线程执行字节码行号有关—线程私有
-虚拟机栈—与Java方法有关创建栈帧—线程私有
-本地方法栈—与Java的native方法有关—线程私有
-Java堆—与Java对象实例有关/垃圾收集器管理的主要区域—GC堆
-Java方法区——线程共享；存储被虚拟机加载的类信息、常......
+      附：快排123456789101112131415void quickSort(vector&lt;int&gt; &amp;arr, int l, int r) &#123;    if (l &gt;= r)        return;    int i = l, j = r;    while (i &lt; j) &#123;        while (i &lt; j &amp......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by 小于 on
-    2021-10-22
+    2021-11-01
   </p>
   <div class="tags">
     
-    <a href="/tags/#Java" title="Java">Java</a>
+    <a href="/tags/#数组" title="数组">数组</a>
     
-    <a href="/tags/#jvm" title="jvm">jvm</a>
+    <a href="/tags/#剑指offer" title="剑指offer">剑指offer</a>
     
   </div>
   
@@ -533,35 +528,78 @@ Java方法区——线程共享；存储被虚拟机加载的类信息、常....
   <!-- top end -->
   
 
-  <a href="/cn/大数据-03-linux/">
+  <a href="/cn/LeetCode_回溯/">
     <h2 class="post-title">
-      大数据-03-linux
+      LeetCode_回溯
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      Linux更多命令参考Linux常用命令总结
+      回溯算法回溯也是搜索的一种方式，常见的二叉树，涉及递归和回溯。
 
-ps：查看当前进程
-ps -ef (system v 输出)
-ps -aux bsd 格式输出
-ps -ef | grep pid
+回溯是递归的副产品，只要有递归就会有回溯。
+回溯的本质是穷举。
+回溯过程，均可以抽象为树形结构。
+高效回溯，穷举的基础上增加剪枝。
 
 
-ln：软连接，快捷方式；硬链接：同步更改。
-chmod abc file a,b,c：分别表示User、Group、及Other的权限。若要rwx属性则4+2+1=7
-vi 文件名编辑 cat file | m......
+组合问题：N个数里面按一定规则找出k个数的集合
+切割问题：一个字符串按一定规则有几种切割方式
+子集问题：一个N个数的集合里有多少符合条件的子集
+排列问题：N个数按一定规则全排列方式
+棋盘问题：......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by 小于 on
-    2021-09-28
+    2021-10-25
   </p>
   <div class="tags">
     
-    <a href="/tags/#linux" title="linux">linux</a>
+    <a href="/tags/#leetcode" title="leetcode">leetcode</a>
+    
+    <a href="/tags/#数组" title="数组">数组</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/bigdata-00-计算机网络/">
+    <h2 class="post-title">
+      BigData-网络层
+    </h2>
+    <h3 class="post-subtitle">
+      操作系统与网络
+    </h3>
+    <div class="post-content-preview">
+      操作系统与网络物理层,数据链路层,网络层,传输层,会话层,表示层和应用层。
+服务器编程参考：服务器编程入门
+0. 操作系统进程与线程
+进程：一个程序在一个数据集合上的一次运行过程。
+线程：线程是进程的一个实体，是被系统独立调度和执行的基本单位。
+
+区别进程是程序的一次执行，线程理解为进程中执行的一个程序片段；进程间是独立的，表现在内存空间、上下文环境上；线程运行在进程空间内；进程间无法存取存......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by 小于 on
+    2021-10-25
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#三次握手" title="三次握手">三次握手</a>
     
   </div>
   
@@ -613,6 +651,47 @@ vi 文件名编辑 cat file | m......
   <!-- top end -->
   
 
+  <a href="/cn/bigdata-06-Sql/">
+    <h2 class="post-title">
+      BigData-SQL
+    </h2>
+    <h3 class="post-subtitle">
+      HQL、SQL语句
+    </h3>
+    <div class="post-content-preview">
+      SQL基础简要sql语法基础，包括添加外部脚本，基本的增删改查
+调用Python脚本SQL调优
+创建索引；避免索引上引用计算；预编译查询；临时表暂存（减少阻塞提高并发性能）；避免使用having（分组后过滤，开销很大）
+分区dt,strategy统计，用样本估计整体；
+常用列建立索引，但不是越多越好。
+
+SQL关键字
++：多个列或者不同表的多个列的值相加；后跟as
+between 66 an......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by 小于 on
+    2019-12-25
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#SQL" title="SQL">SQL</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
   <a href="/cn/LeetCode_拓展/">
     <h2 class="post-title">
       LeetCode_拓展
@@ -633,176 +712,6 @@ vi 文件名编辑 cat file | m......
   <div class="tags">
     
     <a href="/tags/#leetcode" title="leetcode">leetcode</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/大数据-07-git/">
-    <h2 class="post-title">
-      大数据-07-git
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      git操作新建分支以及远程分支git branch xxgit checkout -b xxgit push —set-upstream origin xx
-新本地分支追溯远程分支git checkout -b xxgit branch —set-upstream-to=origin/xx
-删除分支以及远程分支git checkout mastergit push origin —delet......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 小于 on
-    2019-11-02
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#tools" title="tools">tools</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/大数据-06-Sql/">
-    <h2 class="post-title">
-      大数据-06-Sql
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      SQL基础简要sql语法基础，包括添加外部脚本，基本的增删改查
-调用Python脚本SQL调优
-创建索引；避免索引上引用计算；预编译查询；临时表暂存（减少阻塞提高并发性能）；避免使用having（分组后过滤，开销很大）
-分区dt,strategy统计，用样本估计整体；
-常用列建立索引，但不是越多越好。
-
-SQL关键字
-+：多个列或者不同表的多个列的值相加；后跟as
-between 66 an......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 小于 on
-    2019-11-01
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#sql" title="sql">sql</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/大数据-05-shell/">
-    <h2 class="post-title">
-      大数据-05-Shell基础
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      shell基础vim命令
-
-
-
-命令
-功能
-
-
-
-
-set nu
-显示行号
-
-
-set nonu
-不显示行号
-
-
-&lt;-查找-&gt;
-&lt;-查找=&gt;
-
-
-/
-向后搜索
-
-
-n
-查找下一处
-
-
-N
-查找上一处
-
-
-&lt;-跳转-&gt;
-&lt;-跳转=&gt;
-
-
-gg
-跳转到文件开头
-
-
-G
-跳转到文件结尾
-
-
-b
-单词后跳
-
-
-e
-单词前跳
-
-
-0
-跳至行首
-
-
-$
-跳......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 小于 on
-    2019-10-30
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#大数据" title="大数据">大数据</a>
-    
-    <a href="/tags/#Linux" title="Linux">Linux</a>
     
   </div>
   
@@ -905,6 +814,46 @@ word2vec......
 </div>
 <hr>
 
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/算法导论-01-动态规划/">
+    <h2 class="post-title">
+      算法导论-01-动态规划
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      算法导论动态规划
+最优子结构性质。如果问题的最优解所包含的子问题的解也是最优的。
+无后效性。即子问题的解一旦确定，不受之后和包含它的更大的问题的决策影响。
+子问题重叠性质。子问题会被重复计算多次。动态规划对每一个子问题只计算一次保存在表格，简化重复计算时。
+
+钢条切割问题长度为n英寸的钢条有$2^{n-1}$种切割方法：因为在距离钢条左端i (i = 1, 2, … , n-1)英寸处，我们......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by 小于 on
+    2019-10-26
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#coding" title="coding">coding</a>
+    
+    <a href="/tags/#c++" title="c++">c++</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
 
   <!-- Pager -->
   <ul class="pager">
@@ -960,24 +909,24 @@ word2vec......
       <li>工具</li>
     </a>
     
-    <a href="/categories/#take-home_challenge">
-      <li>take-home_challenge</li>
+    <a href="/categories/#Take-home_Challenge">
+      <li>Take-home_Challenge</li>
     </a>
     
     <a href="/categories/#统计学习方法">
       <li>统计学习方法</li>
     </a>
     
-    <a href="/categories/#leetcode">
-      <li>leetcode</li>
+    <a href="/categories/#LeetCode">
+      <li>LeetCode</li>
+    </a>
+    
+    <a href="/categories/#Big_Data">
+      <li>Big_Data</li>
     </a>
     
     <a href="/categories/#剑指offer">
       <li>剑指offer</li>
-    </a>
-    
-    <a href="/categories/#大数据基础">
-      <li>大数据基础</li>
     </a>
     
     <a href="/categories/#推荐系统">
@@ -1012,12 +961,12 @@ word2vec......
       <li>00_widget-factory</li>
     </a>
     
-    <a href="../../%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F-01-TF/">
-      <li>（全网最详细）基于TensorFlow的Estimator实现Wide&amp;Deep模型</li>
+    <a href="../../bigdata-PySpark/">
+      <li>BigData-PySpark</li>
     </a>
     
-    <a href="../../12.%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%8F%E6%95%B4%E7%90%86/">
-      <li>第12章 算法公式总结</li>
+    <a href="../../bigdata-Spark/">
+      <li>BigData-Spark</li>
     </a>
     
   </ul>
@@ -1118,6 +1067,46 @@ word2vec......
     
     
     
+    <a href="/tags/#三次握手" title="三次握手" rel="1">三次握手</a>
+    
+    
+    
+    <a href="/tags/#大数据基础" title="大数据基础" rel="1">大数据基础</a>
+    
+    
+    
+    <a href="/tags/#jvm" title="jvm" rel="1">jvm</a>
+    
+    
+    
+    <a href="/tags/#Linux" title="Linux" rel="1">Linux</a>
+    
+    
+    
+    <a href="/tags/#数据倾斜" title="数据倾斜" rel="1">数据倾斜</a>
+    
+    
+    
+    <a href="/tags/#shell" title="shell" rel="1">shell</a>
+    
+    
+    
+    <a href="/tags/#SQL" title="SQL" rel="1">SQL</a>
+    
+    
+    
+    <a href="/tags/#git" title="git" rel="1">git</a>
+    
+    
+    
+    <a href="/tags/#Spark" title="Spark" rel="2">Spark</a>
+    
+    
+    
+    <a href="/tags/#Scala" title="Scala" rel="1">Scala</a>
+    
+    
+    
     <a href="/tags/#剑指offer" title="剑指offer" rel="7">剑指offer</a>
     
     
@@ -1146,50 +1135,6 @@ word2vec......
     
     
     
-    <a href="/tags/#计算机网络" title="计算机网络" rel="1">计算机网络</a>
-    
-    
-    
-    <a href="/tags/#大数据" title="大数据" rel="2">大数据</a>
-    
-    
-    
-    <a href="/tags/#Java" title="Java" rel="1">Java</a>
-    
-    
-    
-    <a href="/tags/#jvm" title="jvm" rel="1">jvm</a>
-    
-    
-    
-    <a href="/tags/#linux" title="linux" rel="1">linux</a>
-    
-    
-    
-    <a href="/tags/#大数据调优" title="大数据调优" rel="1">大数据调优</a>
-    
-    
-    
-    <a href="/tags/#工程" title="工程" rel="1">工程</a>
-    
-    
-    
-    <a href="/tags/#数据倾斜" title="数据倾斜" rel="1">数据倾斜</a>
-    
-    
-    
-    <a href="/tags/#Linux" title="Linux" rel="1">Linux</a>
-    
-    
-    
-    <a href="/tags/#sql" title="sql" rel="1">sql</a>
-    
-    
-    
-    <a href="/tags/#tools" title="tools" rel="1">tools</a>
-    
-    
-    
     <a href="/tags/#推荐系统" title="推荐系统" rel="1">推荐系统</a>
     
     
@@ -1215,7 +1160,7 @@ word2vec......
 
 <h5><a href="/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2022/05/">May 2022</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2022/04/">April 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2022/03/">March 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2021/12/">December 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2021/11/">November 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2021/10/">October 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2021/09/">September 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2020/04/">April 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2019/11/">November 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2019/10/">October 2019</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2019/01/">January 2019</a><span class="archive-list-count">1</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2022/05/">May 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2022/04/">April 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2022/03/">March 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2021/12/">December 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2021/11/">November 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2021/10/">October 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2020/04/">April 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2019/12/">December 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2019/11/">November 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2019/10/">October 2019</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2019/04/">April 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2019/01/">January 2019</a><span class="archive-list-count">1</span></li></ul>
 </div>
 
 

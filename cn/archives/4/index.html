@@ -223,6 +223,17 @@
           
           
           <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
             <a href="/about/">
               
               关于我
@@ -237,17 +248,6 @@
             <a href="/categories/">
               
               分类
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/archive/">
-              
-              归档
               
               
             </a>
@@ -451,34 +451,114 @@
   
   <!-- top start (article top hot config) -->
   
-  <div class="top">
-    <div class="iconfont icon-hot animated infinite tada"></div>
-  </div>
-  
   <!-- top end -->
   
 
-  <a href="/cn/剑指offer_00_数组/">
+  <a href="/cn/LeetCode_贪心/">
     <h2 class="post-title">
-      剑指offer_00_数组
+      LeetCode_贪心
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      附：快排123456789101112131415void quickSort(vector&lt;int&gt; &amp;arr, int l, int r) &#123;    if (l &gt;= r)        return;    int i = l, j = r;    while (i &lt; j) &#123;        while (i &lt; j &amp......
+      贪心算法本质是，通过获得某一阶段的局部最优，逐步达到全局最优。常识性推导 + 举反例
+
+问题可分解为若干子问题
+思考策略，使得子问题得到局部最优
+堆叠为全局最优
+
+贪心算法经常可以基于dp数组将问题转化为动态规划的递推公式。
+特点
+常识性
+巧妙行思路
+无固定套路
+数学递推证明，如果可以，也就能用dp来做
+
+一、分发饼干和糖果等零食455. 分发饼干胃口小的尽量用小饼干满足，以满足更多的人，返......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by 小于 on
-    2021-11-01
+    2021-12-13
   </p>
   <div class="tags">
     
-    <a href="/tags/#数组" title="数组">数组</a>
+    <a href="/tags/#leetcode" title="leetcode">leetcode</a>
+    
+    <a href="/tags/#贪心" title="贪心">贪心</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/剑指offer_05_数与数列/">
+    <h2 class="post-title">
+      剑指offer_06_数与数列
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      数与数列10.1斐波那契数列
+第一个数为0，第二个数为1.12345678910111213class Solution &#123;public:    int fib(int n) &#123;        int a = 0, b = 1, sum;        for (int i = 0; i &lt; n; i++) &#123;            sum = (a + ......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by 小于 on
+    2021-12-12
+  </p>
+  <div class="tags">
     
     <a href="/tags/#剑指offer" title="剑指offer">剑指offer</a>
+    
+    <a href="/tags/#数列" title="数列">数列</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/LeetCode_字符串/">
+    <h2 class="post-title">
+      LeetCode_字符串
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      字符串回文串等
+一、回文串系列9. 验证回文数判断数字是否是回文数：121，12321。复杂度$O(logN)$
+12345678910111213class Solution &#123;public:    bool isPalindrome(int x) &#123;        if (x &lt; 0 || (x % 10 == 0 &amp;&amp; x != 0))    ......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by 小于 on
+    2021-12-03
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#coding" title="coding">coding</a>
     
   </div>
   
@@ -772,92 +852,6 @@ pass标记，DFS，pass恢复
 </div>
 <hr>
 
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/LeetCode_回溯/">
-    <h2 class="post-title">
-      LeetCode_回溯
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      回溯算法回溯也是搜索的一种方式，常见的二叉树，涉及递归和回溯。
-
-回溯是递归的副产品，只要有递归就会有回溯。
-回溯的本质是穷举。
-回溯过程，均可以抽象为树形结构。
-高效回溯，穷举的基础上增加剪枝。
-
-
-组合问题：N个数里面按一定规则找出k个数的集合
-切割问题：一个字符串按一定规则有几种切割方式
-子集问题：一个N个数的集合里有多少符合条件的子集
-排列问题：N个数按一定规则全排列方式
-棋盘问题：......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 小于 on
-    2021-10-25
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#leetcode" title="leetcode">leetcode</a>
-    
-    <a href="/tags/#数组" title="数组">数组</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/大数据-00-计算机网络/">
-    <h2 class="post-title">
-      大数据-00-操作系统与网络
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      操作系统与网络物理层,数据链路层,网络层,传输层,会话层,表示层和应用层。
-服务器编程参考：服务器编程入门
-0. 操作系统进程与线程
-进程：一个程序在一个数据集合上的一次运行过程。
-线程：线程是进程的一个实体，是被系统独立调度和执行的基本单位。
-
-区别进程是程序的一次执行，线程理解为进程中执行的一个程序片段；进程间是独立的，表现在内存空间、上下文环境上；线程运行在进程空间内；进程间无法存取存......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 小于 on
-    2021-10-25
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#计算机网络" title="计算机网络">计算机网络</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
 
   <!-- Pager -->
   <ul class="pager">
@@ -913,24 +907,24 @@ pass标记，DFS，pass恢复
       <li>工具</li>
     </a>
     
-    <a href="/categories/#take-home_challenge">
-      <li>take-home_challenge</li>
+    <a href="/categories/#Take-home_Challenge">
+      <li>Take-home_Challenge</li>
     </a>
     
     <a href="/categories/#统计学习方法">
       <li>统计学习方法</li>
     </a>
     
-    <a href="/categories/#leetcode">
-      <li>leetcode</li>
+    <a href="/categories/#LeetCode">
+      <li>LeetCode</li>
+    </a>
+    
+    <a href="/categories/#Big_Data">
+      <li>Big_Data</li>
     </a>
     
     <a href="/categories/#剑指offer">
       <li>剑指offer</li>
-    </a>
-    
-    <a href="/categories/#大数据基础">
-      <li>大数据基础</li>
     </a>
     
     <a href="/categories/#推荐系统">
@@ -965,12 +959,12 @@ pass标记，DFS，pass恢复
       <li>00_widget-factory</li>
     </a>
     
-    <a href="../../%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F-01-TF/">
-      <li>（全网最详细）基于TensorFlow的Estimator实现Wide&amp;Deep模型</li>
+    <a href="../../bigdata-PySpark/">
+      <li>BigData-PySpark</li>
     </a>
     
-    <a href="../../12.%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%8F%E6%95%B4%E7%90%86/">
-      <li>第12章 算法公式总结</li>
+    <a href="../../bigdata-Spark/">
+      <li>BigData-Spark</li>
     </a>
     
   </ul>
@@ -1071,6 +1065,46 @@ pass标记，DFS，pass恢复
     
     
     
+    <a href="/tags/#三次握手" title="三次握手" rel="1">三次握手</a>
+    
+    
+    
+    <a href="/tags/#大数据基础" title="大数据基础" rel="1">大数据基础</a>
+    
+    
+    
+    <a href="/tags/#jvm" title="jvm" rel="1">jvm</a>
+    
+    
+    
+    <a href="/tags/#Linux" title="Linux" rel="1">Linux</a>
+    
+    
+    
+    <a href="/tags/#数据倾斜" title="数据倾斜" rel="1">数据倾斜</a>
+    
+    
+    
+    <a href="/tags/#shell" title="shell" rel="1">shell</a>
+    
+    
+    
+    <a href="/tags/#SQL" title="SQL" rel="1">SQL</a>
+    
+    
+    
+    <a href="/tags/#git" title="git" rel="1">git</a>
+    
+    
+    
+    <a href="/tags/#Spark" title="Spark" rel="2">Spark</a>
+    
+    
+    
+    <a href="/tags/#Scala" title="Scala" rel="1">Scala</a>
+    
+    
+    
     <a href="/tags/#剑指offer" title="剑指offer" rel="7">剑指offer</a>
     
     
@@ -1099,50 +1133,6 @@ pass标记，DFS，pass恢复
     
     
     
-    <a href="/tags/#计算机网络" title="计算机网络" rel="1">计算机网络</a>
-    
-    
-    
-    <a href="/tags/#大数据" title="大数据" rel="2">大数据</a>
-    
-    
-    
-    <a href="/tags/#Java" title="Java" rel="1">Java</a>
-    
-    
-    
-    <a href="/tags/#jvm" title="jvm" rel="1">jvm</a>
-    
-    
-    
-    <a href="/tags/#linux" title="linux" rel="1">linux</a>
-    
-    
-    
-    <a href="/tags/#大数据调优" title="大数据调优" rel="1">大数据调优</a>
-    
-    
-    
-    <a href="/tags/#工程" title="工程" rel="1">工程</a>
-    
-    
-    
-    <a href="/tags/#数据倾斜" title="数据倾斜" rel="1">数据倾斜</a>
-    
-    
-    
-    <a href="/tags/#Linux" title="Linux" rel="1">Linux</a>
-    
-    
-    
-    <a href="/tags/#sql" title="sql" rel="1">sql</a>
-    
-    
-    
-    <a href="/tags/#tools" title="tools" rel="1">tools</a>
-    
-    
-    
     <a href="/tags/#推荐系统" title="推荐系统" rel="1">推荐系统</a>
     
     
@@ -1168,7 +1158,7 @@ pass标记，DFS，pass恢复
 
 <h5><a href="/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2022/05/">May 2022</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2022/04/">April 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2022/03/">March 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2021/12/">December 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2021/11/">November 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2021/10/">October 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2021/09/">September 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2020/04/">April 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2019/11/">November 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2019/10/">October 2019</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2019/01/">January 2019</a><span class="archive-list-count">1</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2022/05/">May 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2022/04/">April 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2022/03/">March 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2021/12/">December 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2021/11/">November 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2021/10/">October 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2020/04/">April 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2019/12/">December 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2019/11/">November 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2019/10/">October 2019</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2019/04/">April 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2019/01/">January 2019</a><span class="archive-list-count">1</span></li></ul>
 </div>
 
 

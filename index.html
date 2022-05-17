@@ -223,6 +223,17 @@
           
           
           <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
             <a href="/about/">
               
               关于我
@@ -237,17 +248,6 @@
             <a href="/categories/">
               
               分类
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/archive/">
-              
-              归档
               
               
             </a>
@@ -580,34 +580,30 @@ P(Y=k | x)=\frac{\exp \left(w_{k} \cdot x\right)}{1+\sum_{k=1}^{K-1} \exp \left(
   <!-- top end -->
   
 
-  <a href="/cn/LeetCode_动态规划/">
+  <a href="/cn/02_eda_pipeline/">
     <h2 class="post-title">
-      LeetCode_动态规划
+      02_EDA_Pipeline
     </h2>
     <h3 class="post-subtitle">
-      
+      EDA Pipeline
     </h3>
     <div class="post-content-preview">
-      动态规划基于一维、二维数组，实现动态规划思路。区别于贪心，动态规划的每一个状态是由上几个状态决定的。贪心没有状态依赖，是局部选最优至全局最优。部分问题既可以用贪心解决，也可以用DP，相比较此时贪心一般节省空间复杂度，但DP递推公式的形式更能显式的说明问题。
+      EDA Pipeline原版notebooks：https://github.com/miykael/miykael.github.io/blob/master/assets/nb/03_advanced_eda/nb_advanced_eda.ipynb
 
-确定dp数组及下标的含义
-确定dp的递推公式
-如何初始化、与遍历规则
-举例推导，验证规则
-
-
-判断是否可以转换为DP问题
-如何确定递推......
+数据结构：数据维度、特种类型
+数据质量：重复、缺失或无关实例
+数据内容：更深的去研究和对比不同数据特征之间的关系，试图发现新的东西！
+......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by 小于 on
-    2022-01-01
+    2022-05-15
   </p>
   <div class="tags">
     
-    <a href="/tags/#coding" title="coding">coding</a>
+    <a href="/tags/#EDA" title="EDA">EDA</a>
     
   </div>
   
@@ -665,27 +661,76 @@ U×I→R，其中$R$是一个全序集合(在一定......
   <!-- top end -->
   
 
-  <a href="/cn/剑指offer_00_数组/">
+  <a href="/cn/LeetCode_动态规划/">
     <h2 class="post-title">
-      剑指offer_00_数组
+      LeetCode_动态规划
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      附：快排123456789101112131415void quickSort(vector&lt;int&gt; &amp;arr, int l, int r) &#123;    if (l &gt;= r)        return;    int i = l, j = r;    while (i &lt; j) &#123;        while (i &lt; j &amp......
+      动态规划基于一维、二维数组，实现动态规划思路。区别于贪心，动态规划的每一个状态是由上几个状态决定的。贪心没有状态依赖，是局部选最优至全局最优。部分问题既可以用贪心解决，也可以用DP，相比较此时贪心一般节省空间复杂度，但DP递推公式的形式更能显式的说明问题。
+
+确定dp数组及下标的含义
+确定dp的递推公式
+如何初始化、与遍历规则
+举例推导，验证规则
+
+
+判断是否可以转换为DP问题
+如何确定递推......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by 小于 on
-    2021-11-01
+    2022-01-01
   </p>
   <div class="tags">
     
-    <a href="/tags/#数组" title="数组">数组</a>
+    <a href="/tags/#coding" title="coding">coding</a>
     
-    <a href="/tags/#剑指offer" title="剑指offer">剑指offer</a>
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <div class="top">
+    <div class="iconfont icon-hot animated infinite tada"></div>
+  </div>
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/bigdata-PySpark/">
+    <h2 class="post-title">
+      BigData-PySpark
+    </h2>
+    <h3 class="post-subtitle">
+      PySpark
+    </h3>
+    <div class="post-content-preview">
+      (Episode 03/03)基于Scala&amp;Spark的数据科学和机器学习
+PySpark环境搭建
+基于PySpark读取本地数据
+
+使用GoogleColab搭建PySpark环境参考：towards-data-science/pyspark-in-google-colab
+基于PySpark读取本地数据12from pyspark.sql.functions import *f......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by 小于 on
+    2022-05-12
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#Spark" title="Spark">Spark</a>
     
   </div>
   
@@ -710,44 +755,6 @@ U×I→R，其中$R$是一个全序集合(在一定......
     <div class="post-content-preview">
       Advanced-EDA翻译自：https://medium.com/epfl-extension-school/advanced-exploratory-data-analysis-eda-with-python-536fa83c578a
 快速有效获取格式化数据集一个较好的EDA方式会帮助你方便的处理、理解数据的联系，但是这种相对较好的数据集并不容易获取。实际的所有数据分析过程中，全面理解......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 小于 on
-    2022-05-15
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#EDA" title="EDA">EDA</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/02_eda_pipeline/">
-    <h2 class="post-title">
-      02_EDA_Pipeline
-    </h2>
-    <h3 class="post-subtitle">
-      EDA Pipeline
-    </h3>
-    <div class="post-content-preview">
-      EDA Pipeline原版notebooks：https://github.com/miykael/miykael.github.io/blob/master/assets/nb/03_advanced_eda/nb_advanced_eda.ipynb
-
-数据结构：数据维度、特种类型
-数据质量：重复、缺失或无关实例
-数据内容：更深的去研究和对比不同数据特征之间的关系，试图发现新的东西！
-......
     </div>
   </a>
   
@@ -810,28 +817,31 @@ EDA数据分析是数据岗必备技能，通过这类工作洞察你的思维�
   <!-- top end -->
   
 
-  <a href="/cn/12.算法公式整理/">
+  <a href="/cn/bigdata-Spark/">
     <h2 class="post-title">
-      第12章 算法公式总结
+      BigData-Spark
     </h2>
     <h3 class="post-subtitle">
-      有监督学习算法公式整理
+      Spark
     </h3>
     <div class="post-content-preview">
-      第12章 算法公式总结EM算法当已知每一个样本数据$x^{(i)}$都对应一个类别变量$z^{(i)}$时，即$z=(z^{(1)},z^{(2)},\dots,z^{(m)})$，此时的极大化模型的对数似然函数可以通过全概率公式展开为
+      (Episode 02/03)基于Scala&amp;Spark的数据科学和机器学习
+数据准备
+构建Google Colab的Scala环境
+基于Scala运行Spark读取本地数据
 
-\begin{aligned}
-\hat{\theta}&= \mathop{\arg\max}_{\theta} \sum\limits_{i=1}^m......
+数据准备
+Spark书籍： [Apache Spark™ Under the Hood] https://databricks.com/p/ebook/apache-spark-under-the-hood.......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by 小于 on
-    2022-04-20
+    2022-05-11
   </p>
   <div class="tags">
     
-    <a href="/tags/#机器学习" title="机器学习">机器学习</a>
+    <a href="/tags/#Spark" title="Spark">Spark</a>
     
   </div>
   
@@ -890,24 +900,24 @@ EDA数据分析是数据岗必备技能，通过这类工作洞察你的思维�
       <li>工具</li>
     </a>
     
-    <a href="/categories/#take-home_challenge">
-      <li>take-home_challenge</li>
+    <a href="/categories/#Take-home_Challenge">
+      <li>Take-home_Challenge</li>
     </a>
     
     <a href="/categories/#统计学习方法">
       <li>统计学习方法</li>
     </a>
     
-    <a href="/categories/#leetcode">
-      <li>leetcode</li>
+    <a href="/categories/#LeetCode">
+      <li>LeetCode</li>
+    </a>
+    
+    <a href="/categories/#Big_Data">
+      <li>Big_Data</li>
     </a>
     
     <a href="/categories/#剑指offer">
       <li>剑指offer</li>
-    </a>
-    
-    <a href="/categories/#大数据基础">
-      <li>大数据基础</li>
     </a>
     
     <a href="/categories/#推荐系统">
@@ -942,12 +952,12 @@ EDA数据分析是数据岗必备技能，通过这类工作洞察你的思维�
       <li>00_widget-factory</li>
     </a>
     
-    <a href="cn/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F-01-TF/">
-      <li>（全网最详细）基于TensorFlow的Estimator实现Wide&amp;Deep模型</li>
+    <a href="cn/bigdata-PySpark/">
+      <li>BigData-PySpark</li>
     </a>
     
-    <a href="cn/12.%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%8F%E6%95%B4%E7%90%86/">
-      <li>第12章 算法公式总结</li>
+    <a href="cn/bigdata-Spark/">
+      <li>BigData-Spark</li>
     </a>
     
   </ul>
@@ -1048,6 +1058,46 @@ EDA数据分析是数据岗必备技能，通过这类工作洞察你的思维�
     
     
     
+    <a href="/tags/#三次握手" title="三次握手" rel="1">三次握手</a>
+    
+    
+    
+    <a href="/tags/#大数据基础" title="大数据基础" rel="1">大数据基础</a>
+    
+    
+    
+    <a href="/tags/#jvm" title="jvm" rel="1">jvm</a>
+    
+    
+    
+    <a href="/tags/#Linux" title="Linux" rel="1">Linux</a>
+    
+    
+    
+    <a href="/tags/#数据倾斜" title="数据倾斜" rel="1">数据倾斜</a>
+    
+    
+    
+    <a href="/tags/#shell" title="shell" rel="1">shell</a>
+    
+    
+    
+    <a href="/tags/#SQL" title="SQL" rel="1">SQL</a>
+    
+    
+    
+    <a href="/tags/#git" title="git" rel="1">git</a>
+    
+    
+    
+    <a href="/tags/#Spark" title="Spark" rel="2">Spark</a>
+    
+    
+    
+    <a href="/tags/#Scala" title="Scala" rel="1">Scala</a>
+    
+    
+    
     <a href="/tags/#剑指offer" title="剑指offer" rel="7">剑指offer</a>
     
     
@@ -1076,50 +1126,6 @@ EDA数据分析是数据岗必备技能，通过这类工作洞察你的思维�
     
     
     
-    <a href="/tags/#计算机网络" title="计算机网络" rel="1">计算机网络</a>
-    
-    
-    
-    <a href="/tags/#大数据" title="大数据" rel="2">大数据</a>
-    
-    
-    
-    <a href="/tags/#Java" title="Java" rel="1">Java</a>
-    
-    
-    
-    <a href="/tags/#jvm" title="jvm" rel="1">jvm</a>
-    
-    
-    
-    <a href="/tags/#linux" title="linux" rel="1">linux</a>
-    
-    
-    
-    <a href="/tags/#大数据调优" title="大数据调优" rel="1">大数据调优</a>
-    
-    
-    
-    <a href="/tags/#工程" title="工程" rel="1">工程</a>
-    
-    
-    
-    <a href="/tags/#数据倾斜" title="数据倾斜" rel="1">数据倾斜</a>
-    
-    
-    
-    <a href="/tags/#Linux" title="Linux" rel="1">Linux</a>
-    
-    
-    
-    <a href="/tags/#sql" title="sql" rel="1">sql</a>
-    
-    
-    
-    <a href="/tags/#tools" title="tools" rel="1">tools</a>
-    
-    
-    
     <a href="/tags/#推荐系统" title="推荐系统" rel="1">推荐系统</a>
     
     
@@ -1145,7 +1151,7 @@ EDA数据分析是数据岗必备技能，通过这类工作洞察你的思维�
 
 <h5><a href="/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2022/05/">May 2022</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2022/04/">April 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2022/03/">March 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/12/">December 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/11/">November 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/10/">October 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/09/">September 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/04/">April 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2019/11/">November 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2019/10/">October 2019</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2019/01/">January 2019</a><span class="archive-list-count">1</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2022/05/">May 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2022/04/">April 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2022/03/">March 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/12/">December 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/11/">November 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/10/">October 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/04/">April 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2019/12/">December 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2019/11/">November 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2019/10/">October 2019</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2019/04/">April 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2019/01/">January 2019</a><span class="archive-list-count">1</span></li></ul>
 </div>
 
 

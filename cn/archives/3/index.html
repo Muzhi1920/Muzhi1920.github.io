@@ -223,6 +223,17 @@
           
           
           <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
             <a href="/about/">
               
               关于我
@@ -237,17 +248,6 @@
             <a href="/categories/">
               
               分类
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/archive/">
-              
-              归档
               
               
             </a>
@@ -458,6 +458,47 @@
   <!-- top end -->
   
 
+  <a href="/cn/6.LogisticRegression/">
+    <h2 class="post-title">
+      第6章 逻辑斯谛回归
+    </h2>
+    <h3 class="post-subtitle">
+      logistic regression
+    </h3>
+    <div class="post-content-preview">
+      第6章 逻辑斯谛回归
+附详细梯度下降优化算法
+
+1．逻辑斯谛回归模型是由以下条件概率分布表示的分类模型。
+P(Y=k | x)=\frac{\exp \left(w_{k} \cdot x\right)}{1+\sum_{k=1}^{K-1} \exp \left(w_{k} \cdot x\right)}, \quad k=1,2, \cdots, K-1P(Y=K | x)=\frac{......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by 小于 on
+    2022-03-21
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#机器学习" title="机器学习">机器学习</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <div class="top">
+    <div class="iconfont icon-hot animated infinite tada"></div>
+  </div>
+  
+  <!-- top end -->
+  
+
   <a href="/cn/1.监督学习/">
     <h2 class="post-title">
       第1章 统计学习方法概论
@@ -530,6 +571,75 @@
   <div class="tags">
     
     <a href="/tags/#coding" title="coding">coding</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/8.Boost/">
+    <h2 class="post-title">
+      第8章 提升方法
+    </h2>
+    <h3 class="post-subtitle">
+      AdaBoost，GBDT
+    </h3>
+    <div class="post-content-preview">
+      第8章 提升方法1．提升方法是将弱学习算法提升为强学习算法的统计学习方法。在分类学习中，提升方法通过反复修改训练数据的权值分布，构建一系列基本分类器（弱分类器），并将这些基本分类器线性组合，构成一个强分类器。代表性的提升方法是AdaBoost算法。
+AdaBoost模型是弱分类器的线性组合：
+f(x)=\sum_{m=1}^{M} \alpha_{m} G_{m}(x)2．AdaBoost算......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by 小于 on
+    2022-03-23
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#机器学习" title="机器学习">机器学习</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/7.support-vector-machine/">
+    <h2 class="post-title">
+      第7章 支持向量机
+    </h2>
+    <h3 class="post-subtitle">
+      SVM
+    </h3>
+    <div class="post-content-preview">
+      第7章 支持向量机1．支持向量机条件是训练数据线性可分。最大间隔法作为优化策略。可以表示为凸二次规划问题，其原始最优化问题为
+\min _{w, b} \frac{1}{2}\|w\|^{2}s.t. \quad y_{i}\left(w \cdot x_{i}+b\right)-1 \geqslant 0, \quad i=1,2, \cdots, N求得最优化问题的解为$w^$，$b^$......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by 小于 on
+    2022-03-22
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#机器学习" title="机器学习">机器学习</a>
     
   </div>
   
@@ -738,125 +848,6 @@ f(x)=\operatorname{sign}(w \cdot x+b)感知机模型优化的策略是极小化�
 </div>
 <hr>
 
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/LeetCode_贪心/">
-    <h2 class="post-title">
-      LeetCode_贪心
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      贪心算法本质是，通过获得某一阶段的局部最优，逐步达到全局最优。常识性推导 + 举反例
-
-问题可分解为若干子问题
-思考策略，使得子问题得到局部最优
-堆叠为全局最优
-
-贪心算法经常可以基于dp数组将问题转化为动态规划的递推公式。
-特点
-常识性
-巧妙行思路
-无固定套路
-数学递推证明，如果可以，也就能用dp来做
-
-一、分发饼干和糖果等零食455. 分发饼干胃口小的尽量用小饼干满足，以满足更多的人，返......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 小于 on
-    2021-12-13
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#leetcode" title="leetcode">leetcode</a>
-    
-    <a href="/tags/#贪心" title="贪心">贪心</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/剑指offer_05_数与数列/">
-    <h2 class="post-title">
-      剑指offer_06_数与数列
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      数与数列10.1斐波那契数列
-第一个数为0，第二个数为1.12345678910111213class Solution &#123;public:    int fib(int n) &#123;        int a = 0, b = 1, sum;        for (int i = 0; i &lt; n; i++) &#123;            sum = (a + ......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 小于 on
-    2021-12-12
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#剑指offer" title="剑指offer">剑指offer</a>
-    
-    <a href="/tags/#数列" title="数列">数列</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/LeetCode_字符串/">
-    <h2 class="post-title">
-      LeetCode_字符串
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      字符串回文串等
-一、回文串系列9. 验证回文数判断数字是否是回文数：121，12321。复杂度$O(logN)$
-12345678910111213class Solution &#123;public:    bool isPalindrome(int x) &#123;        if (x &lt; 0 || (x % 10 == 0 &amp;&amp; x != 0))    ......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 小于 on
-    2021-12-03
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#coding" title="coding">coding</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
 
   <!-- Pager -->
   <ul class="pager">
@@ -912,24 +903,24 @@ f(x)=\operatorname{sign}(w \cdot x+b)感知机模型优化的策略是极小化�
       <li>工具</li>
     </a>
     
-    <a href="/categories/#take-home_challenge">
-      <li>take-home_challenge</li>
+    <a href="/categories/#Take-home_Challenge">
+      <li>Take-home_Challenge</li>
     </a>
     
     <a href="/categories/#统计学习方法">
       <li>统计学习方法</li>
     </a>
     
-    <a href="/categories/#leetcode">
-      <li>leetcode</li>
+    <a href="/categories/#LeetCode">
+      <li>LeetCode</li>
+    </a>
+    
+    <a href="/categories/#Big_Data">
+      <li>Big_Data</li>
     </a>
     
     <a href="/categories/#剑指offer">
       <li>剑指offer</li>
-    </a>
-    
-    <a href="/categories/#大数据基础">
-      <li>大数据基础</li>
     </a>
     
     <a href="/categories/#推荐系统">
@@ -964,12 +955,12 @@ f(x)=\operatorname{sign}(w \cdot x+b)感知机模型优化的策略是极小化�
       <li>00_widget-factory</li>
     </a>
     
-    <a href="../../%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F-01-TF/">
-      <li>（全网最详细）基于TensorFlow的Estimator实现Wide&amp;Deep模型</li>
+    <a href="../../bigdata-PySpark/">
+      <li>BigData-PySpark</li>
     </a>
     
-    <a href="../../12.%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%8F%E6%95%B4%E7%90%86/">
-      <li>第12章 算法公式总结</li>
+    <a href="../../bigdata-Spark/">
+      <li>BigData-Spark</li>
     </a>
     
   </ul>
@@ -1070,6 +1061,46 @@ f(x)=\operatorname{sign}(w \cdot x+b)感知机模型优化的策略是极小化�
     
     
     
+    <a href="/tags/#三次握手" title="三次握手" rel="1">三次握手</a>
+    
+    
+    
+    <a href="/tags/#大数据基础" title="大数据基础" rel="1">大数据基础</a>
+    
+    
+    
+    <a href="/tags/#jvm" title="jvm" rel="1">jvm</a>
+    
+    
+    
+    <a href="/tags/#Linux" title="Linux" rel="1">Linux</a>
+    
+    
+    
+    <a href="/tags/#数据倾斜" title="数据倾斜" rel="1">数据倾斜</a>
+    
+    
+    
+    <a href="/tags/#shell" title="shell" rel="1">shell</a>
+    
+    
+    
+    <a href="/tags/#SQL" title="SQL" rel="1">SQL</a>
+    
+    
+    
+    <a href="/tags/#git" title="git" rel="1">git</a>
+    
+    
+    
+    <a href="/tags/#Spark" title="Spark" rel="2">Spark</a>
+    
+    
+    
+    <a href="/tags/#Scala" title="Scala" rel="1">Scala</a>
+    
+    
+    
     <a href="/tags/#剑指offer" title="剑指offer" rel="7">剑指offer</a>
     
     
@@ -1098,50 +1129,6 @@ f(x)=\operatorname{sign}(w \cdot x+b)感知机模型优化的策略是极小化�
     
     
     
-    <a href="/tags/#计算机网络" title="计算机网络" rel="1">计算机网络</a>
-    
-    
-    
-    <a href="/tags/#大数据" title="大数据" rel="2">大数据</a>
-    
-    
-    
-    <a href="/tags/#Java" title="Java" rel="1">Java</a>
-    
-    
-    
-    <a href="/tags/#jvm" title="jvm" rel="1">jvm</a>
-    
-    
-    
-    <a href="/tags/#linux" title="linux" rel="1">linux</a>
-    
-    
-    
-    <a href="/tags/#大数据调优" title="大数据调优" rel="1">大数据调优</a>
-    
-    
-    
-    <a href="/tags/#工程" title="工程" rel="1">工程</a>
-    
-    
-    
-    <a href="/tags/#数据倾斜" title="数据倾斜" rel="1">数据倾斜</a>
-    
-    
-    
-    <a href="/tags/#Linux" title="Linux" rel="1">Linux</a>
-    
-    
-    
-    <a href="/tags/#sql" title="sql" rel="1">sql</a>
-    
-    
-    
-    <a href="/tags/#tools" title="tools" rel="1">tools</a>
-    
-    
-    
     <a href="/tags/#推荐系统" title="推荐系统" rel="1">推荐系统</a>
     
     
@@ -1167,7 +1154,7 @@ f(x)=\operatorname{sign}(w \cdot x+b)感知机模型优化的策略是极小化�
 
 <h5><a href="/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2022/05/">May 2022</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2022/04/">April 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2022/03/">March 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2021/12/">December 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2021/11/">November 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2021/10/">October 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2021/09/">September 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2020/04/">April 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2019/11/">November 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2019/10/">October 2019</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2019/01/">January 2019</a><span class="archive-list-count">1</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2022/05/">May 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2022/04/">April 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2022/03/">March 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2021/12/">December 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2021/11/">November 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2021/10/">October 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2020/04/">April 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2019/12/">December 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2019/11/">November 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2019/10/">October 2019</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2019/04/">April 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2019/01/">January 2019</a><span class="archive-list-count">1</span></li></ul>
 </div>
 
 

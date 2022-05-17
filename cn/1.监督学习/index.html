@@ -223,6 +223,17 @@
           
           
           <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
             <a href="/about/">
               
               关于我
@@ -237,17 +248,6 @@
             <a href="/categories/">
               
               分类
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/archive/">
-              
-              归档
               
               
             </a>
@@ -767,7 +767,7 @@
 <pre><code>&lt;matplotlib.legend.Legend at 0x7efdf98a4950&gt;
 </code></pre><p><img src="/cn/1.%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/output_21_1.png" alt="png"></p>
 <p>是不是发现，变动还是很明显的。。。</p>
-<p>伯努利模型的极大似然估计以及贝叶斯估计中的<strong>统计学习方法三要素</strong>如下：  </p>
+<p>伯努利模型的极大似然估计以及贝叶斯估计中的<strong>统计学习方法三要素</strong>如下：</p>
 <ol>
 <li><strong>极大似然估计</strong><br><strong>模型：</strong> $\mathcal{F}=\{f|f_p(x)=p^x(1-p)^{(1-x)}\}$<br><strong>策略：</strong> 最大化似然函数<br><strong>算法：</strong> $\displaystyle \mathop{\arg\min}_{p} L(p)= \mathop{\arg\min}_{p} \binom{n}{k}p^k(1-p)^{(n-k)}$</li>
 <li><strong>贝叶斯估计</strong><br><strong>模型：</strong> $\mathcal{F}=\{f|f_p(x)=p^x(1-p)^{(1-x)}\}$<br><strong>策略：</strong> 求参数期望<br><strong>算法：</strong><script type="math/tex; mode=display">\begin{aligned}  E_\pi\big[p \big| y_1,\cdots,y_n\big]
@@ -779,7 +779,7 @@
 <p><strong>伯努利模型的极大似然估计：</strong><br>定义$P(Y=1)$概率为$p$，可得似然函数为：<script type="math/tex">L(p)=f_D(y_1,y_2,\cdots,y_n|\theta)=\binom{n}{k}p^k(1-p)^{(n-k)}</script>方程两边同时对$p$求导，则：<script type="math/tex">\begin{aligned}
 0 & = \binom{n}{k}[kp^{k-1}(1-p)^{(n-k)}-(n-k)p^k(1-p)^{(n-k-1)}]\\
 & = \binom{n}{k}[p^{(k-1)}(1-p)^{(n-k-1)}(m-kp)]
-\end{aligned}</script>可解出$p$的值为$p=0,p=1,p=k/n$，显然$\displaystyle P(Y=1)=p=\frac{k}{n}$  </p>
+\end{aligned}</script>可解出$p$的值为$p=0,p=1,p=k/n$，显然$\displaystyle P(Y=1)=p=\frac{k}{n}$</p>
 <p><strong>伯努利模型的贝叶斯估计：</strong><br>定义$P(Y=1)$概率为$p$，$p$在$[0,1]$之间的取值是等概率的，因此先验概率密度函数$\pi(p) = 1$，可得似然函数为： <script type="math/tex">L(p)=f_D(y_1,y_2,\cdots,y_n|\theta)=\binom{n}{k}p^k(1-p)^{(n-k)}</script><br>根据似然函数和先验概率密度函数，可以求解$p$的条件概率密度函数：<script type="math/tex">\begin{aligned}\pi(p|y_1,\cdots,y_n)&=\frac{f_D(y_1,\cdots,y_n|p)\pi(p)}{\int_{\Omega}f_D(y_1,\cdots,y_n|p)\pi(p)dp}\\
 &=\frac{p^k(1-p)^{(n-k)}}{\int_0^1p^k(1-p)^{(n-k)}dp}\\
 &=\frac{p^k(1-p)^{(n-k)}}{B(k+1,n-k+1)}

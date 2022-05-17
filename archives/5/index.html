@@ -223,6 +223,17 @@
           
           
           <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
             <a href="/about/">
               
               关于我
@@ -237,17 +248,6 @@
             <a href="/categories/">
               
               分类
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/archive/">
-              
-              归档
               
               
             </a>
@@ -454,12 +454,137 @@
   <!-- top end -->
   
 
-  <a href="/cn/大数据-00-计算机网络/">
+  <a href="/cn/LeetCode_滑动窗口/">
     <h2 class="post-title">
-      大数据-00-操作系统与网络
+      LeetCode_滑动窗口
     </h2>
     <h3 class="post-subtitle">
       
+    </h3>
+    <div class="post-content-preview">
+      双指针与滑动窗口
+基于数组结合滑动窗口，形成的极值问题；
+基于数组，结合贪心的双指针问题。
+
+双指针11. 盛水最多的容器每次以双指针为边界，得到最大容量。
+双指针正确性：假设当前x&lt;y, res = min(x, y) * t = x * t
+
+假设移动右边，导致长度会减小，高度上限为x；后序只能变小。
+假设移动左边：导致长度会减小，高度上限为y；后序可以变大。获得更高的可能性更大，......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by 小于 on
+    2021-11-01
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#leetcode" title="leetcode">leetcode</a>
+    
+    <a href="/tags/#数组" title="数组">数组</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/剑指offer_00_数组/">
+    <h2 class="post-title">
+      剑指offer_00_数组
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      附：快排123456789101112131415void quickSort(vector&lt;int&gt; &amp;arr, int l, int r) &#123;    if (l &gt;= r)        return;    int i = l, j = r;    while (i &lt; j) &#123;        while (i &lt; j &amp......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by 小于 on
+    2021-11-01
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#数组" title="数组">数组</a>
+    
+    <a href="/tags/#剑指offer" title="剑指offer">剑指offer</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/LeetCode_回溯/">
+    <h2 class="post-title">
+      LeetCode_回溯
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      回溯算法回溯也是搜索的一种方式，常见的二叉树，涉及递归和回溯。
+
+回溯是递归的副产品，只要有递归就会有回溯。
+回溯的本质是穷举。
+回溯过程，均可以抽象为树形结构。
+高效回溯，穷举的基础上增加剪枝。
+
+
+组合问题：N个数里面按一定规则找出k个数的集合
+切割问题：一个字符串按一定规则有几种切割方式
+子集问题：一个N个数的集合里有多少符合条件的子集
+排列问题：N个数按一定规则全排列方式
+棋盘问题：......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by 小于 on
+    2021-10-25
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#leetcode" title="leetcode">leetcode</a>
+    
+    <a href="/tags/#数组" title="数组">数组</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/bigdata-00-计算机网络/">
+    <h2 class="post-title">
+      BigData-网络层
+    </h2>
+    <h3 class="post-subtitle">
+      操作系统与网络
     </h3>
     <div class="post-content-preview">
       操作系统与网络物理层,数据链路层,网络层,传输层,会话层,表示层和应用层。
@@ -478,129 +603,7 @@
   </p>
   <div class="tags">
     
-    <a href="/tags/#计算机网络" title="计算机网络">计算机网络</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/大数据-01-基础/">
-    <h2 class="post-title">
-      大数据-01-基础
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      大数据大数据Hadoop和Spark基础知识，涉及Scala语言，Maven包管理，Hadoop/Hbase/Hive/Spark等大数据工具。(不断更新中，图片源自网络，侵删)
-
-0. Scala基础
-case class：自动生成常用方法(equals&amp;hashCode,toString,copy)；自动生成伴生对象；实现了 apply 方法让你不需要通过 new 来创建类实例
-......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 小于 on
-    2021-10-24
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#大数据" title="大数据">大数据</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/大数据-02-Java/">
-    <h2 class="post-title">
-      大数据-02-Java理论基础
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      Java基础包括Java基础和计算机基础，主要包括GC，JVM，线程进程，同步互斥等
-
-JVM与GCJVM
-程序计数器—与每个线程线程执行字节码行号有关—线程私有
-虚拟机栈—与Java方法有关创建栈帧—线程私有
-本地方法栈—与Java的native方法有关—线程私有
-Java堆—与Java对象实例有关/垃圾收集器管理的主要区域—GC堆
-Java方法区——线程共享；存储被虚拟机加载的类信息、常......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 小于 on
-    2021-10-22
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#Java" title="Java">Java</a>
-    
-    <a href="/tags/#jvm" title="jvm">jvm</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/大数据-03-linux/">
-    <h2 class="post-title">
-      大数据-03-linux
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      Linux更多命令参考Linux常用命令总结
-
-ps：查看当前进程
-ps -ef (system v 输出)
-ps -aux bsd 格式输出
-ps -ef | grep pid
-
-
-ln：软连接，快捷方式；硬链接：同步更改。
-chmod abc file a,b,c：分别表示User、Group、及Other的权限。若要rwx属性则4+2+1=7
-vi 文件名编辑 cat file | m......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 小于 on
-    2021-09-28
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#linux" title="linux">linux</a>
+    <a href="/tags/#三次握手" title="三次握手">三次握手</a>
     
   </div>
   
@@ -687,6 +690,47 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
   <!-- top end -->
   
 
+  <a href="/cn/bigdata-06-Sql/">
+    <h2 class="post-title">
+      BigData-SQL
+    </h2>
+    <h3 class="post-subtitle">
+      HQL、SQL语句
+    </h3>
+    <div class="post-content-preview">
+      SQL基础简要sql语法基础，包括添加外部脚本，基本的增删改查
+调用Python脚本SQL调优
+创建索引；避免索引上引用计算；预编译查询；临时表暂存（减少阻塞提高并发性能）；避免使用having（分组后过滤，开销很大）
+分区dt,strategy统计，用样本估计整体；
+常用列建立索引，但不是越多越好。
+
+SQL关键字
++：多个列或者不同表的多个列的值相加；后跟as
+between 66 an......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by 小于 on
+    2019-12-25
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#SQL" title="SQL">SQL</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
   <a href="/cn/LeetCode_拓展/">
     <h2 class="post-title">
       LeetCode_拓展
@@ -721,27 +765,42 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
   <!-- top end -->
   
 
-  <a href="/cn/大数据-07-git/">
+  <a href="/cn/算法导论-00-CPP基础/">
     <h2 class="post-title">
-      大数据-07-git
+      算法导论-00-CPP基础
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      git操作新建分支以及远程分支git branch xxgit checkout -b xxgit push —set-upstream origin xx
-新本地分支追溯远程分支git checkout -b xxgit branch —set-upstream-to=origin/xx
-删除分支以及远程分支git checkout mastergit push origin —delet......
+      算法与Coding基础算法基础code一般分为：数据结构、算法、数学
+
+数据结构（难度累加）
+c++ STL：数组、栈、队列（优先、双端）、集合与映射（有序、哈希）
+字符串
+指针：链表、树（递归遍历、层序、二叉搜索、字典树）、图（二分图、拓扑排序）
+并查集
+复合数据结构（LRU等）
+
+
+算法
+贪心
+指针类：双指针（滑动、固定窗口）、快慢指针
+二分查找
+排序算法
+搜索算法：广度优先、深度优先（......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by 小于 on
-    2019-11-02
+    2019-10-29
   </p>
   <div class="tags">
     
-    <a href="/tags/#tools" title="tools">tools</a>
+    <a href="/tags/#coding" title="coding">coding</a>
+    
+    <a href="/tags/#c++" title="c++">c++</a>
     
   </div>
   
@@ -756,127 +815,37 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
   <!-- top end -->
   
 
-  <a href="/cn/大数据-06-Sql/">
+  <a href="/cn/推荐系统-02-语言模型/">
     <h2 class="post-title">
-      大数据-06-Sql
+      推荐系统-01-语言模型
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      SQL基础简要sql语法基础，包括添加外部脚本，基本的增删改查
-调用Python脚本SQL调优
-创建索引；避免索引上引用计算；预编译查询；临时表暂存（减少阻塞提高并发性能）；避免使用having（分组后过滤，开销很大）
-分区dt,strategy统计，用样本估计整体；
-常用列建立索引，但不是越多越好。
+      推荐系统之语言模型万物皆可Embedding
 
-SQL关键字
-+：多个列或者不同表的多个列的值相加；后跟as
-between 66 an......
+将one-hot映射为embedding，能够很好挖掘嵌入实体间的内部关联
+
+
+1、高维-&gt;低维2、稀疏-&gt;稠密3、离散-&gt;连续4、整数-&gt;实数
+高维稀疏不利于机器学习参数学习和相关计算；维度灾难；复杂度增加，过拟合；稀疏造成梯度消失；
+向量化好处
+不丢失信息降维
+矩阵运算便于并行
+向量空间比较相似性
+
+word2vec......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by 小于 on
-    2019-11-01
+    2019-10-29
   </p>
   <div class="tags">
     
-    <a href="/tags/#sql" title="sql">sql</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/大数据-05-shell/">
-    <h2 class="post-title">
-      大数据-05-Shell基础
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      shell基础vim命令
-
-
-
-命令
-功能
-
-
-
-
-set nu
-显示行号
-
-
-set nonu
-不显示行号
-
-
-&lt;-查找-&gt;
-&lt;-查找=&gt;
-
-
-/
-向后搜索
-
-
-n
-查找下一处
-
-
-N
-查找上一处
-
-
-&lt;-跳转-&gt;
-&lt;-跳转=&gt;
-
-
-gg
-跳转到文件开头
-
-
-G
-跳转到文件结尾
-
-
-b
-单词后跳
-
-
-e
-单词前跳
-
-
-0
-跳至行首
-
-
-$
-跳......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 小于 on
-    2019-10-30
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#大数据" title="大数据">大数据</a>
-    
-    <a href="/tags/#Linux" title="Linux">Linux</a>
+    <a href="/tags/#NLP" title="NLP">NLP</a>
     
   </div>
   
@@ -939,24 +908,24 @@ $
       <li>工具</li>
     </a>
     
-    <a href="/categories/#take-home_challenge">
-      <li>take-home_challenge</li>
+    <a href="/categories/#Take-home_Challenge">
+      <li>Take-home_Challenge</li>
     </a>
     
     <a href="/categories/#统计学习方法">
       <li>统计学习方法</li>
     </a>
     
-    <a href="/categories/#leetcode">
-      <li>leetcode</li>
+    <a href="/categories/#LeetCode">
+      <li>LeetCode</li>
+    </a>
+    
+    <a href="/categories/#Big_Data">
+      <li>Big_Data</li>
     </a>
     
     <a href="/categories/#剑指offer">
       <li>剑指offer</li>
-    </a>
-    
-    <a href="/categories/#大数据基础">
-      <li>大数据基础</li>
     </a>
     
     <a href="/categories/#推荐系统">
@@ -991,12 +960,12 @@ $
       <li>00_widget-factory</li>
     </a>
     
-    <a href="../../cn/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F-01-TF/">
-      <li>（全网最详细）基于TensorFlow的Estimator实现Wide&amp;Deep模型</li>
+    <a href="../../cn/bigdata-PySpark/">
+      <li>BigData-PySpark</li>
     </a>
     
-    <a href="../../cn/12.%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%8F%E6%95%B4%E7%90%86/">
-      <li>第12章 算法公式总结</li>
+    <a href="../../cn/bigdata-Spark/">
+      <li>BigData-Spark</li>
     </a>
     
   </ul>
@@ -1097,6 +1066,46 @@ $
     
     
     
+    <a href="/tags/#三次握手" title="三次握手" rel="1">三次握手</a>
+    
+    
+    
+    <a href="/tags/#大数据基础" title="大数据基础" rel="1">大数据基础</a>
+    
+    
+    
+    <a href="/tags/#jvm" title="jvm" rel="1">jvm</a>
+    
+    
+    
+    <a href="/tags/#Linux" title="Linux" rel="1">Linux</a>
+    
+    
+    
+    <a href="/tags/#数据倾斜" title="数据倾斜" rel="1">数据倾斜</a>
+    
+    
+    
+    <a href="/tags/#shell" title="shell" rel="1">shell</a>
+    
+    
+    
+    <a href="/tags/#SQL" title="SQL" rel="1">SQL</a>
+    
+    
+    
+    <a href="/tags/#git" title="git" rel="1">git</a>
+    
+    
+    
+    <a href="/tags/#Spark" title="Spark" rel="2">Spark</a>
+    
+    
+    
+    <a href="/tags/#Scala" title="Scala" rel="1">Scala</a>
+    
+    
+    
     <a href="/tags/#剑指offer" title="剑指offer" rel="7">剑指offer</a>
     
     
@@ -1125,50 +1134,6 @@ $
     
     
     
-    <a href="/tags/#计算机网络" title="计算机网络" rel="1">计算机网络</a>
-    
-    
-    
-    <a href="/tags/#大数据" title="大数据" rel="2">大数据</a>
-    
-    
-    
-    <a href="/tags/#Java" title="Java" rel="1">Java</a>
-    
-    
-    
-    <a href="/tags/#jvm" title="jvm" rel="1">jvm</a>
-    
-    
-    
-    <a href="/tags/#linux" title="linux" rel="1">linux</a>
-    
-    
-    
-    <a href="/tags/#大数据调优" title="大数据调优" rel="1">大数据调优</a>
-    
-    
-    
-    <a href="/tags/#工程" title="工程" rel="1">工程</a>
-    
-    
-    
-    <a href="/tags/#数据倾斜" title="数据倾斜" rel="1">数据倾斜</a>
-    
-    
-    
-    <a href="/tags/#Linux" title="Linux" rel="1">Linux</a>
-    
-    
-    
-    <a href="/tags/#sql" title="sql" rel="1">sql</a>
-    
-    
-    
-    <a href="/tags/#tools" title="tools" rel="1">tools</a>
-    
-    
-    
     <a href="/tags/#推荐系统" title="推荐系统" rel="1">推荐系统</a>
     
     
@@ -1194,7 +1159,7 @@ $
 
 <h5><a href="/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../2022/05/">May 2022</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2022/04/">April 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2022/03/">March 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2021/12/">December 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2021/11/">November 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2021/10/">October 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2021/09/">September 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/04/">April 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/11/">November 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/10/">October 2019</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/01/">January 2019</a><span class="archive-list-count">1</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../2022/05/">May 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2022/04/">April 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2022/03/">March 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2021/12/">December 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2021/11/">November 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2021/10/">October 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/04/">April 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/12/">December 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/11/">November 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/10/">October 2019</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/04/">April 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/01/">January 2019</a><span class="archive-list-count">1</span></li></ul>
 </div>
 
 
