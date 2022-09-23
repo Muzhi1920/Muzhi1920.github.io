@@ -380,11 +380,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">39</span> Minutes
+              Estimated Reading Time <span class="post-count">40</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">8k</span> In Total
+              Words <span class="post-count">8.1k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -469,7 +469,35 @@
 <li>递推公式决定了递推的方向；初始化决定了起点是否正确；<strong>滚动数组的调整，完全是因为覆盖导致的不同阶段的状态前后共存</strong></li>
 </ol>
 <p>多重背包：<code>N</code>种物品和一个容量为<code>V</code>的背包。第<code>i</code>种物品最多有<code>M_i</code>件可用，每件耗费的空间是<code>Ci</code> ，价值是<code>Wi</code>。将哪些物品装入背包可使这些物品的耗费的空间 总和不超过背包容量，且价值总和最大。（出现很少）</p>
-<h2 id="简单的DP思路"><a href="#简单的DP思路" class="headerlink" title="简单的DP思路"></a>简单的DP思路</h2><h3 id="509-斐波那契数列"><a href="#509-斐波那契数列" class="headerlink" title="509. 斐波那契数列"></a>509. 斐波那契数列</h3><p><code>dp[i] = dp[i-1] + dp[i-2]</code></p>
+<h2 id="简单的DP思路"><a href="#简单的DP思路" class="headerlink" title="简单的DP思路"></a>简单的DP思路</h2><h3 id="509-斐波那契数列"><a href="#509-斐波那契数列" class="headerlink" title="509. 斐波那契数列"></a>509. 斐波那契数列</h3><ol>
+<li>动态规划：<code>dp[i] = dp[i-1] + dp[i-2]</code></li>
+<li>矩阵方式：<code>F(n) = F(n-1) + F(n-2)</code><script type="math/tex; mode=display">
+\begin{bmatrix}
+ F(n) \\
+ F(n-1)
+\end{bmatrix} =
+\begin{bmatrix}
+ F(n-1)+F(n-2) \\
+ F(n-1)
+\end{bmatrix} =
+\begin{bmatrix}
+ 1 & 1 \\
+ 1 & 0
+\end{bmatrix} \times
+\begin{bmatrix}
+ F(n-1) \\
+ f(n-2)
+\end{bmatrix} =...=
+ \begin{bmatrix}
+ 1 & 1 \\
+ 1 & 0
+\end{bmatrix} ^{n-1} \times
+\begin{bmatrix}
+ F(1) \\
+ f(0)
+\end{bmatrix}</script></li>
+</ol>
+<p>矩阵次幂的计算方式，复杂度<code>O(logN)</code></p>
 <h2 id="种类总数"><a href="#种类总数" class="headerlink" title="种类总数"></a>种类总数</h2><h3 id="爬楼梯"><a href="#爬楼梯" class="headerlink" title="爬楼梯"></a>爬楼梯</h3><h4 id="70-每次爬m步"><a href="#70-每次爬m步" class="headerlink" title="70. 每次爬m步"></a>70. 每次爬m步</h4><p><code>dp[i] = dp[i-1] + dp[i-2]</code>，拓展为<code>m</code>步</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">climbStairs</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">dp</span><span class="params">(n + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m; j++) &#123; <span class="comment">// m最多爬几步</span></span><br><span class="line">                <span class="keyword">if</span> (i - j &gt;= <span class="number">0</span>)</span><br><span class="line">                    dp[i] += dp[i - j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h4 id="746-使用最小花费爬楼梯"><a href="#746-使用最小花费爬楼梯" class="headerlink" title="746. 使用最小花费爬楼梯"></a>746. 使用最小花费爬楼梯</h4><p><strong><code>dp[i]</code>定义为到达该楼层需花费的最小体力。</strong><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minCostClimbingStairs</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; cost)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="keyword">int</span>&gt;<span class="built_in">dp</span>(cost.<span class="built_in">size</span>() + <span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>; i&lt;=cost.<span class="built_in">size</span>(); i++)</span><br><span class="line">            dp[i] = <span class="built_in">min</span>(dp[i<span class="number">-1</span>]+cost[i<span class="number">-1</span>], dp[i<span class="number">-2</span>]+cost[i<span class="number">-2</span>]);</span><br><span class="line">        <span class="keyword">return</span> dp[cost.<span class="built_in">size</span>()];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
